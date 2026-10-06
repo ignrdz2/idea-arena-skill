@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Grupos de casi-duplicados",
+  "description": "Cada ID candidato aparece en exactamente un grupo. Una idea sin duplicados va sola.",
+  "type": "object",
+  "required": ["grupos"],
+  "properties": {
+    "grupos": {"type": "array", "minItems": 1, "items": {"type": "array", "minItems": 1, "items": {"type": "string"}}},
+    "motivos": {"type": "array", "items": {"type": "string", "maxLength": 400}}
+  },
+  "additionalProperties": false
+}
