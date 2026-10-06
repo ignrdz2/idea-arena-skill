@@ -1,0 +1,29 @@
+{
+  "scores": {
+    "X": {"demanda": 5, "viabilidad": 7, "diferenciacion": 6, "business_case": 6, "encaje": 7, "academico": 9, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 1, "viabilidad": 1, "diferenciacion": 1, "business_case": 3, "encaje": 5, "academico": 4, "fatal": true, "fatal_motivo": "restriccion_dura:R1: el costo de infraestructura declarado por la propia idea es USD 504 por año, por encima del tope de USD 300, y crece con usuarios que no pagan."}
+  },
+  "winner": "X",
+  "reason": "Y viola el tope de R1 con USD 504 por año y su demanda es pura opinión, mientras X entra holgada en USD 125 con evidencia local verificada de volatilidad de la demanda y un problema de pronóstico medible.",
+  "standing": {
+    "X": [
+      "La disposición a pagar y el costo del sobrante por local son supuestos: ninguna fuente muestra que una panadería uruguaya pague por planificar producción, y el ahorro que justifica el precio depende de un sobrante de 5 a 15% sin dato.",
+      "La evidencia de dolor es anecdótica o de sector (venta del doble de bizcochos antes de un partido, caída de ventas por competencia argentina); no cuantifica cuánto pierde una panadería por sobreproducir.",
+      "Open-Meteo gratis es solo para uso no comercial (verificado en su página de precios) y el piloto pago del semestre 2 ya es uso comercial; la página no muestra el precio del plan Standard, así que ese costo queda sin cuantificar.",
+      "La tabla de contactos del equipo está vacía: el piloto con 2 o 3 locales del semestre 1, del que depende el modelo, no tiene socio identificado ni plan B si las panaderías no cargan el sobrante todos los días.",
+      "10 semanas de datos de 2 o 3 locales son pocas para un backtesting creíble con feriados y eventos, y para entrenar un modelo global que resuelva el arranque en frío.",
+      "La afirmación de que los puntos de venta locales no pronostican no tiene link ni está en supuestos, y no se revisaron competidores latinoamericanos.",
+      "Ticket de USD 25 a 45 en un mercado chico y atomizado, sin cantidad de panaderías ni costo de adquisición: el business case no muestra que el negocio llegue a existir.",
+      "El link de FAO Uruguay devuelve 404; la cifra nacional se sostiene solo por la página del Ministerio de Ambiente, que habla de cerca del 11%."
+    ],
+    "Y": [
+      "Costo declarado de USD 504 por año, por encima del tope de USD 300 de R1, y escala con usuarios gratuitos.",
+      "La demanda es opinión del autor: la propia idea admite que no hay medición, encuesta ni fuente local, solo conversaciones informales.",
+      "Compite de frente con Google Maps, TripAdvisor, Instagram, TikTok y PedidosYa, gratuitos y con masa crítica; el único hueco (recomendación social) es un supuesto sin respaldo.",
+      "Cero ingresos posibles durante la tesis: el modelo exige una base grande de usuarios antes de que un restaurante pague, y ningún restaurante fue consultado.",
+      "Alcance inflado para 3 personas: dos apps nativas, red social, chat, chatbot, motor de recomendación, panel para restaurantes, gamificación y campaña de lanzamiento, con doble arranque en frío.",
+      "Catálogo de locales sin fuente legal identificada (riesgo de R7 por términos de uso de terceros) y perfilamiento de datos personales que exige evaluación de impacto.",
+      "La IA es un envoltorio sobre un modelo de lenguaje sin datos propios, así que el aporte técnico de la tesis es flaco."
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "scores": {
+    "X": {"demanda": 1, "viabilidad": 1, "diferenciacion": 2, "business_case": 3, "encaje": 4, "academico": 4, "fatal": true, "fatal_motivo": "restriccion_dura:R1: el costo de infraestructura declarado es USD 504 por año, por encima del tope de USD 300, y crece con los usuarios gratuitos (LLM sin tope de uso y Google Maps por encima del crédito gratuito)"},
+    "Y": {"demanda": 7, "viabilidad": 2, "diferenciacion": 4, "business_case": 5, "encaje": 8, "academico": 9, "fatal": true, "fatal_motivo": "restriccion_dura:R1: el total declarado es USD 307 por año, por encima del tope de USD 300; los créditos de estudiante que propone como mitigación no tienen fuente ni duración, y la tabla omite el cargo por IPv4 pública de AWS (USD 0,005 por hora según la página de precios de VPC, unos USD 44 por año), así que el costo real ronda USD 350"}
+  },
+  "winner": "Y",
+  "reason": "Las dos violan R1, así que deciden los totales: Y se pasa del tope por poco y con un recorte obvio, tiene demanda local verificada (21.532 consultas de proveedores a ARCE en 2021, Gubly con usuarios pagos en Uruguay, LicitaLAB con más de 1.500 clientes en Chile y Perú) y un desafío técnico medible, mientras X se pasa en USD 204 con un costo que crece con usuarios que no pagan y una demanda que es solo opinión.",
+  "standing": {
+    "X": [
+      "Costo de USD 504 por año, 68% sobre el tope de USD 300, y crece con cada usuario gratuito: el LLM no tiene tope de uso y Google Maps se cobra por encima del crédito; aun sacando Google Maps queda en USD 324.",
+      "Demanda sin ninguna evidencia: la propia idea admite que se apoya en sentido común y conversaciones informales con amigos, sin ninguna fuente local sobre el dolor ni su costo.",
+      "Competidores gratuitos y universales (Google Maps, TripAdvisor, Instagram, TikTok, PedidosYa) ya cubren descubrimiento, reseñas y reservas; el único hueco que la idea reconoce es la personalización social, que cualquiera de ellos puede copiar.",
+      "Arranque en frío doble: sin usuarios no hay reseñas ni recomendaciones útiles y sin audiencia ningún restaurante paga; la idea reconoce que no hay ingresos posibles durante la tesis y no tiene presupuesto de marketing.",
+      "Ningún restaurante consultado: el precio de USD 30 a 60 por mes es una hipótesis sin respaldo, sin tamaño de mercado y sin canal de venta.",
+      "Alcance inflado para dos semestres: dos apps móviles publicadas, red social, chat, chatbot, motor de recomendación, panel para restaurantes, gamificación y campaña de lanzamiento.",
+      "El catálogo de locales no tiene fuente legal identificada: copiarlo de un tercero puede violar sus términos de uso, lo que pone en riesgo R7.",
+      "Perfilamiento con gustos, ubicación y grafo social más contenido generado por usuarios: según la propia idea exige evaluación de impacto y moderación con responsabilidad legal, sin ingresos que lo sostengan.",
+      "El componente de IA es un envoltorio sobre un LLM mientras no haya datos propios, así que el aporte técnico medible de la tesis es flaco.",
+      "Sin contactos en el sector ni contraparte institucional que valide antes de diciembre de 2026."
+    ],
+    "Y": [
+      "Costo declarado USD 307 por año, sobre el tope de USD 300; además omite el cargo por IPv4 pública de AWS (USD 0,005 por hora, unos USD 44 por año) y el disco EBS de la instancia, y los créditos de estudiante no tienen fuente ni duración.",
+      "Gubly, el competidor local que la idea cita, ya analiza pliegos con IA y muestra a qué precios se adjudicaron los productos y a qué precios vende la competencia, según el mismo artículo de El Observador: el hueco de inteligencia de precios que reclama no existe y el supuesto declarado sobre Gubly queda refutado por su propia fuente.",
+      "Precio hipotético de USD 40 a 120 por mes frente a Gubly, que tiene plan gratuito y premium a USD 25 por mes o USD 250 por año: la idea no explica por qué una PyME pagaría entre 1,6 y 5 veces más.",
+      "Lo que queda como diferencia real (checklist con cita a página cruzado contra una bóveda de documentos con vencimientos, consultas en lenguaje natural) es copiable rápido por Gubly o por LicitaLAB si entra a Uruguay.",
+      "Tamaño de mercado sin cifra: el 99% de mipymes es genérico y el subconjunto de proveedores del RUPE no se cuantifica; tampoco hay canal de adquisición definido.",
+      "La evidencia de dolor local es indirecta: las 21.532 consultas de proveedores a ARCE en 2021 son sobre sistemas y normativa en general, y el tiempo y costo de armar una oferta es un supuesto sin medición.",
+      "Alcance ambicioso para 960 a 1536 horas: ETL OCDS completo, OCR, extracción con evaluación anotada, radar, inteligencia de precios con resolución de entidades, Text-to-SQL, bóveda multi-tenant, endurecimiento y piloto.",
+      "El piloto con 3 a 5 PyMEs no tiene contactos identificados: la tabla de contactos del equipo está vacía.",
+      "El costo de LLM (1.500 pliegos por mes a 20.000 tokens) no está verificado; pliegos largos con anexos pueden superar esa estimación.",
+      "La descarga estable de pliegos y la proporción de PDF escaneados son supuestos sin verificar, y el histórico OCDS subestima las compras chicas."
+    ]
+  }
+}

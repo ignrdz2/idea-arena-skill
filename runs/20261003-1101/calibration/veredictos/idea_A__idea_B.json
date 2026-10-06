@@ -1,0 +1,28 @@
+{
+  "scores": {
+    "X": {"demanda": 8, "viabilidad": 2, "diferenciacion": 5, "business_case": 5, "encaje": 9, "academico": 9, "fatal": true, "fatal_motivo": "restriccion_dura:R1: el costo de infraestructura declarado es USD 307 por año, sobre el tope de USD 300; los créditos de estudiante que propone como mitigación no tienen fuente ni duración documentadas, y la tabla además omite el cargo de AWS por IPv4 pública en uso (USD 0,005 por hora, unos USD 44 por año)"},
+    "Y": {"demanda": 3, "viabilidad": 6, "diferenciacion": 5, "business_case": 5, "encaje": 7, "academico": 8, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "Y",
+  "reason": "X tiene mejor demanda y más encaje, pero su propio presupuesto (USD 307 por año, más el IPv4 público que omite) rompe el tope duro de R1, y una idea con fallo fatal no le gana a Y, que cuesta USD 125 por año aunque su demanda sea débil.",
+  "standing": {
+    "X": [
+      "Costo declarado de USD 307 por año, sobre el tope de USD 300 de R1; los créditos de estudiante de Azure o AWS que propone como mitigación no tienen fuente ni duración, así que según R1 no cuentan.",
+      "La tabla de costos omite el cargo de AWS por IPv4 pública en uso (USD 0,005 por hora según la página de precios de VPC, unos USD 44 por año) y el disco EBS de la instancia: el costo real queda todavía más lejos del tope.",
+      "Gubly, según la misma nota de El Observador que cita la idea, ya ofrece alertas, resúmenes con IA y análisis de pliegos ilimitados por USD 25 por mes, con más de cien usuarios: el hueco de preparación de oferta es más chico de lo que la idea dice, y su hipótesis de USD 40 a 120 por mes queda por encima del competidor local.",
+      "Alcance inflado para dos semestres: ETL OCDS completo, OCR, lector de pliegos evaluado, radar, inteligencia de precios con resolución de entidades, Text-to-SQL, bóveda multi-tenant, endurecimiento y piloto; necesita un recorte explícito que no propone.",
+      "La página de Open Contracting de ARCE confirma OCDS desde 2002 y servicios REST, pero no dice que incluyan los pliegos adjuntos: la descarga estable de pliegos, de la que depende el producto central, es un supuesto declarado sin verificar.",
+      "No dimensiona el mercado inicial: el 99% de mipymes (unas 190.000 empresas) no dice cuántas venden al Estado, y no describe un canal de adquisición para PyMEs más allá del plan para consultores.",
+      "La nota de Forbes sobre LicitaLAB confirma 1.500 clientes y la ronda, pero no dice que cobre por suscripción; y si LicitaLAB entra a Uruguay, la ventaja local de X es chica."
+    ],
+    "Y": [
+      "Demanda casi sin evidencia local del dolor: ninguna fuente mide el sobrante en panaderías uruguayas (la idea lo admite), la nota de La Mañana habla de caída de ventas por la competencia argentina y no de sobreproducción, y el sobrante de 5% a 15%, del que depende todo el ahorro, es un supuesto.",
+      "El link de FAO Uruguay devuelve 404, así que esa cifra se descarta; la idea ya la relativizaba con el dato del Ministerio de Ambiente (verificado) de que cerca del 70% de las pérdidas ocurre en producción y poscosecha.",
+      "Segmento de márgenes golpeados con ticket de USD 25 a 45 y venta uno a uno: riesgo concreto de que el hueco exista porque el cliente no paga; los únicos competidores con clientes (Delicious Data, Foodforecast) son alemanes y no hay ninguna señal de pago local.",
+      "Depende de 2 o 3 panaderías piloto que entreguen datos y carguen el sobrante a diario, sin ningún contacto en la tabla del equipo; 10 semanas de datos de pocos locales es poco para demostrar que el modelo le gana a la intuición del panadero, que es el caso entero del producto.",
+      "Open-Meteo gratis es solo para uso no comercial y el piloto pago del semestre 2 ya es uso comercial; la página de precios no muestra el costo de la licencia y el presupuesto no lo incluye ni propone una alternativa.",
+      "La afirmación de que los sistemas de punto de venta locales no pronostican no tiene fuente ni está en los supuestos.",
+      "No dimensiona el mercado (cuántas panaderías hay en Uruguay) y el canal por la gremial o los proveedores de punto de venta es un supuesto declarado."
+    ]
+  }
+}

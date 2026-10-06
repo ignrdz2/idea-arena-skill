@@ -1,0 +1,90 @@
+{
+  "idea": "i010",
+  "persona": "competidor",
+  "ataques": [
+    {
+      "n": 1,
+      "severidad": "MAJOR",
+      "titulo": "Ignora a los competidores que ya hacen esto para corredores en Uruguay y LATAM",
+      "donde": "Seccion Competidores (solo Foliume, ProtectU y 'insurtech uruguayas') y supuesto 'hoy usa planilla y portales, a costo cero'",
+      "problema": "La idea presenta como hueco un corredor que compara a mano y sigue vencimientos en planillas. Pero ya existe software para corredores con multicotizador de autos, comparacion en PDF, agenda de vencimientos y avisos por WhatsApp: Softseguros (900+ agencias en LATAM) y Nexura, que se presenta para el mercado uruguayo con multicotizador, avisos de renovacion y carga de polizas por OCR. La seccion de competidores no nombra a ninguno. Con rubrica, ignorar competidores obvios es el ancla de 0 a 2 en diferenciacion. El 'costo cero' de la planilla es un supuesto, no un hueco: lo que hay que explicar es por que un corredor dejaria estas herramientas ya instaladas.",
+      "tipo": "evidencia",
+      "evidencia": ["F-ataque-r2-m01-i010-competidor-001", "F-ataque-r2-m01-i010-competidor-002"]
+    },
+    {
+      "n": 2,
+      "severidad": "MAJOR",
+      "titulo": "La unica diferencia declarada (formatos uruguayos y exactitud por campo) la copia un competidor en un mes",
+      "donde": "Competidores: 'Hueco: formatos uruguayos y exactitud por campo; lo cierra si entra'",
+      "problema": "La propia idea admite que Foliume cierra el hueco si entra, y Foliume fue fundada por uruguayos y ya automatiza cotizaciones y renovaciones con IA (F-fintech-seguros-008). Nexura ya ofrece OCR de polizas y multicotizador. Extraer premio, deducible y coberturas de un PDF con un LLM es una funcion que cualquiera de ellos agrega con una plantilla por aseguradora; la 'exactitud por campo' es una metrica interna, no una barrera. No hay datos propios, canal, integracion ni red que protejan el producto. Diferenciacion de 'mas preciso en formatos locales' sin explicar por que el competidor no lo hace es ancla 4.",
+      "tipo": "evidencia",
+      "evidencia": ["F-fintech-seguros-008", "F-ataque-r2-m01-i010-competidor-001"]
+    },
+    {
+      "n": 3,
+      "severidad": "MAJOR",
+      "titulo": "El flujo exige que el corredor ya tenga las cotizaciones en mano: el trabajo caro queda sin resolver",
+      "donde": "Solucion: 'el corredor sube cotizaciones de automovil (PDF o correo reenviado) de varias aseguradoras'",
+      "problema": "El producto parte de cotizaciones ya obtenidas. El tiempo del corredor esta en pedirlas aseguradora por aseguradora; los multicotizadores existentes cotizan en varias aseguradoras a la vez y comparan en un PDF (Softseguros). La idea solo acelera el paso de leer y comparar, que es el menos costoso del proceso, y declara no saber cuantas horas se pierden (supuesto 'las horas perdidas no estan en las fichas'). Si el ahorro real es de minutos por cotizacion, a USD 25 por mes no hay razon de compra.",
+      "tipo": "evidencia",
+      "evidencia": ["F-ataque-r2-m01-i010-competidor-002"]
+    },
+    {
+      "n": 4,
+      "severidad": "MAJOR",
+      "titulo": "La demanda local no tiene ninguna ficha: la unica evidencia de dolor es de una empresa que opera en Espana",
+      "donde": "Problema y Supuestos declarados: 'Corredores comparan a mano... sin ficha local'",
+      "problema": "El dolor del corredor (horas manuales en emails y polizas) viene de la ficha de Foliume, que opera en Espana, Alemania y Portugal y no en Uruguay. La ficha de USD 270,2 millones de primas de automoviles mide el tamano del ramo, no cuantos corretajes de 1 a 10 personas existen, cuantos sufren este problema ni si pagan. No hay cantidad de corredores, ni precio de referencia, ni senal de pago local: la idea lo declara como hipotesis, pero entonces demanda y business_case se apoyan en una opinion. Ademas el segmento elegido (corretajes de 1 a 10 personas) es justo el que hoy paga cero por herramientas.",
+      "tipo": "evidencia",
+      "evidencia": ["F-fintech-seguros-008", "F-defensa-r1-m01-i010-001"]
+    },
+    {
+      "n": 5,
+      "severidad": "MAJOR",
+      "titulo": "Sin contactos ni validacion previa a diciembre de 2026 (R4) y el piloto depende de 3 a 5 corredores no identificados",
+      "donde": "Supuestos: 'No hay socio ni contacto identificado'; Semestre 1: 'Entrevistas a corredores'; Semestre 2: piloto con 3 a 5 corredores",
+      "problema": "R4 pide usuarios que el equipo pueda contactar desde Uruguay para validar la idea antes de diciembre de 2026. La idea deja las entrevistas para el primer semestre de 2027, despues de presentar la propuesta, y la tabla de contactos de constraints.md esta sin completar. El piloto de 6 semanas, la entrega 2 y la medicion de disposicion a pagar dependen de conseguir corredores que acepten subir cotizaciones de sus clientes, sin plan B explicito. Es una dependencia externa critica sin respaldo; no la marco como fatal porque R4 habla de poder contactar, no de haber contactado.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 6,
+      "severidad": "MINOR",
+      "titulo": "Las aseguradoras estan digitalizando su canal: una comparacion por PDF puede quedar obsoleta",
+      "donde": "Riesgos: 'una aseguradora lanza algo similar'",
+      "problema": "SURA Uruguay proyecta USD 15 millones en 5 anios para transformar sus operaciones y ProtectU ya se asocia con Sancor y SBI para que el asegurado consulte polizas con IA. Si las aseguradoras abren cotizacion por portal o API a corredores, el paso de leer PDFs desaparece y el valor de la idea cae. La idea menciona el riesgo pero no ofrece mitigacion.",
+      "tipo": "evidencia",
+      "evidencia": ["F-fintech-seguros-006", "F-fintech-seguros-007"]
+    }
+  ],
+  "nuevas_fichas": [
+    {
+      "id": "F-ataque-r2-m01-i010-competidor-001",
+      "sector": "transversal",
+      "hallazgo": "Nexura es un software para corredores de seguros en Uruguay con multicotizador entre aseguradoras, avisos automaticos de renovacion por WhatsApp y carga de polizas por OCR, desde USD 49 por mes. Figuro y AdminSE aparecen como alternativas.",
+      "source_url": "https://nexuraseguros.com/blog/software-corredores-seguros-uruguay-2026",
+      "source_title": "Software para corredores de seguros en Uruguay 2026",
+      "source_date": "2026",
+      "source_type": "competidor",
+      "geografia": "UY",
+      "confianza": "media",
+      "retrieved_at": "2026-10-03T14:30:00",
+      "extracto": "multicotizador para comparar precios entre aseguradoras",
+      "competidor": "Nexura"
+    },
+    {
+      "id": "F-ataque-r2-m01-i010-competidor-002",
+      "sector": "transversal",
+      "hallazgo": "Softseguros declara mas de 900 agencias de seguros en Latinoamerica y ofrece multicotizador de autos que cotiza en varias aseguradoras a la vez y compara en un PDF, agenda de vencimientos y avisos automaticos por WhatsApp.",
+      "source_url": "https://softseguros.com/",
+      "source_title": "Softseguros",
+      "source_date": "desconocida",
+      "source_type": "competidor",
+      "geografia": "LATAM",
+      "confianza": "media",
+      "retrieved_at": "2026-10-03T14:31:00",
+      "extracto": "Cotiza en varias aseguradoras a la vez y compara en un PDF",
+      "competidor": "Softseguros"
+    }
+  ]
+}

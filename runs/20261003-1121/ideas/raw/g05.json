@@ -1,0 +1,211 @@
+{
+ "generador": "g05",
+ "ideas": [
+  {
+   "local_id": "g05-1",
+   "titulo": "Alertas satelitales de pasturas por WhatsApp para ganaderos chicos y medianos",
+   "problema": "La sequía 2022/2023 dejó pérdidas estimadas en US$ 1.800 millones (F-agro-003) y MGAP, ANDE y ANII pusieron el monitoreo de pasturas entre los desafíos prioritarios del agro (F-agro-008). Las herramientas satelitales citadas apuntan a cultivos: Auravant cobra USD 25 a 150 por mes según hectáreas (F-agro-006) y Ox-agro analiza a pedido (F-agro-007). El ganadero chico, con fricción para lo digital (F-agro-009), no recibe aviso temprano cuando sus potreros vienen mal.",
+   "usuario": "Ganadero chico o mediano de Uruguay: lo usa y lo paga. Canal: agrónomos asesores.",
+   "solucion": "Se dibujan los potreros una vez en un mapa web. Con cada imagen abierta de Sentinel-2, el sistema calcula el NDVI de cada potrero sin nubes y lo compara con su historial en la misma semana de años anteriores. Cada lunes manda por WhatsApp un resumen simple y alerta si un potrero sale de su rango normal. Responde preguntas por texto o audio con un LLM limitado a esos números. Sin app ni precio por hectárea.",
+   "mvp": {
+    "semestre_1": [
+     "Mapa de potreros (PostGIS) con 10 establecimientos.",
+     "Pipeline de NDVI por potrero sobre los COG de Sentinel-2, con máscara de nubes.",
+     "Línea base semanal por potrero y detección de anomalías.",
+     "Entrega 1: tablero y prueba retrospectiva de las alertas en la sequía 2022/2023."
+    ],
+    "semestre_2": [
+     "Bot de WhatsApp: alta, resumen semanal y alertas.",
+     "Preguntas por texto o audio, con pruebas contra respuestas inventadas.",
+     "Entrega 2: piloto de 10 semanas con 15 a 20 productores: uso, alertas confirmadas en campo y disposición a pagar."
+    ]
+   },
+   "stack": [
+    "Python",
+    "FastAPI",
+    "rasterio",
+    "PostGIS",
+    "Leaflet",
+    "WhatsApp Cloud API",
+    "Gemini 3.1 Flash-Lite",
+    "Docker",
+    "AWS Lightsail"
+   ],
+   "costo_infra": {
+    "total_anual_usd": 188.98,
+    "items": [
+     {
+      "concepto": "Lightsail 2 GB y snapshots",
+      "usd_anual": 150,
+      "supuesto": "USD 12 por mes en us-west-2, junto a Sentinel-2, más 10 GB de snapshots a USD 0,05 por GB-mes; 12 meses.",
+      "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+     },
+     {
+      "concepto": "Sentinel-2 L2A",
+      "usd_anual": 0,
+      "supuesto": "Datos abiertos sin cobro; se leen solo las ventanas de los potreros.",
+      "fuente_precio_url": "https://registry.opendata.aws/sentinel-2-l2a-cogs/"
+     },
+     {
+      "concepto": "WhatsApp, plantillas de utilidad",
+      "usd_anual": 22.6,
+      "supuesto": "2.000 fuera de la ventana de 24 h a USD 0,0113 (Resto de América Latina, tabla USD de Meta desde 1/10/2026); dentro de la ventana, gratis.",
+      "fuente_precio_url": "https://developers.facebook.com/docs/whatsapp/pricing"
+     },
+     {
+      "concepto": "Gemini 3.1 Flash-Lite",
+      "usd_anual": 5.3,
+      "supuesto": "4.000 consultas: 12 M tokens de entrada a USD 0,25, 1,2 M de salida a USD 1,50 y 1 M de audio a USD 0,50 por millón.",
+      "fuente_precio_url": "https://ai.google.dev/gemini-api/docs/pricing"
+     },
+     {
+      "concepto": "Dominio .com",
+      "usd_anual": 11.08,
+      "supuesto": "Un año.",
+      "fuente_precio_url": "https://porkbun.com/tld/com"
+     }
+    ]
+   },
+   "competidores": [
+    {
+     "nombre": "Auravant",
+     "evidencia_ids": [
+      "F-agro-006"
+     ],
+     "hueco": "Agricultura de precisión, con versión gratuita y planes por hectárea; 95% de sus hectáreas en Argentina."
+    },
+    {
+     "nombre": "Ox-agro",
+     "evidencia_ids": [
+      "F-agro-007"
+     ],
+     "hueco": "Servicio gestionado para cultivos, analizado a pedido."
+    }
+   ],
+   "monetizacion": "Paga el productor USD 9 por mes por establecimiento, sin límite de hectáreas, debajo del plan pago más chico de Auravant (USD 25, F-agro-006); agrónomos con 5 o más, USD 6 cada uno. Canal: agrónomos, cooperativas y exposiciones rurales. Meta 2027: 20 en piloto y 100 pagando (USD 10.800 por año).",
+   "riesgos": [
+    "Nubes persistentes dejan potreros sin dato por semanas.",
+    "Alertas falsas si el NDVI no refleja el forraje real.",
+    "El productor ignora avisos que no le cambian decisiones.",
+    "Auravant o un servicio público de seguimiento forrajero cubre el mismo uso."
+   ],
+   "supuestos": [
+    "El ganadero chico usa WhatsApp a diario y no sigue sus potreros con satélite (validar en 15 entrevistas antes de diciembre de 2026).",
+    "Una anomalía de NDVI anticipa falta de forraje en campo natural y praderas (validar con agrónomos).",
+    "Los potreros abarcan varios píxeles de 10 m.",
+    "Hay productores que pagarían USD 9 por mes.",
+    "Hay L2A global desde diciembre de 2018 (registro de AWS): alcanza para la línea base.",
+    "Los resúmenes califican como plantillas de utilidad.",
+    "El equipo llega a 20 ganaderos sin contactos previos."
+   ],
+   "evidencias": [
+    "F-agro-003",
+    "F-agro-008",
+    "F-agro-006",
+    "F-agro-007",
+    "F-agro-009"
+   ]
+  },
+  {
+   "local_id": "g05-2",
+   "titulo": "Control de caja desde la foto del cuaderno para almacenes y comercios chicos",
+   "problema": "Un proveedor local describe como dolores típicos del pequeño comercio el cuaderno, el stock a ojo y decidir sin datos (F-comercio-retail-006). El efectivo persiste fuera de Montevideo y en la informalidad (F-fintech-seguros-003): esas ventas no quedan en ningún extracto. Solo 20% de las 188.000 microempresas accedió a crédito y falta asesoramiento financiero (F-comercio-retail-002). Las alternativas obligan a vender distinto: software de punto de venta (F-comercio-retail-007), terminales POS (F-comercio-retail-008) o un POS alquilado desde $ 465 por mes más IVA (F-fintech-seguros-005).",
+   "usuario": "Dueño de almacén, kiosco o comercio de barrio que cobra en efectivo y no usa sistema: lo usa y lo paga.",
+   "solucion": "El comerciante sigue con su cuaderno y al cerrar el día manda por WhatsApp una foto de la página. Un modelo multimodal transcribe cada renglón como venta, gasto, compra o fiado, verifica que sumen el total escrito y pregunta solo por lo que no cierra o no se lee. Cada semana responde con ventas por día, gastos, margen aproximado y saldos de fiado; una web guarda el historial y exporta un PDF mensual para el contador.",
+   "mvp": {
+    "semestre_1": [
+     "Set de prueba: 300 páginas reales cedidas con consentimiento y etiquetadas.",
+     "Extracción a un esquema de renglones con validación por sumas; precisión medida por campo.",
+     "Bot de WhatsApp que recibe la foto y pregunta lo dudoso.",
+     "Entrega 1: demo con fotos reales y tabla de precisión."
+    ],
+    "semestre_2": [
+     "Resumen semanal, web con historial y fiado por cliente, PDF mensual.",
+     "Inscripción de la base ante la URCDP (Ley 18.331).",
+     "Entrega 2: piloto de 8 semanas con 10 a 15 comercios: constancia de uso, precisión y disposición a pagar."
+    ]
+   },
+   "stack": [
+    "Python",
+    "FastAPI",
+    "PostgreSQL",
+    "React",
+    "WhatsApp Cloud API",
+    "Gemini 3.1 Flash-Lite",
+    "Docker",
+    "AWS Lightsail"
+   ],
+   "costo_infra": {
+    "total_anual_usd": 132.63,
+    "items": [
+     {
+      "concepto": "Lightsail 1 GB y snapshots",
+      "usd_anual": 90,
+      "supuesto": "USD 7 por mes más 10 GB de snapshots a USD 0,05 por GB-mes; 12 meses.",
+      "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+     },
+     {
+      "concepto": "Gemini 3.1 Flash-Lite, nivel pago",
+      "usd_anual": 14.6,
+      "supuesto": "8.000 fotos: 20 M tokens de entrada a USD 0,25 y 6,4 M de salida a USD 1,50 por millón.",
+      "fuente_precio_url": "https://ai.google.dev/gemini-api/docs/pricing"
+     },
+     {
+      "concepto": "WhatsApp, plantillas de utilidad",
+      "usd_anual": 16.95,
+      "supuesto": "1.500 recordatorios fuera de la ventana de 24 h a USD 0,0113 (Resto de América Latina, tabla USD de Meta desde 1/10/2026); lo demás, dentro de la ventana, gratis.",
+      "fuente_precio_url": "https://developers.facebook.com/docs/whatsapp/pricing"
+     },
+     {
+      "concepto": "Dominio .com",
+      "usd_anual": 11.08,
+      "supuesto": "Un año.",
+      "fuente_precio_url": "https://porkbun.com/tld/com"
+     }
+    ]
+   },
+   "competidores": [
+    {
+     "nombre": "YoFacturo",
+     "evidencia_ids": [
+      "F-comercio-retail-007",
+      "F-comercio-retail-006"
+     ],
+     "hueco": "Punto de venta e inventario: exige registrar cada venta en su sistema."
+    },
+    {
+     "nombre": "Totalnet (POS Android)",
+     "evidencia_ids": [
+      "F-comercio-retail-008"
+     ],
+     "hueco": "Cobro, stock y fidelización en una terminal: requiere el equipo."
+    }
+   ],
+   "monetizacion": "Paga el comercio $ 290 por mes, debajo del alquiler de POS más barato ($ 465 más IVA, F-fintech-seguros-005). Segundo pagador: contadores, por cliente. Canal: visitas a comercios, ferias y contadores. Meta 2027: 10 a 15 comercios en piloto y 60 pagando.",
+   "riesgos": [
+    "Letra ilegible o páginas desordenadas bajan la precisión.",
+    "El comerciante deja de mandar fotos a las pocas semanas.",
+    "El fiado trae nombres de clientes: datos personales de terceros.",
+    "Quien no paga un POS quizá tampoco pague una suscripción.",
+    "YoFacturo agrega carga por foto."
+   ],
+   "supuestos": [
+    "Muchos comercios chicos llevan cuaderno, no usan sistema y mandarían una foto por día (validar en 20 visitas antes de diciembre de 2026).",
+    "Un modelo multimodal lee cuadernos manuscritos con precisión útil (se mide en el semestre 1).",
+    "Cada foto usa unos 2.500 tokens de entrada y 800 de salida.",
+    "Un comercio pagaría $ 290 por mes y un contador, por cliente.",
+    "El comercio es responsable de la base y el producto, encargado del tratamiento (confirmar).",
+    "Los recordatorios califican como plantillas de utilidad.",
+    "El equipo consigue páginas y 15 comercios sin contactos previos."
+   ],
+   "evidencias": [
+    "F-comercio-retail-006",
+    "F-fintech-seguros-003",
+    "F-comercio-retail-002",
+    "F-comercio-retail-007",
+    "F-comercio-retail-008",
+    "F-fintech-seguros-005"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,98 @@
+{
+ "id": "i010",
+ "titulo": "Lector de coberturas de cotizaciones y renovaciones para corredores de seguros",
+ "problema": "Ya hay software para corredores en Uruguay con multicotizador, avisos de renovación y OCR de pólizas, desde USD 49 por mes (F-ataque-r2-m01-i010-competidor-001), y Softseguros declara más de 900 agencias en LATAM (F-ataque-r2-m01-i010-competidor-002). Nexura describe su OCR para pólizas emitidas, no para cotizaciones recibidas. Que comparar coberturas y cambios de renovación a mano sea un dolor es una hipótesis sin ficha local, a validar con entrevistas.",
+ "usuario": "Corredores independientes y corretajes de 1 a 10 personas en Uruguay, empezando por automóvil. Paga el dueño del corretaje. Complemento de la herramienta que ya use.",
+ "solucion": "Web donde el corredor sube cotizaciones de automóvil recibidas (PDF o correo) de varias aseguradoras. Extrae premio, deducibles, coberturas y exclusiones a un esquema común, marca campos de baja confianza, enlaza cada dato con su origen y compara coberturas en un PDF para el cliente. En renovación, lista qué cambió contra la póliza vigente. Consulta cláusulas con cita.",
+ "mvp": {
+  "semestre_1": [
+   "Oct a dic de 2026, antes de la propuesta: 8 a 10 entrevistas a corredores.",
+   "Set de 40 cotizaciones de automóvil: perfiles ficticios y PDFs sintéticos de 3 aseguradoras. Sin datos reales de asegurados.",
+   "Extracción con LLM y reglas, con enlace al origen.",
+   "Entrega: comparación y PDF para el cliente, exactitud por campo medida (objetivo 95% en premio y deducible)."
+  ],
+  "semestre_2": [
+   "Consulta de cláusula con cita, con exactitud evaluada.",
+   "Comparación de póliza vigente contra renovación, con lista de cambios.",
+   "Cuentas por corretaje.",
+   "Entrega: piloto de 6 semanas con 3 a 5 corredores, con consentimiento, midiendo tiempo, errores y disposición a pagar. Plan B: set sintético y entrevistas."
+  ]
+ },
+ "stack": [
+  "Python",
+  "FastAPI",
+  "PostgreSQL",
+  "Qdrant con FastEmbed local",
+  "React",
+  "Claude Haiku 4.5",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 161.08,
+  "items": [
+   {
+    "concepto": "Servidor Lightsail 2 GB y snapshots",
+    "usd_anual": 125,
+    "supuesto": "USD 12 por mes (2 GB), marzo a diciembre de 2027: USD 120; snapshots de 10 GB a USD 0,05 por GB-mes: USD 5. Desarrollo local.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API Claude Haiku 4.5",
+    "usd_anual": 25,
+    "supuesto": "USD 1 y 5 por millón de tokens (entrada y salida), Batch a mitad. 2.500 extracciones y 1.000 consultas: USD 23, redondeado a 25.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 11.08,
+    "supuesto": "Un año a USD 11,08.",
+    "fuente_precio_url": "https://porkbun.com/products/domains"
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Nexura",
+   "evidencia_ids": [
+    "F-ataque-r2-m01-i010-competidor-001"
+   ],
+   "hueco": "Multicotizador, renovaciones y OCR de pólizas, desde USD 49. No consta que lea cotizaciones recibidas ni compare cláusulas: a verificar. Puede agregarlo."
+  },
+  {
+   "nombre": "Softseguros",
+   "evidencia_ids": [
+    "F-ataque-r2-m01-i010-competidor-002"
+   ],
+   "hueco": "Cotiza y compara en un PDF. Su ficha no menciona cláusulas ni cotizaciones recibidas: a verificar."
+  },
+  {
+   "nombre": "Foliume",
+   "evidencia_ids": [
+    "F-fintech-seguros-008"
+   ],
+   "hueco": "Opera sobre todo en España y lo cierra si entra. Sin barrera propia: la ventaja es llegar antes con piloto medido."
+  }
+ ],
+ "monetizacion": "Paga el corretaje: hipótesis de USD 25 por mes, 30 días de prueba, bajo los USD 49 de Nexura. Meta al segundo año: 40 corretajes, USD 12.000 anuales. Solo si el piloto mide horas y errores evitados. Venta directa y referidos.",
+ "riesgos": [
+  "Un competidor instalado agrega lectura de cotizaciones: validar en entrevistas y llegar antes con el piloto.",
+  "Si las aseguradoras abren portal o API, desaparece leer PDFs (F-fintech-seguros-006): queda comparar cláusulas y renovaciones.",
+  "Un error en premio o deducible daña la confianza: campos de baja confianza, un clic al origen, apoyo y no asesoramiento.",
+  "Datos a una API en el exterior: redacción local y consentimiento (Ley 18.331).",
+  "El piloto depende de corredores aún no identificados."
+ ],
+ "supuestos": [
+  "Los corredores reciben cotizaciones por PDF o correo y las comparan a mano: sin ficha local.",
+  "Horas perdidas, cantidad de corretajes, precio de USD 25 y meta de 40: hipótesis sin dato local.",
+  "Las aseguradoras dan cotizaciones de perfiles ficticios por canales públicos: sin ficha; si no, set sintético.",
+  "No hay socio ni contacto: las entrevistas de 2026 los buscan.",
+  "No intermedia seguros: sin habilitación regulatoria propia."
+ ],
+ "evidencias": [
+  "F-ataque-r2-m01-i010-competidor-001",
+  "F-ataque-r2-m01-i010-competidor-002",
+  "F-fintech-seguros-008",
+  "F-fintech-seguros-006"
+ ]
+}

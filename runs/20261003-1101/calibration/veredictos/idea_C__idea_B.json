@@ -1,0 +1,30 @@
+{
+  "scores": {
+    "X": {"demanda": 1, "viabilidad": 1, "diferenciacion": 1, "business_case": 3, "encaje": 5, "academico": 4, "fatal": true, "fatal_motivo": "restriccion_dura:R1: la propia tabla de costos declara USD 504 por año de infraestructura, por encima del tope de USD 300, y el costo crece con usuarios gratuitos; aun sin la cuenta de Apple (USD 99) queda en USD 405"},
+    "Y": {"demanda": 5, "viabilidad": 6, "diferenciacion": 6, "business_case": 5, "encaje": 7, "academico": 8, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "Y",
+  "reason": "X supera el tope de USD 300 por año (fallo fatal R1) y no tiene ninguna evidencia de demanda frente a competidores gratuitos y masivos, mientras Y cuesta USD 125, tiene un hueco local verificado frente a competidores alemanes y un desafío de pronóstico medible.",
+  "standing": {
+    "X": [
+      "Costo anual declarado de USD 504, por encima del tope duro de USD 300, y creciente con usuarios que no pagan.",
+      "Demanda sin ninguna evidencia: la propia idea dice que la justificación es sentido común y charlas con amigos; ningún restaurante fue consultado.",
+      "Competidores gratuitos y ya instalados (Google Maps, TripAdvisor, Instagram, TikTok, PedidosYa) cubren el mismo uso; la personalización social no es un hueco defendible.",
+      "Arranque en frío doble (usuarios y restaurantes) sin presupuesto de marketing: no hay ingresos posibles durante la tesis.",
+      "Alcance inflado para dos semestres: app móvil para iOS y Android, red social, chat, chatbot, motor de recomendación, panel, gamificación y campaña de lanzamiento.",
+      "El catálogo de locales hay que construirlo y copiarlo de terceros puede violar sus términos de uso (riesgo R7).",
+      "Aporte técnico flaco: el componente de IA es un envoltorio sobre un LLM mientras no haya datos propios.",
+      "Datos personales de gustos, ubicación y relaciones con perfilamiento, más moderación de contenido generado por usuarios, sin ingresos que lo sostengan."
+    ],
+    "Y": [
+      "El dolor central (cuánto sobra en una panadería uruguaya) no está medido: el 5% a 15% de sobrante es un supuesto y todo el caso de ahorro depende de él; las fuentes verificadas muestran volatilidad (El Observador) y márgenes golpeados (La Mañana), no el costo del sobrante.",
+      "Disposición a pagar no validada en un rubro que la propia idea describe con márgenes golpeados y ticket chico; ninguna panadería fue consultada.",
+      "Dependencia de datos de 2 o 3 panaderías piloto durante 10 semanas sin ningún contacto en la tabla del equipo y sin plan B explícito (por ejemplo un dataset público) si no se consiguen o no registran ventas por producto.",
+      "La API de clima se presupuesta en USD 0 con el plan gratuito de Open-Meteo, que la página de precios limita a uso no comercial; el piloto pago del semestre 2 es uso comercial y el costo de esa licencia no está declarado.",
+      "El link de FAO Uruguay devuelve 404; la cifra de un millón de toneladas sí aparece en la página del Ministerio de Ambiente (que dice 11%, no cerca del 10%), aunque es contexto y no un argumento central.",
+      "Mercado inicial no cuantificado: no dice cuántas panaderías hay en Uruguay ni cuántas tienen punto de venta con detalle por producto.",
+      "El hueco frente a Delicious Data y Foodforecast (verificados: solo Alemania y Europa, sin español) es geográfico; un proveedor local de punto de venta podría agregar un pronóstico similar.",
+      "Riesgo de que el pronóstico no supere la intuición de un panadero experimentado y de que nadie cargue el sobrante todos los días."
+    ]
+  }
+}

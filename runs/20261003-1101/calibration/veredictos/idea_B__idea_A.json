@@ -1,0 +1,29 @@
+{
+  "scores": {
+    "X": {"demanda": 4, "viabilidad": 6, "diferenciacion": 5, "business_case": 5, "encaje": 7, "academico": 8, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 7, "viabilidad": 2, "diferenciacion": 3, "business_case": 5, "encaje": 9, "academico": 9, "fatal": true, "fatal_motivo": "restriccion_dura:R1: el costo de infraestructura declarado es USD 307 por año, por encima del tope de USD 300; las mitigaciones (créditos de estudiante, recorte del histórico a tres años) no tienen fuente ni duración y no están aplicadas en la tabla"}
+  },
+  "winner": "X",
+  "reason": "Y viola R1 con un costo declarado de USD 307 sobre el tope de USD 300 y su propia fuente muestra que Gubly ya cubre el análisis de pliegos y la inteligencia de precios a USD 25 por mes, mientras X cuesta USD 125 y tiene un hueco regional real aunque con la demanda poco medida.",
+  "standing": {
+    "X": [
+      "El dolor central no está medido: no hay dato de sobrante en panaderías uruguayas (el 5% a 15% es supuesto) y la evidencia local verificada solo muestra un pico puntual (El Observador: 'Panaderías se preparan para vender el doble de bizcochos de lo habitual') y caída de ventas por costos y competencia argentina (La Mañana), que además sugiere baja disposición a pagar.",
+      "Delicious Data ya ofrece un autopiloto de pedidos que considera clima, feriados y vacaciones escolares, con plan gratuito y planes de EUR 8 y EUR 20 por mes por local: el precio hipotético de USD 25 a 45 queda por encima del líder del nicho y el hueco es solo de idioma y región (su sitio está solo en alemán).",
+      "Dependencia crítica de 2 o 3 panaderías piloto con datos desde el semestre 1, sin ningún contacto en la tabla del equipo y sin plan B explícito para el backtesting si los locales no tienen ventas desagregadas por producto.",
+      "Open-Meteo gratis es solo para uso no comercial: el piloto pago del semestre 2 ya es uso comercial y la licencia no está en la tabla de costos (hay plan B documentado: autohospedar el servidor de código abierto AGPLv3).",
+      "Business case sin tamaño de mercado: no cuantifica cuántas panaderías hay en Uruguay ni el costo de la venta uno a uno contra un ticket chico, que la propia idea reconoce como problema.",
+      "El link de FAO Uruguay devuelve 404; la cifra nacional se sostiene con la página del Ministerio de Ambiente (cerca del 11%, 1 millón de toneladas por año), pero esa página no dice nada de panaderías ni del comercio.",
+      "Afirma sin fuente y sin declararlo como supuesto que los sistemas de punto de venta locales no pronostican.",
+      "Supabase gratis pausa los proyectos tras una semana sin actividad y es redundante con el VPS que ya corre PostgreSQL en Docker Compose (menor)."
+    ],
+    "Y": [
+      "Costo declarado USD 307 por año, sobre el tope de USD 300 de R1; las mitigaciones no tienen fuente ni duración y no están aplicadas. Además la tabla no incluye disco EBS ni IP pública de la instancia EC2, que suben el costo (opinión, las páginas de precios de AWS no se pudieron abrir en esta sesión).",
+      "La fuente que la propia idea cita contradice su hueco: según El Observador, Gubly ya permite 'analizar los pliegos y ganar tiempo para saber si se cumple con las condiciones' y 'ver a qué precios se han adjudicado sus productos, datos de su competencia, a qué precios vende la competencia, y hacer comparativas para poder cotizar mejor'.",
+      "Gubly cobra USD 25 por mes o USD 250 por año y tiene un usuario gratuito: el precio hipotético de USD 40 a 120 queda entre 1,6 y 5 veces por encima del competidor local ya lanzado, con más de 100 usuarios.",
+      "LicitaLAB (más de 1.500 clientes en Chile y Perú, ronda de USD 450.000) ya tiene una IA que reduce 50% el tiempo de lectura y análisis de documentos; lo que queda como diferencial (bóveda con vencimientos y cita por página) es copiable rápido.",
+      "Alcance inflado para 960 a 1536 horas: ETL OCDS completo, OCR, extracción evaluada con 50 pliegos anotados, radar, resolución de entidades, Text-to-SQL, bóveda multi-tenant y endurecimiento, todo en dos semestres.",
+      "El tiempo de armado de una oferta y la descarga estable de pliegos son supuestos sin medir; la página de Open Contracting de ARCE documenta OCDS desde 2002 y servicios REST, pero no menciona los pliegos adjuntos.",
+      "El tamaño del mercado se remite al dataset del RUPE sin dar el número (la memoria 2021 de ARCE reporta 42.366 proveedores activos, dato que la idea no usa)."
+    ]
+  }
+}

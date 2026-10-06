@@ -1,0 +1,115 @@
+{
+ "id": "i002",
+ "titulo": "Cobros por transferencia confirmados al instante para microcomercios",
+ "problema": "Con tarjeta, el comercio paga de 1,15% a 3,55% por transacción y un alquiler de POS de 465 a 1.500 pesos por mes más IVA; con MercadoPago, de 4,99% a 5,99% (F-fintech-seguros-005). Las transferencias instantáneas crecieron 50% en el segundo semestre de 2025 (F-fintech-seguros-002), pero el almacén que las acepta no confirma al instante la llegada del dinero ni cuadra su caja, que muchos llevan en cuadernos (F-comercio-retail-006). Hay unas 188.000 microempresas con poco asesoramiento financiero (F-comercio-retail-002) y fuera de Montevideo persiste el efectivo (F-fintech-seguros-003).",
+ "usuario": "Dueños de almacenes, kioscos y otros microcomercios del interior: usan y pagan la app.",
+ "solucion": "PWA para el celular del comercio. 1) Pedido de cobro con monto y código de referencia; el cliente paga por transferencia. 2) El comercio reenvía automáticamente los avisos por email de su banco; el sistema verifica la firma DKIM (contra avisos falsos), extrae monto y referencia (parsers por banco, LLM de respaldo) y avisa 'cobro confirmado' en segundos. 3) Cierre de caja diario por medio de cobro, con comisiones pagadas. 4) Sin aviso por email, concilia con el extracto CSV.",
+ "mvp": {
+  "semestre_1": [
+   "Entrevistas a 15 comercios y relevamiento de avisos por email por banco",
+   "Recepción de emails, verificación DKIM y parsers para 3 bancos",
+   "PWA con pedido de cobro y push de confirmación",
+   "Demo: cobro real de punta a punta, con métricas"
+  ],
+  "semestre_2": [
+   "Parser de respaldo con LLM y conciliación por extracto",
+   "Cierre de caja y reporte de comisiones evitadas",
+   "Piloto de 8 semanas con 8 a 10 comercios",
+   "Business case con precio validado y registro ante la URCDP"
+  ]
+ },
+ "stack": [
+  "Python",
+  "FastAPI",
+  "PostgreSQL",
+  "React PWA",
+  "Cloudflare Email Workers",
+  "dkimpy",
+  "Claude Haiku 4.5",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 113.08,
+  "items": [
+   {
+    "concepto": "AWS Lightsail 1 GB",
+    "usd_anual": 84,
+    "supuesto": "USD 7 por mes todo 2027, sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "Claude Haiku 4.5 (formatos nuevos)",
+    "usd_anual": 18,
+    "supuesto": "5.000 llamadas: 10 M tokens de entrada a USD 1/M y 1,5 M de salida a USD 5/M.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "Cloudflare Email Routing",
+    "usd_anual": 0,
+    "supuesto": "Incluido en el plan Free, todo 2027.",
+    "fuente_precio_url": "https://developers.cloudflare.com/email-routing/"
+   },
+   {
+    "concepto": "Cloudflare Worker de reenvío",
+    "usd_anual": 0,
+    "supuesto": "Plan Free: 100.000 solicitudes por día; uso estimado 250 por día.",
+    "fuente_precio_url": "https://developers.cloudflare.com/workers/platform/pricing/"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 11.08,
+    "supuesto": "Un año de registro.",
+    "fuente_precio_url": "https://porkbun.com/products/domains"
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "MercadoPago",
+   "evidencia_ids": [
+    "F-fintech-seguros-005"
+   ],
+   "hueco": "Comisión de 4,99% a 5,99% por venta; la transferencia la evita."
+  },
+  {
+   "nombre": "Totalnet",
+   "evidencia_ids": [
+    "F-comercio-retail-008"
+   ],
+   "hueco": "Cobros con stock, pero exige alquilar una terminal POS."
+  },
+  {
+   "nombre": "YoFacturo",
+   "evidencia_ids": [
+    "F-comercio-retail-007"
+   ],
+   "hueco": "Facturación, POS e inventario; la ficha no menciona conciliar transferencias."
+  }
+ ],
+ "monetizacion": "Paga el comercio: 350 pesos por mes más IVA, menos que el alquiler mínimo de un POS (F-fintech-seguros-005). Ejemplo: quien cobra 60.000 pesos mensuales con MercadoPago al 4,99% paga unos 3.000 de comisión; pasando la mitad a transferencias ahorra 1.500. Con 300 comercios: 105.000 pesos por mes. Canal: centros comerciales del interior y contadores.",
+ "riesgos": [
+  "Bancos que no avisan por email, avisan con demora o cambian el formato (mitigación: LLM y alertas).",
+  "Sin firma DKIM del banco no se descarta un aviso falso.",
+  "Bancos o pagos interoperables podrían ofrecer esta confirmación.",
+  "Baja disposición a pagar del microcomercio.",
+  "Datos de pagadores: registro ante la URCDP y contrato de encargado (Ley 18.331)."
+ ],
+ "supuestos": [
+  "Recibir una transferencia no le cuesta al comercio; las comisiones citadas son de 2022.",
+  "Hoy no hay forma simple de confirmar y conciliar transferencias.",
+  "Al menos 3 bancos avisan por email con firma DKIM.",
+  "Clientes y comercios aceptan código de referencia y reenvío de avisos.",
+  "Precio, ejemplo y meta de 300 comercios son hipótesis; sin contactos para el canal.",
+  "No mueve dinero ni inicia pagos: no requiere habilitación del BCU."
+ ],
+ "evidencias": [
+  "F-fintech-seguros-005",
+  "F-fintech-seguros-002",
+  "F-comercio-retail-006",
+  "F-comercio-retail-002",
+  "F-fintech-seguros-003",
+  "F-comercio-retail-008",
+  "F-comercio-retail-007"
+ ]
+}

@@ -1,0 +1,72 @@
+{
+ "idea": "i010",
+ "respuestas": [
+  {
+   "ataque": 1,
+   "decision": "CONCEDE",
+   "detalle": "Tiene razón: no hay ficha uruguaya del dolor, y la de horas es europea. Se reformuló el problema como hipótesis explícita, se movió a supuestos y se agregaron entrevistas a corredores como primer entregable (antes de diciembre de 2026 y en el semestre 1). Se sumó una ficha local del tamaño del ramo automóviles, que es contexto, no prueba del dolor.",
+   "evidencia": [
+    "F-fintech-seguros-008",
+    "F-defensa-r1-m01-i010-001"
+   ]
+  },
+  {
+   "ataque": 2,
+   "decision": "CONCEDE",
+   "detalle": "Tiene razón en que la diferencia era débil. Se acotó el hueco: formatos de aseguradoras uruguayas y exactitud medida por campo con enlace al origen. La consulta de condiciones dejó de ser pilar (queda como consulta de cláusula con cita), porque solapa con ProtectU, que además sirve al asegurado y no al corredor. Foliume sigue como riesgo declarado: opera en España, no en Uruguay, pero puede entrar.",
+   "evidencia": [
+    "F-fintech-seguros-008",
+    "F-fintech-seguros-007",
+    "F-fintech-seguros-009"
+   ]
+  },
+  {
+   "ataque": 3,
+   "decision": "CONCEDE",
+   "detalle": "Tiene razón: primas totales y la estrategia de SURA no prueban demanda de corredores. Se sacaron del problema y de las evidencias; el dato de mercado ahora es el del ramo automóviles (nueva ficha), como contexto. Que una aseguradora ofrezca su propio portal queda como riesgo declarado.",
+   "evidencia": [
+    "F-fintech-seguros-001",
+    "F-fintech-seguros-006",
+    "F-defensa-r1-m01-i010-001"
+   ]
+  },
+  {
+   "ataque": 4,
+   "decision": "CONCEDE",
+   "detalle": "Tiene razón: pedir 80 cotizaciones reales sin socio identificado chocaba con R7. El set pasó a 40 cotizaciones generadas por el equipo con perfiles ficticios más PDFs sintéticos, sin datos de asegurados, así que el plan B no depende de terceros (que las aseguradoras cotizen por canales públicos queda como supuesto sin ficha). Los datos reales llegan solo en el piloto, con consentimiento y redacción local antes de la API. Se declara que no hay socio identificado.",
+   "evidencia": []
+  },
+  {
+   "ataque": 5,
+   "decision": "CONCEDE",
+   "detalle": "Tiene razón: precio y tamaño son hipótesis. Se pasó a precio plano por corretaje (USD 25 por mes, meta 40 corretajes, USD 12.000 anuales), se declaró que la alternativa actual cuesta cero y que solo se justifica con horas ahorradas, y el piloto mide ahorro y disposición a pagar. No se inventa un valor por hora.",
+   "evidencia": []
+  },
+  {
+   "ataque": 6,
+   "decision": "CONCEDE",
+   "detalle": "Tiene razón: migrar la cartera era fricción. Se eliminó la migración: vencimientos por CSV de la planilla y cotizaciones por PDF o correo reenviado. Se declara que no hay integración con sistemas de gestión y que la planilla exportable es un supuesto.",
+   "evidencia": []
+  },
+  {
+   "ataque": 7,
+   "decision": "CONCEDE",
+   "detalle": "Tiene razón: verificar todo anula el ahorro. Se definió un objetivo de exactitud (95% en premio y deducible, medido en el semestre 1), marca de baja confianza para revisar solo esos campos, un clic al origen, y se declara que la comparación es apoyo y que el reparto de responsabilidad se valida en entrevistas.",
+   "evidencia": []
+  }
+ ],
+ "nuevas_fichas": [
+  {
+   "id": "F-defensa-r1-m01-i010-001",
+   "sector": "fintech-seguros",
+   "hallazgo": "El ramo automóviles del mercado asegurador uruguayo emitió USD 270,2 millones de primas a junio de 2025 (+1% interanual, +8,8% en pesos) y representa el 19,6% de la cartera total.",
+   "source_url": "https://boletines.latinoinsurance.com/mercado-para-el-ramo-autos-subio-1-en-junio-2025-8-8-en-pesos-0-5-visto-12meses",
+   "source_title": "Mercado para el ramo Autos subió 1% en junio 2025, (+8.8% en Pesos), +0.5% visto 12meses",
+   "source_date": "2025-08-21",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-03T12:00:00"
+  }
+ ]
+}

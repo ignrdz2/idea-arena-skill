@@ -1,0 +1,99 @@
+{
+ "id": "i010",
+ "titulo": "Comparador de cotizaciones y renovaciones para corredores de seguros",
+ "problema": "Una startup fundada por uruguayos levantó US$ 1 millón para automatizar con IA cotizaciones y renovaciones de corredores, que dedican horas manuales a emails y pólizas, pero opera sobre todo en España, no en Uruguay (F-fintech-seguros-008). En Uruguay, automóviles movió USD 270,2 millones de primas a junio de 2025 (F-defensa-r1-m01-i010-001). Que el corredor chico compare a mano y siga vencimientos en planillas es una hipótesis sin ficha local, a validar con entrevistas.",
+ "usuario": "Corredores independientes y corretajes de 1 a 10 personas en Uruguay, empezando por automóvil. Decide y paga el dueño del corretaje.",
+ "solucion": "Web donde el corredor sube cotizaciones de automóvil (PDF o correo reenviado) de varias aseguradoras para un mismo riesgo. Extrae premio, deducibles y coberturas a un esquema común, marca campos de baja confianza, enlaza cada dato con su origen y arma una comparación simple para el cliente. Consulta cláusulas con cita. Carga vencimientos desde CSV y avisa 30 días antes.",
+ "mvp": {
+  "semestre_1": [
+   "Entrevistas a corredores: dolor, horas por comparación y precio.",
+   "Set de 40 cotizaciones de automóvil: cotizando perfiles ficticios más PDFs sintéticos de 3 aseguradoras. Sin datos reales de asegurados.",
+   "Extracción con LLM y reglas, con enlace al origen.",
+   "Entrega: comparación y PDF para el cliente, con exactitud por campo medida (objetivo 95% en premio y deducible)."
+  ],
+  "semestre_2": [
+   "Consulta de cláusula con cita, con exactitud evaluada.",
+   "Vencimientos por CSV, alertas y renovación precargada.",
+   "Cuentas por corretaje.",
+   "Entrega: piloto de 6 semanas con 3 a 5 corredores, con consentimiento, midiendo tiempo, errores y disposición a pagar."
+  ]
+ },
+ "stack": [
+  "Python",
+  "FastAPI",
+  "PostgreSQL",
+  "Qdrant con FastEmbed local",
+  "React",
+  "Claude Haiku 4.5",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 161.08,
+  "items": [
+   {
+    "concepto": "Servidor Lightsail 2 GB y snapshots",
+    "usd_anual": 125,
+    "supuesto": "USD 12 por mes (2 GB) de marzo a diciembre de 2027: USD 120; snapshots de 10 GB a USD 0,05 por GB-mes: USD 5. Desarrollo local en Docker; embeddings locales.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API Claude Haiku 4.5",
+    "usd_anual": 25,
+    "supuesto": "USD 1 y 5 por millón de tokens de entrada y salida, Batch a mitad. 2.500 extracciones (5.000 y 1.000 tokens; 2.000 por Batch) y 1.000 consultas (6.000 y 400): USD 23, redondeado a 25.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 11.08,
+    "supuesto": "Un año a USD 11,08.",
+    "fuente_precio_url": "https://porkbun.com/products/domains"
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Foliume",
+   "evidencia_ids": [
+    "F-fintech-seguros-008"
+   ],
+   "hueco": "Opera sobre todo en España, no en Uruguay. Hueco: formatos uruguayos y exactitud por campo; lo cierra si entra."
+  },
+  {
+   "nombre": "ProtectU",
+   "evidencia_ids": [
+    "F-fintech-seguros-007"
+   ],
+   "hueco": "Billetera para el asegurado; aquí el usuario es el corredor."
+  },
+  {
+   "nombre": "Insurtech uruguayas",
+   "evidencia_ids": [
+    "F-fintech-seguros-009"
+   ],
+   "hueco": "21 registradas, sin detalle de productos: relevarlas en 2026."
+  }
+ ],
+ "monetizacion": "Paga el corretaje: hipótesis de USD 25 por corretaje por mes, con 30 días de prueba. Meta al segundo año: 40 corretajes, USD 12.000 anuales. Solo si ahorra horas que el piloto mide: hoy usa planilla y portales, a costo cero. Venta directa y referidos.",
+ "riesgos": [
+  "Un error en premio o deducible daña la confianza: campos de baja confianza marcados, un clic al origen, y la comparación es apoyo, no asesoramiento.",
+  "El set propio y sintético puede no representar la variedad real; el piloto lo contrasta.",
+  "Datos de asegurados a una API en el exterior: redacción local y consentimiento (Ley 18.331).",
+  "Foliume, otra insurtech o una aseguradora lanza algo similar."
+ ],
+ "supuestos": [
+  "Corredores comparan a mano, siguen vencimientos en planillas y pierden clientes por olvidos: sin ficha local.",
+  "Las horas perdidas en Uruguay no están en las fichas.",
+  "Número de corredores, precio de USD 25 y meta de 40: hipótesis.",
+  "Las aseguradoras dan cotizaciones de perfiles ficticios por canales públicos: sin ficha; si falla, el set es sintético.",
+  "No hay socio ni contacto identificado.",
+  "Los corredores exportan su cartera a CSV.",
+  "No intermedia seguros: sin habilitación regulatoria propia."
+ ],
+ "evidencias": [
+  "F-fintech-seguros-008",
+  "F-defensa-r1-m01-i010-001",
+  "F-fintech-seguros-007",
+  "F-fintech-seguros-009"
+ ]
+}

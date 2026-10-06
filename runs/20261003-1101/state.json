@@ -1,0 +1,128 @@
+{
+ "version": 1,
+ "run": "20261003-1101",
+ "dir": "runs/20261003-1101",
+ "mode": "calibration",
+ "seed": 862202,
+ "created": "2026-10-03T11:01:55",
+ "sectors": [],
+ "steps": {
+  "calibration-report": {
+   "acuerdo": 2,
+   "pares": 3,
+   "kendall_tau": 0.333
+  }
+ },
+ "deepen": {},
+ "git_baseline": [
+  "?? .claude/skills/idea-arena/SKILL.md",
+  "?? README_IDEA_ARENA.md",
+  "?? docs/PLAN.md",
+  "?? runs/README.md",
+  "?? skills/idea-arena/SKILL.md",
+  "?? skills/idea-arena/briefs/01_investigacion.md",
+  "?? skills/idea-arena/briefs/02_generacion.md",
+  "?? skills/idea-arena/briefs/03_alcance.md",
+  "?? skills/idea-arena/briefs/03_dedup.md",
+  "?? skills/idea-arena/briefs/04_ataque.md",
+  "?? skills/idea-arena/briefs/04_defensa.md",
+  "?? skills/idea-arena/briefs/04_juez.md",
+  "?? skills/idea-arena/briefs/05_preguntas.md",
+  "?? skills/idea-arena/briefs/06_profundizar_arquitectura.md",
+  "?? skills/idea-arena/briefs/06_profundizar_competidores.md",
+  "?? skills/idea-arena/briefs/06_profundizar_costos.md",
+  "?? skills/idea-arena/briefs/07_calibracion.md",
+  "?? skills/idea-arena/briefs/_comunes.md",
+  "?? skills/idea-arena/calibration/ideas/idea_A.md",
+  "?? skills/idea-arena/calibration/ideas/idea_B.md",
+  "?? skills/idea-arena/calibration/ideas/idea_C.md",
+  "?? skills/idea-arena/calibration/my_ranking.md",
+  "?? skills/idea-arena/config.json",
+  "?? skills/idea-arena/constraints.md",
+  "?? skills/idea-arena/ia_evidence.py",
+  "?? skills/idea-arena/ia_schema.py",
+  "?? skills/idea-arena/ia_tournament.py",
+  "?? skills/idea-arena/idea_arena.py",
+  "?? skills/idea-arena/personas.json",
+  "?? skills/idea-arena/rubric.md",
+  "?? skills/idea-arena/schemas/alcance.schema.json",
+  "?? skills/idea-arena/schemas/ataque.schema.json",
+  "?? skills/idea-arena/schemas/dedup.schema.json",
+  "?? skills/idea-arena/schemas/defensa.schema.json",
+  "?? skills/idea-arena/schemas/ficha.schema.json",
+  "?? skills/idea-arena/schemas/idea.schema.json",
+  "?? skills/idea-arena/schemas/preguntas.schema.json",
+  "?? skills/idea-arena/schemas/veredicto.schema.json",
+  "?? skills/idea-arena/strategies.json",
+  "?? skills/idea-arena/templates/guion_entrevista.md",
+  "?? tests/test_idea_arena.py"
+ ],
+ "calibration": {
+  "ideas": [
+   "idea_A",
+   "idea_B",
+   "idea_C"
+  ],
+  "ranking": [
+   "idea_A",
+   "idea_B",
+   "idea_C"
+  ],
+  "jobs": [
+   {
+    "id": "calibracion.idea_A__idea_B",
+    "x": "idea_A",
+    "y": "idea_B",
+    "pair": "idea_A contra idea_B",
+    "outputs": [
+     "runs/20261003-1101/calibration/veredictos/idea_A__idea_B.json"
+    ]
+   },
+   {
+    "id": "calibracion.idea_B__idea_A",
+    "x": "idea_B",
+    "y": "idea_A",
+    "pair": "idea_B contra idea_A",
+    "outputs": [
+     "runs/20261003-1101/calibration/veredictos/idea_B__idea_A.json"
+    ]
+   },
+   {
+    "id": "calibracion.idea_A__idea_C",
+    "x": "idea_A",
+    "y": "idea_C",
+    "pair": "idea_A contra idea_C",
+    "outputs": [
+     "runs/20261003-1101/calibration/veredictos/idea_A__idea_C.json"
+    ]
+   },
+   {
+    "id": "calibracion.idea_C__idea_A",
+    "x": "idea_C",
+    "y": "idea_A",
+    "pair": "idea_C contra idea_A",
+    "outputs": [
+     "runs/20261003-1101/calibration/veredictos/idea_C__idea_A.json"
+    ]
+   },
+   {
+    "id": "calibracion.idea_B__idea_C",
+    "x": "idea_B",
+    "y": "idea_C",
+    "pair": "idea_B contra idea_C",
+    "outputs": [
+     "runs/20261003-1101/calibration/veredictos/idea_B__idea_C.json"
+    ]
+   },
+   {
+    "id": "calibracion.idea_C__idea_B",
+    "x": "idea_C",
+    "y": "idea_B",
+    "pair": "idea_C contra idea_B",
+    "outputs": [
+     "runs/20261003-1101/calibration/veredictos/idea_C__idea_B.json"
+    ]
+   }
+  ]
+ }
+}

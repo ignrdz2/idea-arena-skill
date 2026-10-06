@@ -1,0 +1,28 @@
+{
+  "match": "r1-m01",
+  "scores": {
+    "X": {"demanda": 4, "viabilidad": 8, "diferenciacion": 5, "business_case": 5, "encaje": 8, "academico": 7, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 3, "viabilidad": 6, "diferenciacion": 3, "business_case": 4, "encaje": 6, "academico": 6, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "X",
+  "reason": "X construye su MVP sin dependencias externas críticas (set propio y sintético, costo de USD 161) y su dolor tiene al menos evidencia directa aunque extranjera (Foliume, F-fintech-seguros-008), mientras que el valor central de Y depende de que los bancos avisen por email con DKIM, algo no probado, y su dolor no tiene ficha frente a un sustituto gratuito que la propia idea reconoce (la notificación de la app del banco).",
+  "survived": [
+    "Primas totales y estrategia de SURA usadas como prueba de demanda: retiradas, el dato del ramo automóviles queda solo como contexto",
+    "Set de datos dependiente de cotizaciones reales de corredores sin socio (R7): reemplazado por 40 cotizaciones de perfiles ficticios y PDFs sintéticos",
+    "Fricción de migrar la cartera: reemplazada por vencimientos desde CSV y cotizaciones por PDF o correo reenviado",
+    "Responsabilidad por errores de extracción: objetivo de 95% en premio y deducible, marca de baja confianza y un clic al origen"
+  ],
+  "standing": {
+    "X": [
+      "El dolor del corredor uruguayo sigue sin ficha local: solo hay evidencia extranjera (Foliume en España) y el resto es hipótesis",
+      "Diferenciación débil: Foliume, de fundadores uruguayos y con US$ 1 millón, cierra el hueco si entra, y las 21 insurtech locales siguen sin relevar",
+      "Precio, cantidad de corretajes y horas ahorradas sin medir: el business case depende de lo que mida el piloto, frente a una alternativa de costo cero"
+    ],
+    "Y": [
+      "El dolor de confirmar transferencias y cuadrar la caja no tiene ficha, y la app del banco ya notifica gratis",
+      "Pedir al microcomercio que reenvíe avisos bancarios a un tercero sigue sin validar, en un segmento que según F-fintech-seguros-003 necesita incentivos para adoptar lo digital",
+      "La base técnica (avisos por email con DKIM de los bancos) no está verificada y el plan B, conciliación por extracto, pierde la inmediatez que da nombre al producto",
+      "Diferenciación débil: los competidores citados no atacan el problema, el sustituto es la notificación bancaria gratuita y bancos o pagos interoperables pueden copiarlo"
+    ]
+  }
+}

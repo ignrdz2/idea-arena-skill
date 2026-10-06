@@ -1,0 +1,252 @@
+{
+ "version": 1,
+ "seed": 7,
+ "dir": "runs/20261003-1121/tournament",
+ "has_baseline": false,
+ "final": null,
+ "agents": {
+  "i002": {
+   "card": {
+    "reasoning": {
+     "id": "comercio-retail",
+     "name": "comercio-retail"
+    }
+   },
+   "solution": "runs/20261003-1121/tournament/r1/r1-m01.i002.solution.md",
+   "idea_json": "runs/20261003-1121/tournament/r1/r1-m01.i002.idea.json",
+   "alive": false,
+   "eliminated_in": 1,
+   "eliminated_by": "i010",
+   "byes": 0,
+   "shown_first": 0,
+   "shown_second": 1,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i007": {
+   "card": {
+    "reasoning": {
+     "id": "comercio-retail",
+     "name": "comercio-retail"
+    }
+   },
+   "solution": "runs/20261003-1121/tournament/r2/r2-m01.i007.solution.md",
+   "idea_json": "runs/20261003-1121/tournament/r2/r2-m01.i007.idea.json",
+   "alive": true,
+   "eliminated_in": null,
+   "eliminated_by": null,
+   "byes": 1,
+   "shown_first": 1,
+   "shown_second": 0,
+   "personas": [
+    "competidor"
+   ]
+  },
+  "i010": {
+   "card": {
+    "reasoning": {
+     "id": "fintech-seguros",
+     "name": "fintech-seguros"
+    }
+   },
+   "solution": "runs/20261003-1121/tournament/r2/r2-m01.i010.solution.md",
+   "idea_json": "runs/20261003-1121/tournament/r2/r2-m01.i010.idea.json",
+   "alive": false,
+   "eliminated_in": 2,
+   "eliminated_by": "i007",
+   "byes": 0,
+   "shown_first": 1,
+   "shown_second": 1,
+   "personas": [
+    "cliente",
+    "competidor"
+   ]
+  }
+ },
+ "agents_n": 3,
+ "rounds": [
+  {
+   "n": 1,
+   "alive": [
+    "i002",
+    "i007",
+    "i010"
+   ],
+   "matches": [
+    {
+     "id": "r1-m01",
+     "a": "i010",
+     "b": "i002",
+     "winner": "i010",
+     "loser": "i002",
+     "reason": "X construye su MVP sin dependencias externas críticas (set propio y sintético, costo de USD 161) y su dolor tiene al menos evidencia directa aunque extranjera (Foliume, F-fintech-seguros-008), mientras que el valor central de Y depende de que los bancos avisen por email con DKIM, algo no probado, y su dolor no tiene ficha frente a un sustituto gratuito que la propia idea reconoce (la notificación ",
+     "survived": [
+      "Primas totales y estrategia de SURA usadas como prueba de demanda: retiradas, el dato del ramo automóviles queda solo como contexto",
+      "Set de datos dependiente de cotizaciones reales de corredores sin socio (R7): reemplazado por 40 cotizaciones de perfiles ficticios y PDFs sintéticos",
+      "Fricción de migrar la cartera: reemplazada por vencimientos desde CSV y cotizaciones por PDF o correo reenviado",
+      "Responsabilidad por errores de extracción: objetivo de 95% en premio y deducible, marca de baja confianza y un clic al origen"
+     ],
+     "scores": {
+      "i010": 59.0,
+      "i002": 43.5
+     },
+     "source": "judge",
+     "first": "i010",
+     "second": "i002",
+     "personas": [
+      "cliente"
+     ],
+     "attacks_checked": true,
+     "det_fatal": {
+      "i010": [],
+      "i002": []
+     },
+     "hard_notes": {
+      "i010": [],
+      "i002": [
+       "palabras: la página tiene 887 palabras; el máximo es 700"
+      ]
+     },
+     "revised": true,
+     "fatal": {
+      "i010": false,
+      "i002": false
+     },
+     "criteria": {
+      "i010": {
+       "demanda": 4,
+       "viabilidad": 8,
+       "diferenciacion": 5,
+       "business_case": 5,
+       "encaje": 8,
+       "academico": 7
+      },
+      "i002": {
+       "demanda": 3,
+       "viabilidad": 6,
+       "diferenciacion": 3,
+       "business_case": 4,
+       "encaje": 6,
+       "academico": 6
+      }
+     },
+     "fatal_motivos": {
+      "i010": [],
+      "i002": []
+     },
+     "standing": {
+      "i010": [
+       "El dolor del corredor uruguayo sigue sin ficha local: solo hay evidencia extranjera (Foliume en España) y el resto es hipótesis",
+       "Diferenciación débil: Foliume, de fundadores uruguayos y con US$ 1 millón, cierra el hueco si entra, y las 21 insurtech locales siguen sin relevar",
+       "Precio, cantidad de corretajes y horas ahorradas sin medir: el business case depende de lo que mida el piloto, frente a una alternativa de costo cero"
+      ],
+      "i002": [
+       "El dolor de confirmar transferencias y cuadrar la caja no tiene ficha, y la app del banco ya notifica gratis",
+       "Pedir al microcomercio que reenvíe avisos bancarios a un tercero sigue sin validar, en un segmento que según F-fintech-seguros-003 necesita incentivos para adoptar lo digital",
+       "La base técnica (avisos por email con DKIM de los bancos) no está verificada y el plan B, conciliación por extracto, pierde la inmediatez que da nombre al producto",
+       "Diferenciación débil: los competidores citados no atacan el problema, el sustituto es la notificación bancaria gratuita y bancos o pagos interoperables pueden copiarlo"
+      ]
+     },
+     "notes": []
+    }
+   ],
+   "bye": "i007",
+   "closed": true
+  },
+  {
+   "n": 2,
+   "alive": [
+    "i007",
+    "i010"
+   ],
+   "matches": [
+    {
+     "id": "r2-m01",
+     "a": "i010",
+     "b": "i007",
+     "winner": "i007",
+     "loser": "i010",
+     "reason": "Con demanda igual de débil en las dos, Y compite en Uruguay contra Nexura y Softseguros, que ya cotizan, comparan en PDF y leen pólizas, y admite no tener barrera propia, mientras X no tiene en las fichas un competidor que audite comisiones de forma neutral y además cuesta menos y tiene un plan B de datos más realista.",
+     "survived": [
+      "Evidencia mal leída: sacó F-comercio-retail-006 y dejó las 188.000 microempresas solo como techo",
+      "Ingresos que no cerraban por canal: ahora muestra el rango directo, estudios y mitad y mitad, con la cuenta correcta",
+      "Dependencia de liquidaciones reales: agregó plan B con datos sintéticos y cuentas propias, y una entrega validable con 3 liquidaciones",
+      "Tarifa contratada desconocida y tarifas de 2022: el comercio carga su tarifa y la ficha queda solo como referencia"
+     ],
+     "scores": {
+      "i010": 53.0,
+      "i007": 58.0
+     },
+     "source": "judge",
+     "first": "i007",
+     "second": "i010",
+     "personas": [
+      "competidor"
+     ],
+     "attacks_checked": true,
+     "det_fatal": {
+      "i007": [],
+      "i010": []
+     },
+     "hard_notes": {
+      "i007": [],
+      "i010": [
+       "palabras: la página tiene 704 palabras; el máximo es 700"
+      ]
+     },
+     "revised": true,
+     "fatal": {
+      "i010": false,
+      "i007": false
+     },
+     "criteria": {
+      "i010": {
+       "demanda": 4,
+       "viabilidad": 7,
+       "diferenciacion": 3,
+       "business_case": 5,
+       "encaje": 8,
+       "academico": 8
+      },
+      "i007": {
+       "demanda": 4,
+       "viabilidad": 8,
+       "diferenciacion": 5,
+       "business_case": 6,
+       "encaje": 6,
+       "academico": 6
+      }
+     },
+     "fatal_motivos": {
+      "i010": [],
+      "i007": []
+     },
+     "standing": {
+      "i007": [
+       "Disposición a pagar $ 390 por mes sin ninguna señal en las fichas",
+       "El comparador es aritmética copiable por un software contable o de facturación; la neutralidad no es barrera técnica",
+       "El ahorro por plazo, plan y cargos de más puede ser menor al precio y no hay ninguna cifra real de ahorro"
+      ],
+      "i010": [
+       "Diferencia sin barrera: Nexura o Foliume pueden agregar lectura de cotizaciones y comparación de cláusulas",
+       "No resuelve obtener las cotizaciones, y los multicotizadores existentes ya comparan en un PDF",
+       "Demanda local sin ficha: el dolor solo se apoya en una empresa que opera en España"
+      ]
+     },
+     "notes": []
+    }
+   ],
+   "bye": null,
+   "closed": true
+  }
+ ],
+ "champion": "i007",
+ "persona_order": [
+  "cliente",
+  "competidor",
+  "tutor"
+ ],
+ "personas_per_match": 1,
+ "judge_both_orders": false
+}

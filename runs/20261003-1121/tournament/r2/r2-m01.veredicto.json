@@ -1,0 +1,27 @@
+{
+  "match": "r2-m01",
+  "scores": {
+    "X": {"demanda": 4, "viabilidad": 8, "diferenciacion": 5, "business_case": 6, "encaje": 6, "academico": 6, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 4, "viabilidad": 7, "diferenciacion": 3, "business_case": 5, "encaje": 8, "academico": 8, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "X",
+  "reason": "Con demanda igual de débil en las dos, Y compite en Uruguay contra Nexura y Softseguros, que ya cotizan, comparan en PDF y leen pólizas, y admite no tener barrera propia, mientras X no tiene en las fichas un competidor que audite comisiones de forma neutral y además cuesta menos y tiene un plan B de datos más realista.",
+  "survived": [
+    "Evidencia mal leída: sacó F-comercio-retail-006 y dejó las 188.000 microempresas solo como techo",
+    "Ingresos que no cerraban por canal: ahora muestra el rango directo, estudios y mitad y mitad, con la cuenta correcta",
+    "Dependencia de liquidaciones reales: agregó plan B con datos sintéticos y cuentas propias, y una entrega validable con 3 liquidaciones",
+    "Tarifa contratada desconocida y tarifas de 2022: el comercio carga su tarifa y la ficha queda solo como referencia"
+  ],
+  "standing": {
+    "X": [
+      "Disposición a pagar $ 390 por mes sin ninguna señal en las fichas",
+      "El comparador es aritmética copiable por un software contable o de facturación; la neutralidad no es barrera técnica",
+      "El ahorro por plazo, plan y cargos de más puede ser menor al precio y no hay ninguna cifra real de ahorro"
+    ],
+    "Y": [
+      "Diferencia sin barrera: Nexura o Foliume pueden agregar lectura de cotizaciones y comparación de cláusulas",
+      "No resuelve obtener las cotizaciones, y los multicotizadores existentes ya comparan en un PDF",
+      "Demanda local sin ficha: el dolor solo se apoya en una empresa que opera en España"
+    ]
+  }
+}

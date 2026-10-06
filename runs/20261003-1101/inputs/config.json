@@ -1,0 +1,151 @@
+{
+ "version": 1,
+ "about": "Parámetros de /idea-arena. Editalos acá; cada run guarda una copia congelada en runs/<run>/inputs/config.json. pilot.overrides pisa estos valores cuando corrés con --pilot. limits es el tope de llamadas a sub-agentes por fase: init se niega a arrancar si el plan lo supera. models elige el modelo de cada fase (null = el de la sesión; por ejemplo \"sonnet\" para abaratar).",
+ "infra_budget_usd": 300,
+ "infra_budget_target_usd": 200,
+ "seed": 862202,
+ "wave": 10,
+ "team": {
+  "size": 3,
+  "hours_per_week": [
+   10,
+   16
+  ],
+  "weeks": 32
+ },
+ "sectors": [
+  {
+   "id": "comercio-retail",
+   "nombre": "Comercio y retail"
+  },
+  {
+   "id": "agro",
+   "nombre": "Agro"
+  },
+  {
+   "id": "salud",
+   "nombre": "Salud"
+  },
+  {
+   "id": "logistica-transporte",
+   "nombre": "Logística y transporte"
+  },
+  {
+   "id": "fintech-seguros",
+   "nombre": "Fintech y seguros"
+  },
+  {
+   "id": "educacion",
+   "nombre": "Educación"
+  },
+  {
+   "id": "legal-contable",
+   "nombre": "Legal y contable"
+  },
+  {
+   "id": "sector-publico",
+   "nombre": "Sector público"
+  },
+  {
+   "id": "turismo",
+   "nombre": "Turismo"
+  },
+  {
+   "id": "energia-ambiente",
+   "nombre": "Energía y ambiente"
+  }
+ ],
+ "research": {
+  "fichas_min": 6,
+  "fichas_max": 15,
+  "max_source_age_years": 5
+ },
+ "evidence": {
+  "on_blocked": "keep_flagged",
+  "excerpt_check": "warn",
+  "timeout_s": 15,
+  "workers": 8,
+  "local_geographies": [
+   "UY",
+   "LATAM",
+   "AR",
+   "BO",
+   "BR",
+   "CL",
+   "CO",
+   "CR",
+   "CU",
+   "DO",
+   "EC",
+   "GT",
+   "HN",
+   "MX",
+   "NI",
+   "PA",
+   "PE",
+   "PY",
+   "SV",
+   "VE"
+  ]
+ },
+ "generation": {
+  "agents": 10,
+  "ideas_per_agent": 3
+ },
+ "filter": {
+  "min_evidence_per_idea": 2,
+  "min_local_evidence": 1,
+  "idea_max_words": 700,
+  "scope_batch": 3,
+  "lexical_threshold": 0.5,
+  "dedup_agent": true
+ },
+ "selection": {
+  "max_candidates": 16
+ },
+ "tournament": {
+  "persona_order": [
+   "cliente",
+   "competidor",
+   "inversor",
+   "tutor"
+  ],
+  "personas_per_match": 1,
+  "judge_both_orders": false,
+  "attackers_can_search": true
+ },
+ "shortlist": {
+  "size": 8,
+  "questions_per_idea": 5
+ },
+ "deepen": {
+  "aspects": [
+   "arquitectura",
+   "costos",
+   "competidores"
+  ]
+ },
+ "models": {
+  "research": "sonnet",
+  "generate": null,
+  "scope": null,
+  "dedup": null,
+  "attack": "sonnet",
+  "defend": "sonnet",
+  "judge": null,
+  "questions": null,
+  "deepen": null,
+  "calibrate": null
+ },
+ "limits": {
+  "research": 12,
+  "generate": 12,
+  "scope": 12,
+  "dedup": 1,
+  "tournament": 100,
+  "questions": 8,
+  "deepen": 3,
+  "calibrate": 12
+ },
+ "mode": "calibration"
+}

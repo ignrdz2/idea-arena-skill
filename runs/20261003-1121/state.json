@@ -1,0 +1,247 @@
+{
+ "version": 1,
+ "run": "20261003-1121",
+ "dir": "runs/20261003-1121",
+ "mode": "pilot",
+ "seed": 7,
+ "created": "2026-10-03T11:21:12",
+ "sectors": [
+  {
+   "id": "comercio-retail",
+   "nombre": "Comercio y retail"
+  },
+  {
+   "id": "agro",
+   "nombre": "Agro"
+  },
+  {
+   "id": "fintech-seguros",
+   "nombre": "Fintech y seguros"
+  }
+ ],
+ "sectors_how": "sorteados con la semilla 7",
+ "generators": [
+  {
+   "id": "g01",
+   "strategy": "dolor",
+   "focus": [
+    "comercio-retail",
+    "agro",
+    "fintech-seguros"
+   ],
+   "ideas": 2
+  },
+  {
+   "id": "g02",
+   "strategy": "capacidad",
+   "focus": [
+    "comercio-retail",
+    "agro",
+    "fintech-seguros"
+   ],
+   "ideas": 2
+  },
+  {
+   "id": "g03",
+   "strategy": "segmento",
+   "focus": [
+    "comercio-retail",
+    "agro",
+    "fintech-seguros"
+   ],
+   "ideas": 2
+  },
+  {
+   "id": "g04",
+   "strategy": "localizar",
+   "focus": [
+    "comercio-retail",
+    "agro",
+    "fintech-seguros"
+   ],
+   "ideas": 2
+  },
+  {
+   "id": "g05",
+   "strategy": "invertir",
+   "focus": [
+    "comercio-retail",
+    "agro",
+    "fintech-seguros"
+   ],
+   "ideas": 2
+  }
+ ],
+ "steps": {
+  "verify": {
+   "aceptadas": 28,
+   "ok": 28,
+   "bloqueadas": 0,
+   "descartadas": 0,
+   "motivos": {},
+   "por_sector": {
+    "comercio-retail": {
+     "recibidas": 9,
+     "aceptadas": 9,
+     "bloqueadas": 0,
+     "descartadas": 0
+    },
+    "agro": {
+     "recibidas": 9,
+     "aceptadas": 9,
+     "bloqueadas": 0,
+     "descartadas": 0
+    },
+    "fintech-seguros": {
+     "recibidas": 10,
+     "aceptadas": 10,
+     "bloqueadas": 0,
+     "descartadas": 0
+    }
+   }
+  },
+  "ingest": {
+   "recibidas": 10,
+   "validas": 10,
+   "rechazadas_esquema": 0,
+   "pasan_filtro_duro": 4,
+   "problemas": {
+    "costo_fuente": 8
+   }
+  },
+  "scope-collect": {
+   "evaluadas": 4,
+   "veredictos": {
+    "viable_con_recorte": 4
+   },
+   "sobreviven": 4,
+   "grupos_lexicos": 0
+  },
+  "select": {
+   "grupos": 3,
+   "fusionadas": 1,
+   "seleccionadas": 3
+  },
+  "rank": {
+   "top": [
+    "i007",
+    "i010",
+    "i002"
+   ],
+   "excluidas_por_fallo_fatal": []
+  },
+  "shortlist": {
+   "ideas": [
+    "i007",
+    "i010",
+    "i002"
+   ]
+  }
+ },
+ "scope_batches": [
+  [
+   "i002",
+   "i006",
+   "i007"
+  ],
+  [
+   "i010"
+  ]
+ ],
+ "candidates": [
+  "i002",
+  "i006",
+  "i007",
+  "i010"
+ ],
+ "dedup_needed": true,
+ "selected": [
+  "i002",
+  "i010",
+  "i007"
+ ],
+ "shortlist": [
+  "i007",
+  "i010",
+  "i002"
+ ],
+ "deepen": {},
+ "plan": {
+  "calls": 53,
+  "waves": 14,
+  "tokens_k": [
+   1090,
+   2605
+  ]
+ },
+ "git_baseline": [
+  "?? .claude/skills/idea-arena/SKILL.md",
+  "?? README_IDEA_ARENA.md",
+  "?? docs/PLAN.md",
+  "?? runs/20261003-1101/calibration/ideas/idea_A.md",
+  "?? runs/20261003-1101/calibration/ideas/idea_B.md",
+  "?? runs/20261003-1101/calibration/ideas/idea_C.md",
+  "?? runs/20261003-1101/calibration/my_ranking.md",
+  "?? runs/20261003-1101/calibration/resultados.json",
+  "?? runs/20261003-1101/calibration/veredictos/idea_A__idea_B.json",
+  "?? runs/20261003-1101/calibration/veredictos/idea_A__idea_C.json",
+  "?? runs/20261003-1101/calibration/veredictos/idea_B__idea_A.json",
+  "?? runs/20261003-1101/calibration/veredictos/idea_B__idea_C.json",
+  "?? runs/20261003-1101/calibration/veredictos/idea_C__idea_A.json",
+  "?? runs/20261003-1101/calibration/veredictos/idea_C__idea_B.json",
+  "?? runs/20261003-1101/calibration_report.md",
+  "?? runs/20261003-1101/inputs/config.json",
+  "?? runs/20261003-1101/inputs/constraints.md",
+  "?? runs/20261003-1101/inputs/personas.json",
+  "?? runs/20261003-1101/inputs/rubric.md",
+  "?? runs/20261003-1101/inputs/schemas/veredicto.schema.json",
+  "?? runs/20261003-1101/inputs/strategies.json",
+  "?? runs/20261003-1101/prompts/calibrate/calibracion.idea_A__idea_B.md",
+  "?? runs/20261003-1101/prompts/calibrate/calibracion.idea_A__idea_C.md",
+  "?? runs/20261003-1101/prompts/calibrate/calibracion.idea_B__idea_A.md",
+  "?? runs/20261003-1101/prompts/calibrate/calibracion.idea_B__idea_C.md",
+  "?? runs/20261003-1101/prompts/calibrate/calibracion.idea_C__idea_A.md",
+  "?? runs/20261003-1101/prompts/calibrate/calibracion.idea_C__idea_B.md",
+  "?? runs/20261003-1101/scratch/calibracion.idea_C__idea_A/memoria2021.txt",
+  "?? runs/20261003-1101/state.json",
+  "?? runs/LATEST",
+  "?? runs/README.md",
+  "?? skills/idea-arena/SKILL.md",
+  "?? skills/idea-arena/briefs/01_investigacion.md",
+  "?? skills/idea-arena/briefs/02_generacion.md",
+  "?? skills/idea-arena/briefs/03_alcance.md",
+  "?? skills/idea-arena/briefs/03_dedup.md",
+  "?? skills/idea-arena/briefs/04_ataque.md",
+  "?? skills/idea-arena/briefs/04_defensa.md",
+  "?? skills/idea-arena/briefs/04_juez.md",
+  "?? skills/idea-arena/briefs/05_preguntas.md",
+  "?? skills/idea-arena/briefs/06_profundizar_arquitectura.md",
+  "?? skills/idea-arena/briefs/06_profundizar_competidores.md",
+  "?? skills/idea-arena/briefs/06_profundizar_costos.md",
+  "?? skills/idea-arena/briefs/07_calibracion.md",
+  "?? skills/idea-arena/briefs/_comunes.md",
+  "?? skills/idea-arena/calibration/ideas/idea_A.md",
+  "?? skills/idea-arena/calibration/ideas/idea_B.md",
+  "?? skills/idea-arena/calibration/ideas/idea_C.md",
+  "?? skills/idea-arena/calibration/my_ranking.md",
+  "?? skills/idea-arena/config.json",
+  "?? skills/idea-arena/constraints.md",
+  "?? skills/idea-arena/ia_evidence.py",
+  "?? skills/idea-arena/ia_schema.py",
+  "?? skills/idea-arena/ia_tournament.py",
+  "?? skills/idea-arena/idea_arena.py",
+  "?? skills/idea-arena/personas.json",
+  "?? skills/idea-arena/rubric.md",
+  "?? skills/idea-arena/schemas/alcance.schema.json",
+  "?? skills/idea-arena/schemas/ataque.schema.json",
+  "?? skills/idea-arena/schemas/dedup.schema.json",
+  "?? skills/idea-arena/schemas/defensa.schema.json",
+  "?? skills/idea-arena/schemas/ficha.schema.json",
+  "?? skills/idea-arena/schemas/idea.schema.json",
+  "?? skills/idea-arena/schemas/preguntas.schema.json",
+  "?? skills/idea-arena/schemas/veredicto.schema.json",
+  "?? skills/idea-arena/strategies.json",
+  "?? skills/idea-arena/templates/guion_entrevista.md",
+  "?? tests/test_idea_arena.py"
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "ranking": [
+  {
+   "id": "i007",
+   "champion": true,
+   "reached_round": 3,
+   "eliminated_in": null,
+   "eliminated_by": null,
+   "lost_score": null,
+   "fatal": false,
+   "rank": 1,
+   "titulo": "Auditor de comisiones de cobro para pequeños comercios"
+  },
+  {
+   "id": "i010",
+   "champion": false,
+   "reached_round": 2,
+   "eliminated_in": 2,
+   "eliminated_by": "i007",
+   "lost_score": 53.0,
+   "fatal": false,
+   "rank": 2,
+   "titulo": "Lector de coberturas de cotizaciones y renovaciones para corredores de seguros"
+  },
+  {
+   "id": "i002",
+   "champion": false,
+   "reached_round": 1,
+   "eliminated_in": 1,
+   "eliminated_by": "i010",
+   "lost_score": 43.5,
+   "fatal": false,
+   "rank": 3,
+   "titulo": "Cobros por transferencia confirmados al instante para microcomercios"
+  }
+ ],
+ "top": [
+  "i007",
+  "i010",
+  "i002"
+ ],
+ "excluidas_por_fallo_fatal": []
+}

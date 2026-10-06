@@ -1,0 +1,114 @@
+{
+ "id": "i002",
+ "titulo": "Cobros por transferencia confirmados al instante para microcomercios",
+ "problema": "Con tarjeta, el comercio paga de 1,15% a 3,55% por transacción y un alquiler de POS de 465 a 1.500 pesos por mes más IVA; con MercadoPago, de 4,99% a 5,99% (F-fintech-seguros-005, de 2022). Las transferencias instantáneas crecieron 50% en el segundo semestre de 2025 a escala nacional (F-fintech-seguros-002), y fuera de Montevideo persiste el efectivo y los comercios chicos necesitan incentivos para adoptar pagos digitales (F-fintech-seguros-003). La ficha sobre pequeños comercios solo documenta cuadernos y comprobantes perdidos (F-comercio-retail-006, marketing de un competidor): que confirmar una transferencia y cuadrar la caja sea un dolor pagable es una hipótesis que las entrevistas de las primeras semanas deben validar o descartar.",
+ "usuario": "Dueños de almacenes, kioscos y otros microcomercios del interior que ya reciben transferencias y llevan la caja a mano: usan y pagan la app.",
+ "solucion": "PWA para el celular del comercio. 1) Pedido de cobro con monto y código de referencia (opcional: sin código se casa por monto y hora). 2) El comercio activa una sola vez el reenvío de los avisos de su banco a una casilla propia; el sistema verifica DKIM, extrae monto y referencia (parsers por banco, LLM de respaldo) y avisa 'cobro confirmado' en segundos. 3) Cierre de caja diario por medio de cobro. 4) Sin aviso por email, concilia con el extracto CSV. El producto sigue siendo útil por 3 y 4 si el aviso en tiempo real no es viable en algún banco.",
+ "mvp": {
+  "semestre_1": [
+   "Semanas 1 a 4, puerta de decisión: entrevistas a 15 comercios y prueba real de qué avisos por email emite cada banco (con cuentas del equipo)",
+   "Recepción de emails, verificación DKIM y parsers para los bancos que pasen la prueba (hasta 3)",
+   "PWA con pedido de cobro y push de confirmación",
+   "Demo: cobro real de punta a punta, con métricas de latencia"
+  ],
+  "semestre_2": [
+   "Parser de respaldo con LLM y conciliación por extracto",
+   "Cierre de caja diario por medio de cobro",
+   "Piloto de 8 semanas con los comercios que se consigan en las entrevistas (meta 8, sin contactos previos)",
+   "Business case con precio contrastado en el piloto y registro ante la URCDP"
+  ]
+ },
+ "stack": [
+  "Python",
+  "FastAPI",
+  "PostgreSQL",
+  "React PWA",
+  "Cloudflare Email Workers",
+  "dkimpy",
+  "Claude Haiku 4.5",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 113.08,
+  "items": [
+   {
+    "concepto": "AWS Lightsail 1 GB",
+    "usd_anual": 84,
+    "supuesto": "USD 7 por mes todo 2027, sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "Claude Haiku 4.5 (formatos nuevos)",
+    "usd_anual": 18,
+    "supuesto": "5.000 llamadas: 10 M tokens de entrada a USD 1/M y 1,5 M de salida a USD 5/M.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "Cloudflare Email Routing",
+    "usd_anual": 0,
+    "supuesto": "Incluido en el plan Free, todo 2027.",
+    "fuente_precio_url": "https://developers.cloudflare.com/email-routing/"
+   },
+   {
+    "concepto": "Cloudflare Worker de reenvío",
+    "usd_anual": 0,
+    "supuesto": "Plan Free: 100.000 solicitudes por día; uso estimado 250 por día.",
+    "fuente_precio_url": "https://developers.cloudflare.com/workers/platform/pricing/"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 11.08,
+    "supuesto": "Un año de registro.",
+    "fuente_precio_url": "https://porkbun.com/products/domains"
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "MercadoPago",
+   "evidencia_ids": [
+    "F-fintech-seguros-005"
+   ],
+   "hueco": "Cobra 4,99% a 5,99% por venta; la transferencia lo evita, pero no trae confirmación ni cierre de caja propios."
+  },
+  {
+   "nombre": "Totalnet",
+   "evidencia_ids": [
+    "F-comercio-retail-008"
+   ],
+   "hueco": "Cobros con stock, pero exige alquilar una terminal POS: no cubre al comercio que cobra por transferencia."
+  },
+  {
+   "nombre": "YoFacturo",
+   "evidencia_ids": [
+    "F-comercio-retail-007"
+   ],
+   "hueco": "Facturación, POS e inventario; la ficha no menciona conciliar transferencias."
+  }
+ ],
+ "monetizacion": "Paga el comercio: 350 pesos por mes más IVA, hipótesis a contrastar en las entrevistas y el piloto. Se vende como confirmación y cierre de caja, no como ahorro: no reemplaza al POS ni depende de que los clientes cambien de medio de pago, y solo sirve a quien ya recibe transferencias. Cada comercio paga desde su propio presupuesto operativo (decide el dueño). Meta de 300 comercios: supuesto, sin contactos para el canal (centros comerciales del interior, contadores).",
+ "riesgos": [
+  "Que los bancos no avisen por email, avisen con demora o cambien el formato: si fallan casi todos, la puerta de decisión de las semanas 1 a 4 reorienta el producto a cierre de caja y conciliación por extracto, con menos valor.",
+  "Sin firma DKIM del banco no se descarta un aviso falso.",
+  "La app del banco ya notifica gratis: el aporte debe ser cuadrar la caja y confirmar sin mirar el celular personal.",
+  "Baja disposición a pagar del microcomercio.",
+  "Los avisos reenviados contienen datos de pagadores: registro ante la URCDP, contrato de encargado y retener solo monto y referencia (Ley 18.331)."
+ ],
+ "supuestos": [
+  "Recibir una transferencia no le cuesta al comercio; las comisiones citadas son de 2022.",
+  "Confirmar y conciliar transferencias es hoy un dolor pagable: sin evidencia, se valida en entrevistas.",
+  "Al menos 2 o 3 bancos avisan por email con firma DKIM: sin evidencia, se prueba en las semanas 1 a 4.",
+  "Comercios aceptan reenvío de avisos y clientes un código de referencia opcional.",
+  "Precio, tamaño de mercado y meta de 300 comercios son hipótesis; sin contactos para el canal ni el piloto.",
+  "No mueve dinero ni inicia pagos: no requiere habilitación del BCU."
+ ],
+ "evidencias": [
+  "F-fintech-seguros-005",
+  "F-fintech-seguros-002",
+  "F-comercio-retail-006",
+  "F-fintech-seguros-003",
+  "F-comercio-retail-008",
+  "F-comercio-retail-007"
+ ]
+}

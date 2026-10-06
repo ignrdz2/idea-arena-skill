@@ -1,0 +1,8 @@
+{
+  "grupos": [["i006", "i010"], ["i002"], ["i007"]],
+  "motivos": [
+    "i006 e i010: el mismo usuario (corredor de seguros independiente o corretaje chico en Uruguay, que paga) y el mismo problema (comparar a mano cotizaciones de varias aseguradoras y seguir vencimientos). La solución es esencialmente igual: extracción con LLM a un esquema común, comparador, alertas de renovación, RAG que cita la cláusula y resumen simple para el cliente.",
+    "i002 queda sola: confirma en segundos cada cobro por transferencia (avisos por email del banco con DKIM) y cuadra la caja diaria. i007 apunta a otra cosa: auditar cada mes el costo efectivo de comisiones por canal y simular planes. Mismo tipo de comercio, pero distinto problema y tipo de solución.",
+    "i007 queda sola: es un auditor mensual de liquidaciones y comisiones (POS, MercadoPago, transferencias) con simulador de canal y plazo, que paga el comercio o su contador; no comparte problema ni solución con las ideas de seguros ni con la confirmación en tiempo real de i002."
+  ]
+}

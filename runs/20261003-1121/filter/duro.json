@@ -1,0 +1,112 @@
+{
+ "ideas": {
+  "i001": {
+   "titulo": "Alertas satelitales de pasturas por WhatsApp para ganaderos chicos y medianos",
+   "pasa": false,
+   "palabras": 695,
+   "costo_anual_usd": 188.98,
+   "problemas": [
+    {
+     "codigo": "costo_fuente",
+     "detalle": "la fuente de precio de 'WhatsApp, plantillas de utilidad' no existe: https://developers.facebook.com/docs/whatsapp/pricing"
+    },
+    {
+     "codigo": "costo_fuente",
+     "detalle": "la fuente de precio de 'Gemini 3.1 Flash-Lite' no existe: https://ai.google.dev/gemini-api/docs/pricing"
+    }
+   ]
+  },
+  "i002": {
+   "titulo": "Cobros por transferencia confirmados al instante para microcomercios",
+   "pasa": true,
+   "palabras": 685,
+   "costo_anual_usd": 113.08,
+   "problemas": []
+  },
+  "i003": {
+   "titulo": "Comparador de pólizas con citas verificables para corredores de seguros",
+   "pasa": false,
+   "palabras": 690,
+   "costo_anual_usd": 136,
+   "problemas": [
+    {
+     "codigo": "costo_fuente",
+     "detalle": "la fuente de precio de 'API Gemini 3.1 Flash-Lite y Embedding 2' no existe: https://ai.google.dev/gemini-api/docs/pricing"
+    }
+   ]
+  },
+  "i004": {
+   "titulo": "Cuaderno de campo por voz para el registro de aplicaciones fitosanitarias",
+   "pasa": false,
+   "palabras": 656,
+   "costo_anual_usd": 171.58,
+   "problemas": [
+    {
+     "codigo": "costo_fuente",
+     "detalle": "la fuente de precio de 'API de Gemini, nivel pago' no existe: https://ai.google.dev/gemini-api/docs/pricing"
+    }
+   ]
+  },
+  "i005": {
+   "titulo": "Control de caja desde la foto del cuaderno para almacenes y comercios chicos",
+   "pasa": false,
+   "palabras": 694,
+   "costo_anual_usd": 132.63,
+   "problemas": [
+    {
+     "codigo": "costo_fuente",
+     "detalle": "la fuente de precio de 'Gemini 3.1 Flash-Lite, nivel pago' no existe: https://ai.google.dev/gemini-api/docs/pricing"
+    },
+    {
+     "codigo": "costo_fuente",
+     "detalle": "la fuente de precio de 'WhatsApp, plantillas de utilidad' no existe: https://developers.facebook.com/docs/whatsapp/pricing"
+    }
+   ]
+  },
+  "i006": {
+   "titulo": "Asistente de cartera con IA para corredores de seguros independientes",
+   "pasa": true,
+   "palabras": 697,
+   "costo_anual_usd": 182.33,
+   "problemas": []
+  },
+  "i007": {
+   "titulo": "Auditor de comisiones de cobro para pequeños comercios",
+   "pasa": true,
+   "palabras": 693,
+   "costo_anual_usd": 111.08,
+   "problemas": []
+  },
+  "i008": {
+   "titulo": "Copiloto de cartera para corredores de seguros en Uruguay",
+   "pasa": false,
+   "palabras": 604,
+   "costo_anual_usd": 179.08,
+   "problemas": [
+    {
+     "codigo": "costo_fuente",
+     "detalle": "la fuente de precio de 'API de Gemini, nivel pago' no existe: https://ai.google.dev/gemini-api/docs/pricing"
+    }
+   ]
+  },
+  "i009": {
+   "titulo": "Conciliación de cobros multicanal con consultas en lenguaje natural para microcomercios",
+   "pasa": false,
+   "palabras": 687,
+   "costo_anual_usd": 150,
+   "problemas": [
+    {
+     "codigo": "costo_fuente",
+     "detalle": "la fuente de precio de 'API Gemini 3.1 Flash-Lite y Embedding 2' no existe: https://ai.google.dev/gemini-api/docs/pricing"
+    }
+   ]
+  },
+  "i010": {
+   "titulo": "Comparador de cotizaciones y renovaciones para corredores de seguros",
+   "pasa": true,
+   "palabras": 690,
+   "costo_anual_usd": 176.08,
+   "problemas": []
+  }
+ }
+}

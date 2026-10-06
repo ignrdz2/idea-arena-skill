@@ -1,0 +1,21 @@
+{
+ "seleccionadas": [
+  "i002",
+  "i010",
+  "i007"
+ ],
+ "fusionadas": [
+  {
+   "queda": "i010",
+   "fuera": [
+    "i006"
+   ]
+  }
+ ],
+ "sector_principal": {
+  "i002": "comercio-retail",
+  "i010": "fintech-seguros",
+  "i007": "comercio-retail"
+ },
+ "fuera_por_cupo": []
+}

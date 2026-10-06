@@ -1,0 +1,98 @@
+{
+ "id": "i010",
+ "titulo": "Comparador de cotizaciones y renovaciones para corredores de seguros",
+ "problema": "Corredores y aseguradoras dedican horas manuales a emails, pólizas y contratos al cotizar, renovar y gestionar siniestros; una startup fundada por uruguayos levantó US$ 1 millón para automatizarlo, pero opera sobre todo en España, no en Uruguay (F-fintech-seguros-008). El mercado uruguayo emitió unos US$ 2.889 millones en primas en 2024 (+25,8% real, F-fintech-seguros-001), y una aseguradora grande busca el interior y segmentos no alcanzados (F-fintech-seguros-006). El corredor chico pide cotización a varias aseguradoras, compara a mano formatos distintos y sigue vencimientos en planillas; un error o un olvido puede costarle el cliente.",
+ "usuario": "Corredores independientes y corretajes de 1 a 10 personas en Uruguay, empezando por automóvil. Paga el corretaje.",
+ "solucion": "Web donde el corredor sube las cotizaciones (PDF o correo) de varias aseguradoras para un mismo riesgo. Extrae premio, deducibles y coberturas a un esquema común, enlaza cada dato con su fragmento de origen y arma una comparación en lenguaje simple para el cliente. Responde preguntas sobre condiciones generales citando la cláusula. Importa la cartera, avisa 30 días antes de cada vencimiento y precarga la comparación de renovación.",
+ "mvp": {
+  "semestre_1": [
+   "Set etiquetado de 80 cotizaciones de automóvil anonimizadas, de al menos 3 aseguradoras.",
+   "Extracción con LLM y reglas, con enlace de cada dato a su origen.",
+   "Entrega: comparación y PDF para el cliente, con exactitud por campo medida."
+  ],
+  "semestre_2": [
+   "RAG sobre condiciones generales con cita de cláusula y exactitud evaluada.",
+   "Cartera, alertas de vencimiento y renovación precargada.",
+   "Cuentas por corretaje con varios usuarios.",
+   "Entrega: piloto de 6 semanas con 3 a 5 corredores, midiendo tiempo por comparación y disposición a pagar."
+  ]
+ },
+ "stack": [
+  "Python",
+  "FastAPI",
+  "PostgreSQL",
+  "Qdrant con FastEmbed local",
+  "React",
+  "Claude Haiku 4.5",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 176.08,
+  "items": [
+   {
+    "concepto": "Servidor Lightsail 2 GB y snapshots",
+    "usd_anual": 125,
+    "supuesto": "USD 12 por mes (2 GB) de marzo a diciembre de 2027: USD 120; snapshots de 10 GB a USD 0,05 por GB-mes: USD 5. Desarrollo local en Docker; embeddings locales.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API Claude Haiku 4.5",
+    "usd_anual": 40,
+    "supuesto": "USD 1 y 5 por millón de tokens de entrada y salida, Batch a mitad. 3.800 extracciones (5.000 y 1.000 tokens, 3.200 por Batch) y 2.000 consultas RAG (6.000 y 400): USD 38, redondeado a 40.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 11.08,
+    "supuesto": "Un año a USD 11,08.",
+    "fuente_precio_url": "https://porkbun.com/products/domains"
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Foliume",
+   "evidencia_ids": [
+    "F-fintech-seguros-008"
+   ],
+   "hueco": "Opera sobre todo en España, no en Uruguay; podría entrar."
+  },
+  {
+   "nombre": "ProtectU",
+   "evidencia_ids": [
+    "F-fintech-seguros-007"
+   ],
+   "hueco": "Billetera para el asegurado; la ficha no la describe como herramienta del corredor."
+  },
+  {
+   "nombre": "Insurtech uruguayas",
+   "evidencia_ids": [
+    "F-fintech-seguros-009"
+   ],
+   "hueco": "Son 21 registradas y la ficha no detalla productos: hay que relevarlas en 2026."
+  }
+ ],
+ "monetizacion": "Paga el corretaje: USD 35 por usuario por mes, con 30 días de prueba. Meta al segundo año: 60 usuarios, USD 25.200 anuales. Venta directa y por referidos; ofrecerlo a la red de corredores de una aseguradora es una extensión.",
+ "riesgos": [
+  "Un error en un premio o deducible daña la confianza; el corredor confirma cada dato con su fuente.",
+  "El set depende de que corredores compartan cotizaciones.",
+  "Datos de asegurados enviados a una API en el exterior: consentimiento y seudonimización (Ley 18.331).",
+  "Foliume, otra insurtech o una aseguradora lanza algo similar."
+ ],
+ "supuestos": [
+  "Los corredores comparan a mano, siguen vencimientos en planillas y pierden clientes por errores u olvidos (validar en entrevistas).",
+  "Las horas perdidas en Uruguay no están en las fichas; la de horas describe clientes europeos.",
+  "Número de corredores independientes, precio de USD 35 y meta de 60 usuarios: hipótesis.",
+  "Automóvil es el ramo más cotizado.",
+  "La herramienta no intermedia seguros: no requiere habilitación regulatoria propia.",
+  "Las condiciones generales están disponibles; plan B del set: cotizar vehículos propios en canales públicos de las aseguradoras."
+ ],
+ "evidencias": [
+  "F-fintech-seguros-008",
+  "F-fintech-seguros-001",
+  "F-fintech-seguros-006",
+  "F-fintech-seguros-007",
+  "F-fintech-seguros-009"
+ ]
+}

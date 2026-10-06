@@ -1,0 +1,110 @@
+{
+ "id": "i006",
+ "titulo": "Asistente de cartera con IA para corredores de seguros independientes",
+ "problema": "Corredores y aseguradoras dedican horas manuales a emails, pólizas y contratos; la startup de origen uruguayo que lo automatiza con IA levantó US$ 1 millón, pero opera sobre todo en España, no en Uruguay (F-fintech-seguros-008). El mercado local crece: US$ 2.889 millones en primas en 2024, +25,8% real (F-fintech-seguros-001), y aseguradoras como SURA buscan llegar al interior (F-fintech-seguros-006). El corredor independiente trabaja con varias aseguradoras, cada una con su formato de póliza, y compara coberturas y controla vencimientos a mano.",
+ "usuario": "Corredores de seguros independientes y escritorios de 1 a 5 personas, en especial del interior. Paga el corredor.",
+ "solucion": "Web para el corredor. 1) Carga o reenvío de pólizas y cotizaciones en PDF; un LLM las lleva a un esquema común por ramo (auto y hogar): vigencia, suma asegurada, deducibles, coberturas y prima, con revisión humana de campos dudosos. 2) Cartera con vencimientos y recordatorios de renovación. 3) Comparador de cotizaciones normalizado. 4) Respuestas sobre condiciones generales ('¿cubre granizo?') con RAG que cita la cláusula. 5) Resumen para el cliente en lenguaje simple.",
+ "mvp": {
+  "semestre_1": [
+   "Entrevistas a 10 corredores y 100 pólizas de auto anonimizadas de 4 aseguradoras",
+   "Extractor PDF a JSON con evaluación de precisión por campo",
+   "Cartera con vencimientos y recordatorios",
+   "Demo: 50 pólizas reales procesadas con métricas"
+  ],
+  "semestre_2": [
+   "Ramo hogar, comparador y RAG con cita de cláusula",
+   "Resúmenes para el cliente y revisión humana",
+   "Piloto de 8 semanas con 3 o 4 corredores, midiendo tiempo por renovación",
+   "Business case con precio validado"
+  ]
+ },
+ "stack": [
+  "Python",
+  "FastAPI",
+  "PostgreSQL",
+  "Qdrant",
+  "PyMuPDF",
+  "Claude Haiku 4.5 (API y Batch)",
+  "multilingual-e5-small (local)",
+  "React",
+  "Docker",
+  "AWS Lightsail",
+  "Amazon SES"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 182.33,
+  "items": [
+   {
+    "concepto": "AWS Lightsail 2 GB",
+    "usd_anual": 120,
+    "supuesto": "USD 12 por mes, marzo a diciembre de 2027, sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "Claude Haiku 4.5 Batch (extracción)",
+    "usd_anual": 20.25,
+    "supuesto": "600 pólizas x 3 pasadas: 27 M tokens de entrada a USD 0,50/M y 2,7 M de salida a USD 2,50/M.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "Claude Haiku 4.5 (consultas)",
+    "usd_anual": 30,
+    "supuesto": "4.000 consultas: 20 M tokens de entrada a USD 1/M y 2 M de salida a USD 5/M.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "Amazon SES (recordatorios)",
+    "usd_anual": 1,
+    "supuesto": "10.000 emails a USD 0,10 cada 1.000.",
+    "fuente_precio_url": "https://aws.amazon.com/ses/pricing/"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 11.08,
+    "supuesto": "Un año de registro.",
+    "fuente_precio_url": "https://porkbun.com/products/domains"
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Foliume",
+   "evidencia_ids": [
+    "F-fintech-seguros-008"
+   ],
+   "hueco": "Automatiza cotizaciones y renovaciones con IA, pero no opera en Uruguay."
+  },
+  {
+   "nombre": "ProtectU",
+   "evidencia_ids": [
+    "F-fintech-seguros-007"
+   ],
+   "hueco": "Billetera de seguros para el asegurado final, no para la cartera del corredor."
+  }
+ ],
+ "monetizacion": "Paga el corredor: USD 25 por mes hasta 300 pólizas y USD 49 hasta 1.000 pólizas y 3 usuarios, con 30 días gratis. Con 100 corredores en el plan menor: USD 2.500 por mes. Canal: asociaciones de corredores, referidos y demos en el interior.",
+ "riesgos": [
+  "Errores en suma asegurada o deducible: revisión humana obligatoria.",
+  "PDFs escaneados o formatos dispares bajan la precisión.",
+  "21 insurtechs en Uruguay (F-fintech-seguros-009); alguna puede hacerlo.",
+  "Aseguradoras que transforman su operación y buscan el interior (F-fintech-seguros-006) podrían saltear al corredor.",
+  "Datos de asegurados: contrato de encargado, registro ante la URCDP y transferencia internacional al proveedor del LLM (Ley 18.331).",
+  "Respuesta de cobertura errónea: se cita la cláusula y decide el corredor."
+ ],
+ "supuestos": [
+  "Los corredores uruguayos trabajan con varias aseguradoras y comparan coberturas y vencimientos a mano; F-fintech-seguros-008 no es dato uruguayo.",
+  "Cantidad de corredores independientes: no está en las fichas.",
+  "Aceptan subir pólizas de clientes a la nube.",
+  "Pólizas mayormente en PDF con texto; el corredor tiene las condiciones generales.",
+  "Herramienta para corredores habilitados; no intermedia seguros ni requiere habilitación.",
+  "Precios y meta de 100 corredores son hipótesis; sin contactos en el sector.",
+  "Puede haber herramientas locales que las fichas no muestran."
+ ],
+ "evidencias": [
+  "F-fintech-seguros-008",
+  "F-fintech-seguros-001",
+  "F-fintech-seguros-006",
+  "F-fintech-seguros-007",
+  "F-fintech-seguros-009"
+ ]
+}

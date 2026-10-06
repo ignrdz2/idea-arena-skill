@@ -1,0 +1,93 @@
+{
+ "id": "i008",
+ "titulo": "Copiloto de cartera para corredores de seguros en Uruguay",
+ "problema": "Corredores y aseguradoras dedican horas manuales a emails, pólizas, cotizaciones y renovaciones; una startup levantó US$ 1 millón para automatizarlo, pero opera en España, Alemania y Portugal, no en Uruguay (F-fintech-seguros-008). El mercado local creció 25,8% real en 2024, con unos US$ 2.889 millones en primas (F-fintech-seguros-001). El corredor chico arma cartera, vencimientos y comparativas a mano sobre el PDF de cada aseguradora.",
+ "usuario": "Corredores independientes y oficinas de corretaje chicas en Uruguay. Paga la oficina.",
+ "solucion": "Web donde el corredor sube pólizas y cotizaciones en PDF. Un LLM extrae vencimiento, prima, coberturas y deducibles y arma la cartera; avisa vencimientos y redacta la renovación con enlace de WhatsApp; compara cotizaciones en lenguaje simple y responde preguntas sobre la cartera (Text-to-SQL) y las condiciones generales (RAG). Adaptado a Uruguay: aseguradoras locales, pesos y dólares, cobro por transferencia instantánea (F-fintech-seguros-002). No cotiza ni intermedia: el corredor valida todo.",
+ "mvp": {
+  "semestre_1": [
+   "Extracción de PDF de auto y hogar de 3 aseguradoras, con revisión humana",
+   "Cartera con alertas de vencimiento",
+   "Entrega 1: 50 pólizas extraídas con precisión medida por campo"
+  ],
+  "semestre_2": [
+   "Comparador de cotizaciones y borradores de renovación",
+   "Asistente Text-to-SQL y RAG",
+   "Entrega 2: piloto con 2 o 3 corredores, horas ahorradas y business case"
+  ]
+ },
+ "stack": [
+  "Python",
+  "FastAPI",
+  "PostgreSQL",
+  "Qdrant",
+  "React",
+  "Gemini 2.5 Flash",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 179.08,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail",
+    "usd_anual": 144,
+    "supuesto": "USD 12 por mes (2 GB, 2 vCPU), 12 meses de 2027, todo en Docker; sin créditos gratuitos.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API de Gemini, nivel pago",
+    "usd_anual": 24,
+    "supuesto": "3.000 PDF de 10 páginas (258 tokens por página) más pruebas: 35M tokens de entrada a USD 0,30 por millón, 5M de salida a 2,50 y 5M de embeddings a 0,20.",
+    "fuente_precio_url": "https://ai.google.dev/gemini-api/docs/pricing"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 11.08,
+    "supuesto": "1 dominio por un año para la demo con HTTPS.",
+    "fuente_precio_url": "https://porkbun.com/tld/com"
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Foliume",
+   "evidencia_ids": [
+    "F-fintech-seguros-008"
+   ],
+   "hueco": "Opera en España, Alemania y Portugal, no en Uruguay."
+  },
+  {
+   "nombre": "ProtectU",
+   "evidencia_ids": [
+    "F-fintech-seguros-007"
+   ],
+   "hueco": "Billetera para el asegurado; la ficha no muestra gestión de cartera para corredores."
+  }
+ ],
+ "monetizacion": "Paga la oficina: USD 25 por mes por corredor hasta 500 pólizas, con 30 días de prueba. Canal: venta directa y alianzas con aseguradoras que invierten en transformación, como SURA (F-fintech-seguros-006). Con 40 corredores, unos USD 12.000 por año.",
+ "riesgos": [
+  "Errores de extracción en vencimientos o deducibles: revisión humana y métricas por campo.",
+  "Datos de asegurados: encargado de tratamiento bajo la Ley 18.331, con contrato y cifrado.",
+  "Foliume u otra de las 21 insurtech uruguayas puede entrar (F-fintech-seguros-009).",
+  "Baja disposición a pagar de corredores chicos."
+ ],
+ "supuestos": [
+  "El corredor chico uruguayo arma cartera y comparativas a mano y pierde horas semanales en eso; se valida con 10 entrevistas antes de diciembre de 2026.",
+  "Que aseguradoras como SURA quieran aliarse como canal es una hipótesis.",
+  "Hay suficientes corredores independientes; las fichas no dan su número.",
+  "El equipo puede contactarlos; no hay contactos registrados.",
+  "No requiere habilitación del BCU porque no intermedia.",
+  "Las aseguradoras no ofrecen APIs abiertas; se trabaja sobre PDF.",
+  "El precio de USD 25 no tiene referencia en las fichas.",
+  "Las fichas no muestran software local de cartera para corredores; no está verificado que no exista."
+ ],
+ "evidencias": [
+  "F-fintech-seguros-008",
+  "F-fintech-seguros-001",
+  "F-fintech-seguros-002",
+  "F-fintech-seguros-006",
+  "F-fintech-seguros-007",
+  "F-fintech-seguros-009"
+ ]
+}

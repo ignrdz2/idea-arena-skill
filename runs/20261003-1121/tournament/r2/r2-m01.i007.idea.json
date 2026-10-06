@@ -1,0 +1,100 @@
+{
+ "id": "i007",
+ "titulo": "Auditor de comisiones de cobro para pequeños comercios",
+ "problema": "Un comercio chico uruguayo paga por venta con tarjeta entre 1,15% (débito) y 3,55% (crédito), más $ 465 a $ 1.500 mensuales más IVA de POS; con MercadoPago, 4,99% a 5,99% según el plazo de acreditación (F-fintech-seguros-005, nota de 2022). Con $ 200.000 mensuales, un punto de plazo son $ 2.000 al mes. Las transferencias instantáneas crecen (F-fintech-seguros-002). Hay unas 188.000 microempresas (F-comercio-retail-002); cuántas cobran con POS o MercadoPago no se sabe: es un techo.",
+ "usuario": "Comercio minorista o gastronómico chico que cobra con POS y MercadoPago. Paga el comercio o, a validar, su estudio contable.",
+ "solucion": "Web donde el comercio o su contador sube cada mes sus liquidaciones y carga una vez su tarifa contratada. Calcula el costo efectivo por canal (comisión, POS e IVA) verificando que las líneas sumen el total, marca cargos sobre la tarifa y simula otro plazo de acreditación o plan, con su efecto en costo y caja. Un LLM propone el mapeo de formatos nuevos y un lector determinístico lo aplica.",
+ "mvp": {
+  "semestre_1": [
+   "Lectores de MercadoPago y un adquirente de POS, según los archivos que consigan las entrevistas de 2026.",
+   "Datos: liquidaciones anonimizadas; plan B, sintéticas con las tarifas de la ficha y cuentas propias.",
+   "Costo efectivo mensual por canal con control de totales.",
+   "Entrega: panel web con 3 liquidaciones validadas a mano."
+  ],
+  "semestre_2": [
+   "Mapeo asistido por LLM para formatos nuevos, con exactitud por campo medida.",
+   "Alertas de cargos sobre la tarifa cargada.",
+   "Simulador de plazo y plan, con efecto en caja.",
+   "Entrega: piloto de 6 semanas con hasta 10 comercios, midiendo ahorro y disposición a pagar."
+  ]
+ },
+ "stack": [
+  "Python",
+  "FastAPI",
+  "PostgreSQL",
+  "React",
+  "pdfplumber",
+  "Claude Haiku 4.5",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 111.08,
+  "items": [
+   {
+    "concepto": "Servidor Lightsail 1 GB y snapshots",
+    "usd_anual": 75,
+    "supuesto": "USD 7 por mes de marzo a diciembre de 2027: USD 70; snapshots de 10 GB a USD 0,05 por GB-mes: USD 5.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API Claude Haiku 4.5",
+    "usd_anual": 25,
+    "supuesto": "USD 1 y 5 por millón de tokens (entrada y salida). 1.500 mapeos y 300 reportes: USD 22,35, redondeado a 25.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 11.08,
+    "supuesto": "Un año a USD 11,08.",
+    "fuente_precio_url": "https://porkbun.com/products/domains"
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "MercadoPago",
+   "evidencia_ids": [
+    "F-fintech-seguros-005"
+   ],
+   "hueco": "Vende su propio cobro; no compara canales como tercero neutral."
+  },
+  {
+   "nombre": "Totalnet",
+   "evidencia_ids": [
+    "F-comercio-retail-008"
+   ],
+   "hueco": "Vende POS con cobros, stock y fidelización; no es neutral entre proveedores."
+  },
+  {
+   "nombre": "YoFacturo",
+   "evidencia_ids": [
+    "F-comercio-retail-007"
+   ],
+   "hueco": "Facturación, POS e inventario; sin auditoría de comisiones en la ficha. Podría copiarlo: la defensa es la neutralidad."
+  }
+ ],
+ "monetizacion": "Paga el comercio: primer mes gratis y luego $ 390 por mes más IVA, menos que un alquiler de POS (F-fintech-seguros-005). Estudios contables, canal a validar: $ 2.900 por mes hasta 15 comercios, unos $ 193 cada uno. Meta al segundo año, hipótesis: 300 comercios, mitad directos y mitad por estudios, unos $ 1,05 millones anuales (solo directos $ 1,4; solo estudios $ 0,7).",
+ "riesgos": [
+  "Comercios reacios a compartir liquidaciones: el plan B son datos sintéticos.",
+  "Cambios de formato sin aviso; el control de totales los detecta.",
+  "Ahorro menor al precio: el producto no se sostendría.",
+  "Un proveedor o software contable lanza su comparador.",
+  "Datos de comercios unipersonales: Ley 18.331."
+ ],
+ "supuestos": [
+  "Las tarifas de la ficha son de 2022 y de prensa; el producto usa la tarifa cargada.",
+  "Los comercios no calculan su costo por canal y comparten liquidaciones (validar en 2026).",
+  "El ahorro viene de plazo, plan y cargos de más, no de mover ventas.",
+  "Precios, canal contable, meta y cuántas microempresas usan POS: hipótesis sin señal de pago en las fichas.",
+  "El costo de cobrar por transferencia no está en las fichas ni en el simulador.",
+  "Las fichas no muestran un comparador neutral; no se afirma que no exista."
+ ],
+ "evidencias": [
+  "F-fintech-seguros-005",
+  "F-fintech-seguros-002",
+  "F-comercio-retail-002",
+  "F-comercio-retail-007",
+  "F-comercio-retail-008"
+ ]
+}

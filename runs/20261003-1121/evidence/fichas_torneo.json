@@ -1,0 +1,62 @@
+{
+ "fichas": [
+  {
+   "id": "F-defensa-r1-m01-i010-001",
+   "sector": "fintech-seguros",
+   "hallazgo": "El ramo automóviles del mercado asegurador uruguayo emitió USD 270,2 millones de primas a junio de 2025 (+1% interanual, +8,8% en pesos) y representa el 19,6% de la cartera total.",
+   "source_url": "https://boletines.latinoinsurance.com/mercado-para-el-ramo-autos-subio-1-en-junio-2025-8-8-en-pesos-0-5-visto-12meses",
+   "source_title": "Mercado para el ramo Autos subió 1% en junio 2025, (+8.8% en Pesos), +0.5% visto 12meses",
+   "source_date": "2025-08-21",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-03T12:00:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-03T14:09:58",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-ataque-r2-m01-i010-competidor-001",
+   "sector": "transversal",
+   "hallazgo": "Nexura es un software para corredores de seguros en Uruguay con multicotizador entre aseguradoras, avisos automaticos de renovacion por WhatsApp y carga de polizas por OCR, desde USD 49 por mes. Figuro y AdminSE aparecen como alternativas.",
+   "source_url": "https://nexuraseguros.com/blog/software-corredores-seguros-uruguay-2026",
+   "source_title": "Software para corredores de seguros en Uruguay 2026",
+   "source_date": "2026",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "baja",
+   "retrieved_at": "2026-10-03T14:30:00",
+   "extracto": "multicotizador para comparar precios entre aseguradoras",
+   "competidor": "Nexura",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-03T14:14:47",
+    "extracto": "no_encontrado"
+   }
+  },
+  {
+   "id": "F-ataque-r2-m01-i010-competidor-002",
+   "sector": "transversal",
+   "hallazgo": "Softseguros declara mas de 900 agencias de seguros en Latinoamerica y ofrece multicotizador de autos que cotiza en varias aseguradoras a la vez y compara en un PDF, agenda de vencimientos y avisos automaticos por WhatsApp.",
+   "source_url": "https://softseguros.com/",
+   "source_title": "Softseguros",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "LATAM",
+   "confianza": "media",
+   "retrieved_at": "2026-10-03T14:31:00",
+   "extracto": "Cotiza en varias aseguradoras a la vez y compara en un PDF",
+   "competidor": "Softseguros",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-03T14:14:47",
+    "extracto": "encontrado"
+   }
+  }
+ ]
+}

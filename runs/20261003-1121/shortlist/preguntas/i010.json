@@ -1,0 +1,30 @@
+{
+  "idea": "i010",
+  "preguntas": [
+    {
+      "pregunta": "La última vez que cotizaste un seguro de automóvil con más de una aseguradora, ¿por qué vía te llegó cada cotización (portal, multicotizador, PDF por correo, WhatsApp u otra) y qué hiciste con ellas, paso a paso, hasta mandarle algo al cliente?",
+      "a_quien": "Corredor de seguros independiente en Uruguay que vende seguros de automóvil con varias aseguradoras",
+      "que_valida": "Supuesto: los corredores reciben cotizaciones en PDF o correo y las comparan a mano. Ataque en pie (ronda 2): no resuelve obtener las cotizaciones y los multicotizadores existentes ya comparan en un PDF."
+    },
+    {
+      "pregunta": "En el último mes, ¿cuántas comparaciones de seguro de automóvil entre aseguradoras armaron en el corretaje, quién las hizo y cuánto tiempo llevó la más reciente desde que llegaron las cotizaciones hasta que el cliente recibió la comparación?",
+      "a_quien": "Dueño de un corretaje de seguros de 1 a 10 personas en Montevideo con cartera de automóvil",
+      "que_valida": "Cuánto cuesta hoy el problema: horas y volumen de comparaciones, hoy hipótesis sin dato local. Ataque en pie (ronda 1): horas ahorradas sin medir frente a una alternativa de costo cero."
+    },
+    {
+      "pregunta": "¿Cuándo fue la última vez que un cliente tuvo un siniestro o un reclamo en el que una cobertura, un deducible o una exclusión no era lo que había entendido al contratar? ¿Qué pasó, cómo se detectó y qué le costó al corretaje (tiempo, devoluciones, pérdida del cliente)?",
+      "a_quien": "Corredor de seguros independiente o dueño de un corretaje pequeño en Uruguay con al menos un año de cartera de automóvil",
+      "que_valida": "Ataque en pie (rondas 1 y 2): el dolor del corredor uruguayo no tiene ficha local. Supuesto: comparar coberturas y exclusiones a mano produce errores con un costo real para el corretaje."
+    },
+    {
+      "pregunta": "En la última renovación de una póliza de automóvil que gestionaste, ¿cómo supiste qué había cambiado frente a la póliza vigente (premio, deducible, coberturas, exclusiones), cuánto tiempo te llevó revisarlo y cómo se lo comunicaste al cliente?",
+      "a_quien": "Empleado administrativo o corredor de un corretaje de seguros pequeño en Uruguay que gestiona renovaciones de automóvil",
+      "que_valida": "Supuesto: revisar a mano los cambios de una renovación contra la póliza vigente es un dolor. Riesgo declarado: si las aseguradoras abren portal o API, el valor que queda es comparar cláusulas y renovaciones."
+    },
+    {
+      "pregunta": "¿Qué software pagan hoy en el corretaje para cotizar, gestionar pólizas o avisar vencimientos, quién decidió contratarlo, cuánto pagan por mes y qué pasó la última vez que evaluaron, contrataron o dieron de baja una herramienta de ese tipo?",
+      "a_quien": "Dueño de un corretaje de seguros de 1 a 10 personas en Uruguay que decide las compras de software",
+      "que_valida": "Quién decide y paga, y cuánto: precio hipotético de USD 25 por mes frente a Nexura desde USD 49. Ataque en pie (rondas 1 y 2): diferenciación sin barrera frente a herramientas ya instaladas como Nexura o Softseguros."
+    }
+  ]
+}

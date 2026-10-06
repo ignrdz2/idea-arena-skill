@@ -1,0 +1,67 @@
+{
+ "evaluaciones": [
+  {
+   "id": "i002",
+   "veredicto": "viable_con_recorte",
+   "horas_estimadas": 1170,
+   "motivo": "Unas 1.170 horas: ingesta de email con Cloudflare Worker y verificación DKIM 80, parsers de 3 bancos 60, backend con pedidos de cobro y cruce por monto y referencia 90, PWA con push 110, parser de respaldo con LLM 50, conciliación por extracto CSV 60, cierre de caja y reporte de comisiones 70, integración y pruebas 90, despliegue 40, entrevistas y relevamiento de avisos 60, piloto de 8 semanas 130, business case y registro URCDP 65, documentación de tesis 180, gestión y guía de reenvío para comercios 85. Supera apenas las 1.152 horas declaradas (36 por semana en 32 semanas): entra en el rango, sin margen. El riesgo mayor es que el núcleo depende de avisos bancarios por email con DKIM, monto y referencia, un supuesto sin evidencia.",
+   "recorte_sugerido": "Pasar el parser de respaldo con LLM a opcional (con 3 parsers deterministas y una alerta de formato fallido alcanza para el piloto) y reducir el piloto a 5 o 6 comercios durante 6 semanas. Ahorra unas 100 horas y deja el total cerca de 1.070. Si el relevamiento del semestre 1 muestra que menos de 3 bancos avisan por email con monto y referencia, la conciliación por extracto CSV pasa a ser el camino principal y la confirmación instantánea queda para los bancos que sí avisan.",
+   "dependencias_externas": [
+    "Que al menos 3 bancos envíen avisos por email de transferencias recibidas, firmados con DKIM y con monto y referencia (supuesto sin evidencia).",
+    "Demora real de esos avisos, que define si la confirmación llega en segundos.",
+    "Que el proveedor de email del comercio permita el reenvío automático sin romper la firma DKIM.",
+    "Que el banco del cliente que paga permita escribir el código de referencia y que ese texto aparezca en el aviso.",
+    "Formato de los extractos CSV de cada banco, que puede cambiar sin aviso.",
+    "Soporte de notificaciones push de PWA en los celulares de los comercios.",
+    "8 a 10 comercios del interior para el piloto; la tabla de contactos del equipo está vacía.",
+    "Registro de la base ante la URCDP y contrato de encargado (Ley 18.331).",
+    "API de Anthropic para el parser de respaldo (precio y disponibilidad)."
+   ]
+  },
+  {
+   "id": "i006",
+   "veredicto": "viable_con_recorte",
+   "horas_estimadas": 1300,
+   "motivo": "Unas 1.300 horas: obtener, anonimizar y etiquetar 100 pólizas de auto 100, extractor PDF a JSON y evaluación por campo 105, backend con carga y reenvío por email 100, frontend 80, cartera con vencimientos y recordatorios 50, ramo hogar (esquema, etiquetado y ajuste) 70, comparador 60, RAG con cita de cláusula y su evaluación 110, revisión humana de campos dudosos 50, resúmenes para el cliente 25, integración y pruebas 90, despliegue 40, entrevistas 35, piloto de 8 semanas 80, business case y cumplimiento de la Ley 18.331 70, documentación de tesis 180, gestión 55. Supera en 13% las 1.152 horas declaradas (36 por semana en 32 semanas): entra en el rango (hasta 1.536), sin margen. Dependencia crítica: 100 pólizas reales de 4 aseguradoras sin contactos en el sector.",
+   "recorte_sugerido": "Dejar el ramo hogar fuera del MVP (solo auto), limitar el RAG a las condiciones generales de auto de las 4 aseguradoras del semestre 1 y pasar los resúmenes para el cliente a opcional. Ahorra unas 130 horas y deja el total cerca de 1.170. Si no se consiguen 100 pólizas reales en el semestre 1, bajar a 40 o 50 y medir la precisión por campo sobre esas, sin frenar el resto del cronograma.",
+   "dependencias_externas": [
+    "100 pólizas reales de auto de 4 aseguradoras, que dependen de corredores dispuestos a compartirlas; la tabla de contactos del equipo está vacía.",
+    "Acceso a las condiciones generales de cada aseguradora en un formato procesable para el RAG.",
+    "Formato de los PDF de cada aseguradora, que puede cambiar o venir escaneado.",
+    "3 o 4 corredores para el piloto de 8 semanas, sin contactos identificados.",
+    "Contrato de encargado, registro ante la URCDP y transferencia internacional de datos al proveedor del LLM (Ley 18.331).",
+    "API de Anthropic para extracción y consultas (precio y disponibilidad)."
+   ]
+  },
+  {
+   "id": "i007",
+   "veredicto": "viable_con_recorte",
+   "horas_estimadas": 1120,
+   "motivo": "Unas 1.120 horas: entrevistas y obtención de liquidaciones de 5 comercios 65, modelo de datos y lectores de MercadoPago y de un adquirente de POS 130, costo por canal con control de totales 40, backend y carga de archivos 70, panel web 80, validación manual de 3 comercios 25, mapeo asistido por LLM con exactitud por campo 110, alertas sobre tarifa contratada 40, simulador con efecto en caja 70, integración y pruebas 80, despliegue 35, piloto de 6 semanas 90, business case y cumplimiento de la Ley 18.331 60, documentación de tesis 180, gestión 50. Casi igual a las 1.152 horas declaradas (36 por semana en 32 semanas): entra, sin margen. Riesgo: conseguir liquidaciones sin contactos; 6 semanas de piloto dan 1 o 2 liquidaciones por comercio, poco para medir ahorro real.",
+   "recorte_sugerido": "Limitar el simulador a cambios de plan y de plazo de acreditación dentro de los 2 proveedores ya leídos, sin simular el traspaso de ventas entre canales (el panel ya muestra el costo por canal), y medir en el piloto el ahorro estimado y la disposición a pagar, no el ahorro realizado. Ahorra unas 40 horas y deja margen para imprevistos.",
+   "dependencias_externas": [
+    "Liquidaciones reales de 5 comercios en el semestre 1 y de 10 en el piloto, que dependen de que las compartan; la tabla de contactos del equipo está vacía.",
+    "Formato de las liquidaciones de MercadoPago y del adquirente de POS elegido, que puede cambiar sin aviso.",
+    "Tarifas vigentes de cada proveedor para el simulador y las alertas (las de la ficha son de 2022) y tarifa contratada declarada por cada comercio.",
+    "Estudios contables como canal principal, sin contactos identificados.",
+    "Consentimiento e inscripción de la base de datos (Ley 18.331).",
+    "API de Anthropic para el mapeo de formatos nuevos (precio y disponibilidad)."
+   ]
+  },
+  {
+   "id": "i010",
+   "veredicto": "viable_con_recorte",
+   "horas_estimadas": 1330,
+   "motivo": "MVP tal como está escrito: unas 1.330 h. S1: conseguir, anonimizar y etiquetar 80 cotizaciones de 3 aseguradoras (140 h), extracción LLM más reglas desde PDF y correo con enlace al fragmento de origen (200 h), comparación y PDF para el cliente (120 h), medición de exactitud por campo (40 h). S2: RAG con cita de cláusula y su evaluación (150 h), cartera, alertas y renovación precargada (120 h), cuentas multiusuario por corretaje (80 h), piloto de 6 semanas (80 h). Transversal: despliegue, integración y pruebas (130 h), cumplimiento de la Ley 18.331 (30 h), tesis y business case (180 h), coordinación (60 h). Las horas declaradas (16 + 10 + 10 por 32 semanas) dan unas 1.150 h: se pasa en un 15%, entra recortando. El riesgo mayor es el set de 80 cotizaciones, sin contactos en la tabla.",
+   "recorte_sugerido": "Sacar las cuentas multiusuario (un usuario por corretaje en el piloto, unas 80 h); limitar la entrada a PDF y dejar el parseo de correos afuera (unas 30 h); reducir la renovación precargada a reutilizar la última comparación de la póliza más la alerta por email, sin flujo propio (unas 40 h). Queda en unas 1.180 h. Si en marzo de 2027 no hay cotizaciones de corredores, arrancar con el plan B de la idea (cotizar vehículos propios en los canales públicos de las aseguradoras) para no bloquear la entrega del semestre 1.",
+   "dependencias_externas": [
+    "Corredores que compartan cotizaciones reales de automóvil de al menos 3 aseguradoras para el set de 80; la tabla de contactos del equipo está vacía",
+    "De 3 a 5 corredores dispuestos a un piloto de 6 semanas, sin contacto identificado",
+    "Que las condiciones generales de automóvil de las aseguradoras estén disponibles públicamente para el RAG",
+    "Plan B del set: cotizadores públicos de las aseguradoras, cuyos formatos y acceso no controla el equipo",
+    "API de Anthropic (Claude Haiku 4.5): precio y disponibilidad de un tercero, con datos procesados en el exterior",
+    "Cumplimiento de la Ley 18.331: consentimiento y seudonimización de los datos de asegurados antes de enviarlos a la API"
+   ]
+  }
+ ]
+}

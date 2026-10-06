@@ -1,0 +1,230 @@
+{
+ "generador": "g03",
+ "ideas": [
+  {
+   "local_id": "g03-1",
+   "titulo": "Cobros por transferencia confirmados al instante para microcomercios",
+   "problema": "Con tarjeta, el comercio paga de 1,15% a 3,55% por transacción y un alquiler de POS de 465 a 1.500 pesos por mes más IVA; con MercadoPago, de 4,99% a 5,99% (F-fintech-seguros-005). Las transferencias instantáneas crecieron 50% en el segundo semestre de 2025 (F-fintech-seguros-002), pero el almacén que las acepta no confirma al instante la llegada del dinero ni cuadra su caja, que muchos llevan en cuadernos (F-comercio-retail-006). Hay unas 188.000 microempresas con poco asesoramiento financiero (F-comercio-retail-002) y fuera de Montevideo persiste el efectivo (F-fintech-seguros-003).",
+   "usuario": "Dueños de almacenes, kioscos y otros microcomercios del interior: usan y pagan la app.",
+   "solucion": "PWA para el celular del comercio. 1) Pedido de cobro con monto y código de referencia; el cliente paga por transferencia. 2) El comercio reenvía automáticamente los avisos por email de su banco; el sistema verifica la firma DKIM (contra avisos falsos), extrae monto y referencia (parsers por banco, LLM de respaldo) y avisa 'cobro confirmado' en segundos. 3) Cierre de caja diario por medio de cobro, con comisiones pagadas. 4) Sin aviso por email, concilia con el extracto CSV.",
+   "mvp": {
+    "semestre_1": [
+     "Entrevistas a 15 comercios y relevamiento de avisos por email por banco",
+     "Recepción de emails, verificación DKIM y parsers para 3 bancos",
+     "PWA con pedido de cobro y push de confirmación",
+     "Demo: cobro real de punta a punta, con métricas"
+    ],
+    "semestre_2": [
+     "Parser de respaldo con LLM y conciliación por extracto",
+     "Cierre de caja y reporte de comisiones evitadas",
+     "Piloto de 8 semanas con 8 a 10 comercios",
+     "Business case con precio validado y registro ante la URCDP"
+    ]
+   },
+   "stack": [
+    "Python",
+    "FastAPI",
+    "PostgreSQL",
+    "React PWA",
+    "Cloudflare Email Workers",
+    "dkimpy",
+    "Claude Haiku 4.5",
+    "Docker",
+    "AWS Lightsail"
+   ],
+   "costo_infra": {
+    "total_anual_usd": 113.08,
+    "items": [
+     {
+      "concepto": "AWS Lightsail 1 GB",
+      "usd_anual": 84,
+      "supuesto": "USD 7 por mes todo 2027, sin capa gratuita.",
+      "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+     },
+     {
+      "concepto": "Claude Haiku 4.5 (formatos nuevos)",
+      "usd_anual": 18,
+      "supuesto": "5.000 llamadas: 10 M tokens de entrada a USD 1/M y 1,5 M de salida a USD 5/M.",
+      "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+     },
+     {
+      "concepto": "Cloudflare Email Routing",
+      "usd_anual": 0,
+      "supuesto": "Incluido en el plan Free, todo 2027.",
+      "fuente_precio_url": "https://developers.cloudflare.com/email-routing/"
+     },
+     {
+      "concepto": "Cloudflare Worker de reenvío",
+      "usd_anual": 0,
+      "supuesto": "Plan Free: 100.000 solicitudes por día; uso estimado 250 por día.",
+      "fuente_precio_url": "https://developers.cloudflare.com/workers/platform/pricing/"
+     },
+     {
+      "concepto": "Dominio .com",
+      "usd_anual": 11.08,
+      "supuesto": "Un año de registro.",
+      "fuente_precio_url": "https://porkbun.com/products/domains"
+     }
+    ]
+   },
+   "competidores": [
+    {
+     "nombre": "MercadoPago",
+     "evidencia_ids": [
+      "F-fintech-seguros-005"
+     ],
+     "hueco": "Comisión de 4,99% a 5,99% por venta; la transferencia la evita."
+    },
+    {
+     "nombre": "Totalnet",
+     "evidencia_ids": [
+      "F-comercio-retail-008"
+     ],
+     "hueco": "Cobros con stock, pero exige alquilar una terminal POS."
+    },
+    {
+     "nombre": "YoFacturo",
+     "evidencia_ids": [
+      "F-comercio-retail-007"
+     ],
+     "hueco": "Facturación, POS e inventario; la ficha no menciona conciliar transferencias."
+    }
+   ],
+   "monetizacion": "Paga el comercio: 350 pesos por mes más IVA, menos que el alquiler mínimo de un POS (F-fintech-seguros-005). Ejemplo: quien cobra 60.000 pesos mensuales con MercadoPago al 4,99% paga unos 3.000 de comisión; pasando la mitad a transferencias ahorra 1.500. Con 300 comercios: 105.000 pesos por mes. Canal: centros comerciales del interior y contadores.",
+   "riesgos": [
+    "Bancos que no avisan por email, avisan con demora o cambian el formato (mitigación: LLM y alertas).",
+    "Sin firma DKIM del banco no se descarta un aviso falso.",
+    "Bancos o pagos interoperables podrían ofrecer esta confirmación.",
+    "Baja disposición a pagar del microcomercio.",
+    "Datos de pagadores: registro ante la URCDP y contrato de encargado (Ley 18.331)."
+   ],
+   "supuestos": [
+    "Recibir una transferencia no le cuesta al comercio; las comisiones citadas son de 2022.",
+    "Hoy no hay forma simple de confirmar y conciliar transferencias.",
+    "Al menos 3 bancos avisan por email con firma DKIM.",
+    "Clientes y comercios aceptan código de referencia y reenvío de avisos.",
+    "Precio, ejemplo y meta de 300 comercios son hipótesis; sin contactos para el canal.",
+    "No mueve dinero ni inicia pagos: no requiere habilitación del BCU."
+   ],
+   "evidencias": [
+    "F-fintech-seguros-005",
+    "F-fintech-seguros-002",
+    "F-comercio-retail-006",
+    "F-comercio-retail-002",
+    "F-fintech-seguros-003",
+    "F-comercio-retail-008",
+    "F-comercio-retail-007"
+   ]
+  },
+  {
+   "local_id": "g03-2",
+   "titulo": "Asistente de cartera con IA para corredores de seguros independientes",
+   "problema": "Corredores y aseguradoras dedican horas manuales a emails, pólizas y contratos; la startup de origen uruguayo que lo automatiza con IA levantó US$ 1 millón, pero opera sobre todo en España, no en Uruguay (F-fintech-seguros-008). El mercado local crece: US$ 2.889 millones en primas en 2024, +25,8% real (F-fintech-seguros-001), y aseguradoras como SURA buscan llegar al interior (F-fintech-seguros-006). El corredor independiente trabaja con varias aseguradoras, cada una con su formato de póliza, y compara coberturas y controla vencimientos a mano.",
+   "usuario": "Corredores de seguros independientes y escritorios de 1 a 5 personas, en especial del interior. Paga el corredor.",
+   "solucion": "Web para el corredor. 1) Carga o reenvío de pólizas y cotizaciones en PDF; un LLM las lleva a un esquema común por ramo (auto y hogar): vigencia, suma asegurada, deducibles, coberturas y prima, con revisión humana de campos dudosos. 2) Cartera con vencimientos y recordatorios de renovación. 3) Comparador de cotizaciones normalizado. 4) Respuestas sobre condiciones generales ('¿cubre granizo?') con RAG que cita la cláusula. 5) Resumen para el cliente en lenguaje simple.",
+   "mvp": {
+    "semestre_1": [
+     "Entrevistas a 10 corredores y 100 pólizas de auto anonimizadas de 4 aseguradoras",
+     "Extractor PDF a JSON con evaluación de precisión por campo",
+     "Cartera con vencimientos y recordatorios",
+     "Demo: 50 pólizas reales procesadas con métricas"
+    ],
+    "semestre_2": [
+     "Ramo hogar, comparador y RAG con cita de cláusula",
+     "Resúmenes para el cliente y revisión humana",
+     "Piloto de 8 semanas con 3 o 4 corredores, midiendo tiempo por renovación",
+     "Business case con precio validado"
+    ]
+   },
+   "stack": [
+    "Python",
+    "FastAPI",
+    "PostgreSQL",
+    "Qdrant",
+    "PyMuPDF",
+    "Claude Haiku 4.5 (API y Batch)",
+    "multilingual-e5-small (local)",
+    "React",
+    "Docker",
+    "AWS Lightsail",
+    "Amazon SES"
+   ],
+   "costo_infra": {
+    "total_anual_usd": 182.33,
+    "items": [
+     {
+      "concepto": "AWS Lightsail 2 GB",
+      "usd_anual": 120,
+      "supuesto": "USD 12 por mes, marzo a diciembre de 2027, sin capa gratuita.",
+      "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+     },
+     {
+      "concepto": "Claude Haiku 4.5 Batch (extracción)",
+      "usd_anual": 20.25,
+      "supuesto": "600 pólizas x 3 pasadas: 27 M tokens de entrada a USD 0,50/M y 2,7 M de salida a USD 2,50/M.",
+      "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+     },
+     {
+      "concepto": "Claude Haiku 4.5 (consultas)",
+      "usd_anual": 30,
+      "supuesto": "4.000 consultas: 20 M tokens de entrada a USD 1/M y 2 M de salida a USD 5/M.",
+      "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+     },
+     {
+      "concepto": "Amazon SES (recordatorios)",
+      "usd_anual": 1,
+      "supuesto": "10.000 emails a USD 0,10 cada 1.000.",
+      "fuente_precio_url": "https://aws.amazon.com/ses/pricing/"
+     },
+     {
+      "concepto": "Dominio .com",
+      "usd_anual": 11.08,
+      "supuesto": "Un año de registro.",
+      "fuente_precio_url": "https://porkbun.com/products/domains"
+     }
+    ]
+   },
+   "competidores": [
+    {
+     "nombre": "Foliume",
+     "evidencia_ids": [
+      "F-fintech-seguros-008"
+     ],
+     "hueco": "Automatiza cotizaciones y renovaciones con IA, pero no opera en Uruguay."
+    },
+    {
+     "nombre": "ProtectU",
+     "evidencia_ids": [
+      "F-fintech-seguros-007"
+     ],
+     "hueco": "Billetera de seguros para el asegurado final, no para la cartera del corredor."
+    }
+   ],
+   "monetizacion": "Paga el corredor: USD 25 por mes hasta 300 pólizas y USD 49 hasta 1.000 pólizas y 3 usuarios, con 30 días gratis. Con 100 corredores en el plan menor: USD 2.500 por mes. Canal: asociaciones de corredores, referidos y demos en el interior.",
+   "riesgos": [
+    "Errores en suma asegurada o deducible: revisión humana obligatoria.",
+    "PDFs escaneados o formatos dispares bajan la precisión.",
+    "21 insurtechs en Uruguay (F-fintech-seguros-009); alguna puede hacerlo.",
+    "Aseguradoras que transforman su operación y buscan el interior (F-fintech-seguros-006) podrían saltear al corredor.",
+    "Datos de asegurados: contrato de encargado, registro ante la URCDP y transferencia internacional al proveedor del LLM (Ley 18.331).",
+    "Respuesta de cobertura errónea: se cita la cláusula y decide el corredor."
+   ],
+   "supuestos": [
+    "Los corredores uruguayos trabajan con varias aseguradoras y comparan coberturas y vencimientos a mano; F-fintech-seguros-008 no es dato uruguayo.",
+    "Cantidad de corredores independientes: no está en las fichas.",
+    "Aceptan subir pólizas de clientes a la nube.",
+    "Pólizas mayormente en PDF con texto; el corredor tiene las condiciones generales.",
+    "Herramienta para corredores habilitados; no intermedia seguros ni requiere habilitación.",
+    "Precios y meta de 100 corredores son hipótesis; sin contactos en el sector.",
+    "Puede haber herramientas locales que las fichas no muestran."
+   ],
+   "evidencias": [
+    "F-fintech-seguros-008",
+    "F-fintech-seguros-001",
+    "F-fintech-seguros-006",
+    "F-fintech-seguros-007",
+    "F-fintech-seguros-009"
+   ]
+  }
+ ]
+}

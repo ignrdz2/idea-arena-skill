@@ -1,0 +1,70 @@
+{
+  "idea": "i007",
+  "persona": "competidor",
+  "ataques": [
+    {
+      "n": 1,
+      "severidad": "MAJOR",
+      "titulo": "La disposición a pagar $ 390 por mes no tiene ninguna señal en las fichas",
+      "donde": "Monetización: primer mes gratis y luego $ 390 por mes más IVA; estudios contables a $ 2.900 por mes hasta 15 comercios",
+      "problema": "Ninguna ficha muestra que un comercio chico pague por auditar comisiones. F-comercio-retail-006 es marketing de un competidor sobre cuadernos y stock, no sobre comisiones, y F-comercio-retail-002 habla de crédito y asesoramiento financiero general. Las únicas cifras de costo (F-fintech-seguros-005) son de 2022 y dicen cuánto paga el comercio al adquirente, no que le duela ni que pague por optimizarlo. La idea lo declara como hipótesis, así que no es fatal, pero la demanda queda en un supuesto: el comercio que me interesa como competidor es el que ya paga POS, y este paga por algo que no le piden.",
+      "tipo": "evidencia",
+      "evidencia": ["F-comercio-retail-006", "F-comercio-retail-002", "F-fintech-seguros-005"]
+    },
+    {
+      "n": 2,
+      "severidad": "MAJOR",
+      "titulo": "Evidencia mal leída: dolores de otra cosa usados como dolor de comisiones",
+      "donde": "Problema: 'el comercio decide sin datos (F-comercio-retail-006)' y 'el 90% se financia con ahorros o familia y les falta asesoramiento financiero (F-comercio-retail-002)'",
+      "problema": "F-comercio-retail-006 enumera anotaciones en cuadernos, stock a ojo y pérdida de comprobantes; no menciona comisiones ni medios de cobro. F-comercio-retail-002 trata de acceso a crédito y financiamiento de la microempresa; no dice nada de costos de cobro. La idea los encadena como si respaldaran que el comercio no sabe cuánto le cuesta cobrar. Además, las 188.000 microempresas no se filtran por las que cobran con POS o MercadoPago (la idea lo admite en supuestos), así que el mercado direccionable real es desconocido.",
+      "tipo": "evidencia",
+      "evidencia": ["F-comercio-retail-006", "F-comercio-retail-002"]
+    },
+    {
+      "n": 3,
+      "severidad": "MAJOR",
+      "titulo": "El comparador es fácil de copiar para quien ya tiene los datos o la relación con el comercio",
+      "donde": "Competidores: 'no compara canales como tercero neutral' (MercadoPago, Totalnet, YoFacturo)",
+      "problema": "La diferencia declarada es la neutralidad, no una capacidad difícil de replicar. YoFacturo ya integra punto de venta y facturación (F-comercio-retail-007) y Totalnet integra cobros con inventario en sus terminales (F-comercio-retail-008): cualquiera de los dos puede agregar un reporte de costo por canal con importación de liquidaciones en un trimestre, y un software de estudio contable puede hacer lo mismo con las planillas que ya recibe. La propia idea reconoce 'un proveedor lanza su propio comparador' como riesgo sin explicar por qué el competidor no lo hizo antes. Y el cálculo central (porcentaje por canal más POS e IVA) es aritmética de planilla con tarifas públicas. El único diferencial técnico (lectores de formatos) es mantenimiento continuo, no una barrera.",
+      "tipo": "evidencia",
+      "evidencia": ["F-comercio-retail-007", "F-comercio-retail-008"]
+    },
+    {
+      "n": 4,
+      "severidad": "MAJOR",
+      "titulo": "El ahorro depende de que el comercio cambie de canal, y los adquirentes y MercadoPago no tienen incentivo ni el comercio margen para hacerlo",
+      "donde": "Supuestos: 'Cambiar de plan, proveedor o plazo no tiene barreras grandes'; Riesgos: 'Ahorro chico si las tarifas ya son buenas'",
+      "problema": "El valor de pagar $ 390 mensuales es el ahorro, y el ahorro solo existe si el comercio mueve ventas a otro medio. Para un comercio con $ 200.000 mensuales (el ejemplo de la idea) el débito cuesta unos $ 2.300 y el posible ahorro frente a MercadoPago es de unos miles de pesos, de los cuales $ 390 más IVA es una fracción alta, y el cliente es el que decide cómo cobra el consumidor, no el comercio. Con transferencias instantáneas en alza (F-fintech-seguros-002) el costo de ese canal no está en las fichas (la idea lo declara), justo el canal donde más se pierde el valor de la comparación. Si el hueco es un segmento que no paga porque su ahorro es chico, es el caso que pregunta la rúbrica.",
+      "tipo": "evidencia",
+      "evidencia": ["F-fintech-seguros-005", "F-fintech-seguros-002"]
+    },
+    {
+      "n": 5,
+      "severidad": "MAJOR",
+      "titulo": "Los ingresos del business case no cierran con el canal que la idea llama principal",
+      "donde": "Monetización: $ 390 por mes por comercio, estudios a $ 2.900 por mes hasta 15 comercios, meta de 300 comercios y $ 1,4 millones anuales",
+      "problema": "$ 390 por 12 meses por 300 comercios da unos $ 1,4 millones, pero solo si todos pagan el precio individual. El canal 'principal' (estudios contables) cobra $ 2.900 por hasta 15 comercios, unos $ 193 por comercio: casi la mitad, así que con ese canal 300 comercios rinden alrededor de $ 0,7 millones. La idea no dice qué fracción llega por cada canal ni cómo se llega a los estudios (no hay contactos en constraints.md). Además el costo de un estudio contable es más barato que cargar a 15 comercios con $ 390, lo que canibaliza el precio de lista. Precios y meta están marcados como hipótesis, pero la inconsistencia aritmética interna no.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 6,
+      "severidad": "MAJOR",
+      "titulo": "Dependencia crítica de datos de comercios sin socio ni plan B para el semestre 1",
+      "donde": "Alcance Semestre 1: 'datos anonimizados de 5 comercios', 'panel web con 3 comercios reales validados a mano'",
+      "problema": "El primer entregable requiere liquidaciones reales de MercadoPago y de un adquirente POS (no se dice cuál) de 5 comercios, pero la tabla de contactos de constraints.md está sin completar: no hay ningún comercio ni contador identificado (R4 y R7 piden poder contactarlos desde Uruguay antes de diciembre de 2026). Los comercios son además los 'reacios a compartir liquidaciones' del propio apartado de riesgos. Sin esos archivos el lector no se puede construir ni validar, y no hay plan B (datos sintéticos, cuentas propias). Las liquidaciones contienen datos de ventas y posiblemente de clientes, con la Ley 18.331 todavía sin camino concreto más allá de mencionarla.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 7,
+      "severidad": "MINOR",
+      "titulo": "Las tarifas de referencia tienen cuatro años y vienen de una nota de prensa",
+      "donde": "Problema: 1,15% a 3,55%, $ 465 a $ 1.500 de POS y 4,99% a 5,99% de MercadoPago (F-fintech-seguros-005)",
+      "problema": "La ficha es de octubre de 2022 y es una nota periodística, no una tarifa publicada por los adquirentes ni por MercadoPago. El caso de uso 'marcar cargos sobre la tarifa contratada' exige conocer la tarifa contratada de cada comercio, dato que no está en una liquidación y que el comercio tendría que cargar a mano; la idea no explica cómo se obtiene. Tampoco aparece ninguna cifra actual de cuánto ahorra un comercio real, que sería la prueba del valor.",
+      "tipo": "evidencia",
+      "evidencia": ["F-fintech-seguros-005"]
+    }
+  ],
+  "nuevas_fichas": []
+}

@@ -1,0 +1,32 @@
+{
+  "scores": {
+    "X": {"demanda": 7, "viabilidad": 2, "diferenciacion": 3, "business_case": 5, "encaje": 8, "academico": 8, "fatal": true, "fatal_motivo": "restriccion_dura:R1: el costo declarado es USD 307 por año, sobre el tope de USD 300; además la tabla omite el cargo de IPv4 pública de AWS (USD 0,005 por hora, unos USD 44 por año según la página de precios de VPC) y los créditos de estudiante que propone como mitigación no tienen fuente ni duración documentada"},
+    "Y": {"demanda": 1, "viabilidad": 1, "diferenciacion": 1, "business_case": 3, "encaje": 4, "academico": 3, "fatal": true, "fatal_motivo": "restriccion_dura:R1: el costo declarado es USD 504 por año, sobre el tope de USD 300, y crece con la cantidad de usuarios gratuitos"}
+  },
+  "winner": "X",
+  "reason": "Las dos violan R1 y deciden los totales: X tiene el dolor respaldado por fuentes locales verificadas (21.532 consultas de proveedores a ARCE en 2021, un competidor local que ya cobra) y un desafío técnico medible, mientras Y no tiene ninguna evidencia de demanda, no se diferencia de productos gratuitos con masa crítica y no puede generar ingresos durante la tesis.",
+  "standing": {
+    "X": [
+      "Costo declarado de USD 307 por año, sobre el tope de USD 300 (R1); la tabla omite el cargo de IPv4 pública de AWS (USD 0,005 por hora, unos USD 44 por año), y los créditos de estudiante propuestos como mitigación no tienen fuente ni duración documentada.",
+      "La diferenciación frente a Gubly la contradice su propia fuente: el artículo de El Observador (8 de julio de 2026) dice que Gubly ya analiza pliegos con IA, muestra a qué precios se adjudicaron los productos y a qué precios vende la competencia, por USD 25 al mes o USD 250 al año, con más de un centenar de usuarios; el hueco de preparación de oferta e inteligencia de precios queda reducido al checklist con cita y la bóveda de vencimientos, que se pueden copiar rápido.",
+      "La hipótesis de precio de USD 40 a 120 por mes está por encima del competidor local de USD 25, sin explicar por qué una PyME pagaría más.",
+      "El tamaño del mercado inicial no se cuantifica: remite al dataset del RUPE sin dar el número, y la página de datos abiertos de ARCE citada no muestra ese dataset; tampoco hay un canal de llegada a las PyMEs más allá de las entrevistas.",
+      "La afirmación de que la licencia de datos abiertos habilita el uso comercial citando la fuente no aparece en la página citada (catalogodatos.gub.uy) ni está declarada como supuesto.",
+      "El dolor se apoya en señales indirectas (consultas a ARCE de 2021, que incluyen dudas sobre el uso de los sistemas) y no hay ninguna medición local de horas o costo por oferta.",
+      "Alcance cargado para dos semestres: ETL OCDS completo, OCR, extracción evaluada con 50 pliegos anotados, radar, inteligencia de precios con resolución de entidades, Text-to-SQL, bóveda multi-tenant y piloto con 3 a 5 PyMEs.",
+      "La tabla de contactos del equipo está vacía: no hay proveedores del Estado identificados para validar antes de diciembre de 2026 ni para el piloto.",
+      "LicitaLAB, con más de 1.500 clientes en Chile y Perú y una ronda de USD 450.000, podría entrar a Uruguay; construir sobre OCDS no es una ventaja exclusiva."
+    ],
+    "Y": [
+      "Costo declarado de USD 504 por año, 68% sobre el tope de USD 300 (R1), y crece con usuarios que no pagan.",
+      "La demanda es opinión: la propia idea reconoce que no hay ninguna medición, encuesta ni fuente local, solo sentido común y conversaciones con amigos.",
+      "Competidores gratuitos con masa crítica (Google Maps, TripAdvisor, Instagram, TikTok, PedidosYa) y la propia idea admite que no deja hueco visible más allá de la personalización social.",
+      "Arranque en frío doble: sin usuarios no hay reseñas ni recomendaciones útiles, y sin audiencia ningún restaurante paga, así que no hay ingresos posibles durante la tesis y las entregas no pueden demostrar valor.",
+      "Business case vacío: precio hipotético de USD 30 a 60 por local sin ningún restaurante consultado, sin tamaño de mercado ni canal.",
+      "El catálogo de locales no tiene una fuente legal identificada y copiarlo de un tercero puede violar sus términos de uso.",
+      "La IA es un envoltorio sobre un modelo de lenguaje y el filtrado colaborativo no tiene datos con qué medirse, así que el aporte académico es flaco.",
+      "Según la propia idea, trata datos de gustos, ubicación y relaciones con perfilamiento, lo que exige evaluación de impacto, y suma riesgo de reseñas falsas, difamación y moderación.",
+      "Depende de crecimiento y marketing de una app de consumo, una capacidad central que el equipo no tiene, sin presupuesto ni contraparte que valide."
+    ]
+  }
+}

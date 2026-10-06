@@ -1,0 +1,193 @@
+{
+  "generador": "g02",
+  "ideas": [
+    {
+      "local_id": "g02-1",
+      "titulo": "Conciliación de cobros multicanal con consultas en lenguaje natural para microcomercios",
+      "problema": "Un microcomercio uruguayo cobra por canales de costo muy distinto: POS con 1,15% (débito) a 3,55% (crédito) más 465 a 1.500 pesos de alquiler mensual, MercadoPago con 4,99% a 5,99% (F-fintech-seguros-005) y transferencias instantáneas, que crecieron 50% en un semestre (F-fintech-seguros-002). Son casi 5 puntos de diferencia por venta que el dueño no ve: anota en cuadernos y decide sin datos (F-comercio-retail-006). Hay unas 188.000 microempresas, con falta de asesoramiento financiero (F-comercio-retail-002).",
+      "usuario": "Dueño de un microcomercio que cobra por dos o más canales electrónicos; él paga. Canal secundario: estudios contables.",
+      "solucion": "Web donde el comercio sube los reportes que ya descarga de su adquirente, MercadoPago y banco (CSV, Excel o PDF). Un pipeline los normaliza en PostgreSQL, con mapeo de columnas sugerido por un LLM y confirmado por el usuario, concilia ventas contra acreditaciones y calcula la comisión efectiva por canal. El dueño pregunta en lenguaje natural (\"¿cuánto pagué a MercadoPago en agosto?\") y un Text-to-SQL de solo lectura responde con la cifra y el SQL; el LLM ve el esquema, no las filas.",
+      "mvp": {
+        "semestre_1": [
+          "Libro único e importadores para un adquirente de POS, MercadoPago y un banco, con mapeo asistido por LLM.",
+          "Panel de comisión efectiva por canal y mes.",
+          "Entrega 1: 3 comercios reales con 3 meses de datos importados."
+        ],
+        "semestre_2": [
+          "Text-to-SQL de solo lectura con ejemplos recuperados por pgvector y validación con sqlglot.",
+          "Evaluación con 200 preguntas reales; conciliación con alertas y simulador de canal.",
+          "Entrega 2: piloto con 10 a 15 comercios midiendo uso y disposición a pagar."
+        ]
+      },
+      "stack": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL + pgvector",
+        "React",
+        "sqlglot",
+        "Gemini 3.1 Flash-Lite",
+        "Gemini Embedding 2",
+        "Docker",
+        "AWS Lightsail"
+      ],
+      "costo_infra": {
+        "total_anual_usd": 150,
+        "items": [
+          {
+            "concepto": "AWS Lightsail 1 GB",
+            "usd_anual": 84,
+            "supuesto": "USD 7 por mes con IPv4 y 40 GB SSD, 12 meses de 2027; sin capa gratuita.",
+            "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+          },
+          {
+            "concepto": "API Gemini 3.1 Flash-Lite y Embedding 2",
+            "usd_anual": 66,
+            "supuesto": "2.500 consultas por mes de 5.000 tokens de entrada y 600 de salida, a USD 0,25 y 1,50 por millón (USD 65); 5 millones de tokens de embeddings a USD 0,20 (USD 1).",
+            "fuente_precio_url": "https://ai.google.dev/gemini-api/docs/pricing"
+          }
+        ]
+      },
+      "competidores": [
+        {
+          "nombre": "YoFacturo",
+          "evidencia_ids": [
+            "F-comercio-retail-007",
+            "F-comercio-retail-006"
+          ],
+          "hueco": "Factura e inventaria en su plataforma; la ficha no muestra consolidación de otros canales."
+        },
+        {
+          "nombre": "Totalnet",
+          "evidencia_ids": [
+            "F-comercio-retail-008"
+          ],
+          "hueco": "POS con inventario en su terminal exclusiva; la ficha no muestra comparación entre canales."
+        },
+        {
+          "nombre": "MercadoPago",
+          "evidencia_ids": [
+            "F-fintech-seguros-005"
+          ],
+          "hueco": "Es un canal a comparar; la ficha no indica que muestre el costo de los demás."
+        }
+      ],
+      "monetizacion": "Freemium: gratis con un canal; plan completo a un precio del orden de un alquiler de POS (465 a 1.500 pesos por mes, F-fintech-seguros-005), por ejemplo 490 pesos más IVA, justificado por el ahorro en comisiones que el producto mide. Licencia por cartera para estudios contables. 1.000 comercios pagos darían 490.000 pesos por mes.",
+      "riesgos": [
+        "Formatos de exportación que cambian: importadores a mantener.",
+        "Text-to-SQL con cifras erróneas; se mitiga mostrando el SQL y con evaluación continua.",
+        "Baja disposición a pagar de microempresas que se financian con ahorros (F-comercio-retail-002).",
+        "Adquirentes o facturadores pueden agregar estos reportes.",
+        "Datos de terceros en extractos: comercio responsable y producto encargado (Ley 18.331)."
+      ],
+      "supuestos": [
+        "Adquirentes, MercadoPago y bancos permiten descargar movimientos (CSV, Excel o PDF) y los dueños aceptan subirlos a la nube.",
+        "Muchos microcomercios cobran por varios canales sin conocer su costo efectivo; se valida con comercios contactados desde Uruguay antes de diciembre de 2026 (no hay contactos en la tabla).",
+        "Las comisiones de la ficha son de 2022; se usan las de cada extracto.",
+        "Precio, meta de 1.000 comercios y canal contable son hipótesis.",
+        "Puede haber competidores multicanal que las fichas no muestran.",
+        "No mueve dinero ni da crédito: no requiere habilitación financiera."
+      ],
+      "evidencias": [
+        "F-fintech-seguros-005",
+        "F-fintech-seguros-002",
+        "F-comercio-retail-006",
+        "F-comercio-retail-002",
+        "F-comercio-retail-007",
+        "F-comercio-retail-008"
+      ]
+    },
+    {
+      "local_id": "g02-2",
+      "titulo": "Comparador de pólizas con citas verificables para corredores de seguros",
+      "problema": "Corredores y aseguradoras dedican horas manuales a emails, pólizas y contratos (F-fintech-seguros-008). En Uruguay el mercado asegurador creció 25,8% real en 2024, a unos US$ 2.889 millones en primas (F-fintech-seguros-001). Para recomendar, el corredor contrasta a mano condiciones generales extensas de varias aseguradoras, con riesgo de error ante el cliente. Las soluciones con IA de las fichas apuntan a otro mercado (Foliume, sobre todo España) o a otro usuario (ProtectU, para el asegurado, F-fintech-seguros-007).",
+      "usuario": "Corredor independiente o correduría chica en Uruguay, que paga.",
+      "solucion": "Web donde el corredor carga los PDF de condiciones generales y, con consentimiento, pólizas de clientes. El sistema extrae el texto (con OCR si hace falta), segmenta por cláusula, indexa en Qdrant y llena un esquema: coberturas, exclusiones, deducibles, topes y vencimiento. El corredor pregunta (\"¿cubre granizo con el auto en la calle?\") y recibe la respuesta con cláusula y página citadas; sin cita no hay respuesta. Arma comparativos de 2 a 4 productos exportables a PDF y ve los vencimientos de su cartera.",
+      "mvp": {
+        "semestre_1": [
+          "Ingesta de PDF con OCR, segmentación por cláusula e índice en Qdrant para seguros de auto de 3 aseguradoras.",
+          "Preguntas con cita obligatoria; 150 preguntas de evaluación validadas por corredores.",
+          "Entrega 1: un corredor consulta en vivo condiciones reales de auto."
+        ],
+        "semestre_2": [
+          "Extracción estructurada con revisión humana y comparativo exportable a PDF; extensión a hogar.",
+          "Cartera con calendario de vencimientos y auditoría.",
+          "Entrega 2: piloto de 6 semanas con 5 a 10 corredores midiendo el tiempo por comparativo."
+        ]
+      },
+      "stack": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "React",
+        "Qdrant",
+        "Gemini 3.1 Flash-Lite",
+        "Gemini Embedding 2",
+        "PyMuPDF",
+        "Tesseract",
+        "Docker",
+        "AWS Lightsail"
+      ],
+      "costo_infra": {
+        "total_anual_usd": 136,
+        "items": [
+          {
+            "concepto": "AWS Lightsail 1 GB",
+            "usd_anual": 84,
+            "supuesto": "USD 7 por mes con IPv4 y 40 GB SSD, 12 meses de 2027, OCR por lotes; sin capa gratuita.",
+            "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+          },
+          {
+            "concepto": "API Gemini 3.1 Flash-Lite y Embedding 2",
+            "usd_anual": 52,
+            "supuesto": "1.000 consultas por mes de 8.000 tokens de entrada y 800 de salida, más 3 extracciones de 300 documentos de 20.000 tokens, a USD 0,25 y 1,50 por millón (USD 46); 30 millones de tokens de embeddings a USD 0,20 (USD 6).",
+            "fuente_precio_url": "https://ai.google.dev/gemini-api/docs/pricing"
+          },
+          {
+            "concepto": "Qdrant Cloud gratuito",
+            "usd_anual": 0,
+            "supuesto": "1 GB de RAM y 4 GB de disco, gratuito para siempre según la página; unos 15.000 fragmentos.",
+            "fuente_precio_url": "https://qdrant.tech/pricing/"
+          }
+        ]
+      },
+      "competidores": [
+        {
+          "nombre": "Foliume",
+          "evidencia_ids": [
+            "F-fintech-seguros-008"
+          ],
+          "hueco": "Automatiza cotizaciones, renovaciones y siniestros, pero opera sobre todo en España, no en Uruguay."
+        },
+        {
+          "nombre": "ProtectU",
+          "evidencia_ids": [
+            "F-fintech-seguros-007"
+          ],
+          "hueco": "Sirve al asegurado final; la ficha no muestra una herramienta para que el corredor compare aseguradoras."
+        }
+      ],
+      "monetizacion": "Suscripción del corredor: USD 25 por mes individual y USD 90 para corredurías de hasta 5 usuarios, justificada por el tiempo ahorrado por comparativo. Canal: contacto directo y referidos entre corredores. Con 100 corredores individuales, USD 2.500 por mes.",
+      "riesgos": [
+        "Una respuesta errónea induce mal asesoramiento: cita obligatoria y decisión final del corredor.",
+        "Datos personales en pólizas: corredor responsable y producto encargado (Ley 18.331); enviarlos al LLM requiere consentimiento o cláusulas.",
+        "PDF escaneados o con tablas complejas bajan la calidad de la extracción.",
+        "ProtectU u otra de las 21 insurtech uruguayas (F-fintech-seguros-009) puede apuntar a corredores.",
+        "Pocos corredores dispuestos a pagar."
+      ],
+      "supuestos": [
+        "Los corredores uruguayos comparan aseguradoras leyendo PDF a mano; la ficha de horas manuales no es de Uruguay. Se valida con corredores contactados antes de diciembre de 2026 (no hay contactos en la tabla).",
+        "Las condiciones generales están disponibles para el corredor.",
+        "Ninguna ficha da la cantidad de corredores en Uruguay; se estima al validar.",
+        "Precios y meta de 100 corredores son hipótesis.",
+        "No intermedia ni asesora al asegurado: no requiere habilitación como corredor.",
+        "Puede haber competidores locales para corredores que las fichas no muestran."
+      ],
+      "evidencias": [
+        "F-fintech-seguros-008",
+        "F-fintech-seguros-001",
+        "F-fintech-seguros-007",
+        "F-fintech-seguros-009"
+      ]
+    }
+  ]
+}

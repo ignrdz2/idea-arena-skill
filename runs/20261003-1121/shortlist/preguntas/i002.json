@@ -1,0 +1,30 @@
+{
+  "idea": "i002",
+  "preguntas": [
+    {
+      "pregunta": "La última vez que el cierre de caja no les dio (faltó o sobró plata), ¿cuánta era la diferencia, quién la buscó y cuánto tiempo les llevó encontrarla? ¿Tenía que ver con transferencias, con efectivo o con otro medio de pago? ¿Cuántas veces les pasó en el último mes?",
+      "a_quien": "dueño o encargado de caja de un almacén o kiosco del interior de Uruguay que ya recibe transferencias de clientes",
+      "que_valida": "Cuánto cuesta hoy el problema: el supuesto de que cuadrar la caja con transferencias es un dolor frecuente y con costo en tiempo o dinero, y el ataque que quedó en pie de que ese dolor no tiene ninguna ficha que lo respalde."
+    },
+    {
+      "pregunta": "La última vez que un cliente les pagó por transferencia en el mostrador, ¿cómo comprobaron que la plata había entrado antes de entregarle la mercadería: quién lo miró, en qué celular o equipo y cuánto tardó? ¿Recuerdan alguna vez que la transferencia no llegó o el comprobante era falso? ¿Qué pasó?",
+      "a_quien": "persona que atiende el mostrador (dueño o empleado) de un almacén o kiosco del interior de Uruguay que recibe transferencias",
+      "que_valida": "El ataque de que la app del banco ya notifica gratis y la diferenciación es débil: si la forma actual de confirmar alcanza o genera demoras, dependencia del celular personal del dueño o pérdidas por transferencias que no llegaron."
+    },
+    {
+      "pregunta": "¿En qué banco o bancos reciben las transferencias del negocio y cómo se enteran hoy de que entró una (email, SMS, notificación de la app, mirando el saldo)? En el último aviso que recibieron, ¿por qué medio llegó y cuánto tardó desde que el cliente transfirió?",
+      "a_quien": "dueño de un almacén, kiosco u otro microcomercio del interior de Uruguay que recibe transferencias de clientes",
+      "que_valida": "El supuesto de que al menos 2 o 3 bancos avisan por email y con poca demora, y el ataque de que esa base técnica no está verificada (la firma DKIM se comprueba aparte, con cuentas del equipo)."
+    },
+    {
+      "pregunta": "¿Hoy alguien fuera del negocio (contador, socio, familiar, empleado o algún sistema) recibe o ve los movimientos o avisos de la cuenta bancaria del comercio? ¿Cómo se le dio ese acceso (extracto, clave, reenvío, capturas)? La última vez que alguien les pidió ver esos datos, ¿qué decidieron y por qué?",
+      "a_quien": "dueño de un almacén o kiosco del interior de Uruguay que maneja la cuenta bancaria del negocio",
+      "que_valida": "El ataque que quedó en pie de que pedir al microcomercio que comparta sus avisos bancarios con un tercero no está validado, en un segmento que según F-fintech-seguros-003 necesita incentivos para adoptar lo digital."
+    },
+    {
+      "pregunta": "¿Qué fue lo último que contrataron para el negocio con pago mensual (facturación, POS, contador u otro servicio)? ¿Quién decidió contratarlo, quién lo paga y de qué plata sale, cuánto pagan por mes y cómo se enteraron de que existía? ¿Dieron de baja alguno en el último año, y por qué?",
+      "a_quien": "dueño de un almacén, kiosco u otro microcomercio del interior de Uruguay",
+      "que_valida": "Quién decide y paga: el supuesto de que decide el dueño y paga de su presupuesto operativo, la referencia de gasto mensual frente al precio hipotético de 350 pesos más IVA, y el canal de venta, hoy sin contactos."
+    }
+  ]
+}

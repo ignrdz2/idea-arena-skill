@@ -1,0 +1,30 @@
+{
+  "idea": "i007",
+  "preguntas": [
+    {
+      "pregunta": "Pensando en el último mes cerrado, ¿cuánto pagaron en total por cobrar con tarjeta y con MercadoPago, sumando comisiones, alquiler del POS e IVA? ¿Cómo llegan a ese número: lo tienen calculado o lo están estimando ahora?",
+      "a_quien": "Dueño o encargado de administración de un comercio minorista o gastronómico chico de Montevideo que cobra con POS y MercadoPago",
+      "que_valida": "Cuánto cuesta hoy el problema y el supuesto de que los comercios no calculan su costo por canal; da la base para ver si el ahorro posible supera el precio (ataque de ronda 2: el ahorro puede ser menor al precio y no hay cifra real)."
+    },
+    {
+      "pregunta": "¿Cuándo fue la última vez que revisaron una liquidación del POS o de MercadoPago contra la tarifa contratada, o que cambiaron de plazo de acreditación o de plan? ¿Qué los llevó a hacerlo, quién lo hizo, cuánto tiempo les llevó y qué diferencia en plata encontraron?",
+      "a_quien": "Dueño o encargado de administración de un comercio minorista o gastronómico chico de Montevideo que cobra con POS y MercadoPago",
+      "que_valida": "Supuesto de que el ahorro sale de plazo, plan y cargos de más, y ataque de ronda 2 de que ese ahorro puede ser menor al precio: busca casos reales con cifra."
+    },
+    {
+      "pregunta": "La última vez que contrataron un servicio mensual para administrar el negocio (por ejemplo facturación electrónica, software de gestión o el estudio contable), ¿quién decidió contratarlo, quién lo paga y cuánto pagan hoy por mes? ¿Dieron de baja alguno por precio en el último año?",
+      "a_quien": "Dueño de un comercio minorista o gastronómico chico de Montevideo que cobra con POS y MercadoPago",
+      "que_valida": "Quién decide y paga (el comercio o su estudio contable) y el ataque de ronda 2 de disposición a pagar $ 390 por mes sin señal: da un precio de referencia con lo que ya pagan."
+    },
+    {
+      "pregunta": "De los comercios chicos que llevan, ¿cuántos les entregaron el mes pasado las liquidaciones del POS o de MercadoPago, y en qué formato (PDF, planilla, acceso al portal)? ¿Qué hicieron con ellas, cuántas horas les llevó y ese trabajo se lo cobran al cliente aparte o va dentro del abono?",
+      "a_quien": "Contador socio de un estudio contable de Montevideo que lleva la contabilidad de comercios minoristas o gastronómicos chicos",
+      "que_valida": "Canal de estudios contables a validar (quién paga), supuesto de que los comercios comparten sus liquidaciones y formatos reales para los lectores del semestre 1; si ya cobran por ese trabajo, es una señal de pago."
+    },
+    {
+      "pregunta": "La última vez que quisieron saber cuánto les costó cobrar con cada medio (débito, crédito, MercadoPago, transferencia), ¿cómo lo resolvieron? ¿Usaron una planilla, al contador, el software de facturación o gestión, o le preguntaron al proveedor del POS, y les dio el número? Si nunca lo hicieron, ¿por qué?",
+      "a_quien": "Dueño o encargado de administración de un comercio minorista o gastronómico chico de Montevideo que usa un software de facturación o gestión",
+      "que_valida": "Ataque de ronda 2 de que el cálculo es copiable por un software contable o de facturación: muestra si las herramientas que ya usan lo resuelven y si el hueco es real. También el supuesto de que no calculan el costo por canal."
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+ "id": "i004",
+ "titulo": "Cuaderno de campo por voz para el registro de aplicaciones fitosanitarias",
+ "problema": "Quien aplica fitosanitarios en cultivos propios con equipos de 1.000 litros o más, o aéreos, debe registrar cada aplicación en el RAPF del MGAP dentro de 7 días (F-agro-005). El dato nace en el campo y se pasa a mano después. Los trámites digitales del MGAP ya mostraron fricción: DICOSE llegó al 60% en línea y requirió 100 talleres para 2.080 personas (F-agro-009).",
+ "usuario": "Operarios y productores cargan; el agrónomo asesor revisa. Paga el productor o el agrónomo que atiende a varios.",
+ "solucion": "App que funciona sin señal: el operario dicta una nota de voz (\"2 litros por hectárea de glifosato en el potrero 5\") o fotografía la etiqueta. Al sincronizar, un LLM extrae producto, dosis, lote, superficie y fecha, lo valida contra un catálogo de productos, marca faltantes, avisa antes del plazo y genera el registro listo para el RAPF. Adapta el cuaderno de campo digital de otros mercados a los campos del RAPF, la jerga rioplatense y la conectividad rural.",
+ "mvp": {
+  "semestre_1": [
+   "App offline con lotes en mapa y registro manual con los campos del RAPF",
+   "Notas de voz sincronizadas al volver la señal y extracción evaluada sobre 100 notas",
+   "Entrega 1: dictar una aplicación sin conexión y ver el registro al sincronizar"
+  ],
+  "semestre_2": [
+   "Validación contra catálogo, alertas del plazo y vista del agrónomo",
+   "Lectura de etiquetas por foto y exportación en PDF y CSV",
+   "Entrega 2: piloto con 3 a 5 productores, tiempo y precisión medidos, y business case"
+  ]
+ },
+ "stack": [
+  "TypeScript",
+  "React PWA",
+  "IndexedDB",
+  "Python",
+  "FastAPI",
+  "PostgreSQL con PostGIS",
+  "Gemini 2.5 Flash",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 171.58,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail",
+    "usd_anual": 144,
+    "supuesto": "USD 12 por mes (2 GB, 2 vCPU), 12 meses de 2027, todo en Docker; sin créditos gratuitos.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API de Gemini, nivel pago",
+    "usd_anual": 16.5,
+    "supuesto": "6.000 notas de 30 segundos (32 tokens por segundo): 6M tokens de audio a USD 1,00 por millón, 10M de texto e imagen a 0,30 y 3M de salida a 2,50.",
+    "fuente_precio_url": "https://ai.google.dev/gemini-api/docs/pricing"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 11.08,
+    "supuesto": "1 dominio por un año; HTTPS es necesario para grabar audio en el navegador.",
+    "fuente_precio_url": "https://porkbun.com/tld/com"
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Auravant",
+   "evidencia_ids": [
+    "F-agro-006"
+   ],
+   "hueco": "Precisión satelital centrada en Argentina; la ficha no muestra registro de aplicaciones para el RAPF."
+  },
+  {
+   "nombre": "Ox-agro",
+   "evidencia_ids": [
+    "F-agro-007"
+   ],
+   "hueco": "Monitoreo satelital gestionado; no registra aplicaciones."
+  }
+ ],
+ "monetizacion": "USD 10 por mes por establecimiento hasta 1.000 ha, debajo de los USD 25 de Auravant (F-agro-006), con versión gratuita limitada; plan de USD 40 por mes para agrónomos con hasta 15 productores. Canal: agrónomos, cooperativas y gremiales; cobro en pesos por transferencia.",
+ "riesgos": [
+  "Sin API del RAPF, la carga final es manual y limita el ahorro.",
+  "El MGAP puede mejorar su propio formulario.",
+  "Ruido de maquinaria y jerga: revisión obligatoria antes de exportar.",
+  "Baja adopción digital (F-agro-009): se vende vía agrónomos.",
+  "Más de 30 startups agtech en Uruguay pueden lanzar algo similar (F-agro-008)."
+ ],
+ "supuestos": [
+  "Hoy el registro se anota en papel o de memoria; no hay ficha que lo muestre.",
+  "Hay suficientes obligados al RAPF y agrónomos que pagan; las fichas no dan el número, se pide al MGAP.",
+  "El MGAP no ofrece API del RAPF.",
+  "El catálogo de productos registrados es público; si no, se arma con etiquetas.",
+  "Existen apps de cuaderno de campo digital en otros mercados; no hay ficha que lo respalde.",
+  "Muchos campos tienen señal intermitente.",
+  "El equipo puede contactar productores y agrónomos; no hay contactos registrados.",
+  "Los precios son hipótesis a validar."
+ ],
+ "evidencias": [
+  "F-agro-005",
+  "F-agro-009",
+  "F-agro-006",
+  "F-agro-007",
+  "F-agro-008"
+ ]
+}

@@ -1,0 +1,288 @@
+{
+ "veredictos": [
+  {
+   "x": "idea_A",
+   "y": "idea_B",
+   "winner": "idea_B",
+   "totals": {
+    "idea_A": 56.0,
+    "idea_B": 51.0
+   },
+   "fatal": {
+    "idea_A": true,
+    "idea_B": false
+   },
+   "notes": [
+    "idea_A sumó más puntos pero tiene un fallo fatal"
+   ],
+   "criteria": {
+    "idea_A": {
+     "demanda": 8,
+     "viabilidad": 2,
+     "diferenciacion": 5,
+     "business_case": 5,
+     "encaje": 9,
+     "academico": 9
+    },
+    "idea_B": {
+     "demanda": 3,
+     "viabilidad": 6,
+     "diferenciacion": 5,
+     "business_case": 5,
+     "encaje": 7,
+     "academico": 8
+    }
+   }
+  },
+  {
+   "x": "idea_B",
+   "y": "idea_A",
+   "winner": "idea_B",
+   "totals": {
+    "idea_B": 53.5,
+    "idea_A": 49.5
+   },
+   "fatal": {
+    "idea_B": false,
+    "idea_A": true
+   },
+   "notes": [],
+   "criteria": {
+    "idea_B": {
+     "demanda": 4,
+     "viabilidad": 6,
+     "diferenciacion": 5,
+     "business_case": 5,
+     "encaje": 7,
+     "academico": 8
+    },
+    "idea_A": {
+     "demanda": 7,
+     "viabilidad": 2,
+     "diferenciacion": 3,
+     "business_case": 5,
+     "encaje": 9,
+     "academico": 9
+    }
+   }
+  },
+  {
+   "x": "idea_A",
+   "y": "idea_C",
+   "winner": "idea_A",
+   "totals": {
+    "idea_A": 48.0,
+    "idea_C": 17.0
+   },
+   "fatal": {
+    "idea_A": true,
+    "idea_C": true
+   },
+   "notes": [],
+   "criteria": {
+    "idea_A": {
+     "demanda": 7,
+     "viabilidad": 2,
+     "diferenciacion": 3,
+     "business_case": 5,
+     "encaje": 8,
+     "academico": 8
+    },
+    "idea_C": {
+     "demanda": 1,
+     "viabilidad": 1,
+     "diferenciacion": 1,
+     "business_case": 3,
+     "encaje": 4,
+     "academico": 3
+    }
+   }
+  },
+  {
+   "x": "idea_C",
+   "y": "idea_A",
+   "winner": "idea_A",
+   "totals": {
+    "idea_C": 19.5,
+    "idea_A": 50.5
+   },
+   "fatal": {
+    "idea_C": true,
+    "idea_A": true
+   },
+   "notes": [],
+   "criteria": {
+    "idea_C": {
+     "demanda": 1,
+     "viabilidad": 1,
+     "diferenciacion": 2,
+     "business_case": 3,
+     "encaje": 4,
+     "academico": 4
+    },
+    "idea_A": {
+     "demanda": 7,
+     "viabilidad": 2,
+     "diferenciacion": 4,
+     "business_case": 5,
+     "encaje": 8,
+     "academico": 9
+    }
+   }
+  },
+  {
+   "x": "idea_B",
+   "y": "idea_C",
+   "winner": "idea_B",
+   "totals": {
+    "idea_B": 62.5,
+    "idea_C": 18.5
+   },
+   "fatal": {
+    "idea_B": false,
+    "idea_C": true
+   },
+   "notes": [],
+   "criteria": {
+    "idea_B": {
+     "demanda": 5,
+     "viabilidad": 7,
+     "diferenciacion": 6,
+     "business_case": 6,
+     "encaje": 7,
+     "academico": 9
+    },
+    "idea_C": {
+     "demanda": 1,
+     "viabilidad": 1,
+     "diferenciacion": 1,
+     "business_case": 3,
+     "encaje": 5,
+     "academico": 4
+    }
+   }
+  },
+  {
+   "x": "idea_C",
+   "y": "idea_B",
+   "winner": "idea_B",
+   "totals": {
+    "idea_C": 18.5,
+    "idea_B": 58.0
+   },
+   "fatal": {
+    "idea_C": true,
+    "idea_B": false
+   },
+   "notes": [],
+   "criteria": {
+    "idea_C": {
+     "demanda": 1,
+     "viabilidad": 1,
+     "diferenciacion": 1,
+     "business_case": 3,
+     "encaje": 5,
+     "academico": 4
+    },
+    "idea_B": {
+     "demanda": 5,
+     "viabilidad": 6,
+     "diferenciacion": 6,
+     "business_case": 5,
+     "encaje": 7,
+     "academico": 8
+    }
+   }
+  }
+ ],
+ "metricas": {
+  "pares": [
+   {
+    "tu_preferida": "idea_A",
+    "otra": "idea_B",
+    "juez_prefiere": "idea_B",
+    "coincide": false,
+    "ordenes_coinciden": true,
+    "diferencia_por_criterio": {
+     "demanda": 4.0,
+     "viabilidad": -4.0,
+     "diferenciacion": -1.0,
+     "business_case": 0.0,
+     "encaje": 2.0,
+     "academico": 1.0
+    }
+   },
+   {
+    "tu_preferida": "idea_A",
+    "otra": "idea_C",
+    "juez_prefiere": "idea_A",
+    "coincide": true,
+    "ordenes_coinciden": true,
+    "diferencia_por_criterio": {
+     "demanda": 6.0,
+     "viabilidad": 1.0,
+     "diferenciacion": 2.0,
+     "business_case": 2.0,
+     "encaje": 4.0,
+     "academico": 5.0
+    }
+   },
+   {
+    "tu_preferida": "idea_B",
+    "otra": "idea_C",
+    "juez_prefiere": "idea_B",
+    "coincide": true,
+    "ordenes_coinciden": true,
+    "diferencia_por_criterio": {
+     "demanda": 4.0,
+     "viabilidad": 5.5,
+     "diferenciacion": 5.0,
+     "business_case": 2.5,
+     "encaje": 2.0,
+     "academico": 4.5
+    }
+   }
+  ],
+  "acuerdo": 2,
+  "total_pares": 3,
+  "consistencia": 3,
+  "kendall_tau": 0.333,
+  "orden_juez": [
+   "idea_B",
+   "idea_A",
+   "idea_C"
+  ],
+  "orden_tuyo": [
+   "idea_A",
+   "idea_B",
+   "idea_C"
+  ],
+  "x_gana": 0.5,
+  "medias_por_criterio": {
+   "idea_A": {
+    "demanda": 7.25,
+    "viabilidad": 2.0,
+    "diferenciacion": 3.75,
+    "business_case": 5.0,
+    "encaje": 8.5,
+    "academico": 8.75
+   },
+   "idea_B": {
+    "demanda": 4.25,
+    "viabilidad": 6.25,
+    "diferenciacion": 5.5,
+    "business_case": 5.25,
+    "encaje": 7.0,
+    "academico": 8.25
+   },
+   "idea_C": {
+    "demanda": 1.0,
+    "viabilidad": 1.0,
+    "diferenciacion": 1.25,
+    "business_case": 3.0,
+    "encaje": 4.5,
+    "academico": 3.75
+   }
+  }
+ }
+}

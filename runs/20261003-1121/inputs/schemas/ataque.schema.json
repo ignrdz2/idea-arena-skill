@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Ataque de una persona contra una idea",
+  "description": "Cada ataque cita evidencia por ID (tipo evidencia) o se marca como opinión. Python reetiqueta como opinión todo ataque cuyas citas no existan o hayan sido descartadas.",
+  "type": "object",
+  "required": ["idea", "persona", "ataques"],
+  "properties": {
+    "idea": {"type": "string"},
+    "persona": {"type": "string"},
+    "ataques": {
+      "type": "array",
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "required": ["n", "severidad", "titulo", "donde", "problema", "tipo", "evidencia"],
+        "properties": {
+          "n": {"type": "integer", "minimum": 1},
+          "severidad": {"enum": ["FATAL", "MAJOR", "MINOR"]},
+          "titulo": {"type": "string", "minLength": 3, "maxLength": 160},
+          "donde": {"type": "string", "maxLength": 400},
+          "problema": {"type": "string", "minLength": 10, "maxLength": 1500},
+          "tipo": {"enum": ["evidencia", "opinion"]},
+          "evidencia": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "nuevas_fichas": {"type": "array", "maxItems": 10, "items": {"type": "object"}}
+  },
+  "additionalProperties": false
+}
