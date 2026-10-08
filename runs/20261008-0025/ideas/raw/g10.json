@@ -80,7 +80,7 @@
      "hueco": "Cada bot atiende solo pólizas de su compañía; el corredor multimarca no tiene una vista unificada de su cartera."
     }
    ],
-   "monetizacion": "Suscripción que paga el corredor según pólizas activas: gratis hasta 50 pólizas, USD 15 por mes hasta 400 y USD 30 por mes por encima. Canal: asociaciones de corredores y contacto directo. Con 100 corredores pagos a USD 20 de promedio serían unos USD 24.000 al año.",
+   "monetizacion": "Suscripción del corredor según pólizas activas: gratis hasta 50, USD 15 por mes hasta 400 y USD 30 por encima. Canal: asociaciones de corredores y contacto directo. Con 100 corredores a USD 20 de promedio, unos USD 24.000 al año.",
    "riesgos": [
     "Formatos de pólizas muy distintos bajan la precisión de extracción",
     "Corredores poco digitalizados pueden no adoptarla",
@@ -88,11 +88,11 @@
     "Datos personales de asegurados exigen cumplir la Ley 18.331"
    ],
    "supuestos": [
-    "Los corredores chicos gestionan su cartera en planillas y PDF sin un sistema de gestión",
-    "Perder vencimientos o responder lento cuesta renovaciones a los corredores",
-    "Hay cientos de corredores y productores asesores activos en Uruguay contactables por asociaciones",
-    "Un corredor pagaría USD 15 a 30 por mes por esta herramienta",
-    "El equipo puede conseguir pólizas reales anonimizadas para entrenar y probar"
+    "Los corredores chicos gestionan su cartera en planillas y PDF, sin sistema",
+    "Perder vencimientos les cuesta renovaciones",
+    "Hay cientos de corredores contactables vía asociaciones",
+    "Un corredor pagaría USD 15 a 30 por mes",
+    "Se pueden conseguir pólizas reales anonimizadas para pruebas"
    ],
    "evidencias": [
     "F-fintech-seguros-008",
@@ -162,14 +162,14 @@
    "riesgos": [
     "Falsos negativos pueden dar falsa seguridad; se comunica como ayuda, no garantía",
     "Los estafadores cambian de patrón rápido",
-    "Guardar números o datos de terceros reportados exige un tratamiento cuidadoso bajo la Ley 18.331",
-    "Baja disposición a pagar por un servicio percibido como preventivo"
+    "Guardar datos de terceros reportados exige cuidado bajo la Ley 18.331",
+    "Baja disposición a pagar por algo preventivo"
    ],
    "supuestos": [
     "Una parte relevante de las estafas afecta a vendedores online, por ejemplo con comprobantes falsos o links de phishing",
-    "Los vendedores usarían un bot de WhatsApp antes de despachar o hacer clic",
+    "Los vendedores usarían un bot de WhatsApp antes de despachar",
     "Un vendedor pagaría USD 6 por mes por este servicio",
-    "Las fichas no muestran competidores directos; puede haber herramientas de bancos o marketplaces que no relevamos",
+    "Las fichas no muestran competidores directos; puede haber herramientas de bancos o marketplaces no relevadas",
     "Un modelo con visión puede detectar inconsistencias en capturas de comprobantes con precisión útil"
    ],
    "evidencias": [
@@ -253,17 +253,17 @@
    ],
    "monetizacion": "La pyme paga USD 10 por carpeta o USD 8 por mes con actualización mensual. Más adelante, financiadores pagan por carpeta recibida estandarizada. Canal: proveedores de facturación electrónica y estudios contables como socios que lo revenden. Con 300 pymes en plan mensual serían unos USD 28.800 al año.",
    "riesgos": [
-    "Los financiadores pueden no aceptar una carpeta generada por un tercero sin integración con sus sistemas",
-    "Los XML subidos por la pyme podrían adulterarse; habrá que validar firmas y CAE",
-    "Datos financieros sensibles exigen seguridad fuerte y cumplimiento de la Ley 18.331",
-    "Obtener los XML depende del proveedor de facturación de cada pyme"
+    "Los financiadores pueden no aceptar una carpeta de un tercero",
+    "XML adulterados: hay que validar firmas y CAE",
+    "Datos financieros sensibles exigen seguridad y cumplir la Ley 18.331",
+    "Obtener los XML depende del proveedor de facturación"
    ],
    "supuestos": [
-    "Muchas pymes fuera de plataformas como PedidosYa tienen dificultad para acceder a crédito por falta de información ordenada",
-    "Bancos, cooperativas o fintechs valorarían una carpeta estandarizada basada en CFE",
+    "Muchas pymes fuera de plataformas tienen dificultad para acceder a crédito por falta de información ordenada",
+    "Financiadores valorarían una carpeta estandarizada basada en CFE",
     "Una pyme pagaría USD 8 a 10 por carpeta",
-    "Los proveedores de CFE permiten exportar los XML aunque con fricción",
-    "Generar información para financiadores no requiere habilitación del BCU mientras no se preste ni se intermedie dinero"
+    "Los proveedores de CFE permiten exportar los XML, con fricción",
+    "Dar información a financiadores no requiere habilitación del BCU si no se presta ni intermedia dinero"
    ],
    "evidencias": [
     "F-fintech-seguros-005",
