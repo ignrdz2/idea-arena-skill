@@ -1,0 +1,75 @@
+{
+ "id": "i005",
+ "titulo": "Portal de cambios y devoluciones para tiendas online uruguayas",
+ "problema": "Las pymes de e-commerce uruguayas casi no gestionan devoluciones: solo el 8% lo hace y ninguna mide la eficiencia de su logística (F-comercio-retail-007). El volumen es alto: 96,3 millones de transacciones en 2025 (F-comercio-retail-001) y casi siete de cada diez uruguayos compran online, 93% en comercios nacionales (F-comercio-retail-011). Del lado logístico, el 26% no usa indicadores de entrega (F-logistica-transporte-010) y la última milla es difícil fuera de Montevideo (F-logistica-transporte-011). Cada cambio se resuelve a mano, sin registrar motivos ni productos problemáticos.",
+ "usuario": "Tienda online pyme de Uruguay (indumentaria, calzado, hogar) que paga la suscripción; su cliente final usa el portal para pedir el cambio.",
+ "solucion": "Portal de autoservicio con la marca de la tienda: el cliente ingresa su número de pedido, elige el producto, el motivo y adjunta foto; el sistema aplica las reglas de la tienda (plazos, productos excluidos) y ofrece primero cambio por otro talle o crédito en la tienda antes que reembolso. Un modelo de lenguaje clasifica motivos y fotos. La tienda ve una bandeja con estados, coordina retiro o entrega en local, y obtiene los datos para emitir la nota de crédito en su proveedor de CFE (F-legal-contable-002). Un panel muestra tasa de devolución y motivos por SKU.",
+ "mvp": {
+  "semestre_1": [
+   "Portal del cliente con reglas configurables por tienda",
+   "Bandeja de gestión con estados y notificaciones por correo",
+   "Carga de pedidos por planilla o API de una plataforma de tienda",
+   "Demo: flujo completo con una tienda piloto"
+  ],
+  "semestre_2": [
+   "Clasificación de motivos y fotos con LLM",
+   "Cambio por crédito en tienda y por otro talle con reserva de stock",
+   "Panel de motivos por SKU y exportación de datos para nota de crédito",
+   "Demo: 3 tiendas en uso real y business case con tasas medidas"
+  ]
+ },
+ "stack": [
+  "TypeScript",
+  "NestJS",
+  "PostgreSQL",
+  "React",
+  "Claude Haiku 5.5",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 194,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 2 GB RAM con IPv4",
+    "usd_anual": 144,
+    "supuesto": "USD 12 por mes durante 12 meses de 2027; aloja backend y base de datos en Docker; sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API de Claude Haiku 5.5",
+    "usd_anual": 20,
+    "supuesto": "Unos 15 millones de tokens de entrada (incluye imágenes) y 2 millones de salida en el año en pruebas y pilotos a USD 0,10 y 0,50 por millón; da unos USD 2,5, se presupuestan USD 20 de margen.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "Dominio .com y snapshots de respaldo",
+    "usd_anual": 30,
+    "supuesto": "Estimación por encima, sin fuente: dominio y snapshots semanales, USD 15 cada uno."
+   }
+  ]
+ },
+ "competidores": [],
+ "monetizacion": "Suscripción mensual de la tienda de USD 15 a 30 según cantidad de solicitudes por mes. El argumento de venta es retener ingresos convirtiendo reembolsos en cambios o crédito. Canal: venta directa a tiendas online y agencias que las implementan.",
+ "riesgos": [
+  "El volumen de devoluciones en pymes puede ser bajo y no justificar una suscripción",
+  "Las plataformas de tienda pueden sumar devoluciones nativas",
+  "Integrar pedidos de plataformas diversas puede consumir mucho tiempo",
+  "Tratar datos personales de clientes finales exige cumplir la Ley 18.331 (registro de bases y consentimiento)"
+ ],
+ "supuestos": [
+  "Las fichas no muestran competidores locales de gestión de devoluciones; no se afirma que no existan",
+  "La tasa de devoluciones y su costo en pymes uruguayas no están en las fichas",
+  "El modelo se inspira en portales de devoluciones usados por tiendas online de EEUU; su éxito no está respaldado por fichas",
+  "Que la normativa de relaciones de consumo sobre ventas a distancia hace obligatorio aceptar ciertos arrepentimientos; a confirmar con la ley vigente",
+  "Que las tiendas pagarían USD 15 a 30 por mes; no hay ficha de disposición a pagar"
+ ],
+ "evidencias": [
+  "F-comercio-retail-001",
+  "F-comercio-retail-007",
+  "F-comercio-retail-011",
+  "F-logistica-transporte-010",
+  "F-logistica-transporte-011",
+  "F-legal-contable-002"
+ ]
+}

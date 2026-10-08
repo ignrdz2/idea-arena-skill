@@ -1,0 +1,63 @@
+{
+ "id": "i024",
+ "titulo": "Gestión y prorrateo de cargadores de autos eléctricos compartidos en edificios",
+ "problema": "En 2025 se vendieron 14.387 autos eléctricos en Uruguay (+147%, unos 39 por día) y la ACAU advierte que la cobertura de carga se queda corta; además, el precio de carga de UTE subió cerca de 9,2% en dos meses (F-energia-ambiente-003). La electrificación del transporte es parte de la política energética (F-energia-ambiente-006). Quien vive en un edificio necesita cargar en el garaje común, pero un cargador compartido obliga al administrador a resolver quién carga cuándo y cuánto paga cada uno de la luz común, hoy a mano o sin control, lo que genera conflictos entre copropietarios.",
+ "usuario": "Usan: copropietarios con auto eléctrico y el administrador del edificio. Paga el edificio (gastos comunes) o la administradora que gestiona varios edificios.",
+ "solucion": "Plataforma que se conecta por OCPP a cargadores comerciales compatibles. Cada usuario se identifica con app o tarjeta RFID, reserva turnos, el sistema mide kWh por sesión y genera la liquidación mensual por unidad lista para sumar a los gastos comunes. Sugiere cargar en horas de menor precio según la tarifa que cargue el administrador y avisa cuando la demanda supera la capacidad del cargador.",
+ "mvp": {
+  "semestre_1": [
+   "Servidor central OCPP 1.6 con autenticación de usuarios y registro de sesiones",
+   "Pruebas con simuladores de cargador de código abierto: demo de varias sesiones simultáneas",
+   "App web de reservas"
+  ],
+  "semestre_2": [
+   "Liquidación mensual por unidad y exportación para administradoras",
+   "Recomendación de horario según tarifa configurable",
+   "Piloto en un edificio o garaje con cargador OCPP real si se consigue, si no, demo con simuladores",
+   "Business case con entrevistas a administradoras"
+  ]
+ },
+ "stack": [
+  "Node.js o Python",
+  "OCPP 1.6J sobre WebSocket",
+  "PostgreSQL",
+  "React (PWA)",
+  "Docker",
+  "DigitalOcean Droplet"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 159,
+  "items": [
+   {
+    "concepto": "Droplet básico 2 GiB RAM",
+    "usd_anual": 144,
+    "supuesto": "USD 12 al mes por 12 meses; servidor OCPP, API y base de datos para un piloto con menos de 20 cargadores reales o simulados.",
+    "fuente_precio_url": "https://www.digitalocean.com/pricing/droplets"
+   },
+   {
+    "concepto": "Dominio .com por un año",
+    "usd_anual": 15,
+    "supuesto": "Estimación por encima, sin página de precios abierta: un dominio .com suele costar menos de USD 15 al año; se redondea para arriba con margen."
+   }
+  ]
+ },
+ "competidores": [],
+ "monetizacion": "Suscripción por cargador gestionado de unos USD 15 al mes que paga el edificio o la administradora, más un precio de alta. Segundo canal: instaladores de cargadores que revenden la plataforma. Precios a validar.",
+ "riesgos": [
+  "Depende de cargadores compatibles con OCPP; si se instalan modelos cerrados el producto no aplica",
+  "Sin un edificio piloto la demo queda solo con simuladores",
+  "Las administradoras pueden no querer sumar un proveedor más",
+  "Reglas de copropiedad o de UTE sobre reventa de energía podrían limitar el cobro por kWh"
+ ],
+ "supuestos": [
+  "Una parte relevante de los compradores de autos eléctricos vive en edificios con garaje común",
+  "Los cargadores comerciales disponibles en Uruguay soportan OCPP",
+  "Prorratear la energía entre copropietarios no se considera reventa regulada",
+  "Las fichas no muestran competidores; no se afirma que no existan",
+  "Hay administradoras contactables desde Uruguay para validar antes de diciembre"
+ ],
+ "evidencias": [
+  "F-energia-ambiente-003",
+  "F-energia-ambiente-006"
+ ]
+}

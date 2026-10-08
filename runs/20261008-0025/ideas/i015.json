@@ -1,0 +1,78 @@
+{
+ "id": "i015",
+ "titulo": "Verificador de estafas por WhatsApp para vendedores online",
+ "problema": "Las denuncias por estafa en Uruguay pasaron de 1.872 en 2015 a 25.116 en 2024, tercer delito más denunciado (F-fintech-seguros-004). El BCU identifica como tipos comunes el phishing y smishing, la suplantación de identidad, las estafas de Marketplace y las falsas ofertas de crédito (F-fintech-seguros-006). El comercio online local superó 96 millones de transacciones en 2025 (F-comercio-retail-001). Quien vende por redes recibe a diario mensajes, links y comprobantes de desconocidos y decide solo, en segundos, si despachar o hacer clic; la protección existente actúa del lado del banco y después del pago.",
+ "usuario": "Emprendedores y pymes que venden por WhatsApp, Instagram o marketplaces en Uruguay. Pagan los que usan el plan de negocio; el uso básico personal es gratuito.",
+ "solucion": "Un número de WhatsApp al que el vendedor reenvía un mensaje sospechoso, un link o la captura de un comprobante de transferencia. El sistema analiza el texto y la imagen con un modelo de lenguaje con visión, revisa el dominio del link (antigüedad, parecido con marcas bancarias) y lo contrasta con una base de patrones armada sobre la tipología del BCU. Responde en segundos con un nivel de riesgo, el tipo de estafa probable y qué verificar antes de despachar (por ejemplo, confirmar el crédito en la cuenta, no en la captura). El plan de negocio agrega historial de verificaciones y alertas de patrones nuevos reportados por otros usuarios.",
+ "mvp": {
+  "semestre_1": [
+   "Bot de WhatsApp que clasifica texto y links según la tipología del BCU, con un set de casos etiquetado por el equipo",
+   "Evaluación de precisión y falsos positivos sobre ese set"
+  ],
+  "semestre_2": [
+   "Análisis de capturas de comprobantes con visión y detección de inconsistencias",
+   "Panel web del plan de negocio con historial y alertas",
+   "Piloto con 20 a 40 vendedores y medición de uso y casos detectados"
+  ]
+ },
+ "stack": [
+  "Python",
+  "FastAPI",
+  "PostgreSQL",
+  "Claude Haiku 5.5 API con visión",
+  "WhatsApp Cloud API",
+  "RDAP para datos de dominios",
+  "React",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 115.08,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 1 GB con IPv4",
+    "usd_anual": 84,
+    "supuesto": "USD 7 por mes durante 12 meses, una instancia para bot, panel y base de datos; no se cuenta capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API Claude Haiku 5.5",
+    "usd_anual": 20,
+    "supuesto": "Unas 20.000 verificaciones en el año a 3.000 tokens de entrada (USD 0,10 por millón) y 300 de salida (USD 0,50 por millón) dan unos USD 9; se redondea a 20 por imágenes y margen.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "WhatsApp Cloud API",
+    "usd_anual": 0,
+    "supuesto": "El usuario inicia cada consulta y la respuesta va dentro de la ventana de 24 horas, que no se cobra; no se envían plantillas pagas.",
+    "fuente_precio_url": "https://developers.facebook.com/docs/whatsapp/pricing"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 11.08,
+    "supuesto": "Un dominio por un año al precio publicado de USD 11,08.",
+    "fuente_precio_url": "https://porkbun.com/tld/com"
+   }
+  ]
+ },
+ "competidores": [],
+ "monetizacion": "Freemium: hasta 10 verificaciones por mes gratis. Plan negocio de USD 6 por mes con verificaciones ilimitadas, historial y alertas. Segundo canal: convenios con cámaras o gremios de comercio que lo ofrecen a sus socios a precio por volumen. Con 400 pymes pagas serían unos USD 28.800 al año.",
+ "riesgos": [
+  "Falsos negativos pueden dar falsa seguridad; se comunica como ayuda, no garantía",
+  "Los estafadores cambian de patrón rápido",
+  "Guardar datos de terceros reportados exige cuidado bajo la Ley 18.331",
+  "Baja disposición a pagar por algo preventivo"
+ ],
+ "supuestos": [
+  "Una parte relevante de las estafas afecta a vendedores online, por ejemplo con comprobantes falsos o links de phishing",
+  "Los vendedores usarían un bot de WhatsApp antes de despachar",
+  "Un vendedor pagaría USD 6 por mes por este servicio",
+  "Las fichas no muestran competidores directos; puede haber herramientas de bancos o marketplaces no relevadas",
+  "Un modelo con visión puede detectar inconsistencias en capturas de comprobantes con precisión útil"
+ ],
+ "evidencias": [
+  "F-fintech-seguros-004",
+  "F-fintech-seguros-006",
+  "F-comercio-retail-001"
+ ]
+}

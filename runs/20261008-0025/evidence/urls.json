@@ -453,5 +453,75 @@
   "estado": "ok",
   "http": 200,
   "checked_at": "2026-10-08T00:28:57"
+ },
+ "https://ai.google.dev/gemini-api/docs/pricing": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:32:25"
+ },
+ "https://aws.amazon.com/lightsail/pricing/": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:32:25"
+ },
+ "https://aws.amazon.com/ses/pricing/": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:32:25"
+ },
+ "https://claude.com/pricing": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:32:25"
+ },
+ "https://developers.facebook.com/docs/whatsapp/pricing": {
+  "estado": "bloqueada",
+  "http": 400,
+  "checked_at": "2026-10-08T00:32:25"
+ },
+ "https://developers.openai.com/api/docs/pricing": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:32:25"
+ },
+ "https://platform.claude.com/docs/en/about-claude/pricing": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:32:25"
+ },
+ "https://platform.claude.com/docs/en/docs/about-claude/pricing": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:32:25"
+ },
+ "https://porkbun.com/tld/com": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:32:25"
+ },
+ "https://qdrant.tech/pricing/": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:32:25"
+ },
+ "https://resend.com/pricing": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:32:25"
+ },
+ "https://www.cloudflare.com/plans/": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:32:25"
+ },
+ "https://www.cloudflare.com/products/registrar/": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:32:25"
+ },
+ "https://www.digitalocean.com/pricing/droplets": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:32:25"
  }
 }

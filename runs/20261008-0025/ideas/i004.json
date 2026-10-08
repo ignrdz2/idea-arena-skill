@@ -1,0 +1,71 @@
+{
+ "id": "i004",
+ "titulo": "Cumplimiento antilavado para escribanías y estudios contables chicos",
+ "problema": "La Ley 20.469 de marzo de 2026 endurece el régimen antilavado para abogados, escribanos y contadores: baja el umbral de efectivo de 1.000.000 UI a 200.000 UI y obliga a actualizar matrices de riesgo y manuales (F-legal-contable-009). Más operaciones quedan alcanzadas y cada profesional debe documentar la debida diligencia de sus clientes. A la vez crecen las estafas y la suplantación de identidad (F-fintech-seguros-004, F-fintech-seguros-006), que son justo lo que la debida diligencia debe detectar.",
+ "usuario": "Escribanos, contadores y abogados independientes o en estudios de 1 a 10 personas en Uruguay. Paga el titular del estudio.",
+ "solucion": "Plataforma web de cumplimiento antilavado adaptada al régimen uruguayo, siguiendo el modelo de las herramientas de verificación de clientes para estudios jurídicos del Reino Unido. Hace cuatro cosas: (1) legajo de debida diligencia por cliente con formulario que el cliente completa desde el celular, carga de cédula y declaración de beneficiario final; (2) cruce automático con listas públicas de sanciones; (3) registro de operaciones con alerta cuando el efectivo supera 200.000 UI convertidas con la cotización de la UI del día; (4) generación asistida por LLM de la matriz de riesgo y el manual interno a partir de un cuestionario, con el texto normativo citado por RAG. Cambia: normativa y umbrales en UI, documentos uruguayos, Ley 18.331 y precio para un profesional solo.",
+ "mvp": {
+  "semestre_1": [
+   "Legajo de cliente y formulario de debida diligencia de punta a punta, con almacenamiento cifrado",
+   "Registro de operaciones con conversión a UI y alerta de umbral",
+   "Demo con 2 escribanías de prueba cargando casos reales anonimizados"
+  ],
+  "semestre_2": [
+   "Cruce con listas públicas de sanciones y puntaje de riesgo por cliente",
+   "Generador de matriz de riesgo y manual con RAG sobre la ley y su reglamentación",
+   "Exportación del legajo para inspección y piloto con 5 a 10 profesionales"
+  ]
+ },
+ "stack": [
+  "Python FastAPI",
+  "React",
+  "PostgreSQL",
+  "Qdrant",
+  "Claude Haiku 5.5 vía API",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 179,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail 2 GB",
+    "usd_anual": 144,
+    "supuesto": "1 instancia de USD 12 por mes, 12 meses, sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API de LLM Claude Haiku 5.5",
+    "usd_anual": 15,
+    "supuesto": "Unos 30 millones de tokens de entrada y 6 millones de salida en RAG y redacción: USD 3 más USD 3, redondeado a 15.",
+    "fuente_precio_url": "https://claude.com/pricing"
+   },
+   {
+    "concepto": "Dominio y DNS",
+    "usd_anual": 20,
+    "supuesto": "Estimación por encima, sin página de precios abierta: un dominio .com más DNS, redondeado a USD 20."
+   }
+  ]
+ },
+ "competidores": [],
+ "monetizacion": "Suscripción mensual por profesional, con un precio de referencia de USD 20 a 30 por mes y un plan de estudio para varios usuarios. Canal: asociaciones profesionales y cursos sobre la nueva ley.",
+ "riesgos": [
+  "La reglamentación de la Ley 20.469 todavía no salió y puede cambiar los requisitos",
+  "Responsabilidad si el sistema no detecta un caso: debe presentarse como apoyo, no como garantía",
+  "Manejo de datos personales sensibles bajo Ley 18.331",
+  "Bajo hábito de pago por software en profesionales independientes"
+ ],
+ "supuestos": [
+  "Las fichas no muestran competidores locales de software antilavado para estudios chicos; eso no prueba que no existan",
+  "Existen en el Reino Unido herramientas de verificación de clientes para estudios jurídicos, sin ficha que lo respalde",
+  "Las escribanías chicas hoy gestionan la debida diligencia con planillas o papel",
+  "Las listas de sanciones relevantes son públicas y descargables",
+  "Precio de USD 20 a 30 por mes aceptable para un profesional independiente",
+  "Se puede contactar escribanos y contadores desde Uruguay antes de diciembre de 2026"
+ ],
+ "evidencias": [
+  "F-legal-contable-009",
+  "F-fintech-seguros-004",
+  "F-fintech-seguros-006"
+ ]
+}

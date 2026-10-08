@@ -1,0 +1,74 @@
+{
+ "id": "i019",
+ "titulo": "Consultas en lenguaje natural sobre los datos de gestión de un organismo",
+ "problema": "En Uruguay no existe un marco de competencias digitales para funcionarios, los relevamientos muestran capacidades analíticas limitadas y se pide formación en análisis de datos y Excel (F-sector-publico-004). El volumen de trabajo es alto: Presidencia, el Ministerio del Interior y el Tribunal de Cuentas gestionan más de 500 expedientes diarios cada uno (F-sector-publico-003). La respuesta hoy es capacitar: INEFOP formó a más de 25.000 personas en habilidades digitales (F-educacion-009), pero un curso no responde la pregunta concreta que el jefe necesita hoy.",
+ "usuario": "Usa: el funcionario o jefe de área que necesita una cifra (por ejemplo, expedientes atrasados por oficina). Paga: el organismo o la intendencia, desde su área de TI o de gestión.",
+ "solucion": "El funcionario sube las planillas o exportaciones que ya maneja (expedientes, reclamos, compras) o conecta datos abiertos, y pregunta en español. El sistema genera SQL, muestra la consulta explicada en palabras, la tabla y un gráfico, y guarda las preguntas frecuentes como indicadores. Cada respuesta es auditable y los datos personales se detectan y enmascaran antes de enviar nada al LLM, que solo ve el esquema y muestras anonimizadas.",
+ "mvp": {
+  "semestre_1": [
+   "Carga de planillas CSV y Excel a una base por organismo con detección de esquema",
+   "Text-to-SQL con explicación de la consulta sobre datos abiertos de ejemplo",
+   "Demo con un conjunto de 50 preguntas y medición de exactitud"
+  ],
+  "semestre_2": [
+   "Enmascarado de datos personales y bitácora de consultas",
+   "Gráficos e indicadores guardados con actualización al recargar datos",
+   "Piloto o entrevistas con funcionarios y business case"
+  ]
+ },
+ "stack": [
+  "Python FastAPI",
+  "DuckDB",
+  "PostgreSQL",
+  "Qdrant",
+  "React",
+  "Claude Haiku 5.5 vía API",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 166,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 2 GB con IPv4",
+    "usd_anual": 144,
+    "supuesto": "Una instancia de USD 12 por mes durante 12 meses para backend, DuckDB, Postgres y Qdrant; sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API de LLM Claude Haiku 5.5",
+    "usd_anual": 22,
+    "supuesto": "Hasta 150 millones de tokens de entrada (USD 0,10 por millón) y 12 millones de salida (USD 0,50 por millón), unas 15.000 consultas con esquema y ejemplos en el prompt.",
+    "fuente_precio_url": "https://claude.com/pricing"
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Cursos de habilidades digitales de INEFOP",
+   "evidencia_ids": [
+    "F-educacion-009"
+   ],
+   "hueco": "Forman personas a mediano plazo; no responden en el momento preguntas sobre los datos propios del organismo."
+  }
+ ],
+ "monetizacion": "Paga el organismo: plan por área de USD 60 por mes con hasta 10 usuarios y un volumen de consultas, y excedente por uso. Canal: áreas de gestión de intendencias y ministerios, comunidades de funcionarios como la de expediente digital; luego gobiernos locales de LATAM.",
+ "riesgos": [
+  "Respuestas numéricas incorrectas por SQL mal generado: requiere validación y mostrar la consulta",
+  "Restricciones de los organismos para subir datos a la nube; puede exigir instalación local",
+  "Compras públicas lentas",
+  "Herramientas de BI con IA de grandes proveedores ya licenciadas en el Estado"
+ ],
+ "supuestos": [
+  "Los funcionarios manejan planillas o exportaciones de sus sistemas que pueden usar en la herramienta (a verificar)",
+  "Un área pagaría USD 60 por mes",
+  "Enviar esquema y muestras anonimizadas al LLM tiene un camino de cumplimiento con la Ley 18.331",
+  "Las fichas no muestran competidores de software; no se afirma que no existan",
+  "No hay contacto identificado en el Estado: la validación depende de conseguirlo antes de diciembre de 2026"
+ ],
+ "evidencias": [
+  "F-sector-publico-004",
+  "F-sector-publico-003",
+  "F-educacion-009"
+ ]
+}

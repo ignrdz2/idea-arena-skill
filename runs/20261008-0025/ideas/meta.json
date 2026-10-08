@@ -1,0 +1,237 @@
+{
+ "about": "Lo que el juez no ve: de qué generador y estrategia salió cada idea.",
+ "ideas": {
+  "i001": {
+   "generador": "g04",
+   "local_id": "g04-3",
+   "estrategia": "localizar",
+   "foco": [
+    "legal-contable"
+   ]
+  },
+  "i002": {
+   "generador": "g03",
+   "local_id": "g03-3",
+   "estrategia": "segmento",
+   "foco": [
+    "salud"
+   ]
+  },
+  "i003": {
+   "generador": "g08",
+   "local_id": "g08-3",
+   "estrategia": "segmento",
+   "foco": [
+    "turismo"
+   ]
+  },
+  "i004": {
+   "generador": "g04",
+   "local_id": "g04-1",
+   "estrategia": "localizar",
+   "foco": [
+    "legal-contable"
+   ]
+  },
+  "i005": {
+   "generador": "g09",
+   "local_id": "g09-3",
+   "estrategia": "localizar",
+   "foco": [
+    "comercio-retail"
+   ]
+  },
+  "i006": {
+   "generador": "g03",
+   "local_id": "g03-2",
+   "estrategia": "segmento",
+   "foco": [
+    "salud"
+   ]
+  },
+  "i007": {
+   "generador": "g09",
+   "local_id": "g09-2",
+   "estrategia": "localizar",
+   "foco": [
+    "comercio-retail"
+   ]
+  },
+  "i008": {
+   "generador": "g07",
+   "local_id": "g07-3",
+   "estrategia": "capacidad",
+   "foco": [
+    "educacion"
+   ]
+  },
+  "i009": {
+   "generador": "g04",
+   "local_id": "g04-2",
+   "estrategia": "localizar",
+   "foco": [
+    "legal-contable"
+   ]
+  },
+  "i010": {
+   "generador": "g07",
+   "local_id": "g07-1",
+   "estrategia": "capacidad",
+   "foco": [
+    "educacion"
+   ]
+  },
+  "i011": {
+   "generador": "g07",
+   "local_id": "g07-2",
+   "estrategia": "capacidad",
+   "foco": [
+    "educacion"
+   ]
+  },
+  "i012": {
+   "generador": "g06",
+   "local_id": "g06-1",
+   "estrategia": "dolor",
+   "foco": [
+    "agro"
+   ]
+  },
+  "i013": {
+   "generador": "g01",
+   "local_id": "g01-3",
+   "estrategia": "dolor",
+   "foco": [
+    "energia-ambiente"
+   ]
+  },
+  "i014": {
+   "generador": "g08",
+   "local_id": "g08-2",
+   "estrategia": "segmento",
+   "foco": [
+    "turismo"
+   ]
+  },
+  "i015": {
+   "generador": "g10",
+   "local_id": "g10-2",
+   "estrategia": "invertir",
+   "foco": [
+    "fintech-seguros"
+   ]
+  },
+  "i016": {
+   "generador": "g06",
+   "local_id": "g06-2",
+   "estrategia": "dolor",
+   "foco": [
+    "agro"
+   ]
+  },
+  "i017": {
+   "generador": "g05",
+   "local_id": "g05-1",
+   "estrategia": "invertir",
+   "foco": [
+    "sector-publico"
+   ]
+  },
+  "i018": {
+   "generador": "g09",
+   "local_id": "g09-1",
+   "estrategia": "localizar",
+   "foco": [
+    "comercio-retail"
+   ]
+  },
+  "i019": {
+   "generador": "g05",
+   "local_id": "g05-3",
+   "estrategia": "invertir",
+   "foco": [
+    "sector-publico"
+   ]
+  },
+  "i020": {
+   "generador": "g02",
+   "local_id": "g02-3",
+   "estrategia": "capacidad",
+   "foco": [
+    "logistica-transporte"
+   ]
+  },
+  "i021": {
+   "generador": "g01",
+   "local_id": "g01-1",
+   "estrategia": "dolor",
+   "foco": [
+    "energia-ambiente"
+   ]
+  },
+  "i022": {
+   "generador": "g03",
+   "local_id": "g03-1",
+   "estrategia": "segmento",
+   "foco": [
+    "salud"
+   ]
+  },
+  "i023": {
+   "generador": "g10",
+   "local_id": "g10-3",
+   "estrategia": "invertir",
+   "foco": [
+    "fintech-seguros"
+   ]
+  },
+  "i024": {
+   "generador": "g01",
+   "local_id": "g01-2",
+   "estrategia": "dolor",
+   "foco": [
+    "energia-ambiente"
+   ]
+  },
+  "i025": {
+   "generador": "g05",
+   "local_id": "g05-2",
+   "estrategia": "invertir",
+   "foco": [
+    "sector-publico"
+   ]
+  },
+  "i026": {
+   "generador": "g02",
+   "local_id": "g02-2",
+   "estrategia": "capacidad",
+   "foco": [
+    "logistica-transporte"
+   ]
+  },
+  "i027": {
+   "generador": "g10",
+   "local_id": "g10-1",
+   "estrategia": "invertir",
+   "foco": [
+    "fintech-seguros"
+   ]
+  },
+  "i028": {
+   "generador": "g02",
+   "local_id": "g02-1",
+   "estrategia": "capacidad",
+   "foco": [
+    "logistica-transporte"
+   ]
+  },
+  "i029": {
+   "generador": "g08",
+   "local_id": "g08-1",
+   "estrategia": "segmento",
+   "foco": [
+    "turismo"
+   ]
+  }
+ }
+}

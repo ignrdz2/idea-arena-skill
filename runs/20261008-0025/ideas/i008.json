@@ -1,0 +1,94 @@
+{
+ "id": "i008",
+ "titulo": "Tutor de práctica para la prueba de matemática de ingreso a Ingeniería",
+ "problema": "En la prueba de matemática de Ingeniería del primer semestre solo aprobó el 25% de los inscriptos (F-educacion-002). Quien no la aprueba arranca la carrera con atraso, y el egreso de educación media ya es bajo (F-educacion-001). Las herramientas adaptativas que llegan a la región, como Aleks, son genéricas y no están alineadas a esa prueba (F-educacion-010). Hoy la alternativa son clases particulares.",
+ "usuario": "Estudiantes de último año de liceo y recién ingresados a Ingeniería en Uruguay; pagan ellos o sus familias, y en una segunda etapa institutos preparatorios.",
+ "solucion": "Aplicación web: un banco de ejercicios etiquetados por tema, generado y revisado a partir de material público de la prueba, con diagnóstico inicial, plan de estudio adaptativo según errores y un tutor con RAG que explica paso a paso citando el material de curso en lugar de dar solo el resultado. El docente o el estudiante ve un mapa de temas dominados y pendientes.",
+ "mvp": {
+  "semestre_1": [
+   "Ingesta de material público de la prueba, etiquetado por tema y embeddings en Qdrant",
+   "Banco inicial de ejercicios con corrección automática de respuestas numéricas",
+   "Demo: diagnóstico inicial y mapa de temas para un estudiante"
+  ],
+  "semestre_2": [
+   "Tutor RAG con explicaciones paso a paso y citas del material",
+   "Plan adaptativo según errores y repetición espaciada",
+   "Prueba con un grupo de estudiantes antes de una instancia de la prueba y medición de resultados",
+   "Business case con precio validado"
+  ]
+ },
+ "stack": [
+  "Python",
+  "FastAPI",
+  "Qdrant Cloud",
+  "Gemini 2.5 Flash API",
+  "Gemini Embedding",
+  "Next.js",
+  "PostgreSQL",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 179,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 1 GB",
+    "usd_anual": 84,
+    "supuesto": "Plan de USD 7 por mes con IPv4, 12 meses, para app y PostgreSQL con hasta unos 200 estudiantes de prueba.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "Qdrant Cloud capa gratuita",
+    "usd_anual": 0,
+    "supuesto": "Cluster gratuito de 1 GB de RAM y 4 GB de disco, sin límite de tiempo según la página; alcanza para el corpus de ejercicios y material.",
+    "fuente_precio_url": "https://qdrant.tech/pricing/"
+   },
+   {
+    "concepto": "API Gemini 2.5 Flash y embeddings",
+    "usd_anual": 80,
+    "supuesto": "200 estudiantes, 100 consultas cada uno, unos 4.000 tokens de entrada y 1.000 de salida por consulta: 80 millones de entrada (USD 24) y 20 millones de salida (USD 50), más embeddings del corpus a USD 0,20 por millón. Unos USD 75, redondeado a 80.",
+    "fuente_precio_url": "https://ai.google.dev/gemini-api/docs/pricing"
+   },
+   {
+    "concepto": "Dominio y DNS",
+    "usd_anual": 15,
+    "supuesto": "Estimación por encima sin fuente abierta: un dominio .com cuesta del orden de USD 10 a 12 por año; se redondea a 15 con margen. DNS en el mismo registrador."
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Aleks",
+   "evidencia_ids": [
+    "F-educacion-010"
+   ],
+   "hueco": "Plataforma adaptativa de matemática usada en Ecuador; no está alineada a la prueba de ingreso de Ingeniería en Uruguay ni a su material."
+  },
+  {
+   "nombre": "EduIA Lab de Ceibal",
+   "evidencia_ids": [
+    "F-educacion-008"
+   ],
+   "hueco": "Laboratorio público de IA educativa con foco en aprendizaje estudiantil; puede ser socio o desarrollar algo similar, pero la ficha no muestra un producto para esta prueba."
+  }
+ ],
+ "monetizacion": "Pase por temporada de examen para el estudiante, por ejemplo USD 10 a 15, con diagnóstico gratuito como gancho. Segunda línea: licencias por grupo para institutos preparatorios y liceos privados. Precio a validar.",
+ "riesgos": [
+  "Estudiantes con baja disposición a pagar; la versión gratuita puede canibalizar",
+  "Errores matemáticos del LLM: hay que verificar con cálculo simbólico y revisión humana",
+  "Uso del material de la facultad: verificar que sea público y su licencia",
+  "Demanda estacional, concentrada antes de cada instancia de la prueba"
+ ],
+ "supuestos": [
+  "El material de la prueba y de cursos introductorios es público y se puede usar",
+  "El bajo porcentaje de aprobación de la ficha se repite en otras instancias",
+  "Los estudiantes o familias pagarían USD 10 a 15 por temporada",
+  "Se puede reclutar un grupo de prueba de estudiantes de liceo o de primer año"
+ ],
+ "evidencias": [
+  "F-educacion-001",
+  "F-educacion-002",
+  "F-educacion-008",
+  "F-educacion-010"
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "id": "i021",
+ "titulo": "Prediagnóstico energético de mipymes a partir de sus facturas de UTE",
+ "problema": "Las mipymes son el 80% de las empresas de Uruguay y más del 60% del empleo, y el MIEM las empuja a mejorar su eficiencia energética: reintegra hasta USD 3.000 (75% del costo) de un estudio de oportunidades de mejora, lo que implica estudios de hasta unos USD 4.000, y ofrece un simulador de autodiagnóstico genérico (F-energia-ambiente-001). Para un comercio chico, pagar un estudio sin saber si vale la pena es una barrera. La microgeneración está habilitada para pequeñas empresas (F-energia-ambiente-002) y la solar crece (F-energia-ambiente-006), pero evaluarla exige interpretar facturas y potencia contratada.",
+ "usuario": "Dueño o administrador de una mipyme (comercio, taller, pequeña industria). Pagan la mipyme (plan mensual) y, como segundo cliente, consultores e instaladores de eficiencia o solar que compran prediagnósticos calificados.",
+ "solucion": "Web donde la mipyme sube 12 facturas de UTE en PDF o foto. Un extractor con LLM y validación por reglas arma la serie de consumo, potencia y cargos. Un motor de reglas basado en el pliego tarifario público estima ahorros por ajustar la potencia contratada o cambiar de tarifa, y un simulador estima la viabilidad de microgeneración solar. Entrega un informe de prediagnóstico en lenguaje claro que indica si vale la pena pedir el estudio subsidiado.",
+ "mvp": {
+  "semestre_1": [
+   "Extractor de facturas UTE (PDF y foto) con precisión medida sobre facturas reales donadas",
+   "Modelo de datos de consumo y motor de reglas tarifarias para las tarifas más comunes de pequeños clientes",
+   "Demo: subir facturas y ver la serie de consumo y un primer ahorro estimado"
+  ],
+  "semestre_2": [
+   "Simulador de microgeneración solar con supuestos editables",
+   "Informe de prediagnóstico descargable y panel para consultores",
+   "Piloto con 10 a 20 mipymes y medición de cuántas piden un estudio",
+   "Business case con precios validados en entrevistas"
+  ]
+ },
+ "stack": [
+  "Python",
+  "FastAPI",
+  "PostgreSQL",
+  "Gemini 2.5 Flash-Lite (extracción de documentos)",
+  "React",
+  "Docker",
+  "DigitalOcean Droplet"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 169,
+  "items": [
+   {
+    "concepto": "Droplet básico 2 GiB RAM",
+    "usd_anual": 144,
+    "supuesto": "USD 12 al mes por 12 meses; aloja API, base de datos y frontend para menos de 100 usuarios de piloto.",
+    "fuente_precio_url": "https://www.digitalocean.com/pricing/droplets"
+   },
+   {
+    "concepto": "API de Gemini 2.5 Flash-Lite (capa paga)",
+    "usd_anual": 10,
+    "supuesto": "2.000 facturas al año, unos 3.000 tokens de entrada y 1.000 de salida cada una: unos USD 2 a USD 0,10 y 0,40 por millón; se redondea a 10. Capa paga para no ceder datos de clientes.",
+    "fuente_precio_url": "https://ai.google.dev/gemini-api/docs/pricing"
+   },
+   {
+    "concepto": "Dominio .com por un año",
+    "usd_anual": 15,
+    "supuesto": "Estimación por encima, sin página de precios abierta: un dominio .com suele costar menos de USD 15 al año; se redondea para arriba con margen."
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Simulador de autodiagnóstico del MIEM",
+   "evidencia_ids": [
+    "F-energia-ambiente-001"
+   ],
+   "hueco": "Es genérico y se basa en lo que el usuario declara; no lee sus facturas reales ni cuantifica ahorros tarifarios ni solares para su caso."
+  }
+ ],
+ "monetizacion": "Freemium: un prediagnóstico gratis; plan mipyme de unos USD 10 al mes con seguimiento mensual de facturas y alertas. Consultores e instaladores pagan unos USD 20 por prediagnóstico calificado de una mipyme que aceptó ser contactada. Precios a validar en entrevistas.",
+ "riesgos": [
+  "El programa de reintegro del MIEM es de 2020 y puede no estar vigente o haber cambiado",
+  "Facturas con formatos variables o fotos malas bajan la precisión de extracción",
+  "El ahorro por ajuste tarifario puede ser chico para mipymes de bajo consumo y no justificar un pago"
+ ],
+ "supuestos": [
+  "El pliego tarifario de UTE es público y alcanza para modelar ahorros por potencia y tarifa",
+  "Existen consultores e instaladores en Uruguay dispuestos a pagar por clientes calificados",
+  "Las mipymes pagan por un ahorro estimado que se ve en su propia factura",
+  "No hay competidores en las fichas fuera del simulador del MIEM; no se afirma que no existan",
+  "El tratamiento de facturas cumple la Ley 18.331 con consentimiento explícito"
+ ],
+ "evidencias": [
+  "F-energia-ambiente-001",
+  "F-energia-ambiente-002",
+  "F-energia-ambiente-006"
+ ]
+}

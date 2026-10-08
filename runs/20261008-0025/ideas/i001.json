@@ -1,0 +1,88 @@
+{
+ "id": "i001",
+ "titulo": "Copiloto de obligaciones fiscales para unipersonales que empiezan",
+ "problema": "Un negocio nuevo en Uruguay debe facturar electrónicamente desde el primer día (F-legal-contable-002) y, si factura como contribuyente de IVA, necesita certificado digital y un CAE que vence a los 2 años (F-comercio-retail-009). El costo de entender esto lo paga en honorarios: un contador cobra $U 2.200 a 3.000 por mes a un monotributista (F-legal-contable-001), y elegir mal el proveedor de CFE trae rechazos, caídas y un plan por comprobante más caro pasados unos 80 CFE por mes (F-legal-contable-003).",
+ "usuario": "Unipersonales y monotributistas que recién empiezan o facturan poco, sobre todo servicios. Pagan ellos; contadores asociados pueden pagar por recibir clientes ordenados.",
+ "solucion": "App web para autónomos, al estilo de las apps españolas de gestión para autónomos, adaptada al régimen uruguayo. Un asistente pregunta actividad, ingresos y clientes, y arma un calendario personalizado de obligaciones DGI y BPS con alertas; controla vencimiento del CAE y del certificado; importa los CFE emitidos y recibidos en XML para llevar ingresos y gastos; avisa cuando conviene revisar el régimen o el plan del proveedor de CFE según volumen; y responde dudas con RAG sobre normativa y guías públicas, citando la fuente y derivando al contador cuando la pregunta lo exige. Al cierre arma un dossier para el contador. Lo que cambia: regímenes uruguayos, organismos, vencimientos y un modelo que deriva a contadores en vez de reemplazarlos.",
+ "mvp": {
+  "semestre_1": [
+   "Asistente de alta y calendario de obligaciones para 2 regímenes, con alertas por correo",
+   "Importación de XML de CFE y libro simple de ingresos y gastos",
+   "Demo con 5 unipersonales de prueba"
+  ],
+  "semestre_2": [
+   "Asistente de preguntas con RAG sobre normativa pública y citas",
+   "Alertas de volumen y vencimiento de CAE, y dossier para el contador",
+   "Piloto con 20 a 30 usuarios y medición de retención"
+  ]
+ },
+ "stack": [
+  "Next.js",
+  "Python FastAPI",
+  "PostgreSQL",
+  "Qdrant",
+  "Claude Haiku 5.5 vía API",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 179,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail 2 GB",
+    "usd_anual": 144,
+    "supuesto": "1 instancia de USD 12 por mes, 12 meses, sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API de LLM Claude Haiku 5.5",
+    "usd_anual": 15,
+    "supuesto": "50 usuarios de piloto, 20 consultas por mes, 4.000 tokens de entrada y 500 de salida: USD 4,8 más USD 3, redondeado a 15.",
+    "fuente_precio_url": "https://claude.com/pricing"
+   },
+   {
+    "concepto": "Dominio y DNS",
+    "usd_anual": 20,
+    "supuesto": "Estimación por encima, sin página de precios abierta: un dominio .com más DNS, redondeado a USD 20."
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Contador tradicional",
+   "evidencia_ids": [
+    "F-legal-contable-001"
+   ],
+   "hueco": "Cobra un fijo mensual aunque el autónomo facture poco y no le da visibilidad diaria de sus obligaciones."
+  },
+  {
+   "nombre": "Proveedores de CFE como YoFacturo",
+   "evidencia_ids": [
+    "F-legal-contable-003",
+    "F-comercio-retail-009"
+   ],
+   "hueco": "Resuelven la emisión pero no el calendario de obligaciones ni la orientación sobre el régimen."
+  }
+ ],
+ "monetizacion": "Freemium: calendario gratis y plan de USD 5 a 8 por mes con importación de CFE, asistente y dossier. Segundo ingreso: contadores asociados pagan por recibir clientes nuevos con la información ordenada. Montos a validar.",
+ "riesgos": [
+  "Una respuesta tributaria equivocada genera daño y desconfianza: hay que citar fuentes y derivar",
+  "Cambios normativos obligan a mantener el calendario",
+  "Disposición a pagar baja en usuarios que facturan poco",
+  "Rechazo de contadores si lo ven como reemplazo"
+ ],
+ "supuestos": [
+  "Existen en España apps de gestión fiscal para autónomos, sin ficha que lo respalde",
+  "Los vencimientos de DGI y BPS están publicados y se pueden modelar por régimen",
+  "Los unipersonales pueden descargar los XML de sus CFE",
+  "Precio de USD 5 a 8 por mes aceptable",
+  "Hay contadores dispuestos a pagar por clientes derivados",
+  "Las fichas no muestran apps locales de este tipo; no prueba que no existan"
+ ],
+ "evidencias": [
+  "F-legal-contable-001",
+  "F-legal-contable-002",
+  "F-legal-contable-003",
+  "F-comercio-retail-009"
+ ]
+}

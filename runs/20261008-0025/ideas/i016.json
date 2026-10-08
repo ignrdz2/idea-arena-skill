@@ -1,0 +1,67 @@
+{
+ "id": "i016",
+ "titulo": "Libreta de stock bovino conciliada con la trazabilidad obligatoria",
+ "problema": "Todo productor bovino debe asentar en el SNIG los movimientos, cambios de propiedad y eventos sanitarios de cada animal, sobre la base de DICOSE y la Ley 17.997 (F-agro-002). Mantener el stock por caravana, potrero y categoría coincidiendo con lo declarado es trabajo administrativo del productor o su escritorio. En otros rubros del agro, el papeleo de traslados ya se percibe como un costo que paga el productor (F-logistica-transporte-003), y las empresas chicas tienen digitalización baja (F-logistica-transporte-008).",
+ "usuario": "Usa: el productor ganadero chico o mediano, su capataz y el contador o escritorio rural que lo asiste. Paga: el productor, o el escritorio rural que lo ofrece a varios clientes.",
+ "solucion": "App offline para registrar en el campo nacimientos, caravaneos, muertes, ventas, compras y pases entre potreros, por caravana o por lote. Mantiene el stock por categoría y potrero y lo concilia contra el listado que el productor exporta del registro oficial: marca caravanas que faltan, sobran o cambiaron de categoría y arma pendientes a regularizar antes de un embarque. Panel web para el escritorio rural con el estado de cada cliente.",
+ "mvp": {
+  "semestre_1": [
+   "Entrevistas con productores y escritorios rurales para mapear qué registran, dónde y con qué errores",
+   "App offline con registro de eventos de stock por caravana y por lote, y stock por potrero y categoría",
+   "Importador del listado exportado del registro oficial en el formato que se releve",
+   "Demo al tutor: rodeo de prueba con altas, bajas y pases, y su stock resultante"
+  ],
+  "semestre_2": [
+   "Motor de conciliación con reporte de diferencias y lista de pendientes",
+   "Panel web multi-cliente para escritorio rural",
+   "Piloto con al menos un escritorio rural o productor real",
+   "Business case con precios validados; demo final con la conciliación de un establecimiento del piloto"
+  ]
+ },
+ "stack": [
+  "React Native con Expo",
+  "SQLite local para modo offline",
+  "FastAPI (Python)",
+  "PostgreSQL",
+  "React para el panel web",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 104,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 1 GB (API, panel y base de datos en Docker)",
+    "usd_anual": 84,
+    "supuesto": "Una instancia de USD 7 por mes durante los 12 meses de 2027; volumen de piloto de pocas decenas de establecimientos. No se cuenta la capa gratuita porque la página no dice cuánto dura.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "Dominio para la demo y el piloto",
+    "usd_anual": 20,
+    "supuesto": "Estimación por encima: Cloudflare Registrar cobra a costo sin margen, pero la página no muestra el precio de un .com; se reservan USD 20 por un año.",
+    "fuente_precio_url": "https://www.cloudflare.com/products/registrar/"
+   }
+  ]
+ },
+ "competidores": [],
+ "monetizacion": "Suscripción anual por establecimiento con un tramo por cantidad de cabezas, y un plan para escritorios rurales por cantidad de clientes. Canal principal: escritorios rurales y contadores del interior, que concentran varios productores. Precio y cantidad de clientes potenciales a validar en entrevistas antes de diciembre de 2026.",
+ "riesgos": [
+  "El registro oficial puede no permitir exportar datos en un formato utilizable, lo que obliga a carga manual para conciliar",
+  "Cambios en los sistemas o formatos del MGAP",
+  "El productor puede no ver valor si ya delega todo en el escritorio rural",
+  "Datos de stock y propiedad son datos personales: requiere consentimiento y cumplimiento de la Ley 18.331"
+ ],
+ "supuestos": [
+  "Mantener el stock real conciliado con el registro oficial le cuesta tiempo y errores al productor; la ficha no cuantifica ese costo",
+  "El productor puede descargar o exportar sus propios datos del registro oficial; si no, la conciliación se hace con carga manual",
+  "Los escritorios rurales gestionan la trazabilidad de varios productores y pagarían por una herramienta común",
+  "Las fichas no muestran competidores; puede haber software de gestión ganadera que no se relevó",
+  "Se puede contactar desde Uruguay a productores y escritorios rurales antes de diciembre de 2026"
+ ],
+ "evidencias": [
+  "F-agro-002",
+  "F-logistica-transporte-003",
+  "F-logistica-transporte-008"
+ ]
+}

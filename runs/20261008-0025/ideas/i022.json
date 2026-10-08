@@ -1,0 +1,90 @@
+{
+ "id": "i022",
+ "titulo": "Agenda por WhatsApp con lista de espera para consultorios independientes del interior",
+ "problema": "Los profesionales de salud independientes siguen mayormente con agenda de papel: la fundadora de una agenda local detectó que 18 de cada 20 la usaban, y esa oferta se concentra en Montevideo y el este (F-salud-006). El ausentismo puede costar hasta 14% de los ingresos mensuales de un consultorio privado, y recordatorios con lista de espera lo bajan 30% a 50% según un proveedor extranjero (F-salud-008).",
+ "usuario": "Profesionales de salud que atienden solos o en consultorios de 1 a 3 personas en ciudades del interior (odontólogos, psicólogos, fisioterapeutas, nutricionistas). Usa y paga el profesional; el paciente solo interactúa por WhatsApp.",
+ "solucion": "Un asistente de WhatsApp que el profesional configura en 15 minutos: los pacientes piden, confirman o cambian turno escribiendo en lenguaje natural; el sistema manda recordatorio 24 horas antes y, si alguien cancela, ofrece el hueco automáticamente a la lista de espera en orden. Panel web con agenda, ausentismo y huecos recuperados. Sin historia clínica.",
+ "mvp": {
+  "semestre_1": [
+   "Agenda web con turnos, disponibilidad y lista de espera",
+   "Bot de WhatsApp que reserva, confirma y cancela con un LLM que extrae intención y fecha",
+   "Demo al tutor con 3 profesionales de prueba y pacientes simulados"
+  ],
+  "semestre_2": [
+   "Reasignación automática de huecos cancelados a la lista de espera",
+   "Panel de ausentismo y huecos recuperados por profesional",
+   "Piloto real con 5 a 6 profesionales del interior durante 3 meses y medición antes y después",
+   "Business case con costos por profesional y precio validado"
+  ]
+ },
+ "stack": [
+  "Python FastAPI",
+  "PostgreSQL",
+  "React",
+  "WhatsApp Business Platform (Cloud API)",
+  "Claude Haiku 5.5 vía API",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 185,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 512 MB con IPv4",
+    "usd_anual": 60,
+    "supuesto": "Un servidor 12 meses a USD 5 por mes con app y base juntas; no se cuenta la capa gratuita porque la página no dice cuánto dura.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "Mensajes plantilla de WhatsApp (recordatorios)",
+    "usd_anual": 100,
+    "supuesto": "Estimación por encima: la página de Meta cobra por plantilla entregada pero no muestra la tarifa; supongo USD 0,03 por mensaje, unos 3.300 mensajes (6 profesionales, 80 turnos al mes, 6 meses, más pruebas). Los mensajes dentro de la ventana de atención son gratis."
+   },
+   {
+    "concepto": "API de Claude Haiku 5.5",
+    "usd_anual": 10,
+    "supuesto": "20.000 mensajes interpretados con 2.000 tokens de entrada y 200 de salida (40M entrada a USD 0,10 y 4M salida a USD 0,50 por millón) dan USD 6; redondeo a 10.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/docs/about-claude/pricing"
+   },
+   {
+    "concepto": "Dominio propio",
+    "usd_anual": 15,
+    "supuesto": "Estimación por encima sin fuente abierta: un dominio .com por un año, redondeado hacia arriba con margen."
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Zalon",
+   "evidencia_ids": [
+    "F-salud-006"
+   ],
+   "hueco": "Concentra sus cerca de 200 clientes en Montevideo y el este y cobra comisión por pago; no aparece foco en el interior ni en reprogramación conversacional."
+  },
+  {
+   "nombre": "AgendaPro",
+   "evidencia_ids": [
+    "F-salud-007"
+   ],
+   "hueco": "Producto completo para centros médicos argentinos, sin precios publicados ni mención de Uruguay; pensado para clínicas, no para un profesional solo."
+  }
+ ],
+ "monetizacion": "Suscripción mensual del profesional de USD 10 a 15, sin comisión por pago, con un mes gratis. Canal: asociaciones profesionales y colegios departamentales, y recomendación entre colegas.",
+ "riesgos": [
+  "Costo por mensaje de WhatsApp más alto que lo supuesto, que come el margen",
+  "El profesional no cambia su hábito de agenda en papel",
+  "Errores del LLM al interpretar fechas que generan turnos mal agendados"
+ ],
+ "supuestos": [
+  "La tarifa de plantillas de utilidad para Uruguay no supera USD 0,03 por mensaje",
+  "Los profesionales del interior están desatendidos por las agendas existentes, cosa que las fichas solo sugieren",
+  "El efecto de 30% a 50% de reducción del ausentismo, medido fuera de Uruguay, se replica acá",
+  "Un profesional paga USD 10 a 15 al mes por recuperar turnos",
+  "El equipo puede conseguir 5 o 6 profesionales del interior para el piloto"
+ ],
+ "evidencias": [
+  "F-salud-006",
+  "F-salud-007",
+  "F-salud-008"
+ ]
+}
