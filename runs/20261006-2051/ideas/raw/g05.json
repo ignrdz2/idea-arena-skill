@@ -1,0 +1,188 @@
+{
+  "generador": "g05",
+  "ideas": [
+    {
+      "local_id": "g05-1",
+      "titulo": "Portal de cambios y devoluciones con pago por uso para pymes online",
+      "problema": "56% de los compradores online uruguayos cita la dificultad para devolver como barrera, y 62% investiga en redes pero solo un tercio compra (F-comercio-retail-002). Según un estudio de UTEC, solo 8% de las pymes gestiona devoluciones y ninguna mide sus procesos (F-comercio-retail-003). Con un ticket medio de unos USD 33 (F-comercio-retail-005), cada compra frenada por ese miedo, y cada devolución que termina en reembolso y no en cambio, es una venta perdida.",
+      "usuario": "Paga la pyme que vende online (indumentaria, calzado, accesorios) por tienda, plataforma o redes. Lo usan el dueño (panel) y el comprador (portal, sin cuenta).",
+      "solucion": "Un portal de devoluciones independiente del canal de venta, enlazable desde la tienda, Instagram o WhatsApp. La pyme configura su política (plazos, exclusiones, envío) y la publica antes de la venta. El comprador carga pedido, motivo y fotos, y elige cambio o reembolso; el sistema ofrece primero el cambio. Reglas configurables aprueban lo que cumple la política. Un clasificador agrupa los motivos (talle, defecto, no coincide con la foto, arrepentimiento) y el panel muestra devoluciones por producto y ventas retenidas. El reembolso lo hace la pyme: el producto no mueve dinero.",
+      "mvp": {
+        "semestre_1": [
+          "Configurador y página pública de política.",
+          "Portal del comprador con fotos, cambio o reembolso y avisos por correo.",
+          "Reglas de aprobación, panel de revisión y carga de pedidos por CSV."
+        ],
+        "semestre_2": [
+          "Clasificador de motivos: Claude Haiku 4.5 contra TF-IDF con regresión logística, midiendo exactitud y costo por caso.",
+          "Sugerencia de cambio según stock y métricas por producto.",
+          "Piloto de 8 semanas con 5 a 10 pymes y business case con sus datos."
+        ]
+      },
+      "stack": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "React",
+        "Docker",
+        "Claude Haiku 4.5",
+        "scikit-learn",
+        "Resend"
+      ],
+      "costo_infra": {
+        "total_anual_usd": 148.4,
+        "items": [
+          {
+            "concepto": "Droplet DigitalOcean 1 GiB con backups semanales",
+            "usd_anual": 86.4,
+            "supuesto": "USD 6 por mes más 20% de backups, 12 meses. Con 2 GiB el total sería unos USD 235.",
+            "fuente_precio_url": "https://www.digitalocean.com/pricing/droplets"
+          },
+          {
+            "concepto": "API Claude Haiku 4.5",
+            "usd_anual": 50,
+            "supuesto": "10.000 llamadas de 3.000 tokens de entrada y 300 de salida: USD 30 + 15, redondeado.",
+            "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+          },
+          {
+            "concepto": "Resend, plan Free",
+            "usd_anual": 0,
+            "supuesto": "Gratis sin vencimiento: 3.000 correos por mes; el piloto usa menos de 1.500.",
+            "fuente_precio_url": "https://resend.com/pricing"
+          },
+          {
+            "concepto": "Dominio .com",
+            "usd_anual": 12,
+            "supuesto": "USD 11,08 por año, redondeado.",
+            "fuente_precio_url": "https://porkbun.com/products/domains"
+          }
+        ]
+      },
+      "competidores": [
+        {
+          "nombre": "Tiendanube",
+          "evidencia_ids": [
+            "F-comercio-retail-007"
+          ],
+          "hueco": "Cobra un plan mensual fijo por la tienda entera; quien vende por redes o devuelve poco no tiene una opción que cobre por caso. Si resuelve devoluciones es un supuesto."
+        }
+      ],
+      "monetizacion": "Paga la pyme, sin cuota fija: 5 devoluciones gratis por mes y luego USD 1 por devolución resuelta, tope de USD 25 mensuales. Sobre un ticket de unos USD 33 (F-comercio-retail-005) es cerca de 3%, y cada cambio que evita un reembolso retiene la venta. Meta: 100 pymes con 20 devoluciones mensuales, unos USD 1.500 por mes. Canal: contacto directo con pymes que venden por Instagram.",
+      "riesgos": [
+        "La pyme puede preferir seguir por WhatsApp sin pagar.",
+        "Pocas devoluciones por pyme dan poco ingreso; puede requerir un plan mínimo.",
+        "Una plataforma de tienda puede sumar la función gratis.",
+        "Sin integración con plataformas, validar pedidos depende de CSV.",
+        "Datos de compradores: consentimiento y finalidad según la Ley 18.331."
+      ],
+      "supuestos": [
+        "Hoy las pymes resuelven devoluciones a mano por WhatsApp.",
+        "Un portal claro aumenta conversión y cambios; ninguna ficha lo mide.",
+        "Precio y meta de 100 pymes son supuestos; las fichas no dicen cuántas pymes venden online.",
+        "Las fichas no muestran competidores de devoluciones en Uruguay; no se afirma que no existan.",
+        "Se pueden entrevistar 10 a 20 pymes antes de diciembre de 2026; el perfil no declara contactos.",
+        "La logística física del retorno queda fuera del MVP."
+      ],
+      "evidencias": [
+        "F-comercio-retail-002",
+        "F-comercio-retail-003",
+        "F-comercio-retail-005",
+        "F-comercio-retail-007"
+      ]
+    },
+    {
+      "local_id": "g05-2",
+      "titulo": "Stock al día a partir de los comprobantes electrónicos que el comercio ya tiene",
+      "problema": "Los comercios chicos trabajan con stock desactualizado, venden productos agotados y cargan dos veces los datos porque facturación e inventario van por separado; así lo describe YoFacturo, que vende la integración de ambos (F-comercio-retail-006). Muchas pymes carecen de herramientas digitales completas (F-comercio-retail-004) y las mipymes son 97% de las empresas (F-comercio-retail-010). Con el e-commerce creciendo 32% en 2025 (F-comercio-retail-001), un producto agotado publicado online es una venta cancelada (supuesto).",
+      "usuario": "Paga y usa el dueño de un comercio chico que compra a varios proveedores, factura con cualquier sistema y vende en local y online.",
+      "solucion": "Arma y mantiene el stock sin cambiar de facturador ni cargar productos a mano. El comercio sube los comprobantes de compra y la exportación de ventas de su facturador (XML o CSV); de PDF o fotos, un modelo de visión extrae las líneas. Cada línea ('REM ALG NEG T-M X12') se asocia a un producto con embeddings en Qdrant y reglas por proveedor; lo dudoso se confirma con un clic y queda como regla. Un libro de movimientos calcula existencias, marca faltantes y exporta disponibilidad para la tienda online.",
+      "mvp": {
+        "semestre_1": [
+          "Parser de CFE en XML y de CSV, libro de movimientos y stock.",
+          "Emparejamiento con embeddings en Qdrant, reglas y pantalla de confirmación.",
+          "Corpus de comprobantes sintéticos o anonimizados y primera medición de precisión y cobertura."
+        ],
+        "semestre_2": [
+          "Extracción de PDF y fotos con Claude Haiku 4.5.",
+          "Desempate con LLM y comparación medida: reglas, embeddings, embeddings más LLM.",
+          "Exportación de disponibilidad y piloto de 8 semanas con 3 a 5 comercios, contra conteo físico."
+        ]
+      },
+      "stack": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "Qdrant Cloud",
+        "voyage-4-lite",
+        "Claude Haiku 4.5",
+        "React",
+        "Docker"
+      ],
+      "costo_infra": {
+        "total_anual_usd": 173.4,
+        "items": [
+          {
+            "concepto": "Droplet DigitalOcean 1 GiB con backups semanales",
+            "usd_anual": 86.4,
+            "supuesto": "USD 6 por mes más 20% de backups, 12 meses; vectores y modelos van afuera. Con 2 GiB el total sería unos USD 260.",
+            "fuente_precio_url": "https://www.digitalocean.com/pricing/droplets"
+          },
+          {
+            "concepto": "Qdrant Cloud, capa gratuita",
+            "usd_anual": 0,
+            "supuesto": "Gratis para siempre según la página: 1 GB de RAM y 4 GB de disco; menos de 100.000 vectores (supuesto).",
+            "fuente_precio_url": "https://qdrant.tech/pricing/"
+          },
+          {
+            "concepto": "Embeddings voyage-4-lite",
+            "usd_anual": 5,
+            "supuesto": "USD 0,02 por millón de tokens; 20 M = USD 0,40 sin usar los 200 M gratis. Redondeado.",
+            "fuente_precio_url": "https://docs.voyageai.com/docs/pricing"
+          },
+          {
+            "concepto": "API Claude Haiku 4.5",
+            "usd_anual": 70,
+            "supuesto": "5.000 PDF o fotos (5.000 tokens de entrada, 800 de salida) y 10.000 desempates (1.000 y 100): USD 35 + 25, redondeado.",
+            "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+          },
+          {
+            "concepto": "Dominio .com",
+            "usd_anual": 12,
+            "supuesto": "USD 11,08 por año, redondeado.",
+            "fuente_precio_url": "https://porkbun.com/products/domains"
+          }
+        ]
+      },
+      "competidores": [
+        {
+          "nombre": "YoFacturo",
+          "evidencia_ids": [
+            "F-comercio-retail-006"
+          ],
+          "hueco": "Integra catálogo, CFE e inventario en su propio sistema; quien factura con otro proveedor y no quiere migrar queda afuera."
+        }
+      ],
+      "monetizacion": "Paga el comercio: USD 12 por mes hasta 300 comprobantes y USD 20 por encima, primer mes gratis. No reemplaza al facturador, así que no compite por ese gasto. Meta: 150 comercios, unos USD 1.800 por mes. Canal: contacto directo y estudios contables.",
+      "riesgos": [
+        "Errores de emparejamiento descuadran el stock; se mitigan con confirmación humana y conteos de ajuste.",
+        "Ventas sin comprobante o facturadores sin exportación dejan huecos.",
+        "Un facturador puede sumar inventario gratis.",
+        "Los CFE pueden traer datos personales: se descartan al ingresar (Ley 18.331)."
+      ],
+      "supuestos": [
+        "DGI publica el formato XML de los CFE y el comercio puede obtener los emitidos y recibidos.",
+        "La mayoría de las ventas del comercio objetivo tiene CFE.",
+        "Integrar inventario con YoFacturo exige facturar con YoFacturo.",
+        "Las fichas solo muestran a YoFacturo; otros facturadores pueden ofrecer inventario.",
+        "Precio, disposición a pagar, meta de 150 comercios y canal contable son supuestos.",
+        "El equipo puede conseguir 3 a 5 comercios piloto; el perfil no declara contactos."
+      ],
+      "evidencias": [
+        "F-comercio-retail-006",
+        "F-comercio-retail-004",
+        "F-comercio-retail-010",
+        "F-comercio-retail-001"
+      ]
+    }
+  ]
+}

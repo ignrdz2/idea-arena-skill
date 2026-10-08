@@ -1,0 +1,30 @@
+{
+  "idea": "i002",
+  "preguntas": [
+    {
+      "pregunta": "Pensando en la última vez que trabajaron con el rodeo (vacunación, señalada, destete o pesaje): ¿cómo quedó registrado lo que se hizo, quién lo pasó en limpio y cuántas horas llevó en total, desde la manga hasta tener los datos ordenados? En el último año, ¿faltó o estuvo mal algún dato y qué le costó arreglarlo?",
+      "a_quien": "productor ganadero de carne de una unidad familiar del interior de Uruguay (rodeo chico, pastoril) que lleva él mismo los registros",
+      "que_valida": "Ataque en pie (rondas 1 y 3): el costo de registrar para el productor chico no está medido. También el supuesto de que los productores chicos registran hoy en papel o WhatsApp."
+    },
+    {
+      "pregunta": "Hoy, ¿qué paga para llevar los registros del rodeo y cumplir con el SNIG: algún programa, el veterinario, un escritorio rural o un gestor? ¿Cuánto paga por mes o por trámite, quién tomó la decisión de contratarlo y cuándo fue la última vez que empezó, dejó o cambió de pagar algo así, y por qué?",
+      "a_quien": "productor ganadero de carne de una unidad familiar del interior de Uruguay que decide los gastos del establecimiento",
+      "que_valida": "Quién decide y paga. Ataque en pie (rondas 2 y 3): la disposición a pagar del productor de carne no tiene ficha propia y el precio de USD 6 a 10 por mes sale de un solo ancla (miTambo, lechería, 2020)."
+    },
+    {
+      "pregunta": "La última vez que tuvo que comunicar al SNIG un evento del rodeo (nacimientos, muertes, movimientos o cambios de caravana): ¿por qué canal lo hizo, quién lo cargó, de dónde sacó los datos y cuántas veces se copió el mismo dato de un papel o planilla a otro lugar antes de quedar declarado?",
+      "a_quien": "productor ganadero de carne o la persona que le hace los trámites del SNIG (familiar, escritorio rural o veterinario)",
+      "que_valida": "Ataque en pie (ronda 1), doble carga: aunque se exporten los pendientes, el productor igual declara por el canal oficial. Mide cuántas copias manuales del dato hay hoy y si quitar una ahorra trabajo real."
+    },
+    {
+      "pregunta": "La última vez que trabajaron en la manga o el potrero (vacunación, pesaje, señalada), ¿quién anotaba lo que se iba haciendo y con qué: cuaderno, celular, planilla o de memoria? ¿Había señal de celular en ese lugar? ¿Cuándo y cómo llegó ese dato al productor o al programa que usan, si usan alguno (por ejemplo, Gecos o la app del SNIG)?",
+      "a_quien": "capataz o peón de campo de un establecimiento ganadero de carne chico del interior de Uruguay",
+      "que_valida": "Supuestos sin evidencia: la señal en el campo es intermitente y el registro lo hace el personal de campo. Ataques en pie (rondas 2 y 3): si ya usan Gecos u otro programa en el campo, el hueco frente a ellos se achica."
+    },
+    {
+      "pregunta": "En sus clientes ganaderos chicos, ¿quién registra hoy los tratamientos y vacunaciones que usted indica o aplica, y cómo le llegan esos datos? En el último año, ¿le cobró a algún cliente por ordenar registros o hacer trámites del SNIG, cuánto, y paga usted hoy algún programa para seguir a su cartera de clientes?",
+      "a_quien": "veterinario de libre ejercicio que atiende establecimientos ganaderos de carne chicos en el interior de Uruguay",
+      "que_valida": "Supuesto sin evidencia: los veterinarios pagarían por cartera (USD 35 por mes), el canal de pivote si menos de 5 de 10 productores ven valor pagable. También quién decide y paga en ese canal."
+    }
+  ]
+}

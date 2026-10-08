@@ -1,0 +1,90 @@
+{
+  "idea": "i002",
+  "persona": "competidor",
+  "ataques": [
+    {
+      "n": 1,
+      "severidad": "MAJOR",
+      "titulo": "Ignora a un competidor uruguayo que ya concilia con el SNIG y trabaja por caravana y lote",
+      "donde": "Seccion Competidores (solo miTambo, Cattler y Albor) y el hueco de foco pastoril y de voz",
+      "problema": "Gecos SGG (Uruguay) ofrece trazabilidad por caravanas, reloteo, registro de pesajes y tratamientos sanitarios y una funcion de conciliacion con el SNIG, orientado a produccion ganadera uruguaya tradicional. La idea no lo nombra y afirma que el hueco es de foco pastoril, cuando ya hay un jugador local de carne con la parte de SNIG. Que su pagina no mencione uso offline no prueba que el hueco de voz y sin senal este libre: la idea no lo verifico. Para un gerente de producto de Gecos, agregar captura de campo por voz es un modulo, no un producto.",
+      "tipo": "evidencia",
+      "evidencia": ["F-ataque-r2-m01-i002-competidor-002"]
+    },
+    {
+      "n": 2,
+      "severidad": "MAJOR",
+      "titulo": "El propio MGAP ya tiene app movil del SNIG y avanza con guias digitales: el valor del 'pendiente SNIG' es bajo",
+      "donde": "Solucion: 'Genera la lista de pendientes del SNIG y la exporta ... para copiar o descargar y cargar en el canal oficial'; Riesgos",
+      "problema": "El SNIG publico una app movil oficial para productores (muerte, descarte de caravanas, reidentificacion, extravio, consultas) y su director la presento como la primera de una serie de aplicaciones. Ademas F-agro-004 dice que el Estado ya digitaliza guias y que hay que integrarse a su flujo. La idea reduce todo a una lista para copiar a mano al canal oficial, sin integracion: el productor sigue haciendo el doble trabajo, y cada nueva funcion oficial reduce el unico entregable que toca el tramite. La idea cita F-agro-004 solo como riesgo, no ve que ya compite con el canal oficial que dice complementar.",
+      "tipo": "evidencia",
+      "evidencia": ["F-ataque-r2-m01-i002-competidor-001", "F-agro-004"]
+    },
+    {
+      "n": 3,
+      "severidad": "MAJOR",
+      "titulo": "El diferencial es voz mas LLM y la propia idea admite que es copiable y temporal",
+      "donde": "Competidores (miTambo): 'extenderla a carne es posible ... el hueco ... es temporal'; Riesgos: 'la voz con LLM es copiable'",
+      "problema": "miTambo ya resuelve registro offline por unos USD 10 al mes, con base de clientes y marca local (F-agro-001). Agregar dictado y transcripcion es una llamada a una API, el mismo stack de la idea (gpt-4o-mini-transcribe y Haiku), que un competidor integra en un trimestre. La idea no ofrece ninguna barrera: ni datos propios, ni contratos con gremiales, ni integracion oficial. Segun la rubrica, esto es un 7 como maximo, y sin foso queda cerca de 4 ('mas facil' sin explicar por que el competidor no lo hace).",
+      "tipo": "evidencia",
+      "evidencia": ["F-agro-001"]
+    },
+    {
+      "n": 4,
+      "severidad": "MAJOR",
+      "titulo": "La disposicion a pagar del productor chico no tiene ninguna ficha y el unico ancla es de otro rubro y de 2020",
+      "donde": "Monetizacion: USD 6 a 10 por mes por establecimiento; 300 establecimientos a USD 60 por ano",
+      "problema": "F-agro-002 prueba la obligacion de notificar, no que alguien pague por facilitarla; la idea lo reconoce ('la ficha prueba la obligacion, no su costo'). El unico ancla de precio es miTambo, un tambo de 2020 con prueba gratis, y F-agro-003 muestra que los tambos chicos estan desapareciendo por presion de costos, o sea un segmento con poca capacidad de pago. El segmento puede ser uno que nadie atiende porque no paga: el productor chico de carne ya cumple con el SNIG por papel, WhatsApp o intermediarios, y esa alternativa cuesta cero en efectivo. Los 300 establecimientos no tienen respaldo de tamano de mercado ni de canal, y sin contactos el piloto es incierto.",
+      "tipo": "evidencia",
+      "evidencia": ["F-agro-001", "F-agro-002", "F-agro-003"]
+    },
+    {
+      "n": 5,
+      "severidad": "MINOR",
+      "titulo": "Cattler y Albor se descartan por foco o precio sin ver que ya operan en Uruguay y pueden bajar de segmento",
+      "donde": "Competidores: Cattler 'foco en feedlots'; Albor 'no es ancla de precio'",
+      "problema": "F-agro-006 dice que Cattler opera en Uruguay y declara crecer cerca de 20% mensual: es un competidor con capital y capacidad de ampliar de feedlot a pastoril. La idea lo desecha por segmento sin argumentar por que no lo cubriria. F-agro-007 es de 2018 y de Paraguay, por lo que tampoco dice nada de su oferta actual para productores chicos de Uruguay, y la idea no investigo alternativas mas baratas del mismo tipo.",
+      "tipo": "evidencia",
+      "evidencia": ["F-agro-006", "F-agro-007"]
+    },
+    {
+      "n": 6,
+      "severidad": "MINOR",
+      "titulo": "El canal secundario de veterinarios y su precio son una invencion sin respaldo",
+      "donde": "Monetizacion: 'veterinarios, USD 35 por mes hasta 15 clientes'; Supuestos: 'pagarian por cartera; sin ficha'",
+      "problema": "El plan de canal y el precio de USD 35 no tienen ficha ni referencia de mercado, y los veterinarios con cartera son justamente el cliente que ya usa software como Gecos con conciliacion SNIG. Se declara como supuesto, por lo que no es fatal, pero es la mitad del argumento de canal y no hay ningun contacto identificado.",
+      "tipo": "opinion",
+      "evidencia": []
+    }
+  ],
+  "nuevas_fichas": [
+    {
+      "id": "F-ataque-r2-m01-i002-competidor-001",
+      "sector": "agro",
+      "hallazgo": "El MGAP lanzo en noviembre de 2016 una app movil del SNIG para productores, con consultas de animales, tramite de muerte, descarte de caravanas, reidentificacion y extravio; su director la presento como la primera de una serie de aplicaciones para productores.",
+      "source_url": "https://www.gub.uy/ministerio-ganaderia-agricultura-pesca/comunicacion/noticias/snig-lanzo-aplicacion-movil-para-productores-tenedores-ganando-usuarios-del",
+      "source_title": "SNIG lanzo una aplicacion movil para productores tenedores de ganado usuarios del sistema",
+      "source_date": "2016-11-09",
+      "source_type": "gobierno",
+      "geografia": "UY",
+      "confianza": "alta",
+      "retrieved_at": "2026-10-07T10:30:00",
+      "extracto": "consultas de animales, tramitar muerte, descarte de caravanas, reidentificación, extravío",
+      "competidor": "App SNIG (MGAP)"
+    },
+    {
+      "id": "F-ataque-r2-m01-i002-competidor-002",
+      "sector": "agro",
+      "hallazgo": "Gecos ofrece en Uruguay un Sistema de Gestion Ganadera con trazabilidad por caravanas, reloteo, registro de pesajes y tratamientos y una funcion de conciliacion con el SNIG.",
+      "source_url": "https://gecos.com.uy/soluciones/administracion-ganadera-software/",
+      "source_title": "Administracion Ganadera en Uruguay | Gecos SGG",
+      "source_date": "desconocida",
+      "source_type": "competidor",
+      "geografia": "UY",
+      "confianza": "media",
+      "retrieved_at": "2026-10-07T10:30:00",
+      "extracto": "Conciliación SNIG",
+      "competidor": "Gecos SGG"
+    }
+  ]
+}

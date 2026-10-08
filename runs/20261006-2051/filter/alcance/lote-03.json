@@ -1,0 +1,46 @@
+{
+  "evaluaciones": [
+    {
+      "id": "i007",
+      "veredicto": "viable_con_recorte",
+      "horas_estimadas": 1180,
+      "motivo": "Unas 1.180 h contra unas 1.152 h declaradas (16+10+10 h por semana en 32 semanas). Semestre 1, unas 380 h: ingesta de Certificate Transparency y variantes (75), visitador Playwright aislado con captura, HTML y DNS (85), conjunto etiquetado de clones y legítimos (90), filtro de similitud (70), tablero (60). Semestre 2, unas 360 h: LLM con explicación (55), alertas y PDF (50), casilla de reporte (55), varias entidades con roles (70), piloto y business case (110), demo medida (20). Transversal, unas 440 h: despliegue y aislamiento del visitador (60), pruebas (80), integración (50), documentación de tesis (170), entregas (80). Entra justo, sin margen: el semestre 2 abre cinco frentes a la vez.",
+      "recorte_sugerido": "Pasar a trabajo futuro la casilla de reporte para clientes (unas 55 h) y la gestión de varias entidades con roles (unas 70 h): el MVP queda con una sola entidad y sus marcas. Limitar las variantes de dominio a errores de tipeo y homoglifos. Si no aparece una entidad para el piloto, cerrar con la demo de la marca ficticia y, si alguna entidad acepta, monitorear sus marcas sin integrarse con sus sistemas. Así baja a unas 1.050 h.",
+      "dependencias_externas": [
+        "Logs públicos de Certificate Transparency o servicios que los agregan: disponibilidad y volumen, que es grande para un servidor de 2 GB",
+        "Ejemplos públicos de phishing para el conjunto etiquetado: no hay fuente declarada y los clones suelen caer en poco tiempo",
+        "Al menos una entidad financiera para el piloto, sin contactos declarados en la tabla del equipo",
+        "Clones con bloqueo por país o solo para celulares, que el visitador puede no ver",
+        "Baja de los sitios: depende del hosting y del registrador, fuera del control del equipo",
+        "Amazon SES: AWS tiene que habilitar el envío fuera del modo de prueba para alertar a direcciones no verificadas"
+      ]
+    },
+    {
+      "id": "i008",
+      "veredicto": "viable_con_recorte",
+      "horas_estimadas": 1200,
+      "motivo": "Unas 1.200 h contra unas 1.152 h declaradas (16+10+10 h por semana en 32 semanas). Semestre 1, unas 380 h: alta en WhatsApp Cloud API y webhook (40), bot con veredicto y explicación (80), señales de URL con lista blanca, RDAP y certificados (70), corpus de casos locales y RAG en Qdrant (110), set de 300 mensajes etiquetados y métricas (80). Semestre 2, unas 340 h: visión sobre capturas (50), dominios parecidos a marcas cliente (70), panel por entidad con campañas (120), piloto con métricas (100). Transversal, unas 480 h: defensa contra inyección de instrucciones (30), cumplimiento de la Ley 18.331 (30), despliegue (50), pruebas (80), integración (50), tesis (170), entregas (70). El riesgo mayor no son las horas sino depender de Meta para el canal.",
+      "recorte_sugerido": "Sacar del MVP la detección de dominios parecidos a marcas cliente (unas 70 h) y reducir el panel a una sola entidad con consultas y dominios más reportados, sin agrupar campañas (unas 60 h menos). Hacer el piloto con voluntarios si no hay entidad. Tener un canal de respaldo (bot de Telegram o formulario web) por si Meta no habilita el número a tiempo para el piloto. Así baja a unas 1.070 h.",
+      "dependencias_externas": [
+        "Meta: cuenta de WhatsApp Business, número habilitado para la Cloud API y verificación del negocio; políticas y precios que pueden cambiar",
+        "RDAP para dominios .uy y otros ccTLD: no está verificado que todos lo ofrezcan",
+        "Casos públicos de estafas locales para el RAG y mensajes reales para el set de 300: sin fuente declarada",
+        "Una entidad o 100 voluntarios para el piloto, sin contactos declarados en la tabla del equipo",
+        "API de Claude Haiku 4.5 con visión, a los precios usados en el costo"
+      ]
+    },
+    {
+      "id": "i009",
+      "veredicto": "viable",
+      "horas_estimadas": 980,
+      "motivo": "Unas 980 h contra unas 1.152 h declaradas (16+10+10 h por semana en 32 semanas): margen de unas 170 h. Semestre 1, unas 290 h: portal con marca de la tienda y carga de fotos, panel, pedidos por CSV y política configurable (150), armado de 300 casos etiquetados con foto (70), clasificador de motivo (50), avisos por email (20). Semestre 2, unas 280 h: OAuth y pedidos con la API de Tiendanube (70), resolución sugerida contra la política y medición de aceptación (50), panel por producto y página de política (60), piloto de 6 semanas con 3 a 5 tiendas (100). Transversal, unas 410 h: despliegue (40), pruebas (70), integración (40), Ley 18.331 para datos y fotos de compradores (20), tesis (170), entregas (70). Es una aplicación web con un clasificador acotado, sin infraestructura pesada.",
+      "recorte_sugerido": "No hace falta. Si Tiendanube o el piloto se atrasan, el CSV ya cubre la carga de pedidos y el piloto puede bajar a 3 tiendas sin afectar la entrega 2.",
+      "dependencias_externas": [
+        "Tiendanube: cuenta de desarrollador y aprobación de la app para leer pedidos por API (hay plan B por CSV)",
+        "300 casos de devolución con foto para evaluar: sin fuente declarada, probablemente haya que armarlos o pedirlos a tiendas",
+        "3 a 5 tiendas para el piloto, sin contactos declarados en comercio",
+        "API de Claude Haiku 4.5 con visión, a los precios usados en el costo"
+      ]
+    }
+  ]
+}

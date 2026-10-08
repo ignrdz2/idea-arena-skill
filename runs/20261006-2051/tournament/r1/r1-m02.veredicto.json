@@ -1,0 +1,32 @@
+{
+  "match": "r1-m02",
+  "scores": {
+    "X": {"demanda": 5, "viabilidad": 8, "diferenciacion": 6, "business_case": 5, "encaje": 6, "academico": 6, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 5, "viabilidad": 7, "diferenciacion": 5, "business_case": 6, "encaje": 7, "academico": 7, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "X",
+  "reason": "Con demanda pareja (las dos dejan la disposición a pagar como supuesto), X gana por viabilidad y diferenciación: su MVP se demuestra con registros KML reales o simulados sin depender de terceros y su chequeo contra la normativa del MGAP es un hueco concreto, mientras que Y argumenta su hueco por ausencia frente a un software de facturación que ya tiene los CFE y su piloto depende de datos financieros sensibles; el mercado más grande de Y compensa solo en parte.",
+  "survived": [
+    "Formatos de vuelo sin plan B: ahora importa KML, documentado para DJI Agras por dos fichas, con carga manual de traza como plan B",
+    "Piloto atado a la temporada: la segunda entrega se demuestra con registros reales o simulados y el piloto es opcional",
+    "Distancias inventadas: los 500 m aéreos a centros educativos y la exigencia de zonas buffer tienen fichas oficiales del MGAP",
+    "Dolor como pura opinión: la obligación de respetar zonas buffer y registrar en el RAPF está respaldada por fichas oficiales",
+    "Datos sensibles de clientes: el MVP usa polígonos sin titular y trazas propias o simuladas",
+    "Competidores omitidos: ahora lista la plataforma DJI, AirData y AcreConnect"
+  ],
+  "standing": {
+    "X": [
+      "Disposición a pagar y costo del dolor sin ficha: que el operador pague USD 250 o pierda algo sin el reporte sigue siendo supuesto",
+      "Mercado diminuto: 60 drones vendidos hasta 2023, el escenario de 40 drones da USD 10.000 por año y crecer exige Argentina o Brasil sin ficha",
+      "Sin contacto con operadores de un nicho chico para validar antes de diciembre de 2026",
+      "Capas abiertas de escuelas y centros poblados sin verificar, y distancia a centros poblados sin relevar",
+      "Diferencial angosto y copiable por los fabricantes"
+    ],
+    "Y": [
+      "Demanda de proyección sin ficha: las fichas muestran uso de crédito, no que la falta de proyección cause la financiación de urgencia",
+      "Disposición a pagar USD 15 a 30 por mes y canal por contadores sin ninguna señal",
+      "Carga manual recurrente de XML, extractos y cheques: el aviso de datos viejos mitiga pero no resuelve",
+      "Diferenciación argumentada por ausencia: YoFacturo ya tiene los CFE y puede sumar un tablero de caja"
+    ]
+  }
+}

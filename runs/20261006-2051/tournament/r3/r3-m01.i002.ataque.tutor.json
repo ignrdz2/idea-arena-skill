@@ -1,0 +1,70 @@
+{
+  "idea": "i002",
+  "persona": "tutor",
+  "ataques": [
+    {
+      "n": 1,
+      "severidad": "MAJOR",
+      "titulo": "El piloto y el corpus real dependen de contactos que no existen, y el plan B no sirve para medir lo central",
+      "donde": "Riesgos: 'Sin contacto identificado, el piloto puede no conseguirse'; Supuestos: 'si no, el piloto baja a guiones'; Semestre 2: precision sobre 300 audios y piloto de 8 semanas",
+      "problema": "La tabla de contactos de constraints.md esta vacia (todo <<COMPLETAR>>), asi que no hay ningun productor, gremial ni veterinario identificado. La idea apuesta a conseguirlos 'via gremiales y ferias antes de diciembre de 2026' (R4 pide poder contactar usuarios desde Uruguay para validar antes de esa fecha), sin ninguna ficha ni nombre. El plan B 'guiones' lo grabaria el propio equipo: audios de estudiantes leyendo texto no miden precision con ruido de campo, acentos rurales ni jerga espontanea, que es justo el riesgo tecnico principal. Sin piloto tampoco hay 'minutos por evento vs metodo actual', la unica metrica de valor. Como tutor, el resultado de la tesis queda atado a un permiso externo cuyo plan B invalida la demostracion.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 2,
+      "severidad": "MAJOR",
+      "titulo": "La entrega 1 no muestra el valor central: la voz recien aparece en el semestre 2",
+      "donde": "Alcance del MVP, Semestre 1 vs Semestre 2",
+      "problema": "El valor declarado es 'captura de campo por voz'. Pero la primera entrega intermedia demuestra una PWA offline con inventario por lote y sincronizacion, es decir, un registro generico equivalente a lo que ya hace miTambo (F-agro-001) sin internet. Transcripcion y extraccion con LLM, SNIG exportable, vista de veterinarios y piloto de 8 semanas quedan todos en el semestre 2, con 16 semanas efectivas para extraccion, corpus de 300 audios anotados, exportador y piloto con usuarios reales. Si el piloto debe durar 8 semanas dentro de ese semestre, la extraccion tiene que estar lista en pocas semanas. Con 10, 10 y 16 horas semanales y trabajo en paralelo, el semestre 2 esta cargado y el semestre 1 incluye ademas un ciclo de entrevistas. Falta un hito intermedio con voz funcionando de punta a punta antes de la entrega 1.",
+      "tipo": "evidencia",
+      "evidencia": ["F-agro-001"]
+    },
+    {
+      "n": 3,
+      "severidad": "MAJOR",
+      "titulo": "La demanda del productor chico es un supuesto: las fichas muestran la obligacion, no el dolor ni el pago",
+      "donde": "Problema: 'El costo del registro diario del productor chico es un supuesto a medir'; Monetizacion: USD 6 a 10 por mes",
+      "problema": "F-agro-002 prueba que existe la obligacion de notificar al SNIG, no que registrar cueste algo relevante a un productor pastoril chico ni que pagaria por resolverlo. Ninguna ficha habla de productores ganaderos chicos, de su conectividad o de su disposicion a pagar. La unica ficha de precio cercano es F-agro-001 (miTambo, USD 10), de lecheria y de 2020. F-agro-003, que la idea usa como indicador de baja disposicion a pagar, es de lecheria y habla de presion de competitividad, no de ganaderia de carne. El gran mercado de 12 millones de bovinos no equivale a clientes. La idea lo declara como supuesto, asi que no es fatal, pero la demanda queda en 'dolor plausible, pago sin respaldo'.",
+      "tipo": "evidencia",
+      "evidencia": ["F-agro-002", "F-agro-001", "F-agro-003"]
+    },
+    {
+      "n": 4,
+      "severidad": "MAJOR",
+      "titulo": "La diferenciacion contra Gecos se apoya en una ausencia en una pagina web",
+      "donde": "Competidores: Gecos SGG; Supuestos: 'Gecos no ofrece voz ni modo sin senal (su pagina no lo menciona)'",
+      "problema": "La ficha F-defensa-r2-m01-i002-001 solo dice que la pagina de Gecos no menciona uso sin senal, voz, app movil ni precios. Que una pagina comercial no lo mencione no prueba que el producto no lo tenga. Gecos ya cubre trazabilidad por caravanas, tratamientos y conciliacion con SNIG (F-ataque-r2-m01-i002-competidor-002), o sea el nucleo administrativo que el productor necesita, y la idea reconoce que 'podria sumarlos'. miTambo ya resuelve el modo sin internet a USD 10 (F-agro-001) y Cattler opera en Uruguay (F-agro-006). El hueco real queda reducido a 'dictado por voz con LLM', una capa que un competidor con base instalada y datos de caravanas puede agregar con las mismas APIs que usa esta idea. Ademas el producto no declara ante el SNIG: solo exporta pendientes para cargar a mano, de modo que no reemplaza la carga y el productor seguiria necesitando otra herramienta.",
+      "tipo": "evidencia",
+      "evidencia": ["F-ataque-r2-m01-i002-competidor-002", "F-defensa-r2-m01-i002-001", "F-agro-001", "F-agro-006"]
+    },
+    {
+      "n": 5,
+      "severidad": "MAJOR",
+      "titulo": "Camino de cumplimiento de la Ley 18.331 no demostrado: audios de personal de campo enviados a proveedores de IA",
+      "donde": "Riesgos: Ley 18.331; Supuestos: 'Privacidad: consentimiento escrito; audio borrado tras confirmar'",
+      "problema": "Los audios los graban peones y personal de campo, que son los titulares de la voz y de datos sobre el establecimiento, y se envian a OpenAI (transcripcion) y a Anthropic (extraccion), ambos en el exterior. La idea nombra el problema de la transferencia internacional pero ofrece como camino solo 'consentimiento escrito' del productor y borrado posterior, sin ficha ni analisis de quien debe consentir (el empleado, no el patron), de la retencion en el proveedor ni de la base de la transferencia. R6 admite datos personales solo si hay un camino realista de cumplimiento; aqui es una frase sin respaldo. Para una tesis, ademas, el piloto con terceros reales exige ese tramo resuelto antes de grabar.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 6,
+      "severidad": "MINOR",
+      "titulo": "El desafio de ingenieria es en su mayoria integracion de servicios",
+      "donde": "Stack propuesto; Semestre 2: extraccion de eventos con LLM",
+      "problema": "Transcripcion (API de OpenAI), extraccion (API de Claude Haiku), PWA con IndexedDB y FastAPI con PostgreSQL son piezas conocidas y todas tercerizadas. Lo que aporta valor de tesis seria la evaluacion de precision sobre 300 audios y el manejo de la duda de la IA, pero esa medicion depende del corpus, que a su vez depende del piloto (ataque 1). Sin corpus real, la parte medible se reduce a guiones propios y el trabajo queda como integracion con una demo.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 7,
+      "severidad": "MINOR",
+      "titulo": "El escenario de ingresos no es coherente con el precio declarado",
+      "donde": "Monetizacion: 'USD 6 a 10 por mes ... 100 establecimientos x USD 60 = USD 6.000 por ano'",
+      "problema": "A USD 6 a 10 por mes, un establecimiento paga USD 72 a 120 por ano, no USD 60 (que equivale a USD 5 por mes, fuera del rango). La cuenta no es consistente con el precio propuesto y no explica la diferencia (prueba gratis, descuentos, abandono). Ademas no aparecen ingresos de veterinarios en el escenario pese a ser el segundo canal y el plan de pivote, ni el tamano del mercado inicial ni cuantos establecimientos son alcanzables por gremiales y ferias: todo queda como supuesto sin cifra.",
+      "tipo": "opinion",
+      "evidencia": []
+    }
+  ],
+  "nuevas_fichas": []
+}

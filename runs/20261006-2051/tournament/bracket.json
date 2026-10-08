@@ -1,0 +1,760 @@
+{
+ "version": 1,
+ "seed": 7,
+ "dir": "runs/20261006-2051/tournament",
+ "has_baseline": false,
+ "final": null,
+ "agents": {
+  "i002": {
+   "card": {
+    "reasoning": {
+     "id": "agro",
+     "name": "agro"
+    }
+   },
+   "solution": "runs/20261006-2051/tournament/r3/r3-m01.i002.solution.md",
+   "idea_json": "runs/20261006-2051/tournament/r3/r3-m01.i002.idea.json",
+   "alive": true,
+   "eliminated_in": null,
+   "eliminated_by": null,
+   "byes": 0,
+   "shown_first": 2,
+   "shown_second": 1,
+   "personas": [
+    "cliente",
+    "competidor",
+    "tutor"
+   ]
+  },
+  "i004": {
+   "card": {
+    "reasoning": {
+     "id": "fintech-seguros",
+     "name": "fintech-seguros"
+    }
+   },
+   "solution": "runs/20261006-2051/tournament/r1/r1-m02.i004.solution.md",
+   "idea_json": "runs/20261006-2051/tournament/r1/r1-m02.i004.idea.json",
+   "alive": false,
+   "eliminated_in": 1,
+   "eliminated_by": "i006",
+   "byes": 0,
+   "shown_first": 0,
+   "shown_second": 1,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i005": {
+   "card": {
+    "reasoning": {
+     "id": "comercio-retail",
+     "name": "comercio-retail"
+    }
+   },
+   "solution": "runs/20261006-2051/tournament/r3/r3-m01.i005.solution.md",
+   "idea_json": "runs/20261006-2051/tournament/r3/r3-m01.i005.idea.json",
+   "alive": false,
+   "eliminated_in": 3,
+   "eliminated_by": "i002",
+   "byes": 0,
+   "shown_first": 1,
+   "shown_second": 2,
+   "personas": [
+    "cliente",
+    "competidor",
+    "tutor"
+   ]
+  },
+  "i006": {
+   "card": {
+    "reasoning": {
+     "id": "agro",
+     "name": "agro"
+    }
+   },
+   "solution": "runs/20261006-2051/tournament/r2/r2-m02.i006.solution.md",
+   "idea_json": "runs/20261006-2051/tournament/r2/r2-m02.i006.idea.json",
+   "alive": false,
+   "eliminated_in": 2,
+   "eliminated_by": "i005",
+   "byes": 0,
+   "shown_first": 1,
+   "shown_second": 1,
+   "personas": [
+    "cliente",
+    "competidor"
+   ]
+  },
+  "i007": {
+   "card": {
+    "reasoning": {
+     "id": "fintech-seguros",
+     "name": "fintech-seguros"
+    }
+   },
+   "solution": "runs/20261006-2051/tournament/r1/r1-m04.i007.solution.md",
+   "idea_json": "runs/20261006-2051/tournament/r1/r1-m04.i007.idea.json",
+   "alive": false,
+   "eliminated_in": 1,
+   "eliminated_by": "i002",
+   "byes": 0,
+   "shown_first": 0,
+   "shown_second": 1,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i008": {
+   "card": {
+    "reasoning": {
+     "id": "fintech-seguros",
+     "name": "fintech-seguros"
+    }
+   },
+   "solution": "runs/20261006-2051/tournament/r1/r1-m01.i008.solution.md",
+   "idea_json": "runs/20261006-2051/tournament/r1/r1-m01.i008.idea.json",
+   "alive": false,
+   "eliminated_in": 1,
+   "eliminated_by": "i005",
+   "byes": 0,
+   "shown_first": 1,
+   "shown_second": 0,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i009": {
+   "card": {
+    "reasoning": {
+     "id": "comercio-retail",
+     "name": "comercio-retail"
+    }
+   },
+   "solution": "runs/20261006-2051/tournament/r2/r2-m01.i009.solution.md",
+   "idea_json": "runs/20261006-2051/tournament/r2/r2-m01.i009.idea.json",
+   "alive": false,
+   "eliminated_in": 2,
+   "eliminated_by": "i002",
+   "byes": 0,
+   "shown_first": 1,
+   "shown_second": 1,
+   "personas": [
+    "cliente",
+    "competidor"
+   ]
+  },
+  "i010": {
+   "card": {
+    "reasoning": {
+     "id": "fintech-seguros",
+     "name": "fintech-seguros"
+    }
+   },
+   "solution": "runs/20261006-2051/tournament/r1/r1-m03.i010.solution.md",
+   "idea_json": "runs/20261006-2051/tournament/r1/r1-m03.i010.idea.json",
+   "alive": false,
+   "eliminated_in": 1,
+   "eliminated_by": "i009",
+   "byes": 0,
+   "shown_first": 1,
+   "shown_second": 0,
+   "personas": [
+    "cliente"
+   ]
+  }
+ },
+ "agents_n": 8,
+ "rounds": [
+  {
+   "n": 1,
+   "alive": [
+    "i002",
+    "i004",
+    "i005",
+    "i006",
+    "i007",
+    "i008",
+    "i009",
+    "i010"
+   ],
+   "matches": [
+    {
+     "id": "r1-m01",
+     "a": "i008",
+     "b": "i005",
+     "winner": "i005",
+     "loser": "i008",
+     "reason": "Y cobra al mismo comercio que sufre el problema, ancla precio y señal de pago en ofertas locales verificadas (el escalón de stock de Fixed, UYU 2.140 contra 980, y gestionUltimate) con un costo de USD 173,4, mientras X prueba bien el dolor del usuario final pero cobra a una entidad cuyo costo, disposición a pagar y alternativas actuales son solo supuestos.",
+     "survived": [
+      "Ataque 2: falta de señal de pago, rebatido con el escalón de stock de Fixed (verificado) y la oferta de gestionUltimate; el costo del faltante quedó como supuesto",
+      "Ataque 4: precio sin base, anclado contra el escalón de stock de Fixed (unos USD 35); meta de 150 comercios y canal contable pasados a supuestos",
+      "Ataque 5: datos de los comprobantes, con XML y CSV en servidor propio y PDF o fotos opcionales con consentimiento escrito",
+      "Ataque 6: costo subdimensionado, bien rebatido: USD 173,4 al año y unos USD 260 con 2 GiB, bajo el tope de R1"
+     ],
+     "scores": {
+      "i008": 57.5,
+      "i005": 68.0
+     },
+     "source": "judge",
+     "first": "i008",
+     "second": "i005",
+     "personas": [
+      "cliente"
+     ],
+     "attacks_checked": true,
+     "det_fatal": {
+      "i008": [],
+      "i005": []
+     },
+     "hard_notes": {
+      "i008": [
+       "costo_estimado: el precio de 'Dominio y número de WhatsApp' es una estimación sin fuente"
+      ],
+      "i005": [
+       "palabras: la página tiene 749 palabras; el máximo es 700"
+      ]
+     },
+     "revised": true,
+     "fatal": {
+      "i008": false,
+      "i005": false
+     },
+     "criteria": {
+      "i008": {
+       "demanda": 5,
+       "viabilidad": 7,
+       "diferenciacion": 4,
+       "business_case": 5,
+       "encaje": 8,
+       "academico": 8
+      },
+      "i005": {
+       "demanda": 6,
+       "viabilidad": 8,
+       "diferenciacion": 6,
+       "business_case": 6,
+       "encaje": 8,
+       "academico": 8
+      }
+     },
+     "fatal_motivos": {
+      "i008": [],
+      "i005": []
+     },
+     "standing": {
+      "i008": [
+       "Ataque 2: el dolor probado es del usuario final; que a la entidad que paga le cueste reclamos o imagen sigue siendo solo un supuesto",
+       "Ataque 4: no muestra por qué la entidad pagaría en vez de usar sus avisos, su atención o un canal propio; la diferencia declarada es copiable y no hay competidores analizados con fichas"
+      ],
+      "i005": [
+       "Ataque 1 (en parte): el segmento que no quiere migrar de facturador sigue sin medir, y un cliente de Fixed puede sumar stock sin migrar, así que frente a Fixed la diferencia es sobre todo precio",
+       "Ataque 3: subir comprobantes periódicamente es trabajo nuevo para el dueño; la idea lo marca y lo mide en el piloto, pero no lo resuelve"
+      ]
+     },
+     "notes": []
+    },
+    {
+     "id": "r1-m02",
+     "a": "i004",
+     "b": "i006",
+     "winner": "i006",
+     "loser": "i004",
+     "reason": "Con demanda pareja (las dos dejan la disposición a pagar como supuesto), X gana por viabilidad y diferenciación: su MVP se demuestra con registros KML reales o simulados sin depender de terceros y su chequeo contra la normativa del MGAP es un hueco concreto, mientras que Y argumenta su hueco por ausencia frente a un software de facturación que ya tiene los CFE y su piloto depende de datos financie",
+     "survived": [
+      "Formatos de vuelo sin plan B: ahora importa KML, documentado para DJI Agras por dos fichas, con carga manual de traza como plan B",
+      "Piloto atado a la temporada: la segunda entrega se demuestra con registros reales o simulados y el piloto es opcional",
+      "Distancias inventadas: los 500 m aéreos a centros educativos y la exigencia de zonas buffer tienen fichas oficiales del MGAP",
+      "Dolor como pura opinión: la obligación de respetar zonas buffer y registrar en el RAPF está respaldada por fichas oficiales",
+      "Datos sensibles de clientes: el MVP usa polígonos sin titular y trazas propias o simuladas",
+      "Competidores omitidos: ahora lista la plataforma DJI, AirData y AcreConnect"
+     ],
+     "scores": {
+      "i004": 59.5,
+      "i006": 61.0
+     },
+     "source": "judge",
+     "first": "i006",
+     "second": "i004",
+     "personas": [
+      "cliente"
+     ],
+     "attacks_checked": true,
+     "det_fatal": {
+      "i006": [],
+      "i004": []
+     },
+     "hard_notes": {
+      "i006": [
+       "costo_estimado: el precio de 'Dominio' es una estimación sin fuente"
+      ],
+      "i004": [
+       "costo_estimado: el precio de 'Dominio' es una estimación sin fuente",
+       "palabras: la página tiene 963 palabras; el máximo es 700"
+      ]
+     },
+     "revised": true,
+     "fatal": {
+      "i004": false,
+      "i006": false
+     },
+     "criteria": {
+      "i004": {
+       "demanda": 5,
+       "viabilidad": 7,
+       "diferenciacion": 5,
+       "business_case": 6,
+       "encaje": 7,
+       "academico": 7
+      },
+      "i006": {
+       "demanda": 5,
+       "viabilidad": 8,
+       "diferenciacion": 6,
+       "business_case": 5,
+       "encaje": 6,
+       "academico": 6
+      }
+     },
+     "fatal_motivos": {
+      "i004": [],
+      "i006": []
+     },
+     "standing": {
+      "i006": [
+       "Disposición a pagar y costo del dolor sin ficha: que el operador pague USD 250 o pierda algo sin el reporte sigue siendo supuesto",
+       "Mercado diminuto: 60 drones vendidos hasta 2023, el escenario de 40 drones da USD 10.000 por año y crecer exige Argentina o Brasil sin ficha",
+       "Sin contacto con operadores de un nicho chico para validar antes de diciembre de 2026",
+       "Capas abiertas de escuelas y centros poblados sin verificar, y distancia a centros poblados sin relevar",
+       "Diferencial angosto y copiable por los fabricantes"
+      ],
+      "i004": [
+       "Demanda de proyección sin ficha: las fichas muestran uso de crédito, no que la falta de proyección cause la financiación de urgencia",
+       "Disposición a pagar USD 15 a 30 por mes y canal por contadores sin ninguna señal",
+       "Carga manual recurrente de XML, extractos y cheques: el aviso de datos viejos mitiga pero no resuelve",
+       "Diferenciación argumentada por ausencia: YoFacturo ya tiene los CFE y puede sumar un tablero de caja"
+      ]
+     },
+     "notes": []
+    },
+    {
+     "id": "r1-m03",
+     "a": "i010",
+     "b": "i009",
+     "winner": "i009",
+     "loser": "i010",
+     "reason": "Y apoya el dolor en dos fichas locales verificadas de fuentes distintas (56% de compradores frena por devoluciones y solo 8% de las pymes las gestiona, F-comercio-retail-002 y 003), mientras que en X el dolor del corredor uruguayo es un supuesto sin ninguna ficha y Foliume ya hace el mismo flujo; X compensa en encaje y valor académico, pero no alcanza.",
+     "survived": [
+      "uso de F-comercio-retail-007 como disposición a pagar: corregido, ahora es supuesto",
+      "100 tiendas y USD 24.000 sin base: eliminado, queda una cuenta ilustrativa coherente con el costo",
+      "cita de F-comercio-retail-004 para el envío de vuelta: quitada, queda como supuesto",
+      "datos de compradores a una API externa: datos mínimos, CSV sin datos personales, aviso y cláusulas contractuales con ficha",
+      "piloto con volumen bajo: ahora exige 20 o más devoluciones por mes y 10 entrevistas previas; R4 bien rebatido"
+     ],
+     "scores": {
+      "i010": 51.0,
+      "i009": 54.0
+     },
+     "source": "judge",
+     "first": "i010",
+     "second": "i009",
+     "personas": [
+      "cliente"
+     ],
+     "attacks_checked": true,
+     "det_fatal": {
+      "i010": [],
+      "i009": []
+     },
+     "hard_notes": {
+      "i010": [
+       "palabras: la página tiene 977 palabras; el máximo es 700"
+      ],
+      "i009": []
+     },
+     "revised": true,
+     "fatal": {
+      "i010": false,
+      "i009": false
+     },
+     "criteria": {
+      "i010": {
+       "demanda": 3,
+       "viabilidad": 7,
+       "diferenciacion": 4,
+       "business_case": 5,
+       "encaje": 7,
+       "academico": 7
+      },
+      "i009": {
+       "demanda": 5,
+       "viabilidad": 7,
+       "diferenciacion": 4,
+       "business_case": 5,
+       "encaje": 6,
+       "academico": 5
+      }
+     },
+     "fatal_motivos": {
+      "i010": [],
+      "i009": []
+     },
+     "standing": {
+      "i010": [
+       "ninguna ficha muestra que el corredor uruguayo sufra el problema ni que pague: la demanda sigue siendo hipótesis",
+       "Foliume, de raíz uruguaya y con US$1 millón, ya automatiza el mismo flujo para corredores; el hueco es solo comercial y local",
+       "sin tamaño de mercado: cantidad de corredores desconocida y precio sin base"
+      ],
+      "i009": [
+       "el costo de las devoluciones para la tienda no está probado; el 8% de F-comercio-retail-003 puede indicar poco volumen",
+       "el MVP deja afuera el envío de vuelta y resuelve una decisión administrativa con ahorro posiblemente chico",
+       "no se buscaron herramientas de devoluciones locales o regionales y Tiendanube podría sumar la función"
+      ]
+     },
+     "notes": []
+    },
+    {
+     "id": "r1-m04",
+     "a": "i007",
+     "b": "i002",
+     "winner": "i002",
+     "loser": "i007",
+     "reason": "Con demanda igual de débil en ambas (el pagador es un supuesto), X tiene un costo más holgado (USD 164 contra 198), un hueco concreto frente a competidores locales de las fichas (miTambo solo tambos, Cattler feedlots) y un ancla de precio local, mientras Y solo opone marcas locales, español y precio fijo a plataformas globales, sin señal de pago ni tamaño de mercado.",
+     "survived": [
+      "Precio sin señal: pasó a un rango de USD 6 a 10 anclado en miTambo (F-agro-001), sin Albor como ancla, con el canal declarado como supuesto",
+      "Sin contactos para el piloto: piloto reducido a 3 a 5 establecimientos y audios grabados con guiones como plan B; R4 no exige contactos previos",
+      "Ley 18.331: consentimiento escrito, audio borrado tras confirmar y solo texto sin nombres al LLM, con la transferencia internacional a revisar",
+      "Carga de confirmación y conflictos offline: confirma el propio peón, la IA deja vacío lo dudoso y el registro es de solo agregar"
+     ],
+     "scores": {
+      "i007": 56.5,
+      "i002": 64.0
+     },
+     "source": "judge",
+     "first": "i002",
+     "second": "i007",
+     "personas": [
+      "cliente"
+     ],
+     "attacks_checked": true,
+     "det_fatal": {
+      "i002": [],
+      "i007": []
+     },
+     "hard_notes": {
+      "i002": [
+       "costo_estimado: el precio de 'Dominio' es una estimación sin fuente",
+       "palabras: la página tiene 985 palabras; el máximo es 700"
+      ],
+      "i007": []
+     },
+     "revised": true,
+     "fatal": {
+      "i007": false,
+      "i002": false
+     },
+     "criteria": {
+      "i007": {
+       "demanda": 5,
+       "viabilidad": 7,
+       "diferenciacion": 4,
+       "business_case": 5,
+       "encaje": 7,
+       "academico": 8
+      },
+      "i002": {
+       "demanda": 5,
+       "viabilidad": 8,
+       "diferenciacion": 6,
+       "business_case": 6,
+       "encaje": 7,
+       "academico": 7
+      }
+     },
+     "fatal_motivos": {
+      "i007": [],
+      "i002": []
+     },
+     "standing": {
+      "i002": [
+       "Dolor no demostrado: F-agro-002 prueba la obligación de notificar al SNIG, no cuánto le cuesta al productor chico",
+       "Doble carga: la app exporta los pendientes pero el productor igual tiene que declararlos en el canal oficial",
+       "Diferenciación copiable: miTambo podría extenderse a carne y la voz con LLM se copia, sin explicar por qué no lo hicieron"
+      ],
+      "i007": [
+       "Ninguna ficha muestra que entidades financieras medianas sufran clones ni que paguen por detectarlos",
+       "El diferencial frente a las plataformas globales (marcas locales, español, precio fijo) es hipótesis y copiable",
+       "Precio de USD 150 a 300 por mes y cantidad de entidades compradoras sin ninguna señal"
+      ]
+     },
+     "notes": []
+    }
+   ],
+   "bye": null,
+   "closed": true
+  },
+  {
+   "n": 2,
+   "alive": [
+    "i002",
+    "i005",
+    "i006",
+    "i009"
+   ],
+   "matches": [
+    {
+     "id": "r2-m01",
+     "a": "i002",
+     "b": "i009",
+     "winner": "i002",
+     "loser": "i009",
+     "reason": "Y conserva un hueco real según las fichas (captura por voz y sin señal para el productor pastoril, que no muestran Gecos, la app SNIG ni miTambo), mientras que X queda como un subconjunto de Boris y Undo, gratuitos o freemium y con logística, más un clasificador con IA que la propia idea admite copiable.",
+     "survived": [
+      "No nombraba a Gecos SGG: ahora figura como competidor, con ficha nueva de que su página es un sistema web sin voz ni uso sin señal, y el hueco quedó como supuesto a confirmar",
+      "La app SNIG y las guías digitales bajan el valor de la lista de pendientes: la exportación pasó a subproducto y la ficha de la app solo lista trámites puntuales, no registro diario por lote",
+      "Cattler y Albor descartados sin argumento: Cattler ahora figura como capaz de ampliar de segmento y Albor queda como referencia vieja y cara, según sus fichas",
+      "Canal y precio de veterinarios inventados: el ataque es opinión y la idea ya los declara como supuestos sin respaldo"
+     ],
+     "scores": {
+      "i002": 59.0,
+      "i009": 52.0
+     },
+     "source": "judge",
+     "first": "i009",
+     "second": "i002",
+     "personas": [
+      "competidor"
+     ],
+     "attacks_checked": true,
+     "det_fatal": {
+      "i009": [],
+      "i002": []
+     },
+     "hard_notes": {
+      "i009": [
+       "palabras: la página tiene 967 palabras; el máximo es 700"
+      ],
+      "i002": [
+       "costo_estimado: el precio de 'Dominio' es una estimación sin fuente"
+      ]
+     },
+     "revised": true,
+     "fatal": {
+      "i002": false,
+      "i009": false
+     },
+     "criteria": {
+      "i002": {
+       "demanda": 5,
+       "viabilidad": 7,
+       "diferenciacion": 6,
+       "business_case": 5,
+       "encaje": 6,
+       "academico": 7
+      },
+      "i009": {
+       "demanda": 5,
+       "viabilidad": 7,
+       "diferenciacion": 3,
+       "business_case": 4,
+       "encaje": 7,
+       "academico": 6
+      }
+     },
+     "fatal_motivos": {
+      "i002": [],
+      "i009": []
+     },
+     "standing": {
+      "i009": [
+       "El único diferencial, la clasificación con IA, es copiable por Boris o Undo y la idea lo admite; el foco en tiendas fuera de Tiendanube es una hipótesis sin ficha",
+       "No hay evidencia de que la tienda pague y los competidores son gratuitos o freemium",
+       "El tamaño del segmento con 20 o más devoluciones por mes es desconocido y el plan B gratuito deja la tesis sin ingresos demostrables",
+       "El envío de vuelta, señalado como desafío en F-comercio-retail-004, queda fuera del MVP mientras los competidores ya lo cubren"
+      ],
+      "i002": [
+       "Voz más LLM es copiable por Gecos o miTambo; el corpus de audios es una ventaja moderada, no un foso",
+       "La disposición a pagar del productor chico no tiene ficha propia: el único ancla es miTambo, de lechería y de 2020, y el tamaño de mercado no está medido"
+      ]
+     },
+     "notes": []
+    },
+    {
+     "id": "r2-m02",
+     "a": "i005",
+     "b": "i006",
+     "winner": "i005",
+     "loser": "i006",
+     "reason": "X tiene una señal de pago local por control de stock (el escalón de Fixed y tres competidores que lo venden) sobre un universo de comercios mucho mayor, más encaje y un desafío medible de emparejamiento, mientras Y apunta a un parque de decenas de drones que la propia idea admite que no sostiene un negocio y no tiene ninguna señal de pago.",
+     "survived": [
+      "La carga semanal repite la doble carga: rebatido en parte (un archivo por semana, no catálogo ni ventas a mano) y convertido en criterio de corte medido en el piloto",
+      "Referencia de precio mal armada: reescrita como techo, con el pago sumado al facturador actual y la alternativa declarada sin precio",
+      "Sin contactos ni comercios piloto: entrevistas antes de diciembre de 2026 y plan B con comprobantes anonimizados y corpus sintético"
+     ],
+     "scores": {
+      "i005": 61.0,
+      "i006": 52.5
+     },
+     "source": "judge",
+     "first": "i005",
+     "second": "i006",
+     "personas": [
+      "competidor"
+     ],
+     "attacks_checked": true,
+     "det_fatal": {
+      "i005": [],
+      "i006": []
+     },
+     "hard_notes": {
+      "i005": [
+       "palabras: la página tiene 919 palabras; el máximo es 700"
+      ],
+      "i006": [
+       "costo_estimado: el precio de 'Dominio' es una estimación sin fuente",
+       "palabras: la página tiene 901 palabras; el máximo es 700"
+      ]
+     },
+     "revised": true,
+     "fatal": {
+      "i005": false,
+      "i006": false
+     },
+     "criteria": {
+      "i005": {
+       "demanda": 5,
+       "viabilidad": 7,
+       "diferenciacion": 5,
+       "business_case": 6,
+       "encaje": 8,
+       "academico": 8
+      },
+      "i006": {
+       "demanda": 4,
+       "viabilidad": 7,
+       "diferenciacion": 4,
+       "business_case": 5,
+       "encaje": 6,
+       "academico": 7
+      }
+     },
+     "fatal_motivos": {
+      "i005": [],
+      "i006": []
+     },
+     "standing": {
+      "i005": [
+       "El hueco depende de comercios que no migran de facturador, un segmento sin medir",
+       "La función es copiable por Fixed, YoFacturo o gestionUltimate; la ventaja del corpus por proveedor es un supuesto",
+       "No hay ficha de demanda para una capa de stock externa: el dolor sale del blog de un competidor y la disposición a pagar es supuesto"
+      ],
+      "i006": [
+       "La disposición a pagar USD 250 por drone no tiene ficha y el chequeo previo se puede hacer con un mapa gratuito",
+       "El hueco se afirma por ausencia de ficha y es copiable por el fabricante o las herramientas de registros de vuelo",
+       "Mercado de decenas de drones: 20 drones dan USD 5.000 por año y la idea admite que no sostiene un negocio"
+      ]
+     },
+     "notes": []
+    }
+   ],
+   "bye": null,
+   "closed": true
+  },
+  {
+   "n": 3,
+   "alive": [
+    "i002",
+    "i005"
+   ],
+   "matches": [
+    {
+     "id": "r3-m01",
+     "a": "i002",
+     "b": "i005",
+     "winner": "i002",
+     "loser": "i005",
+     "reason": "X es más viable (USD 149 con precios oficiales y voz demostrable en la entrega 1, contra USD 259,8 con poco margen y un alcance cargado) y tiene un business case con mercado inicial respaldado por ficha, mientras Y depende de que los facturadores exporten las ventas, sin plan B para ellas.",
+     "survived": [
+      "Ataque 2: la voz de punta a punta (audio sin señal, transcripción, extracción y confirmación) pasó al semestre 1, con demo antes de la entrega 1",
+      "Ataque 5: hay un camino de cumplimiento de la Ley 18.331 con consentimiento del peón, aviso de transferencia al exterior y cláusulas de la Res. 41/021 o proveedores del listado de EE.UU. (F-defensa-r3-m01-i002-002), con lo pendiente declarado",
+      "Ataque 6: hay una métrica propia (acierto por campo y tasa de campos vacíos sobre 300 audios, 200 al aire libre con ruido) que no depende solo del piloto",
+      "Ataque 7: el escenario de ingresos ahora es coherente con el precio (100 x USD 72 más 10 veterinarios x USD 420 = USD 11.400) y el mercado inicial tiene ficha (más de 8.000 unidades familiares de ganadería de carne)"
+     ],
+     "scores": {
+      "i002": 63.0,
+      "i005": 58.5
+     },
+     "source": "judge",
+     "first": "i002",
+     "second": "i005",
+     "personas": [
+      "tutor"
+     ],
+     "attacks_checked": true,
+     "det_fatal": {
+      "i002": [],
+      "i005": []
+     },
+     "hard_notes": {
+      "i002": [],
+      "i005": [
+       "palabras: la página tiene 992 palabras; el máximo es 700"
+      ]
+     },
+     "revised": true,
+     "fatal": {
+      "i002": false,
+      "i005": false
+     },
+     "criteria": {
+      "i002": {
+       "demanda": 5,
+       "viabilidad": 8,
+       "diferenciacion": 5,
+       "business_case": 7,
+       "encaje": 7,
+       "academico": 6
+      },
+      "i005": {
+       "demanda": 5,
+       "viabilidad": 6,
+       "diferenciacion": 6,
+       "business_case": 5,
+       "encaje": 8,
+       "academico": 7
+      }
+     },
+     "fatal_motivos": {
+      "i002": [],
+      "i005": []
+     },
+     "standing": {
+      "i002": [
+       "Ataque 1 (parcial): el corpus de habla real y la medición de minutos por evento siguen dependiendo de conseguir productores sin contactos declarados; los guiones propios no miden habla espontánea rural",
+       "Ataque 3: las fichas prueban la obligación ante el SNIG y el tamaño del segmento, no el costo de registrar ni la disposición a pagar del productor de carne",
+       "Ataque 4: la diferencia es una capa de voz que Gecos podría tener o sumar rápido; su ausencia solo surge de lo que no dice su página"
+      ],
+      "i005": [
+       "Ataque 1 (parcial): subir comprobantes a diario sigue siendo una rutina manual y la hipótesis de menos de 15 minutos por semana se prueba recién con comercios reales",
+       "Ataque 2 (parcial): el formato CFE es público, pero que los facturadores dejen exportar los comprobantes es supuesto y el plan B de PDF y fotos cubre solo compras, no ventas",
+       "Ataque 3: la demanda del nicho que no migra de facturador no tiene ficha; la señal de pago de Fixed es por stock integrado al facturador, no por una capa externa",
+       "Ataque 4 (parcial): sin contactos, el piloto y la medición contra conteo físico pueden quedar en comprobantes anonimizados y datos sintéticos",
+       "Ataque 7 (parcial): la base legal de la transferencia de PDF y fotos sigue sin verificar y la página no se recortó (992 palabras contra un máximo de 700)"
+      ]
+     },
+     "notes": []
+    }
+   ],
+   "bye": null,
+   "closed": true
+  }
+ ],
+ "champion": "i002",
+ "persona_order": [
+  "cliente",
+  "competidor",
+  "tutor"
+ ],
+ "personas_per_match": 1,
+ "judge_both_orders": false
+}

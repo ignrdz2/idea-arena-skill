@@ -1,0 +1,26 @@
+{
+  "scores": {
+    "X": {"demanda": 4, "viabilidad": 6, "diferenciacion": 5, "business_case": 5, "encaje": 6, "academico": 8, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 7, "viabilidad": 2, "diferenciacion": 3, "business_case": 5, "encaje": 9, "academico": 8, "fatal": true, "fatal_motivo": "restriccion_dura:R1: el total declarado de infraestructura es USD 307 por año (150 + 12 + 0 + 120 + 25), sobre el tope de USD 300; la mitigación con créditos de estudiante de Azure o AWS no tiene fuente ni duración documentada, así que no cuenta según R1."}
+  },
+  "winner": "X",
+  "reason": "Y declara un costo de infraestructura de USD 307 por año, sobre el tope duro de USD 300 (R1), y además su propia fuente muestra que Gubly ya analiza pliegos con IA y muestra precios adjudicados y de la competencia, mientras X entra holgada en USD 125 sin fallo fatal.",
+  "standing": {
+    "X": [
+      "No hay evidencia local del tamaño ni del costo del sobrante en panaderías: el 5% a 15% es un supuesto, el link de FAO Uruguay devuelve 404 y el dato del Ministerio de Ambiente ubica el 70% de las pérdidas en producción y poscosecha, no en el comercio.",
+      "No hay señales de pago locales: la suscripción de USD 25 a 45 es una hipótesis en un rubro cuya gremial dice estar en pérdida, el ticket es chico y no se cuantifica cuántas panaderías hay en el mercado inicial.",
+      "Depende de 2 o 3 panaderías piloto con datos por producto durante al menos 10 semanas sin ningún contacto identificado; con tan poca historia el backtesting es débil, y el plan por franja y horneada necesita ventas horarias que pueden no existir.",
+      "El plan gratuito de Open-Meteo es solo para uso no comercial según su página de precios: el piloto pago del semestre 2 requeriría un plan comercial cuyo precio no está publicado ahí, o cambiar de fuente de clima.",
+      "La diferenciación es copiable: un proveedor de punto de venta local podría agregar pronóstico, Winnow ya ofrece pronóstico de producción (Foresight) en más de 90 países, y la afirmación de que los puntos de venta locales no pronostican no tiene fuente.",
+      "No está probado que el pronóstico supere la intuición de un panadero con años de oficio, y la adopción depende de que alguien cargue el sobrante todos los días."
+    ],
+    "Y": [
+      "Viola R1: el total declarado es USD 307 por año, sobre el tope de USD 300, y los créditos de estudiante no tienen fuente ni duración, así que no cuentan.",
+      "Su propia fuente (El Observador, julio 2026) dice que Gubly permite analizar los pliegos con IA para saber si se cumple con las condiciones y ver a qué precios se adjudicó y a qué precios vende la competencia: el hueco de preparación de oferta e inteligencia de precios que la idea afirma queda contradicho.",
+      "Gubly tiene plan gratuito y premium a USD 25 por mes (USD 250 por año) con más de un centenar de usuarios: la hipótesis de USD 40 a 120 por mes queda por encima de un competidor local que ya cubre el núcleo.",
+      "Alcance inflado para 3 personas a 10 a 16 horas: ETL completo de OCDS más histórico, OCR, extracción evaluada, radar, inteligencia de precios con resolución de entidades, Text-to-SQL, bóveda multi-tenant y endurecimiento.",
+      "Una EC2 t4g.small de 2 GB corriendo PostgreSQL, ETL, OCR, FastAPI y Next.js probablemente no alcance, y 20k tokens por pliego puede subestimar pliegos largos: el costo real tendería a subir todavía más sobre el tope.",
+      "Las 21.532 consultas de proveedores de ARCE son sobre el uso de los sistemas informáticos, no prueban el costo de leer pliegos; el tiempo por oferta y la disposición a pagar no están medidos localmente, y no se da el tamaño del universo de proveedores ni el canal para llegar a ellos."
+    ]
+  }
+}

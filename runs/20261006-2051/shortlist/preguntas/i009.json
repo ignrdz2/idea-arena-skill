@@ -1,0 +1,30 @@
+{
+  "idea": "i009",
+  "preguntas": [
+    {
+      "pregunta": "Pensando en el último mes: ¿cuántos pedidos terminaron en cambio o devolución, cuántas horas le dedicó alguien de la tienda a atenderlos y cuánto se perdió en envíos, reembolsos o mercadería que no se pudo volver a vender?",
+      "a_quien": "Dueño de una tienda online pyme uruguaya que vende por redes sociales o por una plataforma distinta de Tiendanube",
+      "que_valida": "Ataque en pie: el costo de las devoluciones para la tienda no está probado y el tamaño del segmento con 20 o más devoluciones por mes es desconocido (el 8% de F-comercio-retail-003 puede indicar poco volumen)."
+    },
+    {
+      "pregunta": "Contame la última devolución o cambio que tuvieron: ¿por qué canal llegó el pedido del cliente, quién lo atendió, qué le pidieron para comprobar el problema, cómo decidieron qué hacer y cuánto tiempo pasó hasta cerrarlo?",
+      "a_quien": "Persona que atiende los reclamos y devoluciones (dueño o encargado de atención al cliente) de una tienda online pyme uruguaya",
+      "que_valida": "Supuesto declarado: las devoluciones llegan hoy por WhatsApp o email y se resuelven a mano. También si decidir qué hacer con cada caso consume tiempo real o es un paso trivial."
+    },
+    {
+      "pregunta": "¿Qué herramientas, apps o servicios usaron alguna vez para manejar cambios y devoluciones, incluidas las que ofrece su plataforma de venta? ¿Cuál fue la última que probaron y por qué la siguen usando o la dejaron?",
+      "a_quien": "Dueño de una tienda online pyme uruguaya; hacerla tanto a tiendas en Tiendanube como a tiendas en otras plataformas o que venden solo por redes, para comparar",
+      "que_valida": "Ataques en pie: no se buscaron herramientas locales o regionales, Boris y Undo ya cubren Tiendanube con planes gratis o freemium, y que las tiendas fuera de Tiendanube no tengan opciones equivalentes es una hipótesis sin ficha."
+    },
+    {
+      "pregunta": "La última vez que la tienda empezó a pagar un servicio o app mensual para la operación (envíos, cobros, stock o atención), ¿quién lo encontró, quién aprobó el gasto, cuánto pagan por mes y qué tuvo que pasar para que lo contrataran?",
+      "a_quien": "Dueño o socio que maneja los gastos de una tienda online pyme uruguaya con 20 o más devoluciones por mes",
+      "que_valida": "Quién decide y paga, y el supuesto sin evidencia de disposición a pagar USD 15 a 35 por mes. Ataque en pie: no hay evidencia de que la tienda pague y los competidores son gratuitos o freemium."
+    },
+    {
+      "pregunta": "En la última devolución que se complicó o se demoró, ¿en qué paso se trabó: en decidir si correspondía, en coordinar el envío de vuelta con el cliente o el correo, o en devolver la plata? ¿Cuánto tardó en cerrarse, cuánto costó ese envío y quién lo pagó?",
+      "a_quien": "Encargado de logística o despacho de una tienda online pyme uruguaya que envía pedidos al interior del país",
+      "que_valida": "Ataque en pie: el MVP deja afuera el envío de vuelta, señalado como desafío en F-comercio-retail-004, y resuelve una decisión administrativa cuyo ahorro puede ser chico frente al costo logístico."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "match": "r3-m01",
+  "scores": {
+    "X": {"demanda": 5, "viabilidad": 8, "diferenciacion": 5, "business_case": 7, "encaje": 7, "academico": 6, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 5, "viabilidad": 6, "diferenciacion": 6, "business_case": 5, "encaje": 8, "academico": 7, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "X",
+  "reason": "X es más viable (USD 149 con precios oficiales y voz demostrable en la entrega 1, contra USD 259,8 con poco margen y un alcance cargado) y tiene un business case con mercado inicial respaldado por ficha, mientras Y depende de que los facturadores exporten las ventas, sin plan B para ellas.",
+  "survived": [
+    "Ataque 2: la voz de punta a punta (audio sin señal, transcripción, extracción y confirmación) pasó al semestre 1, con demo antes de la entrega 1",
+    "Ataque 5: hay un camino de cumplimiento de la Ley 18.331 con consentimiento del peón, aviso de transferencia al exterior y cláusulas de la Res. 41/021 o proveedores del listado de EE.UU. (F-defensa-r3-m01-i002-002), con lo pendiente declarado",
+    "Ataque 6: hay una métrica propia (acierto por campo y tasa de campos vacíos sobre 300 audios, 200 al aire libre con ruido) que no depende solo del piloto",
+    "Ataque 7: el escenario de ingresos ahora es coherente con el precio (100 x USD 72 más 10 veterinarios x USD 420 = USD 11.400) y el mercado inicial tiene ficha (más de 8.000 unidades familiares de ganadería de carne)"
+  ],
+  "standing": {
+    "X": [
+      "Ataque 1 (parcial): el corpus de habla real y la medición de minutos por evento siguen dependiendo de conseguir productores sin contactos declarados; los guiones propios no miden habla espontánea rural",
+      "Ataque 3: las fichas prueban la obligación ante el SNIG y el tamaño del segmento, no el costo de registrar ni la disposición a pagar del productor de carne",
+      "Ataque 4: la diferencia es una capa de voz que Gecos podría tener o sumar rápido; su ausencia solo surge de lo que no dice su página"
+    ],
+    "Y": [
+      "Ataque 1 (parcial): subir comprobantes a diario sigue siendo una rutina manual y la hipótesis de menos de 15 minutos por semana se prueba recién con comercios reales",
+      "Ataque 2 (parcial): el formato CFE es público, pero que los facturadores dejen exportar los comprobantes es supuesto y el plan B de PDF y fotos cubre solo compras, no ventas",
+      "Ataque 3: la demanda del nicho que no migra de facturador no tiene ficha; la señal de pago de Fixed es por stock integrado al facturador, no por una capa externa",
+      "Ataque 4 (parcial): sin contactos, el piloto y la medición contra conteo físico pueden quedar en comprobantes anonimizados y datos sintéticos",
+      "Ataque 7 (parcial): la base legal de la transferencia de PDF y fotos sigue sin verificar y la página no se recortó (992 palabras contra un máximo de 700)"
+    ]
+  }
+}

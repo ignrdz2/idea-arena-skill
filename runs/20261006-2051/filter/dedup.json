@@ -1,0 +1,17 @@
+{
+  "grupos": [
+    ["i001", "i009"],
+    ["i002"],
+    ["i003", "i005"],
+    ["i004"],
+    ["i006"],
+    ["i007"],
+    ["i008"],
+    ["i010"]
+  ],
+  "motivos": [
+    "i001 e i009: el mismo problema (la dificultad para devolver frena la compra y la pyme no gestiona devoluciones), el mismo usuario (paga la pyme que vende online, el comprador usa el portal sin costo) y la misma solución: un portal de devoluciones con política configurable, fotos, clasificación del motivo y propuesta de cambio o reembolso.",
+    "i003 e i005: el mismo problema (stock desactualizado y doble carga porque facturación e inventario van separados), el mismo usuario (dueño de comercio chico con varios proveedores) y la misma solución: leer comprobantes de compra (XML, PDF o foto con visión), emparejar líneas con productos por embeddings en Qdrant y guardar las correcciones como regla del proveedor.",
+    "i007 e i008 quedan separadas: comparten el problema del phishing y el pagador, pero cambian el usuario (área de seguridad de la entidad frente a sus clientes finales) y el tipo de solución (monitoreo proactivo de sitios clonados con evidencia para la baja frente a un verificador a demanda por WhatsApp), lo que daría dos tesis distintas."
+  ]
+}

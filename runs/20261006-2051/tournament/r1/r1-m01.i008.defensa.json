@@ -1,0 +1,49 @@
+{
+ "idea": "i008",
+ "respuestas": [
+  {
+   "ataque": 1,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que no hay ficha de disposición a pagar y que eso limita la demanda. No acepto que sea una afirmación oculta: ya estaba en supuestos como 'sin validar', así que no es fallo fatal. Arreglo: bajo la hipótesis a USD 200 a 400, la cuenta ilustrativa a cinco clientes (unos USD 18.000, antes 48.000), declaro que no hay ficha de presupuesto antifraude y agrego entrevistas a responsables de riesgo antes de diciembre y una métrica de consultas de marca cliente en el piloto.",
+   "evidencia": [
+    "F-fintech-seguros-001",
+    "F-fintech-seguros-002"
+   ]
+  },
+  {
+   "ataque": 2,
+   "decision": "PARCIAL",
+   "detalle": "Tiene razón en que 'la entidad imitada no ve las campañas' no tenía ficha ni supuesto: la saco del problema y la declaro en supuestos junto con el costo para la entidad. Lo que sí respalda F-fintech-seguros-002 es que un director de riesgos de una entidad lo trata como amenaza para su marca y sus clientes, pero no prueba costo en reclamos: no lo afirmo. El problema aclara ahora que el costo para la entidad es hipótesis.",
+   "evidencia": [
+    "F-fintech-seguros-002"
+   ]
+  },
+  {
+   "ataque": 3,
+   "decision": "CONCEDE",
+   "detalle": "Correcto: F-fintech-seguros-006 solo cuenta insurtech registradas y no habla de suplantación ni de compra. Saqué insurtech de los usuarios, dejé la ficha solo como contexto y declaro que no hay ficha del tamaño del mercado pagador (fintech, financieras, cooperativas). La cuenta ilustrativa ya no usa esa cifra.",
+   "evidencia": [
+    "F-fintech-seguros-006"
+   ]
+  },
+  {
+   "ataque": 4,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que la idea no describía las alternativas actuales. Las declaro como supuesto (avisos a clientes, atención, bajada de sitios, CERTuy, marcado de enlaces por WhatsApp, navegadores y antivirus) y aclaro que no se verificó su cobertura ni la existencia de competidores locales. No acepto que falte toda diferencia: la propuesta es verificar bajo demanda cualquier mensaje reenviado, con lista blanca de dominios uruguayos y casos locales en rioplatense, algo que un aviso masivo no hace. Es una diferencia copiable, no un hueco probado, y no la presento como tal.",
+   "evidencia": []
+  },
+  {
+   "ataque": 5,
+   "decision": "PARCIAL",
+   "detalle": "Tiene razón en que 'con su marca' sin número propio era ambiguo y en que un chip de USD 15 era corto. Recorto: el MVP usa un número compartido con el nombre de la entidad piloto en las respuestas; número propio y verificación en Meta por entidad quedan fuera del MVP. Subí la estimación a USD 45 (dominio y línea prepago, sin fuente, declarado) y el total a USD 209, bajo el tope. Agrego plan B (Telegram) por la política de WhatsApp. No acepto que 100 voluntarios no valgan: miden acierto y uso, no compra, y la idea no dice lo contrario.",
+   "evidencia": []
+  },
+  {
+   "ataque": 6,
+   "decision": "PARCIAL",
+   "detalle": "Acepto el hueco de manejo de datos. Arreglo: se tachan teléfonos, nombres y cuentas antes del LLM, las capturas se borran tras analizarlas, el panel muestra solo conteos y dominios y no mensajes, el piloto es con consentimiento y se declara que una entidad real pediría contrato de tratamiento. No acepto que viole R6: la restricción permite datos personales con camino realista a la Ley 18.331, y ese camino es la minimización, no una licencia. El falso negativo se mitiga con la regla de nunca decir 'seguro' y con medir recall antes del piloto; no se elimina y sigue como riesgo.",
+   "evidencia": []
+  }
+ ],
+ "nuevas_fichas": []
+}

@@ -1,0 +1,90 @@
+{
+  "idea": "i005",
+  "persona": "cliente",
+  "ataques": [
+    {
+      "n": 1,
+      "severidad": "MAJOR",
+      "titulo": "Los facturadores locales ya venden stock integrado con CFE, y el cliente no tiene por qué sumar una herramienta",
+      "donde": "Competidores (solo YoFacturo) y supuesto 'otros facturadores pueden ofrecer inventario'",
+      "problema": "La idea declara como supuesto que otros facturadores pueden ofrecer inventario, pero ya existen: Fixed ofrece 'Gestión de productos con control de stock (criterio FIFO)' como complemento de su plan de facturación, y gestionUltimate ofrece stock unificado con ecommerce y emisión de e-Ticket y e-Factura desde el POS. Como cliente, mi stock sale solo de la venta que ya facturo. Cambiar de facturador a uno con inventario me resuelve el problema sin sumar un segundo producto, y la idea no explica por qué no lo haría. El hueco 'quien no quiere migrar' es un segmento chico y no está medido.",
+      "tipo": "evidencia",
+      "evidencia": ["F-ataque-r1-m01-i005-cliente-001", "F-ataque-r1-m01-i005-cliente-002"]
+    },
+    {
+      "n": 2,
+      "severidad": "MAJOR",
+      "titulo": "Demanda apoyada en una sola ficha, de un competidor, y fichas genéricas",
+      "donde": "Problema: F-comercio-retail-006, 004, 010, 001",
+      "problema": "El dolor del comercio chico (stock desactualizado, ventas de agotados) viene del blog de YoFacturo, que vende su propia solución, por lo que es marketing y no medición de cuánto cuesta. Las otras tres fichas son contexto: pymes con pocas herramientas digitales, mipymes 97% de empresas, e-commerce +32%. Ninguna dice que un comercio pague por reconciliar compras con ventas ni cuánto pierde por faltantes. 'Producto agotado publicado online es una venta cancelada' está declarado como supuesto, y no hay dato de cuántos de estos comercios venden online.",
+      "tipo": "evidencia",
+      "evidencia": ["F-comercio-retail-006", "F-comercio-retail-004", "F-comercio-retail-010", "F-comercio-retail-001"]
+    },
+    {
+      "n": 3,
+      "severidad": "MAJOR",
+      "titulo": "El flujo pide trabajo manual constante al dueño, que es lo que no hace",
+      "donde": "Solución: subir comprobantes de compra y exportación de ventas; confirmar dudosos con un clic",
+      "problema": "Hoy resuelvo el stock con una planilla, el conteo de una persona o el propio facturador. La propuesta me obliga a subir periódicamente XML, CSV, PDF o fotos de cada compra y exportar ventas, y a confirmar emparejamientos. Eso es una tarea nueva para mi gente, no una integración automática. Si me olvido una semana el stock deja de valer, y un stock que no cuadra me hace desconfiar de todo. No hay argumento de que lo hagan de forma sostenida, ni que ahorre más tiempo del que cuesta. Además, ventas sin comprobante y facturadores sin exportación (ya reconocidos como riesgo) dejan el libro incompleto desde el día uno.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 4,
+      "severidad": "MAJOR",
+      "titulo": "Precio y meta de 150 comercios sin ninguna base, con canal sin contactos",
+      "donde": "Monetización: USD 12 y 20 por mes, meta 150 comercios, canal estudios contables",
+      "problema": "El precio, la disposición a pagar, la meta de 150 comercios y el canal contable están declarados como supuestos, sin ninguna ficha de precios de pago ni de tamaño del segmento alcanzable. Como referencia local, Fixed cobra el plan con control de stock a un precio mensual en pesos que incluye facturación completa, y mi decisión de compra compara contra eso. Además, el equipo no tiene contactos declarados (constraints.md, tabla de contactos vacía), así que ni los 3 a 5 pilotos ni los estudios contables están identificados. Con USD 12 por mes y 150 comercios, USD 1.800 mensuales no cubren soporte y es un negocio chico.",
+      "tipo": "evidencia",
+      "evidencia": ["F-ataque-r1-m01-i005-cliente-001"]
+    },
+    {
+      "n": 5,
+      "severidad": "MAJOR",
+      "titulo": "Pedir a un comercio sus comprobantes y ventas a un equipo de estudiantes, con la base normativa sin resolver",
+      "donde": "Riesgos: 'Los CFE pueden traer datos personales: se descartan al ingresar (Ley 18.331)'; supuesto de acceso al XML de DGI",
+      "problema": "Subir facturas de compra y ventas a un servicio de estudiantes expone precios de proveedores, márgenes y datos de clientes. La idea dice que descarta los datos personales al ingresar, pero el PDF o foto se envía a la API de un modelo externo antes de poder descartar nada, y no explica base legal, consentimiento ni acuerdo de tratamiento. Como dueño no le entrego esto sin una garantía que un proyecto de tesis no puede dar. También depende de dos supuestos sin respaldo: que DGI publique el formato XML y que el comercio pueda obtener los CFE emitidos y recibidos.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 6,
+      "severidad": "MINOR",
+      "titulo": "Costo de infraestructura con piloto subdimensionado",
+      "donde": "Costo de infraestructura: API Claude Haiku 4.5 USD 70 y Droplet de 1 GiB",
+      "problema": "El volumen de 5.000 PDF o fotos al año y 10.000 desempates sale de un supuesto sin respaldo, y un Droplet de 1 GiB corriendo FastAPI, PostgreSQL y React deja poco margen; la propia idea admite que con 2 GiB el total sería unos USD 260, cerca del tope de USD 300. Con 3 a 5 comercios durante 8 semanas el volumen probablemente alcanza, pero cualquier crecimiento hacia los 150 comercios de la meta rompe el modelo de costos.",
+      "tipo": "opinion",
+      "evidencia": []
+    }
+  ],
+  "nuevas_fichas": [
+    {
+      "id": "F-ataque-r1-m01-i005-cliente-001",
+      "sector": "comercio-retail",
+      "hallazgo": "Fixed, facturador electrónico uruguayo, ofrece 'Gestión de productos con control de stock (criterio FIFO)' dentro de su plan Ilimitado: UYU 2.140 por mes, o UYU 1.626 con beneficio fiscal.",
+      "source_url": "https://fixed.uy/",
+      "source_title": "Fixed Factura Electrónica",
+      "source_date": "desconocida",
+      "source_type": "competidor",
+      "geografia": "UY",
+      "confianza": "media",
+      "retrieved_at": "2026-10-07T12:00:00",
+      "extracto": "Gestión de productos con control de stock (criterio FIFO)",
+      "competidor": "Fixed"
+    },
+    {
+      "id": "F-ataque-r1-m01-i005-cliente-002",
+      "sector": "comercio-retail",
+      "hallazgo": "gestionUltimate, sistema en la nube para comercios de Uruguay, ofrece stock unificado entre local y ecommerce y emisión de e-Ticket y e-Factura integrados a DGI desde el punto de venta.",
+      "source_url": "https://gestionultimate.com/soluciones/tiendas-retail/",
+      "source_title": "Software de Punto de Venta para Tiendas en Uruguay",
+      "source_date": "desconocida",
+      "source_type": "competidor",
+      "geografia": "UY",
+      "confianza": "media",
+      "retrieved_at": "2026-10-07T12:00:00",
+      "extracto": "Stock unificado y ecommerce",
+      "competidor": "gestionUltimate"
+    }
+  ]
+}

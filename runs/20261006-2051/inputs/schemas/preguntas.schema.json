@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Preguntas para validar una idea con gente del mercado",
+  "description": "La cantidad exacta la fija config.json (shortlist.questions_per_idea); Python la verifica.",
+  "type": "object",
+  "required": ["idea", "preguntas"],
+  "properties": {
+    "idea": {"type": "string"},
+    "preguntas": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["pregunta", "a_quien", "que_valida"],
+        "properties": {
+          "pregunta": {"type": "string", "minLength": 10, "maxLength": 400},
+          "a_quien": {"type": "string", "minLength": 3, "maxLength": 200},
+          "que_valida": {"type": "string", "minLength": 3, "maxLength": 300}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

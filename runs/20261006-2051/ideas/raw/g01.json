@@ -1,0 +1,185 @@
+{
+  "generador": "g01",
+  "ideas": [
+    {
+      "local_id": "g01-1",
+      "titulo": "Alerta temprana de sitios clonados para entidades financieras uruguayas",
+      "problema": "Las denuncias por estafa en Uruguay pasaron de 1.872 en 2015 a 25.116 en 2024; el phishing es la técnica digital más frecuente y la prevención depende más de cada persona que de la policía (F-fintech-seguros-001). Los delincuentes clonan sitios bancarios con IA en segundos y las transferencias instantáneas eliminan la ventana de recupero (F-fintech-seguros-002, F-fintech-seguros-003): si el clon no se detecta antes de circular, la pérdida es casi definitiva. No hay datos oficiales del monto perdido (F-fintech-seguros-002).",
+      "usuario": "Áreas de seguridad o fraude de entidades financieras medianas de Uruguay (cooperativas, financieras, fintech, aseguradoras). Paga la entidad.",
+      "solucion": "Vigila los logs públicos de Certificate Transparency y variantes del dominio de cada marca cliente. Un navegador sin interfaz visita cada candidato y guarda captura, HTML y DNS. Un filtro barato lo compara con el sitio oficial (similitud visual y de estructura, formularios de clave); solo los dudosos pasan a un modelo de lenguaje que clasifica y explica. Ante un clon, alerta por correo y arma la evidencia para pedir la baja. Los clientes de la entidad pueden reenviar enlaces sospechosos para análisis automático.",
+      "mvp": {
+        "semestre_1": [
+          "Ingesta de Certificate Transparency y generador de variantes de dominio para 5 marcas de prueba.",
+          "Visitador con Playwright que guarda captura, HTML y DNS.",
+          "Filtro de similitud visual y estructural evaluado sobre clones y sitios legítimos etiquetados.",
+          "Demo: tablero de candidatos por riesgo, con precisión y recall del filtro."
+        ],
+        "semestre_2": [
+          "Clasificación con LLM de los casos dudosos, con explicación.",
+          "Alertas por correo y evidencia exportable en PDF para pedir la baja.",
+          "Casilla de reporte para clientes de la entidad.",
+          "Varias entidades con roles; piloto con 1 o 2 entidades y business case.",
+          "Demo: detección de punta a punta de un clon de una marca ficticia, con tiempo medido."
+        ]
+      },
+      "stack": [
+        "Python",
+        "FastAPI",
+        "Playwright",
+        "imagehash",
+        "Claude Haiku 4.5",
+        "PostgreSQL",
+        "React",
+        "Docker",
+        "AWS Lightsail",
+        "Amazon SES"
+      ],
+      "costo_infra": {
+        "total_anual_usd": 198,
+        "items": [
+          {
+            "concepto": "AWS Lightsail Linux, 2 GB RAM",
+            "usd_anual": 144,
+            "supuesto": "12 meses a USD 12; navegador, API y base en Docker. Sin capa gratuita.",
+            "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+          },
+          {
+            "concepto": "API Claude Haiku 4.5",
+            "usd_anual": 40,
+            "supuesto": "500 páginas dudosas por mes, 4.000 tokens de entrada y 300 de salida cada una (USD 1 y 5 por millón): unos USD 33, redondeado.",
+            "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+          },
+          {
+            "concepto": "Dominio .com",
+            "usd_anual": 12,
+            "supuesto": "1 año a USD 11,08, redondeado.",
+            "fuente_precio_url": "https://porkbun.com/products/domains"
+          },
+          {
+            "concepto": "Amazon SES",
+            "usd_anual": 2,
+            "supuesto": "Hasta 10.000 correos a USD 0,10 cada 1.000, redondeado.",
+            "fuente_precio_url": "https://aws.amazon.com/ses/pricing/"
+          }
+        ]
+      },
+      "competidores": [],
+      "monetizacion": "Suscripción mensual por marca monitoreada que paga la entidad: hipótesis de USD 150 a 300. Canal: venta directa a responsables de seguridad y fraude. Con 10 clientes a USD 200 serían USD 24.000 por año.",
+      "riesgos": [
+        "Clones que evaden el visitador (contenido solo para celulares o IPs locales) y falsos positivos.",
+        "Muchos ataques no usan dominios parecidos (acortadores, sitios hackeados, redes): el monitoreo cubre una parte.",
+        "Bancos grandes con proveedor propio y pocas entidades medianas: mercado chico.",
+        "Venta lenta a entidades financieras; la baja depende del hosting y el registrador."
+      ],
+      "supuestos": [
+        "Las entidades medianas no monitorean dominios parecidos y se enteran de los clones por reclamos; a validar en entrevistas.",
+        "Los logs de Certificate Transparency y el DNS son públicos y gratuitos, y buena parte de los clones usa certificados nuevos que aparecen ahí.",
+        "Disposición a pagar de USD 150 a 300 por mes: hipótesis.",
+        "Hay ejemplos públicos de phishing para armar el conjunto de evaluación.",
+        "Las fichas no muestran competidores; probablemente existen servicios globales de protección de marca, a relevar.",
+        "La cantidad de entidades medianas que serían clientes no está en las fichas.",
+        "Los datos de los reportes de clientes se tratan con consentimiento según la Ley 18.331."
+      ],
+      "evidencias": [
+        "F-fintech-seguros-001",
+        "F-fintech-seguros-002",
+        "F-fintech-seguros-003"
+      ]
+    },
+    {
+      "local_id": "g01-2",
+      "titulo": "Comparativos y renovaciones automáticas para corredores de seguros",
+      "problema": "Aseguradoras y corredores cotizan, renuevan y gestionan siniestros procesando PDFs y correos no estructurados; Foliume levantó US$1 millón para automatizarlo, pero vende en España, Alemania y Portugal (F-fintech-seguros-005). Las pólizas están dispersas y en lenguaje difícil (F-fintech-seguros-004). Uruguay tiene 21 insurtech registradas (F-fintech-seguros-006), pero suponemos que el corredor sigue armando comparativos copiando a mano primas, coberturas y deducibles de PDFs de varias aseguradoras, y controla vencimientos en planillas. Ese tiempo es lo primero a medir.",
+      "usuario": "Corredores y corredurías chicas de seguros de Uruguay (1 a 10 personas). Paga la correduría; sus clientes reciben el comparativo.",
+      "solucion": "El corredor sube cotizaciones y pólizas en PDF. El sistema extrae a un esquema común aseguradora, ramo, vigencia, suma asegurada, prima, deducibles y coberturas, con la página de origen y la confianza de cada dato para revisión humana. Arma un comparativo lado a lado, exportable en PDF con la marca del corredor y las diferencias explicadas en lenguaje simple. Lleva la cartera con alertas de vencimiento y redacta el pedido de recotización.",
+      "mvp": {
+        "semestre_1": [
+          "Corpus de 100 a 200 cotizaciones anonimizadas (automóvil y hogar) etiquetadas a mano.",
+          "Extractor con pdfplumber, OCR y LLM con salida estructurada y página de origen.",
+          "Exactitud por campo medida contra el corpus.",
+          "Demo: 3 cotizaciones de distintas aseguradoras y su comparativo con campos dudosos marcados."
+        ],
+        "semestre_2": [
+          "Revisión y corrección que alimenta la medición del extractor.",
+          "Comparativo en PDF con la marca del corredor.",
+          "Cartera con alertas de vencimiento y borrador de recotización.",
+          "Piloto con 2 o 3 corredores midiendo minutos por comparativo antes y después; business case."
+        ]
+      },
+      "stack": [
+        "Python",
+        "FastAPI",
+        "pdfplumber",
+        "Tesseract",
+        "Claude Haiku 4.5",
+        "PostgreSQL",
+        "React",
+        "Docker",
+        "AWS Lightsail",
+        "Amazon SES"
+      ],
+      "costo_infra": {
+        "total_anual_usd": 153,
+        "items": [
+          {
+            "concepto": "AWS Lightsail Linux, 1 GB RAM",
+            "usd_anual": 84,
+            "supuesto": "12 meses a USD 7. Si no alcanza, 2 GB suma USD 60 (total 213). Sin capa gratuita.",
+            "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+          },
+          {
+            "concepto": "API Claude Haiku 4.5",
+            "usd_anual": 55,
+            "supuesto": "1.500 documentos con 10.000 tokens de entrada y 1.500 de salida (USD 26) y 2.000 de evaluación en Batch al 50% (USD 18): USD 44, redondeado.",
+            "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+          },
+          {
+            "concepto": "Dominio .com",
+            "usd_anual": 12,
+            "supuesto": "1 año a USD 11,08, redondeado.",
+            "fuente_precio_url": "https://porkbun.com/products/domains"
+          },
+          {
+            "concepto": "Amazon SES",
+            "usd_anual": 2,
+            "supuesto": "Hasta 10.000 correos a USD 0,10 cada 1.000, redondeado.",
+            "fuente_precio_url": "https://aws.amazon.com/ses/pricing/"
+          }
+        ]
+      },
+      "competidores": [
+        {
+          "nombre": "Foliume",
+          "evidencia_ids": ["F-fintech-seguros-005"],
+          "hueco": "Automatiza seguros con IA, pero vende en España, Alemania y Portugal."
+        },
+        {
+          "nombre": "ProtectU",
+          "evidencia_ids": ["F-fintech-seguros-004"],
+          "hueco": "Es para el asegurado; no resuelve el comparativo ni las renovaciones del corredor."
+        }
+      ],
+      "monetizacion": "Suscripción mensual que paga la correduría: hipótesis de USD 30 a 60 por usuario, con un mes gratis. Canal: venta directa y recomendación entre corredores. Con 50 usuarios a USD 40 serían USD 24.000 por año.",
+      "riesgos": [
+        "Formatos de PDF muy variados; un error en prima o deducible es grave, por eso la revisión humana es obligatoria.",
+        "El corpus depende de que corredores compartan cotizaciones.",
+        "Foliume tiene raíz uruguaya y podría entrar; ProtectU podría extenderse a corredores.",
+        "Mercado local posiblemente chico; los datos personales de las pólizas exigen anonimizar y cumplir la Ley 18.331."
+      ],
+      "supuestos": [
+        "Los corredores uruguayos comparan a mano y controlan vencimientos en planillas; el tiempo no está medido.",
+        "Hay corredores contactables antes de diciembre; su cantidad no está en las fichas.",
+        "Disposición a pagar de USD 30 a 60 por usuario por mes: hipótesis.",
+        "Algún corredor compartirá cotizaciones anonimizadas.",
+        "No sabemos si alguna insurtech uruguaya ya ofrece esto a corredores.",
+        "Una herramienta para el corredor no requiere habilitación propia.",
+        "1 GB de RAM alcanza para el piloto."
+      ],
+      "evidencias": [
+        "F-fintech-seguros-004",
+        "F-fintech-seguros-005",
+        "F-fintech-seguros-006"
+      ]
+    }
+  ]
+}

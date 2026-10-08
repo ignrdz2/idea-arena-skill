@@ -1,0 +1,71 @@
+{
+ "idea": "i004",
+ "respuestas": [
+  {
+   "ataque": 1,
+   "decision": "PARCIAL",
+   "detalle": "Acepto: las fichas 007 y 008 prueban uso de crédito sobre cuentas por cobrar, no que falte proyección; y la frase del faltante tardío no tenía ficha. Arreglo: el problema separa lo medido de la hipótesis, esta pasa a supuestos y el semestre 1 incluye entrevistas para validarla. Agrego una ficha (BBVA 2018, UY) sobre flujos de caja irregulares y necesidad de recursos extra. No acepto que no haya señal de pago: MiFinanzas y PedidosYa muestran pymes pagando por liquidez sobre cheques y ventas, que es el costo que el comparador busca reducir.",
+   "evidencia": [
+    "F-fintech-seguros-007",
+    "F-fintech-seguros-008",
+    "F-defensa-r1-m02-i004-001"
+   ]
+  },
+  {
+   "ataque": 2,
+   "decision": "PARCIAL",
+   "detalle": "Tiene razón: 006 trata de stock y cargas duplicadas, no de caja, y 010 solo mide tamaño. Arreglo: saqué 006 como respaldo del dolor (queda solo como competidor que ya tiene los CFE), aclaré que 010 mide solo el segmento y acoté al usuario a pymes que venden a plazo, no microempresas al contado.",
+   "evidencia": [
+    "F-comercio-retail-006",
+    "F-comercio-retail-010"
+   ]
+  },
+  {
+   "ataque": 3,
+   "decision": "PARCIAL",
+   "detalle": "Acepto: el precio y el 300 no tienen ficha, no se decía quién compra y el plan para estudios daba USD 8 por pyme, menos que el individual. Arreglo: el plan sube a USD 120 por 10 pymes (USD 12 cada una, que carguen datos), se aclara que compra la pyme o el estudio y la cuenta de USD 72.000 queda como ilustrativa; precio y volumen se validan en entrevistas y piloto. No acepto que sea inventado: ya estaba declarado como hipótesis en monetización y supuestos, y la rúbrica pide declararlo, no probarlo con ficha.",
+   "evidencia": []
+  },
+  {
+   "ataque": 4,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que faltaba un camino concreto. Ahora está en supuestos y solución: consentimiento escrito, el equipo como encargado del tratamiento, solo datos de la pyme, contrapartes enmascaradas antes del LLM, acuerdo de uso y borrado al cerrar el piloto; la retención del proveedor del LLM queda declarada como no verificada. Rechazo que R6 se viole: R6 permite datos personales con camino de cumplimiento realista y no exige entidad legal; no hay licencia regulatoria en juego. Además saqué Text-to-SQL del MVP, así que ya no hay consultas libres sobre datos hacia el LLM.",
+   "evidencia": []
+  },
+  {
+   "ataque": 5,
+   "decision": "PARCIAL",
+   "detalle": "Acepto la carga manual y el riesgo de datos viejos; ya figuraba en riesgos. Arreglo: el panel muestra la fecha del último dato y las alertas se suprimen si tiene más de 7 días, así no emite un faltante falso; se suma plantilla CSV genérica para bancos no cubiertos. No acepto que sea el mismo problema de la idea: la carga es de archivos que ya existen, y los cheques diferidos, que son lo de mayor valor, se cargan por foto. Que los CFE se exporten en XML y los extractos se bajen sigue declarado como supuesto.",
+   "evidencia": []
+  },
+  {
+   "ataque": 6,
+   "decision": "PARCIAL",
+   "detalle": "Tiene razón en que el hueco se argumenta por ausencia en las fichas: ahora cada competidor lo dice así y reconozco que YoFacturo es el que más fácil podría sumar un tablero. Las planillas del contador quedan como alternativa real a explorar en las entrevistas. No acepto que la ventaja sea solo la foto: es la proyección que combina cheques, facturas y bimoneda con comparador, que ninguna ficha muestra; no la vendo como defendible.",
+   "evidencia": [
+    "F-comercio-retail-006"
+   ]
+  },
+  {
+   "ataque": 7,
+   "decision": "PARCIAL",
+   "detalle": "Acepto el recorte: saqué Text-to-SQL del MVP (el costo baja de USD 199 a 159), la predicción de atraso arranca con una línea base de mediana por cliente y scikit-learn solo si el piloto aporta historial, midiendo el error de ambos, y el piloto exige acuerdo escrito. No acepto que se toque R4: exige usuarios contactables desde Uruguay, no contactos ya declarados; las entrevistas a pymes y contadores arrancan antes de diciembre de 2026.",
+   "evidencia": []
+  }
+ ],
+ "nuevas_fichas": [
+  {
+   "id": "F-defensa-r1-m02-i004-001",
+   "sector": "transversal",
+   "hallazgo": "Un artículo de BBVA Uruguay (2018) estima unas 170.000 pymes en el país y afirma que sus flujos de caja suelen ser irregulares, lo que genera necesidad de recursos extra para pagar proveedores, tributos y seguridad social.",
+   "source_url": "https://www.bbva.com/es/cuenta-express-producto-especial-pymes-uruguayas/",
+   "source_title": "BBVA Cuenta Express, producto especial para pymes uruguayas",
+   "source_date": "2018-05-28",
+   "source_type": "otro",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-07T10:00:00",
+   "extracto": "Normalmente sus flujos de caja son irregulares por lo tanto, generan necesidades de recursos extras"
+  }
+ ]
+}

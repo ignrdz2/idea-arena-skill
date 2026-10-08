@@ -1,0 +1,121 @@
+{
+ "id": "i009",
+ "titulo": "Portal de devoluciones con clasificación automática para tiendas online pyme",
+ "problema": "En Uruguay, 56% de los compradores online cita la dificultad para devolver como barrera de compra (F-comercio-retail-002). Solo 8% de las pymes con e-commerce gestiona devoluciones y ninguna mide su eficiencia (F-comercio-retail-003). El canal superó los 100.000 millones de pesos en 2025, +32% (F-comercio-retail-001). El volumen y costo de devoluciones por tienda no está en las fichas: se mide en entrevistas.",
+ "usuario": "Paga y usa el panel el dueño de una tienda online pyme uruguaya con 20 o más devoluciones por mes. Foco inicial: tiendas por redes o en plataformas distintas de Tiendanube, adonde no llegan las apps de su tienda (hipótesis a validar). El comprador usa el portal gratis.",
+ "solucion": "Portal con la marca de la tienda donde el comprador indica su pedido, describe el problema y sube fotos. Un modelo de lenguaje con visión clasifica el motivo, lo contrasta con la política de la tienda y propone cambio, crédito, reembolso o rechazo, justificado. El comercio aprueba con un clic. Un panel muestra motivos por producto y la tienda publica su política. Lo que el MVP mide es cuánto ahorra el clasificador: porcentaje de sugerencias aceptadas sin cambios. Datos mínimos: sin dirección ni documento.",
+ "mvp": {
+  "semestre_1": [
+   "Portal y panel con pedidos por CSV (pedido, producto, fecha) y política configurable.",
+   "Clasificador de motivo (texto y foto) evaluado sobre 300 casos etiquetados.",
+   "Entrega 1: demo de punta a punta con avisos por email."
+  ],
+  "semestre_2": [
+   "Pedidos por API de Tiendanube (F-defensa-r1-m03-i009-001); CSV como plan B.",
+   "Resolución sugerida, midiendo cuántas acepta el comercio sin cambios.",
+   "Panel de motivos y página pública de política.",
+   "Entrega 2: piloto de 6 semanas con 3 a 5 tiendas de 20 o más devoluciones por mes."
+  ]
+ },
+ "stack": [
+  "FastAPI",
+  "PostgreSQL",
+  "React",
+  "Claude Haiku 4.5 (texto e imagen)",
+  "Docker",
+  "Amazon Lightsail",
+  "Amazon SES"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 158,
+  "items": [
+   {
+    "concepto": "Servidor Lightsail 1 GB",
+    "usd_anual": 84,
+    "supuesto": "USD 7 por mes, 12 meses; API, base y frontend en Docker. Sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "Claude Haiku 4.5",
+    "usd_anual": 60,
+    "supuesto": "USD 1 y 5 por millón de tokens de entrada y salida; 5.000 y 500 por caso (USD 0,0075). Piloto 1.200 casos (USD 9), evaluación de 4.500 casos en lote al 50% (USD 17), pruebas (USD 20); redondeado.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "Amazon SES",
+    "usd_anual": 2,
+    "supuesto": "USD 0,10 cada 1.000 emails; menos de 10.000.",
+    "fuente_precio_url": "https://aws.amazon.com/ses/pricing/"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 12,
+    "supuesto": "USD 11,08 por año, redondeado.",
+    "fuente_precio_url": "https://porkbun.com/products/domains"
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "WhatsApp, email y planillas (método actual)",
+   "evidencia_ids": [
+    "F-comercio-retail-003"
+   ],
+   "hueco": "Competidor principal y gratis. Gana el portal solo si ahorra tiempo medible; con pocas devoluciones, no."
+  },
+  {
+   "nombre": "Boris (app de la tienda de aplicaciones de Tiendanube)",
+   "evidencia_ids": [
+    "F-ataque-r2-m01-i009-competidor-001"
+   ],
+   "hueco": "Ya ofrece portal, panel y etiquetas logísticas, con modelo freemium en LATAM. Su página no lista clasificación con IA ni fotos, pero eso no prueba que no la tenga ni que no la agregue. Solo sirve a tiendas Tiendanube."
+  },
+  {
+   "nombre": "Undo (app de la tienda de aplicaciones de Tiendanube)",
+   "evidencia_ids": [
+    "F-ataque-r2-m01-i009-competidor-002"
+   ],
+   "hueco": "Integra Tiendanube, correos y medios de pago, con compras dentro de la app. Su página no lista IA ni fotos. Cubre logística, que el MVP no. Apuesta del portal: tiendas fuera de Tiendanube y decisión asistida."
+  },
+  {
+   "nombre": "Tiendanube (plataforma)",
+   "evidencia_ids": [
+    "F-comercio-retail-007",
+    "F-defensa-r1-m03-i009-001"
+   ],
+   "hueco": "Su API lee órdenes y su tienda de apps ya tiene portales de devoluciones; podría sumar clasificación. El portal acepta también CSV de otros canales."
+  }
+ ],
+ "monetizacion": "Paga la tienda. Precio a validar (supuesto): USD 15 por mes hasta 50 devoluciones y USD 35 hasta 200. Hay competidores con plan gratis o freemium, y F-comercio-retail-007 muestra solo planes de plataforma en otros países, no disposición a pagar este complemento. Si las entrevistas no muestran disposición a pagar, el business case pasa a plan gratuito con piloto medido. Canal: redes, eCommerce Day Uruguay (F-comercio-retail-004) y entrevistas directas. Cuenta ilustrativa, sin churn ni costo de adquisición medidos: 5 tiendas a USD 15 durante 6 meses dan USD 450.",
+ "riesgos": [
+  "Boris y Undo ya están en la tienda de apps de Tiendanube y pueden agregar clasificación con IA en poco tiempo.",
+  "Tiendas con pocas devoluciones pueden no pagar, y con apps gratis o freemium el precio efectivo puede ser cero.",
+  "Tiendanube puede sumar devoluciones gratis.",
+  "El envío de vuelta queda fuera del MVP; F-comercio-retail-004 marca el envío como desafío y los competidores ya lo cubren.",
+  "Datos: enviar datos a una API en el exterior exige cláusulas contractuales y aviso (F-defensa-r1-m03-i009-003).",
+  "No hay contactos de tiendas cargados en el equipo; conseguir 3 a 5 tiendas para el piloto depende de la validación por redes."
+ ],
+ "supuestos": [
+  "Las devoluciones llegan hoy por WhatsApp o email y se resuelven a mano.",
+  "Disposición a pagar USD 15 a 35 por mes: sin evidencia; se prueba con 10 entrevistas por redes antes de diciembre de 2026.",
+  "Segmento desconocido; las mipymes son 97% de las empresas (F-comercio-retail-010), no el número de tiendas con 20 o más devoluciones por mes.",
+  "Ley 17.250: 5 días hábiles para rescindir (F-defensa-r1-m03-i009-002); aplicación a confirmar.",
+  "Las páginas de Boris y Undo, leídas el 2026-10-07, no listan IA, fotos ni clasificación de motivos; sus funciones internas y planes no se vieron.",
+  "No se buscaron otras herramientas locales ni de otras plataformas; puede haberlas.",
+  "Que las tiendas fuera de Tiendanube no tengan apps equivalentes es una hipótesis sin ficha.",
+  "Volúmenes de costo: 5 tiendas, 40 devoluciones por mes, 6 meses."
+ ],
+ "evidencias": [
+  "F-comercio-retail-002",
+  "F-comercio-retail-003",
+  "F-comercio-retail-001",
+  "F-comercio-retail-007",
+  "F-comercio-retail-004",
+  "F-comercio-retail-010",
+  "F-defensa-r1-m03-i009-001",
+  "F-defensa-r1-m03-i009-002",
+  "F-defensa-r1-m03-i009-003",
+  "F-ataque-r2-m01-i009-competidor-001",
+  "F-ataque-r2-m01-i009-competidor-002"
+ ]
+}

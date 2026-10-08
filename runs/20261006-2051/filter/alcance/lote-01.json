@@ -1,0 +1,46 @@
+{"evaluaciones": [
+  {
+    "id": "i001",
+    "veredicto": "viable",
+    "horas_estimadas": 1000,
+    "motivo": "Unas 1.000 h: base multiempresa, autenticación y despliegue 60; configurador y página de política 60; portal del comprador con fotos y correos 110; reglas y panel de revisión 100; carga de pedidos por CSV 40; clasificador (etiquetado, TF-IDF, Haiku y evaluación) 100; sugerencia de cambio por stock y métricas 80; pruebas 70; piloto de 8 semanas 120; business case 50; tesis y entregas 150; Ley 18.331 15. Es software web estándar para el perfil del equipo, sin hardware ni integraciones con plataformas, y entra en la capacidad declarada (16 + 10 + 10 h por semana x 32 semanas, unas 1.150 h) con margen. Cada semestre tiene algo demostrable. Riesgo de calendario: el clasificador necesita motivos reales que llegan con el piloto, en el mismo semestre 2.",
+    "dependencias_externas": [
+      "Pymes para el piloto de 8 semanas: el perfil no declara contactos.",
+      "Pedidos y stock de cada pyme solo por CSV, sin integración con su tienda: la sugerencia de cambio depende de que lo mantengan al día.",
+      "Motivos de devolución reales para entrenar y evaluar el clasificador: llegan con el piloto y en volumen desconocido.",
+      "APIs de terceros: Claude (Anthropic) y Resend para correos.",
+      "Ley 18.331: consentimiento de los compradores e inscripción de la base de datos."
+    ]
+  },
+  {
+    "id": "i002",
+    "veredicto": "viable_con_recorte",
+    "horas_estimadas": 1370,
+    "motivo": "Unas 1.370 h, por encima de la capacidad declarada (16 + 10 + 10 h por semana x 32 semanas, unas 1.150 h) aunque dentro del rango de referencia. Base, roles y despliegue 70; PWA offline con inventario por lote y carga manual 150; sincronización con conflictos entre varios usuarios sin señal 150; audio offline y transcripción 60; extracción de eventos con LLM 80; resolución de caravanas y lotes con confirmación 120; set de 300 audios grabados y etiquetados 120; pendientes del SNIG 80; vista multi-cliente para veterinarios 60; pruebas en dispositivos y modo avión 100; piloto en campo con traslados 160; business case 50; tesis y entregas 150; Ley 18.331 15. Lo más caro y riesgoso es la sincronización offline y conseguir audios reales de campo.",
+    "recorte_sugerido": "Bajar a unas 1.130 h: (1) la vista multi-cliente para veterinarios queda como maqueta para el business case (unas 50 h menos); (2) sincronización como registro de eventos que solo se agregan, con identificadores únicos y sin edición concurrente, y los choques de inventario se resuelven pidiendo confirmación (unas 60 h menos); (3) pendientes del SNIG solo para los tipos de evento del MVP, con plazos y datos tomados de la documentación oficial (unas 40 h menos); (4) piloto de 6 semanas con 3 a 5 establecimientos (unas 50 h menos); (5) set de 150 audios en lugar de 300, empezando a grabar en el semestre 1 (unas 40 h menos).",
+    "dependencias_externas": [
+      "Productores y peones para grabar audios y hacer el piloto: el perfil no declara contactos.",
+      "Reglas, plazos y formatos de notificación del SNIG (MGAP): sin API pública según la idea; el MVP solo prepara los datos.",
+      "Cambios del MGAP en sus herramientas digitales, como el proyecto Guías Digitales.",
+      "APIs de transcripción de OpenAI y de Claude (Anthropic): la exactitud con jerga rural y números de caravana no está medida.",
+      "Celulares de los usuarios (navegador con PWA y grabación de audio) y señal intermitente en el campo.",
+      "Traslados al interior para el piloto y las grabaciones.",
+      "Ley 18.331: consentimiento e inscripción de la base de datos."
+    ]
+  },
+  {
+    "id": "i003",
+    "veredicto": "viable_con_recorte",
+    "horas_estimadas": 1190,
+    "motivo": "Unas 1.190 h, algo por encima de la capacidad declarada (16 + 10 + 10 h por semana x 32 semanas, unas 1.150 h) y dentro del rango de referencia. Base y despliegue 60; catálogo por CSV 50; carga de foto o PDF 40; lectura del XML del comprobante electrónico 50; extracción con visión 80; emparejamiento con códigos, embeddings en Qdrant y validación 100; confirmación de líneas y ajuste de stock 80; banco de 300 facturas etiquetadas línea por línea contra un catálogo real 130; sinónimos por proveedor 60; alertas de margen 40; integración con Tiendanube y CSV 80; pruebas 90; piloto de 6 semanas 110; business case 50; tesis y entregas 150; Ley 18.331 15. Cuello de botella: el banco de 300 facturas del semestre 1 necesita facturas y catálogos reales de comercios, sin contactos.",
+    "recorte_sugerido": "Bajar a unas 1.030 h: (1) banco de 120 facturas etiquetadas en el semestre 1, ampliable con las del piloto (unas 60 h menos); (2) ajuste de stock solo por CSV en el MVP y Tiendanube como extensión si sobra tiempo (unas 60 h menos); (3) lectura de XML solo si las entrevistas muestran que los comercios reciben el XML de sus proveedores; si no, queda afuera (unas 40 h menos).",
+    "dependencias_externas": [
+      "Facturas y catálogos reales de comercios para el banco de 300 facturas del semestre 1: el perfil no declara contactos.",
+      "Comercios para el piloto de 6 semanas, con catálogo digital o dispuestos a cargarlo.",
+      "API de Tiendanube para actualizar stock: es un supuesto de la idea, con acceso y condiciones a confirmar.",
+      "Formato del XML del comprobante fiscal electrónico y si los comercios lo reciben de sus proveedores.",
+      "APIs de terceros: Claude (Anthropic), Voyage y la capa gratuita de Qdrant Cloud (plan B: Qdrant en Docker).",
+      "Ley 18.331: facturas con datos de personas físicas."
+    ]
+  }
+]}

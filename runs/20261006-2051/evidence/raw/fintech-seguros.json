@@ -1,0 +1,107 @@
+{
+ "sector": "fintech-seguros",
+ "fichas": [
+  {
+   "id": "F-fintech-seguros-001",
+   "sector": "fintech-seguros",
+   "hallazgo": "Las denuncias por estafa en Uruguay pasaron de 1.872 en 2015 a 25.116 en 2024 (+1.242%), tercer delito más denunciado. El phishing es la técnica digital más frecuente y el Ministerio del Interior admite que la prevención depende más de cada persona que de la policía.",
+   "source_url": "https://www.elobservador.com.uy/nacional/estafas-la-epidemia-que-no-crecer-denuncias-se-multiplicaron-20-diez-anos-n5992836",
+   "source_title": "Estafas: la epidemia que no para de crecer, las denuncias se multiplicaron por 20 en diez años",
+   "source_date": "2025-04-07",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-06T21:10:00"
+  },
+  {
+   "id": "F-fintech-seguros-002",
+   "sector": "fintech-seguros",
+   "hallazgo": "El director de riesgos de Itaú Uruguay advierte que los delincuentes usan IA para clonar sitios y campañas bancarias en segundos, y que las transferencias instantáneas (habilitadas en 2023) eliminan la ventana de recupero. Señala que no hay datos oficiales del BCU ni de la justicia sobre la magnitud del fraude financiero.",
+   "source_url": "https://www.elobservador.com.uy/ciencia-y-tecnologia/itau-advierte-un-aumento-sostenido-fraudes-financieros-uruguay-n5999191",
+   "source_title": "Itaú advierte un aumento sostenido de fraudes financieros en Uruguay",
+   "source_date": "2025-05-14",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-06T21:10:00"
+  },
+  {
+   "id": "F-fintech-seguros-003",
+   "sector": "fintech-seguros",
+   "hallazgo": "Uruguay tiene 75% de los pagos por medios electrónicos, el efectivo cayó más de 40% en cinco años y las transferencias interbancarias son instantáneas. Hay infraestructura de pagos madura sobre la cual construir servicios.",
+   "source_url": "https://www.montevideo.com.uy/Noticias/Uruguay-avanza-hacia-una-economia-sin-efectivo-con-pagos-digitales-interoperables-uc939387",
+   "source_title": "Uruguay avanza hacia una economía sin efectivo con pagos digitales interoperables",
+   "source_date": "2025-10-10",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-06T21:10:00",
+   "extracto": "El 75% de los pagos en Uruguay ya se realizan por medios electrónicos, y las transferencias entre distintos bancos se ejecutan de manera instantánea y sin interrupciones horarias."
+  },
+  {
+   "id": "F-fintech-seguros-004",
+   "sector": "fintech-seguros",
+   "hallazgo": "ProtectU, insurtech uruguaya, recibió una inversión ángel de US$100.000 para una app que centraliza pólizas dispersas, las traduce a lenguaje simple y responde con IA si algo está cubierto. Apunta a 5.000 usuarios en 2026 y tiene alianzas con Sancor Seguros, SBI Seguros y Universal Assistance.",
+   "source_url": "https://www.latamfintech.co/articles/insurtech-uruguaya-protectu-recibio-una-inversion-angel-de-us-100-000-para-simplificar-los-seguros-con-ia",
+   "source_title": "Insurtech uruguaya ProtectU recibió una inversión ángel de US$100.000 para simplificar los seguros con IA",
+   "source_date": "2026-06-18",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-06T21:10:00",
+   "competidor": "ProtectU"
+  },
+  {
+   "id": "F-fintech-seguros-005",
+   "sector": "fintech-seguros",
+   "hallazgo": "Foliume, startup de raíz uruguaya, levantó US$1 millón para automatizar con IA la cotización, renovación y gestión de siniestros de aseguradoras y corredores, procesando PDFs y correos no estructurados. Su foco comercial está en España, Alemania y Portugal, no en Uruguay.",
+   "source_url": "https://www.forbesargentina.com/negocios/la-startup-uruguaya-foliume-capto-us-1-millon-sus-planes-automatizar-sector-asegurador-ia-n70140",
+   "source_title": "La startup uruguaya Foliume captó US$ 1 millón: sus planes para automatizar el sector asegurador con IA",
+   "source_date": "2025-04-04",
+   "source_type": "competidor",
+   "geografia": "ES",
+   "confianza": "media",
+   "retrieved_at": "2026-10-06T21:10:00",
+   "competidor": "Foliume"
+  },
+  {
+   "id": "F-fintech-seguros-006",
+   "sector": "fintech-seguros",
+   "hallazgo": "Uruguay tiene 21 startups insurtech registradas oficialmente, lo que indica un ecosistema activo con competidores locales ya presentes en seguros.",
+   "source_url": "https://ecosistemastartup.com/startups-uruguayas-destacan-en-el-nicho-de-tecnologia-de-seguros-en-latinoamerica/",
+   "source_title": "Startups uruguayas destacan en el nicho de tecnología de seguros en Latinoamérica",
+   "source_date": "2025-09-02",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-06T21:10:00",
+   "extracto": "Uruguay surge como un referente emergente, contabilizando oficialmente 21 startups insurtech registradas en el país"
+  },
+  {
+   "id": "F-fintech-seguros-007",
+   "sector": "fintech-seguros",
+   "hallazgo": "MiFinanzas, startup uruguaya, financia a pymes adelantando cheques diferidos y facturas sin exigir balances ni líneas de crédito previas; declara más de 100.000 operaciones y más de $400 millones financiados.",
+   "source_url": "https://www.descubre.vc/noticia/mifinanzas-ofrece-financiaci-n-gil-y-accesible-para-pymes-en-uruguay-2025-05-27",
+   "source_title": "MiFinanzas ofrece financiación ágil y accesible para PyMEs en Uruguay",
+   "source_date": "2025-05-27",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-06T21:10:00",
+   "competidor": "MiFinanzas"
+  },
+  {
+   "id": "F-fintech-seguros-008",
+   "sector": "fintech-seguros",
+   "hallazgo": "PedidosYa Créditos otorgó US$6,4 millones a más de 1.000 pymes uruguayas desde mediados de 2025, con préstamos de hasta US$52.000 repagados automáticamente desde las ventas. Muestra demanda de capital de trabajo y el uso de datos de ventas como scoring.",
+   "source_url": "https://www.descubre.vc/noticia/pedidosya-cr-ditos-impulsa-a-pymes-uruguayas-con-us-6-4-millones-en-pr-stamos-2026-08-18",
+   "source_title": "PedidosYa Créditos impulsa a pymes uruguayas con US$ 6,4 millones en préstamos",
+   "source_date": "2026-08-18",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-06T21:10:00",
+   "competidor": "PedidosYa Créditos"
+  }
+ ]
+}

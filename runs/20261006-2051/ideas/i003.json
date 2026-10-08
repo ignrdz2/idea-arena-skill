@@ -1,0 +1,97 @@
+{
+ "id": "i003",
+ "titulo": "Facturas de proveedores al stock sin tipeo para comercios chicos",
+ "problema": "Los comercios chicos uruguayos trabajan con stock desactualizado, venden productos agotados y cargan dos veces los datos cuando facturación e inventario están separados (F-comercio-retail-006). Muchas pymes carecen de herramientas digitales completas (F-comercio-retail-004) y la venta online crece 35% interanual (F-comercio-retail-005): el error se publica y se vende. Suponemos que buena parte es tipear facturas de proveedores con descripciones distintas al catálogo; el costo se medirá en entrevistas.",
+ "usuario": "Comercio minorista con cientos de artículos y varios proveedores (ferretería, bazar, librería), con o sin tienda online; el dueño usa y paga.",
+ "solucion": "El comercio fotografía o sube la factura o remito. Si es el XML del comprobante electrónico se lee directo; si no, un modelo con visión extrae producto, cantidad y costo. Cada línea se empareja con el catálogo por códigos, embeddings en Qdrant y, si hay duda, validación del modelo. El encargado confirma lo incierto y cada corrección queda como sinónimo del proveedor. Luego envía el ajuste de stock a Tiendanube o en CSV y avisa de márgenes que cambiaron.",
+ "mvp": {
+  "semestre_1": [
+   "Catálogo por CSV y facturas por foto o PDF.",
+   "Extracción con visión, lectura de XML y emparejamiento en Qdrant.",
+   "Banco de 300 facturas etiquetadas con métricas de exactitud.",
+   "Entrega 1: demo de la foto al ajuste de stock."
+  ],
+  "semestre_2": [
+   "Aprendizaje de sinónimos por proveedor, midiendo cuánto bajan las correcciones.",
+   "Alertas de margen y envío a Tiendanube (CSV como plan B).",
+   "Entrega 2: piloto de 6 semanas con 3 a 5 comercios."
+  ]
+ },
+ "stack": [
+  "FastAPI",
+  "PostgreSQL",
+  "Qdrant Cloud",
+  "Voyage voyage-4-lite",
+  "Claude Haiku 4.5 (visión)",
+  "React",
+  "Docker",
+  "Amazon Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 177,
+  "items": [
+   {
+    "concepto": "Servidor Lightsail 1 GB",
+    "usd_anual": 84,
+    "supuesto": "USD 7 por mes, 12 meses; API, worker y base en Docker. Sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "Claude Haiku 4.5",
+    "usd_anual": 80,
+    "supuesto": "USD 1 y 5 por millón de tokens de entrada y salida; 5.000 y 1.200 por factura (USD 0,011). Piloto 2.400 facturas (USD 27), evaluación de 3.000 en lote al 50% (USD 17), 10.800 líneas dudosas de 900 tokens (USD 14), pruebas (USD 20); redondeado.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "Qdrant Cloud",
+    "usd_anual": 0,
+    "supuesto": "Capa gratuita (1 GB de RAM) sin vencimiento según la página; plan B: Qdrant en Docker.",
+    "fuente_precio_url": "https://qdrant.tech/pricing/"
+   },
+   {
+    "concepto": "Embeddings Voyage",
+    "usd_anual": 1,
+    "supuesto": "USD 0,02 por millón de tokens y 200 millones gratis por cuenta; se prevén menos de 10 millones.",
+    "fuente_precio_url": "https://docs.voyageai.com/docs/pricing"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 12,
+    "supuesto": "USD 11,08 por año, redondeado.",
+    "fuente_precio_url": "https://porkbun.com/products/domains"
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "YoFacturo",
+   "evidencia_ids": [
+    "F-comercio-retail-006"
+   ],
+   "hueco": "Integra catálogo, CFE e inventario si se factura con su sistema; la ficha no muestra carga automática de facturas de proveedores."
+  }
+ ],
+ "monetizacion": "Paga el comercio: USD 19 por mes hasta 100 facturas y USD 39 hasta 400, con un mes de prueba como YoFacturo (F-comercio-retail-006). Costo de IA: USD 0,011 por factura. Canal: visitas por rubro, estudios contables y software de facturación aliado. Con 150 comercios a USD 25 promedio: USD 45.000 por año.",
+ "riesgos": [
+  "Fotos malas bajan la exactitud; confirmar a mano protege el stock pero reduce el ahorro.",
+  "YoFacturo u otro software de facturación puede agregar la función.",
+  "Comercios sin catálogo digital deben cargarlo primero.",
+  "Facturas con datos de personas físicas: cumplir la Ley 18.331."
+ ],
+ "supuestos": [
+  "Tipear facturas de proveedores es buena parte de la doble carga (F-comercio-retail-006).",
+  "Proporción de facturas en XML, PDF o papel: desconocida.",
+  "Disposición a pagar USD 19 a 39 por mes.",
+  "Tamaño del segmento desconocido; las mipymes son 97% de las empresas (F-comercio-retail-010).",
+  "Tiendanube tiene API de stock.",
+  "Las fichas no muestran otras herramientas de captura de facturas; puede haberlas.",
+  "Sin contactos: pilotos visitando comercios.",
+  "Volúmenes de costo: 5 comercios, 80 facturas por mes, 6 meses, 15 líneas cada una, 30% dudosas."
+ ],
+ "evidencias": [
+  "F-comercio-retail-006",
+  "F-comercio-retail-004",
+  "F-comercio-retail-010",
+  "F-comercio-retail-005"
+ ]
+}

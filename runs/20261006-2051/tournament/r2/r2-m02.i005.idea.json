@@ -1,0 +1,114 @@
+{
+ "id": "i005",
+ "titulo": "Stock al día a partir de los comprobantes electrónicos que el comercio ya tiene",
+ "problema": "Los comercios chicos tienen stock desactualizado, venden agotados y cargan datos dos veces cuando facturación e inventario van separados; lo describe YoFacturo, que vende la integración (F-comercio-retail-006) y no mide el costo (supuesto). Hay pago por stock dentro del facturador: Fixed lo cobra en su plan más caro, UYU 2.140 por mes contra 980 (F-defensa-r1-m01-i005-001). Pagar por una capa externa no está probado (supuesto). Contexto de pymes: F-comercio-retail-004 y F-comercio-retail-010.",
+ "usuario": "Paga y usa el dueño de un comercio chico que compra a varios proveedores, factura con un sistema que no quiere cambiar y vende en local y online.",
+ "solucion": "Arma el stock sin cambiar de facturador ni cargar productos a mano. El comercio sube por lote semanal los comprobantes de compra y ventas (XML o CSV); de PDF o fotos, solo con su autorización, un modelo de visión extrae las líneas. Cada línea se asocia a un producto con embeddings en Qdrant y reglas por proveedor; lo dudoso se confirma con un clic. Un libro de movimientos calcula existencias, marca faltantes y exporta disponibilidad a la tienda online. Sin cargas por 14 días, el stock se marca no confiable (supuesto).",
+ "mvp": {
+  "semestre_1": [
+   "Entrevistas a 8 a 10 comercios antes de diciembre de 2026 para medir cuántos facturan con otro sistema y no migran.",
+   "Parser de CFE en XML y de CSV, libro de movimientos y stock, demostrable en la primera entrega.",
+   "Emparejamiento con embeddings en Qdrant, reglas y confirmación.",
+   "Corpus sintético o anonimizado y primera medición de precisión."
+  ],
+  "semestre_2": [
+   "Extracción de PDF y fotos con Claude Haiku 4.5, opcional.",
+   "Desempate con LLM y comparación medida: reglas, embeddings, embeddings más LLM.",
+   "Exportación de disponibilidad y piloto de 8 semanas con 3 a 5 comercios, contra conteo físico y midiendo minutos de carga."
+  ]
+ },
+ "stack": [
+  "Python",
+  "FastAPI",
+  "PostgreSQL",
+  "Qdrant Cloud",
+  "voyage-4-lite",
+  "Claude Haiku 4.5",
+  "React",
+  "Docker"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 173.4,
+  "items": [
+   {
+    "concepto": "Droplet DigitalOcean 1 GiB con backups semanales",
+    "usd_anual": 86.4,
+    "supuesto": "USD 6 por mes más 20% de backups, 12 meses. Con 2 GiB el total sería unos USD 260.",
+    "fuente_precio_url": "https://www.digitalocean.com/pricing/droplets"
+   },
+   {
+    "concepto": "Qdrant Cloud, capa gratuita",
+    "usd_anual": 0,
+    "supuesto": "Gratis para siempre según la página; menos de 100.000 vectores (supuesto).",
+    "fuente_precio_url": "https://qdrant.tech/pricing/"
+   },
+   {
+    "concepto": "Embeddings voyage-4-lite",
+    "usd_anual": 5,
+    "supuesto": "USD 0,02 por millón de tokens; 20 M = USD 0,40. Redondeado.",
+    "fuente_precio_url": "https://docs.voyageai.com/docs/pricing"
+   },
+   {
+    "concepto": "API Claude Haiku 4.5",
+    "usd_anual": 70,
+    "supuesto": "5.000 PDF o fotos (5.000 tokens de entrada, 800 de salida) y 10.000 desempates (1.000 y 100): USD 35 + 25. Unos 125 PDF por comercio y semana (supuesto).",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 12,
+    "supuesto": "USD 11,08 por año, redondeado.",
+    "fuente_precio_url": "https://porkbun.com/products/domains"
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "YoFacturo",
+   "evidencia_ids": [
+    "F-comercio-retail-006"
+   ],
+   "hueco": "Integra catálogo, CFE e inventario en su sistema; quien factura con otro y no quiere migrar queda afuera. Su prueba gratis de un mes no mide el costo de migrar catálogo e historial (supuesto)."
+  },
+  {
+   "nombre": "Fixed",
+   "evidencia_ids": [
+    "F-ataque-r1-m01-i005-cliente-001",
+    "F-defensa-r1-m01-i005-001"
+   ],
+   "hueco": "Stock FIFO dentro de su facturador y en el plan más caro; no muestra carga de compras (supuesto)."
+  },
+  {
+   "nombre": "gestionUltimate",
+   "evidencia_ids": [
+    "F-ataque-r1-m01-i005-cliente-002"
+   ],
+   "hueco": "Stock unificado local y ecommerce dentro de su punto de venta; exige su sistema."
+  }
+ ],
+ "monetizacion": "Paga el comercio: USD 12 por mes hasta 300 comprobantes y USD 20 por encima, primer mes gratis, además de su facturador (supuesto). Techo de referencia: el escalón de stock integrado de Fixed cuesta UYU 1.160 más por mes, unos USD 35 a 33,6 pesos por dólar (F-comercio-retail-001, F-defensa-r1-m01-i005-001, F-ataque-r1-m01-i005-cliente-001). El precio de la alternativa (planilla o módulo propio) no está en las fichas. Con 150 comercios, USD 1.800 a 3.000 al mes: meta y canal contable son supuestos.",
+ "riesgos": [
+  "Errores de emparejamiento descuadran el stock; se mitigan con confirmación humana y conteos de ajuste.",
+  "La carga semanal de un archivo puede repetir la doble carga; el piloto exige menos de 15 minutos por semana por comercio (objetivo, supuesto). Si no se logra, la idea no se sostiene.",
+  "Ventas sin comprobante o facturadores sin exportación dejan huecos en el stock.",
+  "Fixed, YoFacturo o gestionUltimate podrían agregar un importador de terceros; la ventaja a defender es el corpus de reglas por proveedor y la comparación medida, no la función.",
+  "Datos personales en CFE: XML y CSV se procesan en servidor propio y se descartan (Ley 18.331); PDF y fotos van a una API externa solo con consentimiento escrito; base legal no verificada.",
+  "Sin contactos declarados: si no hay 3 comercios piloto, el semestre 2 se valida con comprobantes anonimizados de las entrevistas y corpus sintético."
+ ],
+ "supuestos": [
+  "DGI publica el formato XML de los CFE y el comercio puede obtener los emitidos y recibidos.",
+  "La mayoría de las ventas del comercio objetivo tiene CFE.",
+  "Hay comercios que no quieren migrar de facturador; su cantidad no está medida y las entrevistas de 2026 la miden. Si son pocos, el nicho no justifica el producto.",
+  "Precio, disposición a pagar por una capa externa, costo del faltante, meta y canal son supuestos.",
+  "El equipo puede llegar a comercios por su red personal; el perfil no declara contactos y no se supone ninguno."
+ ],
+ "evidencias": [
+  "F-comercio-retail-006",
+  "F-comercio-retail-004",
+  "F-comercio-retail-010",
+  "F-comercio-retail-001",
+  "F-ataque-r1-m01-i005-cliente-001",
+  "F-ataque-r1-m01-i005-cliente-002",
+  "F-defensa-r1-m01-i005-001"
+ ]
+}

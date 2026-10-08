@@ -1,0 +1,43 @@
+{
+ "seleccionadas": [
+  "i009",
+  "i002",
+  "i008",
+  "i005",
+  "i006",
+  "i004",
+  "i010",
+  "i007"
+ ],
+ "fusionadas": [
+  {
+   "queda": "i009",
+   "fuera": [
+    "i001"
+   ]
+  },
+  {
+   "queda": "i005",
+   "fuera": [
+    "i003"
+   ]
+  }
+ ],
+ "sector_principal": {
+  "i009": "comercio-retail",
+  "i002": "agro",
+  "i005": "comercio-retail",
+  "i004": "fintech-seguros",
+  "i006": "agro",
+  "i007": "fintech-seguros",
+  "i008": "fintech-seguros",
+  "i010": "fintech-seguros"
+ },
+ "temas_compartidos": [
+  [
+   "i007",
+   "i008"
+  ]
+ ],
+ "fuera_por_cupo": []
+}

@@ -1,0 +1,90 @@
+{
+  "idea": "i009",
+  "persona": "competidor",
+  "ataques": [
+    {
+      "n": 1,
+      "severidad": "FATAL",
+      "titulo": "Ya existen portales de devoluciones en la tienda de apps de Tiendanube y la idea no los nombra",
+      "donde": "Seccion Competidores y supuesto 'No se buscaron herramientas locales; puede haberlas'. Afirma que 'las fichas no muestran modulo de devoluciones' y que Tiendanube 'podria agregarlo'.",
+      "problema": "Boris (portal personalizado de cambios y devoluciones, panel, etiquetas logisticas, freemium, LATAM) y Undo (integra con Tiendanube, correos y medios de pago, gratis con compras in-app, LATAM) ya estan instalables en la tienda de apps de Tiendanube, el mismo canal que la idea propone como via de distribucion. La idea omite competidores directos y obvios (rubrica: 0 a 2 si ignora competidores obvios) y su diferencial central, el clasificador con vision, no esta contrastado contra ellos. Su afirmacion de que el hueco existe se apoya en la ausencia de fichas, no en haber buscado. Ademas el precio de referencia de USD 15 por mes compite con apps que ofrecen plan gratuito.",
+      "tipo": "evidencia",
+      "evidencia": ["F-ataque-r2-m01-i009-competidor-001", "F-ataque-r2-m01-i009-competidor-002"]
+    },
+    {
+      "n": 2,
+      "severidad": "MAJOR",
+      "titulo": "El diferencial (clasificacion con IA) es copiable en un mes por Boris o Undo",
+      "donde": "Solucion: 'Un modelo de lenguaje con vision clasifica el motivo... propone cambio, credito, reembolso o rechazo'.",
+      "problema": "Los incumbentes ya tienen portal, panel, integracion con la tienda y logistica. Agregar una llamada a un LLM con vision para clasificar el motivo es una funcion de dias, con la misma API de Claude que usa la idea. La idea no tiene datos propios, ni integracion logistica, ni distribucion previa; lo unico que no tiene el incumbente es el clasificador, y ese es el componente mas facil de replicar. Diferenciacion de rubrica: 4 o menos.",
+      "tipo": "evidencia",
+      "evidencia": ["F-ataque-r2-m01-i009-competidor-001", "F-ataque-r2-m01-i009-competidor-002"]
+    },
+    {
+      "n": 3,
+      "severidad": "MAJOR",
+      "titulo": "El hueco puede ser un segmento que no paga: 8% gestiona devoluciones y no hay evidencia de pago",
+      "donde": "Problema: 'Solo 8% de las pymes con e-commerce gestiona devoluciones'; Monetizacion: USD 15 a 35 por mes.",
+      "problema": "F-comercio-retail-003 dice que solo 8% gestiona devoluciones y que la tecnologia se usa de forma muy basica: eso describe un segmento sin herramientas ni habito de pagar, no un hueco de producto. No dice volumen ni costo de devoluciones por tienda, y la propia idea lo admite. La unica ficha de precio (F-comercio-retail-007) es de planes de plataforma en Chile y Colombia, no de complementos. Con apps gratuitas o freemium disponibles, la disposicion a pagar USD 15 por mes es un supuesto sin respaldo; las tiendas con menos de 20 devoluciones por mes, que son las pymes tipicas, no justifican pagar.",
+      "tipo": "evidencia",
+      "evidencia": ["F-comercio-retail-003", "F-comercio-retail-007", "F-ataque-r2-m01-i009-competidor-002"]
+    },
+    {
+      "n": 4,
+      "severidad": "MAJOR",
+      "titulo": "El business case no cubre el costo con precio realista y la cuenta 'ilustrativa' ignora churn y adquisicion",
+      "donde": "Monetizacion: 'una tienda a USD 15 da USD 180 por año y cubre el costo fijo de USD 158; 10 tiendas darian USD 1.800'.",
+      "problema": "La cuenta supone que existen 10 tiendas pagando, sin evidencia del tamano del segmento (la propia idea dice 'segmento desconocido'; el 97% de mipymes de F-comercio-retail-010 no es el universo de tiendas online con 20 o mas devoluciones por mes). El piloto exige 3 a 5 tiendas con ese volumen, y no hay contactos identificados en constraints.md (tabla de contactos sin completar), ni evidencia de que existan tantas. Si Boris o Undo ofrecen plan gratis, el precio efectivo tiende a cero y el business case de la tesis queda sin ingresos demostrables.",
+      "tipo": "evidencia",
+      "evidencia": ["F-comercio-retail-010", "F-ataque-r2-m01-i009-competidor-002"]
+    },
+    {
+      "n": 5,
+      "severidad": "MAJOR",
+      "titulo": "El dolor mayor (envio de vuelta y logistica) queda fuera del MVP, donde compiten los incumbentes",
+      "donde": "Riesgos: 'El envio de vuelta queda fuera del MVP y puede ser el dolor mayor (supuesto)'.",
+      "problema": "F-comercio-retail-004 senala costos y tiempos de envio como el desafio del e-commerce uruguayo. Undo y Boris ya automatizan guias y etiquetas logisticas. La idea entrega solo la parte de clasificar y aprobar, que es la menos dolorosa, y deja al comercio operando la logistica a mano: un cliente que compara no cambia de herramienta por eso.",
+      "tipo": "evidencia",
+      "evidencia": ["F-comercio-retail-004", "F-ataque-r2-m01-i009-competidor-001", "F-ataque-r2-m01-i009-competidor-002"]
+    },
+    {
+      "n": 6,
+      "severidad": "MINOR",
+      "titulo": "56% de compradores cita dificultad para devolver, pero eso no prueba demanda del comercio por un portal",
+      "donde": "Problema: '56% de los compradores online cita la dificultad para devolver como barrera de compra'.",
+      "problema": "La ficha mide la percepcion del comprador, no el dolor ni el gasto del dueno de la tienda, que es quien paga. El salto de 'barrera de compra' a 'la tienda paga por clasificar motivos con IA' no tiene respaldo, y el comprador se beneficia igual con politicas claras o con las apps existentes.",
+      "tipo": "evidencia",
+      "evidencia": ["F-comercio-retail-002"]
+    }
+  ],
+  "nuevas_fichas": [
+    {
+      "id": "F-ataque-r2-m01-i009-competidor-001",
+      "sector": "comercio-retail",
+      "hallazgo": "Boris Cambios y Devoluciones es una app de la tienda de aplicaciones de Tiendanube que ofrece portal personalizado, panel y gestion de etiquetas logisticas para cambios y devoluciones, con modelo freemium y foco en LATAM.",
+      "source_url": "https://www.tiendanube.com/tienda-aplicaciones-nube/boris",
+      "source_title": "Boris | Cambios y Devoluciones - Tienda de Aplicaciones Tiendanube",
+      "source_date": "desconocida",
+      "source_type": "competidor",
+      "geografia": "LATAM",
+      "confianza": "alta",
+      "retrieved_at": "2026-10-07T12:00:00",
+      "extracto": "Automatizá tus cambios y devoluciones, fidelizá clientes y aumentá tus ventas",
+      "competidor": "Boris"
+    },
+    {
+      "id": "F-ataque-r2-m01-i009-competidor-002",
+      "sector": "comercio-retail",
+      "hallazgo": "Undo es una app de cambios y devoluciones en la tienda de aplicaciones de Tiendanube: se integra con Tiendanube, correos y medios de pago, y figura como gratuita con compras dentro de la app, para LATAM hispanohablante.",
+      "source_url": "https://www.tiendanube.com/tienda-aplicaciones-nube/undo",
+      "source_title": "Undo | Cambios y Devoluciones - Tienda de Aplicaciones Tiendanube",
+      "source_date": "desconocida",
+      "source_type": "competidor",
+      "geografia": "LATAM",
+      "confianza": "alta",
+      "retrieved_at": "2026-10-07T12:00:00",
+      "extracto": "Undo es tu aliado para simplificar la gestión de cambios y devoluciones.",
+      "competidor": "Undo"
+    }
+  ]
+}

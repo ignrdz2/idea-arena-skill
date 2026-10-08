@@ -1,0 +1,30 @@
+{
+  "idea": "i004",
+  "preguntas": [
+    {
+      "pregunta": "Pensá en la última vez que tuvieron que adelantar cheques, descontar facturas, pedir un préstamo o usar sobregiro para pagar sueldos, BPS, DGI o proveedores. ¿Cuántos días antes se dieron cuenta de que iba a faltar plata, cómo se enteraron y compararon el costo de más de una opción antes de elegir?",
+      "a_quien": "dueño de una pyme de Montevideo que vende a otras empresas a plazo, con facturas a crédito o cheques diferidos",
+      "que_valida": "Ataque en pie de ronda 1 y supuesto declarado: que la falta de proyección cause la financiación de urgencia. Si se enteran con tiempo o ya comparan costos, la causa no es la falta de visibilidad y la idea pierde su base."
+    },
+    {
+      "pregunta": "En los últimos 12 meses, ¿cuántas veces tuvieron que cubrir un faltante de caja y cuánto les costó en total, sumando intereses, descuento de cheques, comisiones y recargos o multas por pagar tarde a DGI, BPS o proveedores? ¿De dónde sale ese número?",
+      "a_quien": "dueño de una pyme de Montevideo que vende a otras empresas a plazo, con facturas a crédito o cheques diferidos",
+      "que_valida": "Cuánto cuesta hoy el problema. Es el techo de la disposición a pagar USD 15 a 30 por mes (ataque en pie de ronda 1): si el costo anual es bajo o nadie lo conoce, ese precio no se sostiene."
+    },
+    {
+      "pregunta": "La última vez que la empresa empezó a pagar un software o servicio para la administración (facturación, contabilidad, banca, cobranzas), ¿quién lo propuso, quién decidió contratarlo, quién lo paga, cuánto pagan por mes y qué papel tuvo el contador en esa decisión?",
+      "a_quien": "dueño de una pyme de Montevideo que vende a otras empresas a plazo, con facturas a crédito o cheques diferidos",
+      "que_valida": "Quién decide y quién paga (la pyme o el estudio contable), con un precio de referencia de lo que ya pagan. Responde el ataque en pie de ronda 1 sobre disposición a pagar USD 15 a 30 por mes y canal por contadores sin ninguna señal."
+    },
+    {
+      "pregunta": "¿Dónde llevan hoy los cheques diferidos y las facturas pendientes de cobro y de pago (software de facturación, planilla, cuaderno)? ¿Quién lo actualiza y cada cuánto? Contame la última vez que ese registro estaba atrasado o con errores: cómo se dieron cuenta y qué pasó.",
+      "a_quien": "administrativo o encargado de cobranzas y pagos de una pyme de Montevideo que vende a plazo con cheques diferidos",
+      "que_valida": "Ataque en pie de ronda 1 sobre la carga manual recurrente: si hoy nadie mantiene ese registro al día, tampoco va a cargar datos cada semana. También muestra si el software de facturación que usan ya cubre el seguimiento de cobros (ataque de diferenciación frente a YoFacturo)."
+    },
+    {
+      "pregunta": "La última vez que un cliente pyme te consultó porque no le alcanzaba la plata para pagar sueldos, BPS, DGI o a un proveedor, ¿qué hiciste, con qué herramienta o planilla, cuánto tiempo te llevó y se lo cobraste aparte? ¿A cuántos de tus clientes les pasó algo así en el último año?",
+      "a_quien": "contador socio de un estudio contable de Montevideo que lleva la contabilidad de varias pymes que venden a plazo",
+      "que_valida": "Ataque en pie de ronda 1 sobre el canal por contadores sin señal: si el contador ya atiende este problema, con qué herramienta y si lo cobra. También estima cuántos clientes por estudio lo sufren, base del plan para estudios (USD 12 por pyme)."
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+ "id": "i002",
+ "titulo": "Libreta ganadera por voz y sin señal para productores chicos, con datos listos para el SNIG",
+ "problema": "Todo productor ganadero debe notificar al SNIG eventos de cada bovino, con más de 12 millones identificados (F-agro-002); el MGAP digitaliza guías (F-agro-004) y tiene una app SNIG de trámites puntuales (F-ataque-r2-m01-i002-competidor-001). El costo del registro diario del productor chico es un supuesto a medir.",
+ "usuario": "Productor ganadero pastoril chico de Uruguay y su personal de campo; segundo canal: veterinarios.",
+ "solucion": "PWA sin señal. El peón dicta un audio (vacunamos 38 terneros del potrero 4). Al reconectar, se transcribe y un LLM propone eventos (nacimiento, vacunación, muerte, movimiento, venta) que el peón confirma con un toque; si la IA duda, deja el campo vacío. Registro de solo agregar. Valor central: captura de campo por voz; subproducto: exporta pendientes del SNIG para cargar a mano. No declara por el productor.",
+ "mvp": {
+  "semestre_1": [
+   "PWA offline con inventario por lote y sincronización",
+   "FastAPI y PostgreSQL en Lightsail; audio sin señal transcripto al reconectar",
+   "Demo: 20 eventos en modo avión actualizan el rodeo al reconectar",
+   "Entrevistas: costo de registrar, uso de Gecos, precio. Salida: si menos de 5 de 10 productores ven valor pagable, pivotar a veterinarios"
+  ],
+  "semestre_2": [
+   "Extracción de eventos con LLM y confirmación del peón",
+   "Precisión sobre 300 audios (guiones con jerga rural y audios del piloto); el corpus queda como activo propio",
+   "Pendientes SNIG exportables y vista para veterinarios",
+   "Piloto de 8 semanas con 3 a 5 establecimientos: minutos por evento vs método actual"
+  ]
+ },
+ "stack": [
+  "React + Vite (PWA)",
+  "IndexedDB (Dexie)",
+  "Python FastAPI",
+  "PostgreSQL",
+  "OpenAI gpt-4o-mini-transcribe",
+  "Claude Haiku 4.5",
+  "Docker Compose",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 164,
+  "items": [
+   {
+    "concepto": "AWS Lightsail Linux 1 GB, IPv4",
+    "usd_anual": 84,
+    "supuesto": "USD 7 por mes x 12, hasta 30 establecimientos. Sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "Transcripción gpt-4o-mini-transcribe",
+    "usd_anual": 25,
+    "supuesto": "USD 0,003 por minuto x 7.000 minutos, redondeado.",
+    "fuente_precio_url": "https://developers.openai.com/api/docs/pricing"
+   },
+   {
+    "concepto": "Claude Haiku 4.5",
+    "usd_anual": 40,
+    "supuesto": "USD 1 y 5 por millón de tokens; 10.000 audios x (2.000 + 400).",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "Dominio",
+    "usd_anual": 15,
+    "supuesto": "Estimación por encima de un .com por un año."
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Gecos SGG",
+   "evidencia_ids": [
+    "F-ataque-r2-m01-i002-competidor-002",
+    "F-defensa-r2-m01-i002-001"
+   ],
+   "hueco": "Uruguayo, con caravanas y conciliación SNIG; su página dice sistema web, sin voz ni modo sin señal. Podría sumarlos."
+  },
+  {
+   "nombre": "App SNIG (MGAP)",
+   "evidencia_ids": [
+    "F-ataque-r2-m01-i002-competidor-001"
+   ],
+   "hueco": "Oficial, de 2016: trámites puntuales, sin registro por lote."
+  },
+  {
+   "nombre": "miTambo",
+   "evidencia_ids": [
+    "F-agro-001"
+   ],
+   "hueco": "Uruguaya, sin internet, USD 10 por mes, solo tambos; puede extenderse."
+  },
+  {
+   "nombre": "Cattler",
+   "evidencia_ids": [
+    "F-agro-006"
+   ],
+   "hueco": "En Uruguay, feedlots, crece 20% mensual; podría ampliar."
+  },
+  {
+   "nombre": "Albor",
+   "evidencia_ids": [
+    "F-agro-007"
+   ],
+   "hueco": "Integral paraguayo de 2018, USD 115 por mes; sin voz."
+  }
+ ],
+ "monetizacion": "Productor: USD 6 a 10 por mes por establecimiento, con prueba gratis (ancla adyacente: miTambo, F-agro-001); veterinarios: USD 35 por mes hasta 15 clientes. Canal supuesto: gremiales y ferias. Escenario: 100 establecimientos x USD 60 = USD 6.000 por año. Precios, canal y tamaño de mercado son supuestos a validar; papel y WhatsApp no cuestan en efectivo.",
+ "riesgos": [
+  "Errores al transcribir jerga rural y caravanas.",
+  "Baja disposición a pagar (F-agro-003).",
+  "Competidores pueden copiar la voz con LLM o cubrir el segmento.",
+  "Sin contacto identificado, el piloto puede no conseguirse.",
+  "Ley 18.331: consentimiento y transferencia internacional a proveedores de IA."
+ ],
+ "supuestos": [
+  "Los productores chicos registran en papel o WhatsApp; el costo se mide en entrevistas.",
+  "USD 6 a 10 por mes es aceptable según un único ancla adyacente; sin validar.",
+  "Los veterinarios pagarían por cartera; precio y canal sin ficha.",
+  "La señal es intermitente y Gecos no ofrece voz ni modo sin señal (su página no lo menciona); a confirmar en entrevistas.",
+  "Sin contacto identificado: se buscan vía gremiales y ferias antes de diciembre de 2026; si no, el piloto baja a guiones.",
+  "Privacidad: consentimiento escrito; audio borrado tras confirmar."
+ ],
+ "evidencias": [
+  "F-agro-002",
+  "F-agro-004",
+  "F-agro-001",
+  "F-agro-006",
+  "F-agro-007",
+  "F-agro-003",
+  "F-ataque-r2-m01-i002-competidor-001",
+  "F-ataque-r2-m01-i002-competidor-002",
+  "F-defensa-r2-m01-i002-001"
+ ]
+}

@@ -1,0 +1,60 @@
+{
+ "idea": "i002",
+ "respuestas": [
+  {
+   "ataque": 1,
+   "decision": "PARCIAL",
+   "detalle": "Acepto: USD 6 no tenía señal propia y Albor (2018, Paraguay, sistema integral) no sirve de ancla. Lo arreglo: el precio pasa a rango USD 6 a 10 con miTambo (F-agro-001) como único ancla local, prueba gratis, y el canal queda declarado como supuesto sin ficha. No acepto que sea un defecto oculto: ya figuraba como supuesto sin validar y el escenario de USD 18.000 está rotulado ilustrativo; la validación de precio entra en las entrevistas del semestre 1.",
+   "evidencia": [
+    "F-agro-001",
+    "F-agro-007"
+   ]
+  },
+  {
+   "ataque": 2,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que F-agro-002 prueba la obligación y no el costo: saco 'carga administrativa recurrente' del problema como hecho y lo dejo como supuesto a medir. Agrego entrevistas en el semestre 1 y comparación de minutos por evento en el piloto. No acepto que la obligación sea irrelevante: más de 12 millones de bovinos con notificación obligatoria define el universo y la recurrencia, aunque no el dolor.",
+   "evidencia": [
+    "F-agro-002"
+   ]
+  },
+  {
+   "ataque": 3,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que declarar dos veces anula el ahorro si la app solo lista. La solución ahora exporta los pendientes listos para cargar y deja claro que no declara por el productor; el valor es la captura en campo y la preparación del dato. No acepto que haya una afirmación sin respaldo: la página oficial del SNIG que abrí no menciona API ni canales, así que lo paso a 'no se sabe, a confirmar' y el MVP no depende de ella. El riesgo MGAP (F-agro-004) sigue declarado; el plan B es el valor de libreta y de veterinarios multi-cliente.",
+   "evidencia": [
+    "F-agro-004",
+    "F-agro-002"
+   ]
+  },
+  {
+   "ataque": 4,
+   "decision": "PARCIAL",
+   "detalle": "Acepto: Albor no es comparable por precio y miTambo es el rival cercano y puede extenderse; lo reordeno primero y declaro el hueco como temporal y de foco (pastoril, voz). No acepto que no haya hueco hoy: F-agro-001 limita miTambo a tambos y F-agro-006 limita Cattler a feedlots. La ficha de Albor sí dice que es integral con contabilidad y sueldos; eso queda explicado en el hueco.",
+   "evidencia": [
+    "F-agro-001",
+    "F-agro-006",
+    "F-agro-007"
+   ]
+  },
+  {
+   "ataque": 5,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que no hay contacto identificado y que el piloto y los audios reales dependen de conseguirlo: lo declaro como riesgo, reduzco el piloto a 3 a 5 establecimientos y la medición de 300 audios ya no depende solo del piloto (guiones con jerga grabados por el equipo). No acepto que viole R4: R4 pide usuarios contactables desde Uruguay, no una tabla llena; productores y veterinarios uruguayos son contactables vía gremiales y ferias (supuesto declarado), y R7 se cumple porque los datos los genera el producto.",
+   "evidencia": []
+  },
+  {
+   "ataque": 6,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que una línea sobre la ley no es un camino de cumplimiento. Agrego en supuestos: consentimiento escrito de productor y peón, audio borrado tras confirmar el evento y solo texto sin nombres al LLM. La transferencia internacional queda como punto a revisar contra la Ley 18.331: no afirmo su contenido porque no lo abrí. No acepto que sea inviable: los datos los genera el producto con consentimiento y cumplir es trabajo de diseño, no una licencia imposible (R6).",
+   "evidencia": []
+  },
+  {
+   "ataque": 7,
+   "decision": "PARCIAL",
+   "detalle": "Acepto la carga de confirmación: ahora confirma el mismo peón con un toque al reconectar, no el dueño, y la IA deja vacío lo dudoso en vez de adivinar. Los conflictos se evitan con registro de solo agregar y stock recalculado, y se prueban en la demo del semestre 1. Que la señal es intermitente ya figuraba como supuesto declarado; no tengo ficha y lo marco a confirmar en entrevistas.",
+   "evidencia": []
+  }
+ ],
+ "nuevas_fichas": []
+}

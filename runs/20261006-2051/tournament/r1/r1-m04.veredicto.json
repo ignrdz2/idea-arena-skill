@@ -1,0 +1,27 @@
+{
+  "match": "r1-m04",
+  "scores": {
+    "X": {"demanda": 5, "viabilidad": 8, "diferenciacion": 6, "business_case": 6, "encaje": 7, "academico": 7, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 5, "viabilidad": 7, "diferenciacion": 4, "business_case": 5, "encaje": 7, "academico": 8, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "X",
+  "reason": "Con demanda igual de débil en ambas (el pagador es un supuesto), X tiene un costo más holgado (USD 164 contra 198), un hueco concreto frente a competidores locales de las fichas (miTambo solo tambos, Cattler feedlots) y un ancla de precio local, mientras Y solo opone marcas locales, español y precio fijo a plataformas globales, sin señal de pago ni tamaño de mercado.",
+  "survived": [
+    "Precio sin señal: pasó a un rango de USD 6 a 10 anclado en miTambo (F-agro-001), sin Albor como ancla, con el canal declarado como supuesto",
+    "Sin contactos para el piloto: piloto reducido a 3 a 5 establecimientos y audios grabados con guiones como plan B; R4 no exige contactos previos",
+    "Ley 18.331: consentimiento escrito, audio borrado tras confirmar y solo texto sin nombres al LLM, con la transferencia internacional a revisar",
+    "Carga de confirmación y conflictos offline: confirma el propio peón, la IA deja vacío lo dudoso y el registro es de solo agregar"
+  ],
+  "standing": {
+    "X": [
+      "Dolor no demostrado: F-agro-002 prueba la obligación de notificar al SNIG, no cuánto le cuesta al productor chico",
+      "Doble carga: la app exporta los pendientes pero el productor igual tiene que declararlos en el canal oficial",
+      "Diferenciación copiable: miTambo podría extenderse a carne y la voz con LLM se copia, sin explicar por qué no lo hicieron"
+    ],
+    "Y": [
+      "Ninguna ficha muestra que entidades financieras medianas sufran clones ni que paguen por detectarlos",
+      "El diferencial frente a las plataformas globales (marcas locales, español, precio fijo) es hipótesis y copiable",
+      "Precio de USD 150 a 300 por mes y cantidad de entidades compradoras sin ninguna señal"
+    ]
+  }
+}

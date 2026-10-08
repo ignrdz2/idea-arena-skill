@@ -1,0 +1,57 @@
+{
+ "idea": "i005",
+ "respuestas": [
+  {
+   "ataque": 1,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que el segmento no está medido y que sin él el hueco puede ser un nicho sin pago: lo declaro con criterio de descarte y agrego al semestre 1 entrevistas a 8 a 10 comercios para medirlo. No acepto que migrar cueste poco: F-comercio-retail-006 dice solo que YoFacturo da un mes de prueba gratis, no mide el costo de pasar catálogo e historial; la idea lo pasa a supuesto. Los tres competidores atienden a quien factura con ellos (F-comercio-retail-006, F-ataque-r1-m01-i005-cliente-001, F-ataque-r1-m01-i005-cliente-002), no al que no migra.",
+   "evidencia": [
+    "F-comercio-retail-006",
+    "F-ataque-r1-m01-i005-cliente-001",
+    "F-ataque-r1-m01-i005-cliente-002"
+   ]
+  },
+  {
+   "ataque": 2,
+   "decision": "PARCIAL",
+   "detalle": "Tiene razón en que la carga periódica puede repetir el dolor, y la idea ya lo decía sin cuantificar. Arreglo: es un archivo por semana en lugar de cargar productos a mano, y el piloto tiene un criterio de éxito explícito (menos de 15 minutos por semana, objetivo declarado como supuesto) y la idea admite que si no se cumple no se sostiene. No acepto que sea la misma doble carga: F-comercio-retail-006 la describe como cargar datos de producto y ventas en dos sistemas, y aquí no se carga catálogo ni ventas una por una.",
+   "evidencia": [
+    "F-comercio-retail-006"
+   ]
+  },
+  {
+   "ataque": 3,
+   "decision": "PARCIAL",
+   "detalle": "Es opinión, pero verosímil: no hay ficha que pruebe que un competidor no lo haría. Acepto que la funcionalidad es copiable y lo declaro en riesgos. Lo que sí sostengo, como supuesto y no como hecho, es que un importador de comprobantes de terceros va contra el interés de un facturador que vive de retener al cliente. La ventaja que propongo defender es el corpus de reglas por proveedor y la comparación medida de métodos de emparejamiento.",
+   "evidencia": []
+  },
+  {
+   "ataque": 4,
+   "decision": "PARCIAL",
+   "detalle": "Tiene razón: F-comercio-retail-004 y F-comercio-retail-010 son contexto general, F-comercio-retail-006 es de un competidor y la ficha de Fixed muestra pago por stock dentro del facturador, no por una capa externa. Reescribí el problema para decirlo y pasé la disposición a pagar por capa externa a supuesto. No acepto que no haya señal de pago: UYU 2.140 contra 980 por mes (F-defensa-r1-m01-i005-001) muestra que el stock se cobra aparte hoy. No encontré fichas nuevas de demanda en la búsqueda web.",
+   "evidencia": [
+    "F-comercio-retail-006",
+    "F-comercio-retail-004",
+    "F-comercio-retail-010",
+    "F-defensa-r1-m01-i005-001"
+   ]
+  },
+  {
+   "ataque": 5,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que la comparación con Fixed no es el precio de la alternativa del cliente, que sigue en otro facturador: la reescribí como techo de referencia, declaré que el comercio paga esto además de su facturador y que el precio de su alternativa (módulo propio o planilla) no figura en ninguna ficha. Agregué la cuenta de ingreso (USD 1.800 a 3.000 al mes con 150 comercios). Sobre el extracto no verificable de F-defensa-r1-m01-i005-001: la misma URL y el precio de UYU 2.140 figuran en F-ataque-r1-m01-i005-cliente-001, con verificación ok, y la cito junto a ella.",
+   "evidencia": [
+    "F-defensa-r1-m01-i005-001",
+    "F-ataque-r1-m01-i005-cliente-001",
+    "F-comercio-retail-001"
+   ]
+  },
+  {
+   "ataque": 6,
+   "decision": "CONCEDE",
+   "detalle": "Es cierto: la tabla de contactos está vacía y el piloto era una dependencia sin plan B. Arreglo: las entrevistas de 8 a 10 comercios pasan a ser el primer entregable (antes de diciembre de 2026, por red personal, sin suponer contactos), y agrego plan B: si no hay 3 comercios piloto, el semestre 2 se valida con comprobantes anonimizados de esas entrevistas y el corpus sintético.",
+   "evidencia": []
+  }
+ ],
+ "nuevas_fichas": []
+}

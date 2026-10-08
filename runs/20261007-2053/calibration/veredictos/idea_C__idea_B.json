@@ -1,0 +1,30 @@
+{
+  "scores": {
+    "X": {"demanda": 1, "viabilidad": 1, "diferenciacion": 2, "business_case": 3, "encaje": 6, "academico": 4, "fatal": true, "fatal_motivo": "restriccion_dura:R1: la propia tabla de costos de la idea suma USD 504 por año, sobre el tope de USD 300; aun sacando Google Maps Platform, los otros ítems (99 + 25 + 90 + 25 + 60 + 25) suman USD 324 y siguen por encima del tope"},
+    "Y": {"demanda": 5, "viabilidad": 6, "diferenciacion": 5, "business_case": 6, "encaje": 7, "academico": 9, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "Y",
+  "reason": "X viola R1 con un costo declarado de USD 504 por año y no tiene ninguna evidencia de demanda, mientras Y cuesta USD 125, tiene dolor local respaldado por fuentes verificadas y un desafío de pronóstico medible.",
+  "standing": {
+    "X": [
+      "Costo de infraestructura declarado de USD 504 por año, sobre el tope de USD 300 de R1, y creciente con usuarios gratuitos que no pagan.",
+      "Demanda sin ninguna evidencia: la propia idea admite que solo hay sentido común y charlas con amigos, y ningún restaurante fue consultado.",
+      "Compite contra productos gratuitos ya instalados (Google Maps, TripAdvisor, Instagram, TikTok, PedidosYa) sin un hueco concreto más allá de la recomendación social.",
+      "Arranque en frío doble (usuarios y restaurantes) sin presupuesto de marketing: el modelo no genera ningún ingreso durante la tesis.",
+      "Alcance inflado para dos semestres: app móvil para dos plataformas, red social, chat, chatbot, motor de recomendación, panel para locales, gamificación y campaña de lanzamiento.",
+      "El catálogo de locales no tiene fuente legal identificada y copiarlo de un tercero puede violar sus términos de uso.",
+      "Perfilamiento con gustos, ubicación y grafo social que exige evaluación de impacto bajo la Ley 18.331 y su decreto reglamentario, sin ingreso que lo sostenga.",
+      "El componente de IA es un envoltorio sobre un LLM mientras no haya datos propios, lo que deja flaco el aporte técnico."
+    ],
+    "Y": [
+      "No hay ninguna medición del sobrante en panaderías uruguayas: el 5% a 15% que sostiene el ahorro es un supuesto, y la disposición a pagar en un rubro que declara estar en pérdida es baja.",
+      "El link de FAO Uruguay devuelve 404 y no sirve como evidencia; la cifra del Ministerio de Ambiente (70% de las pérdidas en producción y poscosecha) juega en contra del argumento del comercio.",
+      "El plan gratuito de Open-Meteo es solo para uso no comercial y el piloto pago con 5 locales en el semestre 2 ya es uso comercial; esa licencia no está presupuestada y su precio no figura en la página de precios.",
+      "Dependencia crítica de 2 o 3 panaderías piloto sin ningún contacto en la tabla del equipo; 10 semanas de datos generados desde cero son pocas para capturar estacionalidad, feriados y eventos.",
+      "Delicious Data ya hace pronóstico de pedidos para panaderías con clima, feriados y vacaciones, y Winnow ofrece pronóstico de producción (Foresight); la diferencia es sobre todo localización y canal, copiable por un proveedor de punto de venta local.",
+      "La afirmación de que los sistemas de punto de venta locales no pronostican no tiene link ni está en los supuestos.",
+      "Ticket chico (USD 25 a 45) con venta uno a uno y sin tamaño de mercado inicial: no dice cuántas panaderías hay en Uruguay.",
+      "Los precios de Hetzner y de las plantillas de WhatsApp no se pudieron confirmar en las páginas citadas; son estimaciones, aunque el total queda lejos del tope."
+    ]
+  }
+}

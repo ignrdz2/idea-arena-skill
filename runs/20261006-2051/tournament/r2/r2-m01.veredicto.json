@@ -1,0 +1,27 @@
+{
+  "match": "r2-m01",
+  "scores": {
+    "X": {"demanda": 5, "viabilidad": 7, "diferenciacion": 3, "business_case": 4, "encaje": 7, "academico": 6, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 5, "viabilidad": 7, "diferenciacion": 6, "business_case": 5, "encaje": 6, "academico": 7, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "Y",
+  "reason": "Y conserva un hueco real según las fichas (captura por voz y sin señal para el productor pastoril, que no muestran Gecos, la app SNIG ni miTambo), mientras que X queda como un subconjunto de Boris y Undo, gratuitos o freemium y con logística, más un clasificador con IA que la propia idea admite copiable.",
+  "survived": [
+    "No nombraba a Gecos SGG: ahora figura como competidor, con ficha nueva de que su página es un sistema web sin voz ni uso sin señal, y el hueco quedó como supuesto a confirmar",
+    "La app SNIG y las guías digitales bajan el valor de la lista de pendientes: la exportación pasó a subproducto y la ficha de la app solo lista trámites puntuales, no registro diario por lote",
+    "Cattler y Albor descartados sin argumento: Cattler ahora figura como capaz de ampliar de segmento y Albor queda como referencia vieja y cara, según sus fichas",
+    "Canal y precio de veterinarios inventados: el ataque es opinión y la idea ya los declara como supuestos sin respaldo"
+  ],
+  "standing": {
+    "X": [
+      "El único diferencial, la clasificación con IA, es copiable por Boris o Undo y la idea lo admite; el foco en tiendas fuera de Tiendanube es una hipótesis sin ficha",
+      "No hay evidencia de que la tienda pague y los competidores son gratuitos o freemium",
+      "El tamaño del segmento con 20 o más devoluciones por mes es desconocido y el plan B gratuito deja la tesis sin ingresos demostrables",
+      "El envío de vuelta, señalado como desafío en F-comercio-retail-004, queda fuera del MVP mientras los competidores ya lo cubren"
+    ],
+    "Y": [
+      "Voz más LLM es copiable por Gecos o miTambo; el corpus de audios es una ventaja moderada, no un foso",
+      "La disposición a pagar del productor chico no tiene ficha propia: el único ancla es miTambo, de lechería y de 2020, y el tamaño de mercado no está medido"
+    ]
+  }
+}

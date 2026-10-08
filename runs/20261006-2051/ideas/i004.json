@@ -1,0 +1,102 @@
+{
+ "id": "i004",
+ "titulo": "Proyección de caja para pymes con cheques diferidos y facturas electrónicas",
+ "problema": "Las pymes uruguayas necesitan liquidez antes de cobrar: MiFinanzas declara más de 100.000 operaciones adelantando cheques diferidos y facturas (F-fintech-seguros-007) y PedidosYa Créditos prestó US$6,4 millones a más de 1.000 pymes desde 2025 (F-fintech-seguros-008). Separar sistemas genera cargas duplicadas y datos desactualizados (F-comercio-retail-006, sobre facturación e inventario); con facturas, cheques y bancos dispersos, el dueño ve el faltante cuando ya llegó y se financia de urgencia sin comparar costos. Las mipymes son 97% de las empresas (F-comercio-retail-010).",
+ "usuario": "Usa: el dueño o administrativo de una pyme que vende a plazo, y su contador. Paga: la pyme o el estudio contable.",
+ "solucion": "Web que arma la caja futura con datos que la pyme ya tiene: CFE emitidos y recibidos en XML, extractos bancarios CSV o PDF y cheques diferidos cargados por foto (visión extrae fecha, monto y banco). Proyecta 13 semanas en pesos y dólares, aprende el atraso de cada cliente, simula escenarios y avisa por correo semanas antes de un faltante. Compara el costo de cubrirlo con las opciones que cargue la pyme, sin intermediar ni prestar. Responde preguntas en lenguaje natural con Text-to-SQL de solo lectura.",
+ "mvp": {
+  "semestre_1": [
+   "Importadores de CFE y de extractos CSV de dos bancos, con modelo bimoneda.",
+   "Carga de cheques por foto con corrección manual.",
+   "Proyección determinística a 13 semanas en un panel web."
+  ],
+  "semestre_2": [
+   "Predicción de fecha de cobro por cliente y escenarios.",
+   "Alertas por correo y comparador de costo de financiación.",
+   "Text-to-SQL, vista para contadores y piloto con 5 a 10 pymes."
+  ]
+ },
+ "stack": [
+  "TypeScript",
+  "React",
+  "Python",
+  "FastAPI",
+  "PostgreSQL",
+  "scikit-learn",
+  "Claude Haiku 4.5",
+  "Amazon SES",
+  "Docker en AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 199,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail (contenedores Docker)",
+    "usd_anual": 114,
+    "supuesto": "Linux de 1 GB a USD 7/mes en el semestre 1 y de 2 GB a USD 12/mes en el semestre 2 (USD 42 + 72); sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API de Claude Haiku 4.5",
+    "usd_anual": 60,
+    "supuesto": "A USD 1 y 5 por millón de tokens: 2.000 fotos de cheques de 2.000 tokens estimados (USD 6), 600 extractos PDF (USD 12) y 5.000 preguntas de 4.000 tokens (USD 28); redondeado.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "Correos con Amazon SES",
+    "usd_anual": 5,
+    "supuesto": "Hasta 20.000 correos a USD 0,10 cada 1.000; redondeado, sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/ses/pricing/"
+   },
+   {
+    "concepto": "Dominio",
+    "usd_anual": 20,
+    "supuesto": "Estimación por encima, sin fuente: dominio .com por un año."
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "MiFinanzas",
+   "evidencia_ids": [
+    "F-fintech-seguros-007"
+   ],
+   "hueco": "Financia cheques y facturas; la ficha no muestra proyección de caja. Puede ser una opción a comparar."
+  },
+  {
+   "nombre": "PedidosYa Créditos",
+   "evidencia_ids": [
+    "F-fintech-seguros-008"
+   ],
+   "hueco": "Presta y cobra desde las ventas; la ficha no muestra planificación de caja."
+  },
+  {
+   "nombre": "YoFacturo",
+   "evidencia_ids": [
+    "F-comercio-retail-006"
+   ],
+   "hueco": "Integra CFE e inventario; la ficha no menciona caja ni cheques."
+  }
+ ],
+ "monetizacion": "Suscripción de la pyme (hipótesis: USD 15 a 30 por mes) y plan para estudios contables (hipótesis: USD 80 por 10 pymes). Canal: contadores. 300 pymes a USD 20 dan unos USD 72.000 al año.",
+ "riesgos": [
+  "Extractos sin API abierta y con formatos distintos por banco.",
+  "Errores al leer cheques generan proyecciones falsas.",
+  "Desconfianza para subir datos fiscales y bancarios (Ley 18.331).",
+  "Un software de facturación o un financiador puede sumar esta función."
+ ],
+ "supuestos": [
+  "Muchas pymes no proyectan caja y se financian de urgencia; ninguna ficha lo mide.",
+  "Los CFE se exportan en XML con formato público y los bancos permiten bajar extractos.",
+  "Herramientas similares funcionan en otros mercados sobre software contable; sin ficha.",
+  "Los contadores son un canal eficaz; los precios son hipótesis a validar.",
+  "Comparar costos sin intermediar no requiere habilitación del BCU.",
+  "El equipo puede conseguir 5 a 10 pymes piloto; no hay contactos declarados."
+ ],
+ "evidencias": [
+  "F-fintech-seguros-007",
+  "F-fintech-seguros-008",
+  "F-comercio-retail-006",
+  "F-comercio-retail-010"
+ ]
+}

@@ -1,0 +1,26 @@
+{
+  "match": "r2-m02",
+  "scores": {
+    "X": {"demanda": 5, "viabilidad": 7, "diferenciacion": 5, "business_case": 6, "encaje": 8, "academico": 8, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 4, "viabilidad": 7, "diferenciacion": 4, "business_case": 5, "encaje": 6, "academico": 7, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "X",
+  "reason": "X tiene una señal de pago local por control de stock (el escalón de Fixed y tres competidores que lo venden) sobre un universo de comercios mucho mayor, más encaje y un desafío medible de emparejamiento, mientras Y apunta a un parque de decenas de drones que la propia idea admite que no sostiene un negocio y no tiene ninguna señal de pago.",
+  "survived": [
+    "La carga semanal repite la doble carga: rebatido en parte (un archivo por semana, no catálogo ni ventas a mano) y convertido en criterio de corte medido en el piloto",
+    "Referencia de precio mal armada: reescrita como techo, con el pago sumado al facturador actual y la alternativa declarada sin precio",
+    "Sin contactos ni comercios piloto: entrevistas antes de diciembre de 2026 y plan B con comprobantes anonimizados y corpus sintético"
+  ],
+  "standing": {
+    "X": [
+      "El hueco depende de comercios que no migran de facturador, un segmento sin medir",
+      "La función es copiable por Fixed, YoFacturo o gestionUltimate; la ventaja del corpus por proveedor es un supuesto",
+      "No hay ficha de demanda para una capa de stock externa: el dolor sale del blog de un competidor y la disposición a pagar es supuesto"
+    ],
+    "Y": [
+      "La disposición a pagar USD 250 por drone no tiene ficha y el chequeo previo se puede hacer con un mapa gratuito",
+      "El hueco se afirma por ausencia de ficha y es copiable por el fabricante o las herramientas de registros de vuelo",
+      "Mercado de decenas de drones: 20 drones dan USD 5.000 por año y la idea admite que no sostiene un negocio"
+    ]
+  }
+}

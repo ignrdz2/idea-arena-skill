@@ -1,0 +1,73 @@
+{
+ "idea": "i002",
+ "respuestas": [
+  {
+   "ataque": 1,
+   "decision": "CONCEDE",
+   "detalle": "Cierto: Gecos SGG (ficha F-ataque-r2-m01-i002-competidor-002) es un competidor uruguayo con conciliación SNIG y la idea no lo nombraba. Reabrí su página (ficha nueva F-defensa-r2-m01-i002-001): se describe como sistema web y no menciona uso sin señal, voz ni precio, pero eso no prueba que no puedan sumarlos. Lo agregué a competidores y riesgos, reformulé el hueco como captura de campo por el peón sin afirmar que Gecos no pueda copiarla, y dejé en supuestos que se confirma en entrevistas.",
+   "evidencia": [
+    "F-ataque-r2-m01-i002-competidor-002",
+    "F-defensa-r2-m01-i002-001"
+   ]
+  },
+  {
+   "ataque": 2,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que la app SNIG (ficha de 2016) y las guías digitales (F-agro-004) bajan el valor de la lista de pendientes: la agregué a competidores y la exportación pasa a subproducto; el valor central es la captura de campo por voz. No acepto que compita con lo que dice: la ficha lista consultas, muerte, descarte, reidentificación y extravío, no registro diario por lote, y la idea ya decía que no declara por el productor ni que sepa si hay API.",
+   "evidencia": [
+    "F-ataque-r2-m01-i002-competidor-001",
+    "F-agro-004"
+   ]
+  },
+  {
+   "ataque": 3,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que voz más LLM es copiable (ya figuraba en riesgos) y agregué como activo propio el corpus de audios rurales confirmados, declarado como ventaja moderada y no foso. No acepto el 4: la rúbrica da 7 a una diferencia real copiable rápido; miTambo cubre solo tambos (F-agro-001) y la página de Gecos no muestra voz ni uso sin señal. Que un competidor lo integre en un trimestre es opinión sin ficha.",
+   "evidencia": [
+    "F-agro-001",
+    "F-ataque-r2-m01-i002-competidor-002"
+   ]
+  },
+  {
+   "ataque": 4,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que no hay ficha de disposición a pagar, que F-agro-003 es lechería y que 300 establecimientos no tenían respaldo: bajé el escenario a 100 (USD 6.000 por año), declaré que el tamaño de mercado no está medido y que papel y WhatsApp no cuestan en efectivo, y agregué un criterio de salida en las entrevistas del semestre 1 (pivotar a veterinarios). No acepto que sea un segmento sin pago: miTambo cobra unos USD 10 por mes a tambos chicos (F-agro-001), señal adyacente que la idea ya usaba como ancla declarada y sin validar.",
+   "evidencia": [
+    "F-agro-001",
+    "F-agro-002",
+    "F-agro-003"
+   ]
+  },
+  {
+   "ataque": 5,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que Cattler opera en Uruguay y declara crecer cerca de 20% mensual (F-agro-006): su hueco y los riesgos ahora dicen que podría ampliar de segmento. No acepto el resto: la ficha lo ubica en feedlots y no en sistemas pastoriles, y Albor es de 2018, paraguayo, USD 115 por mes (F-agro-007), no ancla de precio, como la idea ya decía.",
+   "evidencia": [
+    "F-agro-006",
+    "F-agro-007"
+   ]
+  },
+  {
+   "ataque": 6,
+   "decision": "REBUT",
+   "detalle": "Es una opinión sin ficha y la idea ya declara canal y precio de veterinarios como supuesto sin respaldo (supuestos, tercer ítem). La rúbrica castiga afirmar sin declarar, no declarar un supuesto. Que los veterinarios con cartera ya usen Gecos tampoco está en ninguna ficha. Sin cambios.",
+   "evidencia": []
+  }
+ ],
+ "nuevas_fichas": [
+  {
+   "id": "F-defensa-r2-m01-i002-001",
+   "sector": "agro",
+   "hallazgo": "La página de Gecos describe su Administración Ganadera como sistema web de seguimiento individual de animales con caravanas electrónicas, y no menciona uso sin señal, captura por voz, app móvil ni precios.",
+   "source_url": "https://gecos.com.uy/soluciones/administracion-ganadera-software/",
+   "source_title": "Administracion Ganadera en Uruguay | Gecos SGG",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-07T11:30:00",
+   "extracto": "es un sistema web dirigido al seguimiento individual de animales",
+   "competidor": "Gecos SGG"
+  }
+ ]
+}

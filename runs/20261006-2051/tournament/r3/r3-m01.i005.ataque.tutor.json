@@ -1,0 +1,70 @@
+{
+  "idea": "i005",
+  "persona": "tutor",
+  "ataques": [
+    {
+      "n": 1,
+      "severidad": "MAJOR",
+      "titulo": "La carga semanal por lote no resuelve el dolor que la idea cita",
+      "donde": "Solución (\"sube por lote semanal\") y Problema (vender agotados)",
+      "problema": "El dolor citado es stock desactualizado y vender productos agotados, sobre todo con tienda online. Con un lote semanal el stock tiene hasta 7 días de atraso, justo la ventana en que se vende lo agotado. La propia sección de Riesgos admite que la carga semanal puede repetir la doble carga y que, si no baja de 15 minutos por semana, la idea no se sostiene. Es decir, la hipótesis central del producto se prueba recién en el piloto del semestre 2 y el diseño elegido contradice el problema. Un tutor no aprobaría un MVP cuya propuesta de valor depende de un resultado que se mide en el último tramo.",
+      "tipo": "evidencia",
+      "evidencia": ["F-comercio-retail-006"]
+    },
+    {
+      "n": 2,
+      "severidad": "MAJOR",
+      "titulo": "Dependencia externa crítica sin plan B: acceso a los CFE emitidos y recibidos",
+      "donde": "Supuestos declarados (\"DGI publica el formato XML... el comercio puede obtener los emitidos y recibidos\"), Riesgos (\"facturadores sin exportación\")",
+      "problema": "Todo el producto parte de que el comercio pueda exportar sus comprobantes emitidos y recibidos desde un facturador que no quiere cambiar. Ninguna ficha dice que los facturadores uruguayos (Fixed, YoFacturo, gestionUltimate u otros) permitan esa exportación en XML o CSV, ni que el formato sea público; la idea lo declara supuesto, así que no es fatal, pero es una dependencia externa crítica. El plan B (PDF y fotos con modelo de visión) es opcional y recién en el semestre 2, y empeora justo el costo y la privacidad que el diseño pretendía evitar. Sin la exportación, la primera entrega queda demostrable solo con corpus sintético, que no valida nada del mundo real.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 3,
+      "severidad": "MAJOR",
+      "titulo": "La demanda del nicho (comercio que factura con otro sistema y no migra) no tiene ninguna ficha",
+      "donde": "Supuestos declarados (\"su cantidad no está medida\"), Problema y Monetización",
+      "problema": "La única ficha del dolor es el blog de YoFacturo, un competidor que vende su propio módulo de inventario; es marketing, no medición del costo ni de disposición a pagar. Las fichas de pyme (F-comercio-retail-004, F-comercio-retail-010) son contexto genérico del sector, no demuestran que alguien pague una capa externa. Las fichas de precios muestran lo contrario de una señal de pago: el stock se vende integrado al facturador (Fixed, gestionUltimate). La idea reconoce que si los no-migrantes son pocos el producto no se justifica, y deja medirlo para entrevistas que el equipo todavía no hizo. Eso es una hipótesis, no demanda.",
+      "tipo": "evidencia",
+      "evidencia": ["F-comercio-retail-006", "F-comercio-retail-004", "F-comercio-retail-010", "F-ataque-r1-m01-i005-cliente-001", "F-ataque-r1-m01-i005-cliente-002"]
+    },
+    {
+      "n": 4,
+      "severidad": "MAJOR",
+      "titulo": "Entrevistas y piloto dependen de comercios que el equipo no tiene como contactos",
+      "donde": "Alcance del MVP (entrevistas a 8 a 10 comercios antes de diciembre de 2026; piloto de 8 semanas con 3 a 5 comercios) y Riesgos",
+      "problema": "constraints.md no declara ningún contacto (tabla en <<COMPLETAR>>) y R4 pide usuarios que el equipo pueda contactar desde Uruguay para validar antes de diciembre de 2026. La idea apoya en una \"red personal\" que reconoce no declarada. Quedan menos de tres meses para conseguir 8 a 10 comercios que además usen un facturador distinto y compartan comprobantes con datos personales (Ley 18.331). El plan B del semestre 2 (comprobantes anonimizados de las entrevistas y corpus sintético) se cae igual si no hay entrevistas, y sin piloto real no hay medición de minutos de carga ni contra conteo físico, que es el único resultado que justifica la tesis.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 5,
+      "severidad": "MAJOR",
+      "titulo": "Alcance de dos semestres con mucho frente abierto y entregas poco demostrables",
+      "donde": "Alcance del MVP, Semestre 1 y Semestre 2",
+      "problema": "El MVP incluye: parser CFE XML y CSV, libro de movimientos y stock, emparejamiento con embeddings y reglas, UI de confirmación, extracción por visión, desempate con LLM con comparación de tres métodos, exportación de disponibilidad a la tienda online y piloto de 8 semanas. Las horas disponibles son del orden de 960 a 1536 para tres personas, dos de ellas con 10 horas por semana y trabajando. La exportación a la tienda online no nombra ninguna plataforma ni API (no hay ficha que diga cuál usa un comercio uruguayo), así que su esfuerzo es desconocido. La primera entrega se demuestra con datos sintéticos o anonimizados, no con un comercio. La segunda coincide con el piloto de 8 semanas, que deja casi sin margen para ajustes: si el piloto arranca tarde, la entrega final queda sin resultados.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 6,
+      "severidad": "MAJOR",
+      "titulo": "El costo cómodo depende de un droplet de 1 GiB que la propia idea dice que no alcanzaría",
+      "donde": "Costo de infraestructura: fila Droplet DigitalOcean 1 GiB",
+      "problema": "Un solo droplet de 1 GiB debe correr FastAPI, PostgreSQL, el front React y Docker, además de procesar lotes XML y CSV. La idea admite que con 2 GiB el costo de esa fila sería unos USD 260; sumando las demás filas (0 + 5 + 70 + 12) el total sería unos USD 347, sobre el tope de R1 (USD 300). Es decir, el margen de 173,4 contra 300 depende de que 1 GiB alcance, algo sin ninguna medición. Además, el volumen de 5.000 PDF y 10.000 desempates es un supuesto sin relación con el piloto de 3 a 5 comercios, y Qdrant gratis depende de una condición (menos de 100.000 vectores) que la idea no verifica. Si algún supuesto falla, el costo real pasa el tope.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 7,
+      "severidad": "MINOR",
+      "titulo": "El desafío de ingeniería es mayormente integración de servicios; privacidad de PDF y fotos sin base legal",
+      "donde": "Stack propuesto, Solución (visión y embeddings) y Riesgos (datos personales en CFE)",
+      "problema": "Embeddings con voyage-4-lite, Qdrant gratuito y Claude Haiku 4.5 son llamadas a servicios de terceros; el aporte propio es el emparejamiento línea a producto, y la idea no define métrica, baseline ni tamaño de corpus que lo vuelvan una tesis más allá de armar piezas. Además, los PDF y las fotos de comprobantes, con datos personales, salen a una API externa y la idea reconoce \"base legal no verificada\" para la Ley 18.331; el consentimiento por comercio no resuelve por sí solo la transferencia a un proveedor en el exterior. Por último, la página tiene 919 palabras contra un máximo de 700 según el chequeo automático.",
+      "tipo": "opinion",
+      "evidencia": []
+    }
+  ],
+  "nuevas_fichas": []
+}

@@ -1,0 +1,104 @@
+{
+ "id": "i006",
+ "titulo": "Chequeo previo de zonas sensibles y cobertura estimada para aplicadores con drones",
+ "problema": "Los drones aplicadores crecen en Uruguay: 30 vendidos en 2022 y 30 solo en el primer trimestre de 2023, a USD 35.000 a 45.000 cada uno, con datos de vuelo y aplicación por gestionar (F-agro-008). Quien aplica con drones debe respetar zonas buffer y registrar cada aplicación en el RAPF, que ya permite consultar, bajar o imprimir los registros (F-defensa-r1-m02-i006-001, F-defensa-r1-m02-i006-003); la aplicación aérea no puede ser a menos de 500 m de un centro educativo (F-defensa-r1-m02-i006-002). Ninguna ficha muestra una herramienta que verifique esas distancias antes de volar; que el operador chico lo hace a ojo es supuesto.",
+ "usuario": "Contratistas y productores que aplican con 1 a 3 drones. Paga el operador; su cliente recibe el reporte gratis.",
+ "solucion": "Web y PWA para el operador. Antes de volar (núcleo, el RAPF no lo cubre): importa el lote y PostGIS chequea la distancia a escuelas y centros poblados con capas abiertas. Después: importa el registro de vuelo (KML o traza manual), reconstruye franjas con el ancho declarado y estima hectáreas cubiertas, solapes y faltantes, con margen de error medido contra trazas simuladas. Sale un PDF de cobertura estimada para el cliente y un borrador de registro para copiar al RAPF. No reemplaza ni se integra al RAPF ni prueba cumplimiento. Producto y dosis se eligen de una lista.",
+ "mvp": {
+  "semestre_1": [
+   "Relevar capas abiertas y distancias; chequeo en PostGIS",
+   "Mapa web con lotes KML e importador KML, con carga manual como plan B",
+   "Entrevistas a 3 a 5 operadores: cómo verifican hoy las zonas, uso del RAPF, marca, formato y pago",
+   "Demo: planificar junto a una escuela y ver la advertencia"
+  ],
+  "semestre_2": [
+   "Reconstrucción de franjas: cobertura, solapes y faltantes, con margen de error medido sobre trazas simuladas",
+   "Borrador de registro para el RAPF y selección de producto y dosis desde lista",
+   "Reporte PDF de cobertura estimada e historial por lote",
+   "Demo con registros reales o simulados; piloto de 2 a 4 operadores si hay temporada"
+  ]
+ },
+ "stack": [
+  "React + Vite (PWA)",
+  "Mapbox GL JS",
+  "Python FastAPI",
+  "PostgreSQL + PostGIS",
+  "Shapely",
+  "WeasyPrint",
+  "Docker Compose",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 159,
+  "items": [
+   {
+    "concepto": "AWS Lightsail Linux 2 GB, IPv4",
+    "usd_anual": 144,
+    "supuesto": "USD 12 por mes x 12; API, PostGIS y geoprocesamiento en Docker. Sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "Mapbox GL JS",
+    "usd_anual": 0,
+    "supuesto": "Capa gratuita de 50.000 cargas por mes, renovada mensualmente sin vencimiento indicado; el piloto usa menos de 3.000.",
+    "fuente_precio_url": "https://www.mapbox.com/pricing"
+   },
+   {
+    "concepto": "Dominio",
+    "usd_anual": 15,
+    "supuesto": "Estimación por encima de un .com por un año; Cloudflare Registrar no publica el precio en su página."
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Sistema GMA (MGAP)",
+   "evidencia_ids": [
+    "F-agro-005"
+   ],
+   "hueco": "Prueba de 2019 en Soriano para alertar conflictos con escuelas y centros poblados; la ficha no dice a quién llega la alerta ni si se extendió a drones. Si llegara al aplicador, cubriría el chequeo previo: riesgo declarado."
+  },
+  {
+   "nombre": "RAPF (MGAP)",
+   "evidencia_ids": [
+    "F-defensa-r1-m02-i006-003"
+   ],
+   "hueco": "Registro oficial y gratuito que el usuario puede consultar, bajar o imprimir; la ficha no muestra chequeo previo de distancias ni cobertura. No compite con el registro."
+  },
+  {
+   "nombre": "App del fabricante (DJI), AirData y AcreConnect",
+   "evidencia_ids": [
+    "F-defensa-r1-m02-i006-004",
+    "F-defensa-r1-m02-i006-005"
+   ],
+   "hueco": "Manejan KML; ninguna ficha muestra chequeo de zonas uruguayas ni formato para el RAPF (ausencia de ficha, no comprobada). Podrían agregarlo: la defensa es norma y capas uruguayas y canal con distribuidores."
+  }
+ ],
+ "monetizacion": "El operador paga USD 250 por año por drone; su cliente no paga. Canal: distribuidores de drones y contacto directo. Ninguna ficha muestra disposición a pagar ni costo de multa: el precio es hipótesis a validar en entrevistas. Escenario: 20 drones al tercer año = USD 5.000 por año, sobre un parque desconocido (las fichas dan 60 vendidos entre 2022 y el primer trimestre de 2023, sin total acumulado, F-agro-008); crecer exige Argentina o Brasil, sin ficha ni contacto. Sostiene un MVP y un business case de tesis, no una empresa independiente.",
+ "riesgos": [
+  "Formatos de vuelo cerrados o distintos según la marca.",
+  "El KML no trae telemetría detallada (F-defensa-r1-m02-i006-005): la cobertura es estimación con margen de error.",
+  "Mercado chico; fabricantes pueden copiar la función. Mitigación parcial: norma y capas uruguayas, distribuidores.",
+  "El RAPF o el GMA podrían cubrir el chequeo previo gratis.",
+  "Un falso negativo perjudica: el producto advierte, no habilita."
+ ],
+ "supuestos": [
+  "El operador chico verifica hoy las zonas a ojo o con un mapa genérico, y pagaría USD 250 por año por drone por el chequeo previo.",
+  "Los clientes valoran un reporte de cobertura; ninguna ficha lo muestra. Se desconoce el costo de una multa.",
+  "El RAPF no ofrece carga automática desde herramientas externas: a confirmar; el borrador se copia a mano.",
+  "La marca dominante se desconoce; el KML de DJI está documentado.",
+  "Hay capas abiertas utilizables; los 500 m rigen para drones; la distancia a centros poblados es a relevar.",
+  "Se llega a operadores antes de diciembre de 2026, sin contacto identificado.",
+  "El MVP usa polígonos sin titular (Ley 18.331).",
+  "Datos de 2019 y 2023."
+ ],
+ "evidencias": [
+  "F-agro-008",
+  "F-agro-005",
+  "F-defensa-r1-m02-i006-001",
+  "F-defensa-r1-m02-i006-002",
+  "F-defensa-r1-m02-i006-003",
+  "F-defensa-r1-m02-i006-004",
+  "F-defensa-r1-m02-i006-005"
+ ]
+}

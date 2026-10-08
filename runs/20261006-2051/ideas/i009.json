@@ -1,0 +1,92 @@
+{
+ "id": "i009",
+ "titulo": "Portal de devoluciones con clasificación automática para tiendas online pyme",
+ "problema": "En Uruguay, 56% de los compradores online cita la dificultad para devolver productos como barrera de compra (F-comercio-retail-002). Solo 8% de las pymes con e-commerce gestiona devoluciones y ninguna mide la eficiencia de sus procesos; operar así es costoso e impracticable (F-comercio-retail-003). El canal superó los 100.000 millones de pesos en 2025, +32% (F-comercio-retail-001). El costo por tienda no está cuantificado: se medirá en entrevistas.",
+ "usuario": "Paga y usa el panel el dueño de una tienda online pyme uruguaya (Tiendanube, otra plataforma o venta por redes). El comprador usa el portal gratis.",
+ "solucion": "Portal con la marca de la tienda donde el comprador indica su pedido, describe el problema y sube fotos. Un modelo de lenguaje con visión clasifica el motivo (talle, defecto, no coincide con la publicación, arrepentimiento), lo contrasta con la política de la tienda y propone cambio, crédito, reembolso o rechazo, justificado. El comercio aprueba con un clic y el comprador recibe un email. Un panel muestra motivos por producto y la tienda publica su política clara antes de la compra.",
+ "mvp": {
+  "semestre_1": [
+   "Portal y panel con pedidos por CSV y política configurable.",
+   "Clasificador de motivo (texto y foto) evaluado sobre 300 casos etiquetados.",
+   "Entrega 1: demo de punta a punta con avisos por email."
+  ],
+  "semestre_2": [
+   "Pedidos por API de Tiendanube (CSV como plan B).",
+   "Resolución sugerida, midiendo cuántas acepta el comercio sin cambios.",
+   "Panel de motivos por producto y página pública de política.",
+   "Entrega 2: piloto de 6 semanas con 3 a 5 tiendas."
+  ]
+ },
+ "stack": [
+  "FastAPI",
+  "PostgreSQL",
+  "React",
+  "Claude Haiku 4.5 (texto e imagen)",
+  "Docker",
+  "Amazon Lightsail",
+  "Amazon SES"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 158,
+  "items": [
+   {
+    "concepto": "Servidor Lightsail 1 GB",
+    "usd_anual": 84,
+    "supuesto": "USD 7 por mes, 12 meses; API, base y frontend en Docker. Sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "Claude Haiku 4.5",
+    "usd_anual": 60,
+    "supuesto": "USD 1 y 5 por millón de tokens de entrada y salida; 5.000 y 500 por caso (USD 0,0075). Piloto 1.200 casos (USD 9), evaluación de 4.500 casos en lote al 50% (USD 17), pruebas (USD 20); redondeado.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "Amazon SES",
+    "usd_anual": 2,
+    "supuesto": "USD 0,10 cada 1.000 emails; menos de 10.000.",
+    "fuente_precio_url": "https://aws.amazon.com/ses/pricing/"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 12,
+    "supuesto": "USD 11,08 por año, redondeado.",
+    "fuente_precio_url": "https://porkbun.com/products/domains"
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Tiendanube",
+   "evidencia_ids": [
+    "F-comercio-retail-007"
+   ],
+   "hueco": "Plataforma de la tienda con planes mensuales; la ficha no muestra devoluciones, pero podría agregarlas. El portal también acepta pedidos por CSV de otros canales."
+  }
+ ],
+ "monetizacion": "Paga la tienda: USD 15 por mes hasta 50 devoluciones y USD 35 hasta 200, con un mes de prueba. Tiendanube ya cobra planes mensuales en la región (F-comercio-retail-007). Costo de IA: USD 0,0075 por devolución. Canal: redes, el eCommerce Day Uruguay (F-comercio-retail-004) y la tienda de aplicaciones de Tiendanube. Con 100 tiendas a USD 20 promedio: USD 24.000 por año.",
+ "riesgos": [
+  "Tiendas con pocas devoluciones pueden no pagar una herramienta aparte.",
+  "Tiendanube puede sumar devoluciones gratis a su plan.",
+  "El envío de vuelta (F-comercio-retail-004) queda fuera del MVP y puede ser el dolor mayor.",
+  "Datos de compradores: cumplir la Ley 18.331."
+ ],
+ "supuestos": [
+  "Las devoluciones llegan hoy por WhatsApp o email y se resuelven a mano; ordenarlas sube la conversión.",
+  "Disposición a pagar USD 15 a 35 por mes.",
+  "Tamaño del segmento desconocido; las mipymes son 97% de las empresas (F-comercio-retail-010).",
+  "Tiendanube tiene API de pedidos y tienda de aplicaciones.",
+  "La Ley 17.250 da 5 días hábiles para rescindir compras a distancia; a confirmar.",
+  "Las fichas no muestran herramientas de devoluciones locales; puede haberlas.",
+  "Sin contactos en comercio: pilotos por redes y eventos.",
+  "Volúmenes de costo: 5 tiendas, 40 devoluciones por mes, 6 meses."
+ ],
+ "evidencias": [
+  "F-comercio-retail-002",
+  "F-comercio-retail-003",
+  "F-comercio-retail-001",
+  "F-comercio-retail-007",
+  "F-comercio-retail-004",
+  "F-comercio-retail-010"
+ ]
+}

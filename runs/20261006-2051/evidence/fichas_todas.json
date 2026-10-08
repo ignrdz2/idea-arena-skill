@@ -1,0 +1,904 @@
+{
+ "fichas": [
+  {
+   "id": "F-agro-001",
+   "sector": "agro",
+   "hallazgo": "Una app uruguaya, miTambo, permite registrar eventos reproductivos, sanitarios y del rodeo de un tambo en tablet o celular sin internet, por unos USD 10 mensuales con prueba gratis. Muestra que hay una oferta barata para tambos chicos, pero de alcance acotado a lechería.",
+   "source_url": "https://news.agrofy.com.ar/noticia/187935/app-uruguaya-podria-organizar-nuestros-tambos-chicos",
+   "source_title": "Una app uruguaya podría organizar nuestros tambos chicos",
+   "source_date": "2020-07-01",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-06T21:05:00",
+   "extracto": "La idea era hacer una aplicación en la cual se puedan registrar eventos reproductivos, de sanidad, de todo el rodeo de un tambo.",
+   "competidor": "miTambo",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-06T20:52:51",
+    "extracto": "encontrado",
+    "aviso": "fuente de hace 6 años"
+   }
+  },
+  {
+   "id": "F-agro-002",
+   "sector": "agro",
+   "hallazgo": "Por la ley de trazabilidad de 2006 (obligatoria desde 2010), los productores uruguayos deben notificar al SNIG del MGAP movimientos, cambios de propiedad y eventos productivos y sanitarios de cada bovino; hay más de 12 millones de bovinos identificados. Es una carga administrativa recurrente para todo productor ganadero.",
+   "source_url": "https://www.gub.uy/ministerio-ganaderia-agricultura-pesca/tramites-y-servicios/servicios/sistema-nacional-informacion-ganadera",
+   "source_title": "Sistema Nacional de Información Ganadera",
+   "source_date": "desconocida",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-06T21:06:00",
+   "extracto": "En Uruguay hay más 12 millones de bovinos identificados y registrados.",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-06T20:52:51",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-agro-003",
+   "sector": "agro",
+   "hallazgo": "En lechería uruguaya los pequeños establecimientos van desapareciendo y el costo de producción ya es igual al de Nueva Zelanda, cuando antes era 40% menor; la productividad por vaca es inferior a la de Nueva Zelanda o Argentina. Hay presión de competitividad sobre tambos chicos.",
+   "source_url": "https://www.xn--lamaana-7za.uy/?p=28633",
+   "source_title": "La lechería es el sector de mayor derrame y mayor multiplicador de la economía",
+   "source_date": "2021-11-09",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-06T21:07:00",
+   "extracto": "Los pequeños establecimientos van desapareciendo y esas son pérdidas muy importantes desde todo punto de vista",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-06T20:52:51",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-agro-004",
+   "sector": "agro",
+   "hallazgo": "El MGAP presentó en Expo Prado 2024 el proyecto Guías Digitales para digitalizar las guías de propiedad y tránsito de ganado, con una primera fase con productores seleccionados desde septiembre. Indica que el Estado ya digitaliza ese trámite y que hay que integrarse a su flujo.",
+   "source_url": "https://www.gub.uy/ministerio-ganaderia-agricultura-pesca/comunicacion/noticias/proyecto-guias-digitales",
+   "source_title": "MGAP presentó el proyecto Guías Digitales en Expo Prado",
+   "source_date": "2024-09-11",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-06T21:08:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-06T20:52:51",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-agro-005",
+   "sector": "agro",
+   "hallazgo": "El sistema oficial GMA de monitoreo satelital de aplicaciones de agroquímicos se probó en Soriano con 23 empresas aplicadoras y 33 dispositivos sobre 100.000 hectáreas, para alertar de conflictos con centros urbanos, poblaciones rurales o escuelas.",
+   "source_url": "https://www.gub.uy/ministerio-ganaderia-agricultura-pesca/comunicacion/noticias/dgsa-presento-sistema-monitoreo-satelital-agroquimicos-senado",
+   "source_title": "DGSA presentó sistema de monitoreo satelital de agroquímicos en el Senado",
+   "source_date": "2019-09-06",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-06T21:09:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-06T20:52:51",
+    "extracto": "sin_extracto",
+    "aviso": "fuente de hace 7 años"
+   }
+  },
+  {
+   "id": "F-agro-006",
+   "sector": "agro",
+   "hallazgo": "Cattler, startup argentina de gestión ganadera enfocada en feedlots, opera en Uruguay y otros países de América y declara crecer cerca de 20% mensual. Es un competidor regional con foco en engorde a corral, no en sistemas pastoriles.",
+   "source_url": "https://www.descubre.vc/noticia/cattler-busca-expandirse-a-toda-am-rica-2023-11-28",
+   "source_title": "Cattler busca expandirse a toda América",
+   "source_date": "2023-11",
+   "source_type": "competidor",
+   "geografia": "LATAM",
+   "confianza": "media",
+   "retrieved_at": "2026-10-06T21:10:00",
+   "competidor": "Cattler",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-06T20:52:51",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-agro-007",
+   "sector": "agro",
+   "hallazgo": "Albor, software de gestión de campos ganaderos de origen paraguayo, se alquila desde USD 115 por mes (licencia, hosting y mantenimiento) e integra trazabilidad por caravana con contabilidad, compras, ventas y sueldos. Referencia de precio de un competidor completo, probablemente alto para productores chicos.",
+   "source_url": "https://infonegocios.com.py/amp/infoganaderia/albor-software-que-simplifica-eficazmente-la-gestion-de-campos-ganaderos",
+   "source_title": "Albor: Software que simplifica eficazmente la gestión de campos ganaderos",
+   "source_date": "2018-11-26",
+   "source_type": "competidor",
+   "geografia": "PY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-06T21:11:00",
+   "competidor": "Albor",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-06T20:52:51",
+    "extracto": "sin_extracto",
+    "aviso": "fuente de hace 8 años"
+   }
+  },
+  {
+   "id": "F-agro-008",
+   "sector": "agro",
+   "hallazgo": "En Uruguay se vendieron 30 drones aplicadores en 2022 y otros 30 solo en el primer trimestre de 2023, a USD 35.000 a 45.000 cada uno; se usa menos producto por hectárea. Crece la demanda de servicios de aplicación con drones, con datos de vuelo y aplicación por gestionar.",
+   "source_url": "https://www.elobservador.com.uy/nota/la-nueva-frontera-del-agro-esta-en-el-aire-20234229042",
+   "source_title": "La nueva frontera del agro está en el aire",
+   "source_date": "2023-04-22",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-06T21:12:00",
+   "extracto": "se usa menos producto por hectárea, eso está comprobado",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-06T20:52:51",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m01-i005-cliente-001",
+   "sector": "comercio-retail",
+   "hallazgo": "Fixed, facturador electrónico uruguayo, ofrece 'Gestión de productos con control de stock (criterio FIFO)' dentro de su plan Ilimitado: UYU 2.140 por mes, o UYU 1.626 con beneficio fiscal.",
+   "source_url": "https://fixed.uy/",
+   "source_title": "Fixed Factura Electrónica",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-07T12:00:00",
+   "extracto": "Gestión de productos con control de stock (criterio FIFO)",
+   "competidor": "Fixed",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-07T10:10:39",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m01-i005-cliente-002",
+   "sector": "comercio-retail",
+   "hallazgo": "gestionUltimate, sistema en la nube para comercios de Uruguay, ofrece stock unificado entre local y ecommerce y emisión de e-Ticket y e-Factura integrados a DGI desde el punto de venta.",
+   "source_url": "https://gestionultimate.com/soluciones/tiendas-retail/",
+   "source_title": "Software de Punto de Venta para Tiendas en Uruguay",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-07T12:00:00",
+   "extracto": "Stock unificado y ecommerce",
+   "competidor": "gestionUltimate",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-07T10:10:39",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-ataque-r2-m01-i002-competidor-001",
+   "sector": "agro",
+   "hallazgo": "El MGAP lanzo en noviembre de 2016 una app movil del SNIG para productores, con consultas de animales, tramite de muerte, descarte de caravanas, reidentificacion y extravio; su director la presento como la primera de una serie de aplicaciones para productores.",
+   "source_url": "https://www.gub.uy/ministerio-ganaderia-agricultura-pesca/comunicacion/noticias/snig-lanzo-aplicacion-movil-para-productores-tenedores-ganando-usuarios-del",
+   "source_title": "SNIG lanzo una aplicacion movil para productores tenedores de ganado usuarios del sistema",
+   "source_date": "2016-11-09",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-07T10:30:00",
+   "extracto": "consultas de animales, tramitar muerte, descarte de caravanas, reidentificación, extravío",
+   "competidor": "App SNIG (MGAP)",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-07T10:22:24",
+    "extracto": "encontrado",
+    "aviso": "fuente de hace 10 años"
+   }
+  },
+  {
+   "id": "F-ataque-r2-m01-i002-competidor-002",
+   "sector": "agro",
+   "hallazgo": "Gecos ofrece en Uruguay un Sistema de Gestion Ganadera con trazabilidad por caravanas, reloteo, registro de pesajes y tratamientos y una funcion de conciliacion con el SNIG.",
+   "source_url": "https://gecos.com.uy/soluciones/administracion-ganadera-software/",
+   "source_title": "Administracion Ganadera en Uruguay | Gecos SGG",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-07T10:30:00",
+   "extracto": "Conciliación SNIG",
+   "competidor": "Gecos SGG",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-07T10:22:24",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-ataque-r2-m01-i009-competidor-001",
+   "sector": "comercio-retail",
+   "hallazgo": "Boris Cambios y Devoluciones es una app de la tienda de aplicaciones de Tiendanube que ofrece portal personalizado, panel y gestion de etiquetas logisticas para cambios y devoluciones, con modelo freemium y foco en LATAM.",
+   "source_url": "https://www.tiendanube.com/tienda-aplicaciones-nube/boris",
+   "source_title": "Boris | Cambios y Devoluciones - Tienda de Aplicaciones Tiendanube",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "LATAM",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-07T12:00:00",
+   "extracto": "Automatizá tus cambios y devoluciones, fidelizá clientes y aumentá tus ventas",
+   "competidor": "Boris",
+   "verificacion": {
+    "estado": "bloqueada",
+    "http": null,
+    "checked_at": "2026-10-07T10:22:19",
+    "extracto": "no_verificable"
+   }
+  },
+  {
+   "id": "F-ataque-r2-m01-i009-competidor-002",
+   "sector": "comercio-retail",
+   "hallazgo": "Undo es una app de cambios y devoluciones en la tienda de aplicaciones de Tiendanube: se integra con Tiendanube, correos y medios de pago, y figura como gratuita con compras dentro de la app, para LATAM hispanohablante.",
+   "source_url": "https://www.tiendanube.com/tienda-aplicaciones-nube/undo",
+   "source_title": "Undo | Cambios y Devoluciones - Tienda de Aplicaciones Tiendanube",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "LATAM",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-07T12:00:00",
+   "extracto": "Undo es tu aliado para simplificar la gestión de cambios y devoluciones.",
+   "competidor": "Undo",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-07T10:22:19",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-comercio-retail-001",
+   "sector": "comercio-retail",
+   "hallazgo": "Las ventas de comercio electrónico en Uruguay superaron los 100.000 millones de pesos en 2025 (+32%), con 96,3 millones de transacciones, unos USD 2.980 millones y 3% del PIB. El crecimiento viene de más frecuencia de compra, con ticket estable de unos 1.290 pesos.",
+   "source_url": "https://www.ambito.com/uruguay/el-comercio-electronico-supero-los-100000-millones-ventas-2025-y-crecio-32-el-ano-n6306222",
+   "source_title": "El comercio electrónico superó los $100.000 millones en ventas en 2025 y creció 32% en el año",
+   "source_date": "2026-08-02",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-06T21:00:00",
+   "extracto": "Siete de cada diez uruguayos compran online de forma habitual",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-06T20:52:51",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-comercio-retail-002",
+   "sector": "comercio-retail",
+   "hallazgo": "El e-commerce uruguayo se multiplicó por siete desde 2020 mientras el consumo general crece cerca de 2%. Entre las barreras del comprador, 56% cita la dificultad para devolver productos y 45% quiere mejores opciones de pago; 62% investiga en redes pero solo un tercio compra.",
+   "source_url": "https://www.elobservador.com.uy/ciencia-y-tecnologia/el-valor-del-comercio-electronico-uruguay-se-acerca-los-us-3000-millones-y-el-efecto-temu-es-apenas-una-fraccion-n6052553/amp",
+   "source_title": "El valor del comercio electrónico en Uruguay se acerca a los US$ 3.000 millones y el efecto Temu es apenas una fracción",
+   "source_date": "desconocida",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-06T21:02:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-06T20:52:51",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-comercio-retail-003",
+   "sector": "comercio-retail",
+   "hallazgo": "Un estudio de UTEC sobre logística de e-commerce en pymes uruguayas halló que solo 8% gestiona devoluciones, ninguna empresa consultada mide la eficiencia de sus procesos y la tecnología se usa de forma muy básica. Concluye que operar el e-commerce de forma artesanal es costoso e impracticable.",
+   "source_url": "https://www.elobservador.com.uy/nota/las-lecciones-pendientes-de-las-pymes-despues-del-boom-del-e-commerce-202321616450/amp",
+   "source_title": "Las lecciones pendientes de las pymes después del boom del e-commerce",
+   "source_date": "2023-02-17",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-06T21:04:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-06T20:52:51",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-comercio-retail-004",
+   "sector": "comercio-retail",
+   "hallazgo": "En el eCommerce Day Uruguay 2024 se señalaron como desafíos los costos y tiempos de envío por la población dispersa y que muchas pymes carecen de herramientas digitales completas. El e-commerce pasó de 3,3% a 3,8% de las ventas de consumo masivo en el primer semestre de 2024.",
+   "source_url": "https://www.montevideo.com.uy/Negocios-y-Tendencias/eCommerce-Day-Uruguay-2024-desafios-del-comercio-electronico-en-el-pais-uc897144",
+   "source_title": "eCommerce Day Uruguay 2024: desafíos del comercio electrónico en el país",
+   "source_date": "2024-08-14",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-06T21:06:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-06T20:52:51",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-comercio-retail-005",
+   "sector": "comercio-retail",
+   "hallazgo": "Entre abril 2025 y marzo 2026 hubo 87,2 millones de transacciones online en Uruguay por unos USD 2.830 millones; la tarjeta de crédito concentra 68% del valor y el ticket medio ronda USD 33. Q1 2026 creció 35% interanual.",
+   "source_url": "https://www.montevideo.com.uy/Noticias/El-comercio-electronico-crece-35-en-Uruguay-y-supera-los-US-800-millones-uc960929",
+   "source_title": "El comercio electrónico crece 35% en Uruguay y supera los US$ 800 millones",
+   "source_date": "2026-05-04",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-06T21:08:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-06T20:52:51",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-comercio-retail-006",
+   "sector": "comercio-retail",
+   "hallazgo": "YoFacturo, software uruguayo, vende catálogo, emisión de CFE e inventario integrados con prueba gratuita de un mes. Su propio contenido describe los dolores de comercios chicos: stock desactualizado, vender productos agotados y cargas duplicadas por separar facturación e inventario.",
+   "source_url": "https://yo-facturo.com/blog/controlar-stock-comercio-facturacion/",
+   "source_title": "Control de stock y facturación en Uruguay",
+   "source_date": "2026-06-22",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-06T21:10:00",
+   "competidor": "YoFacturo",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-06T20:52:51",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-comercio-retail-007",
+   "sector": "comercio-retail",
+   "hallazgo": "Tiendanube cobra planes mensuales sin comisión por venta y con 7 días de prueba (por ejemplo Chile: CLP 5.999, 14.999 y 44.999; Colombia: COP 24.900 a 149.900). La página no muestra precios de Uruguay, así que sirve solo como referencia regional de precio.",
+   "source_url": "https://www.tiendanube.com/blog/precio-tiendanube/",
+   "source_title": "Precio Tiendanube: planes, costos y cómo elegir el ideal",
+   "source_date": "2026-06-19",
+   "source_type": "precios",
+   "geografia": "LATAM",
+   "confianza": "media",
+   "retrieved_at": "2026-10-06T21:12:00",
+   "competidor": "Tiendanube",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-06T20:52:51",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-comercio-retail-008",
+   "sector": "comercio-retail",
+   "hallazgo": "Según una guía del gobierno de EE.UU., Uruguay compra más de 90% de sus productos online a China y EE.UU., y los bienes importados cuestan cerca de la mitad del precio local; el régimen exento permite tres compras anuales de hasta USD 200. Presión de precios sobre el comercio local.",
+   "source_url": "https://www.trade.gov/knowledge-product/uruguay-ecommerce",
+   "source_title": "Uruguay - eCommerce",
+   "source_date": "2022-09-22",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-06T21:14:00",
+   "verificacion": {
+    "estado": "bloqueada",
+    "http": null,
+    "checked_at": "2026-10-06T20:52:51",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-comercio-retail-009",
+   "sector": "comercio-retail",
+   "hallazgo": "Una nota de CUTI de 2016 recoge que la economista de la Cámara de Comercio decía que todos los sectores encuestados menos uno tenían caída de ventas, y que las compras al exterior gozaban de ventajas tributarias frente al comercio local. Dato viejo, útil solo como contexto estructural.",
+   "source_url": "https://cuti.org.uy/en/noticias/de-socios/empresas-buscan-su-oportunidad-en-el-comercio-electronico/",
+   "source_title": "Empresas buscan su oportunidad en el comercio electrónico",
+   "source_date": "2016-06-29",
+   "source_type": "otro",
+   "geografia": "UY",
+   "confianza": "baja",
+   "retrieved_at": "2026-10-06T21:00:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-06T20:52:51",
+    "extracto": "sin_extracto",
+    "aviso": "fuente de hace 10 años"
+   }
+  },
+  {
+   "id": "F-comercio-retail-010",
+   "sector": "comercio-retail",
+   "hallazgo": "El MIEM declaró en 2020 que las mipymes son 97% de las empresas de Uruguay y que la digitalización y el comercio electrónico de las mipymes eran prioridad, con una estrategia nacional planificada. Muestra el tamaño del segmento pyme.",
+   "source_url": "https://www.gub.uy/ministerio-industria-energia-mineria/comunicacion/noticias/verri-dijo-comercio-electronico-digitalizacion-mipymes-son-prioritarias-para",
+   "source_title": "Verri dijo que el comercio electrónico y la digitalización de las mipymes son prioritarias para la administración",
+   "source_date": "2020-11-19",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-06T21:15:00",
+   "extracto": "Las mipymes constituyen el 97 % del total de empresas del Uruguay",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-06T20:52:51",
+    "extracto": "encontrado",
+    "aviso": "fuente de hace 6 años"
+   }
+  },
+  {
+   "id": "F-defensa-r1-m01-i005-001",
+   "sector": "comercio-retail",
+   "hallazgo": "Fixed, facturador uruguayo, vende el control de stock (criterio FIFO) solo en su plan más caro: UYU 2.140 por mes, contra UYU 980 del plan Ilimitado sin stock (UYU 1.626 y 466 con beneficio fiscal).",
+   "source_url": "https://fixed.uy/",
+   "source_title": "Fixed Factura Electrónica",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-07T13:00:00",
+   "extracto": "Gestión de productos con control de stock (criterio FIFO)",
+   "competidor": "Fixed",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-07T10:10:39",
+    "extracto": "no_verificable"
+   }
+  },
+  {
+   "id": "F-defensa-r1-m02-i004-001",
+   "sector": "transversal",
+   "hallazgo": "Un artículo de BBVA Uruguay (2018) estima unas 170.000 pymes en el país y afirma que sus flujos de caja suelen ser irregulares, lo que genera necesidad de recursos extra para pagar proveedores, tributos y seguridad social.",
+   "source_url": "https://www.bbva.com/es/cuenta-express-producto-especial-pymes-uruguayas/",
+   "source_title": "BBVA Cuenta Express, producto especial para pymes uruguayas",
+   "source_date": "2018-05-28",
+   "source_type": "otro",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-07T10:00:00",
+   "extracto": "Normalmente sus flujos de caja son irregulares por lo tanto, generan necesidades de recursos extras",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-07T10:16:39",
+    "extracto": "encontrado",
+    "aviso": "fuente de hace 8 años"
+   }
+  },
+  {
+   "id": "F-defensa-r1-m02-i006-001",
+   "sector": "agro",
+   "hallazgo": "El MGAP exige a quienes aplican fitosanitarios con drones inscribirse en el RUO y el REA, tener carnet de aplicador, respetar las zonas buffer de centros educativos, centros poblados y cursos de agua, y registrar las aplicaciones en el RAPF.",
+   "source_url": "https://www.gub.uy/ministerio-ganaderia-agricultura-pesca/comunicacion/noticias/aplicaciones-aereas-productos-fitosanitarios-drones",
+   "source_title": "Aplicaciones aéreas de productos fitosanitarios con drones (MGAP)",
+   "source_date": "desconocida",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-07T10:00:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-07T10:16:38",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-defensa-r1-m02-i006-002",
+   "sector": "agro",
+   "hallazgo": "La Resolución 188/011 del MGAP prohíbe las aplicaciones aéreas de fitosanitarios a menos de 500 metros del límite del predio de centros educativos, y las terrestres mecanizadas a menos de 300 metros.",
+   "source_url": "https://www.gub.uy/ministerio-ganaderia-agricultura-pesca/institucional/normativa/resolucion-n-188011-del-mgap-25112011-distancias-aplicaciones-cercanias",
+   "source_title": "Resolución N° 188/011 del MGAP, distancias de aplicaciones en cercanías a centros educativos",
+   "source_date": "2011-11-25",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-07T10:00:00",
+   "extracto": "Prohíbense las aplicaciones aéreas de productos fitosanitarios en todo tipo de cultivo, a una distancia inferior a 500 metros del límite del predio de centros educativos.",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-07T10:16:38",
+    "extracto": "encontrado",
+    "aviso": "fuente de hace 15 años"
+   }
+  },
+  {
+   "id": "F-defensa-r1-m02-i006-003",
+   "sector": "agro",
+   "hallazgo": "El RAPF es un sistema en línea del MGAP, operativo desde septiembre de 2022, donde se registran las aplicaciones de fitosanitarios hechas con equipos terrestres grandes, aviones o drones, hasta 7 días corridos después de aplicar; el usuario puede consultar, bajar o imprimir sus registros.",
+   "source_url": "https://www.gub.uy/tramites/registro-aplicaciones-productos-fitosanitarios-rapf",
+   "source_title": "Registro de Aplicaciones de Productos Fitosanitarios (RAPF)",
+   "source_date": "desconocida",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-07T10:00:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-07T10:16:38",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-defensa-r1-m02-i006-004",
+   "sector": "agro",
+   "hallazgo": "Los registros de vuelo de los drones DJI Agras se exportan desde la plataforma del fabricante como archivo KML, y herramientas de terceros como AcreConnect permiten cargar ese KML.",
+   "source_url": "https://help.acreconnect.io/en/articles/10186084-downloading-dji-kml-flight-logs",
+   "source_title": "Downloading DJI KML Flight Logs (AcreConnect)",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "GLOBAL",
+   "confianza": "media",
+   "retrieved_at": "2026-10-07T10:00:00",
+   "extracto": "Click on 'Export KML File' on the bottom of the screen.",
+   "competidor": "AcreConnect",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-07T10:16:38",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-defensa-r1-m02-i006-005",
+   "sector": "agro",
+   "hallazgo": "AirData recibe los registros de vuelo de DJI Agras desde SmartFarm en formato KML, que según su soporte no incluye telemetría detallada; la herramienta muestra batería, velocidad y actividad del pulverizador.",
+   "source_url": "https://app.airdata.com/wiki/Help/DJI+AGRAS",
+   "source_title": "DJI AGRAS (AirData wiki)",
+   "source_date": "2026-06",
+   "source_type": "competidor",
+   "geografia": "GLOBAL",
+   "confianza": "media",
+   "retrieved_at": "2026-10-07T10:00:00",
+   "extracto": "AirData receives AGRAS flight logs from DJI's SmartFarm platform in KML format.",
+   "competidor": "AirData",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-07T10:16:38",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-defensa-r1-m03-i009-001",
+   "sector": "transversal",
+   "hallazgo": "La API pública de Tiendanube permite a una app de un socio listar las órdenes de una tienda mediante GET /orders, con paginación.",
+   "source_url": "https://tiendanube.github.io/api-documentation/resources/order",
+   "source_title": "Order - Tiendanube API documentation",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "LATAM",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-07T12:00:00",
+   "extracto": "Receive a list of all Orders",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-07T10:16:42",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-defensa-r1-m03-i009-002",
+   "sector": "transversal",
+   "hallazgo": "El artículo 16 de la Ley 17.250 da al consumidor cinco días hábiles desde el contrato o la entrega para rescindir compras ofrecidas fuera del establecimiento, por medios como la computadora.",
+   "source_url": "https://www.impo.com.uy/bases/leyes/17250-2000",
+   "source_title": "Ley N° 17250 (IMPO)",
+   "source_date": "desconocida",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-07T12:00:00",
+   "extracto": "dentro de los cinco días hábiles contados desde la formalización del contrato o de la entrega del producto",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-07T10:16:42",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-defensa-r1-m03-i009-003",
+   "sector": "transversal",
+   "hallazgo": "Para transferir datos personales desde Uruguay a países sin protección adecuada, se recomiendan cláusulas contractuales, con contenido mínimo en la Resolución 41/021 de la URCDP.",
+   "source_url": "https://www.pdelc.com.uy/en/news/corporate/transferencia-internacional-de-datos-personales-desde-uruguay/",
+   "source_title": "Transferencia internacional de datos personales desde Uruguay",
+   "source_date": "desconocida",
+   "source_type": "otro",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-07T12:00:00",
+   "extracto": "cláusulas contractuales adecuadas pueden llegar a garantizar una protección apropiada",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-07T10:16:42",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-defensa-r1-m04-i007-001",
+   "sector": "fintech-seguros",
+   "hallazgo": "Guía de plataformas de protección de marca y suplantación (Bitsight, ZeroFox, Fortra, Bolster, Doppel, Red Points): todas figuran con precio personalizado, sin precio público.",
+   "source_url": "https://www.bitsight.com/guides/best-brand-protection-impersonation-monitoring-platforms",
+   "source_title": "Best Brand Protection & Impersonation Monitoring Platforms in 2026",
+   "source_date": "2026-07-22",
+   "source_type": "competidor",
+   "geografia": "GLOBAL",
+   "confianza": "media",
+   "retrieved_at": "2026-10-07T10:00:00",
+   "extracto": "Custom pricing based on brand assets and monitored channels.",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-07T10:16:44",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-defensa-r2-m01-i002-001",
+   "sector": "agro",
+   "hallazgo": "La página de Gecos describe su Administración Ganadera como sistema web de seguimiento individual de animales con caravanas electrónicas, y no menciona uso sin señal, captura por voz, app móvil ni precios.",
+   "source_url": "https://gecos.com.uy/soluciones/administracion-ganadera-software/",
+   "source_title": "Administracion Ganadera en Uruguay | Gecos SGG",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-07T11:30:00",
+   "extracto": "es un sistema web dirigido al seguimiento individual de animales",
+   "competidor": "Gecos SGG",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-07T10:22:24",
+    "extracto": "no_verificable"
+   }
+  },
+  {
+   "id": "F-defensa-r3-m01-i002-001",
+   "sector": "agro",
+   "hallazgo": "Al 30 de setiembre de 2024 había 15.850 unidades productivas familiares agropecuarias registradas en Uruguay; la ganadería de carne es la actividad principal del 53,17% de ellas, o sea más de 8.000 unidades.",
+   "source_url": "https://www.gub.uy/ministerio-ganaderia-agricultura-pesca/node/19515",
+   "source_title": "Caracterización de la agricultura familiar uruguaya (MGAP)",
+   "source_date": "2024-09",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-07T12:30:00",
+   "extracto": "los rubros de producción animal, en particular carne y lana, fundamentalmente bovina y ovina, comprenden la mayoría de los productores familiares del país (57%)",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-07T10:39:05",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-defensa-r3-m01-i002-002",
+   "sector": "transversal",
+   "hallazgo": "Desde Uruguay se puede transferir datos personales al exterior con cláusulas contractuales adecuadas (Resolución 41/021 de la URCDP) y a organizaciones del listado del Marco de Privacidad de Datos de EE.UU.; al recopilar datos hay que informar si hay transferencias internacionales (art. 13 F).",
+   "source_url": "https://www.pdelc.com.uy/en/news/corporate/transferencia-internacional-de-datos-personales-desde-uruguay/",
+   "source_title": "Transferencia internacional de datos personales desde Uruguay",
+   "source_date": "desconocida",
+   "source_type": "otro",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-07T12:35:00",
+   "extracto": "cláusulas contractuales adecuadas pueden llegar a garantizar una protección apropiada",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-07T10:16:42",
+    "extracto": "no_verificable"
+   }
+  },
+  {
+   "id": "F-defensa-r3-m01-i005-001",
+   "sector": "comercio-retail",
+   "hallazgo": "La DGI de Uruguay publica el formato de los CFE (versión 23.1 en 2022) y sus esquemas XSD para descarga en el portal de factura electrónica, por lo que el XML de los comprobantes tiene un formato público.",
+   "source_url": "https://sovos.com/es/cambios-regulatorios/iva/uruguay-dgi-libera-format-cfe-version-23-1/",
+   "source_title": "Uruguay: DGI libera el Formato de los CFE versión 23.1",
+   "source_date": "2022-08-04",
+   "source_type": "otro",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-07T12:00:00",
+   "extracto": "La documentación actualizada está disponible para su descarga",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-07T10:39:06",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-fintech-seguros-001",
+   "sector": "fintech-seguros",
+   "hallazgo": "Las denuncias por estafa en Uruguay pasaron de 1.872 en 2015 a 25.116 en 2024 (+1.242%), tercer delito más denunciado. El phishing es la técnica digital más frecuente y el Ministerio del Interior admite que la prevención depende más de cada persona que de la policía.",
+   "source_url": "https://www.elobservador.com.uy/nacional/estafas-la-epidemia-que-no-crecer-denuncias-se-multiplicaron-20-diez-anos-n5992836",
+   "source_title": "Estafas: la epidemia que no para de crecer, las denuncias se multiplicaron por 20 en diez años",
+   "source_date": "2025-04-07",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-06T21:10:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-06T20:52:51",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-fintech-seguros-002",
+   "sector": "fintech-seguros",
+   "hallazgo": "El director de riesgos de Itaú Uruguay advierte que los delincuentes usan IA para clonar sitios y campañas bancarias en segundos, y que las transferencias instantáneas (habilitadas en 2023) eliminan la ventana de recupero. Señala que no hay datos oficiales del BCU ni de la justicia sobre la magnitud del fraude financiero.",
+   "source_url": "https://www.elobservador.com.uy/ciencia-y-tecnologia/itau-advierte-un-aumento-sostenido-fraudes-financieros-uruguay-n5999191",
+   "source_title": "Itaú advierte un aumento sostenido de fraudes financieros en Uruguay",
+   "source_date": "2025-05-14",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-06T21:10:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-06T20:52:51",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-fintech-seguros-003",
+   "sector": "fintech-seguros",
+   "hallazgo": "Uruguay tiene 75% de los pagos por medios electrónicos, el efectivo cayó más de 40% en cinco años y las transferencias interbancarias son instantáneas. Hay infraestructura de pagos madura sobre la cual construir servicios.",
+   "source_url": "https://www.montevideo.com.uy/Noticias/Uruguay-avanza-hacia-una-economia-sin-efectivo-con-pagos-digitales-interoperables-uc939387",
+   "source_title": "Uruguay avanza hacia una economía sin efectivo con pagos digitales interoperables",
+   "source_date": "2025-10-10",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-06T21:10:00",
+   "extracto": "El 75% de los pagos en Uruguay ya se realizan por medios electrónicos, y las transferencias entre distintos bancos se ejecutan de manera instantánea y sin interrupciones horarias.",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-06T20:52:51",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-fintech-seguros-004",
+   "sector": "fintech-seguros",
+   "hallazgo": "ProtectU, insurtech uruguaya, recibió una inversión ángel de US$100.000 para una app que centraliza pólizas dispersas, las traduce a lenguaje simple y responde con IA si algo está cubierto. Apunta a 5.000 usuarios en 2026 y tiene alianzas con Sancor Seguros, SBI Seguros y Universal Assistance.",
+   "source_url": "https://www.latamfintech.co/articles/insurtech-uruguaya-protectu-recibio-una-inversion-angel-de-us-100-000-para-simplificar-los-seguros-con-ia",
+   "source_title": "Insurtech uruguaya ProtectU recibió una inversión ángel de US$100.000 para simplificar los seguros con IA",
+   "source_date": "2026-06-18",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-06T21:10:00",
+   "competidor": "ProtectU",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-06T20:52:51",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-fintech-seguros-005",
+   "sector": "fintech-seguros",
+   "hallazgo": "Foliume, startup de raíz uruguaya, levantó US$1 millón para automatizar con IA la cotización, renovación y gestión de siniestros de aseguradoras y corredores, procesando PDFs y correos no estructurados. Su foco comercial está en España, Alemania y Portugal, no en Uruguay.",
+   "source_url": "https://www.forbesargentina.com/negocios/la-startup-uruguaya-foliume-capto-us-1-millon-sus-planes-automatizar-sector-asegurador-ia-n70140",
+   "source_title": "La startup uruguaya Foliume captó US$ 1 millón: sus planes para automatizar el sector asegurador con IA",
+   "source_date": "2025-04-04",
+   "source_type": "competidor",
+   "geografia": "ES",
+   "confianza": "media",
+   "retrieved_at": "2026-10-06T21:10:00",
+   "competidor": "Foliume",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-06T20:52:51",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-fintech-seguros-006",
+   "sector": "fintech-seguros",
+   "hallazgo": "Uruguay tiene 21 startups insurtech registradas oficialmente, lo que indica un ecosistema activo con competidores locales ya presentes en seguros.",
+   "source_url": "https://ecosistemastartup.com/startups-uruguayas-destacan-en-el-nicho-de-tecnologia-de-seguros-en-latinoamerica/",
+   "source_title": "Startups uruguayas destacan en el nicho de tecnología de seguros en Latinoamérica",
+   "source_date": "2025-09-02",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-06T21:10:00",
+   "extracto": "Uruguay surge como un referente emergente, contabilizando oficialmente 21 startups insurtech registradas en el país",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-06T20:52:51",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-fintech-seguros-007",
+   "sector": "fintech-seguros",
+   "hallazgo": "MiFinanzas, startup uruguaya, financia a pymes adelantando cheques diferidos y facturas sin exigir balances ni líneas de crédito previas; declara más de 100.000 operaciones y más de $400 millones financiados.",
+   "source_url": "https://www.descubre.vc/noticia/mifinanzas-ofrece-financiaci-n-gil-y-accesible-para-pymes-en-uruguay-2025-05-27",
+   "source_title": "MiFinanzas ofrece financiación ágil y accesible para PyMEs en Uruguay",
+   "source_date": "2025-05-27",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-06T21:10:00",
+   "competidor": "MiFinanzas",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-06T20:52:51",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-fintech-seguros-008",
+   "sector": "fintech-seguros",
+   "hallazgo": "PedidosYa Créditos otorgó US$6,4 millones a más de 1.000 pymes uruguayas desde mediados de 2025, con préstamos de hasta US$52.000 repagados automáticamente desde las ventas. Muestra demanda de capital de trabajo y el uso de datos de ventas como scoring.",
+   "source_url": "https://www.descubre.vc/noticia/pedidosya-cr-ditos-impulsa-a-pymes-uruguayas-con-us-6-4-millones-en-pr-stamos-2026-08-18",
+   "source_title": "PedidosYa Créditos impulsa a pymes uruguayas con US$ 6,4 millones en préstamos",
+   "source_date": "2026-08-18",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-06T21:10:00",
+   "competidor": "PedidosYa Créditos",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-06T20:52:51",
+    "extracto": "sin_extracto"
+   }
+  }
+ ]
+}

@@ -1,0 +1,148 @@
+{
+ "evaluaciones": [
+  {
+   "id": "i001",
+   "veredicto": "viable",
+   "horas_estimadas": 1000,
+   "motivo": "Unas 1.000 h: base multiempresa, autenticación y despliegue 60; configurador y página de política 60; portal del comprador con fotos y correos 110; reglas y panel de revisión 100; carga de pedidos por CSV 40; clasificador (etiquetado, TF-IDF, Haiku y evaluación) 100; sugerencia de cambio por stock y métricas 80; pruebas 70; piloto de 8 semanas 120; business case 50; tesis y entregas 150; Ley 18.331 15. Es software web estándar para el perfil del equipo, sin hardware ni integraciones con plataformas, y entra en la capacidad declarada (16 + 10 + 10 h por semana x 32 semanas, unas 1.150 h) con margen. Cada semestre tiene algo demostrable. Riesgo de calendario: el clasificador necesita motivos reales que llegan con el piloto, en el mismo semestre 2.",
+   "dependencias_externas": [
+    "Pymes para el piloto de 8 semanas: el perfil no declara contactos.",
+    "Pedidos y stock de cada pyme solo por CSV, sin integración con su tienda: la sugerencia de cambio depende de que lo mantengan al día.",
+    "Motivos de devolución reales para entrenar y evaluar el clasificador: llegan con el piloto y en volumen desconocido.",
+    "APIs de terceros: Claude (Anthropic) y Resend para correos.",
+    "Ley 18.331: consentimiento de los compradores e inscripción de la base de datos."
+   ]
+  },
+  {
+   "id": "i002",
+   "veredicto": "viable_con_recorte",
+   "horas_estimadas": 1370,
+   "motivo": "Unas 1.370 h, por encima de la capacidad declarada (16 + 10 + 10 h por semana x 32 semanas, unas 1.150 h) aunque dentro del rango de referencia. Base, roles y despliegue 70; PWA offline con inventario por lote y carga manual 150; sincronización con conflictos entre varios usuarios sin señal 150; audio offline y transcripción 60; extracción de eventos con LLM 80; resolución de caravanas y lotes con confirmación 120; set de 300 audios grabados y etiquetados 120; pendientes del SNIG 80; vista multi-cliente para veterinarios 60; pruebas en dispositivos y modo avión 100; piloto en campo con traslados 160; business case 50; tesis y entregas 150; Ley 18.331 15. Lo más caro y riesgoso es la sincronización offline y conseguir audios reales de campo.",
+   "recorte_sugerido": "Bajar a unas 1.130 h: (1) la vista multi-cliente para veterinarios queda como maqueta para el business case (unas 50 h menos); (2) sincronización como registro de eventos que solo se agregan, con identificadores únicos y sin edición concurrente, y los choques de inventario se resuelven pidiendo confirmación (unas 60 h menos); (3) pendientes del SNIG solo para los tipos de evento del MVP, con plazos y datos tomados de la documentación oficial (unas 40 h menos); (4) piloto de 6 semanas con 3 a 5 establecimientos (unas 50 h menos); (5) set de 150 audios en lugar de 300, empezando a grabar en el semestre 1 (unas 40 h menos).",
+   "dependencias_externas": [
+    "Productores y peones para grabar audios y hacer el piloto: el perfil no declara contactos.",
+    "Reglas, plazos y formatos de notificación del SNIG (MGAP): sin API pública según la idea; el MVP solo prepara los datos.",
+    "Cambios del MGAP en sus herramientas digitales, como el proyecto Guías Digitales.",
+    "APIs de transcripción de OpenAI y de Claude (Anthropic): la exactitud con jerga rural y números de caravana no está medida.",
+    "Celulares de los usuarios (navegador con PWA y grabación de audio) y señal intermitente en el campo.",
+    "Traslados al interior para el piloto y las grabaciones.",
+    "Ley 18.331: consentimiento e inscripción de la base de datos."
+   ]
+  },
+  {
+   "id": "i003",
+   "veredicto": "viable_con_recorte",
+   "horas_estimadas": 1190,
+   "motivo": "Unas 1.190 h, algo por encima de la capacidad declarada (16 + 10 + 10 h por semana x 32 semanas, unas 1.150 h) y dentro del rango de referencia. Base y despliegue 60; catálogo por CSV 50; carga de foto o PDF 40; lectura del XML del comprobante electrónico 50; extracción con visión 80; emparejamiento con códigos, embeddings en Qdrant y validación 100; confirmación de líneas y ajuste de stock 80; banco de 300 facturas etiquetadas línea por línea contra un catálogo real 130; sinónimos por proveedor 60; alertas de margen 40; integración con Tiendanube y CSV 80; pruebas 90; piloto de 6 semanas 110; business case 50; tesis y entregas 150; Ley 18.331 15. Cuello de botella: el banco de 300 facturas del semestre 1 necesita facturas y catálogos reales de comercios, sin contactos.",
+   "recorte_sugerido": "Bajar a unas 1.030 h: (1) banco de 120 facturas etiquetadas en el semestre 1, ampliable con las del piloto (unas 60 h menos); (2) ajuste de stock solo por CSV en el MVP y Tiendanube como extensión si sobra tiempo (unas 60 h menos); (3) lectura de XML solo si las entrevistas muestran que los comercios reciben el XML de sus proveedores; si no, queda afuera (unas 40 h menos).",
+   "dependencias_externas": [
+    "Facturas y catálogos reales de comercios para el banco de 300 facturas del semestre 1: el perfil no declara contactos.",
+    "Comercios para el piloto de 6 semanas, con catálogo digital o dispuestos a cargarlo.",
+    "API de Tiendanube para actualizar stock: es un supuesto de la idea, con acceso y condiciones a confirmar.",
+    "Formato del XML del comprobante fiscal electrónico y si los comercios lo reciben de sus proveedores.",
+    "APIs de terceros: Claude (Anthropic), Voyage y la capa gratuita de Qdrant Cloud (plan B: Qdrant en Docker).",
+    "Ley 18.331: facturas con datos de personas físicas."
+   ]
+  },
+  {
+   "id": "i004",
+   "veredicto": "viable_con_recorte",
+   "horas_estimadas": 1215,
+   "motivo": "Estimación: base, autenticación multiempresa y despliegue 60 h; importador de CFE 50 h; extractos CSV de dos bancos y modelo bimoneda 70 h; cheques por foto con corrección 50 h; conciliación de cobros bancarios contra facturas y cheques, necesaria para aprender el atraso y no listada en el alcance, 80 h; proyección a 13 semanas y panel 100 h; predicción de cobro 80 h; escenarios 50 h; alertas 25 h; comparador 40 h; Text-to-SQL de solo lectura con aislamiento por pyme 70 h; vista de contadores 50 h; extractos PDF que pide la solución 40 h; piloto con 5 a 10 pymes 120 h; cumplimiento de la Ley 18.331 30 h; pruebas 100 h; tesis y business case 200 h. Unas 1.215 h, por encima de las 1.152 h que dan las horas declaradas (16 + 10 + 10 por 32 semanas), aunque dentro de la referencia.",
+   "recorte_sugerido": "Sacar del MVP el Text-to-SQL y la vista de contadores (unas 120 h) y dejarlos como trabajo futuro en el business case; reemplazar el modelo de scikit-learn por un atraso mediano por cliente con escenarios simples (unas 40 h menos); mantener solo extractos CSV de dos bancos, sin PDF (40 h); y bajar el piloto a 3 a 5 pymes. Queda en unas 1.000 h, con margen frente a la capacidad declarada.",
+   "dependencias_externas": [
+    "Formatos de extractos de dos bancos sin API abierta, que pueden cambiar sin aviso",
+    "Que la pyme pueda obtener sus CFE emitidos y recibidos en XML (supuesto de la idea sobre el formato de DGI)",
+    "5 a 10 pymes piloto dispuestas a subir datos fiscales y bancarios; el perfil no declara contactos",
+    "Supuesto sin validar de que comparar costos de financiación sin intermediar no requiere habilitación del BCU",
+    "Cumplimiento de la Ley 18.331 para datos fiscales y bancarios de las pymes y sus clientes",
+    "API de Claude Haiku 4.5 y AWS (Lightsail, SES) como proveedores externos"
+   ]
+  },
+  {
+   "id": "i005",
+   "veredicto": "viable",
+   "horas_estimadas": 1040,
+   "motivo": "Estimación: base, autenticación y despliegue 60 h; parser de CFE en XML 50 h; CSV de al menos dos facturadores 50 h; catálogo con unidades y presentaciones (cajas por 12 contra unidades), no listado pero necesario, 50 h; libro de movimientos, stock inicial y ajustes 60 h; emparejamiento con embeddings, Qdrant y reglas por proveedor 90 h; pantalla de confirmación 60 h; corpus etiquetado y métricas 70 h; extracción de PDF y fotos 60 h; desempate con LLM y comparación de tres métodos 60 h; exportación de disponibilidad 30 h; piloto de 8 semanas con conteos físicos 120 h; pruebas 80 h; tesis y business case 200 h. Unas 1.040 h: por debajo de las 1.152 h declaradas, con un núcleo acotado. El riesgo es de calendario: el piloto de 8 semanas tiene que arrancar a mitad del semestre 2.",
+   "dependencias_externas": [
+    "Que los facturadores de los comercios permitan exportar ventas en XML o CSV; si no, quedan huecos en el stock",
+    "Que el comercio pueda obtener los CFE de compra recibidos en XML (supuesto de la idea)",
+    "3 a 5 comercios piloto dispuestos a 8 semanas con conteos físicos; el perfil no declara contactos",
+    "Comprobantes reales o anonimizados para el corpus de prueba, que hoy el equipo no tiene",
+    "Capa gratuita de Qdrant Cloud y APIs de Voyage y Claude como proveedores externos"
+   ]
+  },
+  {
+   "id": "i006",
+   "veredicto": "viable_con_recorte",
+   "horas_estimadas": 910,
+   "motivo": "Estimación: base, autenticación y despliegue 50 h; relevar y cargar capas abiertas de escuelas y centros poblados 50 h; zonas de exclusión y chequeo de distancias en PostGIS 40 h; mapa web con lotes KML 60 h; importador de vuelos de una marca 80 h; reconstrucción de franjas, cobertura, solapes, faltantes e invasiones 120 h; precarga desde la etiqueta con LLM 40 h; reporte PDF e historial 50 h; PWA 30 h; relevar distancias normativas 20 h; piloto en temporada 100 h; pruebas con vuelos sintéticos 70 h; tesis y business case 200 h. Unas 910 h: las horas entran. El problema son las dependencias: sin drone ni operador contactado no hay registros de vuelo reales para el importador del semestre 1, el formato puede ser cerrado según la marca y el piloto depende de la temporada de aplicación.",
+   "recorte_sugerido": "Hacer el importador genérico (CSV o KML con posición, hora y estado de aspersión) y probarlo con vuelos sintéticos; el parser de una marca concreta queda condicionado a conseguir registros reales al inicio del semestre 1. Si la temporada no coincide con el semestre 2, reemplazar el piloto en vivo por el análisis de vuelos pasados de 1 o 2 operadores. El chequeo de zonas, la cobertura y el reporte quedan sin cambios.",
+   "dependencias_externas": [
+    "Formato del registro de vuelo de la marca elegida: puede ser cerrado o no exportable (supuesto sin validar de la idea)",
+    "Acceso a un drone o a registros de vuelo reales; no hay operador ni distribuidor contactado",
+    "Capas abiertas de escuelas y centros poblados utilizables (supuesto de la idea)",
+    "Normativa de distancias de exclusión, a relevar",
+    "Temporada de aplicación que coincida con el piloto del semestre 2 y 2 a 4 operadores dispuestos",
+    "Capa gratuita de Mapbox y API de Claude como proveedores externos"
+   ]
+  },
+  {
+   "id": "i007",
+   "veredicto": "viable_con_recorte",
+   "horas_estimadas": 1180,
+   "motivo": "Unas 1.180 h contra unas 1.152 h declaradas (16+10+10 h por semana en 32 semanas). Semestre 1, unas 380 h: ingesta de Certificate Transparency y variantes (75), visitador Playwright aislado con captura, HTML y DNS (85), conjunto etiquetado de clones y legítimos (90), filtro de similitud (70), tablero (60). Semestre 2, unas 360 h: LLM con explicación (55), alertas y PDF (50), casilla de reporte (55), varias entidades con roles (70), piloto y business case (110), demo medida (20). Transversal, unas 440 h: despliegue y aislamiento del visitador (60), pruebas (80), integración (50), documentación de tesis (170), entregas (80). Entra justo, sin margen: el semestre 2 abre cinco frentes a la vez.",
+   "recorte_sugerido": "Pasar a trabajo futuro la casilla de reporte para clientes (unas 55 h) y la gestión de varias entidades con roles (unas 70 h): el MVP queda con una sola entidad y sus marcas. Limitar las variantes de dominio a errores de tipeo y homoglifos. Si no aparece una entidad para el piloto, cerrar con la demo de la marca ficticia y, si alguna entidad acepta, monitorear sus marcas sin integrarse con sus sistemas. Así baja a unas 1.050 h.",
+   "dependencias_externas": [
+    "Logs públicos de Certificate Transparency o servicios que los agregan: disponibilidad y volumen, que es grande para un servidor de 2 GB",
+    "Ejemplos públicos de phishing para el conjunto etiquetado: no hay fuente declarada y los clones suelen caer en poco tiempo",
+    "Al menos una entidad financiera para el piloto, sin contactos declarados en la tabla del equipo",
+    "Clones con bloqueo por país o solo para celulares, que el visitador puede no ver",
+    "Baja de los sitios: depende del hosting y del registrador, fuera del control del equipo",
+    "Amazon SES: AWS tiene que habilitar el envío fuera del modo de prueba para alertar a direcciones no verificadas"
+   ]
+  },
+  {
+   "id": "i008",
+   "veredicto": "viable_con_recorte",
+   "horas_estimadas": 1200,
+   "motivo": "Unas 1.200 h contra unas 1.152 h declaradas (16+10+10 h por semana en 32 semanas). Semestre 1, unas 380 h: alta en WhatsApp Cloud API y webhook (40), bot con veredicto y explicación (80), señales de URL con lista blanca, RDAP y certificados (70), corpus de casos locales y RAG en Qdrant (110), set de 300 mensajes etiquetados y métricas (80). Semestre 2, unas 340 h: visión sobre capturas (50), dominios parecidos a marcas cliente (70), panel por entidad con campañas (120), piloto con métricas (100). Transversal, unas 480 h: defensa contra inyección de instrucciones (30), cumplimiento de la Ley 18.331 (30), despliegue (50), pruebas (80), integración (50), tesis (170), entregas (70). El riesgo mayor no son las horas sino depender de Meta para el canal.",
+   "recorte_sugerido": "Sacar del MVP la detección de dominios parecidos a marcas cliente (unas 70 h) y reducir el panel a una sola entidad con consultas y dominios más reportados, sin agrupar campañas (unas 60 h menos). Hacer el piloto con voluntarios si no hay entidad. Tener un canal de respaldo (bot de Telegram o formulario web) por si Meta no habilita el número a tiempo para el piloto. Así baja a unas 1.070 h.",
+   "dependencias_externas": [
+    "Meta: cuenta de WhatsApp Business, número habilitado para la Cloud API y verificación del negocio; políticas y precios que pueden cambiar",
+    "RDAP para dominios .uy y otros ccTLD: no está verificado que todos lo ofrezcan",
+    "Casos públicos de estafas locales para el RAG y mensajes reales para el set de 300: sin fuente declarada",
+    "Una entidad o 100 voluntarios para el piloto, sin contactos declarados en la tabla del equipo",
+    "API de Claude Haiku 4.5 con visión, a los precios usados en el costo"
+   ]
+  },
+  {
+   "id": "i009",
+   "veredicto": "viable",
+   "horas_estimadas": 980,
+   "motivo": "Unas 980 h contra unas 1.152 h declaradas (16+10+10 h por semana en 32 semanas): margen de unas 170 h. Semestre 1, unas 290 h: portal con marca de la tienda y carga de fotos, panel, pedidos por CSV y política configurable (150), armado de 300 casos etiquetados con foto (70), clasificador de motivo (50), avisos por email (20). Semestre 2, unas 280 h: OAuth y pedidos con la API de Tiendanube (70), resolución sugerida contra la política y medición de aceptación (50), panel por producto y página de política (60), piloto de 6 semanas con 3 a 5 tiendas (100). Transversal, unas 410 h: despliegue (40), pruebas (70), integración (40), Ley 18.331 para datos y fotos de compradores (20), tesis (170), entregas (70). Es una aplicación web con un clasificador acotado, sin infraestructura pesada.",
+   "recorte_sugerido": "No hace falta. Si Tiendanube o el piloto se atrasan, el CSV ya cubre la carga de pedidos y el piloto puede bajar a 3 tiendas sin afectar la entrega 2.",
+   "dependencias_externas": [
+    "Tiendanube: cuenta de desarrollador y aprobación de la app para leer pedidos por API (hay plan B por CSV)",
+    "300 casos de devolución con foto para evaluar: sin fuente declarada, probablemente haya que armarlos o pedirlos a tiendas",
+    "3 a 5 tiendas para el piloto, sin contactos declarados en comercio",
+    "API de Claude Haiku 4.5 con visión, a los precios usados en el costo"
+   ]
+  },
+  {
+   "id": "i010",
+   "veredicto": "viable_con_recorte",
+   "horas_estimadas": 1180,
+   "motivo": "Estimo 1.180 h. S1 490 h: conseguir, anonimizar y etiquetar 100 a 200 cotizaciones 120 h; extractor con pdfplumber, OCR y LLM con página de origen y confianza 200 h; medición de exactitud 40 h; backend y demo del comparativo 100 h; despliegue 30 h. S2 500 h: revisión y corrección 90 h, PDF con marca 70 h, cartera con alertas y recotización 90 h, autenticación y Ley 18.331 60 h, pruebas e integración 70 h, piloto 70 h, business case 50 h. Más 190 h de documentación de tesis, entregas y coordinación. Entra en el rango de 960 a 1536 h, pero sin margen frente a las 1.152 h declaradas (16+10+10 h por 32 semanas). El mayor riesgo es el corpus: no hay corredores en la tabla de contactos y sin cotizaciones reales la demo del S1 no existe.",
+   "recorte_sugerido": "Un solo ramo (automóvil) y un corpus de 100 cotizaciones, dejando hogar para después; priorizar PDFs digitales y usar OCR solo como respaldo para escaneados; borrador de recotización como plantilla completada por el LLM, sin flujo de envío; cartera armada a partir de los documentos ya extraídos o de un CSV. Ahorra unas 110 h y deja el total cerca de 1.070 h. Si no aparecen corredores con cotizaciones al inicio del S1, completar el corpus con cotizaciones que el propio equipo pida como cliente (supuesto a confirmar).",
+   "dependencias_externas": [
+    "Corredores que compartan cotizaciones y pólizas reales para el corpus (no hay contactos en la tabla del equipo)",
+    "2 o 3 corredores dispuestos a hacer el piloto y medir minutos por comparativo antes y después",
+    "Formatos de PDF de cada aseguradora, que el equipo no controla y pueden cambiar",
+    "Precio y disponibilidad de la API de Claude Haiku 4.5",
+    "Camino de cumplimiento con la Ley 18.331 para datos personales de las pólizas (anonimización y consentimiento)",
+    "Aprobación de AWS para usar Amazon SES fuera del modo de prueba al enviar alertas a corredores reales"
+   ]
+  }
+ ]
+}

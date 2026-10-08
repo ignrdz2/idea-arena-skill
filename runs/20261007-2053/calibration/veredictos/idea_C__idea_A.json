@@ -1,0 +1,31 @@
+{
+  "scores": {
+    "X": {"demanda": 1, "viabilidad": 1, "diferenciacion": 2, "business_case": 3, "encaje": 4, "academico": 4, "fatal": true, "fatal_motivo": "restriccion_dura:R1: el costo de infraestructura declarado por la propia idea suma USD 504 por año, por encima del tope de USD 300; aun sacando por completo la línea de Google Maps quedan USD 324, y el costo crece con usuarios que no pagan"},
+    "Y": {"demanda": 6, "viabilidad": 5, "diferenciacion": 4, "business_case": 5, "encaje": 8, "academico": 8, "fatal": true, "fatal_motivo": "restriccion_dura:R1: la tabla de costos de la propia idea suma USD 307 por año (150 + 12 + 0 + 120 + 25), por encima del tope de USD 300; la mitigación con créditos de estudiante de Azure o AWS no tiene fuente que los documente ni duración declarada, y el recorte del histórico no se traduce en un total revisado"}
+  },
+  "winner": "Y",
+  "reason": "Las dos superan el tope de R1, pero Y tiene evidencia local verificada de dolor y de pago (21.532 consultas de proveedores a la ARCE en 2021, un competidor uruguayo con clientes pagos, LicitaLAB con más de 1.500 clientes en Chile y Perú) y se pasa por USD 7, mientras X no tiene ninguna evidencia de demanda, se pasa por USD 204 y admite que no hay hueco frente a Google Maps.",
+  "standing": {
+    "X": [
+      "Costo declarado de USD 504 por año, 68% sobre el tope de R1; incluso sin Google Maps queda en USD 324, y el gasto en mapas y LLM escala con usuarios gratuitos.",
+      "Demanda sin ninguna evidencia: la propia idea dice que la justificación es sentido común y conversaciones informales con amigos; no hay un solo link que muestre el dolor ni disposición a pagar.",
+      "Sin diferenciación: Google Maps, TripAdvisor, Instagram, TikTok y PedidosYa ya cubren descubrimiento, reseñas, mapa y reservas gratis en Montevideo; la recomendación por amigos es un supuesto declarado y trivial de copiar.",
+      "Marketplace de dos lados con arranque en frío doble: sin usuarios no hay reseñas ni recomendaciones, y sin audiencia ningún restaurante paga; la idea reconoce que no hay ingresos posibles durante la tesis.",
+      "Business case sin tamaño de mercado ni canal: el precio de USD 30 a 60 por local es una hipótesis sin ningún restaurante consultado.",
+      "Alcance inflado para el equipo: app nativa iOS y Android, red social, chat, chatbot, gamificación, panel para locales y campaña de lanzamiento sin presupuesto de marketing.",
+      "Catálogo de locales sin fuente legal identificada: copiarlo de un tercero puede violar sus términos (riesgo de R7), y mantenerlo es trabajo manual continuo.",
+      "Valor académico flaco: la propia idea admite que la IA es un envoltorio sobre un LLM y el filtrado colaborativo no se puede evaluar sin datos propios.",
+      "Encaje parcial: la capacidad central es crecimiento de comunidad de consumo, que el equipo no tiene, y no hay contactos en gastronomía."
+    ],
+    "Y": [
+      "Costo declarado de USD 307 por año, sobre el tope de R1; los créditos de estudiante no tienen fuente ni duración, y la tabla no incluye embeddings ni tokens de salida, y una t4g.small de 2 GB para PostgreSQL con el histórico OCDS desde 2002, OCR y workers parece justa.",
+      "El hueco declarado frente a Gubly está contradicho por la fuente que la idea cita: según El Observador, Gubly ya analiza pliegos con IA y muestra precios de adjudicación y datos de la competencia para cotizar mejor; lo que queda distinto (checklist con cita a página, bóveda con vencimientos, consultas en lenguaje natural) es copiable rápido.",
+      "Gubly cobra USD 25 por mes o USD 250 por año con plan gratuito, así que la hipótesis de USD 40 a USD 120 por mes queda por encima del competidor local sin justificar por qué alguien pagaría más.",
+      "La evidencia de dolor es indirecta: las 21.532 consultas de proveedores a la ARCE son de 2021 y no dicen cuántas son sobre pliegos ni cuánto le cuesta a una PyME armar una oferta; el dato de concentración de Chile es extranjero y no mide dolor.",
+      "Tamaño de mercado sin cuantificar: cita que el 99% de las empresas son mipymes (unas 190.000), pero no da cuántas venden al Estado ni cuántas pagarían; tampoco hay canal de venta definido.",
+      "Alcance ambicioso: ETL OCDS, OCR, extracción evaluada, radar, inteligencia de precios con resolución de entidades, Text-to-SQL, bóveda multi-tenant y piloto en dos semestres; entra solo con recorte.",
+      "El piloto con 3 a 5 PyMEs depende de contactos que la tabla del equipo no tiene, y el equipo no tiene conocimiento del dominio de compras públicas.",
+      "Mercado uruguayo chico y LicitaLAB, con más de 1.500 clientes y una ronda de USD 450.000, podría entrar a Uruguay con producto ya maduro."
+    ]
+  }
+}

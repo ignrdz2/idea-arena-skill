@@ -1,0 +1,106 @@
+{
+ "id": "i004",
+ "titulo": "Proyección de caja para pymes con cheques diferidos y facturas electrónicas",
+ "problema": "Las pymes uruguayas tienen flujos de caja irregulares que generan necesidad de recursos extra para pagar proveedores, tributos y seguridad social (F-defensa-r1-m02-i004-001, de 2018). Hay oferta y uso de financiación sobre cuentas por cobrar: MiFinanzas declara más de 100.000 operaciones adelantando cheques diferidos y facturas (F-fintech-seguros-007) y PedidosYa Créditos prestó US$6,4 millones a más de 1.000 pymes desde 2025 (F-fintech-seguros-008). Esas fichas prueban uso de crédito, no que la falta de proyección sea su causa: eso es una hipótesis a validar (ver supuestos), a saber, que con facturas, cheques y bancos dispersos el dueño ve el faltante tarde y se financia de urgencia sin comparar costos. Las mipymes son 97% de las empresas (F-comercio-retail-010): solo mide el tamaño del segmento, no la demanda.",
+ "usuario": "Usa: el dueño o administrativo de una pyme que vende a plazo (con facturas a crédito o cheques diferidos, no una microempresa que cobra al contado), y su contador. Paga: la pyme o el estudio contable.",
+ "solucion": "Web que arma la caja futura con datos que la pyme ya tiene: CFE emitidos y recibidos en XML, extractos bancarios CSV y cheques diferidos cargados por foto (visión extrae fecha, monto y banco, con corrección manual). Proyecta 13 semanas en pesos y dólares, estima el atraso de cada cliente, simula escenarios y avisa por correo semanas antes de un faltante, solo si los datos tienen menos de 7 días; si están viejos, el panel lo marca y no alerta. Compara el costo de cubrir el faltante con las opciones que cargue la pyme, sin intermediar ni prestar. Al LLM solo se envía la imagen del cheque o el texto del extracto, con nombres de contrapartes enmascarados.",
+ "mvp": {
+  "semestre_1": [
+   "Importadores de CFE y de extractos CSV de dos bancos más una plantilla CSV genérica mapeable, con modelo bimoneda.",
+   "Carga de cheques por foto con corrección manual.",
+   "Proyección determinística a 13 semanas en un panel web, con aviso de datos desactualizados.",
+   "Entrevistas a pymes y contadores (desde antes de diciembre de 2026 y durante el semestre) para validar el dolor y el precio."
+  ],
+  "semestre_2": [
+   "Estimación de fecha de cobro por cliente: línea base de mediana de atraso por cliente, y modelo de scikit-learn solo si el piloto aporta historial; se mide el error de ambos.",
+   "Escenarios, alertas por correo y comparador de costo de financiación.",
+   "Vista para contadores y piloto con 5 a 10 pymes, con acuerdo escrito de uso de datos."
+  ]
+ },
+ "stack": [
+  "TypeScript",
+  "React",
+  "Python",
+  "FastAPI",
+  "PostgreSQL",
+  "scikit-learn",
+  "Claude Haiku 4.5",
+  "Amazon SES",
+  "Docker en AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 159,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail (contenedores Docker)",
+    "usd_anual": 114,
+    "supuesto": "Linux de 1 GB a USD 7/mes en el semestre 1 y de 2 GB a USD 12/mes en el semestre 2 (USD 42 + 72); sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API de Claude Haiku 4.5",
+    "usd_anual": 20,
+    "supuesto": "A USD 1 y 5 por millón de tokens: 2.000 fotos de cheques de 2.000 tokens estimados (USD 6) y 600 extractos PDF (USD 12); redondeado.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "Correos con Amazon SES",
+    "usd_anual": 5,
+    "supuesto": "Hasta 20.000 correos a USD 0,10 cada 1.000; redondeado, sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/ses/pricing/"
+   },
+   {
+    "concepto": "Dominio",
+    "usd_anual": 20,
+    "supuesto": "Estimación por encima, sin fuente: dominio .com por un año."
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "MiFinanzas",
+   "evidencia_ids": [
+    "F-fintech-seguros-007"
+   ],
+   "hueco": "Financia cheques y facturas; la ficha no muestra proyección de caja (ausencia en la ficha, no prueba de que no exista). Puede ser una opción a comparar."
+  },
+  {
+   "nombre": "PedidosYa Créditos",
+   "evidencia_ids": [
+    "F-fintech-seguros-008"
+   ],
+   "hueco": "Presta y cobra desde las ventas; la ficha no muestra planificación de caja (ausencia en la ficha, no prueba)."
+  },
+  {
+   "nombre": "YoFacturo",
+   "evidencia_ids": [
+    "F-comercio-retail-006"
+   ],
+   "hueco": "Integra CFE e inventario y ya tiene los CFE del cliente; la ficha no menciona caja ni cheques. Es el que más fácil podría sumar un tablero de caja."
+  }
+ ],
+ "monetizacion": "Suscripción de la pyme (hipótesis: USD 15 a 30 por mes) y plan para estudios contables (hipótesis: USD 120 por 10 pymes que carguen datos, USD 12 por pyme). Canal: contadores. Compra la pyme, o el estudio para sus clientes. Cuenta ilustrativa: 300 pymes a USD 20 darían unos USD 72.000 al año; el 300 y los precios son hipótesis sin ficha, a validar en el piloto.",
+ "riesgos": [
+  "Extractos sin API abierta y con formatos distintos por banco.",
+  "Carga manual recurrente: si dejan de cargar, la proyección queda vieja (mitigado con aviso y sin alertas).",
+  "Errores al leer cheques generan proyecciones falsas.",
+  "Desconfianza para subir datos fiscales y bancarios (Ley 18.331).",
+  "Un software de facturación o un financiador puede sumar esta función."
+ ],
+ "supuestos": [
+  "Que la falta de proyección cause la financiación de urgencia: ninguna ficha lo mide; se valida con entrevistas.",
+  "Los CFE se exportan en XML con formato público y los bancos permiten bajar extractos; sin ficha.",
+  "Herramientas similares funcionan en otros mercados sobre software contable; sin ficha.",
+  "Los contadores son un canal eficaz y la pyme paga USD 15 a 30 por mes: hipótesis a validar.",
+  "Comparar costos sin intermediar no requiere habilitación del BCU.",
+  "Ley 18.331: consentimiento escrito de la pyme, el equipo como encargado del tratamiento, solo datos de la pyme, contrapartes enmascaradas antes del LLM y borrado al cerrar el piloto; la retención del proveedor del LLM no está verificada.",
+  "El equipo puede conseguir 5 a 10 pymes piloto vía contadores; no hay contactos declarados."
+ ],
+ "evidencias": [
+  "F-fintech-seguros-007",
+  "F-fintech-seguros-008",
+  "F-comercio-retail-006",
+  "F-comercio-retail-010",
+  "F-defensa-r1-m02-i004-001"
+ ]
+}

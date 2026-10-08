@@ -1,0 +1,25 @@
+{
+  "match": "r1-m01",
+  "scores": {
+    "X": {"demanda": 5, "viabilidad": 7, "diferenciacion": 4, "business_case": 5, "encaje": 8, "academico": 8, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 6, "viabilidad": 8, "diferenciacion": 6, "business_case": 6, "encaje": 8, "academico": 8, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "Y",
+  "reason": "Y cobra al mismo comercio que sufre el problema, ancla precio y señal de pago en ofertas locales verificadas (el escalón de stock de Fixed, UYU 2.140 contra 980, y gestionUltimate) con un costo de USD 173,4, mientras X prueba bien el dolor del usuario final pero cobra a una entidad cuyo costo, disposición a pagar y alternativas actuales son solo supuestos.",
+  "survived": [
+    "Ataque 2: falta de señal de pago, rebatido con el escalón de stock de Fixed (verificado) y la oferta de gestionUltimate; el costo del faltante quedó como supuesto",
+    "Ataque 4: precio sin base, anclado contra el escalón de stock de Fixed (unos USD 35); meta de 150 comercios y canal contable pasados a supuestos",
+    "Ataque 5: datos de los comprobantes, con XML y CSV en servidor propio y PDF o fotos opcionales con consentimiento escrito",
+    "Ataque 6: costo subdimensionado, bien rebatido: USD 173,4 al año y unos USD 260 con 2 GiB, bajo el tope de R1"
+  ],
+  "standing": {
+    "X": [
+      "Ataque 2: el dolor probado es del usuario final; que a la entidad que paga le cueste reclamos o imagen sigue siendo solo un supuesto",
+      "Ataque 4: no muestra por qué la entidad pagaría en vez de usar sus avisos, su atención o un canal propio; la diferencia declarada es copiable y no hay competidores analizados con fichas"
+    ],
+    "Y": [
+      "Ataque 1 (en parte): el segmento que no quiere migrar de facturador sigue sin medir, y un cliente de Fixed puede sumar stock sin migrar, así que frente a Fixed la diferencia es sobre todo precio",
+      "Ataque 3: subir comprobantes periódicamente es trabajo nuevo para el dueño; la idea lo marca y lo mide en el piloto, pero no lo resuelve"
+    ]
+  }
+}

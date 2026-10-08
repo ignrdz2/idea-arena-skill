@@ -1,0 +1,70 @@
+{
+ "idea": "i007",
+ "respuestas": [
+  {
+   "ataque": 1,
+   "decision": "PARCIAL",
+   "detalle": "Acepto: ninguna ficha muestra que una entidad mediana pierda dinero por clones ni que pague; F-fintech-seguros-002 es de un banco grande. Lo reescribí en el problema como supuesto a validar y agregué que el segmento podría no pagar. No acepto que el problema sea una opinión: F-fintech-seguros-002 dice que los clones de sitios bancarios se hacen en segundos y que no hay recupero, y F-fintech-seguros-001 muestra phishing como técnica digital más frecuente. Eso respalda el dolor; la demanda de medianas sigue declarada en supuestos.",
+   "evidencia": [
+    "F-fintech-seguros-001",
+    "F-fintech-seguros-002"
+   ]
+  },
+  {
+   "ataque": 2,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que F-fintech-seguros-003 es contexto y que F-fintech-seguros-001 no separa clones: saqué F-003 del problema y de las evidencias. No acepto que F-002 sea ajena: habla de clonación de sitios bancarios y de ventana de recupero, que es lo que el producto detecta. Que la prevención dependa de cada persona no excluye que la entidad quiera detectar antes; la demanda de monitoreo sigue siendo supuesto.",
+   "evidencia": [
+    "F-fintech-seguros-001",
+    "F-fintech-seguros-002"
+   ]
+  },
+  {
+   "ataque": 3,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que faltaba relevar competencia. Agregué la ficha F-defensa-r1-m04-i007-001: plataformas globales de protección de marca, todas con precio a medida y sin lista pública. Las cargué como competidor con el hueco declarado como hipótesis (marcas locales, español, precio fijo), copiable por un global. No puedo afirmar que sean caras o que ignoren Uruguay: la ficha no lo dice.",
+   "evidencia": [
+    "F-defensa-r1-m04-i007-001"
+   ]
+  },
+  {
+   "ataque": 4,
+   "decision": "CONCEDE",
+   "detalle": "Tiene razón: el precio no tiene señal de pago y el mercado es chico. Ahora la monetización muestra escenarios de 3 y 10 clientes en lugar de solo el mejor caso, nombra al comprador probable (seguridad o riesgo) con presupuesto a confirmar, y declara el número de entidades como supuesto.",
+   "evidencia": []
+  },
+  {
+   "ataque": 5,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que no hay contacto y que el piloto depende de un socio inexistente. Cambié el alcance: el piloto pasa a ser 'si se consigue', y los hitos (demos con marcas ficticias y evaluación con clones públicos etiquetados) no dependen de ninguna entidad; el plan B son entrevistas. No acepto que viole R4: R4 pide usuarios contactables desde Uruguay para validar, no contactos ya existentes, y la tabla vacía afecta a toda idea del run. Lo declaré en supuestos.",
+   "evidencia": []
+  },
+  {
+   "ataque": 6,
+   "decision": "CONCEDE",
+   "detalle": "Tiene razón en ambos puntos. Quité la casilla de reporte de clientes: ahora solo el analista de la entidad carga enlaces, sin datos personales de sus clientes, lo que elimina la exposición a la Ley 18.331 y el cambio de flujo de atención. La baja la pide la entidad con su representación legal usando la evidencia en PDF; lo declaré en la solución y en riesgos.",
+   "evidencia": []
+  },
+  {
+   "ataque": 7,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que faltaba dimensionar. Agregué el supuesto de unos 200 candidatos por día en serie y filtrado de CT por similitud con las marcas (no todo el flujo), a medir en el semestre 1, y un plan B de cola y menor frecuencia sin subir costo. No acepto que el margen sea un problema: USD 198 está bajo el objetivo de USD 200 y USD 102 bajo el tope de R1, con fuentes en cada ítem.",
+   "evidencia": []
+  }
+ ],
+ "nuevas_fichas": [
+  {
+   "id": "F-defensa-r1-m04-i007-001",
+   "sector": "fintech-seguros",
+   "hallazgo": "Guía de plataformas de protección de marca y suplantación (Bitsight, ZeroFox, Fortra, Bolster, Doppel, Red Points): todas figuran con precio personalizado, sin precio público.",
+   "source_url": "https://www.bitsight.com/guides/best-brand-protection-impersonation-monitoring-platforms",
+   "source_title": "Best Brand Protection & Impersonation Monitoring Platforms in 2026",
+   "source_date": "2026-07-22",
+   "source_type": "competidor",
+   "geografia": "GLOBAL",
+   "confianza": "media",
+   "retrieved_at": "2026-10-07T10:00:00",
+   "extracto": "Custom pricing based on brand assets and monitored channels."
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{"evaluaciones": [
+  {
+    "id": "i004",
+    "veredicto": "viable_con_recorte",
+    "horas_estimadas": 1215,
+    "motivo": "Estimación: base, autenticación multiempresa y despliegue 60 h; importador de CFE 50 h; extractos CSV de dos bancos y modelo bimoneda 70 h; cheques por foto con corrección 50 h; conciliación de cobros bancarios contra facturas y cheques, necesaria para aprender el atraso y no listada en el alcance, 80 h; proyección a 13 semanas y panel 100 h; predicción de cobro 80 h; escenarios 50 h; alertas 25 h; comparador 40 h; Text-to-SQL de solo lectura con aislamiento por pyme 70 h; vista de contadores 50 h; extractos PDF que pide la solución 40 h; piloto con 5 a 10 pymes 120 h; cumplimiento de la Ley 18.331 30 h; pruebas 100 h; tesis y business case 200 h. Unas 1.215 h, por encima de las 1.152 h que dan las horas declaradas (16 + 10 + 10 por 32 semanas), aunque dentro de la referencia.",
+    "recorte_sugerido": "Sacar del MVP el Text-to-SQL y la vista de contadores (unas 120 h) y dejarlos como trabajo futuro en el business case; reemplazar el modelo de scikit-learn por un atraso mediano por cliente con escenarios simples (unas 40 h menos); mantener solo extractos CSV de dos bancos, sin PDF (40 h); y bajar el piloto a 3 a 5 pymes. Queda en unas 1.000 h, con margen frente a la capacidad declarada.",
+    "dependencias_externas": [
+      "Formatos de extractos de dos bancos sin API abierta, que pueden cambiar sin aviso",
+      "Que la pyme pueda obtener sus CFE emitidos y recibidos en XML (supuesto de la idea sobre el formato de DGI)",
+      "5 a 10 pymes piloto dispuestas a subir datos fiscales y bancarios; el perfil no declara contactos",
+      "Supuesto sin validar de que comparar costos de financiación sin intermediar no requiere habilitación del BCU",
+      "Cumplimiento de la Ley 18.331 para datos fiscales y bancarios de las pymes y sus clientes",
+      "API de Claude Haiku 4.5 y AWS (Lightsail, SES) como proveedores externos"
+    ]
+  },
+  {
+    "id": "i005",
+    "veredicto": "viable",
+    "horas_estimadas": 1040,
+    "motivo": "Estimación: base, autenticación y despliegue 60 h; parser de CFE en XML 50 h; CSV de al menos dos facturadores 50 h; catálogo con unidades y presentaciones (cajas por 12 contra unidades), no listado pero necesario, 50 h; libro de movimientos, stock inicial y ajustes 60 h; emparejamiento con embeddings, Qdrant y reglas por proveedor 90 h; pantalla de confirmación 60 h; corpus etiquetado y métricas 70 h; extracción de PDF y fotos 60 h; desempate con LLM y comparación de tres métodos 60 h; exportación de disponibilidad 30 h; piloto de 8 semanas con conteos físicos 120 h; pruebas 80 h; tesis y business case 200 h. Unas 1.040 h: por debajo de las 1.152 h declaradas, con un núcleo acotado. El riesgo es de calendario: el piloto de 8 semanas tiene que arrancar a mitad del semestre 2.",
+    "dependencias_externas": [
+      "Que los facturadores de los comercios permitan exportar ventas en XML o CSV; si no, quedan huecos en el stock",
+      "Que el comercio pueda obtener los CFE de compra recibidos en XML (supuesto de la idea)",
+      "3 a 5 comercios piloto dispuestos a 8 semanas con conteos físicos; el perfil no declara contactos",
+      "Comprobantes reales o anonimizados para el corpus de prueba, que hoy el equipo no tiene",
+      "Capa gratuita de Qdrant Cloud y APIs de Voyage y Claude como proveedores externos"
+    ]
+  },
+  {
+    "id": "i006",
+    "veredicto": "viable_con_recorte",
+    "horas_estimadas": 910,
+    "motivo": "Estimación: base, autenticación y despliegue 50 h; relevar y cargar capas abiertas de escuelas y centros poblados 50 h; zonas de exclusión y chequeo de distancias en PostGIS 40 h; mapa web con lotes KML 60 h; importador de vuelos de una marca 80 h; reconstrucción de franjas, cobertura, solapes, faltantes e invasiones 120 h; precarga desde la etiqueta con LLM 40 h; reporte PDF e historial 50 h; PWA 30 h; relevar distancias normativas 20 h; piloto en temporada 100 h; pruebas con vuelos sintéticos 70 h; tesis y business case 200 h. Unas 910 h: las horas entran. El problema son las dependencias: sin drone ni operador contactado no hay registros de vuelo reales para el importador del semestre 1, el formato puede ser cerrado según la marca y el piloto depende de la temporada de aplicación.",
+    "recorte_sugerido": "Hacer el importador genérico (CSV o KML con posición, hora y estado de aspersión) y probarlo con vuelos sintéticos; el parser de una marca concreta queda condicionado a conseguir registros reales al inicio del semestre 1. Si la temporada no coincide con el semestre 2, reemplazar el piloto en vivo por el análisis de vuelos pasados de 1 o 2 operadores. El chequeo de zonas, la cobertura y el reporte quedan sin cambios.",
+    "dependencias_externas": [
+      "Formato del registro de vuelo de la marca elegida: puede ser cerrado o no exportable (supuesto sin validar de la idea)",
+      "Acceso a un drone o a registros de vuelo reales; no hay operador ni distribuidor contactado",
+      "Capas abiertas de escuelas y centros poblados utilizables (supuesto de la idea)",
+      "Normativa de distancias de exclusión, a relevar",
+      "Temporada de aplicación que coincida con el piloto del semestre 2 y 2 a 4 operadores dispuestos",
+      "Capa gratuita de Mapbox y API de Claude como proveedores externos"
+    ]
+  }
+]}

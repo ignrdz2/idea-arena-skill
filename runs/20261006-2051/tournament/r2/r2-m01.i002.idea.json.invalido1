@@ -1,0 +1,129 @@
+{
+ "id": "i002",
+ "titulo": "Libreta ganadera por voz y sin señal para productores chicos, con datos listos para el SNIG",
+ "problema": "Todo productor ganadero debe notificar al SNIG movimientos, cambios de propiedad y eventos productivos y sanitarios de cada bovino, con más de 12 millones identificados (F-agro-002); el MGAP además digitaliza las guías de tránsito (F-agro-004) y tiene una app oficial del SNIG de 2016 para consultas, muerte, descarte de caravanas, reidentificación y extravío (F-ataque-r2-m01-i002-competidor-001). La ficha prueba la obligación, no su costo: cuánto tiempo y errores le cuesta al productor chico es un supuesto a medir. Entre las opciones de las fichas, miTambo es barata y sin internet pero solo para tambos (F-agro-001), Gecos SGG es un sistema uruguayo de gestión ganadera con conciliación SNIG, descrito como sistema web (F-ataque-r2-m01-i002-competidor-002, F-defensa-r2-m01-i002-001), Cattler apunta a feedlots (F-agro-006) y Albor es un sistema integral de otra escala (F-agro-007). Ninguna ficha muestra captura por voz del peón en el campo sin señal; eso es lo que ataca la idea.",
+ "usuario": "Productor ganadero pastoril chico de Uruguay y su personal de campo. Paga el productor; segundo canal: veterinarios con varios clientes.",
+ "solucion": "PWA que funciona sin señal. El peón dicta un audio (vacunamos 38 terneros del potrero 4) o usa un formulario corto. Al reconectar, el audio se transcribe y un LLM propone eventos (nacimiento, vacunación, muerte, movimiento, venta) que el mismo peón confirma en el teléfono con un toque; las caravanas y lotes se resuelven contra el inventario local y, si la IA duda, deja el campo vacío en vez de adivinar. Los eventos son un registro de solo agregar, así el stock por lote se recalcula sin conflictos de edición. El valor central es la captura en el momento del trabajo, que hoy es papel o WhatsApp (supuesto); la lista de pendientes del SNIG, exportable para copiar o descargar, es un subproducto que evita retranscribir, no el entregable principal, y no declara por el productor. Lo que el producto genera (corpus de audios rurales confirmados y su medición de precisión) es un activo propio que un copiador no tiene al empezar.",
+ "mvp": {
+  "semestre_1": [
+   "PWA offline con inventario por lote, registro de eventos de solo agregar y sincronización",
+   "FastAPI y PostgreSQL en Lightsail; audio grabado sin señal y transcripto al reconectar",
+   "Demo: 20 eventos cargados en modo avión actualizan el rodeo al reconectar",
+   "Entrevistas a productores y veterinarios para medir el costo actual de registrar y notificar, probar el precio y averiguar qué usan hoy (papel, WhatsApp, miTambo, Gecos, app del SNIG). Criterio de salida: si ninguno de los entrevistados acepta pagar, el foco pasa a veterinarios con cartera o se reformula antes de construir la extracción."
+  ],
+  "semestre_2": [
+   "Extracción de eventos con LLM, resolución de caravanas y confirmación del peón",
+   "Precisión medida sobre 300 audios por tipo de evento: guiones con jerga rural grabados por el equipo y los audios que aporte el piloto",
+   "Pendientes SNIG con exportación, y vista multi-cliente para veterinarios",
+   "Piloto de 8 semanas con 3 a 5 establecimientos, comparando minutos por evento contra su método actual"
+  ]
+ },
+ "stack": [
+  "React + Vite (PWA)",
+  "IndexedDB (Dexie)",
+  "Python FastAPI",
+  "PostgreSQL",
+  "OpenAI gpt-4o-mini-transcribe",
+  "Claude Haiku 4.5",
+  "Docker Compose",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 164,
+  "items": [
+   {
+    "concepto": "AWS Lightsail Linux 1 GB, IPv4",
+    "usd_anual": 84,
+    "supuesto": "USD 7 por mes x 12; API y PostgreSQL en Docker para hasta 30 establecimientos. Sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "Transcripción gpt-4o-mini-transcribe",
+    "usd_anual": 25,
+    "supuesto": "USD 0,003 por minuto x 7.000 minutos (30 usuarios x 4 minutos x 40 semanas, más pruebas), redondeado.",
+    "fuente_precio_url": "https://developers.openai.com/api/docs/pricing"
+   },
+   {
+    "concepto": "Claude Haiku 4.5",
+    "usd_anual": 40,
+    "supuesto": "USD 1 y 5 por millón de tokens de entrada y salida; 10.000 audios x (2.000 + 400 tokens).",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "Dominio",
+    "usd_anual": 15,
+    "supuesto": "Estimación por encima de un .com por un año; Cloudflare Registrar no publica el precio en su página."
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "miTambo",
+   "evidencia_ids": [
+    "F-agro-001"
+   ],
+   "hueco": "El competidor más cercano en uso sin internet: uruguaya, unos USD 10 por mes, pero la ficha (2020) la limita a tambos. Extenderla a carne y sumar dictado es técnicamente posible, así que el hueco de foco pastoril y de voz es temporal; ninguna ficha dice que lo vaya a hacer."
+  },
+  {
+   "nombre": "Gecos SGG",
+   "evidencia_ids": [
+    "F-ataque-r2-m01-i002-competidor-002",
+    "F-defensa-r2-m01-i002-001"
+   ],
+   "hueco": "Jugador uruguayo de ganadería con trazabilidad por caravana, reloteo, pesajes, tratamientos y conciliación SNIG. La página, descrita como sistema web, no menciona uso sin señal, voz ni precio; no se verificó que no los tenga. Es la referencia a superar en conciliación; el hueco es captura de campo por el peón, sin dar por hecho que Gecos no pueda agregarla."
+  },
+  {
+   "nombre": "App SNIG (MGAP)",
+   "evidencia_ids": [
+    "F-ataque-r2-m01-i002-competidor-001",
+    "F-agro-004"
+   ],
+   "hueco": "Canal oficial gratuito para consultas y trámites puntuales (muerte, descarte, reidentificación, extravío) y guías digitales en marcha. Las fichas no muestran registro interno por lote ni captura por voz; el producto no lo reemplaza, evita retranscribir, y su exportación pierde valor si el MGAP ofrece API o carga masiva."
+  },
+  {
+   "nombre": "Cattler",
+   "evidencia_ids": [
+    "F-agro-006"
+   ],
+   "hueco": "La ficha lo ubica en feedlots y no en sistemas pastoriles, aunque opera en Uruguay y declara crecer cerca de 20% mensual: podría ampliar de segmento."
+  },
+  {
+   "nombre": "Albor",
+   "evidencia_ids": [
+    "F-agro-007"
+   ],
+   "hueco": "Sistema integral paraguayo (contabilidad, sueldos), ficha de 2018. No es ancla de precio; la ficha no muestra voz ni uso sin señal."
+  }
+ ],
+ "monetizacion": "El productor paga entre USD 6 y 10 por mes por establecimiento (ancla local: miTambo, unos USD 10 con prueba gratis, F-agro-001, de un segmento distinto), con prueba gratis. Veterinarios con varios clientes: hipótesis secundaria, precio a definir en las entrevistas. Canal supuesto: veterinarios, gremiales y ferias, sin ficha que lo respalde. Tamaño de mercado no medido: F-agro-002 cuenta animales, no establecimientos. Escenario ilustrativo: 100 establecimientos a USD 60 por año = USD 6.000 por año. La alternativa actual del productor chico (papel, WhatsApp) no cuesta en efectivo, así que la disposición a pagar es el supuesto central y se valida en entrevistas y piloto.",
+ "riesgos": [
+  "Errores al transcribir jerga rural y números de caravana.",
+  "Baja disposición a pagar del productor chico, cuya alternativa actual no cuesta en efectivo, y costo actual sin medir.",
+  "El MGAP puede ampliar su app, las guías digitales (F-agro-004) o abrir una API, y cubrir parte del trámite.",
+  "miTambo puede extenderse a carne, Gecos o Cattler pueden agregar captura de campo, y la voz con LLM es copiable.",
+  "Sin contacto identificado, el piloto y los audios reales pueden no conseguirse.",
+  "Ley 18.331: consentimiento, transferencia internacional a proveedores de IA y registro de la base."
+ ],
+ "supuestos": [
+  "Los productores chicos registran en papel o WhatsApp y notifican al SNIG a mano o con intermediarios; el costo en horas y errores no está medido y se mide en entrevistas.",
+  "El precio de Albor no es referencia; USD 6 a 10 por mes es aceptable según el único ancla local (miTambo); sin validar.",
+  "Los veterinarios llevan la trazabilidad de varios clientes y pagarían por cartera; sin ficha.",
+  "No se sabe si el SNIG tiene API para terceros (la página oficial abierta no lo dice); el MVP no la necesita y exporta datos para cargar a mano. A confirmar con el MGAP.",
+  "La señal en el campo es intermitente; sin ficha, se confirma en entrevistas.",
+  "No hay contacto identificado; se buscan productores y veterinarios vía gremiales y ferias antes de diciembre de 2026. Si no se consiguen, el piloto baja a pruebas con guiones.",
+  "Privacidad: consentimiento escrito de productor y peón; audio borrado tras confirmar el evento; al LLM solo va texto sin nombres; transferencia internacional a revisar contra la Ley 18.331.",
+  "Fichas de competidores de 2018 a 2023; su oferta pudo cambiar.",
+  "De Gecos solo se sabe lo que dice su página (sistema web, conciliación SNIG); si ofrece uso sin señal, voz o precios accesibles a productores chicos no está verificado y se averigua en entrevistas.",
+  "El corpus de audios rurales confirmados es una ventaja inicial moderada, no un foso: depende de conseguir usuarios reales."
+ ],
+ "evidencias": [
+  "F-agro-002",
+  "F-agro-004",
+  "F-agro-007",
+  "F-agro-001",
+  "F-agro-006",
+  "F-ataque-r2-m01-i002-competidor-001",
+  "F-ataque-r2-m01-i002-competidor-002",
+  "F-defensa-r2-m01-i002-001"
+ ]
+}

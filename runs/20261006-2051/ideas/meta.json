@@ -1,0 +1,85 @@
+{
+ "about": "Lo que el juez no ve: de qué generador y estrategia salió cada idea.",
+ "ideas": {
+  "i001": {
+   "generador": "g05",
+   "local_id": "g05-1",
+   "estrategia": "invertir",
+   "foco": [
+    "comercio-retail"
+   ]
+  },
+  "i002": {
+   "generador": "g03",
+   "local_id": "g03-1",
+   "estrategia": "segmento",
+   "foco": [
+    "agro"
+   ]
+  },
+  "i003": {
+   "generador": "g02",
+   "local_id": "g02-2",
+   "estrategia": "capacidad",
+   "foco": [
+    "comercio-retail"
+   ]
+  },
+  "i004": {
+   "generador": "g04",
+   "local_id": "g04-2",
+   "estrategia": "localizar",
+   "foco": [
+    "fintech-seguros"
+   ]
+  },
+  "i005": {
+   "generador": "g05",
+   "local_id": "g05-2",
+   "estrategia": "invertir",
+   "foco": [
+    "comercio-retail"
+   ]
+  },
+  "i006": {
+   "generador": "g03",
+   "local_id": "g03-2",
+   "estrategia": "segmento",
+   "foco": [
+    "agro"
+   ]
+  },
+  "i007": {
+   "generador": "g01",
+   "local_id": "g01-1",
+   "estrategia": "dolor",
+   "foco": [
+    "fintech-seguros"
+   ]
+  },
+  "i008": {
+   "generador": "g04",
+   "local_id": "g04-1",
+   "estrategia": "localizar",
+   "foco": [
+    "fintech-seguros"
+   ]
+  },
+  "i009": {
+   "generador": "g02",
+   "local_id": "g02-1",
+   "estrategia": "capacidad",
+   "foco": [
+    "comercio-retail"
+   ]
+  },
+  "i010": {
+   "generador": "g01",
+   "local_id": "g01-2",
+   "estrategia": "dolor",
+   "foco": [
+    "fintech-seguros"
+   ]
+  }
+ }
+}

@@ -1,0 +1,201 @@
+{
+  "generador": "g03",
+  "ideas": [
+    {
+      "local_id": "g03-1",
+      "titulo": "Libreta ganadera por voz y sin señal para productores chicos, con pendientes del SNIG",
+      "problema": "Todo productor ganadero debe notificar al SNIG movimientos, cambios de propiedad y eventos productivos y sanitarios de cada bovino (más de 12 millones identificados): una carga administrativa recurrente (F-agro-002), mientras el MGAP digitaliza las guías de tránsito (F-agro-004). Ninguna opción de las fichas encaja con el ganadero pastoril chico: Albor cuesta desde USD 115 por mes (F-agro-007), miTambo es barata y sin internet pero solo para tambos (F-agro-001) y Cattler apunta a feedlots (F-agro-006).",
+      "usuario": "Productor ganadero pastoril chico de Uruguay y su personal de campo. Paga el productor; segundo canal: veterinarios con varios clientes.",
+      "solucion": "PWA que funciona sin señal. El peón dicta un audio (vacunamos 38 terneros del potrero 4) o usa un formulario corto. Al reconectar, el audio se transcribe y un LLM lo convierte en eventos (nacimiento, vacunación, muerte, movimiento, venta), resuelve caravanas y lotes contra el inventario y pide confirmación si duda. Mantiene el stock por lote y lista los pendientes del SNIG con los datos listos para declarar por el canal oficial.",
+      "mvp": {
+        "semestre_1": [
+          "PWA offline con inventario por lote, carga manual de eventos y sincronización",
+          "FastAPI y PostgreSQL en Lightsail; audio grabado sin señal y transcripto al reconectar",
+          "Demo: 20 eventos cargados en modo avión actualizan el rodeo al reconectar"
+        ],
+        "semestre_2": [
+          "Extracción de eventos con LLM, resolución de caravanas y confirmación del usuario",
+          "Precisión medida sobre 300 audios, por tipo de evento",
+          "Pendientes SNIG y vista multi-cliente para veterinarios",
+          "Piloto de 8 semanas con 5 a 10 establecimientos"
+        ]
+      },
+      "stack": [
+        "React + Vite (PWA)",
+        "IndexedDB (Dexie)",
+        "Python FastAPI",
+        "PostgreSQL",
+        "OpenAI gpt-4o-mini-transcribe",
+        "Claude Haiku 4.5",
+        "Docker Compose",
+        "AWS Lightsail"
+      ],
+      "costo_infra": {
+        "total_anual_usd": 164,
+        "items": [
+          {
+            "concepto": "AWS Lightsail Linux 1 GB, IPv4",
+            "usd_anual": 84,
+            "supuesto": "USD 7 por mes x 12; API y PostgreSQL en Docker para hasta 30 establecimientos. Sin capa gratuita.",
+            "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+          },
+          {
+            "concepto": "Transcripción gpt-4o-mini-transcribe",
+            "usd_anual": 25,
+            "supuesto": "USD 0,003 por minuto x 7.000 minutos (30 usuarios x 4 minutos x 40 semanas, más pruebas), redondeado.",
+            "fuente_precio_url": "https://developers.openai.com/api/docs/pricing"
+          },
+          {
+            "concepto": "Claude Haiku 4.5",
+            "usd_anual": 40,
+            "supuesto": "USD 1 y 5 por millón de tokens de entrada y salida; 10.000 audios x (2.000 + 400 tokens).",
+            "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+          },
+          {
+            "concepto": "Dominio",
+            "usd_anual": 15,
+            "supuesto": "Estimación por encima de un .com por un año; Cloudflare Registrar no publica el precio en su página."
+          }
+        ]
+      },
+      "competidores": [
+        {
+          "nombre": "Albor",
+          "evidencia_ids": [
+            "F-agro-007"
+          ],
+          "hueco": "Desde USD 115 por mes; la ficha no muestra registro por voz ni sin señal."
+        },
+        {
+          "nombre": "miTambo",
+          "evidencia_ids": [
+            "F-agro-001"
+          ],
+          "hueco": "Barata y sin internet, pero solo para tambos."
+        },
+        {
+          "nombre": "Cattler",
+          "evidencia_ids": [
+            "F-agro-006"
+          ],
+          "hueco": "Foco en feedlots, no en ganadería pastoril."
+        }
+      ],
+      "monetizacion": "El productor paga USD 6 por mes o USD 60 por año por establecimiento; veterinarios, USD 35 por mes hasta 15 clientes. Canal: veterinarios, gremiales y ferias. Escenario: 300 establecimientos con plan anual al tercer año = USD 18.000 por año. Precios a validar.",
+      "riesgos": [
+        "Errores al transcribir jerga rural y números de caravana.",
+        "Conflictos de sincronización entre usuarios sin señal.",
+        "Baja disposición a pagar del productor chico.",
+        "El MGAP puede ampliar sus herramientas digitales (F-agro-004).",
+        "Ley 18.331: consentimiento e inscripción de la base de datos."
+      ],
+      "supuestos": [
+        "Los productores chicos registran en papel y notifican al SNIG a mano o con intermediarios; el costo en horas y errores no está medido.",
+        "USD 115 por mes es caro para ellos y USD 6 es aceptable; sin validar.",
+        "Los veterinarios llevan la trazabilidad de varios clientes y pagarían por cartera.",
+        "El SNIG no tiene API pública para terceros; el MVP no la necesita.",
+        "La señal en el campo es intermitente.",
+        "Se puede entrevistar productores antes de diciembre de 2026, sin contacto identificado.",
+        "Fichas de competidores de 2018 a 2023; su oferta pudo cambiar."
+      ],
+      "evidencias": [
+        "F-agro-002",
+        "F-agro-004",
+        "F-agro-007",
+        "F-agro-001",
+        "F-agro-006"
+      ]
+    },
+    {
+      "local_id": "g03-2",
+      "titulo": "Chequeo de zonas sensibles y reporte de cobertura para aplicadores con drones",
+      "problema": "Los drones aplicadores crecen en Uruguay: 30 vendidos en 2022 y 30 solo en el primer trimestre de 2023, a USD 35.000 a 45.000 cada uno, con datos de vuelo y aplicación por gestionar (F-agro-008). El Estado vigila dónde se aplica: el sistema GMA se probó sobre 100.000 hectáreas en Soriano para alertar conflictos con centros urbanos, poblaciones rurales y escuelas (F-agro-005). El operador chico carga ese riesgo y debe demostrar a su cliente qué aplicó y dónde.",
+      "usuario": "Contratistas y productores que aplican con 1 a 3 drones. Paga el operador; su cliente recibe el reporte gratis.",
+      "solucion": "Web y PWA para el operador. Antes de volar: importa el lote y PostGIS chequea la distancia a escuelas y centros poblados de capas abiertas, con zonas de exclusión configurables. Después: importa el registro de vuelo, reconstruye las franjas aplicadas y calcula hectáreas cubiertas, solapes, faltantes e invasiones de zonas sensibles. Un LLM con visión lee la etiqueta y precarga producto y dosis. Sale un reporte PDF por aplicación e historial por lote.",
+      "mvp": {
+        "semestre_1": [
+          "Capas abiertas de escuelas y centros poblados en PostGIS y chequeo de distancias",
+          "Mapa web con lotes KML e importador de vuelos de una marca de drone",
+          "Demo: planificar junto a una escuela y ver la advertencia"
+        ],
+        "semestre_2": [
+          "Reconstrucción de franjas: cobertura, solapes, faltantes e invasiones",
+          "Precarga de producto y dosis desde foto con LLM",
+          "Reporte PDF e historial por lote",
+          "Piloto con 2 a 4 operadores en una temporada"
+        ]
+      },
+      "stack": [
+        "React + Vite (PWA)",
+        "Mapbox GL JS",
+        "Python FastAPI",
+        "PostgreSQL + PostGIS",
+        "Shapely",
+        "Claude Haiku 4.5 (visión)",
+        "WeasyPrint",
+        "Docker Compose",
+        "AWS Lightsail"
+      ],
+      "costo_infra": {
+        "total_anual_usd": 174,
+        "items": [
+          {
+            "concepto": "AWS Lightsail Linux 2 GB, IPv4",
+            "usd_anual": 144,
+            "supuesto": "USD 12 por mes x 12; API, PostGIS y geoprocesamiento en Docker. Sin capa gratuita.",
+            "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+          },
+          {
+            "concepto": "Claude Haiku 4.5",
+            "usd_anual": 15,
+            "supuesto": "USD 1 y 5 por millón de tokens de entrada y salida; 3.000 fotos x (2.000 + 300 tokens), redondeado.",
+            "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+          },
+          {
+            "concepto": "Mapbox GL JS",
+            "usd_anual": 0,
+            "supuesto": "Capa gratuita de 50.000 cargas por mes, renovada mensualmente sin vencimiento indicado; el piloto usa menos de 3.000.",
+            "fuente_precio_url": "https://www.mapbox.com/pricing"
+          },
+          {
+            "concepto": "Dominio",
+            "usd_anual": 15,
+            "supuesto": "Estimación por encima de un .com por un año; Cloudflare Registrar no publica el precio en su página."
+          }
+        ]
+      },
+      "competidores": [
+        {
+          "nombre": "Sistema GMA (MGAP)",
+          "evidencia_ids": [
+            "F-agro-005"
+          ],
+          "hueco": "Sistema estatal probado con 23 aplicadoras y 33 dispositivos; alerta al Estado, no ayuda al operador a planificar ni reportar."
+        }
+      ],
+      "monetizacion": "El operador paga USD 250 por año por drone; su cliente no paga. Canal: distribuidores de drones y contacto directo. Escenario: 40 drones al tercer año = USD 10.000 por año; crecer exige Argentina o Brasil. Precio a validar.",
+      "riesgos": [
+        "Formatos de vuelo distintos o cerrados según la marca.",
+        "Precisión de las franjas con el GPS del drone.",
+        "Mercado uruguayo de decenas de drones (F-agro-008).",
+        "Los fabricantes pueden sumar estas funciones.",
+        "Un falso negativo perjudica al operador: el producto advierte, no habilita."
+      ],
+      "supuestos": [
+        "Las fichas no muestran software para aplicadores; los fabricantes quizás tengan el suyo.",
+        "Los operadores chicos no tienen hoy chequeo de zonas ni reportes automáticos.",
+        "Los drones exportan el registro de vuelo en formato legible; validar por marca.",
+        "Hay capas abiertas de escuelas y centros poblados utilizables.",
+        "Las distancias de exclusión salen de la normativa, a relevar.",
+        "No se sabe si el GMA alcanza a los drones.",
+        "Los clientes valoran el reporte y el operador pagaría USD 250 por año.",
+        "Se puede llegar a operadores vía distribuidores antes de diciembre de 2026, sin contacto identificado.",
+        "Datos de 2019 (F-agro-005) y 2023 (F-agro-008); pueden haber cambiado."
+      ],
+      "evidencias": [
+        "F-agro-008",
+        "F-agro-005"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+ "idea": "i005",
+ "respuestas": [
+  {
+   "ataque": 1,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que Fixed y gestionUltimate existen y venden stock con facturación (fichas F-ataque-r1-m01-i005-cliente-001 y 002): los agregué a competidores y quité el supuesto de que solo está YoFacturo. No acepto que eso anule el hueco: las dos soluciones exigen operar dentro de su sistema, y Fixed vende el stock solo en su plan más caro (UYU 2.140 contra 980 del Ilimitado, F-defensa-r1-m01-i005-001); la página tampoco muestra carga de compras de proveedores (lo declaro como supuesto). Acepto que el tamaño del segmento que no migra no está medido: quedó como supuesto a validar en el piloto.",
+   "evidencia": ["F-ataque-r1-m01-i005-cliente-001", "F-ataque-r1-m01-i005-cliente-002", "F-defensa-r1-m01-i005-001"]
+  },
+  {
+   "ataque": 2,
+   "decision": "PARCIAL",
+   "detalle": "Tiene razón en que F-comercio-retail-006 es de un competidor y no mide el costo del faltante: lo dije en el texto y el costo del faltante pasó a supuestos. No tiene razón en que no haya señal de pago: Fixed cobra el stock como escalón aparte (UYU 2.140 contra 980 del plan Ilimitado, ficha F-defensa-r1-m01-i005-001) y gestionUltimate lo vende integrado (F-ataque-r1-m01-i005-cliente-002). Que el comercio pague por stock está respaldado por dos ofertas locales; cuánto pierde por faltantes sigue siendo supuesto.",
+   "evidencia": ["F-comercio-retail-006", "F-defensa-r1-m01-i005-001", "F-ataque-r1-m01-i005-cliente-002"]
+  },
+  {
+   "ataque": 3,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que la carga periódica es trabajo nuevo y que un stock desactualizado pierde confianza. Arreglos: cada producto muestra la fecha del último movimiento, el stock se marca como no confiable tras 14 días sin cargas (supuesto), y el piloto mide minutos de carga por semana además de precisión. No acepto que el flujo sea inviable: no hay ficha que lo pruebe y la idea nunca prometió integración automática; la promesa es no cambiar de facturador ni cargar productos a mano, y el piloto contra conteo físico mide si el esfuerzo compensa. Lo de ventas sin comprobante ya estaba en riesgos.",
+   "evidencia": []
+  },
+  {
+   "ataque": 4,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que la meta de 150 comercios y el canal contable carecen de base y que el equipo no declara contactos (constraints.md): quedaron como supuestos a largo plazo, y la meta ya no es objetivo de la tesis, que busca que parte de los 3 a 5 pilotos acepte pagar. No acepto que USD 12 no tenga ancla: el escalón de stock de Fixed cuesta UYU 1.160 más por mes (2.140 menos 980), unos USD 35 al tipo de cambio implícito de F-comercio-retail-001 (100.000 millones de pesos son USD 2.980 millones, unos 33,6 por dólar), de modo que la propuesta cuesta menos que ese escalón. Con dos comercios pagando (USD 288 al año) se cubren los USD 173,4 de infraestructura.",
+   "evidencia": ["F-defensa-r1-m01-i005-001", "F-ataque-r1-m01-i005-cliente-001", "F-comercio-retail-001"]
+  },
+  {
+   "ataque": 5,
+   "decision": "PARCIAL",
+   "detalle": "Tiene razón en que PDF y fotos viajan a una API externa antes de poder descartar datos personales y en que falta explicar la base legal. Arreglos: esa función es opcional y requiere consentimiento escrito y acuerdo de tratamiento; XML y CSV se procesan en el servidor propio; la base legal queda declarada como no verificada. No tiene razón en lo de los dos supuestos sobre DGI y la obtención de CFE: ya estaban declarados como primer supuesto de la idea, y la restricción R6 pide un camino de cumplimiento realista con la Ley 18.331, no una garantía de nivel empresarial.",
+   "evidencia": []
+  },
+  {
+   "ataque": 6,
+   "decision": "REBUT",
+   "detalle": "El ataque admite que con 3 a 5 comercios en 8 semanas el volumen alcanza. La cuenta: 5.000 PDF entre 5 comercios y 8 semanas son 125 por comercio y semana, un volumen holgado, y el costo anual de USD 173,4 deja USD 126,6 de margen bajo el tope de USD 300; con Droplet de 2 GiB el total sería unos USD 260, también dentro del tope. R1 mide el MVP durante 2027, no una escala de 150 comercios, que ya es un supuesto de largo plazo. Agregué el volumen del piloto al supuesto del ítem para que se vea.",
+   "evidencia": []
+  }
+ ],
+ "nuevas_fichas": [
+  {
+   "id": "F-defensa-r1-m01-i005-001",
+   "sector": "comercio-retail",
+   "hallazgo": "Fixed, facturador uruguayo, vende el control de stock (criterio FIFO) solo en su plan más caro: UYU 2.140 por mes, contra UYU 980 del plan Ilimitado sin stock (UYU 1.626 y 466 con beneficio fiscal).",
+   "source_url": "https://fixed.uy/",
+   "source_title": "Fixed Factura Electrónica",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-07T13:00:00",
+   "extracto": "Gestión de productos con control de stock (criterio FIFO)",
+   "competidor": "Fixed"
+  }
+ ]
+}

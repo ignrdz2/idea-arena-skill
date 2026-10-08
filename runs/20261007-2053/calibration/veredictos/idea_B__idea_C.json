@@ -1,0 +1,32 @@
+{
+  "scores": {
+    "X": {"demanda": 5, "viabilidad": 7, "diferenciacion": 5, "business_case": 5, "encaje": 7, "academico": 8, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 1, "viabilidad": 1, "diferenciacion": 1, "business_case": 3, "encaje": 6, "academico": 4, "fatal": true, "fatal_motivo": "restriccion_dura:R1: el costo de infraestructura declarado es USD 504 por año, por encima del tope de USD 300, y la propia idea admite que crece con usuarios gratuitos; aun sacando el item de Google Maps (USD 180) el stack propuesto suma USD 324"}
+  },
+  "winner": "X",
+  "reason": "Y viola R1 con un costo declarado de USD 504 por año y ademas tiene demanda de pura opinion frente a Google Maps, Instagram y PedidosYa, mientras X entra holgado en USD 125 con un alcance demostrable por semestre y un problema tecnico medible.",
+  "standing": {
+    "X": [
+      "La demanda verificada es de contexto: El Observador confirma que las ventas varian con eventos y La Mañana que el sector tiene margenes golpeados, pero no hay ninguna medicion del sobrante en panaderias ni de lo que cuesta; el 5% a 15% es un supuesto declarado del que depende todo el ahorro.",
+      "No hay ninguna señal de pago: la disposicion a pagar USD 25 a 45 en un rubro que se declara 'en perdida' es una hipotesis sin consultar a ningun local.",
+      "El link de FAO Uruguay devuelve 404; la cifra de un millon de toneladas si aparece en la pagina del Ministerio de Ambiente (alrededor del 11% de la oferta), que tambien dice que cerca del 70% de las perdidas son en produccion y poscosecha, como la idea reconoce.",
+      "Delicious Data ya hace exactamente esto (pronostico de pedidos para panaderias con clima, feriados y calendario escolar); el hueco es solo regional y de idioma, y la afirmacion de que los puntos de venta locales no pronostican no tiene fuente ni se relevaron alternativas en LATAM.",
+      "Un proveedor de punto de venta local podria copiar la funcion rapido, y es a la vez el canal propuesto: la diferenciacion depende de que no lo haga.",
+      "Business case sin tamaño de mercado: no dice cuantas panaderias hay en Uruguay ni cuantas tienen punto de venta con detalle por producto; reconoce que con ese ticket hacen falta decenas de clientes con venta uno a uno.",
+      "No hay contactos en el sector en la tabla del equipo: los 2 o 3 locales del piloto de 10 semanas y la gremial como canal no estan asegurados, y sin ese piloto el modelo de S1 no tiene datos para el backtesting.",
+      "El plan gratuito de Open-Meteo es solo para uso no comercial; el piloto pago del semestre 2 necesitaria la licencia comercial, cuyo precio no esta en la tabla de costos (hay margen de USD 175 hasta el tope, pero el item falta).",
+      "Riesgo de adopcion real: requiere que alguien cargue el sobrante todos los dias, y si el pronostico no le gana al panadero experimentado el producto no tiene caso."
+    ],
+    "Y": [
+      "Viola R1: total declarado de USD 504 por año contra un tope de USD 300, con costo variable que crece con usuarios que no pagan.",
+      "Demanda sin evidencia: la propia idea dice que solo hay sentido comun y conversaciones con amigos; ningun restaurante fue consultado.",
+      "Competidores gratuitos y dominantes en el mercado local (Google Maps, TripAdvisor, Instagram, TikTok, PedidosYa) cubren mapa, reseñas, descubrimiento y relacion comercial; el unico hueco propuesto, la recomendacion por amigos, es un supuesto.",
+      "Arranque en frio doble (usuarios y restaurantes) sin presupuesto de marketing: no hay ingresos posibles durante la tesis y el motor de recomendacion no tiene datos para evaluarse.",
+      "Alcance inflado para dos semestres: app nativa iOS y Android, red social, chat, chatbot, motor de recomendacion, panel para restaurantes, gamificacion y campaña de lanzamiento.",
+      "Riesgo de R7: el catalogo de locales hay que construirlo y copiarlo de un tercero puede violar sus terminos de uso; no hay fuente legal identificada.",
+      "Carga regulatoria sin ingreso que la sostenga: perfilamiento con gustos, ubicacion y grafo social bajo la Ley 18.331, mas moderacion y responsabilidad por contenido de usuarios.",
+      "Valor academico flaco mientras no haya datos propios: el componente de IA es un envoltorio sobre un modelo de lenguaje, como la idea admite.",
+      "El item de Google Maps parece sobreestimado (la pagina de precios hoy da 10 mil llamadas gratis por SKU por mes en Essentials), pero ni sacandolo entero el total baja del tope."
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+ "idea": "i009",
+ "respuestas": [
+  {
+   "ataque": 1,
+   "decision": "CONCEDE",
+   "detalle": "Correcto: Boris y Undo están en la tienda de apps de Tiendanube (fichas F-ataque-r2-m01-i009-competidor-001 y F-ataque-r2-m01-i009-competidor-002) y la idea no los nombraba. Los agregué como competidores directos, retiré la frase de que las fichas no muestran módulo de devoluciones, declaré el hueco como hipótesis y dejé claro que el precio compite con planes gratis o freemium.",
+   "evidencia": [
+    "F-ataque-r2-m01-i009-competidor-001",
+    "F-ataque-r2-m01-i009-competidor-002"
+   ]
+  },
+  {
+   "ataque": 2,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que la clasificación es copiable y ya no la presento como defendible: está en riesgos. No acepto que ellos ya la tengan: abrí ambas páginas el 2026-10-07 y ninguna lista IA, fotos ni clasificación de motivos (portal, dashboard, guías, emails). Eso no prueba ausencia, y quedó en supuestos. El MVP mide la tasa de sugerencias aceptadas sin cambios sobre 300 casos etiquetados.",
+   "evidencia": [
+    "F-ataque-r2-m01-i009-competidor-001",
+    "F-ataque-r2-m01-i009-competidor-002"
+   ]
+  },
+  {
+   "ataque": 3,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que F-comercio-retail-003 muestra un segmento sin herramientas y no disposición a pagar, y que F-comercio-retail-007 no es precio de complementos; ya estaba en supuestos y ahora el plan B es piloto gratis medido si las entrevistas no muestran pago. Acoto el usuario a tiendas con 20 o más devoluciones por mes. No acepto que 8% sea solo falta de demanda: la ficha también dice que operar de forma artesanal es costoso, y ninguna empresa mide eficiencia.",
+   "evidencia": [
+    "F-comercio-retail-003",
+    "F-comercio-retail-007"
+   ]
+  },
+  {
+   "ataque": 4,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que la cuenta de 10 tiendas no tenía base y omitía churn y adquisición: la reemplacé por 5 tiendas por 6 meses (USD 450), marcada como ilustrativa sin churn ni adquisición medidos, y declaré que no hay contactos cargados. No acepto que el business case deba cubrir el costo: R1 limita el costo de infraestructura (USD 158 de 300) y no exige ingresos; el objetivo es un MVP más un business case con supuestos a la vista.",
+   "evidencia": [
+    "F-comercio-retail-010"
+   ]
+  },
+  {
+   "ataque": 5,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que F-comercio-retail-004 marca el envío como desafío y que los competidores cubren etiquetas; está en riesgos. No lo incorporo al MVP: sumaría alcance sin fuente de precios. Reposiciono el foco a tiendas fuera de Tiendanube, donde esas apps no operan (hipótesis declarada), y el valor probado es resolver más rápido cada caso.",
+   "evidencia": [
+    "F-comercio-retail-004",
+    "F-ataque-r2-m01-i009-competidor-002"
+   ]
+  },
+  {
+   "ataque": 6,
+   "decision": "REBUT",
+   "detalle": "La idea cita el 56% solo como barrera de compra del comprador, no como prueba de que la tienda pague: la disposición a pagar figura en supuestos como sin evidencia, a probar con 10 entrevistas. El ataque critica un salto que la idea no hace.",
+   "evidencia": [
+    "F-comercio-retail-002"
+   ]
+  }
+ ],
+ "nuevas_fichas": []
+}

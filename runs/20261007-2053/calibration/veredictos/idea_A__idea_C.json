@@ -1,0 +1,29 @@
+{
+  "scores": {
+    "X": {"demanda": 7, "viabilidad": 3, "diferenciacion": 3, "business_case": 5, "encaje": 9, "academico": 9, "fatal": true, "fatal_motivo": "restriccion_dura:R1: el costo declarado suma USD 307 por año (150 + 12 + 0 + 120 + 25), por encima del tope de USD 300, y la mitigación con créditos de estudiante no cita una fuente que los documente ni dice cuánto duran, como exige R1"},
+    "Y": {"demanda": 1, "viabilidad": 1, "diferenciacion": 1, "business_case": 2, "encaje": 4, "academico": 4, "fatal": true, "fatal_motivo": "restriccion_dura:R1: el costo declarado suma USD 504 por año (180 + 99 + 25 + 90 + 25 + 60 + 25), muy por encima del tope de USD 300, y crece con usuarios que no pagan"}
+  },
+  "winner": "X",
+  "reason": "Con las dos ideas fatales por R1 deciden los totales, y X tiene un dolor local verificado (ARCE atendió 21.532 consultas de proveedores en 2021) y un desafío técnico medible, mientras Y no tiene evidencia de demanda, ni hueco frente a Google Maps o PedidosYa, ni ingresos posibles durante la tesis.",
+  "standing": {
+    "X": [
+      "Viola R1: el total declarado es USD 307 por año, sobre el tope de USD 300; los créditos de estudiante no tienen fuente ni duración y el recorte a tres años de histórico no está cuantificado. Además la tabla no presupuesta el disco EBS de la instancia EC2 ni la transferencia de salida, que se cobran aparte.",
+      "Su propia fuente desmiente el hueco que declara: el artículo de El Observador dice que Gubly ya permite analizar los pliegos para saber si se cumplen las condiciones, ver a qué precios se adjudicó y vende la competencia para cotizar mejor, y cotizar en equipo. Lo que queda propio (bóveda con vencimientos cruzada contra el checklist, cita por página, Text-to-SQL) se copia rápido.",
+      "La hipótesis de precio (USD 40 a 120 por mes) está por encima de Gubly, que según la misma nota cobra USD 25 por mes o USD 250 por año y tiene plan gratuito, sin explicar por qué una PyME pagaría más.",
+      "El business case no cuantifica el mercado inicial (remite al dataset del RUPE sin dar el número de proveedores) ni describe el canal para llegar a las PyMEs.",
+      "Alcance inflado para dos semestres: ETL OCDS completo, OCR, extractor evaluado, radar, inteligencia de precios con resolución de entidades, Text-to-SQL, bóveda multi-tenant y piloto; el piloto con 3 a 5 PyMEs no tiene ningún contacto identificado en la tabla del equipo.",
+      "La evidencia de concentración y de pago (4% de empresas con más del 80% de los montos, 1.500 clientes de LicitaLAB) es de Chile y Perú; el costo local de armar una oferta no está medido.",
+      "La afirmación de que la licencia habilita el uso comercial citando la fuente no aparece en la página citada del catálogo: sus términos remiten a otra licencia sin decirlo ahí."
+    ],
+    "Y": [
+      "Viola R1: USD 504 por año declarados, y el costo de mapas y LLM crece con usuarios gratuitos.",
+      "Demanda sin ninguna evidencia: la propia idea admite que solo hay sentido común y conversaciones con amigos, y ningún restaurante fue consultado.",
+      "Sin diferenciación: Google Maps, TripAdvisor, Instagram, TikTok y PedidosYa ya cubren descubrimiento, reseñas y relación comercial con los restaurantes, gratis y con años de datos.",
+      "Arranque en frío doble (usuarios y restaurantes) sin presupuesto de marketing: sin audiencia ningún local paga, así que no hay ingresos posibles durante la tesis.",
+      "Business case vacío: precio de USD 30 a 60 por local sin validar, sin tamaño de mercado ni canal.",
+      "El catálogo de locales no tiene fuente legal y barata identificada, y copiarlo de un tercero puede violar sus términos de uso.",
+      "La IA es un envoltorio sobre un LLM sin datos propios para entrenar ni evaluar el recomendador, así que el aporte académico es flaco.",
+      "Datos de gustos, ubicación y grafo social con perfilamiento exigen evaluación de impacto bajo la Ley 18.331 y su reglamentación, además de moderación de contenido generado por usuarios."
+    ]
+  }
+}

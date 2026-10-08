@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Defensa de una idea",
+  "description": "Una respuesta por ataque. La idea revisada va en un archivo aparte, con el esquema de idea.",
+  "type": "object",
+  "required": ["idea", "respuestas"],
+  "properties": {
+    "idea": {"type": "string"},
+    "respuestas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["ataque", "decision", "detalle"],
+        "properties": {
+          "ataque": {"type": "integer", "minimum": 1},
+          "decision": {"enum": ["CONCEDE", "PARCIAL", "REBUT"]},
+          "detalle": {"type": "string", "minLength": 3, "maxLength": 1200},
+          "evidencia": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "nuevas_fichas": {"type": "array", "maxItems": 10, "items": {"type": "object"}}
+  },
+  "additionalProperties": false
+}

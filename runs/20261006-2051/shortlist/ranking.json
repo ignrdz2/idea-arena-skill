@@ -1,0 +1,100 @@
+{
+ "ranking": [
+  {
+   "id": "i002",
+   "champion": true,
+   "reached_round": 4,
+   "eliminated_in": null,
+   "eliminated_by": null,
+   "lost_score": null,
+   "fatal": false,
+   "rank": 1,
+   "titulo": "Libreta ganadera por voz y sin señal para productores chicos, con datos listos para el SNIG"
+  },
+  {
+   "id": "i005",
+   "champion": false,
+   "reached_round": 3,
+   "eliminated_in": 3,
+   "eliminated_by": "i002",
+   "lost_score": 58.5,
+   "fatal": false,
+   "rank": 2,
+   "titulo": "Stock al día a partir de los comprobantes electrónicos que el comercio ya tiene"
+  },
+  {
+   "id": "i006",
+   "champion": false,
+   "reached_round": 2,
+   "eliminated_in": 2,
+   "eliminated_by": "i005",
+   "lost_score": 52.5,
+   "fatal": false,
+   "rank": 3,
+   "titulo": "Chequeo previo de zonas sensibles y cobertura estimada para aplicadores con drones"
+  },
+  {
+   "id": "i009",
+   "champion": false,
+   "reached_round": 2,
+   "eliminated_in": 2,
+   "eliminated_by": "i002",
+   "lost_score": 52.0,
+   "fatal": false,
+   "rank": 4,
+   "titulo": "Portal de devoluciones con clasificación automática para tiendas online pyme"
+  },
+  {
+   "id": "i004",
+   "champion": false,
+   "reached_round": 1,
+   "eliminated_in": 1,
+   "eliminated_by": "i006",
+   "lost_score": 59.5,
+   "fatal": false,
+   "rank": 5,
+   "titulo": "Proyección de caja para pymes con cheques diferidos y facturas electrónicas"
+  },
+  {
+   "id": "i008",
+   "champion": false,
+   "reached_round": 1,
+   "eliminated_in": 1,
+   "eliminated_by": "i005",
+   "lost_score": 57.5,
+   "fatal": false,
+   "rank": 6,
+   "titulo": "Verificador de estafas por WhatsApp para clientes de entidades financieras"
+  },
+  {
+   "id": "i007",
+   "champion": false,
+   "reached_round": 1,
+   "eliminated_in": 1,
+   "eliminated_by": "i002",
+   "lost_score": 56.5,
+   "fatal": false,
+   "rank": 7,
+   "titulo": "Alerta temprana de sitios clonados para entidades financieras uruguayas"
+  },
+  {
+   "id": "i010",
+   "champion": false,
+   "reached_round": 1,
+   "eliminated_in": 1,
+   "eliminated_by": "i009",
+   "lost_score": 51.0,
+   "fatal": false,
+   "rank": 8,
+   "titulo": "Comparativos y renovaciones automáticas para corredores de seguros"
+  }
+ ],
+ "top": [
+  "i002",
+  "i005",
+  "i006",
+  "i009",
+  "i004"
+ ],
+ "excluidas_por_fallo_fatal": []
+}

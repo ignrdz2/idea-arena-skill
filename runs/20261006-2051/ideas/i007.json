@@ -1,0 +1,85 @@
+{
+ "id": "i007",
+ "titulo": "Alerta temprana de sitios clonados para entidades financieras uruguayas",
+ "problema": "Las denuncias por estafa en Uruguay pasaron de 1.872 en 2015 a 25.116 en 2024; el phishing es la técnica digital más frecuente y la prevención depende más de cada persona que de la policía (F-fintech-seguros-001). Los delincuentes clonan sitios bancarios con IA en segundos y las transferencias instantáneas eliminan la ventana de recupero (F-fintech-seguros-002, F-fintech-seguros-003): si el clon no se detecta antes de circular, la pérdida es casi definitiva. No hay datos oficiales del monto perdido (F-fintech-seguros-002).",
+ "usuario": "Áreas de seguridad o fraude de entidades financieras medianas de Uruguay (cooperativas, financieras, fintech, aseguradoras). Paga la entidad.",
+ "solucion": "Vigila los logs públicos de Certificate Transparency y variantes del dominio de cada marca cliente. Un navegador sin interfaz visita cada candidato y guarda captura, HTML y DNS. Un filtro barato lo compara con el sitio oficial (similitud visual y de estructura, formularios de clave); solo los dudosos pasan a un modelo de lenguaje que clasifica y explica. Ante un clon, alerta por correo y arma la evidencia para pedir la baja. Los clientes de la entidad pueden reenviar enlaces sospechosos para análisis automático.",
+ "mvp": {
+  "semestre_1": [
+   "Ingesta de Certificate Transparency y generador de variantes de dominio para 5 marcas de prueba.",
+   "Visitador con Playwright que guarda captura, HTML y DNS.",
+   "Filtro de similitud visual y estructural evaluado sobre clones y sitios legítimos etiquetados.",
+   "Demo: tablero de candidatos por riesgo, con precisión y recall del filtro."
+  ],
+  "semestre_2": [
+   "Clasificación con LLM de los casos dudosos, con explicación.",
+   "Alertas por correo y evidencia exportable en PDF para pedir la baja.",
+   "Casilla de reporte para clientes de la entidad.",
+   "Varias entidades con roles; piloto con 1 o 2 entidades y business case.",
+   "Demo: detección de punta a punta de un clon de una marca ficticia, con tiempo medido."
+  ]
+ },
+ "stack": [
+  "Python",
+  "FastAPI",
+  "Playwright",
+  "imagehash",
+  "Claude Haiku 4.5",
+  "PostgreSQL",
+  "React",
+  "Docker",
+  "AWS Lightsail",
+  "Amazon SES"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 198,
+  "items": [
+   {
+    "concepto": "AWS Lightsail Linux, 2 GB RAM",
+    "usd_anual": 144,
+    "supuesto": "12 meses a USD 12; navegador, API y base en Docker. Sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API Claude Haiku 4.5",
+    "usd_anual": 40,
+    "supuesto": "500 páginas dudosas por mes, 4.000 tokens de entrada y 300 de salida cada una (USD 1 y 5 por millón): unos USD 33, redondeado.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 12,
+    "supuesto": "1 año a USD 11,08, redondeado.",
+    "fuente_precio_url": "https://porkbun.com/products/domains"
+   },
+   {
+    "concepto": "Amazon SES",
+    "usd_anual": 2,
+    "supuesto": "Hasta 10.000 correos a USD 0,10 cada 1.000, redondeado.",
+    "fuente_precio_url": "https://aws.amazon.com/ses/pricing/"
+   }
+  ]
+ },
+ "competidores": [],
+ "monetizacion": "Suscripción mensual por marca monitoreada que paga la entidad: hipótesis de USD 150 a 300. Canal: venta directa a responsables de seguridad y fraude. Con 10 clientes a USD 200 serían USD 24.000 por año.",
+ "riesgos": [
+  "Clones que evaden el visitador (contenido solo para celulares o IPs locales) y falsos positivos.",
+  "Muchos ataques no usan dominios parecidos (acortadores, sitios hackeados, redes): el monitoreo cubre una parte.",
+  "Bancos grandes con proveedor propio y pocas entidades medianas: mercado chico.",
+  "Venta lenta a entidades financieras; la baja depende del hosting y el registrador."
+ ],
+ "supuestos": [
+  "Las entidades medianas no monitorean dominios parecidos y se enteran de los clones por reclamos; a validar en entrevistas.",
+  "Los logs de Certificate Transparency y el DNS son públicos y gratuitos, y buena parte de los clones usa certificados nuevos que aparecen ahí.",
+  "Disposición a pagar de USD 150 a 300 por mes: hipótesis.",
+  "Hay ejemplos públicos de phishing para armar el conjunto de evaluación.",
+  "Las fichas no muestran competidores; probablemente existen servicios globales de protección de marca, a relevar.",
+  "La cantidad de entidades medianas que serían clientes no está en las fichas.",
+  "Los datos de los reportes de clientes se tratan con consentimiento según la Ley 18.331."
+ ],
+ "evidencias": [
+  "F-fintech-seguros-001",
+  "F-fintech-seguros-002",
+  "F-fintech-seguros-003"
+ ]
+}

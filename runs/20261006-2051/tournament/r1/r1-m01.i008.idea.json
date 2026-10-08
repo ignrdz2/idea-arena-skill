@@ -1,0 +1,83 @@
+{
+ "id": "i008",
+ "titulo": "Verificador de estafas por WhatsApp para clientes de entidades financieras",
+ "problema": "Las denuncias por estafa en Uruguay pasaron de 1.872 en 2015 a 25.116 en 2024; el phishing es la técnica digital más frecuente y la prevención depende de cada persona (F-fintech-seguros-001). Con IA se clonan sitios bancarios en segundos y las transferencias instantáneas eliminan la ventana de recupero (F-fintech-seguros-002, F-fintech-seguros-003). Quien duda no tiene a quién consultar antes de transferir. No hay datos oficiales del monto perdido (F-fintech-seguros-002).",
+ "usuario": "Usan: clientes de fintech, financieras y cooperativas. Paga: la entidad.",
+ "solucion": "Un número de WhatsApp al que se reenvía el mensaje, link o captura. Se extraen URLs y teléfonos y cada dominio se contrasta con una lista blanca de dominios oficiales uruguayos, su antigüedad (RDAP) y sus certificados recientes (Certificate Transparency). Un LLM con RAG sobre casos públicos locales responde en segundos, en español rioplatense, con riesgo, razones y qué hacer; nunca afirma que algo es seguro. Antes del LLM se tachan teléfonos, nombres y cuentas; las capturas se borran tras analizarlas. El panel muestra conteos y dominios que imitan la marca de la entidad, no mensajes.",
+ "mvp": {
+  "semestre_1": [
+   "Bot de WhatsApp con veredicto y explicación sobre texto y links.",
+   "Señales de URL y RAG sobre casos en Qdrant.",
+   "Set etiquetado de 300 mensajes con precisión y recall."
+  ],
+  "semestre_2": [
+   "Análisis de capturas con visión y detección de dominios parecidos a marcas cliente.",
+   "Panel web con consultas agregadas y campañas detectadas, para una entidad piloto (número compartido; número propio por entidad queda fuera del MVP).",
+   "Piloto con una entidad o 100 voluntarios con consentimiento, con métricas de uso y acierto."
+  ]
+ },
+ "stack": [
+  "Python",
+  "FastAPI",
+  "WhatsApp Cloud API",
+  "Claude Haiku 4.5",
+  "Qdrant",
+  "PostgreSQL",
+  "Playwright",
+  "React",
+  "Docker en AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 209,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail (contenedores Docker)",
+    "usd_anual": 114,
+    "supuesto": "Linux de 1 GB a USD 7/mes en el semestre 1 y 2 GB a USD 12/mes en el semestre 2; sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API de Claude Haiku 4.5",
+    "usd_anual": 50,
+    "supuesto": "4.000 consultas de 3.000 tokens de entrada y 400 de salida a USD 1 y 5 por millón (USD 20) más 10 evaluaciones por Batch (USD 13); redondeado.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "Mensajes de WhatsApp Cloud API",
+    "usd_anual": 0,
+    "supuesto": "Consultas iniciadas por el usuario, sin plantillas, dentro de la ventana de atención: gratis.",
+    "fuente_precio_url": "https://developers.facebook.com/docs/whatsapp/pricing"
+   },
+   {
+    "concepto": "Dominio y número de WhatsApp",
+    "usd_anual": 45,
+    "supuesto": "Estimación sin fuente: dominio .com (USD 20) y línea prepago (USD 25)."
+   }
+  ]
+ },
+ "competidores": [],
+ "monetizacion": "Hipótesis sin validar: la entidad paga USD 200 a 400 por mes. Mercado pagador: fintech, financieras y cooperativas, sin ficha de tamaño ni de presupuesto antifraude; el ecosistema insurtech (F-fintech-seguros-006) es solo contexto. Cuenta ilustrativa: cinco clientes a USD 300 dan unos USD 18.000 al año. Antes de diciembre se entrevista a responsables de riesgo para probar el precio.",
+ "riesgos": [
+  "Un falso negativo puede costarle dinero al usuario; se mide recall antes del piloto.",
+  "Venta B2B lenta; las entidades grandes pueden tener canal propio.",
+  "Cambios de política de WhatsApp (plan B: bot de Telegram).",
+  "Datos de terceros (Ley 18.331): una entidad pediría contrato de tratamiento.",
+  "Inyección de instrucciones."
+ ],
+ "supuestos": [
+  "WhatsApp es el canal donde llegan los mensajes sospechosos.",
+  "Las entidades pagarían USD 200 a 400 mensuales; sin validar.",
+  "A la entidad le cuestan reclamos o imagen las estafas con su marca; sin ficha.",
+  "Hoy las entidades usan avisos, atención y CERTuy, y WhatsApp o navegadores marcan enlaces; no se verificó su cobertura ni si hay competidores en Uruguay.",
+  "Asistentes antiestafas funcionan en otros mercados; sin ficha.",
+  "Hay casos públicos locales suficientes; RDAP y Certificate Transparency son gratuitos.",
+  "Minimización y consentimiento alcanzan para la Ley 18.331.",
+  "El equipo puede contactar entidades; no hay contactos declarados."
+ ],
+ "evidencias": [
+  "F-fintech-seguros-001",
+  "F-fintech-seguros-002",
+  "F-fintech-seguros-003",
+  "F-fintech-seguros-006"
+ ]
+}

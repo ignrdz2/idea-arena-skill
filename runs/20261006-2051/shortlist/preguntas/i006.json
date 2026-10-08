@@ -1,0 +1,30 @@
+{
+  "idea": "i006",
+  "preguntas": [
+    {
+      "pregunta": "Pensá en el último lote nuevo donde aplicaron con drone: ¿cómo averiguaron si había escuelas, centros poblados o cursos de agua cerca y a qué distancia estaban? ¿Qué herramienta o mapa usaron, quién lo hizo y cuánto tiempo les llevó?",
+      "a_quien": "contratista o productor uruguayo que aplica fitosanitarios con 1 a 3 drones propios",
+      "que_valida": "Supuesto de que el operador chico verifica hoy las zonas a ojo o con un mapa genérico, y ataque de ronda 2 de que el chequeo previo se hace con un mapa gratuito o que la app del fabricante ya lo cubre."
+    },
+    {
+      "pregunta": "Contame la última vez que una aplicación con drone les trajo un problema después de hacerla: un reclamo del cliente o de vecinos, una inspección o intimación del MGAP, o tener que volver a aplicar. ¿Qué pasó, cómo lo resolvieron y cuánto les costó en plata, horas de trabajo o clientes perdidos?",
+      "a_quien": "contratista o productor uruguayo que aplica fitosanitarios con 1 a 3 drones propios",
+      "que_valida": "Costo actual del problema: ataque de ronda 1 de que el costo del dolor no tiene ficha y supuesto de que se desconoce el costo de una multa. Si nunca pasó o costó poco, no hay dolor que justifique pagar."
+    },
+    {
+      "pregunta": "¿Qué software o suscripciones pagan hoy para trabajar con los drones, aparte del equipo? Por la última que contrataron: ¿quién decidió contratarla, quién la paga, cuánto pagan por año y por qué la pagaron en vez de seguir con algo gratis?",
+      "a_quien": "dueño o socio de una empresa contratista que aplica fitosanitarios con drones para terceros en Uruguay",
+      "que_valida": "Quién decide y paga, y disposición a pagar: supuesto de que el operador paga USD 250 por año por drone y ataques de ronda 1 y 2 de que esa cifra no tiene ficha y compite con herramientas gratuitas."
+    },
+    {
+      "pregunta": "La última vez que contrataste una aplicación con drone, ¿qué te entregó el aplicador al terminar para mostrarte qué se aplicó, dónde y en cuántas hectáreas? ¿Lo pediste vos, lo usaste para algo y te pasó alguna vez que lo facturado no coincidiera con lo aplicado?",
+      "a_quien": "productor agrícola uruguayo que contrató a un tercero una aplicación de fitosanitarios con drone en la última zafra",
+      "que_valida": "Supuesto de que los clientes del operador valoran un reporte de cobertura (ninguna ficha lo muestra) y de que lo reciben sin pagar: si hoy no piden ni usan nada, el reporte no suma valor a la venta."
+    },
+    {
+      "pregunta": "En los últimos 12 meses, ¿cuántos drones aplicadores vendieron y de qué marcas? De esos compradores, ¿cuántos son contratistas que aplican para terceros y cuántos productores que aplican en su propio campo, y cuántos drones tiene cada uno?",
+      "a_quien": "vendedor o responsable comercial de un distribuidor de drones agrícolas en Uruguay",
+      "que_valida": "Ataque de mercado diminuto (60 drones vendidos hasta el primer trimestre de 2023, sin total acumulado), supuesto de que la marca dominante se desconoce y viabilidad del canal por distribuidores."
+    }
+  ]
+}

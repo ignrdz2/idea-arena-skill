@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "about": "Estrategias de arranque de la fase 2 (generación). Cada generador recibe una. Son formas de buscar ideas, no temas: ninguna empuja hacia un sector o producto. La estrategia queda en ideas/meta.json y el juez nunca la ve. Podés agregar o editar entradas; los ids tienen que ser únicos.",
+  "strategies": [
+    {
+      "id": "dolor",
+      "name": "Partir de un dolor",
+      "how": "Elegí en las fichas los problemas más concretos y caros: quién lo sufre, cuánto le cuesta hoy en plata, tiempo o errores, y cómo lo resuelve ahora. Construí la idea hacia atrás desde ese dolor; la tecnología viene al final y solo si hace falta."
+    },
+    {
+      "id": "capacidad",
+      "name": "Partir de una capacidad técnica",
+      "how": "Mirá el perfil técnico del equipo en las restricciones y preguntate qué problema de las fichas se vuelve barato o posible de resolver gracias a esa capacidad. La capacidad es el punto de partida, pero la idea vale solo si el problema está en las fichas; no fuerces tecnología donde no hace falta."
+    },
+    {
+      "id": "segmento",
+      "name": "Segmento desatendido",
+      "how": "Buscá en las fichas un grupo de usuarios que las soluciones existentes ignoran o atienden mal: por tamaño (pymes, profesionales independientes, organizaciones del interior), por precio o por idioma. Diseñá para ese segmento en particular, con lo que puede pagar y usar."
+    },
+    {
+      "id": "localizar",
+      "name": "Localizar un producto extranjero exitoso",
+      "how": "Partí de un producto que funciona en otro mercado y que no tiene equivalente en Uruguay o LATAM según las fichas. Explicá qué cambia al traerlo: regulación, idioma, tamaño de mercado, integraciones locales, forma de pago. La adaptación es la idea, no la copia."
+    },
+    {
+      "id": "invertir",
+      "name": "Invertir lo que hace un incumbente",
+      "how": "Tomá un competidor establecido de las fichas y hacé lo opuesto a su supuesto central: si es caro, barato; si es complejo, mínimo; si vende a grandes, a chicos; si cobra licencia, por uso. La inversión tiene que crear valor real para alguien que hoy queda afuera."
+    }
+  ]
+}

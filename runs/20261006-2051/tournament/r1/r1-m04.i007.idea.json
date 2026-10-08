@@ -1,0 +1,96 @@
+{
+ "id": "i007",
+ "titulo": "Alerta temprana de sitios clonados para entidades financieras uruguayas",
+ "problema": "Las denuncias por estafa en Uruguay pasaron de 1.872 en 2015 a 25.116 en 2024 y el phishing es la técnica digital más frecuente (F-fintech-seguros-001). Itaú Uruguay advierte que clonan sitios bancarios con IA en segundos y que las transferencias instantáneas eliminan la ventana de recupero (F-fintech-seguros-002). Que las entidades medianas lo sufran y paguen es un supuesto a validar.",
+ "usuario": "Áreas de seguridad o fraude de entidades financieras medianas de Uruguay (cooperativas, financieras, fintech, aseguradoras). Paga la entidad.",
+ "solucion": "Vigila los logs de Certificate Transparency, filtrando certificados parecidos a las marcas cliente, y variantes de dominio. Un navegador sin interfaz visita cada candidato y guarda captura, HTML y DNS. Un filtro barato lo compara con el sitio oficial; solo los dudosos pasan a un modelo de lenguaje que clasifica y explica. Ante un clon, alerta por correo y arma la evidencia para que la entidad pida la baja.",
+ "mvp": {
+  "semestre_1": [
+   "Ingesta de Certificate Transparency y generador de variantes de dominio para 5 marcas de prueba.",
+   "Visitador con Playwright que guarda captura, HTML y DNS.",
+   "Filtro de similitud visual y estructural evaluado sobre clones y sitios legítimos etiquetados.",
+   "Demo: tablero de candidatos por riesgo, con precisión y recall del filtro."
+  ],
+  "semestre_2": [
+   "Clasificación con LLM de los casos dudosos, con explicación.",
+   "Alertas por correo y evidencia en PDF para pedir la baja.",
+   "Carga manual de enlaces por el analista, sin datos de clientes.",
+   "Varias entidades con roles; entrevistas, piloto si se consigue y business case.",
+   "Demo: detección de punta a punta de un clon de una marca ficticia, con tiempo medido."
+  ]
+ },
+ "stack": [
+  "Python",
+  "FastAPI",
+  "Playwright",
+  "imagehash",
+  "Claude Haiku 4.5",
+  "PostgreSQL",
+  "React",
+  "Docker",
+  "AWS Lightsail",
+  "Amazon SES"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 198,
+  "items": [
+   {
+    "concepto": "AWS Lightsail Linux, 2 GB RAM",
+    "usd_anual": 144,
+    "supuesto": "12 meses a USD 12; navegador, API y base en Docker. Sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API Claude Haiku 4.5",
+    "usd_anual": 40,
+    "supuesto": "500 páginas dudosas por mes, 4.000 tokens de entrada y 300 de salida cada una (USD 1 y 5 por millón): unos USD 33, redondeado.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 12,
+    "supuesto": "1 año a USD 11,08, redondeado.",
+    "fuente_precio_url": "https://porkbun.com/products/domains"
+   },
+   {
+    "concepto": "Amazon SES",
+    "usd_anual": 2,
+    "supuesto": "Hasta 10.000 correos a USD 0,10 cada 1.000, redondeado.",
+    "fuente_precio_url": "https://aws.amazon.com/ses/pricing/"
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Plataformas globales de protección de marca (Bolster, Doppel, ZeroFox, Fortra)",
+   "evidencia_ids": [
+    "F-defensa-r1-m04-i007-001"
+   ],
+   "hueco": "Precio a medida, sin lista pública. Hueco a validar: marcas locales, español y precio fijo; un global podría copiarlo."
+  }
+ ],
+ "monetizacion": "Suscripción mensual por marca que paga la entidad: hipótesis de USD 150 a 300, sin señal de pago. Compra probable: seguridad o riesgo, presupuesto a confirmar. Canal: venta directa. Escenarios: 3 clientes a USD 200 son USD 7.200 por año; 10 son USD 24.000.",
+ "riesgos": [
+  "Clones que evaden el visitador y falsos positivos.",
+  "Muchos ataques no usan dominios parecidos: el monitoreo cubre una parte.",
+  "Pocas entidades medianas: mercado chico que podría no pagar.",
+  "Venta lenta; sin contactos, el piloto se reemplaza por entrevistas.",
+  "La baja depende del hosting, el registrador y la entidad.",
+  "Instancia de 2 GB justa: si no alcanza, se encola."
+ ],
+ "supuestos": [
+  "Las entidades medianas no monitorean dominios parecidos y se enteran por reclamos; a validar en entrevistas.",
+  "Los logs de Certificate Transparency y el DNS son públicos y gratuitos, y buena parte de los clones usa certificados nuevos.",
+  "Disposición a pagar de USD 150 a 300 por mes: hipótesis.",
+  "Hay ejemplos públicos de phishing para evaluar el filtro.",
+  "Los competidores globales no publican precios; el hueco local es hipótesis.",
+  "La cantidad de entidades medianas no está en las fichas.",
+  "Unos 200 candidatos por día en serie caben en 2 GB; a medir.",
+  "El equipo no tiene contactos en el sector financiero."
+ ],
+ "evidencias": [
+  "F-fintech-seguros-001",
+  "F-fintech-seguros-002",
+  "F-defensa-r1-m04-i007-001"
+ ]
+}

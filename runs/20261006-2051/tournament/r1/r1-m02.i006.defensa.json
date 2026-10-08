@@ -1,0 +1,132 @@
+{
+ "idea": "i006",
+ "respuestas": [
+  {
+   "ataque": 1,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que ninguna ficha muestra que un cliente exija el reporte ni que el operador pague por él: sigue siendo supuesto y la idea lo dice. No acepto que el dolor sea solo opinión del autor: el MGAP exige a quien aplica con drones respetar las zonas buffer y registrar cada aplicación en el RAPF (fichas 001 y 003), y la resolución 188/011 fija 500 m a centros educativos para aplicación aérea (002). Arreglo: el problema pasa a apoyarse en esa obligación, y la frase sobre demostrar a su cliente deja de ser un hecho y queda como supuesto a validar.",
+   "evidencia": [
+    "F-defensa-r1-m02-i006-001",
+    "F-defensa-r1-m02-i006-002",
+    "F-defensa-r1-m02-i006-003"
+   ]
+  },
+  {
+   "ataque": 2,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que el mercado es chico y que 40 drones es una fracción alta; lo digo en la monetización. No acepto que 'decenas' sea el techo: F-agro-008 cuenta 60 drones vendidos entre 2022 y el primer trimestre de 2023, y el parque en operación no se conoce. Tampoco el objetivo de la tesis es sostener una empresa: constraints.md pide MVP más business case, con seguir como opción. Arreglo: declaro que el parque no se conoce y que el escenario es una fracción alta, y lo cuantifico con la única cifra verificada.",
+   "evidencia": [
+    "F-agro-008"
+   ]
+  },
+  {
+   "ataque": 3,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que no hay ficha sobre qué marca domina en Uruguay y que faltaba un plan B. Arreglo: el importador pasa a ser KML genérico (DJI Agras exporta KML, fichas 004 y 005), con carga manual de traza KML/GPX o dibujo de franjas si el operador no puede exportar, y en el semestre 1 se confirma marca y formato con operadores. Declaro que el KML no trae telemetría detallada (005), así que las franjas usan un ancho declarado por el operador. No acepto que no haya ningún formato conocido: hay uno documentado por dos fuentes.",
+   "evidencia": [
+    "F-defensa-r1-m02-i006-004",
+    "F-defensa-r1-m02-i006-005"
+   ]
+  },
+  {
+   "ataque": 4,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que no hay contacto identificado: la tabla de contactos está vacía y no invento ninguno; queda declarado. R4 pide usuarios que el equipo pueda contactar desde Uruguay, y los operadores son empresas con presencia comercial (F-agro-008), pero eso es supuesto. Arreglo: antes de diciembre se entrevista a 3 a 5 operadores por distribuidores y contacto directo, y el MVP no usa datos de clientes del operador: trabaja con polígonos de lotes sin titular y trazas propias o simuladas, lo que deja el cumplimiento de la Ley 18.331 en el alta del operador. No pido datos sensibles para validar.",
+   "evidencia": [
+    "F-agro-008"
+   ]
+  },
+  {
+   "ataque": 5,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que las capas abiertas siguen sin verificar y que F-agro-005 no habla de distancias ni de drones. Rebato que las distancias sean inventadas: la resolución 188/011 fija 500 m aéreos y 300 m terrestres a centros educativos (002) y la página del MGAP sobre drones exige respetar las zonas buffer (001). Queda como supuesto que los 500 m rijan para drones y la distancia a centros poblados. Arreglo: lo primero del semestre 1 es relevar capas; si faltan, el operador dibuja zonas, y el producto advierte, no habilita, con aviso de capas incompletas.",
+   "evidencia": [
+    "F-defensa-r1-m02-i006-001",
+    "F-defensa-r1-m02-i006-002"
+   ]
+  },
+  {
+   "ataque": 6,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que faltaba el software que rodea al dron. Lo agrego como competidor: la plataforma DJI exporta KML y existen AirData y AcreConnect (004, 005). Ninguna ficha dice que chequeen zonas buffer uruguayas ni que generen un reporte para el RAPF (003), pero tampoco puedo probar que no lo hagan: queda declarado. No acepto que el diferencial sea solo el PDF: el chequeo contra la normativa local del MGAP es lo que no aparece en esas fichas. Sigue siendo copiable por el fabricante y el riesgo ya lo dice.",
+   "evidencia": [
+    "F-defensa-r1-m02-i006-003",
+    "F-defensa-r1-m02-i006-004",
+    "F-defensa-r1-m02-i006-005"
+   ]
+  },
+  {
+   "ataque": 7,
+   "decision": "CONCEDE",
+   "detalle": "Tiene razón: la idea no definía qué se muestra si el piloto no arranca. Arreglo en el alcance: la segunda entrega muestra la reconstrucción y el reporte sobre registros KML reales o simulados, y el piloto pasa a ser opcional según temporada, con el calendario de aplicación como supuesto a validar. La señal de pago se busca antes, en las entrevistas.",
+   "evidencia": []
+  }
+ ],
+ "nuevas_fichas": [
+  {
+   "id": "F-defensa-r1-m02-i006-001",
+   "sector": "agro",
+   "hallazgo": "El MGAP exige a quienes aplican fitosanitarios con drones inscribirse en el RUO y el REA, tener carnet de aplicador, respetar las zonas buffer de centros educativos, centros poblados y cursos de agua, y registrar las aplicaciones en el RAPF.",
+   "source_url": "https://www.gub.uy/ministerio-ganaderia-agricultura-pesca/comunicacion/noticias/aplicaciones-aereas-productos-fitosanitarios-drones",
+   "source_title": "Aplicaciones aéreas de productos fitosanitarios con drones (MGAP)",
+   "source_date": "desconocida",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-07T10:00:00"
+  },
+  {
+   "id": "F-defensa-r1-m02-i006-002",
+   "sector": "agro",
+   "hallazgo": "La Resolución 188/011 del MGAP prohíbe las aplicaciones aéreas de fitosanitarios a menos de 500 metros del límite del predio de centros educativos, y las terrestres mecanizadas a menos de 300 metros.",
+   "source_url": "https://www.gub.uy/ministerio-ganaderia-agricultura-pesca/institucional/normativa/resolucion-n-188011-del-mgap-25112011-distancias-aplicaciones-cercanias",
+   "source_title": "Resolución N° 188/011 del MGAP, distancias de aplicaciones en cercanías a centros educativos",
+   "source_date": "2011-11-25",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-07T10:00:00",
+   "extracto": "Prohíbense las aplicaciones aéreas de productos fitosanitarios en todo tipo de cultivo, a una distancia inferior a 500 metros del límite del predio de centros educativos."
+  },
+  {
+   "id": "F-defensa-r1-m02-i006-003",
+   "sector": "agro",
+   "hallazgo": "El RAPF es un sistema en línea del MGAP, operativo desde septiembre de 2022, donde se registran las aplicaciones de fitosanitarios hechas con equipos terrestres grandes, aviones o drones, hasta 7 días corridos después de aplicar; el usuario puede consultar, bajar o imprimir sus registros.",
+   "source_url": "https://www.gub.uy/tramites/registro-aplicaciones-productos-fitosanitarios-rapf",
+   "source_title": "Registro de Aplicaciones de Productos Fitosanitarios (RAPF)",
+   "source_date": "desconocida",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-07T10:00:00"
+  },
+  {
+   "id": "F-defensa-r1-m02-i006-004",
+   "sector": "agro",
+   "hallazgo": "Los registros de vuelo de los drones DJI Agras se exportan desde la plataforma del fabricante como archivo KML, y herramientas de terceros como AcreConnect permiten cargar ese KML.",
+   "source_url": "https://help.acreconnect.io/en/articles/10186084-downloading-dji-kml-flight-logs",
+   "source_title": "Downloading DJI KML Flight Logs (AcreConnect)",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "GLOBAL",
+   "confianza": "media",
+   "retrieved_at": "2026-10-07T10:00:00",
+   "extracto": "Click on 'Export KML File' on the bottom of the screen.",
+   "competidor": "AcreConnect"
+  },
+  {
+   "id": "F-defensa-r1-m02-i006-005",
+   "sector": "agro",
+   "hallazgo": "AirData recibe los registros de vuelo de DJI Agras desde SmartFarm en formato KML, que según su soporte no incluye telemetría detallada; la herramienta muestra batería, velocidad y actividad del pulverizador.",
+   "source_url": "https://app.airdata.com/wiki/Help/DJI+AGRAS",
+   "source_title": "DJI AGRAS (AirData wiki)",
+   "source_date": "2026-06",
+   "source_type": "competidor",
+   "geografia": "GLOBAL",
+   "confianza": "media",
+   "retrieved_at": "2026-10-07T10:00:00",
+   "extracto": "AirData receives AGRAS flight logs from DJI's SmartFarm platform in KML format.",
+   "competidor": "AirData"
+  }
+ ]
+}

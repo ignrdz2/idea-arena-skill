@@ -1,0 +1,61 @@
+{
+  "idea": "i008",
+  "persona": "cliente",
+  "ataques": [
+    {
+      "n": 1,
+      "severidad": "FATAL",
+      "titulo": "La disposición de la entidad a pagar USD 200 a 600 por mes no tiene ficha y es el centro del negocio",
+      "donde": "Monetización: 'La entidad paga una suscripción mensual (hipótesis: USD 200 a 600)... Diez clientes a USD 400 dan unos USD 48.000 al año'",
+      "problema": "Como responsable de riesgo o atención al cliente en una financiera mediana, no veo ninguna ficha que muestre que una entidad uruguaya pague hoy por algo así. Las fichas F-fintech-seguros-001 y F-fintech-seguros-002 prueban que el fraude crece y duele al cliente final, no que la entidad tenga presupuesto ni obligación de gastar en esto. F-fintech-seguros-002 incluso dice que no hay datos oficiales de magnitud, así que no puedo calcular cuánto me cuesta. El precio y la cantidad de clientes están declarados como supuesto sin validar, pero ese supuesto es la única fuente de ingresos: sin él no hay business case ni cliente que pague, solo una herramienta gratuita para usuarios.",
+      "tipo": "evidencia",
+      "evidencia": ["F-fintech-seguros-001", "F-fintech-seguros-002"]
+    },
+    {
+      "n": 2,
+      "severidad": "MAJOR",
+      "titulo": "El dolor probado es del usuario final, no de la entidad que paga: no hay problema que me cueste plata a mí",
+      "donde": "Problema: 'Quien duda no tiene a quién consultar antes de transferir, y la entidad imitada no ve las campañas que usan su marca.'",
+      "problema": "Las fichas muestran denuncias por estafa en general y que la prevención depende de cada persona (F-fintech-seguros-001). Nada muestra que a la entidad le cueste dinero, reclamos o clientes perdidos cuando un tercero usa su marca en una estafa. La frase sobre que la entidad no ve las campañas es una afirmación sin ficha ni supuesto. Para pagar necesito ver un costo visible (reclamos, devoluciones, pérdida de clientes); acá es un lindo extra de imagen. Además, el cliente a quien duele es quien no paga: el negocio depende de que la entidad pague por un problema de otro.",
+      "tipo": "evidencia",
+      "evidencia": ["F-fintech-seguros-001"]
+    },
+    {
+      "n": 3,
+      "severidad": "MAJOR",
+      "titulo": "Las 21 insurtech de la ficha no son el cliente que se ve afectado ni el que compra: lectura forzada de F-fintech-seguros-006",
+      "donde": "Monetización: 'Mercado inicial: 21 insurtech registradas (F-fintech-seguros-006), fintech, financieras y cooperativas.'",
+      "problema": "La ficha F-fintech-seguros-006 solo dice que hay 21 startups insurtech registradas en Uruguay. No dice que sean víctimas de suplantación de marca, que tengan clientes que transfieran dinero tras un mensaje sospechoso, ni que compren herramientas antifraude. Contarlas como mercado inicial es inflar el tamaño con una cifra que no habla del problema. Las entidades donde F-fintech-seguros-002 sí muestra el fraude son bancos grandes como Itaú, que tienen equipo de riesgos propio y no son el cliente mediano con poco presupuesto que sí podría comprar. Del tamaño real del mercado pagador (fintech, financieras, cooperativas) no hay ninguna ficha.",
+      "tipo": "evidencia",
+      "evidencia": ["F-fintech-seguros-006", "F-fintech-seguros-002"]
+    },
+    {
+      "n": 4,
+      "severidad": "MAJOR",
+      "titulo": "Ya resuelvo esto con comunicación a clientes, el canal del banco y las denuncias; no hay razón visible para cambiar",
+      "donde": "Competidores: 'Ninguno respaldado por fichas.' y Supuestos: 'Las fichas no muestran competidores en Uruguay; no se afirma que no existan.'",
+      "problema": "La idea no analiza cómo resuelve hoy una entidad el problema: alertas por correo o app a sus clientes, avisos en redes, atención por WhatsApp o teléfono, reportes a bajada de sitios, el CERTuy. Tampoco menciona que WhatsApp, los navegadores y los antivirus ya marcan enlaces sospechosos. F-fintech-seguros-002 muestra que una entidad grande conoce el fraude y tiene un director de riesgos: es el cliente con más capacidad de armar su propio canal, y la idea lo admite como riesgo ('las entidades grandes pueden tener canal propio'). Declarar la ausencia de competidores como falta de fichas no es diferenciación: no explica por qué pagaría USD 400 mensuales por un número de WhatsApp en vez de usar lo que ya tengo.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 5,
+      "severidad": "MAJOR",
+      "titulo": "Vender 'con su marca' una línea de WhatsApp exige un número, una cuenta verificada y una política por entidad que el costo no contempla",
+      "donde": "Solución: 'ofrece el verificador con su marca' y Costo: 'Dominio y chip prepago 35 (estimación, sin fuente)'",
+      "problema": "Una entidad que ofrece el servicio a sus clientes con su marca necesita un número de WhatsApp Business propio, verificación de empresa en Meta y aprobación de su área legal. El costo contempla un solo chip prepago de USD 15 para todo el MVP y ninguna fuente de precio, y el supuesto de mensajes gratuitos depende de que Meta mantenga su política (la idea lo lista como riesgo, sin plan B). Si el piloto es con una entidad real, esa entidad pone el número y el trámite; si es con 100 voluntarios, no valida ninguna compra. En ambos casos, el cliente real no puede decidir una compra con un prototipo atado a un chip de un estudiante.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 6,
+      "severidad": "MAJOR",
+      "titulo": "No le doy a un equipo de estudiantes los mensajes de mis clientes, y el panel me los mostraría igual",
+      "donde": "Solución: 'La entidad ve en un panel las consultas y los dominios que imitan su marca' y Supuestos: 'Consentimiento, anonimización y registro de la base alcanzan para cumplir la Ley 18.331.'",
+      "problema": "Los mensajes reenviados contienen datos personales de terceros (nombres, teléfonos, capturas de conversaciones y cuentas). Los envía a un LLM externo (Claude Haiku 4.5) y los guarda en PostgreSQL y Qdrant, operados por tres estudiantes sin área de seguridad. Como responsable en una entidad financiera, mi área legal y de riesgos me va a pedir contrato de tratamiento de datos, ubicación de los datos y quién responde ante un incidente. La idea lo cubre con una línea de supuesto ('consentimiento, anonimización y registro alcanzan'), sin camino concreto. Además, un falso negativo (dice 'riesgo bajo' y el cliente pierde plata) lo asume mi marca, no la de ellos.",
+      "tipo": "opinion",
+      "evidencia": []
+    }
+  ],
+  "nuevas_fichas": []
+}

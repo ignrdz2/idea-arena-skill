@@ -1,0 +1,70 @@
+{
+  "idea": "i006",
+  "persona": "competidor",
+  "ataques": [
+    {
+      "n": 1,
+      "severidad": "MAJOR",
+      "titulo": "El reporte es lo que el RAPF oficial ya entrega, y la idea no resuelve la carga que el operador sí necesita",
+      "donde": "Problema y Solución: 'Sale un reporte PDF' como entregable central",
+      "problema": "La ficha F-defensa-r1-m02-i006-003 dice que el RAPF es el sistema en línea del MGAP donde se registra cada aplicación con drones, y que el usuario puede consultar, bajar o imprimir sus registros. El comprobante de cumplimiento ya existe, es oficial y gratis. La idea no declara integración ni carga automática al RAPF: el operador igual tendría que registrar en el MGAP y además cargar en esta herramienta, o sea duplicar el trabajo. Un competidor oficial gratuito con el mismo comprobante deja sin razón de pago al reporte propio. Lo único que no cubre el RAPF es el chequeo previo, que es una parte chica de la propuesta.",
+      "tipo": "evidencia",
+      "evidencia": ["F-defensa-r1-m02-i006-003"]
+    },
+    {
+      "n": 2,
+      "severidad": "MAJOR",
+      "titulo": "La disposición a pagar y la exigencia del cliente son un supuesto sin ficha; la cifra de USD 250 no tiene respaldo",
+      "donde": "Monetización y Supuestos: 'El cliente exige el reporte y el operador paga USD 250 por año'",
+      "problema": "Ninguna ficha dice que los clientes de los aplicadores pidan un reporte de cobertura, ni que alguien pague por chequeo de zonas. Las fichas muestran obligación regulatoria (F-defensa-r1-m02-i006-001) y crecimiento de drones (F-agro-008), pero no un presupuesto ni un precio. Está declarado como supuesto, así que no es fatal, pero toda la demanda y el business case cuelgan de él. Quien tiene un drone de USD 35.000 a 45.000 puede cumplir la zona buffer mirando un mapa gratuito antes de volar; el costo evitado (una multa) no está cuantificado en ninguna ficha. El argumento de que el operador chico 'carga la obligación sin herramienta propia' es opinión.",
+      "tipo": "evidencia",
+      "evidencia": ["F-agro-008", "F-defensa-r1-m02-i006-001"]
+    },
+    {
+      "n": 3,
+      "severidad": "MAJOR",
+      "titulo": "El fabricante o las herramientas de registros de vuelo copian la función en un trimestre, y el hueco se afirma por ausencia de evidencia",
+      "donde": "Competidores: 'ninguna ficha muestra chequeo de zonas uruguayas ni reporte para el RAPF'; Riesgos: 'los fabricantes pueden copiar la función'",
+      "problema": "Los registros de vuelo ya viven en la plataforma del fabricante y salen como KML (F-defensa-r1-m02-i006-004); AirData y AcreConnect ya los procesan y muestran actividad del pulverizador (F-defensa-r1-m02-i006-005). Para ellos, agregar una capa de zonas buffer y un exportador de reporte por país es trabajo de semanas sobre datos que ya tienen, mientras que la idea parte de cero con 3 estudiantes. La idea admite que 'su oferta local no está verificada': la diferenciación se apoya en que nadie lo hace, que es una ausencia de ficha y no una ausencia comprobada. Además la idea misma reconoce que el riesgo de copia existe y no propone ninguna defensa (datos propios, relación con distribuidores, exclusividad). La diferencia es copiable rápido.",
+      "tipo": "evidencia",
+      "evidencia": ["F-defensa-r1-m02-i006-004", "F-defensa-r1-m02-i006-005"]
+    },
+    {
+      "n": 4,
+      "severidad": "MAJOR",
+      "titulo": "La reconstrucción de franjas con KML sin telemetría no da un reporte de cobertura confiable, que es el núcleo del semestre 2",
+      "donde": "Semestre 2: 'Reconstrucción de franjas: cobertura, solapes, faltantes e invasiones'; Riesgos",
+      "problema": "La ficha F-defensa-r1-m02-i006-005 dice que el KML de DJI Agras no incluye telemetría detallada. Con una traza pobre y un ancho declarado por el operador, las hectáreas cubiertas, los solapes y sobre todo las 'invasiones' a zonas protegidas tienen un error que la idea no cuantifica. Un reporte que el cliente final vaya a usar como prueba de cumplimiento no puede apoyarse en una reconstrucción aproximada; un falso positivo o negativo cae sobre el operador, como la propia idea reconoce. Además la ficha F-defensa-r1-m02-i006-004 cubre solo DJI Agras: las otras marcas, cuyo formato la idea llama 'cerrado o distinto', no tienen ficha, y la marca dominante en Uruguay se desconoce. El plan B de carga manual quita toda la ventaja de automatización frente a el RAPF.",
+      "tipo": "evidencia",
+      "evidencia": ["F-defensa-r1-m02-i006-005", "F-defensa-r1-m02-i006-004"]
+    },
+    {
+      "n": 5,
+      "severidad": "MAJOR",
+      "titulo": "El mercado direccionable es de decenas de equipos y el escenario de ingresos exige una cuota irreal",
+      "donde": "Monetización: '40 drones al tercer año = USD 10.000 por año, fracción alta de un parque desconocido (60 vendidos hasta 2023)'",
+      "problema": "La ficha F-agro-008 dice que se vendieron 30 drones en 2022 y 30 en el primer trimestre de 2023; no dice que el total hasta 2023 sea 60, la idea lo convierte en un parque cerrado. Aun así, 40 de ~60 es una cuota de más del 60 por ciento de un mercado que nadie midió, a USD 250 por drone: USD 10.000 anuales en el mejor caso, sin descontar que la idea misma dice que 'crecer exige Argentina o Brasil', mercados sin ficha ni contacto. Un competidor que ve ese tamaño no se defiende: lo ignora o lo agrega como función. Es un segmento pequeño y caro de servir que probablemente no sostiene un producto independiente.",
+      "tipo": "evidencia",
+      "evidencia": ["F-agro-008"]
+    },
+    {
+      "n": 6,
+      "severidad": "MINOR",
+      "titulo": "Se descarta al GMA oficial con una afirmación que la ficha no hace",
+      "donde": "Competidores: 'Sistema GMA (MGAP): Alerta al Estado, no ayuda al operador a planificar ni reportar'",
+      "problema": "La ficha F-agro-005 dice que el GMA se probó en Soriano con 23 empresas y 33 dispositivos para alertar de conflictos con centros urbanos, poblaciones rurales o escuelas; no dice a quién llega la alerta ni que el operador no la reciba. Es un dato de 2019 y no consta si el sistema se amplió a drones o se volvió obligatorio. Si el Estado extiende el monitoreo con alerta al propio aplicador, el chequeo previo queda cubierto gratis. La idea toma como cierto lo que es una interpretación suya.",
+      "tipo": "evidencia",
+      "evidencia": ["F-agro-005"]
+    },
+    {
+      "n": 7,
+      "severidad": "MINOR",
+      "titulo": "La precarga de producto y dosis con visión LLM agrega poco valor frente a su costo de error",
+      "donde": "Solución y Semestre 2: 'Un LLM con visión precarga producto y dosis desde la etiqueta'",
+      "problema": "Ninguna ficha indica que cargar producto y dosis sea el dolor del operador, que ya conoce lo que aplica. Una etiqueta mal leída por el LLM genera un registro incorrecto en un documento de cumplimiento. Es una función de moda agregada a un producto ya cargado de supuestos; a un competidor le resulta trivial igualarla con la misma API.",
+      "tipo": "opinion",
+      "evidencia": []
+    }
+  ],
+  "nuevas_fichas": []
+}

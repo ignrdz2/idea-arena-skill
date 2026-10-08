@@ -1,0 +1,28 @@
+{
+  "match": "r1-m03",
+  "scores": {
+    "X": {"demanda": 3, "viabilidad": 7, "diferenciacion": 4, "business_case": 5, "encaje": 7, "academico": 7, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 5, "viabilidad": 7, "diferenciacion": 4, "business_case": 5, "encaje": 6, "academico": 5, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "Y",
+  "reason": "Y apoya el dolor en dos fichas locales verificadas de fuentes distintas (56% de compradores frena por devoluciones y solo 8% de las pymes las gestiona, F-comercio-retail-002 y 003), mientras que en X el dolor del corredor uruguayo es un supuesto sin ninguna ficha y Foliume ya hace el mismo flujo; X compensa en encaje y valor académico, pero no alcanza.",
+  "survived": [
+    "uso de F-comercio-retail-007 como disposición a pagar: corregido, ahora es supuesto",
+    "100 tiendas y USD 24.000 sin base: eliminado, queda una cuenta ilustrativa coherente con el costo",
+    "cita de F-comercio-retail-004 para el envío de vuelta: quitada, queda como supuesto",
+    "datos de compradores a una API externa: datos mínimos, CSV sin datos personales, aviso y cláusulas contractuales con ficha",
+    "piloto con volumen bajo: ahora exige 20 o más devoluciones por mes y 10 entrevistas previas; R4 bien rebatido"
+  ],
+  "standing": {
+    "X": [
+      "ninguna ficha muestra que el corredor uruguayo sufra el problema ni que pague: la demanda sigue siendo hipótesis",
+      "Foliume, de raíz uruguaya y con US$1 millón, ya automatiza el mismo flujo para corredores; el hueco es solo comercial y local",
+      "sin tamaño de mercado: cantidad de corredores desconocida y precio sin base"
+    ],
+    "Y": [
+      "el costo de las devoluciones para la tienda no está probado; el 8% de F-comercio-retail-003 puede indicar poco volumen",
+      "el MVP deja afuera el envío de vuelta y resuelve una decisión administrativa con ahorro posiblemente chico",
+      "no se buscaron herramientas de devoluciones locales o regionales y Tiendanube podría sumar la función"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "evaluaciones": [
+    {
+      "id": "i010",
+      "veredicto": "viable_con_recorte",
+      "horas_estimadas": 1180,
+      "motivo": "Estimo 1.180 h. S1 490 h: conseguir, anonimizar y etiquetar 100 a 200 cotizaciones 120 h; extractor con pdfplumber, OCR y LLM con página de origen y confianza 200 h; medición de exactitud 40 h; backend y demo del comparativo 100 h; despliegue 30 h. S2 500 h: revisión y corrección 90 h, PDF con marca 70 h, cartera con alertas y recotización 90 h, autenticación y Ley 18.331 60 h, pruebas e integración 70 h, piloto 70 h, business case 50 h. Más 190 h de documentación de tesis, entregas y coordinación. Entra en el rango de 960 a 1536 h, pero sin margen frente a las 1.152 h declaradas (16+10+10 h por 32 semanas). El mayor riesgo es el corpus: no hay corredores en la tabla de contactos y sin cotizaciones reales la demo del S1 no existe.",
+      "recorte_sugerido": "Un solo ramo (automóvil) y un corpus de 100 cotizaciones, dejando hogar para después; priorizar PDFs digitales y usar OCR solo como respaldo para escaneados; borrador de recotización como plantilla completada por el LLM, sin flujo de envío; cartera armada a partir de los documentos ya extraídos o de un CSV. Ahorra unas 110 h y deja el total cerca de 1.070 h. Si no aparecen corredores con cotizaciones al inicio del S1, completar el corpus con cotizaciones que el propio equipo pida como cliente (supuesto a confirmar).",
+      "dependencias_externas": [
+        "Corredores que compartan cotizaciones y pólizas reales para el corpus (no hay contactos en la tabla del equipo)",
+        "2 o 3 corredores dispuestos a hacer el piloto y medir minutos por comparativo antes y después",
+        "Formatos de PDF de cada aseguradora, que el equipo no controla y pueden cambiar",
+        "Precio y disponibilidad de la API de Claude Haiku 4.5",
+        "Camino de cumplimiento con la Ley 18.331 para datos personales de las pólizas (anonimización y consentimiento)",
+        "Aprobación de AWS para usar Amazon SES fuera del modo de prueba al enviar alertas a corredores reales"
+      ]
+    }
+  ]
+}

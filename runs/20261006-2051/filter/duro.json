@@ -1,0 +1,104 @@
+{
+ "ideas": {
+  "i001": {
+   "titulo": "Portal de cambios y devoluciones con pago por uso para pymes online",
+   "pasa": true,
+   "palabras": 686,
+   "costo_anual_usd": 148.4,
+   "problemas": [],
+   "avisos": []
+  },
+  "i002": {
+   "titulo": "Libreta ganadera por voz y sin señal para productores chicos, con pendientes del SNIG",
+   "pasa": true,
+   "palabras": 690,
+   "costo_anual_usd": 164,
+   "problemas": [],
+   "avisos": [
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Dominio' es una estimación sin fuente"
+    }
+   ]
+  },
+  "i003": {
+   "titulo": "Facturas de proveedores al stock sin tipeo para comercios chicos",
+   "pasa": true,
+   "palabras": 693,
+   "costo_anual_usd": 177,
+   "problemas": [],
+   "avisos": []
+  },
+  "i004": {
+   "titulo": "Proyección de caja para pymes con cheques diferidos y facturas electrónicas",
+   "pasa": true,
+   "palabras": 678,
+   "costo_anual_usd": 199,
+   "problemas": [],
+   "avisos": [
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Dominio' es una estimación sin fuente"
+    }
+   ]
+  },
+  "i005": {
+   "titulo": "Stock al día a partir de los comprobantes electrónicos que el comercio ya tiene",
+   "pasa": true,
+   "palabras": 685,
+   "costo_anual_usd": 173.4,
+   "problemas": [],
+   "avisos": []
+  },
+  "i006": {
+   "titulo": "Chequeo de zonas sensibles y reporte de cobertura para aplicadores con drones",
+   "pasa": true,
+   "palabras": 683,
+   "costo_anual_usd": 174,
+   "problemas": [],
+   "avisos": [
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Dominio' es una estimación sin fuente"
+    }
+   ]
+  },
+  "i007": {
+   "titulo": "Alerta temprana de sitios clonados para entidades financieras uruguayas",
+   "pasa": true,
+   "palabras": 693,
+   "costo_anual_usd": 198,
+   "problemas": [],
+   "avisos": []
+  },
+  "i008": {
+   "titulo": "Verificador de estafas por WhatsApp para clientes de entidades financieras",
+   "pasa": true,
+   "palabras": 677,
+   "costo_anual_usd": 199,
+   "problemas": [],
+   "avisos": [
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Dominio y chip prepago' es una estimación sin fuente"
+    }
+   ]
+  },
+  "i009": {
+   "titulo": "Portal de devoluciones con clasificación automática para tiendas online pyme",
+   "pasa": true,
+   "palabras": 677,
+   "costo_anual_usd": 158,
+   "problemas": [],
+   "avisos": []
+  },
+  "i010": {
+   "titulo": "Comparativos y renovaciones automáticas para corredores de seguros",
+   "pasa": true,
+   "palabras": 661,
+   "costo_anual_usd": 153,
+   "problemas": [],
+   "avisos": []
+  }
+ }
+}

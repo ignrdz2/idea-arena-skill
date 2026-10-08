@@ -1,0 +1,27 @@
+{
+  "scores": {
+    "X": {"demanda": 7, "viabilidad": 2, "diferenciacion": 3, "business_case": 5, "encaje": 9, "academico": 9, "fatal": true, "fatal_motivo": "restriccion_dura:R1: el total declarado es USD 307 por año, sobre el tope de USD 300, y además omite el cargo por IPv4 pública (USD 0,005 por hora, unos USD 44 por año, según la página de precios de AWS VPC) y el disco EBS; los créditos de estudiante que propone como mitigación no tienen fuente ni duración, así que no cuentan"},
+    "Y": {"demanda": 4, "viabilidad": 6, "diferenciacion": 5, "business_case": 5, "encaje": 7, "academico": 8, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "Y",
+  "reason": "X viola R1 (USD 307 declarados más IPv4 y EBS sin contar, sobre el tope de USD 300) y su hueco frente a Gubly lo desmiente su propia fuente, mientras que Y entra con margen en el presupuesto aunque su demanda sea débil.",
+  "standing": {
+    "X": [
+      "Costo sobre el tope de R1: USD 307 declarados, sin contar la IPv4 pública de EC2 (unos USD 44 por año) ni el volumen EBS; las mitigaciones (créditos de estudiante, recortar el histórico) no están cuantificadas ni tienen fuente.",
+      "La nota de El Observador que la idea cita dice que Gubly ya resume pliegos con IA, analiza precios de adjudicaciones anteriores y compara precios de la competencia: el hueco de inteligencia de precios que la idea reclama no existe.",
+      "Lo que queda como diferencia (checklist de requisitos con cita y bóveda de vencimientos) es incremental y Gubly, que ya lee pliegos con IA, lo puede copiar rápido; LicitaLAB, con más de 1.500 clientes y una ronda de USD 450.000, podría entrar a Uruguay.",
+      "Gubly cobra USD 25 por mes con versión gratuita; la hipótesis de USD 40 a 120 por mes queda por encima de la referencia local sin ninguna evidencia que la sostenga.",
+      "La página de Open Contracting de ARCE no menciona que los pliegos vengan adjuntos en OCDS: el lector de pliegos, el núcleo del producto, depende de un supuesto de descarga estable sin verificar.",
+      "Alcance pesado para dos semestres: ETL completo, OCR, extracción con 50 pliegos anotados a mano, resolución de entidades, Text-to-SQL, bóveda multi-tenant, piloto y endurecimiento.",
+      "Business case sin tamaño de mercado cuantificado (el 99% de mipymes es genérico y el dataset del RUPE se menciona sin cifra) y sin canal de venta; el equipo no tiene contactos en el rubro."
+    ],
+    "Y": [
+      "Demanda sin evidencia local del dolor central: no hay ninguna medición de sobrante en panaderías (declarado como supuesto), el link de FAO devuelve 404 y el dato del Ministerio de Ambiente ubica el 70% de las pérdidas en producción y poscosecha; la única señal de pago es extranjera (Delicious Data, más de 250 panaderías alemanas).",
+      "Disposición a pagar supuesta en un rubro con ventas en caída y márgenes golpeados (La Mañana, 2023), con un ticket de USD 25 a 45 que exige decenas de clientes captados uno a uno.",
+      "Depende de panaderías piloto con ventas por producto exportables y registro diario del sobrante, sin ningún contacto identificado; 10 semanas de datos pueden no alcanzar para mostrar que el modelo le gana a los baselines o a la intuición del panadero.",
+      "El plan gratuito de Open-Meteo es solo para uso no comercial y el piloto pago del semestre 2 es uso comercial: el plan Standard cuesta USD 29 por mes y no está en la tabla de costos, lo que acerca el total al tope.",
+      "Afirma sin fuente que los sistemas de punto de venta locales no pronostican; un proveedor de punto de venta que ya tiene los datos podría agregar pronóstico rápido, y el hueco puede existir porque el segmento no paga.",
+      "No cuantifica cuántas panaderías hay en Uruguay, y el canal (gremial y proveedores de punto de venta) es un supuesto sin validar; el precio del VPS de Hetzner no se pudo verificar en la página citada."
+    ]
+  }
+}

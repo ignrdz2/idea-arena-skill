@@ -1,0 +1,197 @@
+{
+ "version": 1,
+ "run": "20261006-2051",
+ "dir": "runs/20261006-2051",
+ "mode": "pilot",
+ "seed": 7,
+ "created": "2026-10-06T20:51:02",
+ "sectors": [
+  {
+   "id": "comercio-retail",
+   "nombre": "Comercio y retail"
+  },
+  {
+   "id": "agro",
+   "nombre": "Agro"
+  },
+  {
+   "id": "fintech-seguros",
+   "nombre": "Fintech y seguros"
+  }
+ ],
+ "sectors_how": "sorteados con la semilla 7",
+ "generators": [
+  {
+   "id": "g01",
+   "strategy": "dolor",
+   "focus": [
+    "fintech-seguros"
+   ],
+   "ideas": 2
+  },
+  {
+   "id": "g02",
+   "strategy": "capacidad",
+   "focus": [
+    "comercio-retail"
+   ],
+   "ideas": 2
+  },
+  {
+   "id": "g03",
+   "strategy": "segmento",
+   "focus": [
+    "agro"
+   ],
+   "ideas": 2
+  },
+  {
+   "id": "g04",
+   "strategy": "localizar",
+   "focus": [
+    "fintech-seguros"
+   ],
+   "ideas": 2
+  },
+  {
+   "id": "g05",
+   "strategy": "invertir",
+   "focus": [
+    "comercio-retail"
+   ],
+   "ideas": 2
+  }
+ ],
+ "steps": {
+  "verify": {
+   "aceptadas": 26,
+   "ok": 25,
+   "bloqueadas": 1,
+   "descartadas": 0,
+   "motivos": {},
+   "por_sector": {
+    "comercio-retail": {
+     "recibidas": 10,
+     "aceptadas": 10,
+     "bloqueadas": 1,
+     "descartadas": 0
+    },
+    "agro": {
+     "recibidas": 8,
+     "aceptadas": 8,
+     "bloqueadas": 0,
+     "descartadas": 0
+    },
+    "fintech-seguros": {
+     "recibidas": 8,
+     "aceptadas": 8,
+     "bloqueadas": 0,
+     "descartadas": 0
+    }
+   }
+  },
+  "ingest": {
+   "recibidas": 10,
+   "validas": 10,
+   "rechazadas_esquema": 0,
+   "pasan_filtro_duro": 10,
+   "problemas": {},
+   "avisos": {
+    "costo_estimado": 4
+   }
+  },
+  "scope-collect": {
+   "evaluadas": 10,
+   "veredictos": {
+    "viable": 3,
+    "viable_con_recorte": 7
+   },
+   "sobreviven": 10,
+   "grupos_lexicos": 0
+  },
+  "select": {
+   "grupos": 8,
+   "fusionadas": 2,
+   "seleccionadas": 8
+  },
+  "rank": {
+   "top": [
+    "i002",
+    "i005",
+    "i006",
+    "i009",
+    "i004"
+   ],
+   "excluidas_por_fallo_fatal": []
+  },
+  "shortlist": {
+   "ideas": [
+    "i002",
+    "i005",
+    "i006",
+    "i009",
+    "i004"
+   ]
+  }
+ },
+ "scope_batches": [
+  [
+   "i001",
+   "i002",
+   "i003"
+  ],
+  [
+   "i004",
+   "i005",
+   "i006"
+  ],
+  [
+   "i007",
+   "i008",
+   "i009"
+  ],
+  [
+   "i010"
+  ]
+ ],
+ "candidates": [
+  "i001",
+  "i002",
+  "i003",
+  "i004",
+  "i005",
+  "i006",
+  "i007",
+  "i008",
+  "i009",
+  "i010"
+ ],
+ "dedup_needed": true,
+ "selected": [
+  "i009",
+  "i002",
+  "i008",
+  "i005",
+  "i006",
+  "i004",
+  "i010",
+  "i007"
+ ],
+ "shortlist": [
+  "i002",
+  "i005",
+  "i006",
+  "i009",
+  "i004"
+ ],
+ "deepen": {},
+ "plan": {
+  "calls": 53,
+  "waves": 14,
+  "tokens_k": [
+   1090,
+   2605
+  ]
+ },
+ "git_baseline": []
+}
