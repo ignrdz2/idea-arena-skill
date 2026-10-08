@@ -1,0 +1,1603 @@
+{
+ "fichas": [
+  {
+   "id": "F-agro-001",
+   "sector": "agro",
+   "hallazgo": "El MGAP informó 308 expedientes por residuos de medicamentos veterinarios, plaguicidas o contaminantes en productos de origen animal iniciados en 2025 y 191 más en 2026 (499 en total, 52 resoluciones sancionatorias). Desde octubre de 2025 el muestreo oficial en frigoríficos subió cerca de 20%.",
+   "source_url": "https://www.elobservador.com.uy/agro/residuos-biologicos-alimentos-mgap-informo-expedientes-y-como-se-acciona-proteger-los-mercados-n6052595/amp",
+   "source_title": "Residuos biológicos en alimentos: MGAP informó sobre expedientes y cómo se acciona para proteger los mercados",
+   "source_date": "2026",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T10:00:00",
+   "extracto": "las cifras no reflejan un deterioro sanitario, sí un mayor esfuerzo de vigilancia",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-agro-002",
+   "sector": "agro",
+   "hallazgo": "El SNIG del MGAP, creado desde 2004 sobre DICOSE y vinculado a la Ley 17.997 (2006), exige asentar movimientos, cambios de propiedad y eventos sanitarios de cada bovino; es el sistema oficial de trazabilidad individual obligatoria.",
+   "source_url": "https://www.gub.uy/ministerio-ganaderia-agricultura-pesca/tramites-y-servicios/servicios/sistema-nacional-informacion-ganadera",
+   "source_title": "Sistema Nacional de Información Ganadera | MGAP",
+   "source_date": "desconocida",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T10:05:00",
+   "extracto": "centralizando la información de todas las transacciones ganaderas",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-comercio-retail-001",
+   "sector": "comercio-retail",
+   "hallazgo": "El comercio electrónico uruguayo superó los 100.000 millones de pesos en 2025 (+32% frente a 81.723 millones en 2024), con 96,3 millones de transacciones y ticket promedio estable de 1.290 pesos; las compras transfronterizas por franquicia son solo el 8% del mercado.",
+   "source_url": "https://www.ambito.com/uruguay/el-comercio-electronico-supero-los-100000-millones-ventas-2025-y-crecio-32-el-ano-n6306222",
+   "source_title": "El comercio electrónico superó los $ 100.000 millones en ventas durante 2025 y creció 32% en el año",
+   "source_date": "2026-08-02",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T00:40:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-comercio-retail-002",
+   "sector": "comercio-retail",
+   "hallazgo": "En el primer semestre de 2025 la facturación del comercio minorista uruguayo subió 6% interanual pero el volumen vendido apenas 0,1% (Radar Scanntech, 7.000 puntos de venta); Montevideo y área metropolitana cayeron 1% en volumen y alimentos -1,2%.",
+   "source_url": "https://americaretail-malls.com/paises/uruguay/consumo-desigual-y-facturacion-moderada-definieron-el-semestre-comercial-uruguayo/",
+   "source_title": "Consumo desigual y facturación moderada definieron el semestre comercial uruguayo",
+   "source_date": "2025-08-01",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T00:40:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-comercio-retail-003",
+   "sector": "comercio-retail",
+   "hallazgo": "La Cámara de Comercio y Servicios estima que las compras en Temu implican una pérdida mensual de unos 15 millones de dólares para el comercio interno; indumentaria, calzado, juguetes y artículos del hogar son los rubros más afectados.",
+   "source_url": "https://americaretail-malls.com/paises/uruguay/el-comercio-uruguayo-enfrenta-senales-de-desaceleracion-y-desafios-externos/",
+   "source_title": "El comercio uruguayo enfrenta señales de desaceleración y desafíos externos",
+   "source_date": "2025-09-10",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T00:40:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-comercio-retail-004",
+   "sector": "comercio-retail",
+   "hallazgo": "Entre enero y junio de 2025 ingresaron 957.633 envíos del exterior por franquicia (Aduanas) contra 304.870 en el mismo período de 2024; el régimen permite tres compras anuales de hasta US$ 200 y 20 kilos sin impuestos.",
+   "source_url": "https://www.elobservador.com.uy/economia-y-empresas/boom-compras-web-el-exterior-y-efecto-temu-casi-1-millon-encomiendas-seis-meses-n6009942",
+   "source_title": "Boom de compras web en el exterior y efecto Temu: casi 1 millón de encomiendas en seis meses",
+   "source_date": "2025-07-25",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T00:41:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-comercio-retail-005",
+   "sector": "comercio-retail",
+   "hallazgo": "Unas 40 jugueterías o negocios vinculados cerraron en Uruguay en 2025, con unos 150 empleos directos perdidos según la Asociación de Jugueteros; entre enero y agosto entraron 1.124.976 paquetes por franquicia.",
+   "source_url": "https://www.bloomberglinea.com/latinoamerica/uruguay/efecto-temu-empresarios-uruguayos-advierten-por-el-cierre-de-40-jugueterias/",
+   "source_title": "¿Efecto Temu? Empresarios uruguayos advierten por el cierre de 40 jugueterías",
+   "source_date": "2025-09-23",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T00:41:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-comercio-retail-006",
+   "sector": "comercio-retail",
+   "hallazgo": "Un estudio de UTEC con ANII sobre pymes uruguayas de e-commerce halló que el 92% de los casos no tiene sistema informático para gestionar el inventario de forma automatizada, solo el 31% usa códigos de barras y la confirmación de pedidos es manual.",
+   "source_url": "https://utec.edu.uy/pt/artigo/primer-analisis-de-buenas-practicas-en-logistica-para-el-comercio-electronico-en-las-pymes-uruguayas",
+   "source_title": "Primer análisis de buenas prácticas en logística para el comercio electrónico en las pymes uruguayas",
+   "source_date": "2023-02-22",
+   "source_type": "academico",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T00:42:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-comercio-retail-007",
+   "sector": "comercio-retail",
+   "hallazgo": "Según el estudio UTEC citado por El Observador, ninguna pyme consultada mide la eficiencia de sus procesos logísticos, solo el 8% gestiona devoluciones y hay dificultades para controlar stock, compras y rastreo de mercadería.",
+   "source_url": "https://www.elobservador.com.uy/nota/las-lecciones-pendientes-de-las-pymes-despues-del-boom-del-e-commerce-202321616450/amp",
+   "source_title": "Las lecciones pendientes de las pymes después del boom del e-commerce",
+   "source_date": "2023",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T00:42:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-comercio-retail-008",
+   "sector": "comercio-retail",
+   "hallazgo": "YoFacturo, competidor local de facturación electrónica y gestión, ofrece en Uruguay planes de Punto de Venta (AR$ 20.000 al mes) a Premium (AR$ 150.000), con stock en tiempo real, POS con código de barras y e-commerce solo desde el plan Completo; la página muestra montos en AR$ bajo el rótulo USD, por lo que la moneda es ambigua.",
+   "source_url": "https://yo-facturo.com/uy/",
+   "source_title": "Facturación electrónica en Uruguay | YoFacturo",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "baja",
+   "retrieved_at": "2026-10-08T00:43:00",
+   "competidor": "YoFacturo",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-comercio-retail-009",
+   "sector": "comercio-retail",
+   "hallazgo": "Una guía de YoFacturo para comercios uruguayos explica que al emitir un comprobante el stock se descuenta solo y que facturar como contribuyente de IVA exige certificado digital y CAE de 2 años; señala el problema de la doble carga entre facturación e inventario.",
+   "source_url": "https://yo-facturo.com/blog/controlar-stock-comercio-facturacion/",
+   "source_title": "Control de stock y facturación: cómo integrarlos en tu comercio (Uruguay)",
+   "source_date": "2026-06-22",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "baja",
+   "retrieved_at": "2026-10-08T00:43:00",
+   "competidor": "YoFacturo",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-comercio-retail-010",
+   "sector": "comercio-retail",
+   "hallazgo": "Tiendanube publica planes con prueba gratuita de 7 días en México, Argentina, Colombia y Chile (por ejemplo Chile desde CLP 5.999 al mes), pero su guía de precios no lista Uruguay, lo que sugiere un hueco de oferta localizada para tiendas online uruguayas.",
+   "source_url": "https://www.tiendanube.com/blog/precio-tiendanube/",
+   "source_title": "Precio Tiendanube: planes, costos y cómo elegir el ideal",
+   "source_date": "2026-06-19",
+   "source_type": "precios",
+   "geografia": "LATAM",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T00:44:00",
+   "competidor": "Tiendanube",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-comercio-retail-011",
+   "sector": "comercio-retail",
+   "hallazgo": "Montevideo Portal reporta que casi siete de cada diez uruguayos compraron online (93% en comercios nacionales, 57% también en el exterior), con tarjeta de crédito en 74% de los pagos y desafíos regulatorios, logísticos y de inclusión digital pendientes.",
+   "source_url": "https://www.montevideo.com.uy/Noticias/Uruguay-lidera-el-crecimiento-del-eCommerce-en-America-Latina-en-2025-uc926770",
+   "source_title": "Uruguay lidera el crecimiento del eCommerce en América Latina en 2025",
+   "source_date": "2025-06-12",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T00:40:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-educacion-001",
+   "sector": "educacion",
+   "hallazgo": "De 100 adolescentes que ingresaron al liceo en Uruguay en 2017, solo 43 egresaron tras ocho años y 42 no figuran inscriptos en educación media. Casi la mitad del alumnado faltó al menos el 11% de los días de clase.",
+   "source_url": "https://www.elobservador.com.uy/tres-graficos-que-muestran-como-los-liceos-uruguay-son-un-expulsor-estudiantes-n6016536",
+   "source_title": "Tres gráficos que muestran cómo los liceos en Uruguay son un 'expulsor de estudiantes'",
+   "source_date": "2025-09-11",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T00:27:32",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-educacion-002",
+   "sector": "educacion",
+   "hallazgo": "En el primer año de Secundaria solo 4 de cada 10 alumnos asisten más del 80% de los días lectivos, y en la prueba de matemática de Ingeniería del primer semestre solo aprobó el 25% de los inscriptos. ANEP proyecta que en 2030 el 75% de los jóvenes de 21 a 23 años completaría la enseñanza obligatoria.",
+   "source_url": "https://www.elobservador.com.uy/seria-historico-uruguay-la-meta-imposible-la-educacion-que-este-ritmo-podria-concretarse-n6049886",
+   "source_title": "\"Sería histórico para Uruguay\": la meta \"imposible\" de la educación que, a este ritmo, podría concretarse",
+   "source_date": "2026-07-07",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T00:27:32",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-educacion-003",
+   "sector": "educacion",
+   "hallazgo": "El Monitor Educativo Liceal de ANEP registró una desvinculación interanual 2023-2024 de 3,6% en Educación Básica Integrada, mínimo histórico, pero la promoción en Educación Media Superior de liceos oficiales fue de 75,5% en 2023, con caída de 4,3 puntos.",
+   "source_url": "https://www.gub.uy/presidencia/comunicacion/noticias/baja-historica-desvinculacion-incremento-promocion-primeros-tres-anos",
+   "source_title": "Baja histórica de desvinculación e incremento de promoción en primeros tres años de secundaria",
+   "source_date": "2024-08-20",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T00:27:32",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-educacion-004",
+   "sector": "educacion",
+   "hallazgo": "Uruguay tiene más de 300 colegios privados, unos 220 agrupados en Audec y Aidep con unos 113.000 alumnos; a fines de 2023 cerraron tres y el MEC analizó fusiones por la crisis del sector.",
+   "source_url": "https://www.ambito.com/uruguay/crisis-colegios-privados-el-ministerio-educacion-analiza-la-posibilidad-fusion-las-instituciones-n5929975/amp",
+   "source_title": "Crisis en colegios privados: el Ministerio de Educación analiza la posibilidad de fusión de las instituciones",
+   "source_date": "2024-01-25",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T00:27:32",
+   "extracto": "las soluciones tienen que venir de los propios actores",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-educacion-005",
+   "sector": "educacion",
+   "hallazgo": "Asistente.uy es una plataforma uruguaya de gestión institucional para colegios y otras instituciones: comunicaciones con confirmación de lectura, portal de familias, asistencia digital, seguimiento estudiantil y facturación. La ficha no publica precios.",
+   "source_url": "https://www.comparasoftware.com/asistente-uy",
+   "source_title": "Asistente Uy: precios, funciones y opiniones",
+   "source_date": "2025",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T00:27:32",
+   "extracto": "una plataforma uruguaya de gestión institucional diseñada para colegios",
+   "competidor": "Asistente.uy",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-educacion-006",
+   "sector": "educacion",
+   "hallazgo": "Colegium ofrece Edufácil (gestión escolar para colegios públicos) y SchoolTrack (colegios privados), con presencia declarada en ocho países incluido Uruguay y más de 130 empleados. La afirmación de mayor alcance en Latinoamérica es de la propia empresa y la nota es de 2019.",
+   "source_url": "https://www.itsitio.com/uy/nicolas-schenquerman-en-colegium-somos-mas-de-130-personas-entregando-productos-tecnologicos",
+   "source_title": "Nicolás Schenquerman: \"En Colegium somos más de 130 personas entregando productos tecnológicos\"",
+   "source_date": "2019-05-28",
+   "source_type": "competidor",
+   "geografia": "LATAM",
+   "confianza": "baja",
+   "retrieved_at": "2026-10-08T00:27:32",
+   "extracto": "En Colegium somos más de 130 personas entregando productos tecnológicos",
+   "competidor": "Colegium",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado",
+    "aviso": "fuente de hace 7 años"
+   }
+  },
+  {
+   "id": "F-educacion-007",
+   "sector": "educacion",
+   "hallazgo": "Según un informe de la fintech mattilda, cerca de dos tercios de los colegios privados colombianos usan plataformas no integradas a su gestión diaria y el 85% debe duplicar tareas administrativas. Referencia regional de un dolor de gestión, no uruguaya.",
+   "source_url": "https://www.vanguardia.com/colombia/2026/09/02/colegios-privados-en-colombia-enfrentan-un-reto-modernizar-su-gestion-y-conectar-sus-plataformas/",
+   "source_title": "Colegios privados en Colombia enfrentan un reto: modernizar su gestión y conectar sus plataformas",
+   "source_date": "2026-09-02",
+   "source_type": "prensa",
+   "geografia": "CO",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T00:27:32",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-educacion-008",
+   "sector": "educacion",
+   "hallazgo": "Ceibal lanzó en marzo de 2025 EduIA Lab, laboratorio regional de IA en educación, con tres áreas: desarrollo profesional docente, aprendizaje estudiantil y gestión educativa. Es un actor público que puede ser socio o competidor de soluciones de IA educativa.",
+   "source_url": "https://www.gub.uy/ministerio-educacion-cultura/comunicacion/noticias/lanzamiento-del-laboratorio-regional-inteligencia-artificial-educacion",
+   "source_title": "Lanzamiento del laboratorio regional de Inteligencia Artificial en educación",
+   "source_date": "2025-03-27",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T00:27:32",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-educacion-009",
+   "sector": "educacion",
+   "hallazgo": "INEFOP informó que más de 50.000 personas accedieron a sus cursos en 2023 (8% más que en 2022), el 70% con algún grado de virtualidad, y que su programa de habilidades digitales capacitó a más de 25.000 personas.",
+   "source_url": "https://www.gub.uy/presidencia/comunicacion/noticias/50000-personas-accedieron-cursos-inefop-2023",
+   "source_title": "Unas 50.000 personas accedieron a cursos de Inefop en 2023",
+   "source_date": "2024-01-25",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T00:27:32",
+   "extracto": "un incremento del 8% en relación al año anterior",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-educacion-010",
+   "sector": "educacion",
+   "hallazgo": "Una nota de Montevideo Portal sobre el congreso EduIA (organizado por Ceibal con BID, Banco Mundial y CAF) menciona herramientas como Teach FX para docentes y Aleks para alumnos (usada en Ecuador). Un experto del Banco Mundial dijo que la brecha de acceso tecnológico en Uruguay está casi resuelta.",
+   "source_url": "https://www.montevideo.com.uy/En-Perspectiva/-Que-herramientas-de-IA-ayudan-a-mejorar-el-rendimiento-de-docentes-y-alumnos-en-el-aula--uc902994",
+   "source_title": "¿Qué herramientas de IA ayudan a mejorar el rendimiento de docentes y alumnos en el aula?",
+   "source_date": "2024-10-11",
+   "source_type": "prensa",
+   "geografia": "LATAM",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T00:27:32",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-energia-ambiente-001",
+   "sector": "energia-ambiente",
+   "hallazgo": "El MIEM lanzó en 2020 una campaña de eficiencia energética dirigida a mipymes (80% de las empresas y más de 60% del empleo), con un simulador de autodiagnóstico y un reintegro de hasta USD 3.000 (75% del costo) para estudios de oportunidades de mejora.",
+   "source_url": "https://www.gub.uy/presidencia/comunicacion/noticias/ministerio-industria-presento-campana-pone-mejor-energia-eficiencia",
+   "source_title": "Ministerio de Industria presentó la campaña “Poné tu mejor energía en la eficiencia”",
+   "source_date": "2020-11-10",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto",
+    "aviso": "fuente de hace 6 años"
+   }
+  },
+  {
+   "id": "F-energia-ambiente-002",
+   "sector": "energia-ambiente",
+   "hallazgo": "Uruguay cubre 99,9% de zonas urbanas con electricidad y el Decreto 173/010 habilitó la microgeneración para hogares y pequeñas empresas; en 2023 nuevos decretos actualizaron el marco técnico y tarifario para generación distribuida.",
+   "source_url": "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/comunicacion/noticias/revolucion-silenciosa-uruguay-transformo-su-matriz-electrica-ejemplo-global",
+   "source_title": "La Revolución Silenciosa: cómo Uruguay transformó su matriz eléctrica en un ejemplo global",
+   "source_date": "2025-11-04",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T12:05:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-energia-ambiente-003",
+   "sector": "energia-ambiente",
+   "hallazgo": "En 2025 se vendieron 14.387 vehículos eléctricos en Uruguay (+147% interanual, unos 39 por día) y la ACAU advierte que la cobertura de carga se está quedando corta; los precios de carga de UTE subieron cerca de 9,2% acumulado entre diciembre y enero.",
+   "source_url": "https://www.elobservador.com.uy/economia-y-empresas/fuerte-aumento-del-mercado-autos-electricos-uruguay-cuantos-se-vendieron-dia-2025-n6030947",
+   "source_title": "Fuerte aumento del mercado de autos eléctricos en Uruguay: cuántos se vendieron por día en 2025",
+   "source_date": "2026-01-14",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T12:10:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-energia-ambiente-004",
+   "sector": "energia-ambiente",
+   "hallazgo": "Montevideo tiene 11.800 contenedores públicos y planea bajar a menos de 4.000 hacia fines de 2028, con contenedores de llave digital para reducir vandalismo, hurgado y acumulación de basura.",
+   "source_url": "https://www.elobservador.com.uy/nacional/montevideo-probara-contenedores-llave-digital-solo-podran-abrirlos-vecinos-autorizados-anuncio-herou-n6049430",
+   "source_title": "Montevideo probará contenedores con 'llave digital': solo podrán abrirlos vecinos autorizados, anunció Herou",
+   "source_date": "2026-07-02",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T12:15:00",
+   "extracto": "Vamos a pasar de 11.800 contenedores a menos de 4.000",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-energia-ambiente-005",
+   "sector": "energia-ambiente",
+   "hallazgo": "Según una encuesta de Equipos, 72% de los montevideanos considera mala o muy mala la limpieza de la ciudad y 62% la recolección; un caso de contenedores cerrados en Buenos Aires dejó de funcionar por vandalismo.",
+   "source_url": "https://www.elobservador.com.uy/nacional/contenedores-acceso-digital-controlado-montevideo-dos-casos-donde-ya-se-aplicaron-el-mundo-uno-funciono-y-otro-no-n6052443",
+   "source_title": "Contenedores de acceso digital controlado en Montevideo: dos casos donde ya se aplicaron en el mundo (uno funcionó y otro no)",
+   "source_date": "2026-07-29",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:20:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-energia-ambiente-006",
+   "sector": "energia-ambiente",
+   "hallazgo": "Uruguay cerró 2025 con 339 MW de solar fotovoltaica conectada y renovables en cerca de 97% de la generación; el gobierno apunta a 500 MW nuevos antes de 2030, atados a la demanda por electrificación del transporte e industria.",
+   "source_url": "https://www.pv-magazine.com/2026/07/30/uruguay-plans-500-mw-of-new-renewables-by-2030/",
+   "source_title": "Uruguay plans 500 MW of new renewables by 2030",
+   "source_date": "2026-07-30",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T12:25:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-fintech-seguros-001",
+   "sector": "fintech-seguros",
+   "hallazgo": "Un informe de la Cámara Uruguay Fintech (elaborado por Mordezki & Asociados) estima que el sector emplea hoy a unas 1.000 personas y aporta US$ 60 millones al PIB, y plantea llegar a 5.000 empleos y US$ 1.000 millones anuales hacia 2035.",
+   "source_url": "https://www.elobservador.com.uy/economia-y-empresas/la-industria-fintech-busca-ganar-terreno-uruguay-y-presento-propuestas-atraer-us-500-millones-inversion-al-ano-n6004592",
+   "source_title": "La industria fintech busca ganar terreno en Uruguay y presentó propuestas para atraer US$ 500 millones de inversión al año",
+   "source_date": "2025-06-18",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "un crecimiento sostenido del sector a tasas superiores al 30% anual nominal",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-fintech-seguros-002",
+   "sector": "fintech-seguros",
+   "hallazgo": "En Uruguay, tras la Ley de Inclusión Financiera (2014), la participación de las compras con débito en una cadena de supermercados subió del 4% al 10%, pero ejecutivos del sector dicen que la innovación en medios de pago es lenta; en Brasil el PIX ya se usa cinco veces más que la tarjeta de débito.",
+   "source_url": "https://www.elobservador.com.uy/cafe-y-negocios/que-se-necesita-que-uruguay-pueda-innovar-medios-pago-las-claves-del-gobierno-y-el-sector-privado-n6022850",
+   "source_title": "Potenciar la inclusión financiera: la visión del gobierno y el sector privado para innovar en medios de pago",
+   "source_date": "2025-10-31",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "Hoy se realizan cinco veces más pagos por este medio que por tarjeta de débito.",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-fintech-seguros-003",
+   "sector": "fintech-seguros",
+   "hallazgo": "El mercado asegurador uruguayo emitió primas netas por $116.179 millones (US$ 2.889 millones) en 2024, con crecimiento real de 25,8%, penetración de 3,6% del PIB y un ratio combinado de 106,2%, según Mapfre Economics.",
+   "source_url": "https://www.forbesargentina.com/negocios/con-fuerte-empuje-vida-uruguay-lidero-expansion-mercado-asegurador-latinoamericano-n81339",
+   "source_title": "Con fuerte empuje de vida, Uruguay lideró expansión del mercado asegurador latinoamericano",
+   "source_date": "2025-11-09",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "El impulso provino del segmento vida, que concentró más del 70% del crecimiento total",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-fintech-seguros-004",
+   "sector": "fintech-seguros",
+   "hallazgo": "Las denuncias por estafa en Uruguay pasaron de 1.872 en 2015 a 25.116 en 2024 según datos del Ministerio del Interior, y ya son el tercer delito más denunciado.",
+   "source_url": "https://www.elobservador.com.uy/nacional/estafas-la-epidemia-que-no-crecer-denuncias-se-multiplicaron-20-diez-anos-n5992836",
+   "source_title": "Estafas, la 'epidemia' que no para de crecer: denuncias se multiplicaron por 20 en diez años",
+   "source_date": "2025-04-07",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "En los últimos diez años, las denuncias por estafa aumentaron un 1242%",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-fintech-seguros-005",
+   "sector": "fintech-seguros",
+   "hallazgo": "PedidosYa Créditos otorgó más de US$ 6,4 millones a más de 1.000 pymes uruguayas desde mediados de 2025, con montos de hasta US$ 52.000, 100% digital y repago descontado de las ventas en la app: crédito con datos transaccionales propios.",
+   "source_url": "https://www.descubre.vc/noticia/pedidosya-cr-ditos-impulsa-a-pymes-uruguayas-con-us-6-4-millones-en-pr-stamos-2026-08-18",
+   "source_title": "PedidosYa Créditos impulsa a pymes uruguayas con US$ 6,4 millones en préstamos",
+   "source_date": "2026-08-18",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "con montos de hasta US$ 52.000 y repagos automáticos descontados de sus ventas en la aplicación.",
+   "competidor": "PedidosYa Créditos",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-fintech-seguros-006",
+   "sector": "fintech-seguros",
+   "hallazgo": "El BCU lanzó en septiembre de 2024 la campaña contra fraudes y listó cinco tipos comunes: robo de credenciales (phishing, smishing), suplantación de identidad, estafas de Marketplace, uso indebido de instrumentos electrónicos y ofertas falsas de crédito e inversión.",
+   "source_url": "https://www.montevideo.com.uy/Noticias/BCU-inicia-campana-contra-los-fraudes-estos-son-los-5-tipos-mas-comunes-uc901137",
+   "source_title": "BCU inicia campaña contra los fraudes: estos son los 5 tipos más comunes",
+   "source_date": "2024-09-23",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-fintech-seguros-007",
+   "sector": "fintech-seguros",
+   "hallazgo": "En octubre de 2025 la Asociación Insurtech del Uruguay y MetLife destacaron productos digitales de contratación inmediata desarrollados con la startup Klimber en Uruguay, Argentina, México, Chile y Colombia.",
+   "source_url": "https://mercado.com.ar/ruta-digital/metlife-klimber-y-la-asociacion-insurtech-del-uruguay-destacan-avances-en-digitalizacion-aseguradora-regional",
+   "source_title": "MetLife, Klimber y la Asociación Insurtech del Uruguay destacan avances en digitalización aseguradora regional",
+   "source_date": "2025-10-29",
+   "source_type": "competidor",
+   "geografia": "LATAM",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "La verdadera innovación surge de la colaboración.",
+   "competidor": "Klimber",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-fintech-seguros-008",
+   "sector": "fintech-seguros",
+   "hallazgo": "En Uruguay operan 16 compañías de seguros, con fuerte influencia de las estatales, y cualquier persona jurídica puede vender pólizas, por lo que la distribución depende de una red de corredores y productores asesores; ya existen canales como un bot de WhatsApp.",
+   "source_url": "https://www.iproup.com/innovacion/19929-la-estrategia-de-san-cristobal-para-conquistar-uruguay.amp",
+   "source_title": "Negocio en expansión: la estrategia de San Cristóbal para conquistar el mercado uruguayo",
+   "source_date": "2021-01-20",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "Es un mercado en desarrollo. Entonces hay una competencia interna muy fuerte",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-legal-contable-001",
+   "sector": "legal-contable",
+   "hallazgo": "Honorarios orientativos de contadores en Uruguay (abril 2026): monotributo $U 2.200 a 3.000 por mes, SRL pequeña $U 18.000 a 25.000 por mes, SRL mediana $U 32.000 a 50.000 por mes, balance anual $U 55.000 a 90.000. Indica cuánto pagan hoy las pymes por trabajo contable recurrente.",
+   "source_url": "https://cuantomecuesta.com/uy/contador-asesor-contable/",
+   "source_title": "Contador / Asesor Contable Uruguay 2026 - Honorarios y Aranceles CCEAU",
+   "source_date": "2026-04",
+   "source_type": "precios",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-legal-contable-002",
+   "sector": "legal-contable",
+   "hallazgo": "La factura electrónica ya es obligatoria para la gran mayoría de contribuyentes en Uruguay: empresas grandes y medianas desde 2015-2019, pequeñas y unipersonales desde 2020-2022, y los negocios nuevos desde el primer día. Casi todo emisor necesita software o un proveedor de CFE.",
+   "source_url": "https://yo-facturo.com/blog/obligatoriedad-factura-electronica-uruguay/",
+   "source_title": "Obligatoriedad de la factura electrónica en Uruguay: todo lo que tenés que saber en 2026",
+   "source_date": "2026-06-27",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "La obligatoriedad de la factura electrónica en Uruguay ya alcanza a la gran mayoría de contribuyentes.",
+   "competidor": "YoFacturo",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-legal-contable-003",
+   "sector": "legal-contable",
+   "hallazgo": "Un proveedor de CFE lista dolores al elegir proveedor en Uruguay: doble carga de datos si no integra con el sistema actual, rechazos de comprobantes, caídas en fechas críticas, dificultad para exportar XML y demoras de varios días al migrar. Un plan por comprobante sale más caro que uno fijo pasados unos 80 CFE por mes.",
+   "source_url": "https://yo-facturo.com/blog/proveedores-de-facturacion-electronica-en-uruguay/",
+   "source_title": "Proveedores de Facturación Electrónica en Uruguay: Cómo Elegir el Mejor en 2026",
+   "source_date": "2026-06-27",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "Elegir bien entre los proveedores de facturación electrónica en Uruguay puede evitarte multas de la DGI",
+   "competidor": "YoFacturo",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-legal-contable-004",
+   "sector": "legal-contable",
+   "hallazgo": "Odoo ofrece localización para Uruguay que emite e-Factura y e-Ticket conectándose a la DGI vía el intermediario Uruware. Exige cuentas Uruware de prueba y producción con certificado digital y CAE, lo que implica configuración técnica no trivial para una pyme.",
+   "source_url": "https://www.odoo.com/documentation/18.0/es/applications/finance/fiscal_localizations/uruguay.html",
+   "source_title": "Uruguay - Odoo documentation",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "La localización para Uruguay le permite generar documentos electrónicos con su XML, folio fiscal y firma electrónica.",
+   "competidor": "Odoo",
+   "verificacion": {
+    "estado": "bloqueada",
+    "http": 403,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "no_verificable"
+   }
+  },
+  {
+   "id": "F-legal-contable-005",
+   "sector": "legal-contable",
+   "hallazgo": "Nexum Consulting busca en Montevideo un asistente contable para un estudio contable: registrar asientos, conciliar bancos y cuentas de clientes y proveedores, preparar declaraciones de impuestos y ayudar con sueldos. Revela trabajo contable repetitivo hecho por personas con Excel intermedio.",
+   "source_url": "https://jobs.workable.com/jobs/99ec14b2-1c02-4efd-a282-578485ec88a4.md",
+   "source_title": "Asistente Contable",
+   "source_date": "desconocida",
+   "source_type": "oferta_laboral",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-legal-contable-006",
+   "sector": "legal-contable",
+   "hallazgo": "La legaltech uruguaya Lexia la usan más de 200 fiscales y el 10% de los jueces; procesó 2.180 horas de audiencias y ahorró unas 8.000 horas de transcripción manual. Muestra demanda real por automatizar trabajo jurídico en Uruguay, aunque en el ámbito judicial.",
+   "source_url": "https://www.elobservador.com.uy/ciencia-y-tecnologia/fiscales-y-jueces-incorporan-ia-su-trabajo-y-este-es-el-tiempo-trabajo-que-ahorran-n5971599",
+   "source_title": "Fiscales y jueces incorporan IA para su trabajo y este es el tiempo de trabajo que ahorran",
+   "source_date": "2024-11-23",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "LegalTech Lexia se ha convertido en una herramienta indispensable para fiscales y jueces en Uruguay.",
+   "competidor": "Lexia",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-legal-contable-007",
+   "sector": "legal-contable",
+   "hallazgo": "UruguAI Legal (Aurora Ideas) nació porque abogados perdían demasiado tiempo buscando y analizando sentencias; responde consultas en lenguaje natural con búsqueda semántica. Hacia noviembre de 2024 tenía unos 1.200 usuarios registrados y ya había pasado de gratis a una versión paga.",
+   "source_url": "https://www.elobservador.com.uy/crean-el-primer-asistente-inteligencia-artificial-especializado-temas-juridicos-uruguai-legal-n5949845",
+   "source_title": "Crean el primer asistente de inteligencia artificial especializado en temas jurídicos: UruguAi Legal",
+   "source_date": "2024-07-07",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "Actualmente, la plataforma es gratuita",
+   "competidor": "UruguAI Legal (Aurora Ideas)",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-legal-contable-008",
+   "sector": "legal-contable",
+   "hallazgo": "Magnar, legaltech chilena de IA para abogados, levantó una Serie A de US$ 8 millones liderada por 6 Degrees Capital; opera en siete países incluido Uruguay y declara casi 30 mil abogados clientes. Es un competidor regional con capital fresco.",
+   "source_url": "https://www.itsitio.com/ar/?p=189561",
+   "source_title": "Inyectan US$ 8 millones en una plataforma para estudios jurídicos",
+   "source_date": "2026-09-10",
+   "source_type": "prensa",
+   "geografia": "LATAM",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "ya tiene como clientes a casi 30 mil abogados en la región",
+   "competidor": "Magnar",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-legal-contable-009",
+   "sector": "legal-contable",
+   "hallazgo": "La Ley 20.469 (promulgada el 19 de marzo de 2026) endurece el régimen contra el lavado de activos para abogados, escribanos y contadores: baja el umbral de efectivo de 1.000.000 UI a 200.000 UI y exige actualizar matrices de riesgo y manuales. Depende de reglamentación futura.",
+   "source_url": "https://www.ferrere.com/es/novedades/cambios-significativos-al-regimen-plaft/",
+   "source_title": "Cambios significativos al régimen PLAFT",
+   "source_date": "2026-04-14",
+   "source_type": "otro",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "Se elimina la presunción de bajo riesgo para operaciones bancarizadas.",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-logistica-transporte-001",
+   "sector": "logistica-transporte",
+   "hallazgo": "La Intergremial de Transporte de Carga denunció en marzo de 2024 que retirar un contenedor del puerto de Montevideo puede demorar hasta 9 horas, cuando debería tomar entre 1,5 y 2. La ANP respondió que las demoras son normales y se deben en parte a controles documentales.",
+   "source_url": "https://www.elobservador.com.uy/nota/transportistas-se-quejan-por-demoras-en-el-puerto-de-montevideo-pero-la-anp-las-considera-normales--2024326141611",
+   "source_title": "Transportistas se quejan por demoras en el Puerto de Montevideo, pero la ANP las considera normales",
+   "source_date": "2024-03-26",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T14:05:00",
+   "extracto": "Por ejemplo, se puede demorar hasta nueve horas para retirar un contenedor",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-logistica-transporte-002",
+   "sector": "logistica-transporte",
+   "hallazgo": "En agosto de 2025 más de 150 camiones quedaron inmovilizados más de diez días en el puerto de Montevideo por la demora en el atraque de un buque; el gremio estimó pérdidas de facturación de unos US$ 750.000.",
+   "source_url": "https://www.montevideo.com.uy/Noticias/-Graves-perdidas-economicas--mas-de-150-camiones-estan-varados-en-el-puerto-de-Montevideo-uc932425",
+   "source_title": "\"Graves pérdidas económicas\": más de 150 camiones están varados en el puerto de Montevideo",
+   "source_date": "2025-08-06",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T14:08:00",
+   "extracto": "graves pérdidas económicas",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-logistica-transporte-003",
+   "sector": "logistica-transporte",
+   "hallazgo": "En junio de 2026 transportistas y arroceros reclaman contra la Guía Electrónica de Carga, que describen como carga administrativa adicional que encarece los fletes y se traslada al precio que paga el productor.",
+   "source_url": "https://www.agrolatam.com/agricultura-latam/arroceros-uruguay-apoyo-transportistas-guia-electronica-carga/",
+   "source_title": "Arroceros se suman al reclamo por una norma que encarece el transporte",
+   "source_date": "2026-06-09",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "baja",
+   "retrieved_at": "2026-10-08T14:10:00",
+   "extracto": "carga administrativa adicional para el transporte de mercaderías",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "no_encontrado"
+   }
+  },
+  {
+   "id": "F-logistica-transporte-004",
+   "sector": "logistica-transporte",
+   "hallazgo": "En mayo de 2023 la Intergremial de Transporte de Carga informó casi 500 camiones esperando para entrar al puerto de Montevideo durante paros portuarios, con pérdidas que el gremio calificó de millonarias (sin cifra).",
+   "source_url": "https://www.montevideo.com.uy/Noticias/Intergremial-de-Transporte-de-Carga-apunta-contra-paros-portuarios--Nos-tienen-de-rehen--uc855161",
+   "source_title": "Intergremial de Transporte de Carga apunta contra paros portuarios: \"Nos tienen de rehén\"",
+   "source_date": "2023-05-26",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T14:12:00",
+   "extracto": "Está todo el comercio exterior de Uruguay paralizado por el puerto de Montevideo",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-logistica-transporte-005",
+   "sector": "logistica-transporte",
+   "hallazgo": "En junio de 2022 un error de software en los servidores de Terminal Cuenca del Plata (Katoen Natie) causó demoras administrativas en el ingreso de camiones; la empresa planeó agregar servidores para redundancia. Muestra fragilidad de sistemas del acceso al puerto.",
+   "source_url": "https://www.montevideo.com.uy/Noticias/Error-de-software-provoco-demoras-en-el-ingreso-de-camiones-a-Terminal-Cuenca-del-Plata-uc825047",
+   "source_title": "Error de software provocó \"demoras en el ingreso de camiones\" a Terminal Cuenca del Plata",
+   "source_date": "2022-06-17",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T14:13:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-logistica-transporte-006",
+   "sector": "logistica-transporte",
+   "hallazgo": "Flexy, startup uruguaya creada en 2024, es una app que reemplaza los fletes pedidos por WhatsApp: el usuario publica la carga y recibe ofertas de fleteros. Declara más de 300 fleteros, 1.000 a 1.200 usuarios y solo 5 o 6 fletes por semana, con comisión por servicio.",
+   "source_url": "https://www.elobservador.com.uy/nacio-dejar-atras-los-fletes-whatsapp-ofrece-mas-tres-presupuestos-tan-solo-cinco-minutos-y-busca-digitalizar-el-mercado-n6054856",
+   "source_title": "Nació para dejar atrás los fletes por WhatsApp, ofrece más de tres presupuestos en tan solo cinco minutos y busca digitalizar el mercado",
+   "source_date": "2026-08-21",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T14:15:00",
+   "competidor": "Flexy",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-logistica-transporte-007",
+   "sector": "logistica-transporte",
+   "hallazgo": "LlegoYa es un marketplace uruguayo que conecta transportistas con empresas para aprovechar capacidad ociosa de camiones, con seguimiento en tiempo real. Registró 250 transportistas, 20 empresas y 55 envíos completados en menos de un año (tracción baja).",
+   "source_url": "https://www.descubre.vc/llegoya",
+   "source_title": "LlegoYa: La startup uruguaya que transforma el transporte de cargas",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T14:17:00",
+   "extracto": "optimiza envíos aprovechando capacidad ociosa de camiones",
+   "competidor": "LlegoYa",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-logistica-transporte-008",
+   "sector": "logistica-transporte",
+   "hallazgo": "Un estudio de 2025 (Jurburg, Sanchez, Tanco, Chong) sobre empresas logísticas uruguayas midió un grado general de digitalización medio/bajo de 2,47 sobre 5; las empresas chicas puntúan más bajo.",
+   "source_url": "https://faculty.up.edu.pe/es/publications/moving-towards-logistics-40-analyzing-the-opportunities-and-chall/",
+   "source_title": "Moving towards logistics 4.0: Analyzing the opportunities and challenges from the Uruguayan logistic sector",
+   "source_date": "2025",
+   "source_type": "academico",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T14:19:00",
+   "extracto": "The overall degree of digitalization among respondents is medium/low (2.47 out of 5)",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-logistica-transporte-009",
+   "sector": "logistica-transporte",
+   "hallazgo": "Un dirigente de fleteros de Cerro Largo dijo en 2020 que entre 80 y 90% del transporte profesional son empresas de uno a tres camiones, y estimó que el gasoil pesa 40 a 50% de lo que cobra el flete.",
+   "source_url": "https://www.xn--lamaana-7za.uy/?p=6403",
+   "source_title": "Cuando la producción está mal, al transporte de carga le va mal",
+   "source_date": "2020-02-20",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T14:21:00",
+   "extracto": "Entre el 80 y el 90 % del transporte profesional somos empresas chicas, de entre uno y tres camiones",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado",
+    "aviso": "fuente de hace 6 años"
+   }
+  },
+  {
+   "id": "F-logistica-transporte-010",
+   "sector": "logistica-transporte",
+   "hallazgo": "Informe ANII/CINOI de 2022 sobre logística del e-commerce en Montevideo: 32,5% de las empresas entrevistadas no tiene sistema de ruteo, 26% no usa indicadores para monitorear la entrega y 88% de los proveedores logísticos sufrió problemas de seguridad en entregas.",
+   "source_url": "https://logistica.anii.org.uy/assets/PDFs/Informe-1-Caracterizacion-de-la-logistica-del-comercio-electronico.pdf",
+   "source_title": "Caracterización de la logística del comercio electrónico en Montevideo",
+   "source_date": "2022-09",
+   "source_type": "informe",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T14:24:00",
+   "extracto": "un 26% de las empresas encuestadas no utilizan indicadores",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "no_verificable"
+   }
+  },
+  {
+   "id": "F-logistica-transporte-011",
+   "sector": "logistica-transporte",
+   "hallazgo": "El informe e-País de la Oficina Comercial de España (enero 2026) señala que el e-commerce uruguayo creció 11,3% en 2025 (US$ 1.886 millones) y que sus obstáculos incluyen costos logísticos altos y dificultades de última milla, sobre todo fuera de Montevideo.",
+   "source_url": "https://www.icex.es/content/dam/icex/centros/uruguay/documentos/2025/resumen-ejecutivo-informe-e-pais-comercio-electronico-uruguay-2025.pdf",
+   "source_title": "Informe e-País: El comercio electrónico en Uruguay (resumen ejecutivo)",
+   "source_date": "2026-01-28",
+   "source_type": "informe",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T14:26:00",
+   "extracto": "con dificultades en la última milla (sobre todo para entregas fuera de la capital)",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "no_verificable"
+   }
+  },
+  {
+   "id": "F-salud-001",
+   "sector": "salud",
+   "hallazgo": "El MSP presentó en marzo de 2026 la Política Nacional de Garantía de Acceso Oportuno: plazos máximos de 24 horas hábiles para medicina general, 48 horas hábiles para cirugía general y 30 días corridos para especialistas, con el decreto vigente a los 60 días de su publicación. Obliga a los prestadores a medir y cumplir tiempos de espera.",
+   "source_url": "https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/msp-presenta-politica-nacional-garantia-acceso-oportuno-salud",
+   "source_title": "El MSP presenta la Política Nacional de Garantía y Acceso Oportuno a la Salud",
+   "source_date": "2026-03-03",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T01:00:00",
+   "extracto": "30 días corridos para consultas con especialistas",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-salud-002",
+   "sector": "salud",
+   "hallazgo": "Según El Observador (mayo de 2025), el MSP admite que faltan sistemas de información para medir los tiempos de espera: el cálculo parte de cuando el usuario registra la demanda, sin contar días de agenda cerrada, y no hay norma para el plazo entre pedido y realización de un estudio. El único sistema que funciona es el de coordinación del block quirúrgico.",
+   "source_url": "https://www.elobservador.com.uy/nacional/los-desafios-del-msp-reducir-los-tiempo-espera-mutualistas-falta-informacion-lo-urgente-y-un-cambio-cultural-necesario-n5998690",
+   "source_title": "Los desafíos del MSP para reducir los tiempo de espera en mutualistas: falta de información, las modificaciones urgentes y un cambio cultural necesario",
+   "source_date": "2025-05-10",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T01:00:00",
+   "extracto": "Necesitamos mejorar los sistemas de información para medir este tema.",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-salud-003",
+   "sector": "salud",
+   "hallazgo": "ASSE completó en 2025, con apoyo de la OPS, cinco talleres participativos (uno gerencial y cuatro regionales, desde mayo de 2025) para reducir las listas de espera; el proceso apunta a beneficiar a más de 1,4 millones de usuarios. La nota no informa el tamaño de las listas.",
+   "source_url": "https://www.paho.org/es/noticias/15-9-2025-asse-culmina-primera-etapa-participativa-para-reducir-listas-espera-con-apoyo",
+   "source_title": "ASSE culmina primera etapa participativa para reducir las listas de espera, con apoyo de OPS",
+   "source_date": "2025-09-15",
+   "source_type": "informe",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T01:00:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-salud-004",
+   "sector": "salud",
+   "hallazgo": "Desde marzo de 2019 las historias clínicas de 2,1 millones de usuarios son interoperables entre 14 prestadores integrales (de 43 en el país y más de 100 organizaciones potenciales), con 18 millones de documentos estimados, siempre que cada persona autorice el acceso. Es una base de datos de salud estandarizada sobre la que se pueden construir servicios.",
+   "source_url": "https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/historias-clinicas-electronicas-de-2100000-usuarios-estaran-accesibles-para",
+   "source_title": "Historias clínicas electrónicas de 2.100.000 usuarios estarán accesibles para 14 prestadores de salud desde el 27/03/19",
+   "source_date": "2019-04-01",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T01:00:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto",
+    "aviso": "fuente de hace 7 años"
+   }
+  },
+  {
+   "id": "F-salud-005",
+   "sector": "salud",
+   "hallazgo": "La Medición TIC y Salud de Agesic (feb 2026) indica que el 83% de las instituciones registra la información clínica de forma digital, 64% ofrece agenda online (58% en 2023), 57% permite ver resultados de exámenes online y el 96% de los usuarios se conectó a Internet en el último mes. Quedan brechas de adopción en servicios digitales.",
+   "source_url": "https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/noticias/medicion-tic-salud-83-instituciones-registra-informacion-clinica-forma",
+   "source_title": "Medición TIC y Salud: 83% de las instituciones registra la información clínica de forma digital",
+   "source_date": "2026-02-25",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T01:00:00",
+   "verificacion": {
+    "estado": "bloqueada",
+    "http": null,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-salud-006",
+   "sector": "salud",
+   "hallazgo": "Zalon, startup uruguaya fundada por Romina Paganini, ofrece agenda, pagos con seña, recordatorios y ficha de cliente a profesionales de salud y estética; tiene cerca de 200 clientes (sobre todo Montevideo y el este), 3 personas de equipo y unos USD 50.000 de capital propio. La fundadora detectó que 18 de cada 20 profesionales seguían con agenda de papel; cobra suscripción mensual más comisión por pago.",
+   "source_url": "https://www.forbesargentina.com/negocios/con-29-anos-fundo-zalon-startup-uruguaya-resuelve-digitalizacion-servicios-ya-busca-cruzar-fronteras-n92129/amp",
+   "source_title": "Con 29 años fundó Zalon, la startup uruguaya que resuelve la digitalización de servicios y ya busca cruzar fronteras",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T01:00:00",
+   "competidor": "Zalon",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-salud-007",
+   "sector": "salud",
+   "hallazgo": "AgendaPro se presenta como líder en software para centros médicos en Argentina: historia clínica con consentimiento, turnos online 24 horas, recordatorios por WhatsApp/SMS/email, comisiones, caja multi-clínica y teleconsulta, con prueba gratis. La página no muestra precios ni menciona Uruguay.",
+   "source_url": "https://agendapro.com/ar/centro-medico/software-para-centro-medico",
+   "source_title": "Software para Centros Médicos líder en Argentina: Más turnos, menos caos",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "AR",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T01:00:00",
+   "competidor": "AgendaPro",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-salud-008",
+   "sector": "salud",
+   "hallazgo": "Un blog de software médico (Medesk, actualizado sep 2026) cita que el ausentismo puede equivaler hasta al 14% de los ingresos mensuales de un consultorio privado y que recordatorios automáticos y listas de espera digitales reducen la tasa entre 30% y 50% en tres meses. Es una referencia no uruguaya y de un proveedor interesado.",
+   "source_url": "https://www.medesk.net/es/blog/cancelaciones-medicas-agenda/",
+   "source_title": "Estrategias de Recordatorios Médicos: Reducción de Inasistencias",
+   "source_date": "2026-09-03",
+   "source_type": "otro",
+   "geografia": "GLOBAL",
+   "confianza": "baja",
+   "retrieved_at": "2026-10-08T01:00:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-salud-009",
+   "sector": "salud",
+   "hallazgo": "El MSP informó 668 muertes por suicidio en Uruguay en 2025 (tasa 19,16 cada 100.000 habitantes, menor que 2024) y 6.140 intentos registrados de 5.144 personas; el 79% de los fallecidos fueron hombres. Muestra la magnitud del problema de salud mental.",
+   "source_url": "https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/encuentro-trabajo-dia-nacional-prevencion-del-suicidio",
+   "source_title": "Encuentro de trabajo por el Día Nacional de Prevención del Suicidio",
+   "source_date": "2026-07-17",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T01:00:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-salud-010",
+   "sector": "salud",
+   "hallazgo": "En 2021 el MSP señaló que Casa de Galicia, mutualista con seis ejercicios seguidos en déficit, había perdido el 20% de sus afiliados en cinco años y tenía un endeudamiento de USD 76 millones, unas cuatro veces la media por afiliado del sector. Evidencia de presión financiera en prestadores de salud.",
+   "source_url": "https://www.montevideo.com.uy/Noticias/MSP-los-estados-contables-de-Casa-de-Galicia-evidencian-severos-problemas-de-gestion--uc801852",
+   "source_title": "MSP: los estados contables de Casa de Galicia \"evidencian severos problemas de gestión\"",
+   "source_date": "2021-10-21",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T01:00:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-sector-publico-001",
+   "sector": "sector-publico",
+   "hallazgo": "El presidente del Congreso de Intendentes reconoció en 2022 que el gobierno digital a nivel departamental es muy desigual: algunas intendencias están avanzadas y otras deben desarrollar capacidades. Agesic firmó un convenio para ofrecerles plataforma de trámites en línea, expediente electrónico y participación digital.",
+   "source_url": "https://www.gub.uy/presidencia/comunicacion/noticias/intendencias-recibiran-apoyo-agesic-para-modernizar-su-gestion",
+   "source_title": "Intendencias recibirán apoyo de Agesic para modernizar su gestión",
+   "source_date": "2022-12-09",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T00:27:35",
+   "extracto": "La realidad en materia de gobierno digital a nivel subnacional es muy heterogénea.",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-sector-publico-002",
+   "sector": "sector-publico",
+   "hallazgo": "Agesic informó en 2019 que 21 organismos estatales estaban habilitados para intercambiar expedientes digitales, diez años después de iniciado el proyecto en 2009. La adopción del expediente electrónico fue gradual y por organismo.",
+   "source_url": "https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/noticias/diez-anos-gestion-digital-expedientes",
+   "source_title": "Diez años de gestión digital de expedientes",
+   "source_date": "2019-06-04",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T00:27:35",
+   "extracto": "21 organismos estatales habilitados para intercambiar expedientes digitales",
+   "verificacion": {
+    "estado": "bloqueada",
+    "http": null,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "no_verificable",
+    "aviso": "fuente de hace 7 años"
+   }
+  },
+  {
+   "id": "F-sector-publico-003",
+   "sector": "sector-publico",
+   "hallazgo": "En junio de 2026 se reunió la Comunidad de Expediente Digital: Presidencia, el Ministerio del Interior y el Tribunal de Cuentas gestionan más de 500 expedientes diarios cada uno según la nota, con delegaciones de varios ministerios y el BSE. Muestra volumen alto de trabajo documental en el Estado central.",
+   "source_url": "https://www.gub.uy/presidencia/comunicacion/noticias/se-realizo-primer-encuentro-presencial-comunidad-expediente-digital",
+   "source_title": "Se realizó primer encuentro presencial de la Comunidad de Expediente Digital",
+   "source_date": "2026-06-25",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T00:27:35",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-sector-publico-004",
+   "sector": "sector-publico",
+   "hallazgo": "Un jerarca de la Oficina Nacional del Servicio Civil dijo en 2022 que en Uruguay no existe un marco de competencias digitales para funcionarios; los relevamientos muestran capacidades analíticas limitadas y necesidad de formación en análisis de datos, Excel y trabajo interinstitucional.",
+   "source_url": "https://dplnews.com/uruguay-gobierno-firmo-acuerdo-para-formar-a-empleados-publicos-en-competencias-digitales/",
+   "source_title": "Uruguay | Gobierno firmó acuerdo para formar a empleados públicos en competencias digitales",
+   "source_date": "2022-11-07",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T00:27:35",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-sector-publico-005",
+   "sector": "sector-publico",
+   "hallazgo": "En 2018 la OPP, el Congreso de Intendentes y el Tribunal de Cuentas contrataron un sistema común de contabilidad, compras e ingresos para 14 intendencias, con inversión de USD 4,5 millones (USD 3,5 millones con apoyo del BID). Antes cada intendencia usaba criterios individuales y muy distintos.",
+   "source_url": "https://www.gub.uy/presidencia/comunicacion/noticias/sistema-informatico-para-gobiernos-departamentales-permite-atender-reclamo",
+   "source_title": "Sistema informático para gobiernos departamentales permite atender reclamo social por mayor transparencia",
+   "source_date": "2018-06-12",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T00:27:35",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto",
+    "aviso": "fuente de hace 8 años"
+   }
+  },
+  {
+   "id": "F-sector-publico-006",
+   "sector": "sector-publico",
+   "hallazgo": "CERTuy registró 14.264 incidentes de ciberseguridad en 2024, 42.768 en 2025 (0,17% de severidad alta o muy alta) y 32.399 en el primer semestre de 2026. El Decreto 66/025 obliga a entidades de sectores críticos a reportar incidentes en 24 horas.",
+   "source_url": "https://www.gub.uy/centro-nacional-respuesta-incidentes-seguridad-informatica/tematica/gestion-de-incidentes",
+   "source_title": "Gestión de incidentes (CERTuy)",
+   "source_date": "2026",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T00:27:35",
+   "extracto": "se detectaron y respondieron 14.264 incidentes",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-sector-publico-007",
+   "sector": "sector-publico",
+   "hallazgo": "Sovra, empresa argentina, implementó su plataforma no-code SovraGov en Luján de Cuyo (Mendoza) en menos de seis meses: 25.000 vecinos registrados (cerca del 15% de la población), 16.000 trámites en el primer año y más de 60 servicios 24/7. No publica precios; es cifra de la propia empresa.",
+   "source_url": "https://blog.sovra.io/p/mi-lujan-digital-a-no-code-citizen-de0",
+   "source_title": "Mi Luján Digital: modernización de los servicios públicos en Mendoza en menos de seis meses",
+   "source_date": "2025-09-29",
+   "source_type": "competidor",
+   "geografia": "AR",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T00:27:35",
+   "competidor": "Sovra (SovraGov)",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-sector-publico-008",
+   "sector": "sector-publico",
+   "hallazgo": "MuniDigital, GovTech peruana, declaraba en 2021 más de 200 municipios activos en 9 países, con propuesta de ahorro, canales digitales y mejor recaudación. Un socio afirma que muchos gobiernos ven la tecnología como gasto y no como inversión; el artículo no explica su modelo de cobro.",
+   "source_url": "https://lexlatin.com/entrevistas/munidigital-primera-govtech-lima",
+   "source_title": "MuniDigital, la primera GovTech que utiliza un municipio limeño",
+   "source_date": "2021-09-07",
+   "source_type": "competidor",
+   "geografia": "LATAM",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T00:27:35",
+   "competidor": "MuniDigital",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-sector-publico-009",
+   "sector": "sector-publico",
+   "hallazgo": "Según la 5ª encuesta de Ciudadanía Digital de Agesic (2019), el 100% de los trámites de la Administración Central pueden iniciarse en línea y el 70% completarse, pero solo el 34% de los encuestados hizo un trámite en línea de principio a fin en el último año.",
+   "source_url": "https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/noticias/nuevos-datos-resultados-5a-encuesta-conocimientos-actitudes-practicas",
+   "source_title": "Nuevos datos: resultados de la 5ª Encuesta de Conocimientos, Actitudes y Prácticas de Ciudadanía Digital",
+   "source_date": "2019-05-20",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T00:27:35",
+   "extracto": "el 100% de los trámites de la Administración Central pueden iniciarse en línea",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado",
+    "aviso": "fuente de hace 7 años"
+   }
+  },
+  {
+   "id": "F-turismo-001",
+   "sector": "turismo",
+   "hallazgo": "El Ministerio de Turismo presentó en noviembre de 2025 el proyecto de decreto que reglamenta la Ley 20.352: registro obligatorio con número único visible para cada vivienda turística (alojamientos de hasta 120 días), y las plataformas digitales deberán inscribirse y publicar solo alojamientos registrados, con 180 días para adecuarse.",
+   "source_url": "https://www.gub.uy/ministerio-turismo/comunicacion/noticias/ministerio-turismo-presento-proyecto-regulacion-vivienda-turistica",
+   "source_title": "El Ministerio de Turismo presentó el proyecto de regulación de vivienda turística",
+   "source_date": "2025-11-24",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "solo podrán publicar alojamientos registrados",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-turismo-002",
+   "sector": "turismo",
+   "hallazgo": "El proyecto de ley de vivienda turística aprobado en el Senado en 2024 considera prestador turístico a todo inmueble con más de 120 días de arrendamiento al año; debe declararse en el registro del Ministerio, exhibir el número de inscripción en cada oferta e informar al Ministerio del Interior la identidad de los huéspedes y anualmente turistas y días de alojamiento.",
+   "source_url": "https://www.elobservador.com.uy/economia-y-empresas/vivienda-turistica-que-dice-el-proyecto-ley-aprobado-el-senado-y-que-podria-regir-el-proximo-verano-punta-del-este-n5958271",
+   "source_title": "Vivienda turística: ¿qué dice el proyecto de ley aprobado en el Senado y que podría regir desde el próximo verano en Punta del Este?",
+   "source_date": "2024-08-29",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "informar de manera obligatoria al Ministerio del Interior la identidad de las personas que se alojen en la vivienda",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-turismo-003",
+   "sector": "turismo",
+   "hallazgo": "En 2019 la Cámara Uruguaya de Turismo y la AHRU reclamaban registro obligatorio de alojamientos y que las plataformas publiquen el número de registro, y calificaban al alojamiento informal como \"el impuesto más caro que pagamos\"; muestra un dolor estructural de los hoteles frente a la oferta informal.",
+   "source_url": "https://www.hosteltur.com/lat/129499_uruguay-no-entendemos-por-que-se-regula-spotify-netflix-uber-y-no-airbnb.html",
+   "source_title": "Uruguay: No entendemos por qué se regula Spotify, Netflix, Uber y no Airbnb",
+   "source_date": "2019-06-21",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "no entendemos por qué se regula Spotify, Netflix, Uber y no Airbnb",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado",
+    "aviso": "fuente de hace 7 años"
+   }
+  },
+  {
+   "id": "F-turismo-004",
+   "sector": "turismo",
+   "hallazgo": "Uruguay cerró 2025 con 3.604.488 visitantes receptivos y US$ 2.040,4 millones de gasto según el documento anual del Ministerio de Turismo; la página oficial de Turismo Receptivo 2025 se publicó el 13/01/2026 y reúne visitantes, gasto y estadía en archivos descargables.",
+   "source_url": "https://www.gub.uy/ministerio-turismo/datos-y-estadisticas/datos/turismo-receptivo-2025",
+   "source_title": "Turismo Receptivo 2025 | Ministerio de Turismo",
+   "source_date": "2026-01-13",
+   "source_type": "datos_abiertos",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "Contiene información correspondientes a los visitantes que ingresaron a Uruguay, gasto y estadía de los mismos",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-turismo-005",
+   "sector": "turismo",
+   "hallazgo": "En la temporada de cruceros 2024-2025 el gasto promedio por crucerista fue USD 59,1 (+11,8%) y el total del país USD 18,5 millones; Montevideo recibió 234.865 personas (75%) y concentró USD 14,6 millones.",
+   "source_url": "https://www.gub.uy/ministerio-turismo/comunicacion/noticias/aumento-del-gasto-turista-temporada-cruceros-2024-2025",
+   "source_title": "Aumento del gasto por turista en la Temporada de Cruceros 2024-2025",
+   "source_date": "2025-07-03",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-turismo-006",
+   "sector": "turismo",
+   "hallazgo": "GuruWalk opera free tours en Montevideo, Colonia, Punta del Este, Atlántida y Fray Bentos: reserva gratuita y el viajero paga lo que considera justo al final, con guías locales en varios idiomas; es un competidor de intermediación para guías independientes.",
+   "source_url": "https://www.guruwalk.com/es/c/uruguay",
+   "source_title": "Visita los mejores Free Tours de Uruguay - GuruWalk",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "baja",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "paga lo que quieras al final",
+   "competidor": "GuruWalk",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "no_encontrado"
+   }
+  },
+  {
+   "id": "F-turismo-007",
+   "sector": "turismo",
+   "hallazgo": "En el verano 2025 la presidenta de Camtur dijo que la llegada de brasileños bajó en algunos destinos por motivos cambiarios y que el fuerte aumento de argentinos lo compensó; en enero ingresaron 572.699 turistas y en Rocha la ocupación de febrero rondó 50% a 60%, lo que evidencia dependencia de pocos mercados y de la estacionalidad.",
+   "source_url": "https://www.elobservador.com.uy/cafe-y-negocios/tras-el-fin-del-verano-el-sector-turistico-hizo-sus-primeros-balances-la-temporada-como-le-fue-uruguay-n5990676",
+   "source_title": "Tras el fin del verano, el sector turístico hizo sus primeros balances de la temporada: ¿cómo le fue a Uruguay?",
+   "source_date": "2025-03-21",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-turismo-008",
+   "sector": "turismo",
+   "hallazgo": "En noviembre de 2024 la diferencia de precios entre Uruguay y Argentina era 47%, el nivel más bajo en cinco años, y la UCU advertía que Brasil pasó a ser más barato y podía desviar turistas; el flujo depende del tipo de cambio.",
+   "source_url": "https://www.ambito.com/uruguay/alerta-el-turismo-se-redujo-la-diferencia-cambiaria-argentina-pero-la-caida-del-real-limitaria-el-gasto-n6081439",
+   "source_title": "Alerta en el turismo: se redujo la diferencia cambiaria con Argentina, pero la caída del real limitaría el gasto",
+   "source_date": "2024-11-13",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-turismo-009",
+   "sector": "turismo",
+   "hallazgo": "Según datos de la Encuesta Continua de Hogares del INE, en 2025 unas 51.404 personas trabajaron en actividades turísticas en Montevideo; gastronomía concentró 42,1% de los puestos y alojamiento turístico 19,2%.",
+   "source_url": "https://www.ambito.com/uruguay/el-turismo-genero-mas-51000-empleos-montevideo-y-explico-el-72-la-ocupacion-n6304628",
+   "source_title": "El turismo generó más de 51.000 empleos en Montevideo y explicó el 7,2% de la ocupación",
+   "source_date": "2026-07-28",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:28:57",
+    "extracto": "sin_extracto"
+   }
+  }
+ ]
+}

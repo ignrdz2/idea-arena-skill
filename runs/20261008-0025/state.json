@@ -130,7 +130,79 @@
    "ideas": 3
   }
  ],
- "steps": {},
+ "steps": {
+  "verify": {
+   "aceptadas": 85,
+   "ok": 82,
+   "bloqueadas": 3,
+   "descartadas": 6,
+   "motivos": {
+    "esquema": 6
+   },
+   "por_sector": {
+    "comercio-retail": {
+     "recibidas": 11,
+     "aceptadas": 11,
+     "bloqueadas": 0,
+     "descartadas": 0
+    },
+    "agro": {
+     "recibidas": 8,
+     "aceptadas": 2,
+     "bloqueadas": 0,
+     "descartadas": 6
+    },
+    "salud": {
+     "recibidas": 10,
+     "aceptadas": 10,
+     "bloqueadas": 1,
+     "descartadas": 0
+    },
+    "logistica-transporte": {
+     "recibidas": 11,
+     "aceptadas": 11,
+     "bloqueadas": 0,
+     "descartadas": 0
+    },
+    "fintech-seguros": {
+     "recibidas": 8,
+     "aceptadas": 8,
+     "bloqueadas": 0,
+     "descartadas": 0
+    },
+    "educacion": {
+     "recibidas": 10,
+     "aceptadas": 10,
+     "bloqueadas": 0,
+     "descartadas": 0
+    },
+    "legal-contable": {
+     "recibidas": 9,
+     "aceptadas": 9,
+     "bloqueadas": 1,
+     "descartadas": 0
+    },
+    "sector-publico": {
+     "recibidas": 9,
+     "aceptadas": 9,
+     "bloqueadas": 1,
+     "descartadas": 0
+    },
+    "turismo": {
+     "recibidas": 9,
+     "aceptadas": 9,
+     "bloqueadas": 0,
+     "descartadas": 0
+    },
+    "energia-ambiente": {
+     "recibidas": 6,
+     "aceptadas": 6,
+     "bloqueadas": 0,
+     "descartadas": 0
+    }
+   }
+  }
+ },
  "scope_batches": [],
  "candidates": [],
  "dedup_needed": false,
