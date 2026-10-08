@@ -240,6 +240,18 @@
    "excluidas_por_fallo_fatal": [
     "i002"
    ]
+  },
+  "shortlist": {
+   "ideas": [
+    "i009",
+    "i027",
+    "i028",
+    "i010",
+    "i006",
+    "i011",
+    "i015",
+    "i021"
+   ]
   }
  },
  "scope_batches": [
