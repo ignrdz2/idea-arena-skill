@@ -108,18 +108,19 @@
      "name": "legal-contable"
     }
    },
-   "solution": "runs/20261008-0025/tournament/r2/r2-m03.i009.solution.md",
-   "idea_json": "runs/20261008-0025/tournament/r2/r2-m03.i009.idea.json",
+   "solution": "runs/20261008-0025/tournament/r3/r3-m02.i009.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r3/r3-m02.i009.idea.json",
    "alive": true,
    "eliminated_in": null,
    "eliminated_by": null,
    "byes": 0,
    "shown_first": 2,
-   "shown_second": 1,
+   "shown_second": 2,
    "personas": [
     "cliente",
     "competidor",
-    "inversor"
+    "inversor",
+    "tutor"
    ]
   },
   "i010": {
@@ -129,11 +130,11 @@
      "name": "educacion"
     }
    },
-   "solution": "runs/20261008-0025/tournament/r2/r2-m04.i010.solution.md",
-   "idea_json": "runs/20261008-0025/tournament/r2/r2-m04.i010.idea.json",
-   "alive": true,
-   "eliminated_in": null,
-   "eliminated_by": null,
+   "solution": "runs/20261008-0025/tournament/r3/r3-m02.i010.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r3/r3-m02.i010.idea.json",
+   "alive": false,
+   "eliminated_in": 3,
+   "eliminated_by": "i009",
    "byes": 0,
    "shown_first": 3,
    "shown_second": 0,
@@ -286,18 +287,19 @@
      "name": "fintech-seguros"
     }
    },
-   "solution": "runs/20261008-0025/tournament/r2/r2-m02.i027.solution.md",
-   "idea_json": "runs/20261008-0025/tournament/r2/r2-m02.i027.idea.json",
+   "solution": "runs/20261008-0025/tournament/r3/r3-m01.i027.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r3/r3-m01.i027.idea.json",
    "alive": true,
    "eliminated_in": null,
    "eliminated_by": null,
    "byes": 0,
-   "shown_first": 2,
+   "shown_first": 3,
    "shown_second": 1,
    "personas": [
     "cliente",
     "competidor",
-    "inversor"
+    "inversor",
+    "tutor"
    ]
   },
   "i028": {
@@ -307,11 +309,11 @@
      "name": "logistica-transporte"
     }
    },
-   "solution": "runs/20261008-0025/tournament/r2/r2-m01.i028.solution.md",
-   "idea_json": "runs/20261008-0025/tournament/r2/r2-m01.i028.idea.json",
-   "alive": true,
-   "eliminated_in": null,
-   "eliminated_by": null,
+   "solution": "runs/20261008-0025/tournament/r3/r3-m01.i028.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r3/r3-m01.i028.idea.json",
+   "alive": false,
+   "eliminated_in": 3,
+   "eliminated_by": "i027",
    "byes": 0,
    "shown_first": 1,
    "shown_second": 2,
@@ -1461,6 +1463,33 @@
       ]
      },
      "notes": []
+    }
+   ],
+   "bye": null,
+   "closed": true
+  },
+  {
+   "n": 4,
+   "alive": [
+    "i009",
+    "i027"
+   ],
+   "matches": [
+    {
+     "id": "r4-m01",
+     "a": "i027",
+     "b": "i009",
+     "winner": null,
+     "loser": null,
+     "reason": null,
+     "survived": [],
+     "scores": null,
+     "source": null,
+     "first": "i027",
+     "second": "i009",
+     "personas": [
+      "tutor"
+     ]
     }
    ],
    "bye": null,
