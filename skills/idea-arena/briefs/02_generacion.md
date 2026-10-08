@@ -1,4 +1,4 @@
-<!-- Fase 2, generación. Un agente por estrategia y foco de sectores. Placeholders: reglas_comunes, generator, ideas_n, strategy_name, strategy_how, focus, fichas, min_evidence, min_local, schema_idea, budget, budget_target, max_words, constraints, out. -->
+<!-- Fase 2, generación. Un agente por estrategia y foco de sectores. Placeholders: reglas_comunes, generator, ideas_n, strategy_name, strategy_how, focus, fichas, min_evidence, min_local, schema_idea, budget, budget_target, max_words, word_check, constraints, out. -->
 Sos el generador {{generator}} de /idea-arena. Tu trabajo: proponer {{ideas_n}} ideas de tesis de emprendedurismo para el equipo descrito en {{constraints}}, cada una nacida de evidencia real.
 
 {{reglas_comunes}}
@@ -27,7 +27,7 @@ Cada idea:
    - riesgos: los principales, técnicos y de negocio.
    - supuestos: todo lo que afirmás sin una ficha que lo respalde. En el torneo, una afirmación central sin ficha y sin declararla acá es un fallo fatal.
    - evidencias: todos los IDs que citás, incluidos los de competidores.
-3. Entra en una página: hasta {{max_words}} palabras en total.
+3. Entra en una página: hasta {{max_words}} palabras en total. Con el archivo escrito, corré `{{word_check}}`: revisa esquema, costo y palabras igual que el filtro. Si alguna idea dice MAL, corregila y volvé a correrlo hasta que todas digan OK.
 4. Respeta todas las restricciones duras de {{constraints}}.
 
 Las {{ideas_n}} ideas tienen que atacar problemas distintos: no el mismo dolor con otra solución, ni la misma solución para otro segmento. En lo posible, que nazcan de fichas distintas; si todas tus ideas salen del mismo par de fichas, buscá otro problema en tus sectores.

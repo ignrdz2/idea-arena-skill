@@ -674,6 +674,25 @@ class DryRunAndCaps(CliCase):
         self.assertEqual(os.listdir(self.root), [])
 
 
+class WordCheck(CliCase):
+    def test_palabras_counts_like_the_filter_and_says_how_much_to_cut(self):
+        self.ok("init", "--pilot", "--seed", 1)
+        path = os.path.join(os.path.dirname(self.fetch), "ideas.json")
+        long = idea(supuestos=[("dato " * 55).strip()] * 12)
+        write_json(path, {"generador": "g01", "ideas": [dict(idea(), local_id="g01-1"), dict(long, local_id="g01-2")]})
+        code, out, _ = self.cli("palabras", path)
+        self.assertEqual(code, 1, out)
+        _, words = S.render_page(S.idea_body(idea()), {}, CFG)
+        self.assertIn("OK   g01-1: %d palabras (máximo 700)" % words, out)
+        self.assertRegex(out, r"MAL  g01-2: \d+ palabras \(máximo 700\): recortá \d+")
+        write_json(path, idea(total=500, items=[dict(idea()["costo_infra"]["items"][0], usd_anual=500)]))
+        code, out, _ = self.cli("palabras", path)
+        self.assertEqual(code, 1)
+        self.assertIn("supera el tope", out, "the budget cap is checked too")
+        write_json(path, idea())
+        self.assertIn("OK", self.ok("palabras", path))
+
+
 class FakeAgents(object):
     """Write the files real sub-agents would, including a few bad ones on purpose."""
     VOCAB = ("turnos clínicas stock depósitos cosecha riego facturas cobranzas reclamos aduana flota choferes "

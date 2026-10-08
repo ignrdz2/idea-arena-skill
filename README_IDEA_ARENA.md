@@ -63,6 +63,34 @@ Qué mirar en el piloto antes de pasar al run completo:
 - Una página de idea en `ideas/` y un veredicto en `tournament/r1/`.
 - El uso de tokens real en tu plan, para decidir si el run completo entra.
 
+## Correr el run completo en la nube
+
+Una sesión de Claude Code en la nube corre el run en una VM de Anthropic, sigue aunque cierres la
+computadora y gasta primero el crédito de sesiones en la nube, si lo tenés.
+
+1. **Entorno con red completa.** En [claude.ai/code](https://claude.ai/code), el ícono de nube
+   arriba del cuadro de mensaje abre el selector de entornos. Creá uno (por ejemplo "idea-arena")
+   con **Network access: Full**. Con el nivel por defecto (Trusted), el verificador de Python no
+   puede abrir diarios ni sitios del gobierno y descarta las fichas. En las variables de entorno
+   agregá `BASH_DEFAULT_TIMEOUT_MS=600000`, para que los pasos que verifican URLs no se corten.
+2. **El repo en GitHub, al día.** La sesión clona la rama de GitHub, no tu copia local: hacé push
+   antes de empezar.
+3. **Nueva sesión** en ese entorno, sobre este repo y la rama `main`, en modo automático. El
+   mensaje (la semilla puede ser cualquier número; queda guardada para repetir el sorteo):
+
+   ```
+   Corré el skill idea-arena con los argumentos "--seed 7": es el run oficial, completo.
+   - Confirmo el run completo; no hace falta preguntar.
+   - Guardá el avance: después de cada step, commit de runs/ solamente y push a la rama de la sesión.
+   - Si los agentes se cortan por límite de uso, avisame cuándo se renueva y pará. Cuando te diga
+     "continuá", seguí con next.
+   ```
+
+4. **Si se corta** (límite de uso o VM pausada), volvé a la sesión y escribí "continuá". El estado
+   está en `runs/<run>/` y en los commits de la rama.
+5. **Al terminar**, la shortlist está en la rama de la sesión: traela con `git fetch` y mergeala a
+   `main`, o abrí un PR desde claude.ai/code.
+
 ## Comandos
 
 | en Claude Code | qué hace |

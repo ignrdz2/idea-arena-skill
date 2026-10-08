@@ -12,6 +12,7 @@ for humans to validate with the market.
     python idea_arena.py prompts <phase>                      # write the briefs, list the jobs left, in waves
     python idea_arena.py check <phase>                        # which outputs are still missing
     python idea_arena.py step                                 # run the pending Python step
+    python idea_arena.py palabras <idea.json>                 # schema, cost and page words, as the filter counts them
     python idea_arena.py status [--json]
     python idea_arena.py record <match_id> <idea_id> [--reason "..."]
     python idea_arena.py deepen <idea_id>                     # queue the deep dive for one idea
@@ -196,6 +197,12 @@ def _script():
 
 def _cmd(*parts):
     return "%s %s %s%s" % (PY, _script(), " ".join(parts), _RUN_SUFFIX)
+
+
+def _word_check(d, path):
+    """The command a generator or defender runs on its own output: absolute paths, any working dir."""
+    q = lambda p: '"%s"' % _slash(p) if " " in p else _slash(p)  # noqa: E731
+    return "%s %s palabras --run %s %s" % (PY, q(SELF), q(ab(d)), q(ab(path)))
 
 
 # ---------------------------------------------------------------- config and inputs
@@ -748,7 +755,8 @@ def render_brief(d, st, cfg, job, ts=None, personas=None, strategies=None):
         names = {s["id"]: s["nombre"] for s in st["sectors"]}
         v.update(generator=g["id"], ideas_n=g["ideas"], strategy_name=strat["name"], strategy_how=strat["how"],
                  focus=", ".join("%s (%s)" % (names.get(x, x), x) for x in g["focus"]),
-                 min_evidence=cfg["filter"]["min_evidence_per_idea"], min_local=cfg["filter"]["min_local_evidence"])
+                 min_evidence=cfg["filter"]["min_evidence_per_idea"], min_local=cfg["filter"]["min_local_evidence"],
+                 word_check=_word_check(d, job["outputs"][0]))
     elif kind == "scope":
         lo, hi = team_hours(cfg)
         v.update(batch=job["label"], hours_low=lo, hours_high=hi, schema=schema("alcance"), ids=", ".join(job["batch"]),
@@ -768,7 +776,8 @@ def render_brief(d, st, cfg, job, ts=None, personas=None, strategies=None):
         v.update(round=n, match=mid, idea_id=iid, own_page=ab(ts["agents"][iid]["solution"]),
                  own_json=ab(ts["agents"][iid]["idea_json"]), attacks=ab(T.attacks_md(ts, n, mid, iid)),
                  schema_defense=schema("defensa"), defense_out=ab(job["outputs"][0]), idea_out=ab(job["outputs"][1]),
-                 search_rule=_search_rule(cfg, ficha_prefix("defend", mid, iid), schema("ficha")))
+                 search_rule=_search_rule(cfg, ficha_prefix("defend", mid, iid), schema("ficha")),
+                 word_check=_word_check(d, job["outputs"][1]))
     elif kind == "judge":
         n, mid, x, y = job["round"], job["match"], job["x"], job["y"]
         m = next(mm for mm in B.current_round(ts)["matches"] if mm["id"] == mid)
@@ -1816,6 +1825,34 @@ def cmd_check(args):
     return 1 if left else 0
 
 
+def cmd_palabras(args):
+    """Schema, cost and page words of one idea, or of every idea in a generator's file, counted the
+    way the hard filter counts them. For the agents that write ideas: they cannot see the filter."""
+    d, st, cfg = load_run(args)
+    data = parse_json_output(args.path) if os.path.isfile(args.path) else None
+    if data is None:
+        print("no es un JSON válido: %s" % args.path)
+        return 1
+    ideas = data["ideas"] if isinstance(data.get("ideas"), list) else [data]
+    schema, cap, ok = S.load_schema("idea"), cfg["filter"]["idea_max_words"], True
+    for k, idea in enumerate(ideas, start=1):
+        body = E.sanitize_obj(S.idea_body(idea)) if isinstance(idea, dict) else idea
+        name = (idea.get("local_id") or idea.get("titulo") or "idea %d" % k) if isinstance(idea, dict) else "idea %d" % k
+        errs = S.validate(body, schema)
+        if errs:
+            ok = False
+            print("MAL  %s: no sigue el esquema: %s" % (name, "; ".join(errs[:4])))
+            continue
+        _, words = S.render_page(body, {}, cfg)
+        cost = [(c, m) for c, m in S.hard_check(body, {}, {}, cfg) if c in ("costo_tope", "costo_suma")]
+        bad = words > cap or cost
+        ok = ok and not bad
+        print("%s %s: %d palabras (máximo %d)%s%s" % ("MAL " if bad else "OK  ", name, words, cap,
+                                                      ": recortá %d" % (words - cap) if words > cap else "",
+                                                      "".join("; %s" % m for _, m in cost)))
+    return 0 if ok else 1
+
+
 def cmd_step(args):
     d, st, cfg = load_run(args)
     E.sweep_dashes(d)
@@ -2070,6 +2107,9 @@ def build_parser():
         s.set_defaults(func=fn)
     s = sub.add_parser("step", parents=[common], help="correr el paso de Python pendiente")
     s.set_defaults(func=cmd_step)
+    s = sub.add_parser("palabras", parents=[common], help="esquema, costo y palabras de una idea, como los cuenta el filtro")
+    s.add_argument("path", help="el JSON de una idea, o el archivo de un generador")
+    s.set_defaults(func=cmd_palabras)
     s = sub.add_parser("status", parents=[common], help="estado del run")
     s.add_argument("--json", action="store_true")
     s.set_defaults(func=cmd_status)

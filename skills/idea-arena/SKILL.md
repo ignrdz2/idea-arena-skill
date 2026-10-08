@@ -95,6 +95,9 @@ trabajos que `prompts` lista como pendientes, una vez. Si vuelven a faltar, escr
 nunca escribas NO OUTPUT para un juez (`judge`, `calibrate`); un juez que falla se relanza.
 Salidas ilegibles: las aparta Python solo (`.invalido1`, `.invalido2`) y `next` te manda a
 relanzarlas; el segundo fallo pasa a NO OUTPUT automáticamente donde hay un plan B.
+Límite de uso: si los agentes se cortan por el límite de la cuenta (error 429, "session limit" o
+"rate limit"), eso no cuenta como intento. Decile al usuario cuándo se renueva y pará; cuando
+retome, `IA next` y relanzá los pendientes. Nunca escribas NO OUTPUT por un corte de límite.
 
 Por qué oleadas: Claude Code corre como mucho 10 herramientas a la vez por defecto
 (`CLAUDE_CODE_MAX_TOOL_USE_CONCURRENCY`). Si el usuario lo subió, que cambie `wave` en config.json.
@@ -124,7 +127,9 @@ ranking, el tau de Kendall y la sección "Cómo usar esto".
 - No leas fichas, ideas, ataques ni veredictos durante el run. `next`, `status` y la salida de `step`
   son todo lo que necesitás.
 - Todo se escribe dentro de `runs/<run>/`. Vos tampoco escribís fuera de ahí, salvo NO OUTPUT en las
-  salidas que faltan. No hagas commits.
+  salidas que faltan. No hagas commits, salvo que el usuario te pida guardar el avance (por ejemplo,
+  en una sesión en la nube): entonces, después de cada `step`, commit de `runs/` solamente y push a
+  la rama de la sesión.
 - Si se compacta tu contexto: `IA status` y después `IA next`.
 - Si el usuario dice que pares, parás. `IA next` retoma más tarde.
 
