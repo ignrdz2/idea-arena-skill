@@ -1316,7 +1316,18 @@
      "personas": [
       "inversor"
      ],
-     "attacks_checked": true
+     "attacks_checked": true,
+     "det_fatal": {
+      "i027": [],
+      "i028": []
+     },
+     "hard_notes": {
+      "i027": [],
+      "i028": [
+       "costo_estimado: el precio de 'Dominio .com' es una estimación sin fuente"
+      ]
+     },
+     "revised": true
     },
     {
      "id": "r3-m02",
@@ -1333,7 +1344,21 @@
      "personas": [
       "inversor"
      ],
-     "attacks_checked": true
+     "attacks_checked": true,
+     "det_fatal": {
+      "i010": [],
+      "i009": []
+     },
+     "hard_notes": {
+      "i010": [
+       "costo_estimado: el precio de 'Dominio' es una estimación sin fuente",
+       "costo_estimado: el precio de 'Copias de seguridad' es una estimación sin fuente"
+      ],
+      "i009": [
+       "costo_estimado: el precio de 'Dominio y DNS' es una estimación sin fuente"
+      ]
+     },
+     "revised": true
     }
    ],
    "bye": null,

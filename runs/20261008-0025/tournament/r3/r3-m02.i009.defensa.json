@@ -1,0 +1,105 @@
+{
+ "idea": "i009",
+ "respuestas": [
+  {
+   "ataque": 1,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que la demanda era solo avisos: sumo F-defensa-r3-m02-i009-002 (tiempo de conciliacion y PDF por banco, fuente de un vendedor, declarado) y corrijo el costo del tiempo como estimacion. No acepto que no se pueda dimensionar ni que sea fatal: el pago es supuesto declarado (rubrica ancla 7) y la idea no lo afirma; las 3 ofertas son de estudios distintos y F-legal-contable-001 es el ingreso del estudio, que es lo que la carga resta.",
+   "evidencia": [
+    "F-defensa-r3-m02-i009-002",
+    "F-legal-contable-005",
+    "F-legal-contable-001"
+   ]
+  },
+  {
+   "ataque": 2,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que anclar al plan de Contafacil era debil y que faltaba cuenta: bajo la referencia a $U 1.500 a 2.500, declaro la moneda como presumible, agrego la cuenta de 10 estudios y que el costo de adquisicion no esta medido (supuesto). No acepto que sea el mismo producto: Contafacil no menciona conciliacion (F-ataque-r1-m05-i009-cliente-001), asi que no son sustitutos y el precio se valida contra honorarios, no contra su plan.",
+   "evidencia": [
+    "F-ataque-r1-m05-i009-cliente-003"
+   ]
+  },
+  {
+   "ataque": 3,
+   "decision": "PARCIAL",
+   "detalle": "Acepto: el silencio de las paginas no prueba, y busque lo que faltaba: Conty declara conciliacion bancaria (F-defensa-r3-m02-i009-003). Lo agrego como competidor mas cercano y reduzco el hueco a PDF de bancos uruguayos y cuenta aprendida por cliente, que su pagina no menciona (tambien silencio, a verificar). Para el dia uno agrego arrancar con el historial de asientos del estudio (supuesto). No acepto que el hueco no exista: sigue sin evidencia de que alguien lo cubra.",
+   "evidencia": [
+    "F-defensa-r3-m02-i009-003",
+    "F-ataque-r1-m05-i009-cliente-001"
+   ]
+  },
+  {
+   "ataque": 4,
+   "decision": "CONCEDE",
+   "detalle": "Tiene razon: 'todo es local' era falso con Lightsail, que ofrece regiones fuera de Uruguay (F-defensa-r3-m02-i009-001). Corrijo: los datos reales solo corren en un equipo en Uruguay (del estudio o del equipo) con Docker; el servidor recibe solo datos sinteticos. Agrego acuerdo de tratamiento y registro de la base; si algun dia hubiera nube con datos reales, se usarian las clausulas del art. 23.",
+   "evidencia": [
+    "F-ataque-r1-m05-i009-cliente-004",
+    "F-defensa-r3-m02-i009-001"
+   ]
+  },
+  {
+   "ataque": 5,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que el paso extra no estaba mitigado: ahora el MVP exporta a un solo sistema destino primero, toma el lote de XML ya bajado y lo declaro como riesgo. No acepto que F-legal-contable-003 pruebe el rechazo: habla de doble carga entre proveedor de CFE y sistema contable, no de un complemento que reemplaza una conciliacion manual; que el estudio tolere el paso queda como supuesto a validar.",
+   "evidencia": [
+    "F-legal-contable-003"
+   ]
+  },
+  {
+   "ataque": 6,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que sin estudio el acierto real no se demuestra: agrego plan B con extractos propios anonimizados del equipo (datos generados por el equipo, permitidos por R7) y criterio de decision en abril 2027. No acepto que se viole R4 ni R7: R4 pide clientes contactables desde Uruguay, no ya contactados, y los estudios con estas tareas existen en Montevideo (F-legal-contable-005, F-defensa-r2-m03-i009-001); el piloto exige acuerdo propio, no depende de datos sin acceso.",
+   "evidencia": [
+    "F-legal-contable-005",
+    "F-defensa-r2-m03-i009-001"
+   ]
+  },
+  {
+   "ataque": 7,
+   "decision": "CONCEDE",
+   "detalle": "La cita de F-legal-contable-003 para YoFacturo no respaldaba lo dicho: quito esa fila. El servidor era un supuesto: agrego plan B con la tabla de precios (4 GB a USD 24, F-defensa-r3-m02-i009-001): 6 meses en 4 GB y 6 en 2 GB dan USD 216 mas dominio 20 igual a 236, bajo el tope; y los embeddings se calculan fuera del servidor. Duplicar todo el anio daria 308, y por eso no es el plan.",
+   "evidencia": [
+    "F-defensa-r3-m02-i009-001"
+   ]
+  }
+ ],
+ "nuevas_fichas": [
+  {
+   "id": "F-defensa-r3-m02-i009-001",
+   "sector": "transversal",
+   "hallazgo": "La pagina de precios de AWS Lightsail lista planes Linux de USD 5, 7, 12 (2 GB), 24 (4 GB) y 44 por mes, y menciona South America (Sao Paulo) como region; no menciona Uruguay.",
+   "source_url": "https://aws.amazon.com/lightsail/pricing/",
+   "source_title": "AWS Lightsail Pricing",
+   "source_date": "desconocida",
+   "source_type": "precios",
+   "geografia": "GLOBAL",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T11:00:00"
+  },
+  {
+   "id": "F-defensa-r3-m02-i009-002",
+   "sector": "transversal",
+   "hallazgo": "Un blog de Sherpa ERP (enero 2026) dice que conciliar a mano 50 movimientos lleva un par de horas y 200 o 500 un dia entero, y que BROU, Itau, Santander, Scotiabank y Heritage ofrecen extractos en PDF o formatos propios.",
+   "source_url": "https://www.sherpaerp.net/blog/conciliacion-bancaria-uruguay-brou-itau",
+   "source_title": "Conciliacion bancaria en Uruguay: como cuadrar BROU, Itau y mas (Sherpa)",
+   "source_date": "2026-01-10",
+   "source_type": "otro",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T11:00:00"
+  },
+  {
+   "id": "F-defensa-r3-m02-i009-003",
+   "sector": "transversal",
+   "hallazgo": "La pagina de Conty (Memory) dice que permite realizar la conciliacion bancaria y comparar banco y contabilidad automaticamente, con multiempresa y multiusuario para estudios; no indica formatos de extracto ni importacion.",
+   "source_url": "https://memory.com.uy/conty-software-contable/",
+   "source_title": "Sistema Contable Integrado en Uruguay (Conty, Memory)",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T11:00:00",
+   "competidor": "Conty"
+  }
+ ]
+}

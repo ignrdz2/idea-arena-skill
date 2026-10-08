@@ -1,0 +1,94 @@
+{
+ "id": "i028",
+ "titulo": "Prediccion de espera para retirar contenedores en el puerto de Montevideo",
+ "problema": "La Intergremial denuncio que retirar un contenedor del puerto de Montevideo puede demorar hasta 9 horas, cuando deberia tomar 1,5 a 2; la ANP dice que son demoras normales (F-logistica-transporte-001). Es un maximo: ninguna ficha da la espera tipica, y medirla es el primer entregable. Choques: buque atrasado (F-logistica-transporte-002), paros (F-logistica-transporte-004), caidas de sistemas (F-logistica-transporte-005); no se predicen, ahi sirve la espera reportada en vivo.",
+ "usuario": "Usan choferes; paga la empresa, foco en flotas de 5 o mas camiones. Se supone que muchas empresas son de 1 a 3 camiones (F-logistica-transporte-009, dato de 2020) y poco digitalizadas (F-logistica-transporte-008); se mide en entrevistas.",
+ "solucion": "PWA donde el chofer marca llegada a la fila, ingreso y salida de cada terminal con un toque (hora corregible); la ubicacion en primer plano verifica una zona amplia de acceso. Se estima la espera por terminal y franja con cuantiles historicos e intervalo. El chofer ve la espera reciente reportada por otros; el aviso de fila anomala exige un minimo de reportes. La empresa ve panel historico y horas perdidas. La terminal muestra fila y camara, no esperas (F-ataque-r3-m01-i028-inversor-001).",
+ "mvp": {
+  "semestre_1": [
+   "Entrevistas con la Intergremial y empresas antes de diciembre de 2026",
+   "PWA con registro de un toque y ubicacion en primer plano",
+   "Backend con API, base de datos y panel de espera",
+   "Demo simulada rotulada; piloto con 2 o 3 empresas; si la espera tipica es baja, se redefine hacia shocks"
+  ],
+  "semestre_2": [
+   "Estimador por terminal y franja (cuantiles, luego LightGBM si hay datos) contra linea base ingenua, con error y cobertura medidos por backtesting",
+   "Alertas push por demoras anomalas",
+   "Reporte de horas perdidas en PDF",
+   "Precios validados en entrevistas"
+  ]
+ },
+ "stack": [
+  "React PWA",
+  "Python FastAPI",
+  "PostgreSQL con TimescaleDB",
+  "scikit-learn o LightGBM",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 164,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 2 GB RAM con IPv4",
+    "usd_anual": 144,
+    "supuesto": "USD 12 por mes x 12 meses, una instancia para API, base de datos y modelo; sin capa gratuita (la pagina no dice cuanto dura).",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 20,
+    "supuesto": "Estimacion por encima: el precio del .com no figura en Cloudflare Registrar; se reservan USD 20."
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Flexy",
+   "evidencia_ids": [
+    "F-logistica-transporte-006"
+   ],
+   "hueco": "Marketplace de fletes; la ficha no dice que mida esperas."
+  },
+  {
+   "nombre": "LlegoYa",
+   "evidencia_ids": [
+    "F-logistica-transporte-007"
+   ],
+   "hueco": "Marketplace de capacidad ociosa; la ficha no dice que prediga esperas."
+  },
+  {
+   "nombre": "Terminal Cuenca del Plata (MiTCP)",
+   "evidencia_ids": [
+    "F-ataque-r3-m01-i028-inversor-001"
+   ],
+   "hueco": "Muestra LineUp y camara; la ficha no menciona tiempos de espera. Podria agregarlos."
+  }
+ ],
+ "monetizacion": "Suscripcion mensual, paga la empresa. Chofer y empresa de hasta 4 camiones usan el plan gratis (espera reciente a cambio de sus tiempos); el pago suma panel, prediccion, alertas y reporte. Precio hipotetico (supuesto): USD 5 por camion por mes, minimo USD 25 (desde 5 camiones); una empresa en el minimo (USD 300 al ano) cubre los USD 164 de infraestructura. Canal: Intergremial de Transporte de Carga, sin contacto aun, gremio publico (F-logistica-transporte-004). Flotas: sin dato, se estiman en entrevistas.",
+ "riesgos": [
+  "Arranque en frio: sin choferes marcando no hay prediccion; plan B: 2 o 3 empresas piloto y demo simulada",
+  "La terminal puede publicar un indicador de espera; defensa: comparacion entre terminales y horas perdidas",
+  "Sustituto gratis: avisos informales entre choferes; el piloto mide el aporte del panel",
+  "Poca adopcion digital (F-logistica-transporte-008) y baja traccion de otras apps (F-logistica-transporte-006)"
+ ],
+ "supuestos": [
+  "La espera tipica es relevante: no hay ficha, se mide en el piloto",
+  "Pagarian por saber la espera; no hay ficha de disposicion a pagar",
+  "Saberlo antes le permite al chofer elegir cuando salir; se prueba en el piloto",
+  "No se afirma que no existan competidores de espera",
+  "10 a 20 choferes alcanzan para una linea base",
+  "Ubicacion solo al marcar, con consentimiento (Ley 18.331); la empresa ve tiempos agregados"
+ ],
+ "evidencias": [
+  "F-logistica-transporte-001",
+  "F-logistica-transporte-002",
+  "F-logistica-transporte-004",
+  "F-logistica-transporte-005",
+  "F-logistica-transporte-006",
+  "F-logistica-transporte-007",
+  "F-logistica-transporte-008",
+  "F-logistica-transporte-009",
+  "F-ataque-r3-m01-i028-inversor-001"
+ ]
+}

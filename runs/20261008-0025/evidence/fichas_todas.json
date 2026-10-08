@@ -1368,6 +1368,61 @@
    }
   },
   {
+   "id": "F-defensa-r3-m02-i009-001",
+   "sector": "transversal",
+   "hallazgo": "La pagina de precios de AWS Lightsail lista planes Linux de USD 5, 7, 12 (2 GB), 24 (4 GB) y 44 por mes, y menciona South America (Sao Paulo) como region; no menciona Uruguay.",
+   "source_url": "https://aws.amazon.com/lightsail/pricing/",
+   "source_title": "AWS Lightsail Pricing",
+   "source_date": "desconocida",
+   "source_type": "precios",
+   "geografia": "GLOBAL",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T11:00:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:32:25",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-defensa-r3-m02-i009-002",
+   "sector": "transversal",
+   "hallazgo": "Un blog de Sherpa ERP (enero 2026) dice que conciliar a mano 50 movimientos lleva un par de horas y 200 o 500 un dia entero, y que BROU, Itau, Santander, Scotiabank y Heritage ofrecen extractos en PDF o formatos propios.",
+   "source_url": "https://www.sherpaerp.net/blog/conciliacion-bancaria-uruguay-brou-itau",
+   "source_title": "Conciliacion bancaria en Uruguay: como cuadrar BROU, Itau y mas (Sherpa)",
+   "source_date": "2026-01-10",
+   "source_type": "otro",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T11:00:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:56:48",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-defensa-r3-m02-i009-003",
+   "sector": "transversal",
+   "hallazgo": "La pagina de Conty (Memory) dice que permite realizar la conciliacion bancaria y comparar banco y contabilidad automaticamente, con multiempresa y multiusuario para estudios; no indica formatos de extracto ni importacion.",
+   "source_url": "https://memory.com.uy/conty-software-contable/",
+   "source_title": "Sistema Contable Integrado en Uruguay (Conty, Memory)",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T11:00:00",
+   "competidor": "Conty",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:56:48",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
    "id": "F-educacion-001",
    "sector": "educacion",
    "hallazgo": "De 100 adolescentes que ingresaron al liceo en Uruguay en 2017, solo 43 egresaron tras ocho años y 42 no figuran inscriptos en educación media. Casi la mitad del alumnado faltó al menos el 11% de los días de clase.",
