@@ -1,87 +1,276 @@
-{"generador": "g10", "ideas": [
 {
-"local_id": "g10-1",
-"titulo": "Cartera digital para corredores de seguros chicos",
-"problema": "En Uruguay operan 16 aseguradoras y la distribución depende de una red de corredores y productores asesores, con competencia interna fuerte y canales directos como bots de WhatsApp de las propias aseguradoras (F-fintech-seguros-008). El mercado emitió US$ 2.889 millones en primas en 2024 con un ratio combinado de 106,2% (F-fintech-seguros-003): las aseguradoras pierden en lo técnico y empujan canales digitales propios, como la contratación inmediata que MetLife desarrolla con Klimber en cinco países (F-fintech-seguros-007). El corredor chico, que vive de renovar su cartera, queda con pólizas de varias compañías en PDF y planillas, sin herramientas para no perder vencimientos ni responder rápido frente a esos canales.",
-"usuario": "Corredores y productores asesores independientes o con oficinas de 1 a 5 personas en Uruguay. Ellos usan y pagan; sus clientes reciben avisos y resúmenes.",
-"solucion": "Aplicación web donde el corredor sube las pólizas en PDF de cualquier aseguradora. Un modelo de lenguaje extrae asegurado, compañía, ramo, coberturas, prima y vencimiento a una ficha estructurada que el corredor valida. Un tablero muestra vencimientos de los próximos 60 días, clientes sin contacto reciente y concentración por compañía. Envía avisos de renovación por email y atiende por WhatsApp las consultas que inicia el cliente (qué cubre mi póliza, cuándo vence) con respuestas basadas solo en su póliza, derivando al corredor lo que no sabe. No vende ni cotiza seguros: es software para el intermediario.",
-"mvp": {
-"semestre_1": ["Extracción de datos de pólizas PDF de al menos 3 aseguradoras con validación manual y métrica de precisión por campo", "Tablero de cartera y vencimientos con avisos por email, probado con 2 corredores reales"],
-"semestre_2": ["Asistente de WhatsApp que responde consultas del cliente sobre su propia póliza con derivación al corredor", "Piloto de 2 meses con 3 a 5 corredores y medición de renovaciones avisadas a tiempo", "Business case con precio validado en entrevistas"]
-},
-"stack": ["Python", "FastAPI", "PostgreSQL", "React", "Claude Haiku 5.5 API", "WhatsApp Cloud API", "Amazon SES", "Docker", "AWS Lightsail"],
-"costo_infra": {
-"total_anual_usd": 117.08,
-"items": [
-{"concepto": "Servidor AWS Lightsail Linux 1 GB con IPv4", "usd_anual": 84, "supuesto": "USD 7 por mes durante 12 meses, una instancia para app, base de datos y demo; no se cuenta capa gratuita.", "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"},
-{"concepto": "API Claude Haiku 5.5", "usd_anual": 20, "supuesto": "Unas 3.000 pólizas de prueba y piloto a 20.000 tokens de entrada (USD 0,10 por millón) y 1.000 de salida (USD 0,50 por millón) dan unos USD 7,5, más consultas por WhatsApp; se redondea a 20 con margen.", "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"},
-{"concepto": "Amazon SES para avisos por email", "usd_anual": 2, "supuesto": "Hasta 20.000 emails en el año a USD 0,10 cada 1.000, sin plan pago ni capa gratuita.", "fuente_precio_url": "https://aws.amazon.com/ses/pricing/"},
-{"concepto": "WhatsApp Cloud API", "usd_anual": 0, "supuesto": "Solo se responden mensajes que inicia el cliente dentro de la ventana de 24 horas, que no se cobran; los avisos proactivos van por email, no por plantillas pagas.", "fuente_precio_url": "https://developers.facebook.com/docs/whatsapp/pricing"},
-{"concepto": "Dominio .com", "usd_anual": 11.08, "supuesto": "Un dominio por un año al precio publicado de USD 11,08.", "fuente_precio_url": "https://porkbun.com/tld/com"}
-]
-},
-"competidores": [
-{"nombre": "Klimber (con MetLife)", "evidencia_ids": ["F-fintech-seguros-007"], "hueco": "Construye contratación digital para grandes aseguradoras; no da herramientas al corredor independiente que trabaja con varias compañías."},
-{"nombre": "Bots de WhatsApp de aseguradoras", "evidencia_ids": ["F-fintech-seguros-008"], "hueco": "Cada bot atiende solo pólizas de su compañía; el corredor multimarca no tiene una vista unificada de su cartera."}
-],
-"monetizacion": "Suscripción que paga el corredor según pólizas activas: gratis hasta 50 pólizas, USD 15 por mes hasta 400 y USD 30 por mes por encima. Canal: asociaciones de corredores y contacto directo. Con 100 corredores pagos a USD 20 de promedio serían unos USD 24.000 al año.",
-"riesgos": ["Formatos de pólizas muy distintos entre aseguradoras bajan la precisión de extracción", "Corredores poco digitalizados pueden no adoptar una herramienta nueva", "Las aseguradoras podrían ofrecer portales gratuitos al corredor", "Manejo de datos personales de asegurados exige cumplir la Ley 18.331 con consentimiento y contrato de encargado"],
-"supuestos": ["Los corredores chicos gestionan su cartera en planillas y PDF sin un sistema de gestión", "Perder vencimientos o responder lento cuesta renovaciones a los corredores", "Hay cientos de corredores y productores asesores activos en Uruguay contactables por asociaciones", "Un corredor pagaría USD 15 a 30 por mes por esta herramienta", "El equipo puede conseguir pólizas reales anonimizadas para entrenar y probar"],
-"evidencias": ["F-fintech-seguros-008", "F-fintech-seguros-003", "F-fintech-seguros-007"]
-},
-{
-"local_id": "g10-2",
-"titulo": "Verificador de estafas por WhatsApp para vendedores online",
-"problema": "Las denuncias por estafa en Uruguay pasaron de 1.872 en 2015 a 25.116 en 2024 y son el tercer delito más denunciado (F-fintech-seguros-004). El BCU identifica como tipos comunes el robo de credenciales por phishing y smishing, la suplantación de identidad, las estafas de Marketplace y las falsas ofertas de crédito (F-fintech-seguros-006). A la vez el comercio online local superó 96 millones de transacciones en 2025 (F-comercio-retail-001). Los emprendedores que venden por redes y marketplaces reciben a diario mensajes, links y comprobantes de pago de desconocidos, y deciden solos, en segundos, si despachar o hacer clic. La protección existente actúa del lado del banco y después del pago.",
-"usuario": "Emprendedores y pymes que venden por WhatsApp, Instagram o marketplaces en Uruguay. Pagan los que usan el plan de negocio; el uso básico personal es gratuito.",
-"solucion": "Un número de WhatsApp al que el vendedor reenvía un mensaje sospechoso, un link o la captura de un comprobante de transferencia. El sistema analiza el texto y la imagen con un modelo de lenguaje con visión, revisa el dominio del link (antigüedad, parecido con marcas bancarias) y lo contrasta con una base de patrones armada sobre la tipología del BCU. Responde en segundos con un nivel de riesgo, el tipo de estafa probable y qué verificar antes de despachar (por ejemplo, confirmar el crédito en la cuenta, no en la captura). El plan de negocio agrega historial de verificaciones y alertas de patrones nuevos reportados por otros usuarios.",
-"mvp": {
-"semestre_1": ["Bot de WhatsApp que clasifica texto y links según la tipología del BCU, con un set de casos etiquetado por el equipo", "Evaluación de precisión y falsos positivos sobre ese set"],
-"semestre_2": ["Análisis de capturas de comprobantes con visión y detección de inconsistencias", "Panel web del plan de negocio con historial y alertas", "Piloto con 20 a 40 vendedores y medición de uso y casos detectados"]
-},
-"stack": ["Python", "FastAPI", "PostgreSQL", "Claude Haiku 5.5 API con visión", "WhatsApp Cloud API", "RDAP para datos de dominios", "React", "Docker", "AWS Lightsail"],
-"costo_infra": {
-"total_anual_usd": 115.08,
-"items": [
-{"concepto": "Servidor AWS Lightsail Linux 1 GB con IPv4", "usd_anual": 84, "supuesto": "USD 7 por mes durante 12 meses, una instancia para bot, panel y base de datos; no se cuenta capa gratuita.", "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"},
-{"concepto": "API Claude Haiku 5.5", "usd_anual": 20, "supuesto": "Unas 20.000 verificaciones en el año a 3.000 tokens de entrada (USD 0,10 por millón) y 300 de salida (USD 0,50 por millón) dan unos USD 9; se redondea a 20 por imágenes y margen.", "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"},
-{"concepto": "WhatsApp Cloud API", "usd_anual": 0, "supuesto": "El usuario inicia cada consulta y la respuesta va dentro de la ventana de 24 horas, que no se cobra; no se envían plantillas pagas.", "fuente_precio_url": "https://developers.facebook.com/docs/whatsapp/pricing"},
-{"concepto": "Dominio .com", "usd_anual": 11.08, "supuesto": "Un dominio por un año al precio publicado de USD 11,08.", "fuente_precio_url": "https://porkbun.com/tld/com"}
-]
-},
-"competidores": [],
-"monetizacion": "Freemium: hasta 10 verificaciones por mes gratis. Plan negocio de USD 6 por mes con verificaciones ilimitadas, historial y alertas. Segundo canal: convenios con cámaras o gremios de comercio que lo ofrecen a sus socios a precio por volumen. Con 400 pymes pagas serían unos USD 28.800 al año.",
-"riesgos": ["Falsos negativos pueden dar una seguridad que el producto no garantiza; hay que comunicar que es una ayuda, no una garantía", "Los estafadores cambian de patrón rápido", "Guardar números o datos de terceros reportados exige un tratamiento cuidadoso bajo la Ley 18.331", "Baja disposición a pagar por un servicio percibido como preventivo"],
-"supuestos": ["Una parte relevante de las estafas afecta a vendedores online, por ejemplo con comprobantes falsos o links de phishing", "Los vendedores usarían un bot de WhatsApp antes de despachar o hacer clic", "Un vendedor pagaría USD 6 por mes por este servicio", "Las fichas no muestran competidores directos; puede haber herramientas de bancos o marketplaces que no relevamos", "Un modelo con visión puede detectar inconsistencias en capturas de comprobantes con precisión útil"],
-"evidencias": ["F-fintech-seguros-004", "F-fintech-seguros-006", "F-comercio-retail-001"]
-},
-{
-"local_id": "g10-3",
-"titulo": "Carpeta crediticia portable para pymes a partir de su factura electrónica",
-"problema": "PedidosYa Créditos prestó más de US$ 6,4 millones a más de 1.000 pymes uruguayas desde mediados de 2025, 100% digital, evaluando con los datos de ventas que pasan por su propia app (F-fintech-seguros-005): muestra que las pymes toman crédito cuando alguien las evalúa con sus ventas reales. Pero ese dato queda encerrado en una plataforma. A la vez, casi todo contribuyente uruguayo ya emite factura electrónica (F-legal-contable-002), así que la pyme tiene su historial de ventas en CFE, aunque exportar los XML es un dolor conocido (F-legal-contable-003). Hoy presentar información a un financiador suele pasar por el contador, con balances que cuestan $U 55.000 a 90.000 (F-legal-contable-001).",
-"usuario": "Pymes y unipersonales uruguayas que facturan electrónicamente y buscan crédito o mejores condiciones. Paga la pyme por cada carpeta; en una segunda etapa pagan los financiadores por recibir carpetas estandarizadas.",
-"solucion": "La pyme sube sus CFE en XML (o el export de su proveedor de facturación). El sistema los normaliza y genera una carpeta: ventas mensuales, estacionalidad, concentración de clientes, ticket promedio, tendencia y consistencia, con un resumen en lenguaje claro generado por IA y explicable dato por dato. La carpeta es de la pyme: decide con quién compartirla mediante un link con vencimiento y consentimiento registrado. No presta ni califica con un puntaje oficial: entrega información verificable para que cualquier banco, cooperativa o fintech la evalúe.",
-"mvp": {
-"semestre_1": ["Parser de XML de CFE (e-Factura y e-Ticket) con normalización y pruebas sobre datos de ejemplo", "Generación de la carpeta con indicadores de ventas y gráficos, demostrada con datos de 2 pymes voluntarias"],
-"semestre_2": ["Resumen narrativo con IA que cita cada indicador, y link compartible con consentimiento y vencimiento", "Validación con al menos 2 financiadores sobre qué indicadores usan", "Piloto con 10 pymes y business case"]
-},
-"stack": ["Python", "FastAPI", "PostgreSQL", "lxml para XML de CFE", "React", "Apache ECharts", "Claude Haiku 5.5 API", "Docker", "AWS Lightsail"],
-"costo_infra": {
-"total_anual_usd": 107.08,
-"items": [
-{"concepto": "Servidor AWS Lightsail Linux 1 GB con IPv4", "usd_anual": 84, "supuesto": "USD 7 por mes durante 12 meses, una instancia para app, procesamiento y base de datos; no se cuenta capa gratuita.", "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"},
-{"concepto": "API Claude Haiku 5.5", "usd_anual": 10, "supuesto": "Unas 500 carpetas en desarrollo y piloto a 30.000 tokens de entrada (USD 0,10 por millón) y 2.000 de salida (USD 0,50 por millón) dan unos USD 2; se redondea a 10 con margen.", "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"},
-{"concepto": "Amazon SES para notificaciones", "usd_anual": 2, "supuesto": "Hasta 20.000 emails en el año a USD 0,10 cada 1.000, sin capa gratuita.", "fuente_precio_url": "https://aws.amazon.com/ses/pricing/"},
-{"concepto": "Dominio .com", "usd_anual": 11.08, "supuesto": "Un dominio por un año al precio publicado de USD 11,08.", "fuente_precio_url": "https://porkbun.com/tld/com"}
-]
-},
-"competidores": [
-{"nombre": "PedidosYa Créditos", "evidencia_ids": ["F-fintech-seguros-005"], "hueco": "Evalúa solo a comercios de su app con datos propios y los ata a su crédito; la pyme no puede llevar ese historial a otro financiador."},
-{"nombre": "Estudios contables", "evidencia_ids": ["F-legal-contable-001"], "hueco": "Preparan balances caros y anuales; no dan una vista mensual de ventas lista para compartir en minutos."}
-],
-"monetizacion": "La pyme paga USD 10 por carpeta o USD 8 por mes con actualización mensual. Más adelante, financiadores pagan por carpeta recibida estandarizada. Canal: proveedores de facturación electrónica y estudios contables como socios que lo revenden. Con 300 pymes en plan mensual serían unos USD 28.800 al año.",
-"riesgos": ["Los financiadores pueden no aceptar una carpeta generada por un tercero sin integración con sus sistemas", "Los XML subidos por la pyme podrían adulterarse; habrá que validar firmas y CAE", "Datos financieros sensibles exigen seguridad fuerte y cumplimiento de la Ley 18.331", "Obtener los XML depende del proveedor de facturación de cada pyme"],
-"supuestos": ["Muchas pymes fuera de plataformas como PedidosYa tienen dificultad para acceder a crédito por falta de información ordenada", "Bancos, cooperativas o fintechs valorarían una carpeta estandarizada basada en CFE", "Una pyme pagaría USD 8 a 10 por carpeta", "Los proveedores de CFE permiten exportar los XML aunque con fricción", "Generar información para financiadores no requiere habilitación del BCU mientras no se preste ni se intermedie dinero"],
-"evidencias": ["F-fintech-seguros-005", "F-legal-contable-002", "F-legal-contable-003", "F-legal-contable-001"]
+ "generador": "g10",
+ "ideas": [
+  {
+   "local_id": "g10-1",
+   "titulo": "Cartera digital para corredores de seguros chicos",
+   "problema": "En Uruguay operan 16 aseguradoras y la distribución depende de corredores y productores asesores, con competencia fuerte y canales directos como bots de WhatsApp de las aseguradoras (F-fintech-seguros-008). El mercado emitió US$ 2.889 millones en primas en 2024 con ratio combinado de 106,2% (F-fintech-seguros-003): las aseguradoras pierden en lo técnico y empujan canales digitales propios, como la contratación inmediata de MetLife con Klimber (F-fintech-seguros-007). El corredor chico, que vive de renovar su cartera, maneja pólizas de varias compañías en PDF y planillas, sin herramientas para no perder vencimientos.",
+   "usuario": "Corredores y productores asesores independientes o con oficinas de 1 a 5 personas en Uruguay. Ellos usan y pagan; sus clientes reciben avisos y resúmenes.",
+   "solucion": "Aplicación web donde el corredor sube pólizas en PDF de cualquier aseguradora. Un modelo de lenguaje extrae asegurado, compañía, ramo, coberturas, prima y vencimiento a una ficha que el corredor valida. Un tablero muestra vencimientos de los próximos 60 días y clientes sin contacto reciente. Envía avisos de renovación por email y responde por WhatsApp las consultas que inicia el cliente sobre su propia póliza, derivando al corredor lo que no sabe. No vende ni cotiza seguros: es software para el intermediario.",
+   "mvp": {
+    "semestre_1": [
+     "Extracción de datos de pólizas PDF de al menos 3 aseguradoras con validación manual y métrica de precisión por campo",
+     "Tablero de cartera y vencimientos con avisos por email, probado con 2 corredores reales"
+    ],
+    "semestre_2": [
+     "Asistente de WhatsApp que responde consultas del cliente sobre su propia póliza con derivación al corredor",
+     "Piloto de 2 meses con 3 a 5 corredores y medición de renovaciones avisadas a tiempo",
+     "Business case con precio validado en entrevistas"
+    ]
+   },
+   "stack": [
+    "Python",
+    "FastAPI",
+    "PostgreSQL",
+    "React",
+    "Claude Haiku 5.5 API",
+    "WhatsApp Cloud API",
+    "Amazon SES",
+    "Docker",
+    "AWS Lightsail"
+   ],
+   "costo_infra": {
+    "total_anual_usd": 117.08,
+    "items": [
+     {
+      "concepto": "Servidor AWS Lightsail Linux 1 GB con IPv4",
+      "usd_anual": 84,
+      "supuesto": "USD 7 por mes durante 12 meses, una instancia para app, base de datos y demo; no se cuenta capa gratuita.",
+      "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+     },
+     {
+      "concepto": "API Claude Haiku 5.5",
+      "usd_anual": 20,
+      "supuesto": "3.000 pólizas a 20.000 tokens de entrada (USD 0,10 por millón) y 1.000 de salida (USD 0,50 por millón) dan unos USD 7,5, más consultas; se redondea a 20.",
+      "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+     },
+     {
+      "concepto": "Amazon SES para avisos por email",
+      "usd_anual": 2,
+      "supuesto": "Hasta 20.000 emails en el año a USD 0,10 cada 1.000, sin plan pago ni capa gratuita.",
+      "fuente_precio_url": "https://aws.amazon.com/ses/pricing/"
+     },
+     {
+      "concepto": "WhatsApp Cloud API",
+      "usd_anual": 0,
+      "supuesto": "Solo se responden mensajes que inicia el cliente dentro de la ventana de 24 horas, que no se cobran; los avisos proactivos van por email, no por plantillas pagas.",
+      "fuente_precio_url": "https://developers.facebook.com/docs/whatsapp/pricing"
+     },
+     {
+      "concepto": "Dominio .com",
+      "usd_anual": 11.08,
+      "supuesto": "Un dominio por un año al precio publicado de USD 11,08.",
+      "fuente_precio_url": "https://porkbun.com/tld/com"
+     }
+    ]
+   },
+   "competidores": [
+    {
+     "nombre": "Klimber (con MetLife)",
+     "evidencia_ids": [
+      "F-fintech-seguros-007"
+     ],
+     "hueco": "Construye contratación digital para grandes aseguradoras; no da herramientas al corredor independiente que trabaja con varias compañías."
+    },
+    {
+     "nombre": "Bots de WhatsApp de aseguradoras",
+     "evidencia_ids": [
+      "F-fintech-seguros-008"
+     ],
+     "hueco": "Cada bot atiende solo pólizas de su compañía; el corredor multimarca no tiene una vista unificada de su cartera."
+    }
+   ],
+   "monetizacion": "Suscripción que paga el corredor según pólizas activas: gratis hasta 50 pólizas, USD 15 por mes hasta 400 y USD 30 por mes por encima. Canal: asociaciones de corredores y contacto directo. Con 100 corredores pagos a USD 20 de promedio serían unos USD 24.000 al año.",
+   "riesgos": [
+    "Formatos de pólizas muy distintos bajan la precisión de extracción",
+    "Corredores poco digitalizados pueden no adoptarla",
+    "Las aseguradoras podrían dar portales gratuitos al corredor",
+    "Datos personales de asegurados exigen cumplir la Ley 18.331"
+   ],
+   "supuestos": [
+    "Los corredores chicos gestionan su cartera en planillas y PDF sin un sistema de gestión",
+    "Perder vencimientos o responder lento cuesta renovaciones a los corredores",
+    "Hay cientos de corredores y productores asesores activos en Uruguay contactables por asociaciones",
+    "Un corredor pagaría USD 15 a 30 por mes por esta herramienta",
+    "El equipo puede conseguir pólizas reales anonimizadas para entrenar y probar"
+   ],
+   "evidencias": [
+    "F-fintech-seguros-008",
+    "F-fintech-seguros-003",
+    "F-fintech-seguros-007"
+   ]
+  },
+  {
+   "local_id": "g10-2",
+   "titulo": "Verificador de estafas por WhatsApp para vendedores online",
+   "problema": "Las denuncias por estafa en Uruguay pasaron de 1.872 en 2015 a 25.116 en 2024, tercer delito más denunciado (F-fintech-seguros-004). El BCU identifica como tipos comunes el phishing y smishing, la suplantación de identidad, las estafas de Marketplace y las falsas ofertas de crédito (F-fintech-seguros-006). El comercio online local superó 96 millones de transacciones en 2025 (F-comercio-retail-001). Quien vende por redes recibe a diario mensajes, links y comprobantes de desconocidos y decide solo, en segundos, si despachar o hacer clic; la protección existente actúa del lado del banco y después del pago.",
+   "usuario": "Emprendedores y pymes que venden por WhatsApp, Instagram o marketplaces en Uruguay. Pagan los que usan el plan de negocio; el uso básico personal es gratuito.",
+   "solucion": "Un número de WhatsApp al que el vendedor reenvía un mensaje sospechoso, un link o la captura de un comprobante de transferencia. El sistema analiza el texto y la imagen con un modelo de lenguaje con visión, revisa el dominio del link (antigüedad, parecido con marcas bancarias) y lo contrasta con una base de patrones armada sobre la tipología del BCU. Responde en segundos con un nivel de riesgo, el tipo de estafa probable y qué verificar antes de despachar (por ejemplo, confirmar el crédito en la cuenta, no en la captura). El plan de negocio agrega historial de verificaciones y alertas de patrones nuevos reportados por otros usuarios.",
+   "mvp": {
+    "semestre_1": [
+     "Bot de WhatsApp que clasifica texto y links según la tipología del BCU, con un set de casos etiquetado por el equipo",
+     "Evaluación de precisión y falsos positivos sobre ese set"
+    ],
+    "semestre_2": [
+     "Análisis de capturas de comprobantes con visión y detección de inconsistencias",
+     "Panel web del plan de negocio con historial y alertas",
+     "Piloto con 20 a 40 vendedores y medición de uso y casos detectados"
+    ]
+   },
+   "stack": [
+    "Python",
+    "FastAPI",
+    "PostgreSQL",
+    "Claude Haiku 5.5 API con visión",
+    "WhatsApp Cloud API",
+    "RDAP para datos de dominios",
+    "React",
+    "Docker",
+    "AWS Lightsail"
+   ],
+   "costo_infra": {
+    "total_anual_usd": 115.08,
+    "items": [
+     {
+      "concepto": "Servidor AWS Lightsail Linux 1 GB con IPv4",
+      "usd_anual": 84,
+      "supuesto": "USD 7 por mes durante 12 meses, una instancia para bot, panel y base de datos; no se cuenta capa gratuita.",
+      "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+     },
+     {
+      "concepto": "API Claude Haiku 5.5",
+      "usd_anual": 20,
+      "supuesto": "Unas 20.000 verificaciones en el año a 3.000 tokens de entrada (USD 0,10 por millón) y 300 de salida (USD 0,50 por millón) dan unos USD 9; se redondea a 20 por imágenes y margen.",
+      "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+     },
+     {
+      "concepto": "WhatsApp Cloud API",
+      "usd_anual": 0,
+      "supuesto": "El usuario inicia cada consulta y la respuesta va dentro de la ventana de 24 horas, que no se cobra; no se envían plantillas pagas.",
+      "fuente_precio_url": "https://developers.facebook.com/docs/whatsapp/pricing"
+     },
+     {
+      "concepto": "Dominio .com",
+      "usd_anual": 11.08,
+      "supuesto": "Un dominio por un año al precio publicado de USD 11,08.",
+      "fuente_precio_url": "https://porkbun.com/tld/com"
+     }
+    ]
+   },
+   "competidores": [],
+   "monetizacion": "Freemium: hasta 10 verificaciones por mes gratis. Plan negocio de USD 6 por mes con verificaciones ilimitadas, historial y alertas. Segundo canal: convenios con cámaras o gremios de comercio que lo ofrecen a sus socios a precio por volumen. Con 400 pymes pagas serían unos USD 28.800 al año.",
+   "riesgos": [
+    "Falsos negativos pueden dar falsa seguridad; se comunica como ayuda, no garantía",
+    "Los estafadores cambian de patrón rápido",
+    "Guardar números o datos de terceros reportados exige un tratamiento cuidadoso bajo la Ley 18.331",
+    "Baja disposición a pagar por un servicio percibido como preventivo"
+   ],
+   "supuestos": [
+    "Una parte relevante de las estafas afecta a vendedores online, por ejemplo con comprobantes falsos o links de phishing",
+    "Los vendedores usarían un bot de WhatsApp antes de despachar o hacer clic",
+    "Un vendedor pagaría USD 6 por mes por este servicio",
+    "Las fichas no muestran competidores directos; puede haber herramientas de bancos o marketplaces que no relevamos",
+    "Un modelo con visión puede detectar inconsistencias en capturas de comprobantes con precisión útil"
+   ],
+   "evidencias": [
+    "F-fintech-seguros-004",
+    "F-fintech-seguros-006",
+    "F-comercio-retail-001"
+   ]
+  },
+  {
+   "local_id": "g10-3",
+   "titulo": "Carpeta crediticia portable para pymes a partir de su factura electrónica",
+   "problema": "PedidosYa Créditos prestó más de US$ 6,4 millones a más de 1.000 pymes uruguayas desde mediados de 2025, evaluándolas con las ventas que pasan por su propia app (F-fintech-seguros-005): las pymes toman crédito cuando alguien las evalúa con sus ventas reales, pero ese dato queda encerrado en una plataforma. Casi todo contribuyente uruguayo ya emite factura electrónica (F-legal-contable-002), así que la pyme tiene su historial de ventas en CFE, aunque exportar los XML cuesta (F-legal-contable-003). Hoy ordenar esa información pasa por el contador, con balances de $U 55.000 a 90.000 (F-legal-contable-001).",
+   "usuario": "Pymes y unipersonales uruguayas que facturan electrónicamente y buscan crédito o mejores condiciones. Paga la pyme por cada carpeta; en una segunda etapa pagan los financiadores por recibir carpetas estandarizadas.",
+   "solucion": "La pyme sube sus CFE en XML o el export de su proveedor de facturación. El sistema los normaliza y genera una carpeta: ventas mensuales, estacionalidad, concentración de clientes, ticket promedio y tendencia, con un resumen en lenguaje claro generado por IA que cita cada dato. La carpeta es de la pyme: la comparte con un link con vencimiento y consentimiento registrado. No presta ni da un puntaje oficial: entrega información verificable para que cualquier banco, cooperativa o fintech evalúe.",
+   "mvp": {
+    "semestre_1": [
+     "Parser de XML de CFE (e-Factura y e-Ticket) con normalización y pruebas sobre datos de ejemplo",
+     "Generación de la carpeta con indicadores de ventas y gráficos, demostrada con datos de 2 pymes voluntarias"
+    ],
+    "semestre_2": [
+     "Resumen narrativo con IA que cita cada indicador, y link compartible con consentimiento y vencimiento",
+     "Validación con al menos 2 financiadores sobre qué indicadores usan",
+     "Piloto con 10 pymes y business case"
+    ]
+   },
+   "stack": [
+    "Python",
+    "FastAPI",
+    "PostgreSQL",
+    "lxml para XML de CFE",
+    "React",
+    "Apache ECharts",
+    "Claude Haiku 5.5 API",
+    "Docker",
+    "AWS Lightsail"
+   ],
+   "costo_infra": {
+    "total_anual_usd": 107.08,
+    "items": [
+     {
+      "concepto": "Servidor AWS Lightsail Linux 1 GB con IPv4",
+      "usd_anual": 84,
+      "supuesto": "USD 7 por mes durante 12 meses, una instancia para app, procesamiento y base de datos; no se cuenta capa gratuita.",
+      "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+     },
+     {
+      "concepto": "API Claude Haiku 5.5",
+      "usd_anual": 10,
+      "supuesto": "Unas 500 carpetas en desarrollo y piloto a 30.000 tokens de entrada (USD 0,10 por millón) y 2.000 de salida (USD 0,50 por millón) dan unos USD 2; se redondea a 10 con margen.",
+      "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+     },
+     {
+      "concepto": "Amazon SES para notificaciones",
+      "usd_anual": 2,
+      "supuesto": "Hasta 20.000 emails en el año a USD 0,10 cada 1.000, sin capa gratuita.",
+      "fuente_precio_url": "https://aws.amazon.com/ses/pricing/"
+     },
+     {
+      "concepto": "Dominio .com",
+      "usd_anual": 11.08,
+      "supuesto": "Un dominio por un año al precio publicado de USD 11,08.",
+      "fuente_precio_url": "https://porkbun.com/tld/com"
+     }
+    ]
+   },
+   "competidores": [
+    {
+     "nombre": "PedidosYa Créditos",
+     "evidencia_ids": [
+      "F-fintech-seguros-005"
+     ],
+     "hueco": "Evalúa solo a comercios de su app con datos propios y los ata a su crédito; la pyme no puede llevar ese historial a otro financiador."
+    },
+    {
+     "nombre": "Estudios contables",
+     "evidencia_ids": [
+      "F-legal-contable-001"
+     ],
+     "hueco": "Preparan balances caros y anuales; no dan una vista mensual de ventas lista para compartir en minutos."
+    }
+   ],
+   "monetizacion": "La pyme paga USD 10 por carpeta o USD 8 por mes con actualización mensual. Más adelante, financiadores pagan por carpeta recibida estandarizada. Canal: proveedores de facturación electrónica y estudios contables como socios que lo revenden. Con 300 pymes en plan mensual serían unos USD 28.800 al año.",
+   "riesgos": [
+    "Los financiadores pueden no aceptar una carpeta generada por un tercero sin integración con sus sistemas",
+    "Los XML subidos por la pyme podrían adulterarse; habrá que validar firmas y CAE",
+    "Datos financieros sensibles exigen seguridad fuerte y cumplimiento de la Ley 18.331",
+    "Obtener los XML depende del proveedor de facturación de cada pyme"
+   ],
+   "supuestos": [
+    "Muchas pymes fuera de plataformas como PedidosYa tienen dificultad para acceder a crédito por falta de información ordenada",
+    "Bancos, cooperativas o fintechs valorarían una carpeta estandarizada basada en CFE",
+    "Una pyme pagaría USD 8 a 10 por carpeta",
+    "Los proveedores de CFE permiten exportar los XML aunque con fricción",
+    "Generar información para financiadores no requiere habilitación del BCU mientras no se preste ni se intermedie dinero"
+   ],
+   "evidencias": [
+    "F-fintech-seguros-005",
+    "F-legal-contable-002",
+    "F-legal-contable-003",
+    "F-legal-contable-001"
+   ]
+  }
+ ]
 }
-]}
