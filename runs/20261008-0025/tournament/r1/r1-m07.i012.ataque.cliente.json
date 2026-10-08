@@ -1,0 +1,89 @@
+{
+  "idea": "i012",
+  "persona": "cliente",
+  "ataques": [
+    {
+      "n": 1,
+      "severidad": "FATAL",
+      "titulo": "El MGAP ya bloquea en el SNIG el embarque de animales en retiro y ofrece un simulador gratuito",
+      "donde": "Problema: 'ese registro no avisa qué animales siguen en retiro al armar una tropa'; Competidores: 'Ninguno respaldado por fichas'; Supuesto 'no tienen hoy una herramienta simple'",
+      "problema": "Desde el 19 de agosto de 2026 el SNIG cruza los tratamientos declarados con la caravana de cada bovino y bloquea la documentación para enviarlo a faena mientras dure el retiro, y habilitará un simulador de aptitud sanitaria para que el productor consulte qué animales están aptos antes de cargar. La idea afirma lo contrario como hecho central de su problema y de su diferenciación, sin ficha. El semáforo por tropa que propone es exactamente la función que ofrece el Estado sin costo, y esa afirmación contradice la realidad del mercado local a octubre de 2026. Como cliente: ¿por qué pagaría una suscripción por lo que el MGAP me da gratis?",
+      "tipo": "evidencia",
+      "evidencia": ["F-ataque-r1-m07-i012-cliente-001"]
+    },
+    {
+      "n": 2,
+      "severidad": "MAJOR",
+      "titulo": "El bloqueo oficial deja al producto solo con el dolor residual, que la idea no cuantifica",
+      "donde": "Problema: 499 expedientes y 52 sanciones (F-agro-001); Supuesto 'una parte de los expedientes se origina en animales enviados antes del retiro'",
+      "problema": "La ficha F-agro-001 mezcla residuos de medicamentos veterinarios, plaguicidas y contaminantes, y su extracto dice que las cifras reflejan 'un mayor esfuerzo de vigilancia', no un deterioro. No aísla el caso retiro incumplido, y la idea lo admite en supuestos. Además, con el bloqueo del SNIG, ese caso queda cubierto salvo los tratamientos que nunca se declararon (el MGAP aclara que solo actúa sobre tratamientos registrados). El mercado direccionable del MVP pasa a ser el productor que trata sin declarar, justo el menos propenso a pagar por llevar un registro prolijo. La demanda queda sin respaldo concreto: ninguna ficha muestra a un productor que pague o pierda plata por esto.",
+      "tipo": "evidencia",
+      "evidencia": ["F-agro-001", "F-ataque-r1-m07-i012-cliente-001"]
+    },
+    {
+      "n": 3,
+      "severidad": "MAJOR",
+      "titulo": "Competidores con registro sanitario por caravana existen y no se relevaron",
+      "donde": "Competidores: 'Ninguno respaldado por fichas'",
+      "problema": "Existe software uruguayo de administración ganadera (Gecos) que registra actos sanitarios por caravana electrónica y se sincroniza con el SNIG. La idea declara el hueco de competencia como supuesto, pero un cliente tiene hoy planilla, el sistema de su veterinario o un software así, y la idea no explica por qué cambiaría ni por qué esos sistemas no agregarían un semáforo de retiro (copia rápida). Diferenciación sin sustento: 'más simple' sin argumento.",
+      "tipo": "evidencia",
+      "evidencia": ["F-ataque-r1-m07-i012-cliente-002"]
+    },
+    {
+      "n": 4,
+      "severidad": "MAJOR",
+      "titulo": "Responsabilidad por un falso apto y datos de retiro cargados a mano",
+      "donde": "Solución: 'la app calcula el fin de retiro con el dato que el veterinario toma del prospecto'; Riesgos: 'un error da un falso apto'",
+      "problema": "El producto depende de que una persona cargue bien el retiro de cada producto. Si la app dice apto y el animal da residuo, el productor reclama a un equipo de estudiantes sin respaldo legal ni seguro, y ante el MGAP la herramienta oficial es la que manda. El riesgo está declarado pero sin mitigación: no hay base oficial de períodos de retiro ni plan para obtenerla. Un responsable de establecimiento no delega su control sanitario en una app así.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 5,
+      "severidad": "MAJOR",
+      "titulo": "Disposición a pagar y comprador sin ninguna señal; el valor frente al registro oficial obligatorio es dudoso",
+      "donde": "Monetización: 'Suscripción anual por establecimiento... Precio y disposición a pagar a validar'; Usuario: 'Paga: el productor'",
+      "problema": "No hay precio, cantidad de establecimientos objetivo ni ficha de pago. El productor ya debe llevar la Planilla de Control Sanitario y declarar en el SNIG, así que esta app es un registro paralelo: doble carga en el campo, sin integración (el MVP solo exporta). Para un cliente con poco tiempo, doble registro sin ahorro visible es un no. El canal 'veterinarios y gremiales' tampoco tiene contactos: la tabla de contactos del equipo está sin completar.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 6,
+      "severidad": "MINOR",
+      "titulo": "Los datos sanitarios del rodeo y el piloto dependen de confianza que el equipo no tiene",
+      "donde": "Alcance Semestre 2: 'Piloto con al menos un veterinario y sus clientes'",
+      "problema": "El piloto exige que un veterinario y sus clientes entreguen historiales de tratamientos, que pueden usarse en un expediente, a un equipo de estudiantes. No hay contacto identificado ni plan de privacidad (Ley 18.331) en la idea, y la zafra puede no coincidir con los semestres de la tesis.",
+      "tipo": "opinion",
+      "evidencia": []
+    }
+  ],
+  "nuevas_fichas": [
+    {
+      "id": "F-ataque-r1-m07-i012-cliente-001",
+      "sector": "agro",
+      "hallazgo": "Desde el 19 de agosto de 2026 el SNIG bloquea automaticamente la documentacion para enviar a faena bovinos en periodo de espera de un medicamento veterinario, segun los tratamientos declarados, y habilitara un simulador de aptitud sanitaria para consultar antes de cargar.",
+      "source_url": "https://www.agrolatam.com/amp/uruguay-control-bovinos-medicamentos-faena-snig-2026/",
+      "source_title": "Por que Uruguay bloqueara bovinos antes de enviarlos a faena",
+      "source_date": "2026-08",
+      "source_type": "prensa",
+      "geografia": "UY",
+      "confianza": "media",
+      "retrieved_at": "2026-10-08T10:30:00",
+      "extracto": "bloqueará automáticamente la documentación necesaria para enviarlos al frigorífico"
+    },
+    {
+      "id": "F-ataque-r1-m07-i012-cliente-002",
+      "sector": "agro",
+      "hallazgo": "Gecos ofrece en Uruguay un sistema web de administracion ganadera con lectura de caravanas electronicas que registra actos sanitarios y compara con los archivos descargados del SNIG; la pagina no menciona tiempos de retiro ni precios.",
+      "source_url": "https://gecos.com.uy/post/trazabilidad-ganadera-sistema-software-uruguay/",
+      "source_title": "Sistema de Administracion-Trazabilidad Ganadera Uruguay 2026",
+      "source_date": "2026",
+      "source_type": "competidor",
+      "geografia": "UY",
+      "confianza": "media",
+      "extracto": "pesadas, actos sanitarios, castraciones, gestión de caravanas, crías",
+      "competidor": "Gecos",
+      "retrieved_at": "2026-10-08T10:30:00"
+    }
+  ]
+}

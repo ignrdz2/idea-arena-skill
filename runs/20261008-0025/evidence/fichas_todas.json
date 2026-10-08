@@ -39,6 +39,501 @@
    }
   },
   {
+   "id": "F-ataque-r1-m01-i005-cliente-001",
+   "sector": "comercio-retail",
+   "hallazgo": "Boris es una app del directorio de Tiendanube para cambios y devoluciones: portal personalizable de autoservicio para el cliente, panel de gestion de solicitudes, seguimiento de estado en tiempo real y gestion automatica de etiquetas de envio, con 4,9 de calificacion sobre 50 resenas. La pagina no lista precios ni menciona Uruguay.",
+   "source_url": "https://www.tiendanube.com/tienda-aplicaciones-nube/boris",
+   "source_title": "Boris Cambios y Devoluciones - Tienda de Aplicaciones",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "LATAM",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T01:10:00",
+   "competidor": "Boris",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:38:03",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m01-i005-cliente-002",
+   "sector": "comercio-retail",
+   "hallazgo": "Undo es una app del directorio de Tiendanube que gestiona cambios y devoluciones: usa el stock en linea para ofrecer solo productos disponibles, permite cambio por otro producto, cupon o reembolso, genera etiquetas y mails automaticos y da a la tienda un portal de autoservicio 24 horas y un panel de logistica inversa. Calificacion 4,9 sobre 42 resenas; la pagina no detalla planes ni paises.",
+   "source_url": "https://www.tiendanube.com/tienda-aplicaciones-nube/undo",
+   "source_title": "Undo Cambios y Devoluciones - Tienda de Aplicaciones",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "LATAM",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T01:10:00",
+   "competidor": "Undo",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:38:03",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m01-i005-cliente-003",
+   "sector": "transversal",
+   "hallazgo": "La Resolucion 23/2021 de la URCDP de Uruguay excluyo el Privacy Shield como base de adecuacion para EEUU y reemplazo a la Resolucion 4/2019: las transferencias de datos personales a EEUU deben apoyarse en consentimiento o en una excepcion del art. 23 de la Ley 18.331 y, segun el caso, en autorizacion expresa de la URCDP; se valoran clausulas contractuales apropiadas conforme a la Resolucion 41/2021.",
+   "source_url": "https://www.guyer.com.uy/informes-&-noticias/exclusion-de-privacy-shield-modificacion-al-regimen-de-transferencia-internacional-de-datos-a-estados-unidos-de-america",
+   "source_title": "Exclusion de Privacy Shield. Modificacion al regimen de transferencia internacional de datos a Estados Unidos de America",
+   "source_date": "2021-09",
+   "source_type": "otro",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T01:12:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:38:03",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m01-i006-cliente-001",
+   "sector": "salud",
+   "hallazgo": "Nota de Presidencia sobre el decreto del 26/02/2026 (publicado 3/3/2026): plazos de 30 días corridos para medicina general/pediatría con médico tratante, 48 horas hábiles cirugía general, hasta 90 días con especialista tratante, 10 días hábiles priorizadas. Crea un sistema nacional de monitoreo obligatorio; no menciona ninguna herramienta que deban usar los prestadores.",
+   "source_url": "https://www.gub.uy/presidencia/comunicacion/noticias/modificacion-normativa-ajusta-plazos-para-acceder-consultas-estudios-cirugias",
+   "source_title": "Modificación de normativa ajusta plazos para acceder a consultas, estudios y cirugías",
+   "source_date": "2026-03-03",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:38:07",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m01-i006-cliente-002",
+   "sector": "salud",
+   "hallazgo": "CliniGest, software uruguayo de agenda médica e historia clínica, publica un Plan Fundador de $25 al mes con agenda, historial clínico, gestión financiera básica y recordatorios; promete gráficos y estadísticas de rendimiento. La página no habla de tiempos de espera ni de importación de datos.",
+   "source_url": "https://clinigest.com.uy/",
+   "source_title": "CliniGest Uruguay",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:05:00",
+   "competidor": "CliniGest",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:38:07",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m02-i021-cliente-001",
+   "sector": "transversal",
+   "hallazgo": "UTE ofrece en su portal un simulador que, con el número de cuenta, muestra al cliente residencial si le conviene el Plan Inteligente; el autodiagnóstico usa datos de la factura (consumo de 12 meses, potencia contratada y tarifa aplicada).",
+   "source_url": "https://www.elobservador.com.uy/nota/sepa-en-cinco-minutos-si-le-conviene-pasarse-a-la-tarifa-inteligente-de-ute-2018101718150",
+   "source_title": "Sepa en cinco minutos si le conviene pasarse a la tarifa inteligente de UTE",
+   "source_date": "2018-10-17",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T10:30:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:38:08",
+    "extracto": "sin_extracto",
+    "aviso": "fuente de hace 8 años"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m02-i021-cliente-002",
+   "sector": "transversal",
+   "hallazgo": "La página de deprecaciones de la API de Gemini no anuncia fecha de retiro para gemini-2.5-flash-lite, pero indica que su acceso está limitado a quienes ya lo usaron y recomienda modelos más nuevos para proyectos nuevos.",
+   "source_url": "https://ai.google.dev/gemini-api/docs/deprecations",
+   "source_title": "Gemini API deprecations",
+   "source_date": "2026",
+   "source_type": "otro",
+   "geografia": "GLOBAL",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T10:35:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:38:08",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m03-i001-cliente-001",
+   "sector": "legal-contable",
+   "hallazgo": "Calculame, un sitio uruguayo de asesoramiento contable, publica gratis el calendario de vencimientos DGI y BPS 2026 y ofrece 'Registrarme gratis' y un 'sistema' para no olvidar fechas importantes; el calendario como contenido gratuito ya existe localmente.",
+   "source_url": "https://calculame.uy/blog/calendario-de-vencimientos-2026-dgi-y-bps-para-tu-empresa",
+   "source_title": "Calendario de vencimientos 2026: DGI y BPS para tu empresa",
+   "source_date": "2026",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T13:00:00",
+   "competidor": "Calculame",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:38:09",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m03-i001-cliente-002",
+   "sector": "legal-contable",
+   "hallazgo": "YoFacturo afirma en su guía del monotributo que toda venta o prestación de servicios debe respaldarse con un CFE, incluso las ventas pequeñas, y no presenta una excepción para ese régimen.",
+   "source_url": "https://yo-facturo.com/blog/monotributo-en-uruguay/",
+   "source_title": "Monotributo en Uruguay 2026",
+   "source_date": "2026",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T13:00:00",
+   "extracto": "Toda venta o prestación de servicios debe respaldarse con un CFE",
+   "competidor": "YoFacturo",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:38:09",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m04-i026-cliente-001",
+   "sector": "logistica-transporte",
+   "hallazgo": "Segun Busqueda (10/06/2026), la ministra de Transporte confirmo a la intergremial que la Guia Electronica de Carga no tiene fecha definida y solo se implementara cuando esten de acuerdo todas las partes; la intergremial advierte inseguridad juridica para las empresas.",
+   "source_url": "https://www.busqueda.com.uy/agro/guia-digital-iniciara-cuando-haya-acuerdo-confirmo-mtop-transportistas-n5414093",
+   "source_title": "Guia digital iniciara cuando haya acuerdo, confirmo MTOP a transportistas",
+   "source_date": "2026-06-10",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T15:00:00",
+   "extracto": "no tiene fecha definida, y solo se implementará cuando estén de acuerdo todas las partes involucradas",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:38:26",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m04-i026-cliente-002",
+   "sector": "logistica-transporte",
+   "hallazgo": "El MTOP indica que la Guia Electronica de Carga se puede emitir con aplicaciones del propio ministerio en version Web y Android, y que la crean empresas transportistas o cargadoras dadoras; es exigible para vehiculos de mas de 3500 kg de peso bruto.",
+   "source_url": "https://www.gub.uy/ministerio-transporte-obras-publicas/comunicacion/publicaciones/sistema-informacion-carga-del-transporte-terrestre",
+   "source_title": "Sistema de Informacion de Carga del Transporte Terrestre (MTOP)",
+   "source_date": "2026-04-28",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T15:02:00",
+   "extracto": "Quienes podrán efectivamente crear guías serán las empresas Transportistas o las empresas Cargadoras Dadoras",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:38:26",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m04-i027-cliente-001",
+   "sector": "transversal",
+   "hallazgo": "Nexura se ofrece a corredores de seguros de Uruguay: carga del PDF de la poliza con extraccion automatica de datos, CRM de polizas y clientes, avisos de renovacion por WhatsApp y precio desde USD 49 por mes, sin contrato anual; recomendada para carteras de 150 a 600 polizas.",
+   "source_url": "https://nexuraseguros.com/blog/software-corredores-seguros-uruguay-2026",
+   "source_title": "Software para corredores de seguros en Uruguay 2026",
+   "source_date": "2026-03-29",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "baja",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "Subís el PDF de la póliza y el sistema extrae automáticamente los datos",
+   "competidor": "Nexura",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:38:27",
+    "extracto": "no_encontrado"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m05-i009-cliente-001",
+   "sector": "legal-contable",
+   "hallazgo": "Contafácil es software uruguayo con robots que descargan los CFE de DGI y eFactura de todas las empresas de un estudio, un perfil por cliente, y entrega los asientos en formato listo para importar a Conty, Zureo o ZetaSoftware. La página no menciona conciliación bancaria de extractos.",
+   "source_url": "https://www.contafacil.uy/",
+   "source_title": "Contafácil",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T11:00:00",
+   "competidor": "Contafácil",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:38:44",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m05-i009-cliente-002",
+   "sector": "legal-contable",
+   "hallazgo": "Contable.CFE es una aplicación web para estudios contables que toma los CFE recibidos y emitidos bajados de DGI y los convierte en asientos importables a Conty, Contawin, Zureo y Zlibra; declara sin límite de empresas ni usuarios y ofrece descuento a socios del CCEAU.",
+   "source_url": "https://contablecfe.com.uy/",
+   "source_title": "Contable.CFE",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T11:02:00",
+   "competidor": "Contable.CFE",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:38:44",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m05-i009-cliente-003",
+   "sector": "legal-contable",
+   "hallazgo": "Contafácil publica planes con empresas ilimitadas sin costo extra: Free $0, Simple $1.499, Pro $2.799 y Smart Pro $3.799 por mes (IVA incluido; la moneda no está rotulada, presumiblemente pesos uruguayos), con 20% menos en plan anual y prueba de un mes.",
+   "source_url": "https://www.contafacil.uy/planes",
+   "source_title": "Contafácil - Planes",
+   "source_date": "desconocida",
+   "source_type": "precios",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T11:05:00",
+   "competidor": "Contafácil",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:38:44",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m05-i009-cliente-004",
+   "sector": "legal-contable",
+   "hallazgo": "El art. 23 de la Ley 18.331 prohíbe transferir datos personales a países sin nivel adecuado; enviar datos a un proveedor en EE.UU. exige que figure en el Data Privacy Framework o usar cláusulas de la Res. 41/021 o autorización de la URCDP, y la base debe estar registrada ante la URCDP antes de transferir.",
+   "source_url": "https://www.pdelc.com.uy/en/news/corporate/transferencia-internacional-de-datos-personales-desde-uruguay/",
+   "source_title": "Transferencia internacional de datos personales desde Uruguay",
+   "source_date": "2024-04-01",
+   "source_type": "otro",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T11:08:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:38:44",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m05-i018-cliente-001",
+   "sector": "comercio-retail",
+   "hallazgo": "gestionUltimate, ERP en la nube uruguayo, ofrece para tiendas un POS con lector de código de barras que emite e-Ticket y e-Factura a la DGI y mantiene un stock único entre el local y la tienda online (WooCommerce, MercadoLibre) para evitar sobreventas.",
+   "source_url": "https://gestionultimate.com/soluciones/tiendas-retail/",
+   "source_title": "Software de Punto de Venta para Tiendas en Uruguay | gestionUltimate",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T15:10:00",
+   "extracto": "Sincroniza stock, precios y pedidos con WooCommerce y MercadoLibre, manteniendo un stock único.",
+   "competidor": "gestionUltimate",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:38:46",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m05-i018-cliente-002",
+   "sector": "comercio-retail",
+   "hallazgo": "Facture ERP, proveedor uruguayo de facturación y gestión, incluye un módulo de stock con depósitos o sucursales, movimientos que se actualizan solos con cada venta o compra y alerta de stock mínimo por producto.",
+   "source_url": "https://facture.uy/funcionalidades/stock-inventario",
+   "source_title": "Facture ERP: stock e inventario",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T15:10:00",
+   "extracto": "Cada venta, compra o ajuste actualiza el stock automáticamente.",
+   "competidor": "Facture ERP",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:38:46",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m05-i018-cliente-003",
+   "sector": "comercio-retail",
+   "hallazgo": "Fixed, software uruguayo de facturación electrónica que declara más de 22.000 empresas usuarias, vende el control de stock (criterio FIFO) como plan propio a unos $1.626 al mes en pesos, y planes de facturación desde $514 al mes.",
+   "source_url": "https://fixed.uy/",
+   "source_title": "Fixed Factura Electrónica",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T15:10:00",
+   "extracto": "+22.000 Empresas en Uruguay ya utilizan nuestro sistema de facturación electrónica.",
+   "competidor": "Fixed",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:38:46",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m06-i017-cliente-001",
+   "sector": "sector-publico",
+   "hallazgo": "La Intendencia de Montevideo habilitó en mayo de 2023 un WhatsApp (092 250 260) para reportar pérdidas de agua en la vía pública: el vecino envía la palabra PÉRDIDA, una foto y la ubicación, y la intendencia georreferencia el reclamo. La página también muestra el WhatsApp general de atención 099 019 500.",
+   "source_url": "https://montevideo.gub.uy/noticias/institucional/intendencia-habilita-whatsapp-092-250-260-para-reportar-perdidas-de-agua-en-via-publica",
+   "source_title": "Intendencia habilita Whatsapp 092 250 260 para reportar pérdidas de agua en vía pública",
+   "source_date": "2023-05-17",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T01:00:00",
+   "extracto": "Se debe enviar un mensaje con la palabra PÉRDIDA, foto y ubicación",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:38:48",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m06-i017-cliente-002",
+   "sector": "sector-publico",
+   "hallazgo": "El Buzón Ciudadano de la Intendencia de Montevideo recibe sugerencias, reconocimientos y quejas de vecinos por WhatsApp (099 019 500), de lunes a viernes de 8:00 a 19:00 h.",
+   "source_url": "https://montevideo.gub.uy/buzon-ciudadano",
+   "source_title": "Buzón Ciudadano",
+   "source_date": "desconocida",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T01:00:00",
+   "extracto": "de lunes a viernes de 8:00 a 19:00 h",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:38:48",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m07-i012-cliente-001",
+   "sector": "agro",
+   "hallazgo": "Desde el 19 de agosto de 2026 el SNIG bloquea automaticamente la documentacion para enviar a faena bovinos en periodo de espera de un medicamento veterinario, segun los tratamientos declarados, y habilitara un simulador de aptitud sanitaria para consultar antes de cargar.",
+   "source_url": "https://www.agrolatam.com/amp/uruguay-control-bovinos-medicamentos-faena-snig-2026/",
+   "source_title": "Por que Uruguay bloqueara bovinos antes de enviarlos a faena",
+   "source_date": "2026-08",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T10:30:00",
+   "extracto": "bloqueará automáticamente la documentación necesaria para enviarlos al frigorífico",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:38:50",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m07-i012-cliente-002",
+   "sector": "agro",
+   "hallazgo": "Gecos ofrece en Uruguay un sistema web de administracion ganadera con lectura de caravanas electronicas que registra actos sanitarios y compara con los archivos descargados del SNIG; la pagina no menciona tiempos de retiro ni precios.",
+   "source_url": "https://gecos.com.uy/post/trazabilidad-ganadera-sistema-software-uruguay/",
+   "source_title": "Sistema de Administracion-Trazabilidad Ganadera Uruguay 2026",
+   "source_date": "2026",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "extracto": "pesadas, actos sanitarios, castraciones, gestión de caravanas, crías",
+   "competidor": "Gecos",
+   "retrieved_at": "2026-10-08T10:30:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:38:50",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m08-i002-cliente-001",
+   "sector": "transversal",
+   "hallazgo": "La política de WhatsApp Business prohíbe usar la plataforma para telemedicina o para enviar o pedir información relacionada con la salud cuando la regulación aplicable exige salvaguardas reforzadas para esos datos; también restringe bienes y servicios médicos.",
+   "source_url": "https://whatsappbusiness.com/policy/",
+   "source_title": "WhatsApp Business Messaging Policy",
+   "source_date": "desconocida",
+   "source_type": "otro",
+   "geografia": "GLOBAL",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T00:40:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:38:51",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m08-i015-cliente-001",
+   "sector": "transversal",
+   "hallazgo": "Naranja X (Argentina, marzo 2026) explica que una captura de comprobante no es dinero: el unico comprobante valido es el propio homebanking o app, y hasta ver el monto acreditado la venta no existe. La defensa contra el comprobante falso es gratuita y consiste en mirar la cuenta.",
+   "source_url": "https://www.naranjax.com/blog/la-estafa-del-comprobante-fantasma",
+   "source_title": "La estafa del comprobante fantasma: una captura de pantalla no es dinero",
+   "source_date": "2026-03-13",
+   "source_type": "otro",
+   "geografia": "AR",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "El único comprobante válido es tu propio Homebanking o app.",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:38:51",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-ataque-r1-m08-i015-cliente-002",
+   "sector": "transversal",
+   "hallazgo": "Segun la documentacion de precios de WhatsApp Business Platform, solo los mensajes no plantilla dentro de la ventana de 24 horas abierta por el usuario son gratis; las plantillas de marketing siempre se cobran y las de utilidad se cobran fuera de la ventana abierta.",
+   "source_url": "https://developers.facebook.com/docs/whatsapp/pricing",
+   "source_title": "WhatsApp Business Platform pricing",
+   "source_date": "desconocida",
+   "source_type": "precios",
+   "geografia": "GLOBAL",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "All non-template messages are free",
+   "verificacion": {
+    "estado": "bloqueada",
+    "http": 400,
+    "checked_at": "2026-10-08T00:32:25",
+    "extracto": "no_verificable"
+   }
+  },
+  {
    "id": "F-comercio-retail-001",
    "sector": "comercio-retail",
    "hallazgo": "El comercio electrónico uruguayo superó los 100.000 millones de pesos en 2025 (+32% frente a 81.723 millones en 2024), con 96,3 millones de transacciones y ticket promedio estable de 1.290 pesos; las compras transfronterizas por franquicia son solo el 8% del mercado.",
