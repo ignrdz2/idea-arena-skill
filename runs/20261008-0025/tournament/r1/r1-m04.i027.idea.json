@@ -1,18 +1,18 @@
 {
  "id": "i027",
  "titulo": "Cartera digital para corredores de seguros chicos",
- "problema": "En Uruguay operan 16 aseguradoras y la distribución depende de corredores y productores asesores (F-fintech-seguros-008), en un mercado de US$ 2.889 millones en primas en 2024 (F-fintech-seguros-003). El corredor chico vive de renovar su cartera y la maneja en PDF y planillas. Ya hay software pago con carga de PDF y avisos por WhatsApp desde USD 49 por mes (F-ataque-r1-m04-i027-cliente-001): hay quien paga, pero el tramo bajo 150 pólizas no tiene oferta de entrada. El costo de los vencimientos perdidos es un supuesto a validar.",
- "usuario": "Corredores y productores asesores independientes, con oficinas de 1 a 5 personas y menos de unas 300 pólizas activas, en Uruguay. Ellos usan y pagan.",
- "solucion": "Aplicación web donde el corredor sube en lote pólizas PDF de cualquier aseguradora o importa su planilla. Un paso local enmascara identificadores (documento, matrícula, teléfono, email) y un modelo de lenguaje extrae asegurado, compañía, ramo, coberturas, prima y vencimiento. Cada campo trae su confianza y el corredor revisa solo los dudosos. Un tablero muestra vencimientos a 60 días y clientes sin contacto reciente. Envía avisos por email y arma el mensaje de renovación para que el corredor lo mande por WhatsApp desde su número (enlace wa.me), sin API paga. No vende ni cotiza seguros.",
+ "problema": "En Uruguay la distribución de seguros depende de corredores y productores asesores (F-fintech-seguros-008). El corredor chico vive de renovar su cartera y la maneja en PDF y planillas. Ya hay software pago con carga de PDF y avisos por WhatsApp desde USD 49 por mes (F-ataque-r1-m04-i027-cliente-001): hay quien paga, pero el tramo bajo 150 pólizas no tiene oferta de entrada. El costo de los vencimientos perdidos es un supuesto a validar.",
+ "usuario": "Corredores y productores asesores independientes, con menos de unas 300 pólizas activas, en Uruguay. Ellos pagan.",
+ "solucion": "Aplicación web donde el corredor sube en lote pólizas PDF de cualquier aseguradora o importa su planilla. Un paso local enmascara identificadores (documento, matrícula, teléfono, email) y un modelo de lenguaje extrae asegurado, compañía, ramo, coberturas, prima y vencimiento. El corredor revisa solo los campos de baja confianza. Un tablero muestra vencimientos a 60 días. Envía avisos por email y arma el mensaje de renovación para que el corredor lo mande por WhatsApp desde su número (enlace wa.me).",
  "mvp": {
   "semestre_1": [
-   "Extracción de PDF de al menos 3 aseguradoras con enmascarado local, confianza por campo y precisión por campo medida con pólizas propias del equipo y de familiares con consentimiento, más sintéticas",
-   "Tablero de vencimientos con carga masiva o importación de planilla y avisos por email, probado con 2 corredores"
+   "Extracción de PDF de 3 aseguradoras con enmascarado local, confianza por campo y precisión por campo medida con pólizas propias del equipo y de familiares con consentimiento, más sintéticas",
+   "Tablero de vencimientos con carga masiva o planilla y avisos por email, probado con 2 corredores"
   ],
   "semestre_2": [
-   "Mensajes de renovación para WhatsApp listos para enviar desde el número del corredor",
+   "Mensajes de renovación para WhatsApp desde el número del corredor",
    "Piloto de 2 meses con 3 a 5 corredores: minutos de revisión por póliza frente a su planilla y renovaciones avisadas a tiempo",
-   "Business case con precio validado por cartas de intención firmadas en entrevistas"
+   "Business case con precio validado por cartas de intención firmadas"
   ]
  },
  "stack": [
@@ -26,7 +26,7 @@
   "AWS Lightsail"
  ],
  "costo_infra": {
-  "total_anual_usd": 117.08,
+  "total_anual_usd": 106,
   "items": [
    {
     "concepto": "Servidor AWS Lightsail Linux 1 GB con IPv4",
@@ -45,12 +45,6 @@
     "usd_anual": 2,
     "supuesto": "Hasta 20.000 emails al año a USD 0,10 cada 1.000, sin capa gratuita.",
     "fuente_precio_url": "https://aws.amazon.com/ses/pricing/"
-   },
-   {
-    "concepto": "Dominio .com",
-    "usd_anual": 11.08,
-    "supuesto": "Un dominio por un año a USD 11,08.",
-    "fuente_precio_url": "https://porkbun.com/tld/com"
    }
   ]
  },
@@ -60,35 +54,34 @@
    "evidencia_ids": [
     "F-ataque-r1-m04-i027-cliente-001"
    ],
-   "hueco": "Carga de PDF, CRM y avisos por WhatsApp desde USD 49 por mes. Su página no informa precisión de extracción ni tratamiento de datos, y no ofrece entrada gratis. El precio es copiable: el diferencial a probar es la precisión medida y la revisión por confianza."
+   "hueco": "Carga de PDF, CRM y avisos por WhatsApp desde USD 49 por mes. Su página no informa precisión de extracción ni tratamiento de datos, ni ofrece entrada gratis. El precio es copiable: el diferencial a probar es la precisión medida."
   },
   {
    "nombre": "Figuro",
    "evidencia_ids": [
     "F-defensa-r1-m04-i027-002"
    ],
-   "hueco": "Gestión de cartera y avisos de vencimientos en Uruguay, pero su página no describe extracción desde PDF: la carga es manual."
+   "hueco": "Gestión de cartera y avisos de vencimientos en Uruguay, pero su página no describe extracción desde PDF."
   }
  ],
- "monetizacion": "Suscripción según pólizas activas: gratis hasta 50, USD 19 por mes hasta 300 y USD 35 por encima. Canal: asociaciones como A.PRO.A.SE., con más de 500 corredores y agentes (F-defensa-r1-m04-i027-001). Escenario: 25 a 50 corredores de pago (5 a 10%) a USD 25 promedio, unos USD 7.500 a 15.000 al año. El piloto no cobra: se mide con cartas de intención.",
+ "monetizacion": "Suscripción según pólizas activas: gratis hasta 50, USD 19 por mes hasta 300 y USD 35 por encima. Canal: asociaciones como A.PRO.A.SE., con más de 500 corredores y agentes (F-defensa-r1-m04-i027-001). Escenario: 25 a 50 corredores de pago (5 a 10%) a USD 25 promedio, unos USD 7.500 a 15.000 al año. El piloto no cobra.",
  "riesgos": [
   "Formatos de pólizas muy distintos bajan la precisión",
   "Un competidor con más recursos copia precio o extracción",
   "Sin corredores reales, la precisión se mide con datos propios y sintéticos",
-  "Datos personales (Ley 18.331): el corredor es responsable, el equipo encargado; hay que inscribir la base y usar cláusulas modelo para la transferencia al exterior (F-defensa-r1-m04-i027-003)"
+  "Ley 18.331: el corredor es responsable y el equipo encargado; hay que inscribir la base y usar cláusulas modelo para transferir al exterior (F-defensa-r1-m04-i027-003)"
  ],
  "supuestos": [
   "Los corredores chicos gestionan su cartera en planillas y PDF",
   "Perder vencimientos les cuesta renovaciones",
-  "Se llega a corredores vía A.PRO.A.SE. u otra asociación, sin contacto confirmado hoy",
-  "Un corredor chico pagaría USD 19 a 35 por mes; USD 49 de Nexura es solo referencia",
+  "Se llega a corredores vía A.PRO.A.SE., sin contacto confirmado hoy",
+  "Un corredor chico pagaría USD 19 a 35 por mes",
   "Adopta el 5 a 10% de los asociados",
-  "Hay 2 a 5 corredores dispuestos a probarlo; si no, el plan B es solo pólizas propias y sintéticas",
+  "Hay 2 a 5 corredores dispuestos a probarlo; si no, plan B con pólizas propias y sintéticas",
   "El proveedor del modelo acepta cláusulas modelo de la URCDP"
  ],
  "evidencias": [
   "F-fintech-seguros-008",
-  "F-fintech-seguros-003",
   "F-ataque-r1-m04-i027-cliente-001",
   "F-defensa-r1-m04-i027-001",
   "F-defensa-r1-m04-i027-002",
