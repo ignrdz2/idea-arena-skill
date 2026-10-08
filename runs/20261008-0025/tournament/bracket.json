@@ -1305,12 +1305,20 @@
      "id": "r3-m01",
      "a": "i027",
      "b": "i028",
-     "winner": null,
-     "loser": null,
-     "reason": null,
-     "survived": [],
-     "scores": null,
-     "source": null,
+     "winner": "i027",
+     "loser": "i028",
+     "reason": "X tiene un MVP de bajo costo con plan B tecnico (parsers por plantilla) y un mercado local donde ya se paga por software de cartera, mientras Y depende de que choferes poco digitalizados generen los datos sin los cuales no hay producto y su business case no tiene precio ni tamano de flota con respaldo; eso pesa mas que la mejor diferenciacion de Y.",
+     "survived": [
+      "Escenario de ingresos inflado por precio promedio: corregido a precio unico de USD 19 y USD 5.700 a 11.400, con churn y tamano del segmento declarados como desconocidos",
+      "Cumplimiento de la Ley 18.331 incompleto: agregados evaluacion de impacto y registro en marzo 2027, seudonimizacion nombrada como tal y plan B sin modelo de lenguaje",
+      "Figuro da avisos gratis: rebatido, la ficha del plan gratuito no lista avisos",
+      "El pago se valida recien al final: parcialmente arreglado con 10 entrevistas de precio antes de diciembre de 2026"
+     ],
+     "scores": {
+      "i027": 57.5,
+      "i028": 57.0
+     },
+     "source": "judge",
      "first": "i027",
      "second": "i028",
      "personas": [
@@ -1327,18 +1335,70 @@
        "costo_estimado: el precio de 'Dominio .com' es una estimación sin fuente"
       ]
      },
-     "revised": true
+     "revised": true,
+     "fatal": {
+      "i027": false,
+      "i028": false
+     },
+     "criteria": {
+      "i027": {
+       "demanda": 5,
+       "viabilidad": 8,
+       "diferenciacion": 3,
+       "business_case": 6,
+       "encaje": 7,
+       "academico": 6
+      },
+      "i028": {
+       "demanda": 6,
+       "viabilidad": 6,
+       "diferenciacion": 6,
+       "business_case": 4,
+       "encaje": 6,
+       "academico": 6
+      }
+     },
+     "fatal_motivos": {
+      "i027": [],
+      "i028": []
+     },
+     "standing": {
+      "i027": [
+       "Nexura ya cubre el mismo segmento con extraccion de PDF por IA y avisos; el diferencial es precio y precision publicada, copiable",
+       "No hay ficha del dolor ni de la disposicion a pagar del corredor de 100 a 300 polizas",
+       "Sin contactos confirmados; las cartas de intencion son senal de pago debil",
+       "El envio por wa.me de un clic sigue siendo mas debil que el WhatsApp automatico de Nexura"
+      ],
+      "i028": [
+       "No hay ficha de la espera tipica; el dolor citado es un maximo denunciado y shocks que no se predicen",
+       "El segmento que paga (flotas de 5 o mas camiones) no tiene tamano conocido",
+       "Precio y disposicion a pagar sin ninguna senal; canal sin contacto",
+       "Arranque en frio: el valor depende de reportes manuales de choferes poco digitalizados y el plan B no entrega datos reales",
+       "La terminal ya muestra LineUp y camara del acceso y podria agregar un indicador de espera"
+      ]
+     },
+     "notes": []
     },
     {
      "id": "r3-m02",
      "a": "i009",
      "b": "i010",
-     "winner": null,
-     "loser": null,
-     "reason": null,
-     "survived": [],
-     "scores": null,
-     "source": null,
+     "winner": "i009",
+     "loser": "i010",
+     "reason": "Y muestra el dolor en estudios contables uruguayos con fichas locales verificadas (avisos que piden conciliar bancos y el tiempo de conciliar a mano con extractos PDF), mientras X no tiene ninguna ficha de que el ausentismo sea un problema que los colegios privados paguen por resolver y su hueco frente a Appoderado, SInIDE y los incumbentes locales es más débil.",
+     "survived": [
+      "afirmación falsa de que todo era local con Lightsail: corregida, datos reales solo en un equipo en Uruguay y nube solo con sintéticos",
+      "servidor de 2 GB sin plan B de costo: plan B de 4 GB documentado con la tabla de precios, USD 236 bajo el tope",
+      "cita de F-legal-contable-003 que no decía lo atribuido: fila quitada",
+      "violación de R4 y R7 por falta de contactos: rebatido, R4 pide clientes contactables y los datos del piloto son con acuerdo propio o generados por el equipo",
+      "precio anclado al plan de Contafácil sin cuenta de clientes: referencia bajada, cuenta de 10 estudios y CAC declarado como supuesto",
+      "demanda basada solo en avisos: sumada ficha local verificada del tiempo de conciliar y formatos PDF por banco, con el pago declarado como supuesto"
+     ],
+     "scores": {
+      "i009": 62.0,
+      "i010": 54.5
+     },
+     "source": "judge",
      "first": "i010",
      "second": "i009",
      "personas": [
@@ -1358,7 +1418,49 @@
        "costo_estimado: el precio de 'Dominio y DNS' es una estimación sin fuente"
       ]
      },
-     "revised": true
+     "revised": true,
+     "fatal": {
+      "i009": false,
+      "i010": false
+     },
+     "criteria": {
+      "i009": {
+       "demanda": 6,
+       "viabilidad": 7,
+       "diferenciacion": 5,
+       "business_case": 6,
+       "encaje": 7,
+       "academico": 7
+      },
+      "i010": {
+       "demanda": 4,
+       "viabilidad": 8,
+       "diferenciacion": 4,
+       "business_case": 5,
+       "encaje": 6,
+       "academico": 6
+      }
+     },
+     "fatal_motivos": {
+      "i009": [],
+      "i010": []
+     },
+     "standing": {
+      "i010": [
+       "no hay ninguna ficha de que el ausentismo cueste alumnos o cuotas a un colegio privado ni señal de pago",
+       "el hueco (medir intervenciones) es copiable por Asistente.uy, Colegium o Trivium, ya hay alertas en Appoderado y SInIDE, y un trimestre no mide retención",
+       "canal y costo de adquisición sin medir en un sector pagador en crisis",
+       "sin colegio piloto el modelo de riesgo se valida solo sobre datos sintéticos"
+      ],
+      "i009": [
+       "el pago por conciliar sigue siendo un supuesto sin señal de pago ni cantidad de estudios",
+       "Conty ya declara conciliación bancaria automática; el hueco (PDF de bancos y cuenta aprendida) se apoya en silencio de su página y es copiable",
+       "el producto agrega una herramienta y un paso de carga, sin evidencia de que el estudio lo tolere",
+       "sin estudio voluntario el acierto real de la imputación aprendida no se demuestra",
+       "costo de adquisición sin medir"
+      ]
+     },
+     "notes": []
     }
    ],
    "bye": null,
