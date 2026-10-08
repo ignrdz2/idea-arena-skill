@@ -1,0 +1,149 @@
+{
+ "version": 1,
+ "run": "20261008-0025",
+ "dir": "runs/20261008-0025",
+ "mode": "full",
+ "seed": 7,
+ "created": "2026-10-08T00:25:49",
+ "sectors": [
+  {
+   "id": "comercio-retail",
+   "nombre": "Comercio y retail"
+  },
+  {
+   "id": "agro",
+   "nombre": "Agro"
+  },
+  {
+   "id": "salud",
+   "nombre": "Salud"
+  },
+  {
+   "id": "logistica-transporte",
+   "nombre": "Logística y transporte"
+  },
+  {
+   "id": "fintech-seguros",
+   "nombre": "Fintech y seguros"
+  },
+  {
+   "id": "educacion",
+   "nombre": "Educación"
+  },
+  {
+   "id": "legal-contable",
+   "nombre": "Legal y contable"
+  },
+  {
+   "id": "sector-publico",
+   "nombre": "Sector público"
+  },
+  {
+   "id": "turismo",
+   "nombre": "Turismo"
+  },
+  {
+   "id": "energia-ambiente",
+   "nombre": "Energía y ambiente"
+  }
+ ],
+ "sectors_how": "todos los de config.json",
+ "generators": [
+  {
+   "id": "g01",
+   "strategy": "dolor",
+   "focus": [
+    "energia-ambiente"
+   ],
+   "ideas": 3
+  },
+  {
+   "id": "g02",
+   "strategy": "capacidad",
+   "focus": [
+    "logistica-transporte"
+   ],
+   "ideas": 3
+  },
+  {
+   "id": "g03",
+   "strategy": "segmento",
+   "focus": [
+    "salud"
+   ],
+   "ideas": 3
+  },
+  {
+   "id": "g04",
+   "strategy": "localizar",
+   "focus": [
+    "legal-contable"
+   ],
+   "ideas": 3
+  },
+  {
+   "id": "g05",
+   "strategy": "invertir",
+   "focus": [
+    "sector-publico"
+   ],
+   "ideas": 3
+  },
+  {
+   "id": "g06",
+   "strategy": "dolor",
+   "focus": [
+    "agro"
+   ],
+   "ideas": 3
+  },
+  {
+   "id": "g07",
+   "strategy": "capacidad",
+   "focus": [
+    "educacion"
+   ],
+   "ideas": 3
+  },
+  {
+   "id": "g08",
+   "strategy": "segmento",
+   "focus": [
+    "turismo"
+   ],
+   "ideas": 3
+  },
+  {
+   "id": "g09",
+   "strategy": "localizar",
+   "focus": [
+    "comercio-retail"
+   ],
+   "ideas": 3
+  },
+  {
+   "id": "g10",
+   "strategy": "invertir",
+   "focus": [
+    "fintech-seguros"
+   ],
+   "ideas": 3
+  }
+ ],
+ "steps": {},
+ "scope_batches": [],
+ "candidates": [],
+ "dedup_needed": false,
+ "selected": [],
+ "shortlist": [],
+ "deepen": {},
+ "plan": {
+  "calls": 114,
+  "waves": 19,
+  "tokens_k": [
+   2475,
+   6160
+  ]
+ },
+ "git_baseline": []
+}
