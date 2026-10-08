@@ -12,11 +12,11 @@
      "name": "legal-contable"
     }
    },
-   "solution": "runs/20261008-0025/ideas/i001.md",
-   "idea_json": "runs/20261008-0025/ideas/i001.json",
-   "alive": true,
-   "eliminated_in": null,
-   "eliminated_by": null,
+   "solution": "runs/20261008-0025/tournament/r1/r1-m03.i001.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r1/r1-m03.i001.idea.json",
+   "alive": false,
+   "eliminated_in": 1,
+   "eliminated_by": "i010",
    "byes": 0,
    "shown_first": 0,
    "shown_second": 1,
@@ -31,11 +31,11 @@
      "name": "salud"
     }
    },
-   "solution": "runs/20261008-0025/ideas/i002.md",
-   "idea_json": "runs/20261008-0025/ideas/i002.json",
-   "alive": true,
-   "eliminated_in": null,
-   "eliminated_by": null,
+   "solution": "runs/20261008-0025/tournament/r1/r1-m08.i002.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r1/r1-m08.i002.idea.json",
+   "alive": false,
+   "eliminated_in": 1,
+   "eliminated_by": "i015",
    "byes": 0,
    "shown_first": 0,
    "shown_second": 1,
@@ -50,11 +50,11 @@
      "name": "turismo"
     }
    },
-   "solution": "runs/20261008-0025/ideas/i003.md",
-   "idea_json": "runs/20261008-0025/ideas/i003.json",
-   "alive": true,
-   "eliminated_in": null,
-   "eliminated_by": null,
+   "solution": "runs/20261008-0025/tournament/r1/r1-m02.i003.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r1/r1-m02.i003.idea.json",
+   "alive": false,
+   "eliminated_in": 1,
+   "eliminated_by": "i021",
    "byes": 0,
    "shown_first": 0,
    "shown_second": 1,
@@ -69,11 +69,11 @@
      "name": "comercio-retail"
     }
    },
-   "solution": "runs/20261008-0025/ideas/i005.md",
-   "idea_json": "runs/20261008-0025/ideas/i005.json",
-   "alive": true,
-   "eliminated_in": null,
-   "eliminated_by": null,
+   "solution": "runs/20261008-0025/tournament/r1/r1-m01.i005.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r1/r1-m01.i005.idea.json",
+   "alive": false,
+   "eliminated_in": 1,
+   "eliminated_by": "i006",
    "byes": 0,
    "shown_first": 1,
    "shown_second": 0,
@@ -88,16 +88,17 @@
      "name": "salud"
     }
    },
-   "solution": "runs/20261008-0025/ideas/i006.md",
-   "idea_json": "runs/20261008-0025/ideas/i006.json",
+   "solution": "runs/20261008-0025/tournament/r1/r1-m01.i006.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r1/r1-m01.i006.idea.json",
    "alive": true,
    "eliminated_in": null,
    "eliminated_by": null,
    "byes": 0,
-   "shown_first": 0,
+   "shown_first": 1,
    "shown_second": 1,
    "personas": [
-    "cliente"
+    "cliente",
+    "competidor"
    ]
   },
   "i009": {
@@ -107,16 +108,17 @@
      "name": "legal-contable"
     }
    },
-   "solution": "runs/20261008-0025/ideas/i009.md",
-   "idea_json": "runs/20261008-0025/ideas/i009.json",
+   "solution": "runs/20261008-0025/tournament/r1/r1-m05.i009.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r1/r1-m05.i009.idea.json",
    "alive": true,
    "eliminated_in": null,
    "eliminated_by": null,
    "byes": 0,
-   "shown_first": 1,
+   "shown_first": 2,
    "shown_second": 0,
    "personas": [
-    "cliente"
+    "cliente",
+    "competidor"
    ]
   },
   "i010": {
@@ -126,16 +128,17 @@
      "name": "educacion"
     }
    },
-   "solution": "runs/20261008-0025/ideas/i010.md",
-   "idea_json": "runs/20261008-0025/ideas/i010.json",
+   "solution": "runs/20261008-0025/tournament/r1/r1-m03.i010.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r1/r1-m03.i010.idea.json",
    "alive": true,
    "eliminated_in": null,
    "eliminated_by": null,
    "byes": 0,
-   "shown_first": 1,
+   "shown_first": 2,
    "shown_second": 0,
    "personas": [
-    "cliente"
+    "cliente",
+    "competidor"
    ]
   },
   "i011": {
@@ -145,16 +148,17 @@
      "name": "educacion"
     }
    },
-   "solution": "runs/20261008-0025/ideas/i011.md",
-   "idea_json": "runs/20261008-0025/ideas/i011.json",
+   "solution": "runs/20261008-0025/tournament/r1/r1-m06.i011.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r1/r1-m06.i011.idea.json",
    "alive": true,
    "eliminated_in": null,
    "eliminated_by": null,
    "byes": 0,
    "shown_first": 1,
-   "shown_second": 0,
+   "shown_second": 1,
    "personas": [
-    "cliente"
+    "cliente",
+    "competidor"
    ]
   },
   "i012": {
@@ -164,11 +168,11 @@
      "name": "agro"
     }
    },
-   "solution": "runs/20261008-0025/ideas/i012.md",
-   "idea_json": "runs/20261008-0025/ideas/i012.json",
-   "alive": true,
-   "eliminated_in": null,
-   "eliminated_by": null,
+   "solution": "runs/20261008-0025/tournament/r1/r1-m07.i012.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r1/r1-m07.i012.idea.json",
+   "alive": false,
+   "eliminated_in": 1,
+   "eliminated_by": "i028",
    "byes": 0,
    "shown_first": 0,
    "shown_second": 1,
@@ -183,16 +187,17 @@
      "name": "fintech-seguros"
     }
    },
-   "solution": "runs/20261008-0025/ideas/i015.md",
-   "idea_json": "runs/20261008-0025/ideas/i015.json",
+   "solution": "runs/20261008-0025/tournament/r1/r1-m08.i015.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r1/r1-m08.i015.idea.json",
    "alive": true,
    "eliminated_in": null,
    "eliminated_by": null,
    "byes": 0,
    "shown_first": 1,
-   "shown_second": 0,
+   "shown_second": 1,
    "personas": [
-    "cliente"
+    "cliente",
+    "competidor"
    ]
   },
   "i017": {
@@ -202,11 +207,11 @@
      "name": "sector-publico"
     }
    },
-   "solution": "runs/20261008-0025/ideas/i017.md",
-   "idea_json": "runs/20261008-0025/ideas/i017.json",
-   "alive": true,
-   "eliminated_in": null,
-   "eliminated_by": null,
+   "solution": "runs/20261008-0025/tournament/r1/r1-m06.i017.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r1/r1-m06.i017.idea.json",
+   "alive": false,
+   "eliminated_in": 1,
+   "eliminated_by": "i011",
    "byes": 0,
    "shown_first": 0,
    "shown_second": 1,
@@ -221,11 +226,11 @@
      "name": "comercio-retail"
     }
    },
-   "solution": "runs/20261008-0025/ideas/i018.md",
-   "idea_json": "runs/20261008-0025/ideas/i018.json",
-   "alive": true,
-   "eliminated_in": null,
-   "eliminated_by": null,
+   "solution": "runs/20261008-0025/tournament/r1/r1-m05.i018.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r1/r1-m05.i018.idea.json",
+   "alive": false,
+   "eliminated_in": 1,
+   "eliminated_by": "i009",
    "byes": 0,
    "shown_first": 0,
    "shown_second": 1,
@@ -240,16 +245,17 @@
      "name": "energia-ambiente"
     }
    },
-   "solution": "runs/20261008-0025/ideas/i021.md",
-   "idea_json": "runs/20261008-0025/ideas/i021.json",
+   "solution": "runs/20261008-0025/tournament/r1/r1-m02.i021.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r1/r1-m02.i021.idea.json",
    "alive": true,
    "eliminated_in": null,
    "eliminated_by": null,
    "byes": 0,
    "shown_first": 1,
-   "shown_second": 0,
+   "shown_second": 1,
    "personas": [
-    "cliente"
+    "cliente",
+    "competidor"
    ]
   },
   "i026": {
@@ -259,11 +265,11 @@
      "name": "logistica-transporte"
     }
    },
-   "solution": "runs/20261008-0025/ideas/i026.md",
-   "idea_json": "runs/20261008-0025/ideas/i026.json",
-   "alive": true,
-   "eliminated_in": null,
-   "eliminated_by": null,
+   "solution": "runs/20261008-0025/tournament/r1/r1-m04.i026.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r1/r1-m04.i026.idea.json",
+   "alive": false,
+   "eliminated_in": 1,
+   "eliminated_by": "i027",
    "byes": 0,
    "shown_first": 1,
    "shown_second": 0,
@@ -278,16 +284,17 @@
      "name": "fintech-seguros"
     }
    },
-   "solution": "runs/20261008-0025/ideas/i027.md",
-   "idea_json": "runs/20261008-0025/ideas/i027.json",
+   "solution": "runs/20261008-0025/tournament/r1/r1-m04.i027.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r1/r1-m04.i027.idea.json",
    "alive": true,
    "eliminated_in": null,
    "eliminated_by": null,
    "byes": 0,
-   "shown_first": 0,
+   "shown_first": 1,
    "shown_second": 1,
    "personas": [
-    "cliente"
+    "cliente",
+    "competidor"
    ]
   },
   "i028": {
@@ -297,16 +304,17 @@
      "name": "logistica-transporte"
     }
    },
-   "solution": "runs/20261008-0025/ideas/i028.md",
-   "idea_json": "runs/20261008-0025/ideas/i028.json",
+   "solution": "runs/20261008-0025/tournament/r1/r1-m07.i028.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r1/r1-m07.i028.idea.json",
    "alive": true,
    "eliminated_in": null,
    "eliminated_by": null,
    "byes": 0,
    "shown_first": 1,
-   "shown_second": 0,
+   "shown_second": 1,
    "personas": [
-    "cliente"
+    "cliente",
+    "competidor"
    ]
   }
  },
@@ -950,6 +958,87 @@
      },
      "notes": [
       "fatal determinístico de i002: evidencia_inexistente"
+     ]
+    }
+   ],
+   "bye": null,
+   "closed": true
+  },
+  {
+   "n": 2,
+   "alive": [
+    "i006",
+    "i009",
+    "i010",
+    "i011",
+    "i015",
+    "i021",
+    "i027",
+    "i028"
+   ],
+   "matches": [
+    {
+     "id": "r2-m01",
+     "a": "i028",
+     "b": "i006",
+     "winner": null,
+     "loser": null,
+     "reason": null,
+     "survived": [],
+     "scores": null,
+     "source": null,
+     "first": "i006",
+     "second": "i028",
+     "personas": [
+      "competidor"
+     ]
+    },
+    {
+     "id": "r2-m02",
+     "a": "i021",
+     "b": "i027",
+     "winner": null,
+     "loser": null,
+     "reason": null,
+     "survived": [],
+     "scores": null,
+     "source": null,
+     "first": "i027",
+     "second": "i021",
+     "personas": [
+      "competidor"
+     ]
+    },
+    {
+     "id": "r2-m03",
+     "a": "i009",
+     "b": "i011",
+     "winner": null,
+     "loser": null,
+     "reason": null,
+     "survived": [],
+     "scores": null,
+     "source": null,
+     "first": "i009",
+     "second": "i011",
+     "personas": [
+      "competidor"
+     ]
+    },
+    {
+     "id": "r2-m04",
+     "a": "i015",
+     "b": "i010",
+     "winner": null,
+     "loser": null,
+     "reason": null,
+     "survived": [],
+     "scores": null,
+     "source": null,
+     "first": "i010",
+     "second": "i015",
+     "personas": [
+      "competidor"
      ]
     }
    ],
