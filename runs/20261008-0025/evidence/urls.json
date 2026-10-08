@@ -648,5 +648,65 @@
   "estado": "ok",
   "http": 200,
   "checked_at": "2026-10-08T00:38:51"
+ },
+ "https://www.gub.uy/unidad-reguladora-control-datos-personales/institucional/normativa/resolucion-n-41021": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:44:11"
+ },
+ "https://www.impo.com.uy/bases/decretos/339-2025": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:44:14"
+ },
+ "https://catalogodatos.gub.uy/dataset/ministerio-de-turismo-turismo-receptivo": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:44:24"
+ },
+ "https://sistemahotelero.com.uy/": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:44:24"
+ },
+ "https://www.elobservador.com.uy/nota/liceos-privados-recuperan-terreno-y-cantidad-de-alumnos-de-2023-es-similar-a-la-de-2018-2023912184621": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:44:28"
+ },
+ "https://www.impo.com.uy/bases/leyes/18331-2008/23": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:44:28"
+ },
+ "https://faprosu.uy/asociaciones/": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:44:31"
+ },
+ "https://www.figuro.la/soluciones/software-para-agentes-de-seguros": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:44:31"
+ },
+ "https://ai.google.dev/gemini-api/terms": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:44:32"
+ },
+ "https://americaretail-malls.com/paises/uruguay/estafas-virtuales-crecen-en-uruguay-con-metodos-mas-complejos-y-dificiles-de-detectar/": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:44:33"
+ },
+ "https://psico.edu.uy/presencias-en-medios/un-intento-de-suicidio-cada-tres-horas-en-uruguay-reflejo-de-una-crisis-en-la": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:44:35"
+ },
+ "https://www.elobservador.com.uy/nota/ministerio-de-salud-publica-emitio-decreto-que-obliga-a-prestadores-a-registrar-intentos-de-suicidio-en-una-base-digital-para-seguirlos-en-tiempo-real--2022930171429": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:44:35"
  }
 }

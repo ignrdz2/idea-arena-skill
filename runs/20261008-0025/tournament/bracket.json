@@ -348,7 +348,20 @@
      "personas": [
       "cliente"
      ],
-     "attacks_checked": true
+     "attacks_checked": true,
+     "det_fatal": {
+      "i005": [],
+      "i006": []
+     },
+     "hard_notes": {
+      "i005": [
+       "costo_estimado: el precio de 'Dominio .com y snapshots de respaldo' es una estimación sin fuente"
+      ],
+      "i006": [
+       "costo_estimado: el precio de 'Dominio propio' es una estimación sin fuente"
+      ]
+     },
+     "revised": true
     },
     {
      "id": "r1-m02",
@@ -365,7 +378,20 @@
      "personas": [
       "cliente"
      ],
-     "attacks_checked": true
+     "attacks_checked": true,
+     "det_fatal": {
+      "i021": [],
+      "i003": []
+     },
+     "hard_notes": {
+      "i021": [
+       "costo_estimado: el precio de 'Dominio .com por un año' es una estimación sin fuente"
+      ],
+      "i003": [
+       "costo_estimado: el precio de 'Dominio .com' es una estimación sin fuente"
+      ]
+     },
+     "revised": true
     },
     {
      "id": "r1-m03",
@@ -382,7 +408,20 @@
      "personas": [
       "cliente"
      ],
-     "attacks_checked": true
+     "attacks_checked": true,
+     "det_fatal": {
+      "i010": [],
+      "i001": []
+     },
+     "hard_notes": {
+      "i010": [
+       "costo_estimado: el precio de 'Dominio y DNS' es una estimación sin fuente"
+      ],
+      "i001": [
+       "costo_estimado: el precio de 'Correo de alertas, dominio y DNS' es una estimación sin fuente"
+      ]
+     },
+     "revised": true
     },
     {
      "id": "r1-m04",
@@ -399,7 +438,18 @@
      "personas": [
       "cliente"
      ],
-     "attacks_checked": true
+     "attacks_checked": true,
+     "det_fatal": {
+      "i026": [],
+      "i027": []
+     },
+     "hard_notes": {
+      "i026": [
+       "costo_estimado: el precio de 'Dominio .com' es una estimación sin fuente"
+      ],
+      "i027": []
+     },
+     "revised": true
     },
     {
      "id": "r1-m05",
@@ -416,7 +466,20 @@
      "personas": [
       "cliente"
      ],
-     "attacks_checked": true
+     "attacks_checked": true,
+     "det_fatal": {
+      "i009": [],
+      "i018": []
+     },
+     "hard_notes": {
+      "i009": [
+       "costo_estimado: el precio de 'Dominio y DNS' es una estimación sin fuente"
+      ],
+      "i018": [
+       "costo_estimado: el precio de 'Dominio .com, snapshots y correo entrante' es una estimación sin fuente"
+      ]
+     },
+     "revised": true
     },
     {
      "id": "r1-m06",
@@ -433,7 +496,20 @@
      "personas": [
       "cliente"
      ],
-     "attacks_checked": true
+     "attacks_checked": true,
+     "det_fatal": {
+      "i011": [],
+      "i017": []
+     },
+     "hard_notes": {
+      "i011": [
+       "costo_estimado: el precio de 'Dominio y DNS' es una estimación sin fuente"
+      ],
+      "i017": [
+       "costo_estimado: el precio de 'Dominio y respaldos' es una estimación sin fuente"
+      ]
+     },
+     "revised": true
     },
     {
      "id": "r1-m07",
@@ -450,7 +526,18 @@
      "personas": [
       "cliente"
      ],
-     "attacks_checked": true
+     "attacks_checked": true,
+     "det_fatal": {
+      "i028": [],
+      "i012": []
+     },
+     "hard_notes": {
+      "i028": [
+       "costo_estimado: el precio de 'Dominio .com' es una estimación sin fuente"
+      ],
+      "i012": []
+     },
+     "revised": true
     },
     {
      "id": "r1-m08",
@@ -467,7 +554,23 @@
      "personas": [
       "cliente"
      ],
-     "attacks_checked": true
+     "attacks_checked": true,
+     "det_fatal": {
+      "i015": [],
+      "i002": [
+       "evidencia_inexistente"
+      ]
+     },
+     "hard_notes": {
+      "i015": [],
+      "i002": [
+       "costo_estimado: el precio de 'Respaldos (snapshots) del servidor' es una estimación sin fuente",
+       "costo_estimado: el precio de 'Dominio propio' es una estimación sin fuente",
+       "evidencia_inexistente: cita fichas que no existen o fueron descartadas: F-defensa-r1-m08-i002-002",
+       "ficha nueva descartada: F-defensa-r1-m08-i002-002 (esquema)"
+      ]
+     },
+     "revised": true
     }
    ],
    "bye": null,

@@ -1,0 +1,88 @@
+{
+ "id": "i028",
+ "titulo": "Prediccion de espera para retirar contenedores en el puerto de Montevideo",
+ "problema": "Retirar un contenedor del puerto de Montevideo puede demorar hasta 9 horas cuando deberia tomar 1,5 a 2 (F-logistica-transporte-001). Se agrava con buques atrasados (150 camiones varados diez dias, F-logistica-transporte-002), paros (casi 500 camiones, F-logistica-transporte-004) y caidas de sistemas (F-logistica-transporte-005). El chofer se entera en la fila y no puede planificar el resto de los viajes.",
+ "usuario": "Lo usan choferes y despachantes; paga la empresa de transporte. Se supone que muchas son chicas (F-logistica-transporte-009 es un dato general de 2020, no del segmento portuario); el tamano real se confirma en entrevistas.",
+ "solucion": "PWA donde el chofer marca llegada, ingreso y salida de cada terminal con un toque; al marcar, la ubicacion en primer plano verifica que esta en la terminal. Con esos tiempos, mas paros y buques cargados a mano (opcionales), se estima la espera por terminal y franja con cuantiles historicos y se avisa cuando la fila se dispara. El chofer ve la espera reciente reportada por otros; la empresa ve un panel de espera historica y horas de camion perdidas.",
+ "mvp": {
+  "semestre_1": [
+   "PWA con registro de un toque y ubicacion en primer plano",
+   "Backend con API, base de datos y panel de espera",
+   "Piloto con pocos choferes e informe de tiempos reales"
+  ],
+  "semestre_2": [
+   "Estimador por terminal y franja (cuantiles, luego LightGBM si hay datos) contra una linea base ingenua",
+   "Alertas push por demoras anomalas",
+   "Reporte de horas perdidas en PDF",
+   "Precios validados en entrevistas"
+  ]
+ },
+ "stack": [
+  "React PWA",
+  "Python FastAPI",
+  "PostgreSQL con TimescaleDB",
+  "scikit-learn o LightGBM",
+  "Leaflet con OpenStreetMap",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 164,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 2 GB RAM con IPv4",
+    "usd_anual": 144,
+    "supuesto": "USD 12 por mes x 12 meses, una instancia para API, base de datos y modelo, Docker Compose; no se cuenta la capa gratuita porque la pagina no dice cuanto dura.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 20,
+    "supuesto": "Estimacion por encima: Cloudflare Registrar cobra al costo del registro pero su pagina no muestra el precio del .com; se reservan USD 20 por un ano con margen."
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Flexy",
+   "evidencia_ids": [
+    "F-logistica-transporte-006"
+   ],
+   "hueco": "Marketplace de fletes con comision; la ficha no dice que mida la espera en terminales."
+  },
+  {
+   "nombre": "LlegoYa",
+   "evidencia_ids": [
+    "F-logistica-transporte-007"
+   ],
+   "hueco": "Marketplace de capacidad ociosa con seguimiento; la ficha no dice que prediga la espera en el puerto."
+  }
+ ],
+ "monetizacion": "Suscripcion mensual por camion, paga la empresa. El plan gratis da al chofer la espera reciente a cambio de sus tiempos; el pago suma prediccion, alertas y reporte. Canal: Intergremial de Transporte de Carga y despachantes, sin contacto aun. Precio hipotetico (supuesto): USD 5 por camion por mes, a validar antes de diciembre de 2026; el tamano de mercado se estima en esas entrevistas.",
+ "riesgos": [
+  "Arranque en frio: sin choferes marcando no hay prediccion; plan B: 2 o 3 empresas piloto y linea base",
+  "Terminales o ANP podrian publicar su propio indicador",
+  "Poca adopcion digital en empresas chicas (F-logistica-transporte-008) y baja traccion de otras apps (F-logistica-transporte-006, F-logistica-transporte-007)",
+  "Paros y buques son dificiles de predecir: se tratan como alertas",
+  "Sin contactos cargados, el piloto depende de las entrevistas"
+ ],
+ "supuestos": [
+  "Pagarian por saber la espera; no hay ficha de disposicion a pagar",
+  "Saber la espera permite elegir cuando salir; ninguna ficha lo muestra, se prueba en el piloto",
+  "Existe una tarifa de demora reclamable; sin respaldo, se pregunta en entrevistas",
+  "No se afirma que no existan competidores que midan la espera",
+  "Datos de arribos de buques usables legalmente: sin verificar, por eso son opcionales",
+  "10 a 20 choferes alcanzan para una linea base; LightGBM solo si hay datos",
+  "Ubicacion solo al marcar, con consentimiento individual (Ley 18.331); la empresa ve tiempos agregados, no posiciones"
+ ],
+ "evidencias": [
+  "F-logistica-transporte-001",
+  "F-logistica-transporte-002",
+  "F-logistica-transporte-004",
+  "F-logistica-transporte-005",
+  "F-logistica-transporte-006",
+  "F-logistica-transporte-007",
+  "F-logistica-transporte-008",
+  "F-logistica-transporte-009"
+ ]
+}
