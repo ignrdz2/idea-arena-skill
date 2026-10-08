@@ -708,5 +708,60 @@
   "estado": "ok",
   "http": 200,
   "checked_at": "2026-10-08T00:44:35"
+ },
+ "https://www.elobservador.com.uy/nacional/lustemberg-hoy-nada-me-preocupa-mas-que-los-tiempos-espera-y-la-salud-mental-n6059722": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:47:47"
+ },
+ "https://nexuraseguros.com/": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:47:47"
+ },
+ "https://www.figuro.la/blog-post/software-para-agentes-de-seguros-guia-completa": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:47:47"
+ },
+ "https://portal.ute.com.uy/articulos/tu-empresa-tiene-la-tarifa-adecuada": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:47:49"
+ },
+ "https://portal.ute.com.uy/clientes/soluciones-para-empresas/beneficios/opciones-tarifarias-para-pymes": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:47:49"
+ },
+ "https://web.appoderado.cl/": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:47:50"
+ },
+ "https://www.infobae.com/educacion/2023/06/18/alerta-temprana-dos-provincias-ya-usan-inteligencia-artificial-para-prevenir-el-abandono-escolar/": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:47:50"
+ },
+ "https://www.trivium.ai/": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:47:50"
+ },
+ "https://mediavox.co/mvsite/fraud-check": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:47:51"
+ },
+ "https://scamzero.app/": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:47:51"
+ },
+ "https://www.infobae.com/tecno/2026/09/28/lanzaron-una-herramienta-web-gratuita-para-detectar-estafas-por-sms-y-whatsapp/": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:47:51"
  }
 }

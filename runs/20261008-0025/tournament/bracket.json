@@ -991,7 +991,8 @@
      "second": "i028",
      "personas": [
       "competidor"
-     ]
+     ],
+     "attacks_checked": true
     },
     {
      "id": "r2-m02",
@@ -1007,7 +1008,8 @@
      "second": "i021",
      "personas": [
       "competidor"
-     ]
+     ],
+     "attacks_checked": true
     },
     {
      "id": "r2-m03",
@@ -1023,7 +1025,8 @@
      "second": "i011",
      "personas": [
       "competidor"
-     ]
+     ],
+     "attacks_checked": true
     },
     {
      "id": "r2-m04",
@@ -1039,7 +1042,8 @@
      "second": "i015",
      "personas": [
       "competidor"
-     ]
+     ],
+     "attacks_checked": true
     }
    ],
    "bye": null,

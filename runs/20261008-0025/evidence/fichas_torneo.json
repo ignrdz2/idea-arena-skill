@@ -795,6 +795,243 @@
     "checked_at": "2026-10-08T00:44:35",
     "extracto": "encontrado"
    }
+  },
+  {
+   "id": "F-ataque-r2-m01-i006-competidor-001",
+   "sector": "salud",
+   "hallazgo": "El Observador (7/10/2026) recoge que la ministra Cristina Lustemberg afirmó que desde 2027 estará operativo un sistema que permitirá medir los tiempos de espera en todos los prestadores de salud del país.",
+   "source_url": "https://www.elobservador.com.uy/nacional/lustemberg-hoy-nada-me-preocupa-mas-que-los-tiempos-espera-y-la-salud-mental-n6059722",
+   "source_title": "Lustemberg: Hoy nada me preocupa más que los tiempos de espera y la salud mental",
+   "source_date": "2026-10-07",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "desde 2027 estará operativo un sistema que permitirá medir los tiempos de espera en todos los prestadores de salud",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:47:47",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-ataque-r2-m02-i027-competidor-001",
+   "sector": "transversal",
+   "hallazgo": "El blog de Nexura sobre software para corredores en Uruguay dice que con menos de 100 pólizas muchos corredores se manejan bien con Excel; lista a Figuro en unos USD 50 por mes y a AdminSE sin precio publicado, para corredurías de más de cinco personas.",
+   "source_url": "https://nexuraseguros.com/blog/software-corredores-seguros-uruguay-2026",
+   "source_title": "Software para corredores de seguros en Uruguay 2026",
+   "source_date": "2026-03-29",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T13:00:00",
+   "extracto": "Con menos de 100 pólizas, muchos corredores se manejan bien.",
+   "competidor": "Nexura",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:38:27",
+    "extracto": "no_verificable"
+   }
+  },
+  {
+   "id": "F-ataque-r2-m02-i027-competidor-002",
+   "sector": "transversal",
+   "hallazgo": "Figuro, software para agentes de seguros, ofrece un plan gratuito (formularios por ramo, prospectos, cotizaciones comparativas) y planes de pago desde USD 5 por mes, con conectores para Zapier y Make.",
+   "source_url": "https://www.figuro.la/blog-post/software-para-agentes-de-seguros-guia-completa",
+   "source_title": "Software para Agentes de Seguros: Guía por Etapa (2026)",
+   "source_date": "2026",
+   "source_type": "competidor",
+   "geografia": "LATAM",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T13:05:00",
+   "extracto": "Figuro tiene plan gratuito con formularios por ramo, lista de prospectos y cotizaciones comparativas.",
+   "competidor": "Figuro",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:47:47",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-ataque-r2-m02-i027-competidor-003",
+   "sector": "transversal",
+   "hallazgo": "La home de Nexura dice que el corredor sube el PDF y la IA lee prima, vigencias, cuotas y coberturas; declara 43 aseguradoras de 5 países mapeadas, cifrado AES-256, cumplimiento de la Ley 18.331 e infraestructura en AWS; planes desde USD 197 por mes.",
+   "source_url": "https://nexuraseguros.com/",
+   "source_title": "NEXURA - CRM y Automatización con IA para Corredores de Seguros",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "baja",
+   "retrieved_at": "2026-10-08T13:10:00",
+   "extracto": "Subís el PDF y la IA lee prima, vigencias, cuotas, coberturas y certificados de flota.",
+   "competidor": "Nexura",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:47:47",
+    "extracto": "no_encontrado"
+   }
+  },
+  {
+   "id": "F-ataque-r2-m02-i021-competidor-001",
+   "sector": "transversal",
+   "hallazgo": "UTE ofrece a las pymes tres opciones tarifarias (Plan Inteligente Pymes sobre Hora-Estacional, Tarifa General Simple para consumo menor a 2.000 kWh mensuales y Mediano Consumidor) y dice contar con técnicos especializados en todo el país para asesorar sobre tarifas, con pedido por formulario u oficina comercial.",
+   "source_url": "https://portal.ute.com.uy/clientes/soluciones-para-empresas/beneficios/opciones-tarifarias-para-pymes",
+   "source_title": "Opciones Tarifarias para Pymes (UTE)",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T10:30:00",
+   "extracto": "técnicos especializados en todo el país",
+   "competidor": "UTE",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:47:49",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-ataque-r2-m02-i021-competidor-002",
+   "sector": "transversal",
+   "hallazgo": "UTE publicó en 2018 que las mipymes pueden acceder al Plan Pymes, con asesoramiento personalizado y gratuito de tarifa y eficiencia energética, que puede incluir adecuar la tarifa, ajustar la potencia contratada y compensar energía reactiva; lo promueve la DNE del MIEM. La vigencia actual no está confirmada.",
+   "source_url": "https://portal.ute.com.uy/articulos/tu-empresa-tiene-la-tarifa-adecuada",
+   "source_title": "Tu empresa tiene la tarifa adecuada (UTE)",
+   "source_date": "2018-10",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T10:31:00",
+   "extracto": "asesoramiento personalizado tarifario y de eficiencia energética",
+   "competidor": "UTE",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:47:49",
+    "extracto": "encontrado",
+    "aviso": "fuente de hace 8 años"
+   }
+  },
+  {
+   "id": "F-ataque-r2-m04-i010-competidor-001",
+   "sector": "educacion",
+   "hallazgo": "Appoderado, plataforma de gestión escolar orientada a establecimientos chilenos, incluye en su módulo Estadísticas y Prevención 'Alertas de Ausentismo Crónico' y 'Alerta de Deserción Escolar'. La página no menciona Uruguay.",
+   "source_url": "https://web.appoderado.cl/",
+   "source_title": "Appoderado.com",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "CL",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T02:10:00",
+   "extracto": "Alertas de Ausentismo Crónico",
+   "competidor": "Appoderado",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:47:50",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-ataque-r2-m04-i010-competidor-002",
+   "sector": "educacion",
+   "hallazgo": "Trivium se presenta como fundada en 2023 en Montevideo, con colegios uruguayos entre sus clientes, reportes oficiales de ANEP, registro de asistencia, tasa de abandono por grado y un motor de diagnóstico continuo del aprendizaje con IA. La página no describe alertas de ausentismo o deserción.",
+   "source_url": "https://www.trivium.ai/",
+   "source_title": "Trivium",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T02:10:00",
+   "extracto": "Trivium fue fundado en 2023 en Montevideo",
+   "competidor": "Trivium",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:47:50",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-ataque-r2-m04-i010-competidor-003",
+   "sector": "educacion",
+   "hallazgo": "Una nota de Infobae de 2023 incluye a Uruguay entre los países con sistemas de alerta temprana de abandono escolar y dice que el SInIDE Gestión Escolar del Ministerio de Educación prevé generar alertas a partir de las inasistencias de los alumnos.",
+   "source_url": "https://www.infobae.com/educacion/2023/06/18/alerta-temprana-dos-provincias-ya-usan-inteligencia-artificial-para-prevenir-el-abandono-escolar/",
+   "source_title": "Alerta temprana: dos provincias ya usan inteligencia artificial para prevenir el abandono escolar",
+   "source_date": "2023-06-18",
+   "source_type": "prensa",
+   "geografia": "LATAM",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T02:10:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:47:50",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-ataque-r2-m04-i015-competidor-001",
+   "sector": "transversal",
+   "hallazgo": "Un detector de fraude para SMS y WhatsApp de LATAM funciona reenviando el mensaje sospechoso a un contacto de WhatsApp, que responde con el analisis. Revisa phishing, links, suplantacion de marcas y numeros falsos; es gratis, sin registro y sin limite, optimizado para Colombia, Mexico, Peru, Chile, Argentina y Ecuador.",
+   "source_url": "https://mediavox.co/mvsite/fraud-check",
+   "source_title": "Detector de Estafas SMS y WhatsApp, Verifica Gratis",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "LATAM",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "solo reenvialo a este contacto de WhatsApp y te decimos si es estafa",
+   "competidor": "Mediavox Detector de Fraude",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:47:51",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-ataque-r2-m04-i015-competidor-002",
+   "sector": "transversal",
+   "hallazgo": "Truecaller lanzo en septiembre de 2026 Scam Checker, una herramienta web gratuita para pegar un numero, link o mensaje sospechoso; hoy solo en India, con expansion prevista a America Latina y una funcion futura para analizar capturas de pantalla.",
+   "source_url": "https://www.infobae.com/tecno/2026/09/28/lanzaron-una-herramienta-web-gratuita-para-detectar-estafas-por-sms-y-whatsapp/",
+   "source_title": "Lanzaron una herramienta web gratuita para detectar estafas por SMS y WhatsApp",
+   "source_date": "2026-09-28",
+   "source_type": "prensa",
+   "geografia": "GLOBAL",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "competidor": "Truecaller Scam Checker",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:47:51",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
+   "id": "F-ataque-r2-m04-i015-competidor-003",
+   "sector": "transversal",
+   "hallazgo": "ScamZero ofrece en app store y Google Play un agente que analiza mensajes, links, correos y numeros, y su pagina afirma que verificar es gratis; los planes Pro y Familiar agregan identificador de llamadas, sin anuncios y verificaciones ilimitadas.",
+   "source_url": "https://scamzero.app/",
+   "source_title": "Verificar si un mensaje, numero o enlace es estafa, gratis con IA, ScamZero",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "LATAM",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "Verificar mensajes, enlaces, correos y números es gratis.",
+   "competidor": "ScamZero",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:47:51",
+    "extracto": "encontrado"
+   }
   }
  ]
 }
