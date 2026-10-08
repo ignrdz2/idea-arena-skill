@@ -1479,12 +1479,21 @@
      "id": "r4-m01",
      "a": "i027",
      "b": "i009",
-     "winner": null,
-     "loser": null,
-     "reason": null,
-     "survived": [],
-     "scores": null,
-     "source": null,
+     "winner": "i009",
+     "loser": "i027",
+     "reason": "X compite contra Nexura, que según las fichas ya hace en Uruguay lo mismo (PDF a datos con IA, avisos por WhatsApp, Ley 18.331), y su componente de IA depende de cláusulas de transferencia no confirmadas, mientras Y procesa localmente sin dependencia regulatoria ni de API externa y su hueco frente a Conty, aunque apoyado en silencio, no está tan cubierto.",
+     "survived": [
+      "Plan B sin imputaciones reales: reemplazado por historial sintético con comparación reglas contra embeddings; R7 bien rebatido (datos propios o sintéticos)",
+      "Precio de referencia frente a Contafácil: rebatido, cae dentro de la banda Simple a Pro que ya se paga",
+      "Alcance técnico: bancos nombrados (BROU e Itaú), vista multi-cliente quitada, piloto limitado a 1 estudio, hito 1 compara métodos",
+      "Ley 18.331 y arquitectura del piloto: datos reales en Docker dentro del estudio, sin transferencia; roles y registro pasados a supuesto",
+      "Dominio sin fuente: eliminado, costo USD 144 con fuente"
+     ],
+     "scores": {
+      "i027": 51.0,
+      "i009": 55.5
+     },
+     "source": "judge",
      "first": "i027",
      "second": "i009",
      "personas": [
@@ -1499,7 +1508,47 @@
       "i027": [],
       "i009": []
      },
-     "revised": true
+     "revised": true,
+     "fatal": {
+      "i027": false,
+      "i009": false
+     },
+     "criteria": {
+      "i027": {
+       "demanda": 5,
+       "viabilidad": 6,
+       "diferenciacion": 3,
+       "business_case": 5,
+       "encaje": 7,
+       "academico": 6
+      },
+      "i009": {
+       "demanda": 5,
+       "viabilidad": 7,
+       "diferenciacion": 4,
+       "business_case": 5,
+       "encaje": 7,
+       "academico": 6
+      }
+     },
+     "fatal_motivos": {
+      "i027": [],
+      "i009": []
+     },
+     "standing": {
+      "i027": [
+       "Piloto y validación de pago dependen de corredores sin contacto; el plan B no prueba disposición a pagar",
+       "Diferencia frente a Nexura es precio y una precisión medida, copiable, con anclas de precio contradictorias",
+       "Demanda del segmento de 100 a 300 pólizas sin evidencia y solapado con Nexura desde 150",
+       "Sin cláusulas de transferencia el componente de IA queda fuera de producción y la tesis se reduce a comparar parsers"
+      ],
+      "i009": [
+       "Demanda apoyada en un aviso laboral y un blog interesado, sin señal de pago por conciliar ni tamaño de mercado",
+       "Hueco frente a Conty (PDF y cuenta aprendida) solo por silencio de su página; copiable por Contafácil",
+       "Sin estudio piloto, el aprendizaje se mide solo sobre historial sintético, con validez limitada"
+      ]
+     },
+     "notes": []
     }
    ],
    "bye": null,
