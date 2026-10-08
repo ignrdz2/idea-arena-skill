@@ -1,0 +1,55 @@
+{
+ "idea": "i021",
+ "respuestas": [
+  {
+   "ataque": 1,
+   "decision": "CONCEDE",
+   "detalle": "Cierto: ninguna ficha muestra que una mipyme uruguaya pague de más ni que pague por saberlo; las citadas dan tamaño de segmento, tarifas y marco. Arreglo: la idea declara ambas cosas como hipótesis sin ficha en supuestos, los precios de USD 20 y USD 15 figuran como hipótesis sin base y se agregan entrevistas de precio en el semestre 1 para medirlos.",
+   "evidencia": [
+    "F-energia-ambiente-001",
+    "F-defensa-r1-m02-i021-001"
+   ]
+  },
+  {
+   "ataque": 2,
+   "decision": "CONCEDE",
+   "detalle": "Verificado: las fichas muestran que UTE ofrece asesoramiento tarifario con técnicos (001) y asesoramiento gratuito de tarifa y potencia, de 2018 y sin vigencia confirmada (002). Se agrega a UTE como competidor (se quita el simulador residencial por espacio, pues UTE lo cubre), se quita 'no se buscaron más competidores', se declara que es copiable y se reposiciona el hueco: informe inmediato desde la factura, con solar y sin el incentivo de UTE de mover clientes de plan.",
+   "evidencia": [
+    "F-ataque-r2-m02-i021-competidor-001",
+    "F-ataque-r2-m02-i021-competidor-002"
+   ]
+  },
+  {
+   "ataque": 3,
+   "decision": "PARCIAL",
+   "detalle": "Acepto lo de instaladores: F-energia-ambiente-002 trata de cobertura y microgeneración, no de instaladores; se quita ese competidor y queda como supuesto sin ficha. No acepto lo del MIEM: la ficha 001 confirma el simulador y la idea ya marca como 'Supuesto:' que no lee facturas, sin presentarlo como hecho. Los USD 20 por lead ya figuraban como hipótesis a validar en la monetización y en supuestos, no como dato citado.",
+   "evidencia": [
+    "F-energia-ambiente-002",
+    "F-energia-ambiente-001"
+   ]
+  },
+  {
+   "ataque": 4,
+   "decision": "CONCEDE",
+   "detalle": "Razonable: el ahorro tarifario se corrige una vez y 3 veces USD 120 anuales es un umbral de USD 360 que pocas mipymes de General Simple cumplirían. Se elimina el plan mensual, el segundo ingreso pasa a informe puntual y se agrega al riesgo que el hueco puede ser un segmento que no paga.",
+   "evidencia": [
+    "F-ataque-r2-m02-i021-competidor-001"
+   ]
+  },
+  {
+   "ataque": 5,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que el segundo cliente no tiene ficha y que el piloto de 5 a 15 mipymes no mide precio por lead: el precio se valida con entrevistas y cartas de intención a consultores e instaladores antes de la entrega 2, el consentimiento explícito para ser contactada define el lead y se agrega un plan B (herramienta para consultores). No acepto que sea una afirmación sin declarar: estaba en supuestos y en monetización como 'a validar'. Lo de que UTE captaría esos leads es una conjetura del ataque, sin ficha.",
+   "evidencia": []
+  },
+  {
+   "ataque": 6,
+   "decision": "CONCEDE",
+   "detalle": "El decreto fija tarifas de enero de 2026 y se actualizan. Se guardan en una tabla versionada, se declara que actualizarla lleva pocas horas por cambio, y como la tabla de contactos está vacía se quita la dependencia de un especialista: la validación pasa a tests contra el decreto y facturas reales del equipo, con el especialista solo si hay contacto.",
+   "evidencia": [
+    "F-defensa-r1-m02-i021-001"
+   ]
+  }
+ ],
+ "nuevas_fichas": []
+}

@@ -1,0 +1,119 @@
+{
+ "id": "i015",
+ "titulo": "Verificador de estafas por WhatsApp para vendedores online",
+ "problema": "Las denuncias por estafa en Uruguay pasaron de 1.872 en 2015 a 25.116 en 2024 (F-fintech-seguros-004). El BCU lista phishing, suplantación y estafas de Marketplace (F-fintech-seguros-006). Se reportan comprobantes con capturas adulteradas por WhatsApp, Marketplace e Instagram (F-defensa-r1-m08-i015-002). La pérdida del vendedor no está medida: se mide en entrevistas y piloto.",
+ "usuario": "Emprendedores y pymes que venden por WhatsApp, Instagram o marketplaces en Uruguay. Pagan los del plan negocio.",
+ "solucion": "Un número de WhatsApp al que el vendedor reenvía un mensaje de comprador, un link o la captura de un comprobante. Un modelo con visión analiza texto e imagen, revisa el dominio y contrasta con la tipología del BCU. Responde con señales y qué verificar; nunca dice 'seguro'. Antes de enviar al modelo se enmascaran teléfonos, cuentas y cédulas; las capturas exigen consentimiento, y si el camino legal no se confirma, el MVP queda en texto y links. El plan negocio suma capturas, historial y un panel con avisos de dominios y textos (nunca personas); sin mensajes proactivos.",
+ "mvp": {
+  "semestre_1": [
+   "Bot de WhatsApp que clasifica texto y links según la tipología del BCU, con set de casos etiquetado desde denuncias y notas públicas, publicado",
+   "Evaluación: detectar 80% de las estafas del set con hasta 10% de falsos positivos, contra un modelo sin chequeo de dominio y un detector gratuito",
+   "Inscripción de la base ante la URCDP y cláusulas con el proveedor del modelo"
+  ],
+  "semestre_2": [
+   "Análisis de capturas con visión (si el camino legal se confirma), medido contra capturas adulteradas por el equipo",
+   "Panel web con historial y avisos",
+   "Piloto con 20 a 40 vendedores: uso, casos detectados y cuántos pagarían USD 6 por mes"
+  ]
+ },
+ "stack": [
+  "Python",
+  "FastAPI",
+  "PostgreSQL",
+  "Claude Haiku 5.5 API",
+  "WhatsApp Cloud API",
+  "RDAP",
+  "React",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 115.08,
+  "items": [
+   {
+    "concepto": "AWS Lightsail 1 GB",
+    "usd_anual": 84,
+    "supuesto": "USD 7 por mes por 12 meses; sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API Claude Haiku 5.5",
+    "usd_anual": 20,
+    "supuesto": "20.000 verificaciones al año, 3.000 tokens de entrada y 300 de salida: USD 9; se redondea a 20.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "WhatsApp Cloud API",
+    "usd_anual": 0,
+    "supuesto": "Respuestas dentro de la ventana de 24 horas del usuario: gratis (F-defensa-r1-m08-i015-001). Sin plantillas.",
+    "fuente_precio_url": "https://developers.facebook.com/docs/whatsapp/pricing"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 11.08,
+    "supuesto": "Un dominio por un año.",
+    "fuente_precio_url": "https://porkbun.com/tld/com"
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Mediavox Detector de Fraude (gratis)",
+   "evidencia_ids": [
+    "F-ataque-r2-m04-i015-competidor-001"
+   ],
+   "hueco": "Gratis, sin Uruguay entre sus 6 países; sin comprobantes"
+  },
+  {
+   "nombre": "ScamZero (gratis, planes Pro)",
+   "evidencia_ids": [
+    "F-ataque-r2-m04-i015-competidor-003"
+   ],
+   "hueco": "App genérica; sin tipología uruguaya ni panel de vendedor"
+  },
+  {
+   "nombre": "Truecaller Scam Checker",
+   "evidencia_ids": [
+    "F-ataque-r2-m04-i015-competidor-002"
+   ],
+   "hueco": "Hoy solo India; prevé LATAM y capturas"
+  },
+  {
+   "nombre": "Chequeo gratis en la cuenta del banco (Naranja X, AR)",
+   "evidencia_ids": [
+    "F-ataque-r1-m08-i015-cliente-001"
+   ],
+   "hueco": "Cubre solo el comprobante falso"
+  }
+ ],
+ "monetizacion": "Freemium: 30 verificaciones mensuales gratis de texto y links; plan negocio de USD 6 por mes con capturas, ilimitadas, historial y panel. Disposición a pagar: supuesto, se prueba en el piloto. Escenario ilustrativo: 100 pymes pagas serían USD 7.200 al año. Sin cifra de vendedores ni contactos: antes de diciembre, entrevistas a vendedores por Instagram.",
+ "riesgos": [
+  "Falsos negativos: nunca se responde 'seguro'; se publican las métricas",
+  "Los estafadores cambian: el set se actualiza",
+  "Ley 18.331: enviar datos a EEUU exige base inscripta y cláusulas o autorización (F-ataque-r1-m05-i009-cliente-004, F-ataque-r1-m01-i005-cliente-003); inscribir no cuesta (F-defensa-r2-m04-i015-001); se guardan dominio, tipo y fecha 90 días",
+  "Baja disposición a pagar de las pymes (F-comercio-retail-006)",
+  "Un gratuito grande puede copiar la función: no hay foso"
+ ],
+ "supuestos": [
+  "Los vendedores reciben comprobantes falsos o phishing con frecuencia suficiente para pagar",
+  "Los vendedores usarían un bot de WhatsApp",
+  "Un vendedor pagaría USD 6 por mes frente a opciones gratis",
+  "Las cláusulas del proveedor bastan para la transferencia; se confirma con la URCDP",
+  "El modelo con visión detecta inconsistencias útiles, no las bien editadas"
+ ],
+ "evidencias": [
+  "F-fintech-seguros-004",
+  "F-fintech-seguros-006",
+  "F-comercio-retail-001",
+  "F-comercio-retail-006",
+  "F-ataque-r1-m08-i015-cliente-001",
+  "F-defensa-r1-m08-i015-001",
+  "F-defensa-r1-m08-i015-002",
+  "F-ataque-r2-m04-i015-competidor-001",
+  "F-ataque-r2-m04-i015-competidor-002",
+  "F-ataque-r2-m04-i015-competidor-003",
+  "F-ataque-r1-m05-i009-cliente-004",
+  "F-ataque-r1-m01-i005-cliente-003",
+  "F-defensa-r2-m04-i015-001"
+ ]
+}

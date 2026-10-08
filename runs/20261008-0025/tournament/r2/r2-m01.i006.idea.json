@@ -1,0 +1,98 @@
+{
+ "id": "i006",
+ "titulo": "Medición de tiempos de espera desde el pedido para prestadores de salud chicos",
+ "problema": "El decreto de 2026 fija plazos máximos de espera y un monitoreo nacional obligatorio (F-salud-001, F-ataque-r1-m01-i006-cliente-001). Las fuentes difieren: el MSP da 24 horas hábiles en medicina general y 30 días corridos para especialistas; Presidencia, 30 días con médico tratante y hasta 90 con especialista. En 2025 el MSP admitía que su cálculo no cuenta agenda cerrada (F-salud-002); en octubre de 2026 anunció un sistema de medición en todos los prestadores desde 2027 (F-ataque-r2-m01-i006-competidor-001).",
+ "usuario": "Dirección técnica y administración de prestadores integrales chicos o del interior y de policlínicas privadas. Paga el prestador; lo usan el administrativo de agenda y la dirección.",
+ "solucion": "Herramienta de gestión interna: muestra el cumplimiento propio y alerta vencimientos mientras el prestador aún puede corregir. Mide la espera desde el pedido y la concilia con el turno. Importa CSV con plantilla propia y mapeo de columnas, sin identificar al paciente; si la agenda no guarda el pedido, un formulario registra fecha y hora. Los plazos van en una tabla versionada. Calcula la espera por especialidad, alerta y genera el reporte. Text-to-SQL es un hito final opcional.",
+ "mvp": {
+  "semestre_1": [
+   "Tabla de plazos versionada (horas hábiles o días), validada contra el texto oficial del decreto",
+   "Importador CSV con mapeo de columnas y formulario de pedidos",
+   "Tablero de cumplimiento sobre datos sintéticos, demostrado al tutor"
+  ],
+  "semestre_2": [
+   "Alertas de pedidos por vencer y reporte exportable",
+   "Demo con datos sintéticos; piloto opcional",
+   "Business case con precio probado en entrevistas",
+   "Opcional: Text-to-SQL de solo lectura, con exactitud medida"
+  ]
+ },
+ "stack": [
+  "Python FastAPI",
+  "PostgreSQL",
+  "React",
+  "Claude Haiku 5.5 vía API para Text-to-SQL",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 109,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 1 GB con IPv4",
+    "usd_anual": 84,
+    "supuesto": "Un servidor 12 meses a USD 7 por mes con app y PostgreSQL; sin contar capa gratuita porque no se documenta su duración en la página.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API de Claude Haiku 5.5",
+    "usd_anual": 10,
+    "supuesto": "3.000 consultas en lenguaje natural con 6.000 tokens de entrada (esquema incluido) y 500 de salida: 18M a USD 0,10 y 1,5M a USD 0,50 por millón, unos USD 3; redondeo a 10.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/docs/about-claude/pricing"
+   },
+   {
+    "concepto": "Dominio propio",
+    "usd_anual": 15,
+    "supuesto": "Estimación por encima sin fuente abierta: un dominio .com por un año, redondeado hacia arriba con margen."
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Zalon",
+   "evidencia_ids": [
+    "F-salud-006"
+   ],
+   "hueco": "Agenda para profesionales de salud, unos 200 clientes sobre todo en Montevideo y el este; no mide desde el pedido. Puede agregarlo."
+  },
+  {
+   "nombre": "CliniGest",
+   "evidencia_ids": [
+    "F-ataque-r1-m01-i006-cliente-002"
+   ],
+   "hueco": "Agenda uruguaya a $25 al mes; no habla de tiempos de espera."
+  },
+  {
+   "nombre": "Sistema del MSP (desde 2027)",
+   "evidencia_ids": [
+    "F-ataque-r2-m01-i006-competidor-001"
+   ],
+   "hueco": "Mide a todos los prestadores, sin costo; es medición externa, esta es gestión interna con alertas previas."
+  }
+ ],
+ "monetizacion": "Suscripción mensual de USD 60 a 150 según tamaño, hipótesis a validar. Hay 43 prestadores integrales (F-salud-004, de 2019); cuántos son chicos se desconoce. Techo: unos USD 31.000 a 77.000 por año. CliniGest cobra $25 al mes por una agenda completa (F-ataque-r1-m01-i006-cliente-002): esto es un complemento y el precio baja si la entrevista no lo sostiene. Canal: venta directa a direcciones técnicas.",
+ "riesgos": [
+  "El sistema del MSP vuelve innecesaria la herramienta",
+  "Una agenda agrega el indicador",
+  "Sin socio: plan A, entrevistas antes de diciembre de 2026; plan B, datos sintéticos",
+  "Sin incentivo para cargar pedidos si el registro expone",
+  "Ciclo de venta largo; el piloto exige Ley 18.331"
+ ],
+ "supuestos": [
+  "Que el prestador chico no mida desde el pedido es un supuesto a validar",
+  "Las agendas exportan CSV, sin ficha que lo respalde",
+  "Los plazos se toman del texto oficial del decreto",
+  "La carencia de F-salud-002 es de 2025 y puede haber cambiado",
+  "Un prestador paga USD 60 a 150 al mes",
+  "Pedidos por teléfono o WhatsApp no se integran"
+ ],
+ "evidencias": [
+  "F-salud-001",
+  "F-salud-002",
+  "F-salud-004",
+  "F-salud-006",
+  "F-ataque-r1-m01-i006-cliente-001",
+  "F-ataque-r1-m01-i006-cliente-002",
+  "F-ataque-r2-m01-i006-competidor-001"
+ ]
+}
