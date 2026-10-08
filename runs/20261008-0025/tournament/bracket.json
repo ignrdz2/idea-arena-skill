@@ -108,8 +108,8 @@
      "name": "legal-contable"
     }
    },
-   "solution": "runs/20261008-0025/tournament/r3/r3-m02.i009.solution.md",
-   "idea_json": "runs/20261008-0025/tournament/r3/r3-m02.i009.idea.json",
+   "solution": "runs/20261008-0025/tournament/r4/r4-m01.i009.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r4/r4-m01.i009.idea.json",
    "alive": true,
    "eliminated_in": null,
    "eliminated_by": null,
@@ -287,11 +287,11 @@
      "name": "fintech-seguros"
     }
    },
-   "solution": "runs/20261008-0025/tournament/r3/r3-m01.i027.solution.md",
-   "idea_json": "runs/20261008-0025/tournament/r3/r3-m01.i027.idea.json",
-   "alive": true,
-   "eliminated_in": null,
-   "eliminated_by": null,
+   "solution": "runs/20261008-0025/tournament/r4/r4-m01.i027.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r4/r4-m01.i027.idea.json",
+   "alive": false,
+   "eliminated_in": 4,
+   "eliminated_by": "i009",
    "byes": 0,
    "shown_first": 3,
    "shown_second": 1,
@@ -1552,10 +1552,10 @@
     }
    ],
    "bye": null,
-   "closed": false
+   "closed": true
   }
  ],
- "champion": null,
+ "champion": "i009",
  "persona_order": [
   "cliente",
   "competidor",
