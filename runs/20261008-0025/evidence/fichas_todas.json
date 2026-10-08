@@ -1423,6 +1423,24 @@
    }
   },
   {
+   "id": "F-defensa-r4-m01-i027-001",
+   "sector": "transversal",
+   "hallazgo": "La página de precios de AWS Lightsail lista el plan Linux general de USD 7 por mes con 1 GB, 2 vCPU, 40 GB SSD e IPv4 incluido, el de USD 12 con 2 GB y 60 GB, y snapshots a USD 0,05 por GB-mes.",
+   "source_url": "https://aws.amazon.com/lightsail/pricing/",
+   "source_title": "AWS Lightsail Pricing",
+   "source_date": "desconocida",
+   "source_type": "precios",
+   "geografia": "GLOBAL",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T14:00:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:32:25",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
    "id": "F-educacion-001",
    "sector": "educacion",
    "hallazgo": "De 100 adolescentes que ingresaron al liceo en Uruguay en 2017, solo 43 egresaron tras ocho años y 42 no figuran inscriptos en educación media. Casi la mitad del alumnado faltó al menos el 11% de los días de clase.",

@@ -1490,7 +1490,16 @@
      "personas": [
       "tutor"
      ],
-     "attacks_checked": true
+     "attacks_checked": true,
+     "det_fatal": {
+      "i027": [],
+      "i009": []
+     },
+     "hard_notes": {
+      "i027": [],
+      "i009": []
+     },
+     "revised": true
     }
    ],
    "bye": null,
