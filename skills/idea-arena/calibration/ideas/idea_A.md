@@ -24,36 +24,35 @@
 
 ## Stack propuesto
 
-Python con FastAPI para el backend y los workers; PostgreSQL para el modelo OCDS y las vistas analiticas; Qdrant para los embeddings de pliegos y descripciones de items; PyMuPDF mas Tesseract para parsing y OCR; modelos de lenguaje chicos via Azure OpenAI con salidas estructuradas validadas contra esquema; frontend en Next.js; contenedores Docker sobre una instancia EC2 con S3 para los PDF; Terraform para infraestructura y GitHub Actions para CI, incluyendo la suite de evaluacion que corta el build si cae la exactitud de extraccion.
+Python con FastAPI para el backend y los workers; PostgreSQL para el modelo OCDS y las vistas analiticas; Qdrant para los embeddings de pliegos y descripciones de items; PyMuPDF mas Tesseract para parsing y OCR; modelos de lenguaje chicos via Azure OpenAI con salidas estructuradas validadas contra esquema; frontend en Next.js; contenedores Docker sobre una instancia de Amazon Lightsail, con los PDF en su mismo disco; Terraform para infraestructura y GitHub Actions para CI, incluyendo la suite de evaluacion que corta el build si cae la exactitud de extraccion.
 
 ## Costo de infraestructura (anual)
 
 | Concepto | USD/año | Supuesto | Fuente de precio |
 | --- | --- | --- | --- |
-| Instancia de aplicacion y ETL (EC2 t4g.small, 24/7) | 150 | 1 instancia on demand, 2 vCPU y 2 GB, sin reserva | [AWS EC2 On-Demand](https://aws.amazon.com/ec2/pricing/on-demand/) |
-| Almacenamiento de pliegos (S3 Standard) | 12 | 30 GB de PDF mas requests de lectura | [AWS S3](https://aws.amazon.com/s3/pricing/) |
+| Instancia de aplicacion, ETL y pliegos (Amazon Lightsail, 24/7) | 144 | Plan de USD 12 por mes: 2 vCPU, 2 GB, 60 GB de SSD y 3 TB de transferencia, con IPv4 estatica incluida; los 30 GB de PDF van en el mismo disco | [AWS Lightsail](https://aws.amazon.com/lightsail/pricing/) |
 | Base vectorial (Qdrant Cloud, tier gratuito) | 0 | Menos de 1 GB de vectores durante el MVP | [Qdrant pricing](https://qdrant.tech/pricing/) |
 | Procesamiento de pliegos con LLM chico | 120 | Cada pliego se procesa una sola vez y se comparte entre clientes: unos 1.500 pliegos por mes a 20k tokens de entrada | [Azure OpenAI pricing](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/) |
 | Dominio y correo transaccional | 25 | 1 dominio anual, menos de 3.000 correos por mes dentro del plan gratuito | [Namecheap](https://www.namecheap.com/domains/) y [Resend](https://resend.com/pricing) |
 
-**Total: USD 307 por año.**
+**Total: USD 289 por año.**
 
-Queda apenas por encima del techo de USD 300 del equipo. Mitigaciones: creditos de estudiante de Azure o AWS, y procesar solo llamados nuevos mas una ventana historica de tres anos en lugar de todo el historico.
+Queda bajo el techo de USD 300, pero por encima del objetivo de USD 200. La IP publica y el disco ya estan en el plan de Lightsail, sin costo aparte. Para acercarse al objetivo: creditos de estudiante de Azure o AWS, y procesar solo llamados nuevos mas una ventana historica de tres anos en lugar de todo el historico.
 
 ## Competidores
 
-- Gubly (Uruguay): organiza y segmenta los llamados del portal por rubro, resume con IA y envia alertas. Deja el hueco de la preparacion de la oferta y la inteligencia de precios ([El Observador](https://www.elobservador.com.uy/cafe-y-negocios/dos-jovenes-canelones-crearon-una-plataforma-facilitar-el-acceso-pequenas-empresas-las-licitaciones-n6049993)).
+- Gubly (Uruguay): organiza y segmenta los llamados del portal por rubro, analiza pliegos para ver si se cumplen las condiciones, muestra precios adjudicados y de la competencia para cotizar mejor, y envia alertas. Tiene plan gratuito y premium de USD 25 por mes o USD 250 por ano, y mas de 100 usuarios. La nota no menciona que cruce la documentacion de la empresa contra los requisitos del pliego: ese es el hueco, junto con el checklist con cita verificable por requisito ([El Observador](https://www.elobservador.com.uy/cafe-y-negocios/dos-jovenes-canelones-crearon-una-plataforma-facilitar-el-acceso-pequenas-empresas-las-licitaciones-n6049993)).
 - LicitaLAB (Chile y Peru): mas de 1.500 clientes activos y una ronda de USD 450.000; prueba que el modelo de suscripcion se paga, pero no opera en Uruguay ni sobre la normativa local ([Forbes Peru](https://forbes.pe/negocios/2025-07-22/startup-chilena-licitalab-cerro-ronda-de-inversion-por-450-000-dolares-buscara-fortalecer-su-presencia-en-peru/)).
 - Monitor de Compras Publicas de FCEA, Udelar: visualiza el historico por mecanismo y proveedor; es analitico y academico, no operativo ([Monitor](https://shiny.fcea.udelar.edu.uy/compras_publicas/)).
 - Alertas del propio portal de Compras Estatales: filtros por rubro, sin lectura de pliegos ni checklist ([Compras Estatales](https://www.gub.uy/agencia-reguladora-compras-estatales/)).
 
 ## Monetización
 
-Suscripcion mensual SaaS por empresa, con tres planes: radar y alertas en el plan base, lector de pliegos y boveda en el intermedio, inteligencia de precios y consultas en el superior. Hipotesis de precio a validar en entrevistas: entre USD 40 y USD 120 por mes segun plan, justificado contra el costo de las horas que hoy dedica un administrativo a leer pliegos. Plan para consultores de licitaciones: precio por cantidad de empresas gestionadas. La licencia de datos abiertos de Uruguay habilita el uso comercial citando la fuente ([licencia de datos abiertos](https://catalogodatos.gub.uy/)).
+Suscripcion mensual SaaS por empresa, con tres planes: radar y alertas en el plan base, lector de pliegos y boveda en el intermedio, inteligencia de precios y consultas en el superior. Hipotesis de precio a validar en entrevistas: entre USD 40 y USD 120 por mes segun plan, justificado contra el costo de las horas que hoy dedica un administrativo a leer pliegos. Referencia: Gubly cobra USD 25 por mes en su plan premium y tiene plan gratuito, asi que el plan base compite contra eso y el ingreso depende de los planes con lector de pliegos y boveda. Plan para consultores de licitaciones: precio por cantidad de empresas gestionadas. La licencia de datos abiertos de Uruguay habilita el uso comercial citando la fuente ([licencia de datos abiertos](https://catalogodatos.gub.uy/)).
 
 ## Riesgos
 
-- Competidor local ya lanzado (Gubly). Mitigacion: diferenciarse en preparacion de oferta y precios, no en alertas, y probar su producto como cliente antes de definir el alcance.
+- Competidor local ya lanzado (Gubly) que cubre alertas, analisis de pliegos e inteligencia de precios, con plan gratuito. Mitigacion: diferenciarse en el cumplimiento documental (boveda cruzada contra el checklist del pliego) y en la exactitud medida de la extraccion, no en alertas ni precios, y probar su producto como cliente antes de definir el alcance.
 - Mercado uruguayo chico. Mitigacion: construir sobre el estandar OCDS para que sumar otro pais publicador sea un conector y no un rediseno.
 - Requisitos extraidos con errores. Mitigacion: cita verificable por requisito, score de confianza y la regla de que el sistema nunca presenta ofertas.
 - Pliegos escaneados o mal estructurados. Mitigacion: OCR y recorte del MVP a los tipos de procedimiento mas frecuentes.
@@ -66,4 +65,4 @@ Suscripcion mensual SaaS por empresa, con tres planes: radar y alertas en el pla
 - Que el tiempo promedio de armado de una oferta justifica la suscripcion: no encontramos una medicion local.
 - Que los pliegos adjuntos son descargables de forma estable y mayoritariamente en PDF con texto, no escaneados.
 - Que el historial de adjudicaciones por RUT es suficiente para rankear oportunidades sin feedback inicial del usuario.
-- Que Gubly no cubre hoy la preparacion de oferta ni la inteligencia de precios (a confirmar usando el producto).
+- Que Gubly no cruza hoy la documentacion de la empresa contra los requisitos del pliego (la nota no lo menciona; a confirmar usando el producto).
