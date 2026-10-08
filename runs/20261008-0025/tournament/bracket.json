@@ -992,7 +992,20 @@
      "personas": [
       "competidor"
      ],
-     "attacks_checked": true
+     "attacks_checked": true,
+     "det_fatal": {
+      "i006": [],
+      "i028": []
+     },
+     "hard_notes": {
+      "i006": [
+       "costo_estimado: el precio de 'Dominio propio' es una estimación sin fuente"
+      ],
+      "i028": [
+       "costo_estimado: el precio de 'Dominio .com' es una estimación sin fuente"
+      ]
+     },
+     "revised": true
     },
     {
      "id": "r2-m02",
@@ -1009,7 +1022,18 @@
      "personas": [
       "competidor"
      ],
-     "attacks_checked": true
+     "attacks_checked": true,
+     "det_fatal": {
+      "i027": [],
+      "i021": []
+     },
+     "hard_notes": {
+      "i027": [],
+      "i021": [
+       "costo_estimado: el precio de 'Dominio .com por un año' es una estimación sin fuente"
+      ]
+     },
+     "revised": true
     },
     {
      "id": "r2-m03",
@@ -1026,7 +1050,20 @@
      "personas": [
       "competidor"
      ],
-     "attacks_checked": true
+     "attacks_checked": true,
+     "det_fatal": {
+      "i009": [],
+      "i011": []
+     },
+     "hard_notes": {
+      "i009": [
+       "costo_estimado: el precio de 'Dominio y DNS' es una estimación sin fuente"
+      ],
+      "i011": [
+       "costo_estimado: el precio de 'Dominio y DNS' es una estimación sin fuente"
+      ]
+     },
+     "revised": true
     },
     {
      "id": "r2-m04",
@@ -1043,7 +1080,16 @@
      "personas": [
       "competidor"
      ],
-     "attacks_checked": true
+     "attacks_checked": true,
+     "det_fatal": {
+      "i010": [],
+      "i015": []
+     },
+     "hard_notes": {
+      "i010": [],
+      "i015": []
+     },
+     "revised": true
     }
    ],
    "bye": null,

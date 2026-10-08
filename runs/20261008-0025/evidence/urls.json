@@ -763,5 +763,20 @@
   "estado": "ok",
   "http": 200,
   "checked_at": "2026-10-08T00:47:51"
+ },
+ "https://uy.jooble.org/trabajo-estudio-contable/Montevideo%2C-Montevideo": {
+  "estado": "bloqueada",
+  "http": 403,
+  "checked_at": "2026-10-08T00:50:30"
+ },
+ "https://www.buscojobs.com.uy/asistente-contable-en-montevideo-ID-256768": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:50:30"
+ },
+ "https://www.gub.uy/tramites/inscripcion-bases-datos-personales": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:50:34"
  }
 }

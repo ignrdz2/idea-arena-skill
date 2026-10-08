@@ -1032,6 +1032,63 @@
     "checked_at": "2026-10-08T00:47:51",
     "extracto": "encontrado"
    }
+  },
+  {
+   "id": "F-defensa-r2-m03-i009-001",
+   "sector": "legal-contable",
+   "hallazgo": "Un aviso en BuscoJobs de un estudio contable de Pocitos, Montevideo, que presta servicios contables y fiscales, lista conciliaciones bancarias entre las tareas principales del asistente contable, junto con registraciones y seguimiento de cartera de clientes. La oferta figura finalizada.",
+   "source_url": "https://www.buscojobs.com.uy/asistente-contable-en-montevideo-ID-256768",
+   "source_title": "ASISTENTE CONTABLE - Montevideo (BuscoJobs)",
+   "source_date": "desconocida",
+   "source_type": "oferta_laboral",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "Conciliaciones bancarias",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:50:30",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-defensa-r2-m03-i009-002",
+   "sector": "legal-contable",
+   "hallazgo": "El listado de Jooble Uruguay para estudios contables en Montevideo muestra un aviso de auxiliar contable de un estudio en Ciudad Vieja con registraciones contables, liquidaciones de sueldo y conciliaciones bancarias, ingreso inmediato, sin sueldo indicado.",
+   "source_url": "https://uy.jooble.org/trabajo-estudio-contable/Montevideo%2C-Montevideo",
+   "source_title": "Estudio contable en Montevideo, Jooble Uruguay 2026",
+   "source_date": "2026-10",
+   "source_type": "oferta_laboral",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "conciliaciones bancarias",
+   "verificacion": {
+    "estado": "bloqueada",
+    "http": 403,
+    "checked_at": "2026-10-08T00:50:30",
+    "extracto": "no_verificable"
+   }
+  },
+  {
+   "id": "F-defensa-r2-m04-i015-001",
+   "sector": "transversal",
+   "hallazgo": "El portal oficial de trámites de Uruguay indica que la inscripción de bases de datos personales ante la URCDP no tiene costo y se hace con usuario gub.uy u otra identificación electrónica.",
+   "source_url": "https://www.gub.uy/tramites/inscripcion-bases-datos-personales",
+   "source_title": "Inscripción de bases de datos personales",
+   "source_date": "desconocida",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T13:00:00",
+   "extracto": "No tiene costo",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:50:34",
+    "extracto": "encontrado"
+   }
   }
  ]
 }
