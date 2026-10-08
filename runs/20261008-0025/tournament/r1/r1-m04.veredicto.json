@@ -1,0 +1,25 @@
+{
+  "match": "r1-m04",
+  "scores": {
+    "X": {"demanda": 4, "viabilidad": 7, "diferenciacion": 5, "business_case": 5, "encaje": 8, "academico": 7, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 5, "viabilidad": 8, "diferenciacion": 4, "business_case": 7, "encaje": 7, "academico": 7, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "Y",
+  "reason": "Y tiene una señal de pago local (Nexura cobra desde USD 49 por mes a corredores uruguayos), un canal con tamaño verificado (A.PRO.A.SE., más de 500 corredores) y un costo de USD 106 con plan B de datos, mientras que la demanda de X descansa en una declaración de 2020 y un estudio de digitalización sin ninguna señal de que el fletero pague.",
+  "survived": [
+    "Ignorar a Nexura y afirmar ausencia de herramientas: Nexura y Figuro pasan a competidores y se retira la afirmación",
+    "Fichas de competidores que no decían lo atribuido: se retiran Klimber y los bots",
+    "Dependencia de pólizas reales y Ley 18.331: plan B con pólizas propias y sintéticas, enmascarado y camino de cumplimiento con ficha",
+    "Business case sin tamaño ni canal: canal y tamaño anclados en A.PRO.A.SE., escenario de 5 a 10% declarado y cartas de intención",
+    "Cambio de flujo de trabajo: carga masiva, importación de planilla, revisión solo de campos de baja confianza y mensaje wa.me",
+    "Asistente de WhatsApp reactivo: eliminado"
+  ],
+  "standing": {
+    "X": [
+      "Disposición a pagar y dolor sin señal: la demanda se apoya en un testimonio de 2020 y en datos de digitalización; que el fletero tipee el viaje varias veces y pague USD 10 por camión sigue sin ficha"
+    ],
+    "Y": [
+      "La demanda sigue en buena parte como supuesto: ninguna ficha muestra que el corredor chico pierda renovaciones ni cuánto le cuesta; solo la existencia de Nexura y Figuro sugiere pago"
+    ]
+  }
+}

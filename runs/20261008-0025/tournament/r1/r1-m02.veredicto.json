@@ -1,0 +1,27 @@
+{
+  "match": "r1-m02",
+  "scores": {
+    "X": {"demanda": 4, "viabilidad": 7, "diferenciacion": 5, "business_case": 5, "encaje": 7, "academico": 7, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 4, "viabilidad": 8, "diferenciacion": 3, "business_case": 4, "encaje": 8, "academico": 6, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "X",
+  "reason": "Con demanda igual de floja en las dos (dolor y pago declarados como supuestos), X ofrece algo que la mipyme no obtiene gratis (leer sus facturas y calcular el ahorro con el decreto 339/2025 verificado), mientras que la capa base de Y se reduce a datos trimestrales nacionales y al tipo de cambio públicos, con un hueco débil frente a esa alternativa gratuita.",
+  "survived": [
+    "Ataque fatal de disposición a pagar: rebatido como fatal porque está declarada en supuestos y el modelo se reordenó hacia el lead calificado",
+    "Subsidio MIEM de 2020: arreglado, el valor ya no depende del reintegro y la cifra derivada se quitó",
+    "Falta de contactos para facturas y piloto: arreglado con plan B declarado (facturas propias, contacto en frío, piloto de 5 a 15)",
+    "Pliego tarifario sin ficha: arreglado con la ficha verificada del decreto 339/2025 y motor acotado a dos tarifas con rangos",
+    "Acceso restringido a Gemini 2.5 Flash-Lite: arreglado con modelo alternativo y costo de peor caso de USD 259 bajo el tope"
+  ],
+  "standing": {
+    "X": [
+      "Ninguna ficha muestra que una mipyme pague de más ni que alguien pague por prediagnósticos o leads (queda como hipótesis)",
+      "Diferenciación copiable: UTE o un instalador pueden extender el simulador por factura a comercios"
+    ],
+    "Y": [
+      "Dolor y disposición a pagar del dueño de posada sin ficha, solo declarados como hipótesis",
+      "El dato abierto es trimestral y nacional: el producto base queda en alertas de tipo de cambio sin valor propio para una posada concreta",
+      "La alternativa gratuita (datos del Ministerio y cotización pública) cubre casi lo mismo, y el hueco frente a MiniHotel es hipótesis"
+    ]
+  }
+}

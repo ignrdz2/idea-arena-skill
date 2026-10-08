@@ -1,0 +1,29 @@
+{
+  "match": "r1-m07",
+  "scores": {
+    "X": {"demanda": 6, "viabilidad": 6, "diferenciacion": 5, "business_case": 5, "encaje": 7, "academico": 7, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 4, "viabilidad": 7, "diferenciacion": 3, "business_case": 3, "encaje": 5, "academico": 5, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "X",
+  "reason": "X tiene un dolor local repetido y con pérdidas en dólares (F-001, F-002) sin competidor directo en las fichas, mientras que en Y el bloqueo gratuito del SNIG ya cubre el núcleo del problema, Gecos queda como copia rápida y no hay precio ni señal de pago.",
+  "survived": [
+    "F-009 mal leída: la idea ya no fija cliente ni precio con ella y la declara dato general",
+    "Geocerca no viable en PWA: reemplazada por registro de un toque con ubicación en primer plano",
+    "Plan gratis sin valor para el chofer: ahora recibe la espera reciente reportada por otros",
+    "Dependencia de datos de buques (R7): rebatido, el dataset central lo genera el producto y los buques son opcionales",
+    "LightGBM con pocos datos: el estimador base pasa a cuantiles contra una línea base ingenua",
+    "Reclamar o facturar demoras sin respaldo: se sacó de la solución y quedó en supuestos"
+  ],
+  "standing": {
+    "X": [
+      "No hay evidencia de que saber la espera permita una decisión que ahorre plata; queda como supuesto central a probar en el piloto",
+      "Adopción baja y arranque en frío: sin choferes que marquen no hay predicción, y no hay empresa piloto ni contactos",
+      "Business case con precio hipotético de USD 5 por camión, sin tamaño de mercado ni contacto con el canal"
+    ],
+    "Y": [
+      "Con el bloqueo del SNIG el dolor queda en lo no declarado o tardío, sin cifra ni ficha de pérdida o pago",
+      "Gecos ya registra actos sanitarios por caravana y podría agregar retiros; la diferencia es corta y no probada",
+      "Sin precio, sin cantidad de establecimientos y sin señal de pago; riesgo de doble carga frente a la planilla y el SNIG"
+    ]
+  }
+}
