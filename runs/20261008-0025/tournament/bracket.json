@@ -88,11 +88,11 @@
      "name": "salud"
     }
    },
-   "solution": "runs/20261008-0025/tournament/r1/r1-m01.i006.solution.md",
-   "idea_json": "runs/20261008-0025/tournament/r1/r1-m01.i006.idea.json",
-   "alive": true,
-   "eliminated_in": null,
-   "eliminated_by": null,
+   "solution": "runs/20261008-0025/tournament/r2/r2-m01.i006.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r2/r2-m01.i006.idea.json",
+   "alive": false,
+   "eliminated_in": 2,
+   "eliminated_by": "i028",
    "byes": 0,
    "shown_first": 1,
    "shown_second": 1,
@@ -108,17 +108,18 @@
      "name": "legal-contable"
     }
    },
-   "solution": "runs/20261008-0025/tournament/r1/r1-m05.i009.solution.md",
-   "idea_json": "runs/20261008-0025/tournament/r1/r1-m05.i009.idea.json",
+   "solution": "runs/20261008-0025/tournament/r2/r2-m03.i009.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r2/r2-m03.i009.idea.json",
    "alive": true,
    "eliminated_in": null,
    "eliminated_by": null,
    "byes": 0,
    "shown_first": 2,
-   "shown_second": 0,
+   "shown_second": 1,
    "personas": [
     "cliente",
-    "competidor"
+    "competidor",
+    "inversor"
    ]
   },
   "i010": {
@@ -128,17 +129,18 @@
      "name": "educacion"
     }
    },
-   "solution": "runs/20261008-0025/tournament/r1/r1-m03.i010.solution.md",
-   "idea_json": "runs/20261008-0025/tournament/r1/r1-m03.i010.idea.json",
+   "solution": "runs/20261008-0025/tournament/r2/r2-m04.i010.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r2/r2-m04.i010.idea.json",
    "alive": true,
    "eliminated_in": null,
    "eliminated_by": null,
    "byes": 0,
-   "shown_first": 2,
+   "shown_first": 3,
    "shown_second": 0,
    "personas": [
     "cliente",
-    "competidor"
+    "competidor",
+    "inversor"
    ]
   },
   "i011": {
@@ -148,11 +150,11 @@
      "name": "educacion"
     }
    },
-   "solution": "runs/20261008-0025/tournament/r1/r1-m06.i011.solution.md",
-   "idea_json": "runs/20261008-0025/tournament/r1/r1-m06.i011.idea.json",
-   "alive": true,
-   "eliminated_in": null,
-   "eliminated_by": null,
+   "solution": "runs/20261008-0025/tournament/r2/r2-m03.i011.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r2/r2-m03.i011.idea.json",
+   "alive": false,
+   "eliminated_in": 2,
+   "eliminated_by": "i009",
    "byes": 0,
    "shown_first": 1,
    "shown_second": 1,
@@ -187,11 +189,11 @@
      "name": "fintech-seguros"
     }
    },
-   "solution": "runs/20261008-0025/tournament/r1/r1-m08.i015.solution.md",
-   "idea_json": "runs/20261008-0025/tournament/r1/r1-m08.i015.idea.json",
-   "alive": true,
-   "eliminated_in": null,
-   "eliminated_by": null,
+   "solution": "runs/20261008-0025/tournament/r2/r2-m04.i015.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r2/r2-m04.i015.idea.json",
+   "alive": false,
+   "eliminated_in": 2,
+   "eliminated_by": "i010",
    "byes": 0,
    "shown_first": 1,
    "shown_second": 1,
@@ -245,11 +247,11 @@
      "name": "energia-ambiente"
     }
    },
-   "solution": "runs/20261008-0025/tournament/r1/r1-m02.i021.solution.md",
-   "idea_json": "runs/20261008-0025/tournament/r1/r1-m02.i021.idea.json",
-   "alive": true,
-   "eliminated_in": null,
-   "eliminated_by": null,
+   "solution": "runs/20261008-0025/tournament/r2/r2-m02.i021.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r2/r2-m02.i021.idea.json",
+   "alive": false,
+   "eliminated_in": 2,
+   "eliminated_by": "i027",
    "byes": 0,
    "shown_first": 1,
    "shown_second": 1,
@@ -284,17 +286,18 @@
      "name": "fintech-seguros"
     }
    },
-   "solution": "runs/20261008-0025/tournament/r1/r1-m04.i027.solution.md",
-   "idea_json": "runs/20261008-0025/tournament/r1/r1-m04.i027.idea.json",
+   "solution": "runs/20261008-0025/tournament/r2/r2-m02.i027.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r2/r2-m02.i027.idea.json",
    "alive": true,
    "eliminated_in": null,
    "eliminated_by": null,
    "byes": 0,
-   "shown_first": 1,
+   "shown_first": 2,
    "shown_second": 1,
    "personas": [
     "cliente",
-    "competidor"
+    "competidor",
+    "inversor"
    ]
   },
   "i028": {
@@ -304,17 +307,18 @@
      "name": "logistica-transporte"
     }
    },
-   "solution": "runs/20261008-0025/tournament/r1/r1-m07.i028.solution.md",
-   "idea_json": "runs/20261008-0025/tournament/r1/r1-m07.i028.idea.json",
+   "solution": "runs/20261008-0025/tournament/r2/r2-m01.i028.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r2/r2-m01.i028.idea.json",
    "alive": true,
    "eliminated_in": null,
    "eliminated_by": null,
    "byes": 0,
    "shown_first": 1,
-   "shown_second": 1,
+   "shown_second": 2,
    "personas": [
     "cliente",
-    "competidor"
+    "competidor",
+    "inversor"
    ]
   }
  },
@@ -981,12 +985,19 @@
      "id": "r2-m01",
      "a": "i028",
      "b": "i006",
-     "winner": null,
-     "loser": null,
-     "reason": null,
-     "survived": [],
-     "scores": null,
-     "source": null,
+     "winner": "i028",
+     "loser": "i006",
+     "reason": "Con demanda pareja y mejor viabilidad y business case en X, Y gana por poco porque su hueco no choca con un sistema gratuito del regulador que arranca en 2027 y porque su estimador con error medido contra linea base aporta un desafio de ingenieria y un uso del perfil de datos que X, casi un CRUD con Text-to-SQL opcional, no tiene.",
+     "survived": [
+      "Ubicacion en primer plano y marcas con error: zona amplia, hora corregible, intervalos y minimo de reportes",
+      "Validacion sin contactos y R4: entrega 1 con demo simulada rotulada, piloto opcional, Intergremial identificada en fichas",
+      "Fichas de dolor sobre eventos impredecibles: 001 fechada como maximo denunciado, choques cubiertos con espera reportada en vivo y supuestos declarados"
+     ],
+     "scores": {
+      "i028": 59.0,
+      "i006": 58.5
+     },
+     "source": "judge",
      "first": "i006",
      "second": "i028",
      "personas": [
@@ -1005,18 +1016,64 @@
        "costo_estimado: el precio de 'Dominio .com' es una estimación sin fuente"
       ]
      },
-     "revised": true
+     "revised": true,
+     "fatal": {
+      "i028": false,
+      "i006": false
+     },
+     "criteria": {
+      "i028": {
+       "demanda": 6,
+       "viabilidad": 7,
+       "diferenciacion": 5,
+       "business_case": 4,
+       "encaje": 7,
+       "academico": 7
+      },
+      "i006": {
+       "demanda": 6,
+       "viabilidad": 8,
+       "diferenciacion": 4,
+       "business_case": 5,
+       "encaje": 6,
+       "academico": 4
+      }
+     },
+     "fatal_motivos": {
+      "i028": [],
+      "i006": []
+     },
+     "standing": {
+      "i006": [
+       "El sistema gratuito del MSP desde 2027 deja poco margen al diferencial de alerta previa",
+       "Cualquier agenda (Zalon, CliniGest) puede agregar el indicador sobre datos que ya tiene",
+       "Precio de USD 60 a 150 sin senal de pago frente a una agenda completa de $25 al mes y mercado de pocas decenas de prestadores"
+      ],
+      "i028": [
+       "Arranque en frio y sustituto gratis del aviso informal entre choferes",
+       "Terminales o ANP pueden publicar el indicador con datos exactos; cuantiles y panel son copiables",
+       "Ticket chico en un sector de empresas de pocos camiones y tamano de mercado sin ningun numero"
+      ]
+     },
+     "notes": []
     },
     {
      "id": "r2-m02",
      "a": "i021",
      "b": "i027",
-     "winner": null,
-     "loser": null,
-     "reason": null,
-     "survived": [],
-     "scores": null,
-     "source": null,
+     "winner": "i027",
+     "loser": "i021",
+     "reason": "X tiene señales locales de pago (Nexura y Figuro cobran unos USD 50 por mes por este flujo) y un canal concreto con A.PRO.A.SE., mientras Y no tiene ninguna ficha de dolor ni de pago, compite con el asesoramiento gratuito de UTE y depende de vender leads sin validar.",
+     "survived": [
+      "Hueco 'sin oferta de entrada' falso: se quitó y se reconoce a Figuro gratis y desde USD 5",
+      "Segmento bajo 100 pólizas que no paga: el usuario pasa a 100 a 300 pólizas y el tramo gratis perpetuo pasa a prueba de 60 días",
+      "Nombre del asegurado enviado a la API en EE.UU.: ahora se enmascara localmente, con camino legal documentado (inscripción y cláusulas modelo)"
+     ],
+     "scores": {
+      "i021": 47.0,
+      "i027": 61.0
+     },
+     "source": "judge",
      "first": "i027",
      "second": "i021",
      "personas": [
@@ -1033,18 +1090,68 @@
        "costo_estimado: el precio de 'Dominio .com por un año' es una estimación sin fuente"
       ]
      },
-     "revised": true
+     "revised": true,
+     "fatal": {
+      "i021": false,
+      "i027": false
+     },
+     "criteria": {
+      "i021": {
+       "demanda": 3,
+       "viabilidad": 7,
+       "diferenciacion": 3,
+       "business_case": 4,
+       "encaje": 7,
+       "academico": 6
+      },
+      "i027": {
+       "demanda": 5,
+       "viabilidad": 8,
+       "diferenciacion": 4,
+       "business_case": 7,
+       "encaje": 7,
+       "academico": 6
+      }
+     },
+     "fatal_motivos": {
+      "i021": [],
+      "i027": []
+     },
+     "standing": {
+      "i027": [
+       "Nexura ya extrae del PDF con IA en 43 aseguradoras: el diferencial (precisión publicada y precio) es copiable",
+       "El dolor (vencimientos perdidos) y la disposición a pagar USD 19 siguen sin ficha, solo como supuestos",
+       "WhatsApp manual por wa.me queda por debajo de Nexura",
+       "Sin contacto confirmado con corredores ni con A.PRO.A.SE.; la conversión de 5 a 10% no tiene base"
+      ],
+      "i021": [
+       "Ninguna ficha muestra que la mipyme pague de más ni que pague por saberlo",
+       "UTE asesora gratis sobre tarifa y potencia; el hueco (inmediatez, solar, sin incentivo) es copiable",
+       "El ahorro se corrige una vez y el segmento de bajo consumo puede no pagar",
+       "El ingreso principal (USD 20 por lead a consultores e instaladores) no tiene ficha ni validación"
+      ]
+     },
+     "notes": []
     },
     {
      "id": "r2-m03",
      "a": "i009",
      "b": "i011",
-     "winner": null,
-     "loser": null,
-     "reason": null,
-     "survived": [],
-     "scores": null,
-     "source": null,
+     "winner": "i009",
+     "loser": "i011",
+     "reason": "X tiene demanda local verificada (tres avisos de estudios de Montevideo que contratan personal para conciliar bancos, dos ok y uno bloqueado, más honorarios y planes pagos de herramientas vecinas), mientras que el dolor de Y solo tiene respaldo en una ficha colombiana y su cliente uruguayo está en crisis y sin ancla de precio.",
+     "survived": [
+      "precio por encima del techo de Contafácil: bajado a $U 1.500 a 3.500 y declarado supuesto",
+      "demanda de conciliación en una sola oferta: ahora hay tres avisos locales",
+      "piloto sin socio de datos como violación de R4 o R7: rebatido, hay plan B con datos sintéticos declarado",
+      "LLM externo y transferencia internacional: eliminado, todo local, costo USD 164",
+      "tamaño de mercado ausente: declarado como supuesto"
+     ],
+     "scores": {
+      "i009": 62.0,
+      "i011": 53.0
+     },
+     "source": "judge",
      "first": "i009",
      "second": "i011",
      "personas": [
@@ -1063,18 +1170,68 @@
        "costo_estimado: el precio de 'Dominio y DNS' es una estimación sin fuente"
       ]
      },
-     "revised": true
+     "revised": true,
+     "fatal": {
+      "i009": false,
+      "i011": false
+     },
+     "criteria": {
+      "i009": {
+       "demanda": 6,
+       "viabilidad": 7,
+       "diferenciacion": 5,
+       "business_case": 6,
+       "encaje": 7,
+       "academico": 7
+      },
+      "i011": {
+       "demanda": 3,
+       "viabilidad": 7,
+       "diferenciacion": 4,
+       "business_case": 5,
+       "encaje": 9,
+       "academico": 7
+      }
+     },
+     "fatal_motivos": {
+      "i009": [],
+      "i011": []
+     },
+     "standing": {
+      "i009": [
+       "el hueco frente a Contafácil y Contable.CFE se apoya en el silencio de sus páginas, sin ficha de pago por conciliación",
+       "un incumbente con clientes y CFE de DGI puede copiar la conciliación rápido; la ventaja es solo de tiempo",
+       "flujo con XML subido a mano y exportación genérica, sin importar a Conty o Zureo: dos herramientas para el estudio"
+      ],
+      "i011": [
+       "un incumbente con los datos en su base puede sumar consultas en lenguaje natural sin migración",
+       "el dolor de sistemas no integrados solo tiene ficha colombiana; en Uruguay es supuesto, sin señal de pago",
+       "el segmento objetivo está en crisis y el precio de USD 60 a 120 no tiene ancla",
+       "importadores y exactitud solo probados con datos sintéticos, sin formatos de exportación reales",
+       "BI genérico e IA de planillas son la alternativa real y la diferencia es copiable"
+      ]
+     },
+     "notes": []
     },
     {
      "id": "r2-m04",
      "a": "i015",
      "b": "i010",
-     "winner": null,
-     "loser": null,
-     "reason": null,
-     "survived": [],
-     "scores": null,
-     "source": null,
+     "winner": "i010",
+     "loser": "i015",
+     "reason": "X tiene un cliente pagador acotado (unos 220 colegios, 41.235 alumnos de liceo privado) con precio y techo de mercado coherentes y un MVP demostrable sin dependencias, mientras Y compite contra verificadores gratuitos de WhatsApp ya existentes en LATAM, sin tamaño de mercado ni canal.",
+     "survived": [
+      "mercado inflado con 113.000 alumnos de todos los niveles: corregido a 41.235 alumnos de liceo privado y 200 por colegio como supuesto",
+      "SInIDE como sustituto público omitido: agregado con sus límites",
+      "modelo entrenado con datos sintéticos mide el generador: reconocido, el valor pasa a reglas explicables e intervenciones",
+      "datos de menores a una API extranjera: avisos por plantillas, LLM solo con datos sintéticos salvo confirmación de la URCDP, plan B sin LLM",
+      "dependencia de exportes de la suite: importador CSV o Excel con mapeo de columnas y plan B de carga mensual"
+     ],
+     "scores": {
+      "i015": 52.5,
+      "i010": 57.0
+     },
+     "source": "judge",
      "first": "i010",
      "second": "i015",
      "personas": [
@@ -1089,7 +1246,92 @@
       "i010": [],
       "i015": []
      },
-     "revised": true
+     "revised": true,
+     "fatal": {
+      "i015": false,
+      "i010": false
+     },
+     "criteria": {
+      "i015": {
+       "demanda": 5,
+       "viabilidad": 7,
+       "diferenciacion": 3,
+       "business_case": 4,
+       "encaje": 7,
+       "academico": 7
+      },
+      "i010": {
+       "demanda": 4,
+       "viabilidad": 8,
+       "diferenciacion": 4,
+       "business_case": 6,
+       "encaje": 7,
+       "academico": 6
+      }
+     },
+     "fatal_motivos": {
+      "i015": [],
+      "i010": []
+     },
+     "standing": {
+      "i010": [
+       "hay competidores con alertas (Appoderado) o que pueden sumarlas (Asistente.uy, Trivium); el registro de intervenciones es copiable y no está validado",
+       "ninguna ficha muestra que el ausentismo cueste cuotas a un colegio privado ni señales de pago: la demanda del pagador es supuesto"
+      ],
+      "i015": [
+       "existen verificadores gratuitos por WhatsApp en LATAM (Mediavox, ScamZero, Truecaller en camino) y la diferencia restante es foco Uruguay y capturas",
+       "el plan de USD 6 compite contra opciones gratis sin ninguna ficha de disposición a pagar",
+       "el dolor específico del vendedor (comprobante falso) se resuelve gratis mirando la cuenta; frecuencia y pérdida no medidas",
+       "sin tamaño de mercado de vendedores ni canal: 100 pymes es un escenario ilustrativo",
+       "sin foso: modelo de terceros más un set propio que se puede replicar"
+      ]
+     },
+     "notes": []
+    }
+   ],
+   "bye": null,
+   "closed": true
+  },
+  {
+   "n": 3,
+   "alive": [
+    "i009",
+    "i010",
+    "i027",
+    "i028"
+   ],
+   "matches": [
+    {
+     "id": "r3-m01",
+     "a": "i027",
+     "b": "i028",
+     "winner": null,
+     "loser": null,
+     "reason": null,
+     "survived": [],
+     "scores": null,
+     "source": null,
+     "first": "i027",
+     "second": "i028",
+     "personas": [
+      "inversor"
+     ]
+    },
+    {
+     "id": "r3-m02",
+     "a": "i009",
+     "b": "i010",
+     "winner": null,
+     "loser": null,
+     "reason": null,
+     "survived": [],
+     "scores": null,
+     "source": null,
+     "first": "i010",
+     "second": "i009",
+     "personas": [
+      "inversor"
+     ]
     }
    ],
    "bye": null,
