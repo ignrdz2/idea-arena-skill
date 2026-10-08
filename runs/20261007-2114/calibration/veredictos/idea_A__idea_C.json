@@ -1,0 +1,29 @@
+{
+  "scores": {
+    "X": {"demanda": 7, "viabilidad": 6, "diferenciacion": 5, "business_case": 6, "encaje": 8, "academico": 8, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 1, "viabilidad": 1, "diferenciacion": 1, "business_case": 3, "encaje": 4, "academico": 4, "fatal": true, "fatal_motivo": "restriccion_dura:R1: el costo de infraestructura declarado es USD 504 por año, por encima del tope de USD 300; aun sacando el ítem estimado de Google Maps suma USD 324, y las cuentas de Apple (USD 99 anual) y Google Play (USD 25) están verificadas"}
+  },
+  "winner": "X",
+  "reason": "Y tiene fallo fatal por R1 (USD 504 por año sobre el tope de USD 300) y ninguna evidencia de demanda, mientras X se apoya en fuentes locales verificadas y entra bajo el tope, aunque con poco margen y frente a un competidor local fuerte.",
+  "standing": {
+    "X": [
+      "Gubly (Uruguay, verificado en El Observador) ya organiza los llamados, analiza pliegos con IA para ver si la empresa cumple los requisitos, muestra precios adjudicados y de la competencia y manda alertas, con plan gratuito y premium de USD 25 por mes: el hueco de la bóveda documental cruzada contra el checklist es estrecho, no está verificado (es un supuesto) y Gubly lo podría copiar rápido.",
+      "El precio hipotético de USD 40 a 120 por mes es de 1,6 a 5 veces el premium de Gubly, que con más de un centenar de usuarios declara solo varios clientes pagos: la señal local de pago es débil y la disposición a pagar es un supuesto sin validar.",
+      "Las 21.532 consultas de proveedores que ARCE atendió en 2021 (verificado en la memoria) muestran que el proceso es difícil, pero no que el dolor central sea leer pliegos ni cuánto le cuesta a una PyME; no hay medición local de horas por oferta.",
+      "El costo de USD 289 deja USD 11 de margen al tope y el ítem de LLM (USD 120) es una estimación sin precio verificable (la página de Azure no muestra precios): 1.500 pliegos por mes a 20k tokens son unos 360 millones de tokens de entrada por año, sin contar salida, reprocesos ni embeddings, que no tienen línea de costo; un pliego más largo o un modelo algo más caro supera el tope.",
+      "El tier gratuito de Qdrant Cloud es de 1 GB de RAM y 4 GB de disco: menos de 1 GB de vectores para los pliegos de un año más las descripciones de ítems es optimista; y una instancia de 2 GB de RAM para PostgreSQL, OCR con Tesseract, FastAPI y Next.js queda corta, y subir de plan rompe el tope.",
+      "Alcance inflado para 3 personas: ETL OCDS con histórico, OCR, extractor evaluado sobre 50 pliegos anotados, radar, inteligencia de precios con resolución de entidades, Text-to-SQL, bóveda multi-tenant, endurecimiento y piloto en dos semestres; depende de un recorte que el texto no fija.",
+      "Business case sin tamaño de mercado ni canal: dice que el universo se mide con el dataset abierto del RUPE pero no da la cifra, y la página de datos abiertos de ARCE citada no lista ese dataset; no hay canal de adquisición definido ni contactos en el sector.",
+      "Mercado uruguayo chico y LicitaLAB (más de 1.500 clientes en Chile y Perú, ronda de USD 450.000) podría entrar con un producto ya probado."
+    ],
+    "Y": [
+      "Viola R1: el costo declarado es USD 504 por año, por encima del tope de USD 300, y crece con usuarios gratuitos que no pagan.",
+      "Demanda sin evidencia: la propia idea reconoce que no hay ninguna medición ni fuente local, solo sentido común y conversaciones informales con amigos.",
+      "Competidores gratuitos y masivos (Google Maps, TripAdvisor, Instagram, TikTok, PedidosYa) ya cubren descubrimiento, reseñas y la relación comercial con los restaurantes; la única diferencia es la personalización social, sin evidencia de que recomiende mejor.",
+      "Arranque en frío doble: sin usuarios no hay reseñas ni restaurantes que paguen; ningún restaurante fue consultado y la idea admite que no hay ingresos posibles durante la tesis.",
+      "El éxito depende de captar masa crítica de usuarios en Montevideo sin presupuesto de marketing, una capacidad de crecimiento de consumo que el equipo no tiene; el alcance suma app móvil, mapa, chat, gamificación y campaña de lanzamiento.",
+      "El componente de IA es un envoltorio sobre un modelo de lenguaje sin datos propios suficientes: el aporte académico es flaco.",
+      "Catálogo de locales sin una fuente legal y barata, y datos personales de gustos, ubicación y relaciones con perfilamiento, que exigen cumplir la Ley 18.331 sin ningún ingreso que lo financie."
+    ]
+  }
+}

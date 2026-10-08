@@ -1,0 +1,86 @@
+{
+ "version": 1,
+ "run": "20261007-2114",
+ "dir": "runs/20261007-2114",
+ "mode": "calibration",
+ "seed": 741514,
+ "created": "2026-10-07T21:14:17",
+ "sectors": [],
+ "steps": {
+  "calibration-report": {
+   "acuerdo": 3,
+   "pares": 3,
+   "kendall_tau": 1.0
+  }
+ },
+ "deepen": {},
+ "git_baseline": [],
+ "calibration": {
+  "ideas": [
+   "idea_A",
+   "idea_B",
+   "idea_C"
+  ],
+  "ranking": [
+   "idea_A",
+   "idea_B",
+   "idea_C"
+  ],
+  "jobs": [
+   {
+    "id": "calibracion.idea_A__idea_B",
+    "x": "idea_A",
+    "y": "idea_B",
+    "pair": "idea_A contra idea_B",
+    "outputs": [
+     "runs/20261007-2114/calibration/veredictos/idea_A__idea_B.json"
+    ]
+   },
+   {
+    "id": "calibracion.idea_B__idea_A",
+    "x": "idea_B",
+    "y": "idea_A",
+    "pair": "idea_B contra idea_A",
+    "outputs": [
+     "runs/20261007-2114/calibration/veredictos/idea_B__idea_A.json"
+    ]
+   },
+   {
+    "id": "calibracion.idea_A__idea_C",
+    "x": "idea_A",
+    "y": "idea_C",
+    "pair": "idea_A contra idea_C",
+    "outputs": [
+     "runs/20261007-2114/calibration/veredictos/idea_A__idea_C.json"
+    ]
+   },
+   {
+    "id": "calibracion.idea_C__idea_A",
+    "x": "idea_C",
+    "y": "idea_A",
+    "pair": "idea_C contra idea_A",
+    "outputs": [
+     "runs/20261007-2114/calibration/veredictos/idea_C__idea_A.json"
+    ]
+   },
+   {
+    "id": "calibracion.idea_B__idea_C",
+    "x": "idea_B",
+    "y": "idea_C",
+    "pair": "idea_B contra idea_C",
+    "outputs": [
+     "runs/20261007-2114/calibration/veredictos/idea_B__idea_C.json"
+    ]
+   },
+   {
+    "id": "calibracion.idea_C__idea_B",
+    "x": "idea_C",
+    "y": "idea_B",
+    "pair": "idea_C contra idea_B",
+    "outputs": [
+     "runs/20261007-2114/calibration/veredictos/idea_C__idea_B.json"
+    ]
+   }
+  ]
+ }
+}

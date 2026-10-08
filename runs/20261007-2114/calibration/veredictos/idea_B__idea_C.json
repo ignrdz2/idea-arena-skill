@@ -1,0 +1,28 @@
+{
+  "scores": {
+    "X": {"demanda": 4, "viabilidad": 6, "diferenciacion": 5, "business_case": 6, "encaje": 7, "academico": 8, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 1, "viabilidad": 1, "diferenciacion": 1, "business_case": 3, "encaje": 5, "academico": 4, "fatal": true, "fatal_motivo": "restriccion_dura:R1: el costo de infraestructura declarado es USD 504 por año, por encima del tope de USD 300, y crece con usuarios que no pagan; aun quitando Google Maps entero (USD 180) queda en USD 324"}
+  },
+  "winner": "X",
+  "reason": "Y viola R1 con un costo declarado de USD 504 por año y no tiene ninguna evidencia de demanda frente a competidores gratuitos con masa crítica, mientras X entra holgado en el presupuesto (USD 125), tiene evidencia local verificada aunque genérica y un desafío técnico medible.",
+  "standing": {
+    "X": [
+      "La evidencia no muestra el dolor que el producto resuelve: no hay ninguna medición del sobrante en panaderías uruguayas (el 5% a 15% es un supuesto) ni señales de pago; las dos fuentes locales verificadas (El Observador y La Mañana) muestran un pico de demanda en un evento puntual y un sector en pérdida, lo que también sugiere baja disposición a pagar.",
+      "El link de FAO Uruguay devuelve 404, así que la cifra de un millón de toneladas por año queda sin respaldo (la idea misma la relativiza, pero no cuenta como evidencia).",
+      "Dependencia de datos sin socio identificado: el modelo necesita 2 o 3 panaderías piloto con ventas por producto desde el semestre 1 y la tabla de contactos del equipo está vacía; si no aparecen, la primera entrega no tiene datos reales, y 10 semanas de historia son pocas para estimar efectos de feriados y eventos.",
+      "La API de clima gratuita de Open-Meteo es solo para uso no comercial y el piloto pago con 5 locales del semestre 2 es uso comercial: esa licencia no está en el costo (el total de USD 125 deja margen, pero el precio no está declarado); el precio de Hetzner tampoco se pudo confirmar en la página citada.",
+      "Diferenciación frágil: Delicious Data muestra selector de idioma en español, lo que contradice que no opere en español; el hueco real es la presencia local y la integración con POS y comprobantes fiscales uruguayos, que un proveedor local de punto de venta podría copiar.",
+      "Business case con el tamaño de mercado sin cuantificar: no dice cuántas panaderías hay ni cuántas tienen POS con detalle por producto, con un ticket de USD 25 a 45 y venta uno a uno cara.",
+      "Riesgo de adopción: depende de que alguien cargue el sobrante todos los días y de que el pronóstico le gane a la intuición de un panadero con años de oficio."
+    ],
+    "Y": [
+      "Costo de infraestructura de USD 504 por año, por encima del tope de USD 300 de R1, y que crece con usuarios gratuitos.",
+      "Demanda sin evidencia: la propia idea admite que se apoya en sentido común y charlas con amigos, sin ninguna fuente local.",
+      "Competidores gratuitos con masa crítica (Google Maps, TripAdvisor, Instagram, PedidosYa) ya cubren el caso de uso; el único hueco es la personalización social, sin evidencia de que alguien la valore.",
+      "Arranque en frío doble: sin usuarios no hay reseñas ni restaurantes que paguen, y no hay ingresos posibles durante la tesis; ningún restaurante fue consultado.",
+      "Alcance inflado para dos semestres: apps iOS y Android, red social, chat, chatbot, motor de recomendación, gamificación, panel de restaurantes y campaña de lanzamiento.",
+      "Riesgo legal y de datos: el catálogo de locales puede violar términos de uso de terceros, y el perfilamiento de gustos, ubicación y relaciones exige evaluación de impacto bajo la Ley 18.331 y el Decreto 64/020.",
+      "Valor académico flaco: la parte de IA es un envoltorio sobre un modelo de lenguaje mientras no haya datos propios."
+    ]
+  }
+}

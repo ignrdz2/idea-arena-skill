@@ -1,0 +1,32 @@
+{
+  "scores": {
+    "X": {"demanda": 1, "viabilidad": 1, "diferenciacion": 1, "business_case": 2, "encaje": 5, "academico": 3, "fatal": true, "fatal_motivo": "restriccion_dura:R1: la propia idea declara un costo de infraestructura de USD 504 por año, sobre el tope de USD 300; aun sacando Google Maps (la pagina de precios abierta muestra 10K llamadas gratuitas por SKU al mes) el resto suma USD 324, y el costo del LLM crece sin tope con usuarios que no pagan"},
+    "Y": {"demanda": 5, "viabilidad": 6, "diferenciacion": 6, "business_case": 5, "encaje": 7, "academico": 9, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "Y",
+  "reason": "X viola R1 con un costo declarado de USD 504 por año y no tiene evidencia de demanda ni hueco frente a Google Maps, Instagram o PedidosYa, mientras Y entra holgada en el presupuesto, tiene evidencia local verificada de volatilidad y presión de margen en panaderías y un desafío de pronóstico medible.",
+  "standing": {
+    "X": [
+      "Costo declarado de USD 504 por año, sobre el tope de R1, y creciente con usuarios gratuitos (LLM sin tope de uso).",
+      "Demanda sin ninguna evidencia: la propia idea admite que solo hay sentido común y conversaciones con amigos.",
+      "Sin hueco frente a Google Maps, TripAdvisor, Instagram, TikTok y PedidosYa, gratuitos y con masa crítica; la idea misma reconoce que no hay hueco visible.",
+      "Arranque en frío doble (usuarios y restaurantes) sin presupuesto de marketing: el producto no tiene valor demostrable dentro de 2027.",
+      "No hay ingresos posibles durante la tesis; el precio de USD 30 a 60 por local no se consultó con ningún restaurante y no hay tamaño de mercado.",
+      "Alcance inflado: app iOS y Android, red social, chat, chatbot, gamificación, panel de locales y campaña de lanzamiento.",
+      "El catálogo de locales hay que construirlo y copiarlo de terceros puede violar sus términos de uso (riesgo sobre R7).",
+      "Perfilamiento de gustos, ubicación y grafo social bajo la Ley 18.331, sin ingresos que justifiquen el costo de cumplimiento.",
+      "El componente técnico es un envoltorio sobre un LLM mientras no haya datos propios."
+    ],
+    "Y": [
+      "La evidencia de demanda es adyacente: muestra volatilidad por eventos (El Observador) y caída de ventas y costos altos en el sector (La Mañana), pero no mide el sobrante de una panadería ni que el dueño pagaría; el 5 a 15% de sobrante es un supuesto.",
+      "El link de FAO Uruguay devuelve 404; la cifra nacional de pérdidas se sostiene solo por la página del Ministerio de Ambiente, que dice cerca del 11% y ubica el 70% en producción y poscosecha, irrelevante para el comercio.",
+      "Ningún contacto en la tabla del equipo: el piloto de datos con 2 o 3 locales en el semestre 1 es una dependencia externa sin plan B, y 10 semanas de historia limitan el backtesting.",
+      "La API gratuita de Open-Meteo es solo de uso no comercial y el semestre 2 incluye un piloto pago con 5 locales: hace falta licencia comercial cuyo precio no está en el costo ni se verificó.",
+      "El precio del VPS (USD 55 por año) no se pudo verificar en la página de Hetzner; es una estimación, aunque el total seguiría bajo USD 200 aunque se duplique.",
+      "La afirmación de que los sistemas de punto de venta locales no pronostican no tiene link ni está declarada como supuesto; un proveedor de POS podría copiar la función rápido.",
+      "Ticket chico (USD 25 a 45) en un rubro con márgenes golpeados, sin tamaño de mercado cuantificado (cuántas panaderías hay) y con venta uno a uno cara; el canal por la gremial es un supuesto.",
+      "Riesgo central de producto: si el pronóstico no supera claramente al panadero con experiencia, no hay caso; además depende de que alguien cargue el sobrante todos los días.",
+      "Foodforecast y Too Good To Go no se pudieron verificar (página sin contenido y error 429)."
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "scores": {
+    "X": {"demanda": 7, "viabilidad": 5, "diferenciacion": 4, "business_case": 5, "encaje": 9, "academico": 8, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 3, "viabilidad": 6, "diferenciacion": 5, "business_case": 5, "encaje": 7, "academico": 8, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "X",
+  "reason": "X apoya la demanda en fuentes locales verificadas (21.532 consultas de proveedores a la ARCE en 2021 y un competidor uruguayo con usuarios y plan pago), mientras que el dolor central de Y, el sobrante en panaderías, no tiene ninguna evidencia local y es solo un supuesto, y eso pesa más que la ventaja de Y en costo y alcance.",
+  "standing": {
+    "X": [
+      "Gubly, competidor local ya lanzado con plan gratuito y premium de USD 25 por mes, ya analiza pliegos con IA, muestra precios adjudicados y de la competencia y envía alertas (verificado en la nota de El Observador): tres de los cuatro módulos repiten lo que existe, y el hueco (bóveda cruzada contra el checklist) es un supuesto sin confirmar que Gubly podría copiar rápido, porque la propia idea dice que Gubly ya analiza pliegos para ver si se cumplen las condiciones.",
+      "El precio hipotético de USD 40 a 120 por mes está entre 1,6 y 5 veces el premium de Gubly, que ya incluye análisis ilimitado de pliegos, y no hay evidencia de que una PyME pague esa diferencia por la bóveda y la exactitud medida.",
+      "El costo de USD 289 deja solo USD 11 de margen bajo el tope: el precio del LLM no se pudo verificar (la página de Azure no muestra precios al abrirla), el volumen de 1.500 pliegos por mes a 20k tokens es un supuesto, y no se costean los embeddings ni las consultas Text-to-SQL; si el LLM cuesta el doble, supera el tope. Los créditos de estudiante que propone no están documentados ni tienen duración declarada.",
+      "Una instancia de 2 GB de RAM para PostgreSQL con el histórico OCDS desde 2002, OCR con Tesseract, workers, FastAPI y Next.js queda corta; el plan siguiente de Lightsail (USD 24 por mes, verificado) lleva el total a unos USD 433 por año, sobre el tope.",
+      "Alcance inflado para unas 960 a 1.536 horas: ETL completo, OCR, extractor con evaluación anotada, radar, inteligencia de precios con resolución de entidades, Text-to-SQL, bóveda multi-tenant, piloto con PyMEs y endurecimiento; necesita un recorte que la idea no define.",
+      "No cuantifica el mercado inicial (cuántas PyMEs proveedoras activas hay en el RUPE) ni define un canal de venta; el 99% de mipymes es un dato genérico, y la página de datos abiertos de la ARCE que cita para medirlo no lista conjuntos de datos al abrirla.",
+      "La afirmación de que la licencia de datos abiertos habilita el uso comercial no aparece en la página citada (catalogodatos.gub.uy).",
+      "Los pliegos adjuntos no figuran en lo que la página de Open Contracting de la ARCE describe del OCDS: su descarga estable depende del portal y es un supuesto declarado."
+    ],
+    "Y": [
+      "El dolor central (el sobrante diario en panaderías) no tiene evidencia local: la cifra de 5% a 15% es un supuesto declarado y la nota de La Mañana habla de caída de ventas y costos salariales, sin mencionar sobrante ni desperdicio.",
+      "El link de FAO Uruguay devuelve 404; el dato nacional del Ministerio de Ambiente ubica cerca del 70% de las pérdidas en producción y poscosecha, lo que, como la propia idea admite, no respalda el caso del comercio minorista.",
+      "No hay señales de pago en la región: Delicious Data, el competidor verificado, opera solo en mercados de habla alemana; el segmento de panaderías de barrio con márgenes golpeados puede ser un hueco que nadie atiende porque no paga.",
+      "Dependencia crítica de 2 o 3 panaderías que carguen datos a diario durante al menos 10 semanas en el semestre 1, sin contactos en el equipo y sin plan B (por ejemplo, un dataset público de ventas de panadería) si no aparecen o no tienen ventas por producto.",
+      "El plan gratuito de Open-Meteo es solo para uso no comercial y el piloto pago del semestre 2 es uso comercial: la licencia comercial no está costeada en la tabla. El precio de Hetzner tampoco se pudo verificar (la página no muestra precios), aunque aun duplicado el total queda bajo el objetivo.",
+      "Afirma sin link y sin declararlo como supuesto que los sistemas de punto de venta locales no pronostican; un proveedor de POS podría agregar pronóstico rápido, y un modelo con LightGBM sobre ventas no es un diferencial defendible.",
+      "Ticket de USD 25 a 45 con venta uno a uno, sin tamaño de mercado (cuántas panaderías hay) y con el ahorro a demostrar antes de cobrar; el canal por la gremial es un supuesto.",
+      "Riesgo de producto admitido: el pronóstico puede no superar la intuición de un panadero experimentado, y la adopción depende de que alguien cargue el sobrante todos los días.",
+      "El pronóstico de series temporales no es el núcleo del perfil del equipo (RAG, Text-to-SQL, embeddings, Qdrant); se aprende en el plazo, pero aprovecha menos lo que el equipo ya sabe."
+    ]
+  }
+}

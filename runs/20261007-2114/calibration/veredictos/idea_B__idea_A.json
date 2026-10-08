@@ -1,0 +1,29 @@
+{
+  "scores": {
+    "X": {"demanda": 4, "viabilidad": 6, "diferenciacion": 5, "business_case": 5, "encaje": 6, "academico": 8, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 7, "viabilidad": 5, "diferenciacion": 3, "business_case": 5, "encaje": 9, "academico": 8, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "Y",
+  "reason": "Y tiene demanda local verificada con señales de pago (21.532 consultas de proveedores a la ARCE en 2021, Gubly con más de un centenar de usuarios y plan premium, LicitaLAB con 1.500 clientes en Chile y Perú) y usa de lleno el perfil del equipo, lo que pesa más que su diferenciación débil frente a Gubly y su costo al borde del tope, mientras X apoya su dolor central (el sobrante diario) en un supuesto sin evidencia local y depende de panaderías piloto sin contactos.",
+  "standing": {
+    "X": [
+      "Demanda sin evidencia local del dolor central: no hay ninguna medición de sobrante en panaderías uruguayas (la idea lo admite y lo pasa a supuesto, 5% a 15%); las fuentes locales verificadas muestran una volatilidad puntual (el doble de bizcochos antes de un partido) y caída de ventas por competencia argentina, no el costo del sobrante; la única señal de pago es extranjera (Delicious Data, más de 250 panaderías, solo en alemán e inglés).",
+      "El link de FAO Uruguay devuelve 404; la cifra nacional queda solo con el Ministerio de Ambiente, que ubica cerca del 70% de las pérdidas en producción y poscosecha, así que no respalda el dolor del comercio.",
+      "Dependencia crítica de 2 o 3 panaderías piloto durante 10 semanas en el semestre 1, sin ningún contacto en la tabla del equipo y sin plan B de datos (por ejemplo, un dataset público de ventas de panadería); además 10 semanas no cubren feriados ni estacionalidad, así que el backtesting de la primera entrega es débil.",
+      "El plan gratuito de Open-Meteo es solo para uso no comercial (verificado) y el semestre 2 incluye un piloto pago con 5 locales: la licencia comercial no está presupuestada y su precio no figura en la página; el total seguiría bajo el tope, pero la tabla de costos está incompleta.",
+      "Disposición a pagar dudosa en un rubro con márgenes golpeados, con un ticket de USD 25 a 45 y venta uno a uno; el mercado inicial no está dimensionado (no hay cantidad de panaderías ni de clientes objetivo) y el canal por la gremial es solo una posibilidad.",
+      "Que los puntos de venta locales no pronostican no tiene link ni está declarado como supuesto; un proveedor de punto de venta podría agregar el pronóstico, y frente a Delicious Data el hueco es solo idioma y región.",
+      "Adopción incierta: depende de que alguien cargue el sobrante todos los días y de que el modelo supere la intuición del panadero, riesgos que la idea reconoce sin evidencia de que se resuelvan."
+    ],
+    "Y": [
+      "Gubly (Uruguay, verificado en El Observador) ya filtra oportunidades según el perfil de la empresa, analiza y resume pliegos con IA, envía alertas y muestra precios adjudicados y comparativas de competencia, con plan gratuito y premium de USD 25 por mes: tres de los cuatro módulos ya existen localmente y más baratos que la hipótesis de USD 40 a 120.",
+      "El hueco restante (bóveda documental cruzada contra el checklist, con cita por página) es una funcionalidad que Gubly puede copiar rápido, y su ausencia es solo un supuesto: que la nota no la mencione no prueba que no exista; LicitaLAB ya hace procesamiento y análisis de documentos y podría entrar a Uruguay.",
+      "Costo de USD 289, a USD 11 del tope: el ítem de LLM (USD 120) es una estimación sin precio verificable (la página de Azure no muestra precios) y depende de un volumen sin respaldo de 1.500 pliegos por mes a 20k tokens; un desvío moderado en volumen o largo de pliegos rompe el tope.",
+      "Capacidad subdimensionada: 2 GB de RAM para PostgreSQL con el histórico desde 2002, OCR con Tesseract, workers y Next.js es poco, y pasar al plan siguiente de Lightsail (USD 24 por mes, verificado) lleva el total a unos USD 433; el tier gratuito de Qdrant (1 GB de RAM y 4 GB de disco, verificado) difícilmente aloje los chunks de miles de pliegos por año más las descripciones de ítems para la resolución de entidades.",
+      "Alcance inflado para 960 a 1536 horas: ETL completo desde 2002, OCR, extracción evaluada con 50 pliegos anotados, radar, inteligencia de precios con resolución de entidades, Text-to-SQL, bóveda multi-tenant, piloto y endurecimiento, sin un recorte definido.",
+      "Business case sin canal de venta y sin tamaño del mercado inicial: el 99% de mipymes (unas 190.000 empresas) es genérico y el subconjunto de proveedores del RUPE se menciona pero no se mide; la bóveda y el lector tienen que justificar pagar más que el premium de Gubly.",
+      "Que la licencia de datos abiertos habilita el uso comercial no se pudo confirmar en el link citado (la portada del catálogo no muestra la licencia), y la descarga estable de los pliegos adjuntos es un supuesto: la página de OCDS de la ARCE no dice que los incluya.",
+      "Piloto con 3 a 5 PyMEs sin ningún contacto identificado en la tabla del equipo."
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "scores": {
+    "X": {"demanda": 1, "viabilidad": 1, "diferenciacion": 1, "business_case": 3, "encaje": 5, "academico": 4, "fatal": true, "fatal_motivo": "restriccion_dura:R1: el costo de infraestructura declarado es USD 504 por año, por encima del tope de USD 300, y crece con la cantidad de usuarios gratuitos"},
+    "Y": {"demanda": 7, "viabilidad": 6, "diferenciacion": 5, "business_case": 6, "encaje": 8, "academico": 8, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "Y",
+  "reason": "X tiene un fallo fatal verificado por R1 (USD 504 por año contra un tope de USD 300) y una demanda que es solo opinión, mientras Y queda bajo el tope con demanda local verificada, así que Y gana aunque Gubly le achique mucho la diferenciación.",
+  "standing": {
+    "X": [
+      "Costo anual declarado de USD 504, por encima del tope de USD 300 de R1, y crece con usuarios que no pagan (chatbot LLM sin tope de uso, Google Maps por encima del crédito gratuito).",
+      "Demanda sin evidencia: la propia idea admite que no hay ninguna medición local y que la justificación es sentido común y conversaciones informales; ningún restaurante fue consultado.",
+      "Compite de frente con Google Maps, TripAdvisor, Instagram, TikTok y PedidosYa, gratuitos y con masa crítica; el único hueco, la recomendación social, es un supuesto sin respaldo.",
+      "Arranque en frío doble (usuarios y locales) sin presupuesto de marketing: no hay ingresos posibles durante la tesis y el valor del producto depende de alcanzar una masa crítica que el plazo no permite.",
+      "Alcance inflado para dos semestres: apps iOS y Android, red social, chat, chatbot, motor de recomendación, panel para locales, gamificación y campaña de lanzamiento.",
+      "Catálogo de locales sin fuente legal clara (copiarlo de un tercero puede violar sus términos, riesgo R7), más moderación de contenido de usuarios y perfilamiento de gustos, ubicación y relaciones bajo la Ley 18.331 y el Decreto 64/020.",
+      "El componente técnico es mayormente un envoltorio sobre un modelo de lenguaje hasta tener datos propios, que el producto no va a llegar a juntar en el plazo."
+    ],
+    "Y": [
+      "Gubly ya ofrece en Uruguay alertas, análisis de pliegos con IA, precios adjudicados y comparativas de competencia, con plan gratuito y premium de USD 25 por mes (verificado en El Observador, julio de 2026); el hueco de la bóveda documental cruzada contra el checklist es angosto, no está confirmado (la nota solo no lo menciona) y Gubly lo podría copiar rápido.",
+      "Precio hipotético de USD 40 a USD 120 por mes, por encima del competidor local que tiene plan gratuito y cobra USD 25, sin ninguna entrevista ni dato de disposición a pagar a ese nivel.",
+      "Costo de USD 289 con solo USD 11 de margen bajo el tope: el precio de Azure OpenAI no se pudo verificar (la página de precios muestra valores vacíos) y el supuesto de 1.500 pliegos por mes a 20k tokens de entrada no cuenta salida y puede quedarse corto con pliegos largos y anexos; un desvío moderado rompe R1.",
+      "Infraestructura justa: el tier gratuito de Qdrant tiene 1 GB de RAM y 4 GB de disco, poco para los embeddings acumulados de 1.500 pliegos por mes; la instancia de 2 GB de RAM tiene que correr PostgreSQL con el histórico OCDS desde 2002, OCR con Tesseract, los workers y el frontend, con 30 GB de PDF en un disco de 60 GB.",
+      "Alcance amplio para 3 personas a tiempo parcial: ETL completo, OCR, extracción evaluada con 50 pliegos anotados, radar, inteligencia de precios con resolución de entidades, Text-to-SQL, bóveda multi-tenant, piloto y endurecimiento; probablemente necesita un recorte.",
+      "El piloto con 3 a 5 PyMEs no tiene ningún contacto en la tabla del equipo y el canal para llegar a los clientes no está descrito.",
+      "La evidencia de demanda es indirecta: las 21.532 consultas de proveedores a ARCE en 2021 son de cualquier tipo (incluido el uso de los sistemas), los más de 100 usuarios de Gubly incluyen gratuitos, y la cifra chilena del 4% de empresas con más del 80% de los montos es una afirmación del cofundador de LicitaLAB sin fuente.",
+      "Mercado uruguayo chico y tamaño del mercado inicial sin cuantificar: la idea remite al dataset del RUPE pero no da el número de proveedores activos."
+    ]
+  }
+}
