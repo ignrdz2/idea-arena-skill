@@ -1,0 +1,387 @@
+{
+ "evaluaciones": [
+  {
+   "id": "i001",
+   "veredicto": "viable",
+   "horas_estimadas": 1150,
+   "motivo": "Estimación: base web con auth y backend 150 h, modelado del calendario DGI y BPS para 2 regímenes (relevar normativa y vencimientos) 120 h, importación y parseo de XML de CFE más libro de ingresos y gastos 160 h, RAG sobre normativa pública con curación del corpus, citas y evaluación 180 h, alertas de volumen y CAE más dossier 110 h, integración y despliegue 100 h, pruebas 80 h, piloto con 20 a 30 usuarios 70 h, documentación de tesis 180 h. Total cerca de 1150 h, dentro del rango 960 a 1536 y con entregables demostrables en cada semestre. Es software propio sobre datos públicos y XML que aporta el usuario.",
+   "recorte_sugerido": "",
+   "dependencias_externas": [
+    "Que los unipersonales puedan descargar los XML de sus CFE desde su proveedor (formato y acceso no confirmados)",
+    "Normativa y calendarios publicados por DGI y BPS, que pueden cambiar durante 2027",
+    "Reclutar 20 a 30 usuarios reales para el piloto",
+    "API de LLM de terceros (precio y disponibilidad)"
+   ]
+  },
+  {
+   "id": "i002",
+   "veredicto": "viable_con_recorte",
+   "horas_estimadas": 1200,
+   "motivo": "Estimación: registro de casos con consentimiento, roles y bitácora de auditoría 140 h, planes de contacto y tablero 180 h, alertas 50 h, integración WhatsApp Cloud API con verificación de negocio y plantillas aprobadas por Meta 80 h, derivación exportable 50 h, cifrado de columnas y endurecimiento de seguridad 110 h, plan de cumplimiento Ley 18.331 60 h, base y despliegue 140 h, pruebas 90 h, piloto 120 h, documentación de tesis 180 h. Total cerca de 1200 h: el desarrollo entra. El riesgo de alcance es el piloto del semestre 2: no hay socio identificado y usar datos reales de pacientes de salud mental probablemente exige autorización institucional o de un comité de ética, que el equipo no controla.",
+   "recorte_sugerido": "Planificar el piloto del semestre 2 sin datos reales de pacientes: validación con un equipo de salud mental usando casos ficticios y entrevistas, dejando el uso con pacientes como paso posterior a la tesis. Tener el recordatorio por correo o SMS como alternativa si la verificación de WhatsApp Business se demora.",
+   "dependencias_externas": [
+    "Institución o equipo de salud mental dispuesto a pilotear (sin socio identificado)",
+    "Autorización institucional o de comité de ética para usar datos reales de pacientes",
+    "Verificación de negocio y aprobación de plantillas en WhatsApp Business Platform (Meta)",
+    "Interpretación regulatoria de que la herramienta no es dispositivo médico",
+    "Cumplimiento de la Ley 18.331 para datos sensibles de salud"
+   ]
+  },
+  {
+   "id": "i003",
+   "veredicto": "viable",
+   "horas_estimadas": 1080,
+   "motivo": "Estimación: ETL de archivos de turismo receptivo (formatos que pueden variar por año) y tipo de cambio 140 h, modelo de datos 40 h, tablero con series históricas 120 h, Text-to-SQL con validación de la SQL y límites 150 h, carga de ocupación propia y comparación 60 h, alertas cambiarias y resumen semanal con acciones sugeridas 120 h, integración y despliegue 70 h, pruebas 80 h, piloto con 5 a 8 alojamientos 60 h, documentación de tesis 180 h, ajustes 60 h. Total cerca de 1080 h, en el rango de capacidad y alineado con el perfil (Text-to-SQL, datos). Los datos son abiertos, así que la dependencia principal es su granularidad, no el acceso.",
+   "recorte_sugerido": "",
+   "dependencias_externas": [
+    "Granularidad y rezago de los datos abiertos del Ministerio de Turismo (desglose por origen y departamento no confirmado)",
+    "Fuente pública de tipo de cambio",
+    "Alojamientos del interior dispuestos a cargar su ocupación en el piloto",
+    "API de LLM de terceros y plan gratuito de Resend"
+   ]
+  },
+  {
+   "id": "i004",
+   "veredicto": "viable_con_recorte",
+   "horas_estimadas": 1300,
+   "motivo": "Estimación: legajo y formulario móvil con carga de cédula y cifrado (230 h), autenticación y multiusuario por estudio (80 h), registro de operaciones con conversión a UI (70 h), ingesta y cruce difuso con listas de sanciones más puntaje de riesgo (220 h), generador de matriz y manual con RAG sobre la ley (200 h), exportación del legajo (50 h), pruebas, despliegue e integración (150 h), pilotos con escribanías (100 h) y documentación de la tesis (200 h). Unas 1300 h, en la parte alta de la capacidad (960 a 1536 h). El mayor riesgo es externo: la reglamentación de la Ley 20.469 no salió y puede cambiar requisitos a mitad del desarrollo.",
+   "recorte_sugerido": "Limitar el cruce de sanciones a una o dos listas públicas con coincidencia por nombre y documento, sin puntaje de riesgo elaborado (regla simple), y dejar la exportación para inspección como PDF básico. Ahorra unas 150 h.",
+   "dependencias_externas": [
+    "Reglamentación de la Ley 20.469, todavía no publicada",
+    "Escribanías o estudios dispuestos a cargar casos reales anonimizados para la demo y el piloto",
+    "Disponibilidad y formato descargable de las listas públicas de sanciones",
+    "Fuente pública diaria de la cotización de la UI",
+    "API de LLM de terceros"
+   ]
+  },
+  {
+   "id": "i005",
+   "veredicto": "viable_con_recorte",
+   "horas_estimadas": 1200,
+   "motivo": "Estimación: portal del cliente con marca y reglas configurables (180 h), bandeja con estados y correos (130 h), carga de pedidos por planilla y por API de una plataforma de tienda (150 h, la parte más incierta), clasificación de motivos y fotos con LLM (100 h), cambio por talle con reserva de stock y crédito en tienda (160 h, requiere escribir en la plataforma de la tienda), panel por SKU y exportación para nota de crédito (90 h), pruebas, despliegue y multitienda (140 h), pilotos con 3 tiendas (80 h) y documentación de la tesis (180 h). Unas 1200 h, dentro de la capacidad, pero la integración de pedidos y stock con plataformas diversas puede crecer mucho.",
+   "recorte_sugerido": "Integrar una sola plataforma de tienda (más la planilla) y, en vez de reservar stock automáticamente en la plataforma, mostrar el pedido de cambio para que la tienda confirme el stock a mano; el crédito en tienda se emite como código manual. Ahorra unas 150 h y quita dependencia de APIs de escritura.",
+   "dependencias_externas": [
+    "Tienda piloto en semestre 1 y 3 tiendas en uso real en semestre 2",
+    "API de pedidos y stock de la plataforma de tienda elegida",
+    "Proveedor de CFE de cada tienda (solo como destino de la exportación)",
+    "API de LLM de terceros"
+   ]
+  },
+  {
+   "id": "i006",
+   "veredicto": "viable",
+   "horas_estimadas": 950,
+   "motivo": "Estimación: modelo de datos de pedidos, turnos y plazos con calendario de días hábiles y feriados (100 h), formulario de demanda e importador CSV con mapeo de columnas (120 h), conciliación pedido y turno (70 h), tablero de cumplimiento (100 h), alertas y reporte exportable (80 h), Text-to-SQL con validación de consultas (150 h), autenticación, anonimización, pruebas y despliegue (120 h), piloto (60 h) y documentación de la tesis (150 h). Unas 950 h, en el piso de la capacidad, con margen. El riesgo principal no es el alcance sino el piloto: no hay socio identificado y el acceso a datos reales de agenda depende de convencer a un prestador; el MVP se puede demostrar con datos sintéticos.",
+   "recorte_sugerido": "",
+   "dependencias_externas": [
+    "Prestador o policlínica que acepte el piloto y entregue una exportación anonimizada de su agenda",
+    "Formato de exportación CSV de los sistemas de agenda existentes",
+    "Decreto de acceso oportuno vigente con los plazos anunciados",
+    "API de LLM de terceros"
+   ]
+  },
+  {
+   "id": "i007",
+   "veredicto": "viable_con_recorte",
+   "horas_estimadas": 1240,
+   "motivo": "Estimación: ingesta y normalización de catálogo 80 h, recolección de páginas públicas con Playwright 150 h, emparejamiento con embeddings de texto e imagen y validación manual 220 h, calculadora de costo puesto 40 h, seguimiento periódico de precios 100 h, recomendaciones con LLM 70 h, panel por rubro y temporada 100 h, frontend y autenticación 100 h, despliegue 40 h, pruebas 60 h, pilotos con 3 comercios 80 h, documentación de tesis 200 h. Total cerca de 1240 h, por encima de la capacidad de referencia del equipo (16+10+10 h por semana en 32 semanas, unas 1150 h). El riesgo mayor es la dependencia de páginas de plataformas extranjeras cuyos términos pueden prohibir la consulta automatizada, y conseguir 3 comercios con catálogo real sin contactos declarados.",
+   "recorte_sugerido": "Emparejar solo por texto en semestre 1 y dejar imagen como mejora opcional; reemplazar el seguimiento periódico automático por actualización a demanda sobre enlaces cargados manualmente; reducir el panel a una vista por rubro sin análisis por temporada. Ahorra unas 150 a 200 h y evita el scraping masivo.",
+   "dependencias_externas": [
+    "Términos de uso de plataformas extranjeras que pueden prohibir la consulta automatizada",
+    "Catálogos reales de comercios minoristas, sin contacto declarado",
+    "Cambios en el régimen de franquicia y tipo de cambio",
+    "API de Claude Haiku 5.5"
+   ]
+  },
+  {
+   "id": "i008",
+   "veredicto": "viable_con_recorte",
+   "horas_estimadas": 1230,
+   "motivo": "Estimación: ingesta y etiquetado por tema del material 120 h, banco de ejercicios con corrección automática 150 h, diagnóstico inicial y mapa de temas 110 h, tutor RAG con citas 150 h, verificación simbólica de respuestas del LLM 60 h, plan adaptativo con repetición espaciada 100 h, frontend 150 h, autenticación y despliegue 50 h, pruebas 60 h, piloto con estudiantes y medición 80 h, documentación de tesis 200 h. Total cerca de 1230 h, algo arriba de la referencia de unas 1150 h. La medición de resultados depende de que el piloto coincida con una instancia oficial de la prueba, que el equipo no controla, y de reclutar estudiantes y confirmar la licencia del material de la facultad.",
+   "recorte_sugerido": "Medir con un test propio antes y después del uso en lugar del resultado de la prueba oficial; limitar el banco y el tutor a 3 o 4 temas centrales de la prueba; implementar el plan adaptativo con reglas simples en vez de un modelo de repetición espaciada completo. Ahorra unas 120 a 150 h.",
+   "dependencias_externas": [
+    "Licencia y disponibilidad pública del material de la prueba y de cursos introductorios",
+    "Calendario de instancias de la prueba de ingreso",
+    "Reclutamiento de un grupo de estudiantes de liceo o primer año, sin contacto declarado",
+    "API de Gemini 2.5 Flash y capa gratuita de Qdrant Cloud"
+   ]
+  },
+  {
+   "id": "i009",
+   "veredicto": "viable_con_recorte",
+   "horas_estimadas": 1280,
+   "motivo": "Estimación: parser de XML de CFE 80 h, parsers de extractos CSV y PDF de 2 bancos 120 h, extracción de PDFs con LLM 60 h, imputación con reglas y similitud 150 h, cola de revisión 100 h, conciliación bancaria con métricas 150 h, exportación configurable 60 h, vista multi-cliente y multiinquilino con seguridad para Ley 18.331 120 h, despliegue 40 h, pruebas 80 h, piloto con 1 o 2 estudios 80 h, documentación de tesis 200 h. Total cerca de 1280 h, arriba de la referencia de unas 1150 h. La dependencia crítica es acceder a XML de CFE y extractos reales de clientes de estudios contables, sin contacto declarado, con acuerdo de tratamiento de datos.",
+   "recorte_sugerido": "Aceptar solo XML de CFE y extractos CSV de 2 bancos, dejando PDFs fuera del MVP; exportar asientos en un único formato CSV en lugar de planilla configurable; conciliación por reglas de monto, fecha y RUT sin aprendizaje. Ahorra unas 150 a 200 h.",
+   "dependencias_externas": [
+    "XML de CFE y extractos bancarios reales de estudios contables, sin contacto declarado",
+    "Cumplimiento de la Ley 18.331 para datos de clientes de los estudios",
+    "Formatos de exportación de extractos de cada banco",
+    "Sistemas contables de los estudios para importar asientos",
+    "API de Claude Haiku 5.5"
+   ]
+  },
+  {
+   "id": "i010",
+   "veredicto": "viable",
+   "horas_estimadas": 1000,
+   "motivo": "Componentes acotados y en el perfil del equipo. Estimación: importador de planillas, modelo de datos y panel por grupo 160 h; puntaje por reglas explicables 80 h; resumen y borrador de mensaje con LLM con revisión humana 90 h; registro de intervenciones y tablero 100 h; modelo predictivo simple con scikit-learn y comparación 80 h; autenticación, roles y política de datos Ley 18.331 70 h; despliegue en Lightsail y pruebas 120 h; piloto de un trimestre 100 h; documentación de tesis y business case 200 h. Unas 1000 h, dentro de la capacidad de referencia (36 h por semana declaradas, unas 1150 h en 32 semanas). Cada semestre tiene una demo clara. El riesgo principal no es de horas sino conseguir un colegio piloto con datos, que hoy no tiene contacto declarado.",
+   "recorte_sugerido": "",
+   "dependencias_externas": [
+    "Colegio piloto que entregue asistencia y notas anonimizadas: no hay contacto declarado en la tabla",
+    "Consentimiento y cumplimiento de Ley 18.331 para datos de menores",
+    "Que los registros del colegio sean exportables a planilla",
+    "API de Gemini (proveedor externo, sustituible)"
+   ]
+  },
+  {
+   "id": "i011",
+   "veredicto": "viable_con_recorte",
+   "horas_estimadas": 1250,
+   "motivo": "Estimación: importadores para planillas y CSV de 2 o 3 sistemas distintos y base unificada 180 h (cada formato nuevo suma mantenimiento); catálogo semántico y glosario 80 h; Text-to-SQL con LangGraph, validación de consultas, solo lectura 200 h; permisos por rol 60 h; frontend con consulta, tabla y gráfico 120 h; tableros guardados y reporte mensual automático 100 h; conjunto de evaluación con respuestas conocidas 90 h; despliegue y pruebas 110 h; piloto con datos reales 80 h; tesis y business case 200 h. Unas 1250 h, algo por encima de las unas 1150 h que dan las horas declaradas (16+10+10 por semana). Entra recortando importadores y automatización de reportes. El Text-to-SQL es el núcleo y está en el perfil del equipo.",
+   "recorte_sugerido": "Limitar los importadores a planillas genéricas más una sola exportación de un sistema real (no 2 o 3), y reemplazar el reporte mensual automático por la exportación manual de un tablero guardado. Permisos por rol con solo dos roles (dirección y administración).",
+   "dependencias_externas": [
+    "Colegio piloto que entregue datos reales de matrícula, cobranza y asistencia: no hay contacto declarado",
+    "Que los sistemas del colegio permitan exportar a CSV o planilla",
+    "Cumplimiento de Ley 18.331 para datos de familias y cobranza",
+    "API de Gemini (proveedor externo, sustituible)"
+   ]
+  },
+  {
+   "id": "i012",
+   "veredicto": "viable_con_recorte",
+   "horas_estimadas": 1240,
+   "motivo": "Estimación: entrevistas 60 h; app React Native offline con SQLite y registro por caravana y lote 220 h; sincronización con backend y resolución de conflictos 120 h; backend FastAPI y PostgreSQL 100 h; vista web del veterinario 100 h; cálculo de fin de retiro 30 h; armado de tropa con escaneo y semáforo 130 h; exportación PDF y CSV 50 h; despliegue, distribución de la app y pruebas en campo 130 h; piloto con un veterinario en zafra 100 h; tesis y business case 200 h. Unas 1240 h, algo por encima de las unas 1150 h declaradas. El escaneo de caravanas es ambiguo: leer caravanas electrónicas exige un lector RFID (hardware) y la sincronización offline bidireccional es lo más costoso. Mobile no figura en el perfil común, suma curva de aprendizaje.",
+   "recorte_sugerido": "Escaneo por cámara del código o número visual de la caravana o ingreso manual, sin lector RFID. Sincronización simple (última escritura gana, sin edición concurrente). Distribuir la app del piloto como APK Android o vía Expo, sin publicar en tiendas. Vista web del veterinario solo de lectura.",
+   "dependencias_externas": [
+    "Veterinario y productores para el piloto: no hay contacto declarado",
+    "Calendario de zafra y embarques reales para probar el flujo de tropa",
+    "Lector RFID si se quieren leer caravanas electrónicas (hardware)",
+    "Tiempos de retiro cargados a mano desde prospectos",
+    "Cuentas de desarrollador de tiendas de apps si se publica (costo no incluido en la tabla)"
+   ]
+  },
+  {
+   "id": "i013",
+   "veredicto": "viable_con_recorte",
+   "horas_estimadas": 1120,
+   "motivo": "Estimación: web de reporte por QR con foto y ubicación 120 h, clasificación con visión y deduplicación espacio-temporal 120 h, modelo de datos PostGIS y carga de ubicaciones 60 h, tablero con mapa de calor y alertas 180 h, módulo de consolidación con métricas de cobertura (problema de optimización de ubicaciones) 200 h, piloto con municipio 120 h, pruebas, integración y despliegue 120 h, tesis y business case 200 h. Unas 1120 h: entra en la capacidad de referencia (960 a 1536 h) con margen moderado. El riesgo no es de horas sino de dependencias: pegar QR en contenedores públicos y pilotar requiere permiso de una intendencia o municipio que hoy no figura en contactos.",
+   "recorte_sugerido": "Dejar el piloto con municipio como objetivo deseable y no como entregable obligatorio: plan B con un conjunto de contenedores de prueba relevado por el equipo y ubicaciones de datos abiertos, con reportes simulados o de voluntarios. Acotar el módulo de consolidación a una heurística de cobertura por distancia y densidad de reportes, sin optimización completa de la red.",
+   "dependencias_externas": [
+    "Permiso de una intendencia o municipio para colocar QR en contenedores públicos y para el piloto",
+    "Datos de ubicación de contenedores (datos abiertos o relevamiento propio)",
+    "API de Gemini para clasificación de imágenes",
+    "Participación de vecinos para generar reportes reales"
+   ]
+  },
+  {
+   "id": "i014",
+   "veredicto": "viable_con_recorte",
+   "horas_estimadas": 1040,
+   "motivo": "Estimación: carga del calendario de escalas desde fuentes públicas 60 h, alta de guías y tours 120 h, filtro por barco y horario 60 h, traducción automática 40 h, flujo de reserva y recordatorios 100 h, prepago con Mercado Pago y política de cancelación 140 h, recalculo de itinerario y avisos 100 h, piloto con guías 120 h, pruebas y despliegue 100 h, tesis y business case 200 h. Unas 1040 h, dentro de la capacidad. El problema es de calendario y dependencias: la temporada de cruceros (noviembre a abril) casi no coincide con el semestre 2, cobrar prepago real a turistas como intermediario puede exigir figura de agencia ante el Ministerio de Turismo y una cuenta de Mercado Pago con empresa, y el calendario de escalas debe estar publicado de forma usable.",
+   "recorte_sugerido": "Hacer el prepago en modo sandbox de Mercado Pago (sin cobros reales) o que el cobro vaya directo a la cuenta del guía sin intermediar fondos. Plantear el piloto con datos reales de la temporada 2026-2027 y guías en modo demostración, o adelantarlo al inicio de la temporada 2027-2028 en noviembre si la entrega lo permite.",
+   "dependencias_externas": [
+    "Calendario de escalas de cruceros publicado de forma abierta y utilizable",
+    "Guías independientes dispuestos a pilotar",
+    "Temporada de cruceros (noviembre a abril) para el piloto",
+    "Cuenta y aprobación de Mercado Pago para cobros reales",
+    "Normativa de turismo sobre venta de tours como intermediario",
+    "API de Claude y Resend"
+   ]
+  },
+  {
+   "id": "i015",
+   "veredicto": "viable",
+   "horas_estimadas": 1060,
+   "motivo": "Estimación: integración con WhatsApp Cloud API y alta del número 120 h, armado y etiquetado del set de casos según la tipología del BCU 160 h, clasificador de texto y links con LLM más chequeo de dominio por RDAP 120 h, evaluación de precisión y falsos positivos 80 h, análisis de capturas de comprobantes con visión 120 h, panel web con historial y alertas 140 h, piloto con 20 a 40 vendedores 100 h, pruebas y despliegue 120 h, tesis y business case 200 h. Unas 1060 h, dentro de la capacidad con margen. Las dependencias externas tienen camino realista: la verificación de la cuenta de WhatsApp Business es un trámite estándar y el set de casos se puede armar con ejemplos públicos y casos sintéticos.",
+   "recorte_sugerido": "",
+   "dependencias_externas": [
+    "Verificación de cuenta y número en WhatsApp Cloud API (Meta)",
+    "API de Claude con visión",
+    "Servicios RDAP para datos de dominios",
+    "Ejemplos reales o públicos de estafas para el set etiquetado",
+    "Vendedores dispuestos a participar del piloto"
+   ]
+  },
+  {
+   "id": "i016",
+   "veredicto": "viable_con_recorte",
+   "horas_estimadas": 1270,
+   "motivo": "Estimación: entrevistas y relevamiento 60 h, app React Native offline con SQLite y sincronización con el servidor (resolución de conflictos entre capataz y escritorio) 300 h, API FastAPI y modelo de stock por caravana, lote, potrero y categoría 150 h, importador del listado oficial 60 h, motor de conciliación 120 h, panel web multi-cliente con permisos 200 h, pruebas 100 h, despliegue 40 h, piloto 80 h, documentación y business case 160 h. Entra en la capacidad (960 a 1536 h) pero queda justo si el equipo rinde cerca del mínimo, y el punto más riesgoso es la sincronización offline multi-usuario. El formato de exportación del registro oficial es desconocido y lo controla el MGAP.",
+   "recorte_sugerido": "Limitar el modo offline a registrar eventos en el celular con sincronización simple (sin edición concurrente del mismo animal desde varios dispositivos) y que el panel del escritorio rural sea de solo lectura del estado de cada cliente. Si el registro oficial no exporta, aceptar una planilla CSV cargada a mano como entrada de la conciliación.",
+   "dependencias_externas": [
+    "Formato y posibilidad de exportar el listado del productor desde el SNIG/DICOSE del MGAP",
+    "Cambios de sistemas o formatos del MGAP",
+    "Productor o escritorio rural dispuesto a hacer el piloto (no hay contacto declarado)",
+    "Consentimiento y cumplimiento de la Ley 18.331 para datos de stock y propiedad"
+   ]
+  },
+  {
+   "id": "i017",
+   "veredicto": "viable",
+   "horas_estimadas": 1050,
+   "motivo": "Estimación: bot con WhatsApp Cloud API (webhooks, texto, foto, ubicación, número de prueba) 120 h, clasificación con LLM y diálogo para pedir datos faltantes 80 h, backend FastAPI con PostgreSQL y PostGIS 120 h, bandeja web con mapa y estados 150 h, catálogo configurable desde planilla 50 h, asignación por zona 50 h, aviso de cierre con plantillas 30 h, reporte de tiempos 50 h, medición de exactitud del clasificador con conjunto etiquetado 50 h, pruebas 80 h, despliegue 40 h, entrevistas o piloto 80 h, documentación y business case 150 h. Entra con margen; el alcance ya prevé demo con datos simulados si no hay municipio.",
+   "recorte_sugerido": "",
+   "dependencias_externas": [
+    "Cuenta de Meta para WhatsApp Cloud API y aprobación de plantillas de mensajes fuera de la ventana de 24 horas",
+    "Municipio o intendencia para el piloto (no hay contacto identificado)",
+    "Disponibilidad y precios de la API del LLM",
+    "Cumplimiento de la Ley 18.331 por datos de vecinos, fotos y ubicación"
+   ]
+  },
+  {
+   "id": "i018",
+   "veredicto": "viable",
+   "horas_estimadas": 1150,
+   "motivo": "Estimación: productos, depósitos y movimientos con API y panel 150 h, parser de CFE en XML 80 h, emparejamiento de líneas con LLM y embeddings en Qdrant con confirmación humana 120 h, escaneo de código de barras en PWA 60 h, lectura de CFE desde casilla de correo 60 h, alertas y sugerencia de reposición 70 h, sincronización con una tienda online vía API pública 100 h, autenticación multi-comercio 50 h, medición de aciertos 40 h, pruebas 100 h, despliegue 40 h, relevamiento y pilotos con 3 a 5 pymes 130 h, documentación y business case 150 h. Entra con margen razonable. El riesgo principal no es de horas sino de acceso: que los proveedores de CFE permitan exportar o reenviar el XML y que haya pymes dispuestas a dar datos reales.",
+   "recorte_sugerido": "Si el tiempo aprieta, integrar una sola plataforma de tienda online y dejar la sugerencia de reposición como regla simple de stock mínimo.",
+   "dependencias_externas": [
+    "Que los proveedores de CFE de las pymes piloto permitan exportar o reenviar el XML de cada comprobante",
+    "Pymes que acepten compartir CFE reales para la demo y el piloto (no hay contactos declarados)",
+    "API pública de la plataforma de tienda online elegida",
+    "Disponibilidad y precios de la API del LLM",
+    "Cumplimiento de la Ley 18.331 por datos de clientes en los CFE"
+   ]
+  },
+  {
+   "id": "i019",
+   "veredicto": "viable",
+   "horas_estimadas": 1050,
+   "motivo": "Text-to-SQL es el núcleo del perfil común del equipo. Estimación: carga de CSV y Excel con detección de esquema a DuckDB/Postgres 150 h; Text-to-SQL con explicación y set de 50 preguntas con medición de exactitud 250 h; enmascarado de datos personales y bitácora 150 h; gráficos e indicadores guardados con recarga 150 h; frontend React 120 h; integración, pruebas y despliegue en Lightsail 100 h; entrevistas, piloto y business case 50 h; documentación de tesis 80 h. Total cerca de 1050 h, dentro de la capacidad con margen. El mayor riesgo es externo: no hay contacto en el Estado, pero el MVP se puede demostrar con datos abiertos aunque el piloto no se concrete.",
+   "recorte_sugerido": "",
+   "dependencias_externas": [
+    "Contacto en un organismo o intendencia para el piloto o las entrevistas (no identificado en la tabla de contactos)",
+    "Disponibilidad de planillas reales del organismo; si no, solo datos abiertos",
+    "API de LLM de terceros (Claude Haiku) y restricciones de los organismos para enviar datos a la nube"
+   ]
+  },
+  {
+   "id": "i020",
+   "veredicto": "viable_con_recorte",
+   "horas_estimadas": 1400,
+   "motivo": "Tiene varios componentes pesados a la vez. Estimación: carga de pedidos y geocodificación de direcciones uruguayas con Nominatim y limpieza 200 h; OSRM con extracto de OSM y optimizador OR-Tools con ventanas horarias y varios vehículos 250 h; PWA del repartidor con secuencia y modo con mala conectividad 200 h; prueba de entrega con foto, firma, ubicación y alertas de anomalías 180 h; panel de indicadores 120 h; consultas en lenguaje natural 100 h; backend, PostGIS e integración 120 h; pruebas, despliegue y ajuste de memoria de OSRM 90 h; piloto con pymes y medición antes y después 60 h; documentación 80 h. Unas 1400 h, en el borde alto de la capacidad (960 a 1536 h).",
+   "recorte_sugerido": "Sacar las consultas en lenguaje natural del MVP (unas 100 h) y reducir las alertas de anomalías a una regla simple de entrega fuera de radio de la dirección. Si la geocodificación de direcciones incompletas consume más de lo previsto, permitir corrección manual del punto en el mapa en vez de construir un geocodificador propio.",
+   "dependencias_externas": [
+    "Una o dos pymes o mensajerías dispuestas a hacer el piloto con datos reales de pedidos (sin contacto identificado)",
+    "Calidad de los datos de OpenStreetMap y Nominatim para direcciones uruguayas",
+    "Que OSRM con el extracto de Uruguay entre en la memoria del servidor previsto",
+    "Repartidores que usen la app durante el piloto"
+   ]
+  },
+  {
+   "id": "i021",
+   "veredicto": "viable",
+   "horas_estimadas": 1100,
+   "motivo": "Estimación: extractor de facturas UTE con LLM y validación por reglas, PDF y foto, con medición de precisión 230 h; modelo de datos de consumo y motor de reglas tarifarias a partir del pliego público para las tarifas de pequeños clientes 200 h; simulador de microgeneración solar con supuestos editables 130 h; informe descargable 70 h; panel para consultores 90 h; frontend 110 h; integración, pruebas y despliegue 100 h; piloto con 10 a 20 mipymes y entrevistas 90 h; documentación 80 h. Unas 1100 h, dentro de la capacidad con margen. El cuello de botella no son las horas sino conseguir facturas reales donadas para medir la extracción en el semestre 1.",
+   "recorte_sugerido": "",
+   "dependencias_externas": [
+    "Facturas reales de UTE donadas por mipymes, con consentimiento según Ley 18.331",
+    "Mipymes para el piloto de 10 a 20 casos (sin contacto identificado)",
+    "Pliego tarifario público de UTE y sus cambios durante 2027",
+    "Vigencia del programa de reintegro del MIEM, que define el valor del informe",
+    "API de Gemini de terceros para la extracción"
+   ]
+  },
+  {
+   "id": "i022",
+   "veredicto": "viable",
+   "horas_estimadas": 1000,
+   "motivo": "Estimacion: agenda web con disponibilidad y lista de espera 150 h, integracion con WhatsApp Cloud API (webhooks, plantillas, alta y verificacion del numero) 120 h, extraccion de intencion y fecha con LLM mas casos de prueba de fechas ambiguas 100 h, reasignacion automatica de huecos 80 h, panel de ausentismo 60 h, despliegue y monitoreo 40 h, pruebas 80 h, operacion y soporte del piloto 100 h, business case y documentacion de tesis 270 h. Unas 1000 h, dentro de 960 a 1536. El riesgo de plazo es el piloto de 3 meses y medio en un semestre de 16 semanas: tiene que arrancar al inicio del semestre 2.",
+   "recorte_sugerido": "Si el piloto se atrasa, acortarlo a 8 semanas o medir antes y despues sobre menos profesionales, sin tocar el producto.",
+   "dependencias_externas": [
+    "Aprobacion de Meta para la cuenta de WhatsApp Business y las plantillas de recordatorio",
+    "Tarifa real por plantilla de WhatsApp para Uruguay",
+    "Conseguir 5 o 6 profesionales del interior para el piloto (no hay contactos declarados)",
+    "Disponibilidad y precio de la API del LLM"
+   ]
+  },
+  {
+   "id": "i023",
+   "veredicto": "viable",
+   "horas_estimadas": 1080,
+   "motivo": "Estimacion: parser de XML de CFE (e-Factura, e-Ticket y notas de credito) con normalizacion 150 h, validacion de firma y CAE para detectar XML adulterados 80 h, indicadores y graficos 120 h, resumen con IA que cita cada dato 80 h, link compartible con vencimiento, consentimiento registrado y seguridad para Ley 18.331 100 h, autenticacion y carga de archivos 60 h, despliegue 40 h, pruebas 90 h, validacion con financiadores y piloto con 10 pymes 100 h, business case y documentacion de tesis 260 h. Unas 1080 h, dentro del rango. No hay hardware ni socio imprescindible: con XML de ejemplo el producto se demuestra igual.",
+   "recorte_sugerido": "Si la validacion criptografica de firmas se complica, limitarla a verificar estructura y CAE contra el formato publicado y dejar la firma completa como trabajo futuro.",
+   "dependencias_externas": [
+    "Acceso a XML reales de CFE de pymes voluntarias y friccion de exportacion de cada proveedor de facturacion",
+    "Disponibilidad de al menos 2 financiadores para validar indicadores (no hay contactos declarados)",
+    "Registro de la base ante la autoridad de datos personales y cumplimiento de la Ley 18.331",
+    "Confirmar que compartir informacion con financiadores no requiere habilitacion del BCU"
+   ]
+  },
+  {
+   "id": "i024",
+   "veredicto": "viable",
+   "horas_estimadas": 1120,
+   "motivo": "Estimacion: servidor central OCPP 1.6J sobre WebSocket (BootNotification, Authorize, Start y StopTransaction, MeterValues, reservas) 220 h, autenticacion por app y RFID 60 h, pruebas con simuladores de codigo abierto y sesiones simultaneas 70 h, app web PWA de reservas 100 h, liquidacion mensual y exportacion 80 h, recomendacion por tarifa y alerta de capacidad 70 h, despliegue 40 h, pruebas 90 h, integracion con un cargador real si se consigue 80 h, business case y documentacion de tesis 310 h. Unas 1120 h, dentro del rango. La falta de hardware no bloquea porque el alcance ya prevé demo con simuladores.",
+   "recorte_sugerido": "Apoyarse en una libreria OCPP de codigo abierto en lugar de implementar el protocolo desde cero, y dejar las reservas OCPP nativas (ReserveNow) para despues si el tiempo aprieta.",
+   "dependencias_externas": [
+    "Cargador real compatible con OCPP y un edificio o garaje que acepte el piloto",
+    "Administradoras dispuestas a entrevistas (no hay contactos declarados)",
+    "Reglas de copropiedad y de UTE sobre prorrateo o reventa de energia"
+   ]
+  },
+  {
+   "id": "i025",
+   "veredicto": "viable",
+   "horas_estimadas": 1000,
+   "motivo": "Componentes acotados y dentro del perfil: registro con formulario, chat y adjuntos (unas 180 h), clasificacion con LLM sobre taxonomia configurable y medicion con 20 incidentes simulados (150 h), reloj de 24 horas con avisos por correo y borrador exportable (120 h), RAG de guias con Qdrant (120 h), usuarios, roles y auditoria (130 h), seguridad del almacenamiento de datos sensibles, despliegue y pruebas (130 h), entrevistas o piloto con 5 entidades y documentacion de tesis (170 h). Unas 1000 h, en la franja baja de 960 a 1536. La dependencia critica es conocer la taxonomia y el formato de reporte de CERTuy y conseguir entidades para el piloto, pero la demo funciona con simulados.",
+   "recorte_sugerido": "",
+   "dependencias_externas": [
+    "Taxonomia y formato de reporte de CERTuy segun el Decreto 66/025, a obtener de fuentes publicas o entrevistas",
+    "Entidades obligadas dispuestas a entrevistas o piloto (no hay contacto identificado)",
+    "API de Claude Haiku"
+   ]
+  },
+  {
+   "id": "i026",
+   "veredicto": "viable_con_recorte",
+   "horas_estimadas": 1300,
+   "motivo": "PWA movil con alta por foto y por audio y confirmacion de campos (220 h), extraccion con vision mas transcripcion y medicion de exactitud sobre remitos reales (200 h), gastos y margen por viaje (100 h), plantilla para la Guia Electronica de Carga y exportacion al contador (120 h, depende de conocer el formato oficial, sin ficha), Text-to-SQL con validacion y controles de seguridad (180 h), despliegue, pruebas e integracion (160 h), piloto con 5 a 10 fleteros y documentacion de tesis (320 h). Unas 1300 h: entra en la capacidad pero con poco margen frente a los 960 h del escenario bajo, y conseguir remitos reales y fleteros sin contacto previo puede atrasar.",
+   "recorte_sugerido": "Dejar el alta por audio y la transcripcion fuera del MVP (solo foto y edicion manual), y limitar el Text-to-SQL a un conjunto de consultas frecuentes validadas; ahorra unas 150 a 200 h.",
+   "dependencias_externas": [
+    "Remitos reales de fleteros para medir exactitud de extraccion",
+    "Formato de datos de la Guia Electronica de Carga (sin API conocida)",
+    "Fleteros dispuestos a un piloto (no hay contacto identificado)",
+    "API de OpenAI para vision, texto y transcripcion"
+   ]
+  },
+  {
+   "id": "i027",
+   "veredicto": "viable",
+   "horas_estimadas": 1150,
+   "motivo": "Extraccion de polizas PDF de 3 aseguradoras con validacion y metrica por campo (250 h), tablero de cartera y vencimientos con avisos por SES (170 h), asistente de WhatsApp con derivacion al corredor (200 h, incluye alta y verificacion del numero en WhatsApp Cloud API), usuarios, seguridad y cumplimiento de la Ley 18.331 (100 h), despliegue, pruebas e integracion (130 h), piloto de 2 meses con 3 a 5 corredores y documentacion de tesis (300 h). Unas 1150 h, dentro de la franja. El riesgo esta en conseguir polizas reales anonimizadas y corredores para el piloto, sin contacto identificado; el piloto de 2 meses debe empezar a mitad del semestre 2.",
+   "recorte_sugerido": "",
+   "dependencias_externas": [
+    "Polizas reales anonimizadas de corredores para entrenar y medir la extraccion",
+    "Corredores dispuestos a probar y a un piloto de 2 meses (no hay contacto identificado)",
+    "Alta y verificacion del numero en WhatsApp Cloud API de Meta",
+    "API de Claude Haiku y Amazon SES"
+   ]
+  },
+  {
+   "id": "i028",
+   "veredicto": "viable_con_recorte",
+   "horas_estimadas": 1150,
+   "motivo": "Estimacion: PWA con registro manual y geocerca 220 h, backend FastAPI, TimescaleDB y panel 200 h, piloto con choferes e informe 120 h, carga de arribos de buques y avisos de paro 60 h, modelo de espera y evaluacion 160 h, alertas push 60 h, reporte PDF 40 h, despliegue y pruebas 110 h, documentacion de tesis y business case 180 h. Entra en 960 a 1536 h, pero la geocerca automatica en una PWA es fragil: el navegador no da ubicacion en segundo plano de forma confiable (sobre todo en iOS), y el modelo depende de que el piloto junte suficientes registros, algo que el equipo no controla.",
+   "recorte_sugerido": "Dejar el registro de tiempos como marcado manual con un toque (con ubicacion solo al abrir la app) y sacar la geocerca automatica en segundo plano. Si el piloto junta pocos datos, el modelo del semestre 2 se reduce a una linea base estadistica por terminal y franja (medianas y percentiles) en lugar de LightGBM.",
+   "dependencias_externas": [
+    "Reclutar 10 a 20 choferes o empresas para el piloto, sin contacto identificado en la tabla",
+    "Datos publicos de arribos de buques cuya disponibilidad y uso legal no estan verificados",
+    "Permiso de ubicacion del chofer y consentimiento segun Ley 18.331",
+    "Eventos externos (paros, atrasos de buques) que afectan la calidad del modelo"
+   ]
+  },
+  {
+   "id": "i029",
+   "veredicto": "viable_con_recorte",
+   "horas_estimadas": 900,
+   "motivo": "Estimacion: alta de propietario y viviendas 80 h, check-in bilingue con consentimiento y cifrado 150 h, reportes de huespedes y resumen anual 100 h, verificador de anuncios 140 h, emails y LLM 40 h, seguridad y cumplimiento Ley 18.331 (registro de la base, borrado) 60 h, despliegue y pruebas 110 h, piloto con 5 a 10 propietarios 80 h, documentacion y business case 140 h. Entra con margen. El riesgo es de dependencias: el formato del reporte depende de un decreto que puede cambiar o demorarse, y revisar anuncios de plataformas como Airbnb por scraping choca con sus terminos de uso y defensas anti bots.",
+   "recorte_sugerido": "El verificador de anuncios se limita a analizar el texto o la URL que el propio propietario pega (sin rastreo automatico de plataformas). El formato del reporte se hace configurable y se valida contra el texto del decreto o proyecto vigente, sin integracion oficial con el Ministerio del Interior.",
+   "dependencias_externas": [
+    "Decreto reglamentario de la Ley 20.352 vigente y con formato de reporte definido en 2027",
+    "Terminos de uso de plataformas de alquiler para leer anuncios",
+    "Propietarios de Maldonado y Rocha para el piloto, sin contacto identificado en la tabla",
+    "Cumplimiento de Ley 18.331 para datos de identidad de huespedes (registro de base ante la URCDP)"
+   ]
+  }
+ ]
+}
