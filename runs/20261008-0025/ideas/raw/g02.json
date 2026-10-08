@@ -1,0 +1,242 @@
+{
+ "generador": "g02",
+ "ideas": [
+  {
+   "local_id": "g02-1",
+   "titulo": "Prediccion de espera para retirar contenedores en el puerto de Montevideo",
+   "problema": "Retirar un contenedor del puerto de Montevideo puede demorar hasta 9 horas cuando deberia tomar 1,5 a 2 (F-logistica-transporte-001). Las esperas se agravan con atrasos de buques, como los mas de 150 camiones varados diez dias con perdidas estimadas de US$ 750.000 (F-logistica-transporte-002), con paros que dejaron casi 500 camiones esperando (F-logistica-transporte-004) y con caidas de sistemas de la terminal (F-logistica-transporte-005). El transportista se entera en la fila: no sabe cuando le conviene ir ni puede planificar el resto de los viajes del camion.",
+   "usuario": "Lo usan transportistas y despachantes que retiran contenedores; paga la empresa de transporte. La mayoria son empresas de uno a tres camiones (F-logistica-transporte-009), por lo que se apunta a un precio bajo y a acuerdos con la gremial.",
+   "solucion": "Una app web instalable (PWA) donde el chofer marca llegada, ingreso y salida de cada terminal; el registro se completa solo por geocerca cuando da permiso de ubicacion. Con esos tiempos, mas datos publicos de arribos de buques y avisos de paro cargados por el equipo, un modelo estima la espera por terminal y franja horaria y avisa cuando la fila se dispara. Un panel muestra a la empresa la espera historica por terminal y las horas de camion perdidas, util para reclamar o facturar demoras.",
+   "mvp": {
+    "semestre_1": [
+     "PWA con registro manual y por geocerca de tiempos en las terminales",
+     "Backend con API, base de datos y panel de espera actual e historica",
+     "Piloto con un grupo chico de choferes y primer informe de tiempos reales"
+    ],
+    "semestre_2": [
+     "Modelo de prediccion de espera por terminal y franja, evaluado contra los datos del piloto",
+     "Alertas push por demoras anomalas",
+     "Reporte de horas perdidas por empresa exportable a PDF",
+     "Business case con precios validados en entrevistas"
+    ]
+   },
+   "stack": [
+    "React PWA",
+    "Python FastAPI",
+    "PostgreSQL con TimescaleDB",
+    "scikit-learn o LightGBM",
+    "Leaflet con OpenStreetMap",
+    "Docker",
+    "AWS Lightsail"
+   ],
+   "costo_infra": {
+    "total_anual_usd": 174,
+    "items": [
+     {
+      "concepto": "Servidor AWS Lightsail Linux 2 GB RAM con IPv4",
+      "usd_anual": 144,
+      "supuesto": "USD 12 por mes x 12 meses, una instancia para API, base de datos y modelo, Docker Compose; no se cuenta la capa gratuita porque la pagina no dice cuanto dura.",
+      "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+     },
+     {
+      "concepto": "Dominio .com",
+      "usd_anual": 20,
+      "supuesto": "Estimacion por encima: Cloudflare Registrar cobra al costo del registro pero su pagina no muestra el precio del .com; se reservan USD 20 por un ano con margen."
+     },
+     {
+      "concepto": "API de lenguaje Claude Haiku 5.5 para resumen diario de demoras",
+      "usd_anual": 10,
+      "supuesto": "Unos 365 resumenes al ano de 20.000 tokens de entrada y 1.000 de salida: menos de USD 1 a USD 0,10 y 0,50 por millon; se reservan USD 10 con margen.",
+      "fuente_precio_url": "https://claude.com/pricing"
+     }
+    ]
+   },
+   "competidores": [],
+   "monetizacion": "Suscripcion mensual por camion para empresas de transporte, con un plan gratis que solo aporta tiempos (para sumar datos) y un plan pago con prediccion, alertas y reportes de horas perdidas. Canal: la Intergremial de Transporte de Carga y despachantes. Los precios se validan en entrevistas antes de diciembre de 2026.",
+   "riesgos": [
+    "Arranque en frio: sin suficientes choferes reportando, la prediccion no sirve",
+    "Las terminales o la ANP podrian publicar su propio indicador de espera",
+    "Poca adopcion digital en empresas chicas (F-logistica-transporte-008)",
+    "La espera depende de eventos externos (paros, buques) dificiles de predecir"
+   ],
+   "supuestos": [
+    "Los transportistas pagarian por saber la espera antes de salir; no hay ficha con disposicion a pagar",
+    "Las fichas no muestran competidores que midan la espera en el puerto; no se afirma que no existan",
+    "Hay datos publicos de arribos de buques utilizables legalmente; falta verificarlo",
+    "Un piloto de 10 a 20 choferes alcanza para un primer modelo",
+    "Los datos de ubicacion se tratan con consentimiento segun la Ley 18.331"
+   ],
+   "evidencias": [
+    "F-logistica-transporte-001",
+    "F-logistica-transporte-002",
+    "F-logistica-transporte-004",
+    "F-logistica-transporte-005",
+    "F-logistica-transporte-008",
+    "F-logistica-transporte-009"
+   ]
+  },
+  {
+   "local_id": "g02-2",
+   "titulo": "Asistente de papeleo por viaje para fleteros con uno a tres camiones",
+   "problema": "Entre 80 y 90% del transporte profesional son empresas de uno a tres camiones (F-logistica-transporte-009). Desde 2026 transportistas y arroceros reclaman que la Guia Electronica de Carga suma carga administrativa que encarece el flete (F-logistica-transporte-003), y ademas casi todo emisor debe facturar electronicamente (F-legal-contable-002), con doble carga de datos como dolor tipico (F-legal-contable-003). Las empresas logisticas chicas tienen la digitalizacion mas baja del sector (F-logistica-transporte-008): el viaje se tipea varias veces y no se sabe cuanto dejo, aunque el gasoil pesa 40 a 50% de lo que se cobra (F-logistica-transporte-009).",
+   "usuario": "El dueno de una empresa de uno a tres camiones, que paga y suele manejar; su contador recibe los datos exportados.",
+   "solucion": "El fletero carga cada viaje una sola vez: foto del remito o un audio. Un modelo de lenguaje con vision extrae origen, destino, carga, cliente y precio, y el usuario confirma. Con ese registro unico la app prepara los datos listos para copiar en la Guia Electronica de Carga y para el comprobante electronico, registra gasoil y peajes, y calcula el margen por viaje. Se puede preguntar en lenguaje natural, por ejemplo cuanto gane con un cliente en marzo, con Text-to-SQL sobre sus propios datos.",
+   "mvp": {
+    "semestre_1": [
+     "App web movil con alta de viajes desde foto o audio y confirmacion de campos",
+     "Extraccion con modelo de lenguaje y medicion de exactitud sobre remitos reales",
+     "Registro de gastos y margen por viaje"
+    ],
+    "semestre_2": [
+     "Plantilla de datos para Guia Electronica de Carga y exportacion para el contador",
+     "Consultas en lenguaje natural con Text-to-SQL y controles de seguridad",
+     "Piloto con 5 a 10 fleteros y business case"
+    ]
+   },
+   "stack": [
+    "Next.js PWA",
+    "Python FastAPI",
+    "PostgreSQL",
+    "OpenAI gpt-5-mini (vision y texto)",
+    "Whisper o modelo de transcripcion",
+    "Text-to-SQL con validacion de consultas",
+    "Docker",
+    "AWS Lightsail"
+   ],
+   "costo_infra": {
+    "total_anual_usd": 204,
+    "items": [
+     {
+      "concepto": "Servidor AWS Lightsail Linux 2 GB RAM con IPv4",
+      "usd_anual": 144,
+      "supuesto": "USD 12 por mes x 12 meses, una instancia para API y base de datos, Docker Compose; no se cuenta la capa gratuita porque la pagina no dice cuanto dura.",
+      "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+     },
+     {
+      "concepto": "Dominio .com",
+      "usd_anual": 20,
+      "supuesto": "Estimacion por encima: Cloudflare Registrar cobra al costo del registro pero su pagina no muestra el precio del .com; se reservan USD 20 por un ano con margen."
+     },
+     {
+      "concepto": "API OpenAI gpt-5-mini para extraccion y consultas",
+      "usd_anual": 40,
+      "supuesto": "5.000 llamadas al ano con 4.000 tokens de entrada y 600 de salida: 20 M entrada a USD 0,25 y 3 M salida a USD 2 por millon dan unos USD 11; se reservan USD 40 por imagenes, audio y pruebas.",
+      "fuente_precio_url": "https://developers.openai.com/api/docs/pricing"
+     }
+    ]
+   },
+   "competidores": [
+    {
+     "nombre": "YoFacturo",
+     "evidencia_ids": [
+      "F-comercio-retail-008",
+      "F-comercio-retail-009"
+     ],
+     "hueco": "Facturacion y stock para comercios; no modela el viaje, la Guia Electronica de Carga ni el margen por flete."
+    },
+    {
+     "nombre": "Odoo con localizacion uruguaya",
+     "evidencia_ids": [
+      "F-legal-contable-004"
+     ],
+     "hueco": "ERP generico que exige configurar intermediario, certificado y CAE: demasiado complejo para un fletero con un camion."
+    }
+   ],
+   "monetizacion": "Suscripcion mensual por camion para el fletero, con prueba gratis. Canal secundario: estudios contables de transportistas, con un plan propio. Los precios se validan en entrevistas.",
+   "riesgos": [
+    "El sistema oficial de la Guia Electronica de Carga puede no tener API y quedar en copia manual",
+    "Cambios regulatorios en la guia o su eventual derogacion",
+    "Errores de extraccion en remitos manuscritos o fotos malas"
+   ],
+   "supuestos": [
+    "No hay ficha sobre el formato o la API de la Guia Electronica de Carga: el MVP prepara los datos y no la emite",
+    "La emision del comprobante electronico se integra con un proveedor existente o queda fuera del MVP",
+    "Los fleteros pagarian una suscripcion mensual; no hay ficha con precio",
+    "La extraccion con modelo de lenguaje supera 90% de campos correctos tras confirmacion",
+    "Datos personales de clientes tratados segun la Ley 18.331"
+   ],
+   "evidencias": [
+    "F-logistica-transporte-003",
+    "F-logistica-transporte-008",
+    "F-logistica-transporte-009",
+    "F-legal-contable-002",
+    "F-legal-contable-003",
+    "F-legal-contable-004",
+    "F-comercio-retail-008",
+    "F-comercio-retail-009"
+   ]
+  },
+  {
+   "local_id": "g02-3",
+   "titulo": "Ruteo y prueba de entrega para pymes de e-commerce y mensajerias chicas",
+   "problema": "En Montevideo, 32,5% de las empresas de e-commerce entrevistadas no tiene sistema de ruteo, 26% no usa indicadores para monitorear la entrega y 88% de los proveedores logisticos sufrio problemas de seguridad en entregas (F-logistica-transporte-010). Ninguna pyme consultada por UTEC mide la eficiencia de su logistica (F-comercio-retail-007). Mientras tanto el e-commerce crece (F-comercio-retail-001) y la ultima milla, sobre todo fuera de Montevideo, es uno de sus principales obstaculos (F-logistica-transporte-011).",
+   "usuario": "Pymes de e-commerce con reparto propio y mensajerias chicas que reparten para varias tiendas; paga la empresa. El repartidor usa la app movil y el cliente final recibe el aviso.",
+   "solucion": "La pyme sube los pedidos del dia (CSV o planilla) y el sistema geocodifica direcciones, arma rutas optimizadas por vehiculo respetando ventanas horarias, y las envia a la app del repartidor. La prueba de entrega guarda foto, firma y ubicacion, y marca entregas fuera de zona o anomalas como alerta de seguridad. El panel muestra indicadores: entregas a tiempo, costo por entrega y kilometros, y permite preguntar en lenguaje natural sobre esos datos.",
+   "mvp": {
+    "semestre_1": [
+     "Carga de pedidos y geocodificacion de direcciones uruguayas",
+     "Optimizador de rutas con ventanas horarias sobre el mapa de Uruguay",
+     "App del repartidor con secuencia de paradas"
+    ],
+    "semestre_2": [
+     "Prueba de entrega con foto, firma y ubicacion, y alertas de anomalias",
+     "Panel de indicadores y consultas en lenguaje natural",
+     "Piloto con una o dos pymes y comparacion de kilometros antes y despues"
+    ]
+   },
+   "stack": [
+    "React y PWA para repartidor",
+    "Python FastAPI",
+    "Google OR-Tools",
+    "OSRM con extracto OpenStreetMap de Uruguay",
+    "Nominatim o geocodificador propio",
+    "PostgreSQL con PostGIS",
+    "Claude Haiku 5.5 para consultas",
+    "Docker",
+    "AWS Lightsail"
+   ],
+   "costo_infra": {
+    "total_anual_usd": 174,
+    "items": [
+     {
+      "concepto": "Servidor AWS Lightsail Linux 2 GB RAM con IPv4",
+      "usd_anual": 144,
+      "supuesto": "USD 12 por mes x 12 meses, una instancia para API, base, OSRM con el extracto de Uruguay y fotos comprimidas, Docker Compose; no se cuenta la capa gratuita porque la pagina no dice cuanto dura.",
+      "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+     },
+     {
+      "concepto": "Dominio .com",
+      "usd_anual": 20,
+      "supuesto": "Estimacion por encima: Cloudflare Registrar cobra al costo del registro pero su pagina no muestra el precio del .com; se reservan USD 20 por un ano con margen."
+     },
+     {
+      "concepto": "API Claude Haiku 5.5 para consultas en lenguaje natural",
+      "usd_anual": 10,
+      "supuesto": "Unas 3.000 consultas al ano de 5.000 tokens de entrada y 500 de salida: unos USD 2 a USD 0,10 y 0,50 por millon; se reservan USD 10 con margen.",
+      "fuente_precio_url": "https://claude.com/pricing"
+     }
+    ]
+   },
+   "competidores": [],
+   "monetizacion": "Suscripcion mensual por vehiculo o por tramo de entregas para la pyme o la mensajeria, con prueba gratis. Canal: comunidades de tiendas online y mensajerias de Montevideo, luego interior. Los precios se validan en entrevistas.",
+   "riesgos": [
+    "Existen ruteadores internacionales que las fichas no relevan",
+    "Geocodificacion debil en direcciones uruguayas incompletas",
+    "OSRM y fotos pueden exigir mas memoria o disco que el servidor previsto",
+    "Las pymes chicas pueden no ver valor si reparten pocos pedidos"
+   ],
+   "supuestos": [
+    "Las fichas no muestran competidores de ruteo para pymes; no se afirma que no existan",
+    "Las pymes pagarian por ruteo y prueba de entrega; no hay ficha con precio",
+    "El extracto de OpenStreetMap de Uruguay entra en 2 GB de RAM con OSRM",
+    "Fotos y ubicaciones de entrega se tratan segun la Ley 18.331"
+   ],
+   "evidencias": [
+    "F-logistica-transporte-010",
+    "F-logistica-transporte-011",
+    "F-comercio-retail-001",
+    "F-comercio-retail-007"
+   ]
+  }
+ ]
+}

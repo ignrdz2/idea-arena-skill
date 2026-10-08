@@ -1,0 +1,244 @@
+{
+ "generador": "g05",
+ "ideas": [
+  {
+   "local_id": "g05-1",
+   "titulo": "Reclamos vecinales por WhatsApp para municipios chicos, sin implantación",
+   "problema": "El gobierno digital departamental en Uruguay es muy desigual (F-sector-publico-001). Las soluciones existentes son proyectos grandes: un sistema común para 14 intendencias costó USD 4,5 millones (F-sector-publico-005) y una plataforma municipal de la región tardó cerca de seis meses en implantarse (F-sector-publico-007). Muchos gobiernos ven la tecnología como gasto (F-sector-publico-008) y solo el 34% de los encuestados completó un trámite en línea de punta a punta (F-sector-publico-009). Un municipio chico queda entre no tener nada y un proyecto que no puede pagar.",
+   "usuario": "Usan: vecinos (reportan por WhatsApp) y funcionarios del municipio o de la intendencia (gestionan en un tablero web). Paga: el municipio o la intendencia.",
+   "solucion": "Un canal de reclamos que se activa en un día: el vecino escribe al WhatsApp del municipio, un asistente con LLM pide lo mínimo (tipo, ubicación, foto), lo clasifica y lo asigna a una cuadrilla. El funcionario ve una bandeja web con mapa, estados y plazos; el vecino recibe el cierre por el mismo chat. Sin instalación ni migración, con catálogo configurable desde una planilla y reporte mensual de tiempos de respuesta.",
+   "mvp": {
+    "semestre_1": [
+     "Bot de WhatsApp (API oficial, número de prueba) que recibe reclamos con texto, foto y ubicación y los clasifica con LLM",
+     "Bandeja web para funcionarios con estados y mapa",
+     "Demo al tutor con datos simulados de un municipio"
+    ],
+    "semestre_2": [
+     "Catálogo de reclamos configurable, asignación por zona y aviso de cierre al vecino",
+     "Reporte mensual de tiempos de respuesta y medición de exactitud del clasificador",
+     "Piloto con un municipio o business case con entrevistas a funcionarios"
+    ]
+   },
+   "stack": [
+    "WhatsApp Cloud API",
+    "Python FastAPI",
+    "PostgreSQL con PostGIS",
+    "React",
+    "Claude Haiku 5.5 vía API",
+    "Docker",
+    "AWS Lightsail"
+   ],
+   "costo_infra": {
+    "total_anual_usd": 130,
+    "items": [
+     {
+      "concepto": "Servidor AWS Lightsail Linux 1 GB con IPv4",
+      "usd_anual": 84,
+      "supuesto": "Una instancia de USD 7 por mes durante 12 meses para backend, base y bandeja; no se cuenta capa gratuita.",
+      "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+     },
+     {
+      "concepto": "API de LLM Claude Haiku 5.5",
+      "usd_anual": 16,
+      "supuesto": "Hasta 60 millones de tokens de entrada (USD 0,10 por millón) y 12 millones de salida (USD 0,50 por millón) en el año, más margen; unos 20.000 mensajes.",
+      "fuente_precio_url": "https://claude.com/pricing"
+     },
+     {
+      "concepto": "Mensajes de WhatsApp Cloud API",
+      "usd_anual": 10,
+      "supuesto": "Los mensajes del vecino y las respuestas dentro de la ventana de 24 horas son gratis; se reservan USD 10 para plantillas de aviso fuera de ventana.",
+      "fuente_precio_url": "https://developers.facebook.com/docs/whatsapp/pricing"
+     },
+     {
+      "concepto": "Dominio y respaldos",
+      "usd_anual": 20,
+      "supuesto": "Estimación por encima sin fuente abierta: un dominio .com (unos USD 15) y almacenamiento de respaldos pequeño, redondeado hacia arriba."
+     }
+    ]
+   },
+   "competidores": [
+    {
+     "nombre": "SovraGov (Sovra)",
+     "evidencia_ids": [
+      "F-sector-publico-007"
+     ],
+     "hueco": "Plataforma completa de trámites con implantación de meses y sin precios públicos; no sirve a quien solo necesita un canal de reclamos ya."
+    },
+    {
+     "nombre": "MuniDigital",
+     "evidencia_ids": [
+      "F-sector-publico-008"
+     ],
+     "hueco": "Suite para municipios en 9 países; no explica cómo cobra y el cliente percibe la tecnología como gasto."
+    },
+    {
+     "nombre": "Plataforma de trámites de Agesic para intendencias",
+     "evidencia_ids": [
+      "F-sector-publico-001"
+     ],
+     "hueco": "Ofrece trámites y expediente electrónico, no un canal conversacional de reclamos; puede ser socio en lugar de rival."
+    }
+   ],
+   "monetizacion": "Paga el municipio o la intendencia, por uso: sin costo de implantación y un precio por reclamo gestionado (por ejemplo USD 0,25) con un mínimo mensual bajo (USD 50) y un tope. Canal: Congreso de Intendentes y venta directa a alcaldes; luego municipios chicos de LATAM.",
+   "riesgos": [
+    "Compras públicas lentas o con licitación aun para montos chicos",
+    "Que Agesic o la intendencia ofrezcan un canal similar gratis",
+    "Clasificación errónea de reclamos",
+    "Baja adopción si el municipio no responde"
+   ],
+   "supuestos": [
+    "Uruguay tiene más de 100 municipios de tercer nivel, muchos sin canal digital propio de reclamos (a verificar)",
+    "Los vecinos prefieren WhatsApp a un portal de trámites",
+    "Un municipio puede contratar montos de USD 50 a 150 por mes por compra directa",
+    "El precio por reclamo es una hipótesis a validar en entrevistas",
+    "No hay contacto identificado en el sector: el piloto depende de conseguirlo antes de diciembre de 2026"
+   ],
+   "evidencias": [
+    "F-sector-publico-001",
+    "F-sector-publico-005",
+    "F-sector-publico-007",
+    "F-sector-publico-008",
+    "F-sector-publico-009"
+   ]
+  },
+  {
+   "local_id": "g05-2",
+   "titulo": "Registro y reporte de incidentes de ciberseguridad en 24 horas para entidades chicas",
+   "problema": "CERTuy registró 14.264 incidentes en 2024, 42.768 en 2025 y 32.399 solo en el primer semestre de 2026, y el Decreto 66/025 obliga a las entidades de sectores críticos a reportar incidentes en 24 horas (F-sector-publico-006). Las organizaciones con pocas capacidades digitales lo sufren más: en el Estado no hay un marco de competencias digitales y las capacidades analíticas son limitadas (F-sector-publico-004), y la madurez digital de las intendencias es muy desigual (F-sector-publico-001). Una entidad sin equipo de seguridad no sabe qué registrar, cómo clasificarlo ni cómo armar el reporte a tiempo.",
+   "usuario": "Usa: el responsable de TI o de seguridad (a menudo una sola persona) de una intendencia, un organismo chico o una entidad privada de sector crítico. Paga: la entidad.",
+   "solucion": "Una herramienta mínima de cumplimiento: el responsable describe el incidente en lenguaje natural o por formulario guiado; un LLM propone tipo y severidad, pide los datos que faltan y arranca un reloj de 24 horas con avisos. Genera el borrador del reporte, guarda una bitácora con evidencias y línea de tiempo, y sugiere pasos de contención básicos desde guías cargadas por la entidad. No es un SOC: no monitorea redes, ordena y documenta la respuesta.",
+   "mvp": {
+    "semestre_1": [
+     "Formulario guiado y chat que registra incidentes con línea de tiempo y adjuntos",
+     "Clasificación de tipo y severidad con LLM sobre una taxonomía configurable",
+     "Demo con 20 incidentes simulados y medición de acierto"
+    ],
+    "semestre_2": [
+     "Reloj de 24 horas con avisos por correo y borrador de reporte exportable",
+     "Guías de contención con RAG sobre documentos de la entidad",
+     "Usuarios y roles, auditoría y piloto o entrevistas con 5 entidades"
+    ]
+   },
+   "stack": [
+    "Python FastAPI",
+    "PostgreSQL",
+    "Qdrant",
+    "React",
+    "Claude Haiku 5.5 vía API",
+    "Docker",
+    "AWS Lightsail"
+   ],
+   "costo_infra": {
+    "total_anual_usd": 148,
+    "items": [
+     {
+      "concepto": "Servidor AWS Lightsail Linux 2 GB con IPv4",
+      "usd_anual": 144,
+      "supuesto": "Una instancia de USD 12 por mes durante 12 meses para backend, base y Qdrant; sin capa gratuita.",
+      "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+     },
+     {
+      "concepto": "API de LLM Claude Haiku 5.5",
+      "usd_anual": 4,
+      "supuesto": "Hasta 20 millones de tokens de entrada (USD 0,10 por millón) y 4 millones de salida (USD 0,50 por millón) en el año, unos 3.000 incidentes de prueba con guías.",
+      "fuente_precio_url": "https://claude.com/pricing"
+     }
+    ]
+   },
+   "competidores": [],
+   "monetizacion": "Suscripción por entidad, sin licencia inicial: USD 40 por mes para entidades chicas, con un plan anual pagado por adelantado. Canal: responsables de TI de intendencias y de proveedores chicos de sectores críticos, y estudios que asesoran en seguridad como revendedores.",
+   "riesgos": [
+    "Alcance exacto del Decreto 66/025 y formato del reporte: si no coincide con el producto, pierde valor",
+    "Que CERTuy publique su propia herramienta gratuita de registro",
+    "Datos de incidentes sensibles: exige buenas prácticas de seguridad y cumplimiento con la Ley 18.331",
+    "Clasificación errónea de severidad con impacto en el plazo"
+   ],
+   "supuestos": [
+    "Hay en Uruguay un número relevante de entidades obligadas sin equipo propio de seguridad (a verificar)",
+    "Las entidades obligadas pagarían USD 40 por mes por ordenar el reporte",
+    "La taxonomía y el formato de reporte de CERTuy son públicos o se obtienen en entrevistas",
+    "Las fichas no muestran competidores; no se afirma que no existan",
+    "No hay contacto identificado: la validación depende de conseguir entrevistas antes de diciembre de 2026"
+   ],
+   "evidencias": [
+    "F-sector-publico-006",
+    "F-sector-publico-004",
+    "F-sector-publico-001"
+   ]
+  },
+  {
+   "local_id": "g05-3",
+   "titulo": "Consultas en lenguaje natural sobre los datos de gestión de un organismo",
+   "problema": "En Uruguay no existe un marco de competencias digitales para funcionarios, los relevamientos muestran capacidades analíticas limitadas y se pide formación en análisis de datos y Excel (F-sector-publico-004). El volumen de trabajo es alto: Presidencia, el Ministerio del Interior y el Tribunal de Cuentas gestionan más de 500 expedientes diarios cada uno (F-sector-publico-003). La respuesta hoy es capacitar: INEFOP formó a más de 25.000 personas en habilidades digitales (F-educacion-009), pero un curso no responde la pregunta concreta que el jefe necesita hoy.",
+   "usuario": "Usa: el funcionario o jefe de área que necesita una cifra (por ejemplo, expedientes atrasados por oficina). Paga: el organismo o la intendencia, desde su área de TI o de gestión.",
+   "solucion": "El funcionario sube las planillas o exportaciones que ya maneja (expedientes, reclamos, compras) o conecta datos abiertos, y pregunta en español. El sistema genera SQL, muestra la consulta explicada en palabras, la tabla y un gráfico, y guarda las preguntas frecuentes como indicadores. Cada respuesta es auditable y los datos personales se detectan y enmascaran antes de enviar nada al LLM, que solo ve el esquema y muestras anonimizadas.",
+   "mvp": {
+    "semestre_1": [
+     "Carga de planillas CSV y Excel a una base por organismo con detección de esquema",
+     "Text-to-SQL con explicación de la consulta sobre datos abiertos de ejemplo",
+     "Demo con un conjunto de 50 preguntas y medición de exactitud"
+    ],
+    "semestre_2": [
+     "Enmascarado de datos personales y bitácora de consultas",
+     "Gráficos e indicadores guardados con actualización al recargar datos",
+     "Piloto o entrevistas con funcionarios y business case"
+    ]
+   },
+   "stack": [
+    "Python FastAPI",
+    "DuckDB",
+    "PostgreSQL",
+    "Qdrant",
+    "React",
+    "Claude Haiku 5.5 vía API",
+    "Docker",
+    "AWS Lightsail"
+   ],
+   "costo_infra": {
+    "total_anual_usd": 166,
+    "items": [
+     {
+      "concepto": "Servidor AWS Lightsail Linux 2 GB con IPv4",
+      "usd_anual": 144,
+      "supuesto": "Una instancia de USD 12 por mes durante 12 meses para backend, DuckDB, Postgres y Qdrant; sin capa gratuita.",
+      "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+     },
+     {
+      "concepto": "API de LLM Claude Haiku 5.5",
+      "usd_anual": 22,
+      "supuesto": "Hasta 150 millones de tokens de entrada (USD 0,10 por millón) y 12 millones de salida (USD 0,50 por millón), unas 15.000 consultas con esquema y ejemplos en el prompt.",
+      "fuente_precio_url": "https://claude.com/pricing"
+     }
+    ]
+   },
+   "competidores": [
+    {
+     "nombre": "Cursos de habilidades digitales de INEFOP",
+     "evidencia_ids": [
+      "F-educacion-009"
+     ],
+     "hueco": "Forman personas a mediano plazo; no responden en el momento preguntas sobre los datos propios del organismo."
+    }
+   ],
+   "monetizacion": "Paga el organismo: plan por área de USD 60 por mes con hasta 10 usuarios y un volumen de consultas, y excedente por uso. Canal: áreas de gestión de intendencias y ministerios, comunidades de funcionarios como la de expediente digital; luego gobiernos locales de LATAM.",
+   "riesgos": [
+    "Respuestas numéricas incorrectas por SQL mal generado: requiere validación y mostrar la consulta",
+    "Restricciones de los organismos para subir datos a la nube; puede exigir instalación local",
+    "Compras públicas lentas",
+    "Herramientas de BI con IA de grandes proveedores ya licenciadas en el Estado"
+   ],
+   "supuestos": [
+    "Los funcionarios manejan planillas o exportaciones de sus sistemas que pueden usar en la herramienta (a verificar)",
+    "Un área pagaría USD 60 por mes",
+    "Enviar esquema y muestras anonimizadas al LLM tiene un camino de cumplimiento con la Ley 18.331",
+    "Las fichas no muestran competidores de software; no se afirma que no existan",
+    "No hay contacto identificado en el Estado: la validación depende de conseguirlo antes de diciembre de 2026"
+   ],
+   "evidencias": [
+    "F-sector-publico-004",
+    "F-sector-publico-003",
+    "F-educacion-009"
+   ]
+  }
+ ]
+}

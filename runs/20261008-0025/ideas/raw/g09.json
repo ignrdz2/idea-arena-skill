@@ -1,0 +1,258 @@
+{
+  "generador": "g09",
+  "ideas": [
+    {
+      "local_id": "g09-1",
+      "titulo": "Stock único que se descuenta leyendo los CFE que la pyme ya emite",
+      "problema": "Las pymes uruguayas que venden online no controlan su stock: el 92% no tiene sistema para gestionar inventario de forma automatizada, solo el 31% usa código de barras y la confirmación de pedidos es manual (F-comercio-retail-006); tienen dificultades para controlar stock, compras y rastreo (F-comercio-retail-007). Como la factura electrónica es obligatoria para casi todos (F-legal-contable-002), cargan cada venta dos veces: en el software de CFE y en la planilla de stock (F-comercio-retail-009, F-legal-contable-003). El costo es vender lo que no hay y horas de carga manual, en un canal que facturó más de 100.000 millones de pesos en 2025 (F-comercio-retail-001).",
+      "usuario": "Dueño o encargado de una pyme uruguaya que vende en local y online y ya factura con un proveedor de CFE. Paga el mismo comercio.",
+      "solucion": "Aplicación web y móvil (PWA) que mantiene un stock único. En lugar de emitir comprobantes, lee los CFE que la pyme ya emite (XML exportado o reenviado por correo desde su proveedor) y descuenta stock automáticamente; un modelo de lenguaje empareja las descripciones libres de las líneas del comprobante con los SKU y pide confirmación solo cuando duda. El celular sirve de lector de código de barras para recepción de mercadería y conteos. Alerta de quiebres y sugiere reposición. Así no compite con el proveedor de CFE: se monta encima.",
+      "mvp": {
+        "semestre_1": [
+          "Modelo de productos, depósitos y movimientos con API y panel web",
+          "Importación de CFE en XML y descuento de stock con emparejamiento asistido por LLM",
+          "Escaneo de código de barras con la cámara en PWA",
+          "Demo: piloto con datos reales de 1 o 2 pymes, midiendo aciertos del emparejamiento"
+        ],
+        "semestre_2": [
+          "Lectura automática de CFE desde una casilla de correo dedicada",
+          "Alertas de quiebre y sugerencia de reposición",
+          "Sincronización de stock con una tienda online vía API pública",
+          "Demo: 3 a 5 pymes usándolo un mes y business case con métricas de uso"
+        ]
+      },
+      "stack": [
+        "Python FastAPI",
+        "PostgreSQL",
+        "React PWA",
+        "ZXing para código de barras",
+        "Claude Haiku 5.5",
+        "Qdrant para embeddings de productos",
+        "Docker",
+        "AWS Lightsail"
+      ],
+      "costo_infra": {
+        "total_anual_usd": 194,
+        "items": [
+          {
+            "concepto": "Servidor AWS Lightsail Linux 2 GB RAM con IPv4",
+            "usd_anual": 144,
+            "supuesto": "Una instancia de USD 12 por mes durante 12 meses de 2027 para backend, base de datos y Qdrant en Docker; no se cuenta capa gratuita.",
+            "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+          },
+          {
+            "concepto": "API de Claude Haiku 5.5",
+            "usd_anual": 20,
+            "supuesto": "Unos 10 millones de tokens de entrada y 2 millones de salida en el año (emparejamiento de líneas de CFE en pruebas y pilotos) a USD 0,10 y 0,50 por millón; da unos USD 2, se presupuestan USD 20 de margen.",
+            "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+          },
+          {
+            "concepto": "Dominio .com y snapshots de respaldo",
+            "usd_anual": 30,
+            "supuesto": "Estimación por encima sin fuente abierta: dominio unos USD 15 por año y snapshots semanales unos USD 15 por año, redondeado para arriba."
+          }
+        ]
+      },
+      "competidores": [
+        {
+          "nombre": "YoFacturo",
+          "evidencia_ids": [
+            "F-comercio-retail-008",
+            "F-comercio-retail-009"
+          ],
+          "hueco": "Integra stock solo si la pyme migra a su facturación, y el stock en tiempo real y e-commerce aparecen en planes superiores; quien ya tiene otro proveedor de CFE no tiene opción sin migrar, algo que causa demoras (F-legal-contable-003)."
+        },
+        {
+          "nombre": "Odoo con localización Uruguay",
+          "evidencia_ids": [
+            "F-legal-contable-004"
+          ],
+          "hueco": "Exige configurar cuentas del intermediario, certificado digital y CAE: configuración no trivial para una pyme chica."
+        },
+        {
+          "nombre": "Tiendanube",
+          "evidencia_ids": [
+            "F-comercio-retail-010"
+          ],
+          "hueco": "Su guía de precios no lista Uruguay; no resuelve el stock del local físico ni la conexión con CFE."
+        }
+      ],
+      "monetizacion": "Suscripción mensual que paga el comercio, con un precio objetivo de USD 15 a 25 por mes por local, por debajo de migrar de sistema. Venta directa a pymes y alianza con estudios contables, que ya cobran trabajo recurrente a pymes (F-legal-contable-001).",
+      "riesgos": [
+        "Los proveedores de CFE pueden no exportar XML de forma cómoda o cambiar formatos",
+        "El emparejamiento de descripciones libres puede fallar en catálogos con muchas variantes (talles, colores)",
+        "La pyme puede no querer otra herramienta además de la de facturación",
+        "Un proveedor de CFE puede sumar stock gratis y cerrar el hueco"
+      ],
+      "supuestos": [
+        "Que la mayoría de los proveedores de CFE permite exportar o reenviar el XML de cada comprobante",
+        "Que el precio de USD 15 a 25 por mes es aceptable; no hay ficha de disposición a pagar",
+        "El modelo se inspira en herramientas de inventario para comercio minorista de EEUU; su éxito allá no está respaldado por fichas",
+        "Que el equipo consigue 1 o 2 pymes piloto antes de diciembre de 2026; no hay contactos declarados",
+        "El costo de vender sin stock no está cuantificado en las fichas"
+      ],
+      "evidencias": [
+        "F-comercio-retail-001",
+        "F-comercio-retail-006",
+        "F-comercio-retail-007",
+        "F-comercio-retail-008",
+        "F-comercio-retail-009",
+        "F-comercio-retail-010",
+        "F-legal-contable-001",
+        "F-legal-contable-002",
+        "F-legal-contable-003",
+        "F-legal-contable-004"
+      ]
+    },
+    {
+      "local_id": "g09-2",
+      "titulo": "Radar de exposición del catálogo frente a compras por franquicia",
+      "problema": "El comercio minorista uruguayo pierde ventas frente a plataformas extranjeras: la Cámara de Comercio estima unos 15 millones de dólares por mes, sobre todo en indumentaria, calzado, juguetes y hogar (F-comercio-retail-003). Los envíos por franquicia pasaron de 304.870 a 957.633 en un semestre (F-comercio-retail-004) y cerraron unas 40 jugueterías en 2025 (F-comercio-retail-005), mientras el volumen vendido se estanca (F-comercio-retail-002). El comerciante no sabe qué productos de su catálogo están realmente expuestos y cuáles puede defender.",
+      "usuario": "Dueño o comprador de una tienda minorista de juguetes, indumentaria, calzado u hogar en Uruguay; paga el comercio. Podría pagar también una cámara o asociación del rubro para sus socios.",
+      "solucion": "El comercio sube su catálogo (planilla o exportación del sistema). El sistema busca productos equivalentes en páginas públicas de plataformas extranjeras con embeddings de texto e imagen, calcula el costo puesto en Uruguay para el consumidor con las reglas de franquicia (tres compras anuales de hasta US$ 200 y 20 kilos, F-comercio-retail-004), el tipo de cambio y el plazo de entrega, y clasifica cada SKU: expuesto, defendible o sin equivalente. Para los expuestos sugiere acciones: ajustar precio, dejar de reponer o comunicar ventajas locales (entrega inmediata, cambio, garantía). Informe mensual por rubro.",
+      "mvp": {
+        "semestre_1": [
+          "Ingesta de catálogo y normalización de productos",
+          "Búsqueda de equivalentes con embeddings sobre un conjunto de páginas públicas cargadas por el usuario o el equipo",
+          "Calculadora de costo puesto con reglas de franquicia y tipo de cambio",
+          "Demo: catálogo real de una juguetería con SKUs clasificados y validación manual de aciertos"
+        ],
+        "semestre_2": [
+          "Seguimiento periódico de precios de los equivalentes encontrados",
+          "Recomendaciones por SKU generadas con LLM y explicadas",
+          "Panel por rubro y temporada",
+          "Demo: 3 comercios de distintos rubros y business case con su feedback"
+        ]
+      },
+      "stack": [
+        "Python",
+        "Playwright para páginas públicas",
+        "Modelo de embeddings multilingüe abierto (sentence-transformers)",
+        "Qdrant",
+        "Claude Haiku 5.5",
+        "PostgreSQL",
+        "Next.js",
+        "Docker",
+        "AWS Lightsail"
+      ],
+      "costo_infra": {
+        "total_anual_usd": 199,
+        "items": [
+          {
+            "concepto": "Servidor AWS Lightsail Linux 2 GB RAM con IPv4",
+            "usd_anual": 144,
+            "supuesto": "Una instancia de USD 12 por mes durante 12 meses de 2027 para backend, base de datos y Qdrant en Docker; no se cuenta capa gratuita.",
+            "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+          },
+          {
+            "concepto": "API de Claude Haiku 5.5",
+            "usd_anual": 25,
+            "supuesto": "Unos 30 millones de tokens de entrada y 5 millones de salida en el año (clasificación y recomendaciones en pruebas y pilotos) a USD 0,10 y 0,50 por millón; da unos USD 5,5, se presupuestan USD 25 de margen.",
+            "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+          },
+          {
+            "concepto": "Dominio .com y snapshots de respaldo",
+            "usd_anual": 30,
+            "supuesto": "Estimación por encima sin fuente abierta: dominio unos USD 15 por año y snapshots semanales unos USD 15 por año, redondeado para arriba."
+          }
+        ]
+      },
+      "competidores": [],
+      "monetizacion": "Suscripción mensual del comercio de USD 20 a 40 según cantidad de SKUs, y un plan para asociaciones gremiales que lo ofrezcan a sus socios. Canal: asociaciones del rubro y venta directa a tiendas.",
+      "riesgos": [
+        "Los términos de uso de las plataformas extranjeras pueden prohibir la consulta automatizada; obliga a limitarse a consultas puntuales o carga manual de enlaces",
+        "El emparejamiento de productos genéricos sin marca puede dar falsos positivos",
+        "El comercio puede ver el diagnóstico como mala noticia sin acciones accionables",
+        "Cambios en el régimen de franquicia alteran el cálculo"
+      ],
+      "supuestos": [
+        "Las fichas no muestran competidores locales de inteligencia de precios frente a compras por franquicia; no se afirma que no existan",
+        "El modelo se inspira en herramientas de monitoreo de precios de competidores usadas en otros mercados; su éxito no está respaldado por fichas",
+        "Que los comerciantes pagarían USD 20 a 40 por mes; no hay ficha de disposición a pagar",
+        "Que existe una forma legal de obtener precios públicos de las plataformas extranjeras en el volumen del MVP",
+        "Que una asociación del rubro estaría dispuesta a difundirlo; no hay contacto declarado"
+      ],
+      "evidencias": [
+        "F-comercio-retail-002",
+        "F-comercio-retail-003",
+        "F-comercio-retail-004",
+        "F-comercio-retail-005"
+      ]
+    },
+    {
+      "local_id": "g09-3",
+      "titulo": "Portal de cambios y devoluciones para tiendas online uruguayas",
+      "problema": "Las pymes de e-commerce uruguayas casi no gestionan devoluciones: solo el 8% lo hace y ninguna mide la eficiencia de su logística (F-comercio-retail-007). El volumen es alto: 96,3 millones de transacciones en 2025 (F-comercio-retail-001) y casi siete de cada diez uruguayos compran online, 93% en comercios nacionales (F-comercio-retail-011). Del lado logístico, el 26% no usa indicadores de entrega (F-logistica-transporte-010) y la última milla es difícil fuera de Montevideo (F-logistica-transporte-011). Cada cambio se resuelve a mano por mensajes, sin registro de motivos ni de qué productos generan problemas.",
+      "usuario": "Tienda online pyme de Uruguay (indumentaria, calzado, hogar) que paga la suscripción; su cliente final usa el portal para pedir el cambio.",
+      "solucion": "Portal de autoservicio con la marca de la tienda: el cliente ingresa su número de pedido, elige el producto, el motivo y adjunta foto; el sistema aplica las reglas de la tienda (plazos, productos excluidos) y ofrece primero cambio por otro talle o crédito en la tienda antes que reembolso. Un modelo de lenguaje clasifica motivos y fotos. La tienda ve una bandeja con estados, coordina retiro o entrega en local, y obtiene los datos para emitir la nota de crédito en su proveedor de CFE (F-legal-contable-002). Un panel muestra tasa de devolución y motivos por SKU.",
+      "mvp": {
+        "semestre_1": [
+          "Portal del cliente con reglas configurables por tienda",
+          "Bandeja de gestión con estados y notificaciones por correo",
+          "Carga de pedidos por planilla o API de una plataforma de tienda",
+          "Demo: flujo completo con una tienda piloto"
+        ],
+        "semestre_2": [
+          "Clasificación de motivos y fotos con LLM",
+          "Cambio por crédito en tienda y por otro talle con reserva de stock",
+          "Panel de motivos por SKU y exportación de datos para nota de crédito",
+          "Demo: 3 tiendas en uso real y business case con tasas medidas"
+        ]
+      },
+      "stack": [
+        "TypeScript",
+        "NestJS",
+        "PostgreSQL",
+        "React",
+        "Claude Haiku 5.5",
+        "Docker",
+        "AWS Lightsail"
+      ],
+      "costo_infra": {
+        "total_anual_usd": 194,
+        "items": [
+          {
+            "concepto": "Servidor AWS Lightsail Linux 2 GB RAM con IPv4",
+            "usd_anual": 144,
+            "supuesto": "Una instancia de USD 12 por mes durante 12 meses de 2027 para backend, base de datos y Qdrant en Docker; no se cuenta capa gratuita.",
+            "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+          },
+          {
+            "concepto": "API de Claude Haiku 5.5",
+            "usd_anual": 20,
+            "supuesto": "Unos 15 millones de tokens de entrada (incluye imágenes) y 2 millones de salida en el año en pruebas y pilotos a USD 0,10 y 0,50 por millón; da unos USD 2,5, se presupuestan USD 20 de margen.",
+            "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+          },
+          {
+            "concepto": "Dominio .com y snapshots de respaldo",
+            "usd_anual": 30,
+            "supuesto": "Estimación por encima sin fuente abierta: dominio unos USD 15 por año y snapshots semanales unos USD 15 por año, redondeado para arriba."
+          }
+        ]
+      },
+      "competidores": [],
+      "monetizacion": "Suscripción mensual de la tienda de USD 15 a 30 según cantidad de solicitudes por mes. El argumento de venta es retener ingresos convirtiendo reembolsos en cambios o crédito. Canal: venta directa a tiendas online y agencias que las implementan.",
+      "riesgos": [
+        "El volumen de devoluciones en pymes puede ser bajo y no justificar una suscripción",
+        "Las plataformas de tienda pueden sumar devoluciones nativas",
+        "Integrar pedidos de plataformas diversas puede consumir mucho tiempo",
+        "Tratar datos personales de clientes finales exige cumplir la Ley 18.331 (registro de bases y consentimiento)"
+      ],
+      "supuestos": [
+        "Las fichas no muestran competidores locales de gestión de devoluciones; no se afirma que no existan",
+        "La tasa de devoluciones y su costo en pymes uruguayas no están en las fichas",
+        "El modelo se inspira en portales de devoluciones usados por tiendas online de EEUU; su éxito no está respaldado por fichas",
+        "Que la normativa de relaciones de consumo sobre ventas a distancia hace obligatorio aceptar ciertos arrepentimientos; a confirmar con la ley vigente",
+        "Que las tiendas pagarían USD 15 a 30 por mes; no hay ficha de disposición a pagar"
+      ],
+      "evidencias": [
+        "F-comercio-retail-001",
+        "F-comercio-retail-007",
+        "F-comercio-retail-011",
+        "F-logistica-transporte-010",
+        "F-logistica-transporte-011",
+        "F-legal-contable-002"
+      ]
+    }
+  ]
+}
