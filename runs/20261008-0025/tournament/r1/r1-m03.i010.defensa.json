@@ -1,0 +1,90 @@
+{
+ "idea": "i010",
+ "respuestas": [
+  {
+   "ataque": 1,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que la dependencia del colegio piloto no tenía plan B y que no hay contacto declarado. No acepto que viole R7: R7 permite datos abiertos, públicos o generados por el propio producto, y el MVP revisado corre sobre cohortes sintéticas que genera el equipo. El semestre 1 ya no usa datos de ningún colegio y el semestre 2 tiene demo alternativa (simulación completa). El piloto pasa a ser opcional y se declara como supuesto; el costo es menos valor académico y demanda sin medir, y queda como riesgo.",
+   "evidencia": []
+  },
+  {
+   "ataque": 2,
+   "decision": "PARCIAL",
+   "detalle": "Tiene razón en que ninguna ficha mide ausentismo en privados; busqué y no encontré cifras separadas por gestión. Lo declaro en el problema y como supuesto. Rebato que F-educacion-001 y 002 sean solo de liceos oficiales (hablan de liceos de Uruguay sin ese filtro; solo F-003 dice oficiales, y la saqué del argumento). Agrego F-defensa-r1-m03-i010-001: 41.235 alumnos en liceos privados, que dimensiona el segmento, aunque no prueba el dolor allí.",
+   "evidencia": [
+    "F-educacion-001",
+    "F-educacion-002",
+    "F-educacion-003",
+    "F-defensa-r1-m03-i010-001"
+   ]
+  },
+  {
+   "ataque": 3,
+   "decision": "CONCEDE",
+   "detalle": "F-educacion-004 prueba el tamaño del sector y su crisis, no que la desvinculación cause cierres, ni que los adscriptos detecten tarde, ni que lo usen a diario. Quité el texto que lo sugería y pasé 'detectan tarde y a mano' y 'lo usarían a diario' a supuestos. El problema ahora dice solo que perder un alumno es perder una cuota, en un sector en crisis.",
+   "evidencia": [
+    "F-educacion-004"
+   ]
+  },
+  {
+   "ataque": 4,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que la ausencia de alertas en F-005 y F-006 no es prueba y que una suite podría sumarlas; lo escribí en el hueco y ya estaba en riesgos. No acepto que obligue a una segunda herramienta con doble carga: el producto ahora se posiciona como capa sobre los exportes de la suite, sin migrar nada, con valor propio en puntaje explicable, borrador de mensaje revisado y registro de resultados de intervenciones, que F-005 no muestra. La carga semanal de planilla es supuesto declarado.",
+   "evidencia": [
+    "F-educacion-005",
+    "F-educacion-006"
+   ]
+  },
+  {
+   "ataque": 5,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que un trimestre en un colegio no mide retención ni da muestra para el modelo: el riesgo ahora dice que mide detección anticipada, y la comparación contra reglas es retrospectiva. Rebato que el business case sea flojo por tener solo supuesto de precio: la rúbrica da 7 en demanda cuando la disposición a pagar es un supuesto declarado, y agregué una cuenta con F-004: 113.000 / 220 son unos 514 alumnos por colegio, unos USD 1.500 por colegio a USD 3, y 10 colegios son unos USD 15.000 al año.",
+   "evidencia": [
+    "F-educacion-004"
+   ]
+  },
+  {
+   "ataque": 6,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que faltaba describir el flujo. Ahora el LLM recibe solo datos seudonimizados, sin nombre, documento ni texto libre, y el adscripto revisa el borrador. Con eso se supone que no hay transferencia de datos personales; el art. 23 prohíbe transferir a países sin nivel adecuado salvo excepciones o autorización de la URCDP (F-defensa-r1-m03-i010-002). Esa suposición queda declarada como riesgo a confirmar con la URCDP. No acepto que falte camino: R6 pide uno realista, y seudonimizar antes de la llamada más política de datos en el semestre 2 lo es. Las pruebas usan datos sintéticos, sin consentimiento previo.",
+   "evidencia": [
+    "F-defensa-r1-m03-i010-002"
+   ]
+  },
+  {
+   "ataque": 7,
+   "decision": "CONCEDE",
+   "detalle": "Eliminé el 'registro propio en la app', que obligaba a cargar todo dos veces; queda solo importación de exportes de la suite. La aceptación de cargar una planilla semanal pasa a supuesto explícito. F-educacion-007 es de Colombia y no la uso.",
+   "evidencia": [
+    "F-educacion-007"
+   ]
+  }
+ ],
+ "nuevas_fichas": [
+  {
+   "id": "F-defensa-r1-m03-i010-001",
+   "sector": "educacion",
+   "hallazgo": "En 2023 la matrícula de los liceos privados uruguayos llegó a 41.235 alumnos, similar a la de 2018, según el Monitor Liceal. La desvinculación 2022-2023 en educación media (4,7%) no se desglosa por tipo de gestión.",
+   "source_url": "https://www.elobservador.com.uy/nota/liceos-privados-recuperan-terreno-y-cantidad-de-alumnos-de-2023-es-similar-a-la-de-2018-2023912184621",
+   "source_title": "Liceos privados recuperan terreno y cantidad de alumnos de 2023 es similar a la de 2018",
+   "source_date": "2023-09-12",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T01:10:00",
+   "extracto": "En 2023 la matrícula de los privados llegó a 41.235 alumnos"
+  },
+  {
+   "id": "F-defensa-r1-m03-i010-002",
+   "sector": "transversal",
+   "hallazgo": "El artículo 23 de la Ley 18.331 prohíbe transferir datos personales a países sin nivel adecuado de protección, salvo excepciones como el consentimiento del titular; la URCDP puede autorizar transferencias con garantías contractuales.",
+   "source_url": "https://www.impo.com.uy/bases/leyes/18331-2008/23",
+   "source_title": "Ley N° 18331, artículo 23 (IMPO)",
+   "source_date": "desconocida",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T01:10:00"
+  }
+ ]
+}

@@ -1,0 +1,103 @@
+{
+ "id": "i001",
+ "titulo": "Copiloto de obligaciones fiscales para unipersonales que empiezan",
+ "problema": "Un negocio nuevo en Uruguay debe facturar electrónicamente desde el primer día (F-legal-contable-002) y, si factura como contribuyente de IVA, necesita certificado digital y un CAE que vence a los 2 años (F-comercio-retail-009). Entenderlo se paga en honorarios: un contador cobra $U 2.200 a 3.000 por mes a un monotributista (F-legal-contable-001). Que olvidar un vencimiento cueste plata es hipótesis a validar.",
+ "usuario": "Unipersonales y monotributistas que recién empiezan o facturan poco, sin contador o que lo consultan poco.",
+ "solucion": "App web para autónomos, adaptada al régimen uruguayo. Un asistente pregunta actividad, ingresos y clientes, y arma un calendario personalizado de obligaciones DGI y BPS con alertas por correo; controla vencimiento del CAE y del certificado; lleva ingresos y gastos por carga manual o CSV (XML de CFE opcional); avisa cuándo revisar régimen o plan de CFE; y responde dudas con RAG sobre normativa pública, citando la fuente y derivando al contador. Arma un dossier para el contador. Diferencia: calendario por perfil individual (los gratuitos publican fechas por grupo, F-ataque-r1-m03-i001-cliente-001) más CAE y derivación. Un contador revisa las fechas antes del piloto.",
+ "mvp": {
+  "semestre_1": [
+   "Alta y calendario para 2 regímenes con alertas, validado por un contador",
+   "Libro de ingresos y gastos por carga manual y CSV",
+   "Demo con 5 unipersonales de prueba"
+  ],
+  "semestre_2": [
+   "Asistente RAG sobre normativa pública con citas",
+   "Alertas de volumen y de CAE, y dossier para el contador",
+   "Piloto con 20 a 30 usuarios y medición de retención"
+  ]
+ },
+ "stack": [
+  "Next.js",
+  "Python FastAPI",
+  "PostgreSQL con pgvector",
+  "Claude Haiku 5.5 vía API",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 218,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail 2 GB",
+    "usd_anual": 144,
+    "supuesto": "1 instancia de USD 12 por mes, 12 meses; pgvector en vez de Qdrant para caber en 2 GB.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "Backups con snapshots de Lightsail",
+    "usd_anual": 12,
+    "supuesto": "20 GB a USD 0,05 por GB al mes.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API de LLM Claude Haiku 5.5",
+    "usd_anual": 30,
+    "supuesto": "Piloto: 50 usuarios, 20 consultas al mes, 4.000 tokens de entrada y 500 de salida a USD 0,10 y 0,50 por millón (menos de USD 10); el resto, pruebas.",
+    "fuente_precio_url": "https://claude.com/pricing"
+   },
+   {
+    "concepto": "Correo de alertas, dominio y DNS",
+    "usd_anual": 32,
+    "supuesto": "Estimación por encima, sin precio abierto: correo transaccional (12) y dominio .com con DNS (20)."
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Contador tradicional",
+   "evidencia_ids": [
+    "F-legal-contable-001"
+   ],
+   "hueco": "Cobra fijo aunque se facture poco y no da visibilidad diaria. La app lo complementa."
+  },
+  {
+   "nombre": "Proveedores de CFE como YoFacturo",
+   "evidencia_ids": [
+    "F-legal-contable-003",
+    "F-comercio-retail-009"
+   ],
+   "hueco": "Resuelven la emisión; las fichas no muestran calendario de obligaciones."
+  },
+  {
+   "nombre": "Calculame",
+   "evidencia_ids": [
+    "F-ataque-r1-m03-i001-cliente-001"
+   ],
+   "hueco": "Publica gratis el calendario por grupo; la página no describe alertas personalizadas, CAE ni libro."
+  }
+ ],
+ "monetizacion": "Freemium: calendario con alertas gratis y plan de USD 5 a 8 por mes (cerca del 10% de F-legal-contable-001) con libro, asistente y dossier. Unos 4 suscriptores cubren el costo anual. Canal a probar: unipersonales recién inscriptos y contadores que recomienden. A validar.",
+ "riesgos": [
+  "Una fecha o respuesta equivocada genera daño: fuente oficial, revisión de un contador y derivación",
+  "Cambios normativos obligan a mantener el calendario",
+  "Disposición a pagar baja en quienes facturan poco",
+  "Rechazo de contadores si lo ven como reemplazo",
+  "Datos personales (Ley 18.331): mínimos, con consentimiento; sin datos identificatorios hacia el LLM"
+ ],
+ "supuestos": [
+  "El dolor de olvidar vencimientos justifica pagar: se valida con entrevistas antes de diciembre de 2026",
+  "Sin contactos cargados del equipo",
+  "Los vencimientos de DGI y BPS se modelan por régimen; la fuente es DGI y BPS, no guías comerciales",
+  "Algunos proveedores de CFE permiten descargar XML; si no, carga manual o CSV",
+  "Precio de USD 5 a 8 por mes aceptable",
+  "Contadores que paguen por clientes derivados: hipótesis posterior al MVP",
+  "Las fichas no muestran apps locales salvo calendarios gratuitos"
+ ],
+ "evidencias": [
+  "F-legal-contable-001",
+  "F-legal-contable-002",
+  "F-legal-contable-003",
+  "F-comercio-retail-009",
+  "F-ataque-r1-m03-i001-cliente-001"
+ ]
+}

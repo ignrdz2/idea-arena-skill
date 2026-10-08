@@ -1,0 +1,86 @@
+{
+ "idea": "i009",
+ "respuestas": [
+  {
+   "ataque": 1,
+   "decision": "PARCIAL",
+   "detalle": "Acepto: el CFE-a-asiento para estudios ya existe (Contafácil, Contable.CFE) y la idea lo ignoraba; lo saqué como diferencial, agregué ambos competidores y dejé de competir en descarga de DGI. No acepto que no quede hueco: abrí ambas páginas y ninguna menciona conciliación bancaria, PDF ni sugerencia de cuenta; Contable.CFE fija los códigos una vez por configuración. Es ausencia en sus páginas, no prueba de que no lo hagan ni de demanda: lo declaro como riesgo y supuesto.",
+   "evidencia": [
+    "F-ataque-r1-m05-i009-cliente-001",
+    "F-ataque-r1-m05-i009-cliente-002",
+    "F-defensa-r1-m05-i009-001",
+    "F-defensa-r1-m05-i009-002"
+   ]
+  },
+  {
+   "ataque": 2,
+   "decision": "CONCEDE",
+   "detalle": "Tiene razón: cobrar por empresa penaliza al estudio que crece y queda sobre un competidor con empresas ilimitadas. Cambié a plan plano por estudio ($U 3.000 a 6.000 por mes, a validar) en el orden de los planes de Contafácil, justificado solo por la conciliación; la moneda de esos planes no está rotulada y lo digo.",
+   "evidencia": [
+    "F-ataque-r1-m05-i009-cliente-003"
+   ]
+  },
+  {
+   "ataque": 3,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que la demanda es delgada y que 'cada hora de carga se come margen' era inferencia: ahora figura en supuestos. No acepto que las fichas hablen de otro usuario: F-legal-contable-005 es una oferta de un estudio de Montevideo con conciliación bancaria como tarea, y F-legal-contable-001 muestra honorarios fijos del estudio. Sumé como señal de pago los planes publicados de competidores del mismo usuario. Quité el dolor de exportar XML, que era de la empresa emisora. No hay ficha de cantidad de estudios ni de pago por conciliación: queda declarado.",
+   "evidencia": [
+    "F-legal-contable-005",
+    "F-legal-contable-001",
+    "F-ataque-r1-m05-i009-cliente-003"
+   ]
+  },
+  {
+   "ataque": 4,
+   "decision": "CONCEDE",
+   "detalle": "Las fichas no dicen que YoFacturo ni Odoo no sirvan a un estudio. Reescribí: YoFacturo se describe solo por lo que dice la ficha y Odoo salió del texto (su ficha estaba bloqueada y era sobre emisión). Sumé los competidores que sí compiten.",
+   "evidencia": [
+    "F-legal-contable-003",
+    "F-comercio-retail-008",
+    "F-legal-contable-004"
+   ]
+  },
+  {
+   "ataque": 5,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que no hay socio de datos ni ruta de cumplimiento. Arreglo: demo con datos sintéticos y CFE anonimizados; PDFs con extracción local y LLM solo con datos anonimizados o consentimiento escrito, base registrada y proveedor adecuado según el art. 23; piloto voluntario con acuerdo de datos; si no hay estudio, se reporta solo la métrica sintética (riesgo declarado). No acepto que viole R7: la restricción permite datos generados por el propio producto o sintéticos, y la tesis no depende de datos reales para existir; solo la medición en piloto. Los contactos de R4 siguen sin cargar y quedan como supuesto.",
+   "evidencia": [
+    "F-ataque-r1-m05-i009-cliente-004"
+   ]
+  },
+  {
+   "ataque": 6,
+   "decision": "CONCEDE",
+   "detalle": "Sin meta ni línea de base el ahorro no es demostrable. Agregué meta de 80 por ciento de acierto en proveedores recurrentes (supuesto) y medición de horas por cliente antes y después en el piloto; la exportación pasa a columnas configurables por sistema y se admite que no igualamos la exportación nativa de los competidores.",
+   "evidencia": []
+  }
+ ],
+ "nuevas_fichas": [
+  {
+   "id": "F-defensa-r1-m05-i009-001",
+   "sector": "legal-contable",
+   "hallazgo": "Contable.CFE procesa los CFE bajados de DGI a Excel y asientos, con códigos de cuenta que el usuario configura una vez, y exporta a Conty, Contawin, Zureo y Zlibra. La página no menciona conciliación bancaria, PDF ni sugerencia automática de cuenta.",
+   "source_url": "https://contablecfe.com.uy/",
+   "source_title": "Contable.CFE",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "competidor": "Contable.CFE"
+  },
+  {
+   "id": "F-defensa-r1-m05-i009-002",
+   "sector": "legal-contable",
+   "hallazgo": "Contafácil lista robots de DGI, una ficha por empresa, conversión de e-Factura a formato Conty, Zureo o Zeta y subida de archivos e-Factura. Su página no menciona conciliación de extractos bancarios, PDF ni aprendizaje de cuentas.",
+   "source_url": "https://www.contafacil.uy/",
+   "source_title": "Contafácil",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:01:00",
+   "competidor": "Contafácil"
+  }
+ ]
+}

@@ -1,0 +1,105 @@
+{
+ "id": "i009",
+ "titulo": "Conciliación bancaria y precontabilización aprendida para estudios contables",
+ "problema": "Los estudios contables de Montevideo contratan asistentes para registrar asientos y conciliar bancos y cuentas, con Excel intermedio (F-legal-contable-005). Una SRL pequeña paga honorarios fijos de $U 18.000 a 25.000 por mes (F-legal-contable-001), así que más carga resta margen (inferencia declarada). Los CFE ya son casi universales (F-legal-contable-002). Herramientas uruguayas ya convierten CFE en asientos para Conty, Zureo y otros (F-ataque-r1-m05-i009-cliente-001, F-ataque-r1-m05-i009-cliente-002), con planes pagos (F-ataque-r1-m05-i009-cliente-003): hay pago por automatizar, y esa carga está cubierta. Sus páginas no muestran conciliación bancaria ni imputación aprendida (F-defensa-r1-m05-i009-001, F-defensa-r1-m05-i009-002).",
+ "usuario": "Asistentes y contadores de estudios contables de 2 a 20 personas que llevan la contabilidad de pymes. Paga el estudio.",
+ "solucion": "Conciliación bancaria multi-cliente e imputación aprendida, lo que el CFE-a-asiento no cubre. El estudio sube extractos (CSV o PDF de 2 bancos) y XML de CFE. El sistema concilia movimientos contra comprobantes, propone la cuenta aprendiendo de las imputaciones previas de cada cliente (reglas y embeddings) y deja una cola de excepciones para revisión humana. Exporta CSV o planilla con columnas configurables por sistema contable. Los PDF se leen con extracción local; el LLM solo con datos anonimizados o consentimiento escrito, base registrada y proveedor adecuado (art. 23 Ley 18.331, F-ataque-r1-m05-i009-cliente-004).",
+ "mvp": {
+  "semestre_1": [
+   "Ingesta de XML de CFE y extractos de 2 bancos, con extracción local",
+   "Propuesta de imputación y cola de revisión",
+   "Demo con datos sintéticos y anonimizados, midiendo acierto"
+  ],
+  "semestre_2": [
+   "Conciliación bancaria con métricas de acierto y horas",
+   "Exportación configurable y vista multi-cliente",
+   "Piloto voluntario con acuerdo de datos en 1 o 2 estudios"
+  ]
+ },
+ "stack": [
+  "Python FastAPI",
+  "React",
+  "PostgreSQL con pgvector",
+  "lxml para XML de CFE",
+  "Extracción local de PDF",
+  "Claude Haiku 5.5 vía API solo para PDFs anonimizados",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 184,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail 2 GB",
+    "usd_anual": 144,
+    "supuesto": "1 instancia de USD 12 por mes, 12 meses, sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API de LLM Claude Haiku 5.5",
+    "usd_anual": 20,
+    "supuesto": "Solo PDFs anonimizados o con consentimiento: 40.000 PDFs de prueba, 1.500 tokens de entrada y 300 de salida: USD 6 más USD 6, redondeado a 20. Los XML no usan LLM.",
+    "fuente_precio_url": "https://claude.com/pricing"
+   },
+   {
+    "concepto": "Dominio y DNS",
+    "usd_anual": 20,
+    "supuesto": "Estimación por encima, sin página de precios abierta: un dominio .com más DNS, redondeado a USD 20."
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Contafácil",
+   "evidencia_ids": [
+    "F-ataque-r1-m05-i009-cliente-001",
+    "F-ataque-r1-m05-i009-cliente-003",
+    "F-defensa-r1-m05-i009-002"
+   ],
+   "hueco": "Descarga CFE y entrega asientos, con empresas ilimitadas. Su página no menciona conciliación bancaria, PDF ni sugerencia de cuenta."
+  },
+  {
+   "nombre": "Contable.CFE",
+   "evidencia_ids": [
+    "F-ataque-r1-m05-i009-cliente-002",
+    "F-defensa-r1-m05-i009-001"
+   ],
+   "hueco": "Convierte CFE en asientos con cuentas configuradas una vez; no menciona conciliación bancaria ni aprendizaje."
+  },
+  {
+   "nombre": "YoFacturo y otros proveedores de CFE",
+   "evidencia_ids": [
+    "F-legal-contable-003"
+   ],
+   "hueco": "Sus fichas describen emisión y puntos de venta, no procesamiento multi-cliente para estudios."
+  }
+ ],
+ "monetizacion": "Plan plano por estudio, no por empresa. Referencia a validar: $U 3.000 a 6.000 por mes según tramo de clientes, similar a Contafácil ($1.499 a $3.799 por mes, moneda no rotulada, F-ataque-r1-m05-i009-cliente-003), justificado por la conciliación. Canal: venta directa a estudios.",
+ "riesgos": [
+  "Sin socio de datos: sin estudio voluntario, solo se reporta acierto sobre datos sintéticos",
+  "Formatos de extracto distintos por banco",
+  "Un competidor con descarga de DGI podría agregar conciliación",
+  "Integración con cada sistema contable: solo exportación configurable"
+ ],
+ "supuestos": [
+  "Los estudios reciben de sus clientes los XML de CFE o pueden obtenerlos",
+  "Un estudio típico atiende decenas de empresas cliente",
+  "La carga contable resta margen (inferencia de honorarios fijos)",
+  "Precio plano de $U 3.000 a 6.000 aceptable, sin ficha de pago por conciliación",
+  "Los bancos permiten exportar extractos en CSV o PDF",
+  "Meta: 80 por ciento de acierto de imputación en proveedores recurrentes, con línea de base de horas medida en el piloto",
+  "Se podrá contactar estudios antes de diciembre de 2026; hoy no hay contactos cargados"
+ ],
+ "evidencias": [
+  "F-legal-contable-005",
+  "F-legal-contable-001",
+  "F-legal-contable-002",
+  "F-legal-contable-003",
+  "F-ataque-r1-m05-i009-cliente-001",
+  "F-ataque-r1-m05-i009-cliente-002",
+  "F-ataque-r1-m05-i009-cliente-003",
+  "F-ataque-r1-m05-i009-cliente-004",
+  "F-defensa-r1-m05-i009-001",
+  "F-defensa-r1-m05-i009-002"
+ ]
+}
