@@ -778,5 +778,10 @@
   "estado": "ok",
   "http": 200,
   "checked_at": "2026-10-08T00:50:34"
+ },
+ "https://www.terminaltcp.com.uy/informacion-operativa/": {
+  "estado": "ok",
+  "http": 200,
+  "checked_at": "2026-10-08T00:54:07"
  }
 }

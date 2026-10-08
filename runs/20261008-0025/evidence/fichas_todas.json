@@ -771,6 +771,44 @@
    }
   },
   {
+   "id": "F-ataque-r3-m01-i028-inversor-001",
+   "sector": "logistica-transporte",
+   "hallazgo": "La pagina operativa de Terminal Cuenca del Plata exige acceder por la plataforma MiTCP para ver el LineUp, muestra el estado de contenedores llenos y vacios y enlaza una camara online del acceso Maciel; no menciona turnos de camiones ni tiempos de espera.",
+   "source_url": "https://www.terminaltcp.com.uy/informacion-operativa/",
+   "source_title": "Informacion Operativa, Terminal Cuenca del Plata",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T15:00:00",
+   "extracto": "para visualizar el LineUp deberá acceder mediante la plataforma MiTCP",
+   "competidor": "Terminal Cuenca del Plata (MiTCP)",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:54:07",
+    "extracto": "encontrado"
+   }
+  },
+  {
+   "id": "F-ataque-r3-m02-i009-inversor-001",
+   "sector": "transversal",
+   "hallazgo": "La pagina de precios de AWS Lightsail lista el plan Linux de 2 GB a USD 12 por mes (2 vCPU, 60 GB SSD, 3 TB de transferencia) y menciona regiones como Asia Pacific (Mumbai), Asia Pacific (Sydney) y South America (Sao Paulo); no menciona Uruguay.",
+   "source_url": "https://aws.amazon.com/lightsail/pricing/",
+   "source_title": "AWS Lightsail Pricing",
+   "source_date": "desconocida",
+   "source_type": "precios",
+   "geografia": "GLOBAL",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T10:30:00",
+   "verificacion": {
+    "estado": "ok",
+    "http": 200,
+    "checked_at": "2026-10-08T00:32:25",
+    "extracto": "sin_extracto"
+   }
+  },
+  {
    "id": "F-comercio-retail-001",
    "sector": "comercio-retail",
    "hallazgo": "El comercio electrónico uruguayo superó los 100.000 millones de pesos en 2025 (+32% frente a 81.723 millones en 2024), con 96,3 millones de transacciones y ticket promedio estable de 1.290 pesos; las compras transfronterizas por franquicia son solo el 8% del mercado.",
