@@ -1,0 +1,82 @@
+{
+ "idea": "i027",
+ "respuestas": [
+  {
+   "ataque": 1,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que las entregas y el business case dependen de corredores sin contacto confirmado, y que A.PRO.A.SE. solo cuenta socios. Arreglo: las 10 entrevistas pasan a medir tamaño de cartera y precio, el tablero se demuestra con datos sintéticos, y si no hay corredores el piloto se limita a pólizas propias y sintéticas sin afirmar nada sobre pago; los supuestos ya dicen que no hay acceso confirmado. No acepto la violación de R7: las pólizas del piloto las sube cada corredor al producto (datos generados por el producto, permitidos por R7), y el resto es propio o sintético.",
+   "evidencia": [
+    "F-defensa-r1-m04-i027-001"
+   ]
+  },
+  {
+   "ataque": 2,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que el ancla de USD 19 se apoyaba en datos contradictorios: la ficha del blog dice Nexura desde USD 49 y la home desde USD 197, y Figuro aparece en USD 50 y desde USD 5. La idea ahora lo muestra y marca USD 19 como hipótesis a validar en entrevistas. No acepto que la diferencia sea solo precio: la propuesta incluye precisión por campo medida y recall del enmascarado antes de enviar a un tercero, que ninguna ficha dice que Nexura publique. La idea ya decía que es copiable y que no se sabe si Nexura es peor.",
+   "evidencia": [
+    "F-ataque-r1-m04-i027-cliente-001",
+    "F-ataque-r2-m02-i027-competidor-003",
+    "F-ataque-r2-m02-i027-competidor-001",
+    "F-ataque-r2-m02-i027-competidor-002"
+   ]
+  },
+  {
+   "ataque": 3,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que no hay ficha sobre cuántos asociados caen en 100 a 300 y que el solapamiento con Nexura (150 a 600) es real; ya estaba declarado y ahora el escenario de 25 a 50 pagos figura como ilustrativo, condicionado a lo que midan las entrevistas. No acepto que 100 a 150 sea el único tramo: de 150 a 300 el producto compite con Nexura por precio y es la hipótesis a validar, no un hueco sin demanda. La ficha solo dice que con menos de 100 muchos se manejan con Excel, y el rango empieza en 100.",
+   "evidencia": [
+    "F-ataque-r2-m02-i027-competidor-001",
+    "F-ataque-r1-m04-i027-cliente-001",
+    "F-defensa-r1-m04-i027-001"
+   ]
+  },
+  {
+   "ataque": 4,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que sin cláusulas aceptadas el plan queda en parsers por plantilla y que eso pesa menos como tesis, y que un error de enmascarado es riesgo legal. Arreglo: se mide el recall del enmascarado, se bloquea el envío al modelo si la confianza es baja, y la comparación parsers contra modelo de lenguaje en precisión por campo es un resultado de tesis incluso sin el modelo en producción. No acepto que el fallback sea solo regex sin valor medible: esa comparación es lo que se evalúa. Tampoco se oculta: el riesgo declara que sin cláusulas el modelo queda fuera.",
+   "evidencia": [
+    "F-defensa-r1-m04-i027-003",
+    "F-defensa-r1-m01-i005-001",
+    "F-ataque-r1-m05-i009-cliente-004"
+   ]
+  },
+  {
+   "ataque": 5,
+   "decision": "CONCEDE",
+   "detalle": "La ficha del plan gratuito no dice que carezca de avisos y otra ficha menciona avisos de vencimiento sin precisar el plan. Corregido: el hueco de Figuro ya no afirma esa limitación y el riesgo declara que los avisos podrían estar desde USD 5.",
+   "evidencia": [
+    "F-ataque-r2-m02-i027-competidor-002",
+    "F-defensa-r1-m04-i027-002"
+   ]
+  },
+  {
+   "ataque": 6,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que el semestre 1 estaba cargado: baja de 3 a 2 aseguradoras (la tercera pasa al semestre 2) y el tablero se demuestra con datos sintéticos, sin depender de terceros. No acepto que el desafío sea solo integración: quedan por medir la precisión por campo, el recall del enmascarado local y la calibración de confianza para decidir qué revisa el corredor, con el comparativo parsers contra modelo. La capacidad de referencia, unas 576 horas por semestre con 16, 10 y 10 horas semanales en 16 semanas, alcanza para ese recorte.",
+   "evidencia": []
+  },
+  {
+   "ataque": 7,
+   "decision": "PARCIAL",
+   "detalle": "No acepto que la ficha no dé el plan: la página de precios, abierta en esta defensa, lista USD 7 con 1 GB y 2 vCPU con IPv4 incluido, y USD 12 con 2 GB. Sí acepto que una instancia de 1 GB es justa para app y PostgreSQL y que faltaban copias de seguridad: paso a USD 12 (2 GB) y sumo snapshots de 20 GB a USD 0,05 por GB-mes. Total USD 178, por debajo del objetivo de USD 200.",
+   "evidencia": [
+    "F-defensa-r4-m01-i027-001",
+    "F-defensa-r3-m02-i009-001"
+   ]
+  }
+ ],
+ "nuevas_fichas": [
+  {
+   "id": "F-defensa-r4-m01-i027-001",
+   "sector": "transversal",
+   "hallazgo": "La página de precios de AWS Lightsail lista el plan Linux general de USD 7 por mes con 1 GB, 2 vCPU, 40 GB SSD e IPv4 incluido, el de USD 12 con 2 GB y 60 GB, y snapshots a USD 0,05 por GB-mes.",
+   "source_url": "https://aws.amazon.com/lightsail/pricing/",
+   "source_title": "AWS Lightsail Pricing",
+   "source_date": "desconocida",
+   "source_type": "precios",
+   "geografia": "GLOBAL",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T14:00:00"
+  }
+ ]
+}
