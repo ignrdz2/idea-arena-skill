@@ -1,0 +1,100 @@
+{
+  "idea": "i026",
+  "persona": "cliente",
+  "ataques": [
+    {
+      "n": 1,
+      "severidad": "FATAL",
+      "titulo": "La Guia Electronica de Carga no tiene fecha de vigencia: el dolor central puede no existir",
+      "donde": "Problema (F-logistica-transporte-003) y Solucion: 'prepara los datos listos para copiar en la Guia Electronica de Carga'",
+      "problema": "La idea presenta la guia como obligacion que el fletero ya sufre. Segun Busqueda (10/06/2026), el MTOP confirmo que la guia 'no tiene fecha definida, y solo se implementara cuando esten de acuerdo todas las partes', y la intergremial rechaza aplicarla. La ficha F-003 solo recoge un reclamo (y su extracto no fue encontrado en la pagina al verificar, confianza baja). Si la guia no rige, la mitad del valor del MVP (plantilla GEC, Semestre 2) no resuelve ningun costo actual. La idea lista como riesgo la 'eventual derogacion', pero no que hoy ni siquiera es obligatoria. Afirmacion central sin respaldo y no declarada en supuestos.",
+      "tipo": "evidencia",
+      "evidencia": [
+        "F-ataque-r1-m04-i026-cliente-001",
+        "F-logistica-transporte-003"
+      ]
+    },
+    {
+      "n": 2,
+      "severidad": "MAJOR",
+      "titulo": "El MTOP ya ofrece app gratuita para emitir la guia, y la puede crear el dador de carga",
+      "donde": "Solucion y Competidores: la lista omite la herramienta oficial",
+      "problema": "El MTOP publica aplicaciones propias (web y Android) para emitir la guia, y quienes crean guias son transportistas o cargadoras dadoras. La idea no lista esta alternativa entre los competidores y no explica por que el fletero pagaria una suscripcion por copiar datos a una app oficial gratuita. Ademas la idea 'no la emite': el fletero igual tiene que reingresar los datos en la app del MTOP, es decir, la doble carga que dice eliminar. Como cliente, el ahorro de tiempo no es visible.",
+      "tipo": "evidencia",
+      "evidencia": [
+        "F-ataque-r1-m04-i026-cliente-002"
+      ]
+    },
+    {
+      "n": 3,
+      "severidad": "MAJOR",
+      "titulo": "Competidores mal elegidos: ignora los que ya atienden al fletero y la facturacion que si emite",
+      "donde": "Seccion Competidores (YoFacturo, Odoo)",
+      "problema": "YoFacturo y Odoo no son la alternativa real del fletero. Odoo se cita con una ficha bloqueada (F-legal-contable-004, no pudo leerse). Las fichas F-logistica-transporte-006 y 007 (Flexy, LlegoYa) muestran apps uruguayas que ya tratan con fleteros y no aparecen. Hoy el fletero resuelve con WhatsApp, planilla y su contador; la idea no compara contra eso ni explica por que cambiaria. Tampoco resuelve el comprobante electronico: queda 'con un proveedor existente o fuera del MVP', por lo que la doble carga con el facturador sigue.",
+      "tipo": "evidencia",
+      "evidencia": [
+        "F-logistica-transporte-006",
+        "F-logistica-transporte-007",
+        "F-legal-contable-004"
+      ]
+    },
+    {
+      "n": 4,
+      "severidad": "MAJOR",
+      "titulo": "Disposicion a pagar y precio sin ninguna senal; el segmento tiene poca digitalizacion y poco margen",
+      "donde": "Monetizacion y Supuestos: 'Los fleteros pagarian una suscripcion mensual'",
+      "problema": "No hay precio, tamano de mercado ni numero de camiones; solo 'precios se validan en entrevistas'. La demanda se apoya en una declaracion de un dirigente de Cerro Largo de 2020 (F-009, fuente de hace 6 anos, un solo testimonio) y en un estudio de digitalizacion sin dato por tamano que la idea no cita con cifra para las chicas. Los fleteros con 1 a 3 camiones y gasoil de 40 a 50% del flete tienen margen chico y poco habito de pagar software. La idea no tiene contactos de fleteros (la tabla de contactos esta sin completar), asi que no hay forma de validar antes de diciembre de 2026 (R4).",
+      "tipo": "evidencia",
+      "evidencia": [
+        "F-logistica-transporte-009",
+        "F-logistica-transporte-008"
+      ]
+    },
+    {
+      "n": 5,
+      "severidad": "MAJOR",
+      "titulo": "Exactitud de extraccion de remitos manuscritos: 90% es un supuesto y el costo de error lo paga el fletero",
+      "donde": "Supuestos: 'supera 90% de campos correctos tras confirmacion'; Riesgos",
+      "problema": "No hay ficha sobre calidad de remitos reales ni sobre extraccion con modelo de vision en documentos manuscritos uruguayos. El equipo no tiene remitos ni socio que los provea (R7 aplica si dependiera de ellos). Un fletero que maneja y debe confirmar campos en el telefono no va a cambiar su forma de trabajar si cada viaje exige corregir. Una guia o factura con datos errados le puede costar mas que el tiempo ahorrado.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 6,
+      "severidad": "MINOR",
+      "titulo": "Costo de USD 204 supera el objetivo de 200 y el audio no esta calculado",
+      "donde": "Tabla de costo de infraestructura",
+      "problema": "El total (USD 204) esta sobre el objetivo comodo de USD 200. La linea de API (USD 40) calcula solo texto e imagen y menciona audio sin precio ni fuente de Whisper o transcripcion; el dominio es una estimacion sin fuente. Todo entra en el tope de USD 300, pero queda poco margen para pruebas del piloto con 5 a 10 fleteros.",
+      "tipo": "opinion",
+      "evidencia": []
+    }
+  ],
+  "nuevas_fichas": [
+    {
+      "id": "F-ataque-r1-m04-i026-cliente-001",
+      "sector": "logistica-transporte",
+      "hallazgo": "Segun Busqueda (10/06/2026), la ministra de Transporte confirmo a la intergremial que la Guia Electronica de Carga no tiene fecha definida y solo se implementara cuando esten de acuerdo todas las partes; la intergremial advierte inseguridad juridica para las empresas.",
+      "source_url": "https://www.busqueda.com.uy/agro/guia-digital-iniciara-cuando-haya-acuerdo-confirmo-mtop-transportistas-n5414093",
+      "source_title": "Guia digital iniciara cuando haya acuerdo, confirmo MTOP a transportistas",
+      "source_date": "2026-06-10",
+      "source_type": "prensa",
+      "geografia": "UY",
+      "confianza": "media",
+      "retrieved_at": "2026-10-08T15:00:00",
+      "extracto": "no tiene fecha definida, y solo se implementará cuando estén de acuerdo todas las partes involucradas"
+    },
+    {
+      "id": "F-ataque-r1-m04-i026-cliente-002",
+      "sector": "logistica-transporte",
+      "hallazgo": "El MTOP indica que la Guia Electronica de Carga se puede emitir con aplicaciones del propio ministerio en version Web y Android, y que la crean empresas transportistas o cargadoras dadoras; es exigible para vehiculos de mas de 3500 kg de peso bruto.",
+      "source_url": "https://www.gub.uy/ministerio-transporte-obras-publicas/comunicacion/publicaciones/sistema-informacion-carga-del-transporte-terrestre",
+      "source_title": "Sistema de Informacion de Carga del Transporte Terrestre (MTOP)",
+      "source_date": "2026-04-28",
+      "source_type": "gobierno",
+      "geografia": "UY",
+      "confianza": "alta",
+      "retrieved_at": "2026-10-08T15:02:00",
+      "extracto": "Quienes podrán efectivamente crear guías serán las empresas Transportistas o las empresas Cargadoras Dadoras"
+    }
+  ]
+}

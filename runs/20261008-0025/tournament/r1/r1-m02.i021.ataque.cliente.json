@@ -1,0 +1,95 @@
+{
+  "idea": "i021",
+  "persona": "cliente",
+  "ataques": [
+    {
+      "n": 1,
+      "severidad": "FATAL",
+      "titulo": "La disposición a pagar de la mipyme y del consultor es central y no tiene ficha",
+      "donde": "Monetización (USD 10 al mes por mipyme, USD 20 por prediagnóstico calificado) y Supuestos declarados",
+      "problema": "Todo el modelo de ingresos descansa en que una mipyme pague una suscripción mensual y en que consultores o instaladores paguen por contactos. Ninguna de las 3 fichas citadas muestra a alguien pagando por esto, ni el costo de la factura de UTE de una mipyme, ni cuánto se ahorraría ajustando potencia o tarifa. Los supuestos lo admiten, pero el riesgo propio de la idea dice que el ahorro puede ser chico para mipymes de bajo consumo. Como cliente: si el ahorro posible son unos pocos miles de pesos al año, pagar USD 120 al año por seguimiento mensual no cierra, y una vez hecho el ajuste de potencia no hay motivo para seguir pagando. El modelo de lead pago (USD 20) no tiene ninguna señal de que existan instaladores uruguayos que compren leads. No hay cifra de mercado alcanzable: el 80% de las empresas es el universo total, no las que tienen un ahorro tarifario relevante.",
+      "tipo": "evidencia",
+      "evidencia": ["F-energia-ambiente-001"]
+    },
+    {
+      "n": 2,
+      "severidad": "MAJOR",
+      "titulo": "El gancho del subsidio MIEM es de 2020 y no hay ficha de que siga vigente",
+      "donde": "Problema: reintegro de hasta USD 3.000 (75%) y 'estudios de hasta unos USD 4.000'; Solución: 'indica si vale la pena pedir el estudio subsidiado'",
+      "problema": "La propuesta de valor central es filtrar quién debe pedir el estudio subsidiado, pero la única ficha del reintegro (F-energia-ambiente-001) es una noticia de lanzamiento de noviembre de 2020 y habla de una campaña, no de un programa permanente. La propia idea lo lista como riesgo. Si el reintegro ya no existe, desaparece el dolor 'pagar un estudio sin saber si vale la pena' y el informe pierde su destino. Además, 'estudios de hasta unos USD 4.000' es una cifra derivada por la idea (3.000 / 0,75), no un precio observado, y la ficha no dice cuántas mipymes lo usaron ni cuántas lo consideran una barrera. La ficha de 2020 no prueba que una mipyme hoy tenga este problema.",
+      "tipo": "evidencia",
+      "evidencia": ["F-energia-ambiente-001"]
+    },
+    {
+      "n": 3,
+      "severidad": "MAJOR",
+      "titulo": "Las facturas reales y las 10 a 20 mipymes del piloto dependen de contactos que el equipo no tiene",
+      "donde": "Alcance Semestre 1 ('facturas reales donadas') y Semestre 2 ('Piloto con 10 a 20 mipymes', 'precios validados en entrevistas')",
+      "problema": "La tabla de contactos de constraints.md está toda en <<COMPLETAR>>: no hay ninguna mipyme, consultor ni instalador identificado. Sin facturas reales no se puede medir la precisión del extractor (la entrega del semestre 1), y sin piloto no hay datos para el business case. Es una dependencia externa crítica sin plan B declarado (R7 y R4 pesan acá, y el criterio de viabilidad de la rúbrica baja a 4 con dependencias sin plan B). Como dueño de una mipyme, entregar 12 facturas de UTE (con número de cuenta, dirección y consumo) a un equipo de estudiantes sin trayectoria exige confianza que nadie ha construido todavía; la idea solo dice 'consentimiento explícito' como supuesto.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 4,
+      "severidad": "MAJOR",
+      "titulo": "El motor de ahorro tarifario se apoya en un pliego que la idea no abrió ni citó",
+      "donde": "Solución: 'motor de reglas basado en el pliego tarifario público'; Supuestos: 'El pliego tarifario de UTE es público y alcanza para modelar ahorros'",
+      "problema": "El diferencial central frente al simulador del MIEM es cuantificar ahorros por potencia y tarifa, pero no hay una ficha del pliego ni de las reglas de elegibilidad de cambio de tarifa para pequeños clientes comerciales; queda como supuesto. Ajustar la potencia contratada depende de la demanda máxima realmente medida y de las condiciones contractuales de UTE, y el pliego cambia cada enero. Un error del motor (recomendar bajar potencia y que luego la mipyme pague excesos) cuesta plata real al cliente, y el equipo no tiene a quién validar los cálculos. Tampoco hay ficha de que el simulador solar se pueda calibrar: F-energia-ambiente-002 y -006 hablan de marco legal y de MW instalados, no de tarifas de inyección ni de retornos para un comercio chico.",
+      "tipo": "evidencia",
+      "evidencia": ["F-energia-ambiente-002", "F-energia-ambiente-006"]
+    },
+    {
+      "n": 5,
+      "severidad": "MAJOR",
+      "titulo": "Diferenciación y alternativa actual mal exploradas: la única comparación es contra un simulador de 2020",
+      "donde": "Competidores: un solo ítem, el simulador del MIEM, con F-energia-ambiente-001",
+      "problema": "La ficha dice que el MIEM tiene un simulador de autodiagnóstico, pero no dice que sea 'genérico', que se base en lo declarado ni que no lea facturas: eso lo agrega la idea sin respaldo. Tampoco compara contra la alternativa real de un cliente: llamar a un instalador o consultor que ya hace esa evaluación gratis como parte de su venta, o pedirle a UTE. UTE ofrece simuladores propios de tarifa para residenciales (verificados en prensa, por ejemplo el de Plan Inteligente que pide los datos de la factura), lo que muestra que el patrón 'ingresá los datos de tu factura y te digo si te conviene' ya existe en la propia empresa; que un competidor (UTE o un instalador) lo extienda a comercios es fácil de copiar. La idea declara que 'no se afirma que no existan' otros competidores, pero tampoco busca ninguno.",
+      "tipo": "evidencia",
+      "evidencia": ["F-energia-ambiente-001", "F-ataque-r1-m02-i021-cliente-001"]
+    },
+    {
+      "n": 6,
+      "severidad": "MINOR",
+      "titulo": "Sin demanda local medida: ninguna ficha dice que una mipyme uruguaya pierda plata por la potencia o la tarifa contratada",
+      "donde": "Problema: 'evaluarla exige interpretar facturas y potencia contratada'",
+      "problema": "Las 3 fichas son de contexto: campaña estatal 2020, marco legal de microgeneración y MW solares a nivel país. Ninguna describe a una mipyme con potencia sobredimensionada, ni cuánto paga de más, ni qué hace hoy (contador, instalador, nada). La rúbrica ubica este caso en el ancla 4 de demanda (pocas fichas, genéricas). El dolor se afirma, no se muestra.",
+      "tipo": "evidencia",
+      "evidencia": ["F-energia-ambiente-002", "F-energia-ambiente-006"]
+    },
+    {
+      "n": 7,
+      "severidad": "MINOR",
+      "titulo": "Modelo de extracción con acceso restringido para cuentas nuevas y costo con un solo proveedor",
+      "donde": "Stack: Gemini 2.5 Flash-Lite; Costo de infraestructura: fila de la API de Gemini (USD 10 por año)",
+      "problema": "La página de deprecaciones de Google indica que los modelos 2.5 no tienen fecha de retiro pero ya se sirven solo a quienes los usaron antes y recomienda modelos nuevos para proyectos nuevos. Si la cuenta del equipo no tiene acceso, hay que migrar a otro modelo con otro precio, y el costo de USD 10 deja de ser verificable. El monto es chico y el total (USD 169) tiene margen, así que no rompe R1, pero la dependencia no tiene plan B declarado y se manda el PDF de facturas con datos personales a un tercero.",
+      "tipo": "evidencia",
+      "evidencia": ["F-ataque-r1-m02-i021-cliente-002"]
+    }
+  ],
+  "nuevas_fichas": [
+    {
+      "id": "F-ataque-r1-m02-i021-cliente-001",
+      "sector": "transversal",
+      "hallazgo": "UTE ofrece en su portal un simulador que, con el número de cuenta, muestra al cliente residencial si le conviene el Plan Inteligente; el autodiagnóstico usa datos de la factura (consumo de 12 meses, potencia contratada y tarifa aplicada).",
+      "source_url": "https://www.elobservador.com.uy/nota/sepa-en-cinco-minutos-si-le-conviene-pasarse-a-la-tarifa-inteligente-de-ute-2018101718150",
+      "source_title": "Sepa en cinco minutos si le conviene pasarse a la tarifa inteligente de UTE",
+      "source_date": "2018-10-17",
+      "source_type": "prensa",
+      "geografia": "UY",
+      "confianza": "media",
+      "retrieved_at": "2026-10-08T10:30:00"
+    },
+    {
+      "id": "F-ataque-r1-m02-i021-cliente-002",
+      "sector": "transversal",
+      "hallazgo": "La página de deprecaciones de la API de Gemini no anuncia fecha de retiro para gemini-2.5-flash-lite, pero indica que su acceso está limitado a quienes ya lo usaron y recomienda modelos más nuevos para proyectos nuevos.",
+      "source_url": "https://ai.google.dev/gemini-api/docs/deprecations",
+      "source_title": "Gemini API deprecations",
+      "source_date": "2026",
+      "source_type": "otro",
+      "geografia": "GLOBAL",
+      "confianza": "media",
+      "retrieved_at": "2026-10-08T10:35:00"
+    }
+  ]
+}

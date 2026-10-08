@@ -1,0 +1,128 @@
+{
+ "idea": "i009",
+ "persona": "cliente",
+ "ataques": [
+  {
+   "n": 1,
+   "severidad": "FATAL",
+   "titulo": "Ignora competidores directos uruguayos que ya hacen CFE a asiento para estudios",
+   "donde": "Sección Competidores (solo YoFacturo y Odoo) y Solución ('Lo que cambia: el formato CFE uruguayo, plan de cuentas local... precio por empresa cliente')",
+   "problema": "La diferencia que la idea declara ya está cubierta: Contafácil descarga los CFE de todas las empresas de un estudio y entrega asientos importables a Conty, Zureo y Zeta, y Contable.CFE convierte CFE recibidos y emitidos en asientos importables a Conty, Contawin, Zureo y Zlibra, ambos orientados a estudios contables y multi-cliente. La idea afirma un hueco (nadie sirve al estudio con CFE local) sin ficha y sin declararlo en supuestos, y solo compara contra proveedores de facturación y un ERP, que no son lo que compra un estudio. Como cliente, hoy resolvería esto con una de esas herramientas. Lo único que queda sin cubrir según sus páginas es la conciliación bancaria de extractos de Contafácil, y eso no está sostenido por ninguna ficha de demanda.",
+   "tipo": "evidencia",
+   "evidencia": [
+    "F-ataque-r1-m05-i009-cliente-001",
+    "F-ataque-r1-m05-i009-cliente-002"
+   ]
+  },
+  {
+   "n": 2,
+   "severidad": "MAJOR",
+   "titulo": "El precio por empresa cliente queda por encima de un competidor con empresas ilimitadas",
+   "donde": "Monetización: 'USD 3 a 5 por empresa por mes; un estudio con 40 clientes pagaría USD 120 a 200 por mes'",
+   "problema": "Contafácil cobra plano con empresas ilimitadas sin costo extra, de $1.499 a $3.799 por mes. Con un tipo de cambio de referencia de unos $U 40 por USD (supuesto mío, no verificado), 40 clientes a USD 3 a 5 serían unos $U 4.800 a 8.000 por mes, entre 1,3 y 5 veces el plan más caro del competidor, para un estudio que además puede probar el competidor gratis. La idea declara el precio como supuesto sin respaldo, y el modelo por empresa penaliza justo al estudio que crece. La moneda de los planes de Contafácil no está rotulada en la página, así que la comparación es aproximada.",
+   "tipo": "evidencia",
+   "evidencia": [
+    "F-ataque-r1-m05-i009-cliente-003"
+   ]
+  },
+  {
+   "n": 3,
+   "severidad": "MAJOR",
+   "titulo": "La demanda de estudios contables descansa en una sola oferta laboral y fichas que hablan de otro usuario",
+   "donde": "Problema: citas F-legal-contable-005, -001, -003; Usuario: 'Paga el estudio'",
+   "problema": "La única ficha sobre estudios contables es F-legal-contable-005, una oferta de un estudio de Montevideo, de fecha desconocida, que no dice cuántas horas ni cuánto cuesta ese trabajo. F-legal-contable-001 son honorarios que paga una SRL a su contador, no el costo de carga del estudio ni una señal de que pagaría por software; la frase 'cada hora de carga se come margen' es inferencia de la idea. F-legal-contable-003 es un blog de un proveedor de CFE sobre cómo elegir proveedor de facturación, y sus dolores (doble carga, exportar XML) son de la empresa emisora, no de un estudio que recibe comprobantes. No hay ficha sobre cuántos estudios hay, cuánto tiempo pierden ni si pagan por herramientas del rubro. La demanda real queda como supuesto y 'un estudio típico atiende decenas de empresas' no tiene ficha.",
+   "tipo": "evidencia",
+   "evidencia": [
+    "F-legal-contable-005",
+    "F-legal-contable-001",
+    "F-legal-contable-003"
+   ]
+  },
+  {
+   "n": 4,
+   "severidad": "MAJOR",
+   "titulo": "Evidencia mal leída para sostener la comparación con YoFacturo y Odoo",
+   "donde": "Competidores: 'Están pensados para que cada empresa emita y gestione sus comprobantes, no para que un estudio procese...' (F-legal-contable-003, F-comercio-retail-008) y Odoo (F-legal-contable-004)",
+   "problema": "Ninguna de esas fichas dice que YoFacturo no sirva a un estudio: F-legal-contable-003 lista dolores al elegir proveedor y F-comercio-retail-008 describe planes de punto de venta, stock y e-commerce para comercios. La conclusión sobre el estudio es de la idea. F-legal-contable-004 está bloqueada (vale menos) y solo dice que la localización de Odoo emite e-Factura vía Uruware con configuración no trivial; no dice que Odoo no sirva como capa liviana para un estudio. Se usan fichas sobre emisión de facturas para descartar competidores de otro problema, y se omiten los que sí compiten.",
+   "tipo": "evidencia",
+   "evidencia": [
+    "F-legal-contable-003",
+    "F-comercio-retail-008",
+    "F-legal-contable-004"
+   ]
+  },
+  {
+   "n": 5,
+   "severidad": "MAJOR",
+   "titulo": "Datos reales de clientes de estudios sin socio identificado y sin camino de cumplimiento de la Ley 18.331",
+   "donde": "Alcance S1 'Demo con datos anonimizados de 3 empresas cliente', S2 'Piloto con 1 o 2 estudios'; Riesgos: 'Acceso a XML y extractos reales depende de que los estudios los compartan bajo Ley 18.331'",
+   "problema": "R7: la tabla de contactos de constraints.md está en <<COMPLETAR>>, no hay estudio socio que provea datos, y las métricas de acierto de imputación y conciliación que sostienen la tesis necesitan comprobantes y extractos reales (R4 pide además poder contactar clientes antes de diciembre de 2026). R6: el flujo manda PDFs de terceros a la API de un LLM en EE.UU., que es una transferencia internacional (art. 23 de la Ley 18.331): exige proveedor en el Data Privacy Framework, cláusulas de la Res. 41/021 o autorización de la URCDP, y base registrada. La idea lo nombra como riesgo pero no da ruta de cumplimiento. Como contador, no entregaría extractos bancarios de mis clientes a un equipo de estudiantes sin contrato ni garantías. Mitigación posible que la idea no plantea: datos sintéticos, que no sirven para medir acierto real.",
+   "tipo": "evidencia",
+   "evidencia": [
+    "F-ataque-r1-m05-i009-cliente-004"
+   ]
+  },
+  {
+   "n": 6,
+   "severidad": "MINOR",
+   "titulo": "Si el acierto de imputación es bajo, no hay ahorro, y no hay meta ni línea de base",
+   "donde": "Riesgos: 'Si el acierto de imputación es bajo, la revisión anula el ahorro'; S2: 'midiendo horas ahorradas'",
+   "problema": "La propuesta de valor depende de un umbral de acierto que la idea no fija ni compara contra la herramienta que el estudio usa hoy o contra el asistente humano. Sin horas de línea de base por cliente ni costo del asistente, el ahorro visible que exige quien paga no es demostrable; la integración con cada sistema contable queda como exportar planilla o CSV, que los competidores ya resuelven con formato propio de cada sistema. Es una opinión, sin ficha que mida acierto o tiempo.",
+   "tipo": "opinion",
+   "evidencia": []
+  }
+ ],
+ "nuevas_fichas": [
+  {
+   "id": "F-ataque-r1-m05-i009-cliente-001",
+   "sector": "legal-contable",
+   "hallazgo": "Contafácil es software uruguayo con robots que descargan los CFE de DGI y eFactura de todas las empresas de un estudio, un perfil por cliente, y entrega los asientos en formato listo para importar a Conty, Zureo o ZetaSoftware. La página no menciona conciliación bancaria de extractos.",
+   "source_url": "https://www.contafacil.uy/",
+   "source_title": "Contafácil",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T11:00:00",
+   "competidor": "Contafácil"
+  },
+  {
+   "id": "F-ataque-r1-m05-i009-cliente-002",
+   "sector": "legal-contable",
+   "hallazgo": "Contable.CFE es una aplicación web para estudios contables que toma los CFE recibidos y emitidos bajados de DGI y los convierte en asientos importables a Conty, Contawin, Zureo y Zlibra; declara sin límite de empresas ni usuarios y ofrece descuento a socios del CCEAU.",
+   "source_url": "https://contablecfe.com.uy/",
+   "source_title": "Contable.CFE",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T11:02:00",
+   "competidor": "Contable.CFE"
+  },
+  {
+   "id": "F-ataque-r1-m05-i009-cliente-003",
+   "sector": "legal-contable",
+   "hallazgo": "Contafácil publica planes con empresas ilimitadas sin costo extra: Free $0, Simple $1.499, Pro $2.799 y Smart Pro $3.799 por mes (IVA incluido; la moneda no está rotulada, presumiblemente pesos uruguayos), con 20% menos en plan anual y prueba de un mes.",
+   "source_url": "https://www.contafacil.uy/planes",
+   "source_title": "Contafácil - Planes",
+   "source_date": "desconocida",
+   "source_type": "precios",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T11:05:00",
+   "competidor": "Contafácil"
+  },
+  {
+   "id": "F-ataque-r1-m05-i009-cliente-004",
+   "sector": "legal-contable",
+   "hallazgo": "El art. 23 de la Ley 18.331 prohíbe transferir datos personales a países sin nivel adecuado; enviar datos a un proveedor en EE.UU. exige que figure en el Data Privacy Framework o usar cláusulas de la Res. 41/021 o autorización de la URCDP, y la base debe estar registrada ante la URCDP antes de transferir.",
+   "source_url": "https://www.pdelc.com.uy/en/news/corporate/transferencia-internacional-de-datos-personales-desde-uruguay/",
+   "source_title": "Transferencia internacional de datos personales desde Uruguay",
+   "source_date": "2024-04-01",
+   "source_type": "otro",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T11:08:00"
+  }
+ ]
+}

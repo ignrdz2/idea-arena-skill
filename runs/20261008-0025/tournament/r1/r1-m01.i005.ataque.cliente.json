@@ -1,0 +1,100 @@
+{
+  "idea": "i005",
+  "persona": "cliente",
+  "ataques": [
+    {
+      "n": 1,
+      "severidad": "MAJOR",
+      "titulo": "Ya existen portales de cambios y devoluciones listos para las plataformas de tienda que usan las pymes",
+      "donde": "Seccion Competidores (\"Ninguno respaldado por fichas\") y Supuestos (\"no se afirma que no existan\")",
+      "problema": "Como dueno de una tienda online, antes de pagar por un portal nuevo busco si mi plataforma ya lo trae. En el directorio de apps de Tiendanube hay al menos dos productos que hacen lo mismo que el MVP: Boris (portal de autoservicio para el cliente, panel de gestion de solicitudes, seguimiento de estado, etiquetas de envio) y Undo (portal 24 hs, cambio por otro producto, cupon o reembolso, sincronizado con el stock real, mails automaticos, panel de logistica inversa). Ambos se instalan sin programar. La idea tiene una unica funcion que dice diferenciar (priorizar cambio o credito antes que reembolso) y Undo ya la ofrece. La ficha F-comercio-retail-010 muestra que la guia de precios de Tiendanube no lista Uruguay, pero eso no prueba que sus apps no se usen aca (Tiendanube y Shopify son las plataformas mas mencionadas por agencias uruguayas). La idea declara que no tiene competidores en fichas, pero no explica por que un equipo de estudiantes con un solo piloto le ganaria a apps con 40 a 50 resenas. Sin un hueco concreto no hay motivo para cambiar de lo que ya tengo.",
+      "tipo": "evidencia",
+      "evidencia": ["F-ataque-r1-m01-i005-cliente-001", "F-ataque-r1-m01-i005-cliente-002", "F-comercio-retail-010"]
+    },
+    {
+      "n": 2,
+      "severidad": "MAJOR",
+      "titulo": "El dolor central (devoluciones a mano que cuestan plata) no esta en las fichas; se infiere de datos que dicen otra cosa",
+      "donde": "Problema: \"Las pymes de e-commerce uruguayas casi no gestionan devoluciones... Cada cambio se resuelve a mano, sin registrar motivos ni productos problematicos\"",
+      "problema": "F-comercio-retail-007 dice que solo el 8% de las pymes consultadas gestiona devoluciones, en una nota de 2023 sobre un estudio chico. Eso se puede leer igual de bien como que casi nadie tiene volumen de devoluciones suficiente para necesitar un sistema, que es lo que yo, como responsable de una tienda, respondo hoy: lo resuelvo por WhatsApp o mail. La ficha no mide cuanto cuestan las devoluciones, cuantas hay por tienda ni cuanto tiempo consumen. Las otras cuatro fichas citadas no tocan devoluciones: F-comercio-retail-001 es el total del mercado (incluye marketplaces y grandes), F-comercio-retail-011 es una encuesta a consumidores, F-logistica-transporte-010 es un informe de 2022 sobre ruteo y entregas en Montevideo, y F-logistica-transporte-011 habla de costos logisticos y ultima milla, no de cambios. Que el mercado sea grande no demuestra que haya un dolor pagable en la devolucion. El propio apartado de Supuestos admite que la tasa de devoluciones y su costo no estan en las fichas, y ese es el numero del que depende toda la propuesta (\"retener ingresos\").",
+      "tipo": "evidencia",
+      "evidencia": ["F-comercio-retail-007", "F-comercio-retail-001", "F-comercio-retail-011", "F-logistica-transporte-010", "F-logistica-transporte-011"]
+    },
+    {
+      "n": 3,
+      "severidad": "MAJOR",
+      "titulo": "Las fotos y datos de clientes finales viajan a una API en EEUU sin camino de cumplimiento descripto",
+      "donde": "Solucion (\"Un modelo de lenguaje clasifica motivos y fotos\"), Stack (Claude Haiku 5.5) y Riesgos (Ley 18.331 \"registro de bases y consentimiento\")",
+      "problema": "El MVP recibe nombre, pedido, direccion o punto de retiro y fotos de los clientes de la tienda, y las manda a la API de Anthropic. El riesgo de la idea solo menciona registro de bases y consentimiento. Para la ley uruguaya, la transferencia de datos personales a EEUU ya no tiene el amparo del Privacy Shield (Resolucion 23/2021 de la URCDP): hay que apoyarse en consentimiento, una excepcion del art. 23 de la Ley 18.331 o clausulas contractuales apropiadas, y en algunos casos autorizacion expresa de la URCDP. Ademas, la tienda es la responsable de la base y el equipo seria su encargado de tratamiento, con contrato y medidas de seguridad. Como cliente, no le entrego los datos de mis compradores a un grupo de estudiantes sin ese marco, y no tengo a quien consultar en la empresa para armarlo. Esto afecta la restriccion R6 (camino de cumplimiento realista con la Ley 18.331): la idea no lo muestra y el costo de asesoramiento legal no figura en el presupuesto.",
+      "tipo": "evidencia",
+      "evidencia": ["F-ataque-r1-m01-i005-cliente-003"]
+    },
+    {
+      "n": 4,
+      "severidad": "MAJOR",
+      "titulo": "Disposicion a pagar y pilotos sin respaldo; sin contactos ni ficha de precios, y el ingreso no cubre ni el servidor",
+      "donde": "Monetizacion (USD 15 a 30 por mes), Alcance S1 (\"tienda piloto\") y S2 (\"3 tiendas en uso real\")",
+      "problema": "El precio es un supuesto declarado sin ninguna ficha de precios de apps parecidas ni de lo que pagan las pymes. Con 3 tiendas a USD 15 a 30 por mes el ingreso es de USD 45 a 90 por mes, apenas por encima del servidor (USD 12 por mes) sin contar el tiempo del equipo, soporte ni el costo de captar clientes por venta directa. No hay tamano de mercado inicial (cuantas tiendas uruguayas tienen un volumen de cambios que justifique pagar) ni canal verificable: \"agencias que las implementan\" no tiene ninguna ficha. La tabla de contactos del equipo en constraints.md esta toda sin completar, asi que no hay tienda piloto identificada, y el plan de S1 y S2 depende de conseguir una y luego tres que acepten cargar pedidos reales y entregar datos de sus clientes. Como cliente, nadie me avisa que existe esto y yo no cambio un proceso que funciona por una promesa de retener ventas que el equipo no puede medir hasta que alguien lo use.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 5,
+      "severidad": "MAJOR",
+      "titulo": "La reserva de stock y la carga de pedidos asumen sistemas que, segun la ficha, la mayoria de las pymes no tiene",
+      "donde": "Alcance S1 (\"Carga de pedidos por planilla o API de una plataforma de tienda\") y S2 (\"cambio por otro talle con reserva de stock\")",
+      "problema": "Ofrecer cambio por otro talle con reserva de stock exige conocer el inventario en tiempo real. F-comercio-retail-006 dice que el 92% de las pymes de e-commerce estudiadas no tiene sistema informatico para gestionar el inventario de forma automatizada y que la confirmacion de pedidos es manual. Entonces o el portal depende de una integracion con la plataforma (cuya identidad la idea no define, y que su propio riesgo reconoce que puede consumir mucho tiempo) o la tienda tiene que cargar y mantener el stock a mano en una herramienta mas, lo que contradice la condicion de no cambiar como trabaja mi gente. Si cargo pedidos por planilla, duplico la carga que ya hago en mi tienda. El MVP no dice con que plataformas integra ni como obtiene el stock de las tiendas que no tienen sistema, y esa es la funcion que hace que el cambio por talle (la propuesta de valor) funcione.",
+      "tipo": "evidencia",
+      "evidencia": ["F-comercio-retail-006"]
+    },
+    {
+      "n": 6,
+      "severidad": "MINOR",
+      "titulo": "F-legal-contable-002 no respalda que el MVP resuelva la nota de credito",
+      "donde": "Solucion (\"obtiene los datos para emitir la nota de credito en su proveedor de CFE (F-legal-contable-002)\") y Alcance S2 (\"exportacion de datos para nota de credito\")",
+      "problema": "La ficha solo dice que la factura electronica es obligatoria para casi todos los contribuyentes y que el emisor necesita software o un proveedor de CFE. No dice nada de notas de credito, de exportar datos a proveedores ni de su formato. Para mi, la parte que cuesta tiempo es emitir la nota de credito en mi proveedor, y el MVP solo me entrega una exportacion: sigo tipeando o importando a mano en otro sistema. La integracion directa con los proveedores de CFE no esta prevista, y la ficha citada no muestra que exista una forma de hacerlo. Es un beneficio presentado como si la ficha lo respaldara, y en la practica es una planilla de salida.",
+      "tipo": "evidencia",
+      "evidencia": ["F-legal-contable-002"]
+    }
+  ],
+  "nuevas_fichas": [
+    {
+      "id": "F-ataque-r1-m01-i005-cliente-001",
+      "sector": "comercio-retail",
+      "hallazgo": "Boris es una app del directorio de Tiendanube para cambios y devoluciones: portal personalizable de autoservicio para el cliente, panel de gestion de solicitudes, seguimiento de estado en tiempo real y gestion automatica de etiquetas de envio, con 4,9 de calificacion sobre 50 resenas. La pagina no lista precios ni menciona Uruguay.",
+      "source_url": "https://www.tiendanube.com/tienda-aplicaciones-nube/boris",
+      "source_title": "Boris Cambios y Devoluciones - Tienda de Aplicaciones",
+      "source_date": "desconocida",
+      "source_type": "competidor",
+      "geografia": "LATAM",
+      "confianza": "media",
+      "retrieved_at": "2026-10-08T01:10:00",
+      "competidor": "Boris"
+    },
+    {
+      "id": "F-ataque-r1-m01-i005-cliente-002",
+      "sector": "comercio-retail",
+      "hallazgo": "Undo es una app del directorio de Tiendanube que gestiona cambios y devoluciones: usa el stock en linea para ofrecer solo productos disponibles, permite cambio por otro producto, cupon o reembolso, genera etiquetas y mails automaticos y da a la tienda un portal de autoservicio 24 horas y un panel de logistica inversa. Calificacion 4,9 sobre 42 resenas; la pagina no detalla planes ni paises.",
+      "source_url": "https://www.tiendanube.com/tienda-aplicaciones-nube/undo",
+      "source_title": "Undo Cambios y Devoluciones - Tienda de Aplicaciones",
+      "source_date": "desconocida",
+      "source_type": "competidor",
+      "geografia": "LATAM",
+      "confianza": "media",
+      "retrieved_at": "2026-10-08T01:10:00",
+      "competidor": "Undo"
+    },
+    {
+      "id": "F-ataque-r1-m01-i005-cliente-003",
+      "sector": "transversal",
+      "hallazgo": "La Resolucion 23/2021 de la URCDP de Uruguay excluyo el Privacy Shield como base de adecuacion para EEUU y reemplazo a la Resolucion 4/2019: las transferencias de datos personales a EEUU deben apoyarse en consentimiento o en una excepcion del art. 23 de la Ley 18.331 y, segun el caso, en autorizacion expresa de la URCDP; se valoran clausulas contractuales apropiadas conforme a la Resolucion 41/2021.",
+      "source_url": "https://www.guyer.com.uy/informes-&-noticias/exclusion-de-privacy-shield-modificacion-al-regimen-de-transferencia-internacional-de-datos-a-estados-unidos-de-america",
+      "source_title": "Exclusion de Privacy Shield. Modificacion al regimen de transferencia internacional de datos a Estados Unidos de America",
+      "source_date": "2021-09",
+      "source_type": "otro",
+      "geografia": "UY",
+      "confianza": "media",
+      "retrieved_at": "2026-10-08T01:12:00"
+    }
+  ]
+}
