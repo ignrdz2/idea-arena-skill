@@ -5,13 +5,13 @@
    "local_id": "g05-1",
    "titulo": "Reclamos vecinales por WhatsApp para municipios chicos, sin implantación",
    "problema": "El gobierno digital departamental en Uruguay es muy desigual (F-sector-publico-001). Las soluciones existentes son proyectos grandes: un sistema común para 14 intendencias costó USD 4,5 millones (F-sector-publico-005) y una plataforma municipal de la región tardó cerca de seis meses en implantarse (F-sector-publico-007). Muchos gobiernos ven la tecnología como gasto (F-sector-publico-008) y solo el 34% de los encuestados completó un trámite en línea de punta a punta (F-sector-publico-009). Un municipio chico queda entre no tener nada y un proyecto que no puede pagar.",
-   "usuario": "Usan: vecinos (reportan por WhatsApp) y funcionarios del municipio o de la intendencia (gestionan en un tablero web). Paga: el municipio o la intendencia.",
+   "usuario": "Usan: vecinos (reportan por WhatsApp) y funcionarios municipales (gestionan en un tablero web). Paga: el municipio o la intendencia.",
    "solucion": "Un canal de reclamos que se activa en un día: el vecino escribe al WhatsApp del municipio, un asistente con LLM pide lo mínimo (tipo, ubicación, foto), lo clasifica y lo asigna a una cuadrilla. El funcionario ve una bandeja web con mapa, estados y plazos; el vecino recibe el cierre por el mismo chat. Sin instalación ni migración, con catálogo configurable desde una planilla y reporte mensual de tiempos de respuesta.",
    "mvp": {
     "semestre_1": [
      "Bot de WhatsApp (API oficial, número de prueba) que recibe reclamos con texto, foto y ubicación y los clasifica con LLM",
      "Bandeja web para funcionarios con estados y mapa",
-     "Demo al tutor con datos simulados de un municipio"
+     "Demo al tutor con datos simulados"
     ],
     "semestre_2": [
      "Catálogo de reclamos configurable, asignación por zona y aviso de cierre al vecino",
@@ -79,7 +79,7 @@
      "hueco": "Ofrece trámites y expediente electrónico, no un canal conversacional de reclamos; puede ser socio en lugar de rival."
     }
    ],
-   "monetizacion": "Paga el municipio o la intendencia, por uso: sin costo de implantación y un precio por reclamo gestionado (por ejemplo USD 0,25) con un mínimo mensual bajo (USD 50) y un tope. Canal: Congreso de Intendentes y venta directa a alcaldes; luego municipios chicos de LATAM.",
+   "monetizacion": "Paga el municipio o la intendencia, por uso: sin costo de implantación, USD 0,25 por reclamo gestionado (hipótesis a validar) con un mínimo mensual de USD 50. Canal: Congreso de Intendentes y venta directa a alcaldes; luego municipios chicos de LATAM.",
    "riesgos": [
     "Compras públicas lentas o con licitación aun para montos chicos",
     "Que Agesic o la intendencia ofrezcan un canal similar gratis",
@@ -87,11 +87,10 @@
     "Baja adopción si el municipio no responde"
    ],
    "supuestos": [
-    "Uruguay tiene más de 100 municipios de tercer nivel, muchos sin canal digital propio de reclamos (a verificar)",
+    "Uruguay tiene más de 100 municipios, muchos sin canal digital de reclamos (a verificar)",
     "Los vecinos prefieren WhatsApp a un portal de trámites",
-    "Un municipio puede contratar montos de USD 50 a 150 por mes por compra directa",
-    "El precio por reclamo es una hipótesis a validar en entrevistas",
-    "No hay contacto identificado en el sector: el piloto depende de conseguirlo antes de diciembre de 2026"
+    "Un municipio puede contratar USD 50 a 150 por mes por compra directa",
+    "No hay contacto identificado: el piloto depende de conseguirlo antes de diciembre de 2026"
    ],
    "evidencias": [
     "F-sector-publico-001",

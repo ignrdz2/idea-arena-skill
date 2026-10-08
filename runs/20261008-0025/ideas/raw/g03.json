@@ -1,0 +1,235 @@
+{
+ "generador": "g03",
+ "ideas": [
+  {
+   "local_id": "g03-1",
+   "titulo": "Agenda por WhatsApp con lista de espera para consultorios independientes del interior",
+   "problema": "Los profesionales de salud independientes siguen mayormente con agenda de papel: la fundadora de una agenda local detectó que 18 de cada 20 la usaban, y esa oferta se concentra en Montevideo y el este (F-salud-006). El ausentismo puede costar hasta 14% de los ingresos mensuales de un consultorio privado, y recordatorios con lista de espera lo bajan 30% a 50% según un proveedor extranjero (F-salud-008).",
+   "usuario": "Profesionales de salud que atienden solos o en consultorios de 1 a 3 personas en ciudades del interior (odontólogos, psicólogos, fisioterapeutas, nutricionistas). Usa y paga el profesional; el paciente solo interactúa por WhatsApp.",
+   "solucion": "Un asistente de WhatsApp que el profesional configura en 15 minutos: los pacientes piden, confirman o cambian turno escribiendo en lenguaje natural; el sistema manda recordatorio 24 horas antes y, si alguien cancela, ofrece el hueco automáticamente a la lista de espera en orden. Panel web con agenda, ausentismo y huecos recuperados. Sin historia clínica.",
+   "mvp": {
+    "semestre_1": [
+     "Agenda web con turnos, disponibilidad y lista de espera",
+     "Bot de WhatsApp que reserva, confirma y cancela con un LLM que extrae intención y fecha",
+     "Demo al tutor con 3 profesionales de prueba y pacientes simulados"
+    ],
+    "semestre_2": [
+     "Reasignación automática de huecos cancelados a la lista de espera",
+     "Panel de ausentismo y huecos recuperados por profesional",
+     "Piloto real con 5 a 6 profesionales del interior durante 3 meses y medición antes y después",
+     "Business case con costos por profesional y precio validado"
+    ]
+   },
+   "stack": [
+    "Python FastAPI",
+    "PostgreSQL",
+    "React",
+    "WhatsApp Business Platform (Cloud API)",
+    "Claude Haiku 5.5 vía API",
+    "Docker",
+    "AWS Lightsail"
+   ],
+   "costo_infra": {
+    "total_anual_usd": 185,
+    "items": [
+     {
+      "concepto": "Servidor AWS Lightsail Linux 512 MB con IPv4",
+      "usd_anual": 60,
+      "supuesto": "Un servidor 12 meses a USD 5 por mes con app y base juntas; no se cuenta la capa gratuita porque la página no dice cuánto dura.",
+      "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+     },
+     {
+      "concepto": "Mensajes plantilla de WhatsApp (recordatorios)",
+      "usd_anual": 100,
+      "supuesto": "Estimación por encima: la página de Meta cobra por plantilla entregada pero no muestra la tarifa; supongo USD 0,03 por mensaje, unos 3.300 mensajes (6 profesionales, 80 turnos al mes, 6 meses, más pruebas). Los mensajes dentro de la ventana de atención son gratis."
+     },
+     {
+      "concepto": "API de Claude Haiku 5.5",
+      "usd_anual": 10,
+      "supuesto": "20.000 mensajes interpretados con 2.000 tokens de entrada y 200 de salida (40M entrada a USD 0,10 y 4M salida a USD 0,50 por millón) dan USD 6; redondeo a 10.",
+      "fuente_precio_url": "https://platform.claude.com/docs/en/docs/about-claude/pricing"
+     },
+     {
+      "concepto": "Dominio propio",
+      "usd_anual": 15,
+      "supuesto": "Estimación por encima sin fuente abierta: un dominio .com por un año, redondeado hacia arriba con margen."
+     }
+    ]
+   },
+   "competidores": [
+    {
+     "nombre": "Zalon",
+     "evidencia_ids": [
+      "F-salud-006"
+     ],
+     "hueco": "Concentra sus cerca de 200 clientes en Montevideo y el este y cobra comisión por pago; no aparece foco en el interior ni en reprogramación conversacional."
+    },
+    {
+     "nombre": "AgendaPro",
+     "evidencia_ids": [
+      "F-salud-007"
+     ],
+     "hueco": "Producto completo para centros médicos argentinos, sin precios publicados ni mención de Uruguay; pensado para clínicas, no para un profesional solo."
+    }
+   ],
+   "monetizacion": "Suscripción mensual del profesional de USD 10 a 15, sin comisión por pago, con un mes gratis. Canal: asociaciones profesionales y colegios departamentales, y recomendación entre colegas.",
+   "riesgos": [
+    "Costo por mensaje de WhatsApp más alto que lo supuesto, que come el margen",
+    "El profesional no cambia su hábito de agenda en papel",
+    "Errores del LLM al interpretar fechas que generan turnos mal agendados"
+   ],
+   "supuestos": [
+    "La tarifa de plantillas de utilidad para Uruguay no supera USD 0,03 por mensaje",
+    "Los profesionales del interior están desatendidos por las agendas existentes, cosa que las fichas solo sugieren",
+    "El efecto de 30% a 50% de reducción del ausentismo, medido fuera de Uruguay, se replica acá",
+    "Un profesional paga USD 10 a 15 al mes por recuperar turnos",
+    "El equipo puede conseguir 5 o 6 profesionales del interior para el piloto"
+   ],
+   "evidencias": [
+    "F-salud-006",
+    "F-salud-007",
+    "F-salud-008"
+   ]
+  },
+  {
+   "local_id": "g03-2",
+   "titulo": "Medición de tiempos de espera para prestadores de salud chicos",
+   "problema": "La Política Nacional de Garantía de Acceso Oportuno fija plazos máximos (24 horas hábiles medicina general, 48 cirugía general, 30 días especialistas) y obliga a los prestadores a medirlos y cumplirlos (F-salud-001). Pero el propio MSP admite que faltan sistemas de información: el cálculo empieza cuando se registra la demanda, sin contar días de agenda cerrada (F-salud-002). Los prestadores con menos recursos, con presión financiera como la documentada en una mutualista (F-salud-010), difícilmente pueden encarar un proyecto informático propio para cumplir.",
+   "usuario": "Dirección técnica y administración de prestadores integrales chicos o del interior y de policlínicas privadas. Paga el prestador; lo usan el administrativo de agenda y la dirección.",
+   "solucion": "Un servicio web que registra cada pedido de consulta en el momento en que el usuario lo hace, incluso si no hay agenda abierta, y lo concilia con el turno finalmente dado. Importa los turnos desde una exportación CSV de la agenda existente, calcula el tiempo de espera por especialidad contra el plazo del decreto, alerta los pedidos por vencer y genera el reporte de cumplimiento. La dirección puede consultar en lenguaje natural (por ejemplo, qué especialidad incumplió más este mes) con Text-to-SQL.",
+   "mvp": {
+    "semestre_1": [
+     "Modelo de datos de pedidos, turnos y plazos del decreto con calendario de días hábiles",
+     "Formulario de registro de demanda e importador CSV de agendas",
+     "Tablero de cumplimiento por especialidad sobre datos sintéticos, demostrado al tutor"
+    ],
+    "semestre_2": [
+     "Alertas de pedidos por vencer y reporte exportable de cumplimiento",
+     "Consultas en lenguaje natural con Text-to-SQL y validación de las consultas generadas",
+     "Piloto con un prestador o policlínica usando su exportación real anonimizada",
+     "Business case con precio por prestador"
+    ]
+   },
+   "stack": [
+    "Python FastAPI",
+    "PostgreSQL",
+    "React",
+    "Claude Haiku 5.5 vía API para Text-to-SQL",
+    "Docker",
+    "AWS Lightsail"
+   ],
+   "costo_infra": {
+    "total_anual_usd": 109,
+    "items": [
+     {
+      "concepto": "Servidor AWS Lightsail Linux 1 GB con IPv4",
+      "usd_anual": 84,
+      "supuesto": "Un servidor 12 meses a USD 7 por mes con app y PostgreSQL; sin contar capa gratuita porque no se documenta su duración en la página.",
+      "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+     },
+     {
+      "concepto": "API de Claude Haiku 5.5",
+      "usd_anual": 10,
+      "supuesto": "3.000 consultas en lenguaje natural con 6.000 tokens de entrada (esquema incluido) y 500 de salida: 18M a USD 0,10 y 1,5M a USD 0,50 por millón, unos USD 3; redondeo a 10.",
+      "fuente_precio_url": "https://platform.claude.com/docs/en/docs/about-claude/pricing"
+     },
+     {
+      "concepto": "Dominio propio",
+      "usd_anual": 15,
+      "supuesto": "Estimación por encima sin fuente abierta: un dominio .com por un año, redondeado hacia arriba con margen."
+     }
+    ]
+   },
+   "competidores": [],
+   "monetizacion": "Suscripción anual del prestador según tamaño, de USD 150 a 400 al mes, con implementación incluida. Canal: venta directa a direcciones técnicas, empezando por prestadores del interior.",
+   "riesgos": [
+    "Sin socio identificado para el piloto: el acceso a datos reales de agenda depende de convencer a un prestador",
+    "El MSP o los grandes proveedores de historia clínica agregan la medición a sus propios sistemas",
+    "Ciclo de venta largo en instituciones de salud",
+    "Datos personales de salud: requiere anonimización y cumplimiento de la Ley 18.331"
+   ],
+   "supuestos": [
+    "Las fichas no muestran competidores que midan tiempos de espera contra el decreto; no afirmo que no existan",
+    "Los prestadores chicos no tienen hoy un sistema para medir los plazos del decreto",
+    "Las agendas existentes permiten exportar turnos en CSV",
+    "Un prestador paga USD 150 a 400 al mes por cumplir la norma",
+    "El decreto se aplica en 2027 con los plazos anunciados"
+   ],
+   "evidencias": [
+    "F-salud-001",
+    "F-salud-002",
+    "F-salud-010"
+   ]
+  },
+  {
+   "local_id": "g03-3",
+   "titulo": "Seguimiento de pacientes tras un intento de autoeliminación para equipos de salud mental",
+   "problema": "En 2025 el MSP registró 668 suicidios y 6.140 intentos de 5.144 personas: casi mil intentos fueron de personas que ya habían intentado ese mismo año (F-salud-009). La continuidad entre instituciones es limitada: la historia clínica interoperable cubre 14 de 43 prestadores integrales y deja fuera a más de 100 organizaciones potenciales (F-salud-004), y el MSP reconoce falta de sistemas de información para seguir plazos asistenciales (F-salud-002). El paciente que no vuelve al control se pierde sin que nadie lo note.",
+   "usuario": "Equipos de salud mental de prestadores chicos, policlínicas del interior y organizaciones que hoy siguen casos con planillas. Paga la institución; lo usan psicólogos, psiquiatras y referentes de seguimiento.",
+   "solucion": "Una herramienta de gestión de casos: al ingresar un paciente tras un intento se crea un plan de contactos con fechas (por ejemplo, a los 7, 30 y 90 días), el sistema asigna responsable, avisa al equipo cuando un contacto vence sin registrarse y manda al paciente, con su consentimiento, un recordatorio de consulta por WhatsApp. Permite derivar el caso a otra institución con un resumen exportable. No calcula riesgo ni diagnostica: organiza el seguimiento que el equipo ya decide.",
+   "mvp": {
+    "semestre_1": [
+     "Registro de casos con consentimiento, roles y bitácora de auditoría",
+     "Planes de contacto configurables con vencimientos y tablero del equipo",
+     "Demo al tutor con casos ficticios"
+    ],
+    "semestre_2": [
+     "Alertas de contactos vencidos y recordatorios al paciente por WhatsApp",
+     "Derivación con resumen exportable y cifrado de datos sensibles",
+     "Piloto con un equipo de salud mental y entrevistas de validación",
+     "Business case y plan de cumplimiento de la Ley 18.331"
+    ]
+   },
+   "stack": [
+    "Python FastAPI",
+    "PostgreSQL con cifrado de columnas",
+    "React",
+    "WhatsApp Business Platform (Cloud API)",
+    "Docker",
+    "AWS Lightsail"
+   ],
+   "costo_infra": {
+    "total_anual_usd": 139,
+    "items": [
+     {
+      "concepto": "Servidor AWS Lightsail Linux 1 GB con IPv4",
+      "usd_anual": 84,
+      "supuesto": "Un servidor 12 meses a USD 7 por mes; sin contar capa gratuita porque la página no dice cuánto dura.",
+      "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+     },
+     {
+      "concepto": "Mensajes plantilla de WhatsApp",
+      "usd_anual": 40,
+      "supuesto": "Estimación por encima: Meta cobra por plantilla entregada pero la página no muestra la tarifa; supongo USD 0,03 por mensaje y unos 1.300 mensajes (40 pacientes, 4 al mes, 6 meses, más pruebas)."
+     },
+     {
+      "concepto": "Dominio propio",
+      "usd_anual": 15,
+      "supuesto": "Estimación por encima sin fuente abierta: un dominio .com por un año, redondeado hacia arriba con margen."
+     }
+    ]
+   },
+   "competidores": [],
+   "monetizacion": "Suscripción mensual por equipo institucional, de USD 100 a 200 según cantidad de casos activos. Canal: venta directa a direcciones técnicas de prestadores chicos y a organizaciones de salud mental.",
+   "riesgos": [
+    "Datos de salud mental muy sensibles: un incidente de seguridad sería grave",
+    "Sin socio identificado para el piloto; conseguir un equipo dispuesto puede llevar tiempo",
+    "Que la institución lo vea como dispositivo médico si se le pide puntuar riesgo, cosa que el MVP evita",
+    "Presupuestos acotados de los prestadores chicos"
+   ],
+   "supuestos": [
+    "Las fichas no muestran competidores de seguimiento post intento; no afirmo que no existan",
+    "Los equipos de salud mental de prestadores chicos siguen hoy estos casos con planillas o papel",
+    "Un seguimiento con fechas fijas es práctica aceptada por los equipos",
+    "Una institución paga USD 100 a 200 al mes por esta herramienta",
+    "Una herramienta que no diagnostica ni puntúa riesgo no requiere habilitación como dispositivo médico",
+    "La tarifa de plantillas de WhatsApp para Uruguay no supera USD 0,03"
+   ],
+   "evidencias": [
+    "F-salud-009",
+    "F-salud-004",
+    "F-salud-002"
+   ]
+  }
+ ]
+}

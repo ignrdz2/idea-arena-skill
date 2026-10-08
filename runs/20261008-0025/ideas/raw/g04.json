@@ -1,0 +1,253 @@
+{
+ "generador": "g04",
+ "ideas": [
+  {
+   "local_id": "g04-1",
+   "titulo": "Cumplimiento antilavado para escribanías y estudios contables chicos",
+   "problema": "La Ley 20.469 de marzo de 2026 endurece el régimen antilavado para abogados, escribanos y contadores: baja el umbral de efectivo de 1.000.000 UI a 200.000 UI y obliga a actualizar matrices de riesgo y manuales (F-legal-contable-009). Más operaciones quedan alcanzadas y cada profesional debe documentar la debida diligencia de sus clientes. A la vez crecen las estafas y la suplantación de identidad (F-fintech-seguros-004, F-fintech-seguros-006), que son justo lo que la debida diligencia debe detectar. Una escribanía chica hoy resuelve esto con planillas y formularios en papel; el costo en horas no está medido en las fichas.",
+   "usuario": "Escribanos, contadores y abogados independientes o en estudios de 1 a 10 personas en Uruguay. Paga el titular del estudio.",
+   "solucion": "Plataforma web de cumplimiento antilavado adaptada al régimen uruguayo, siguiendo el modelo de las herramientas de verificación de clientes para estudios jurídicos del Reino Unido. Hace cuatro cosas: (1) legajo de debida diligencia por cliente con formulario que el cliente completa desde el celular, carga de cédula y declaración de beneficiario final; (2) cruce automático con listas públicas de sanciones; (3) registro de operaciones con alerta cuando el efectivo supera 200.000 UI convertidas con la cotización de la UI del día; (4) generación asistida por LLM de la matriz de riesgo y el manual interno a partir de un cuestionario, con el texto normativo citado por RAG. Lo que cambia frente al original: normativa y umbrales en UI, idioma, documentos uruguayos, Ley 18.331 y precio para un estudio de una persona.",
+   "mvp": {
+    "semestre_1": [
+     "Legajo de cliente y formulario de debida diligencia de punta a punta, con almacenamiento cifrado",
+     "Registro de operaciones con conversión a UI y alerta de umbral",
+     "Demo con 2 escribanías de prueba cargando casos reales anonimizados"
+    ],
+    "semestre_2": [
+     "Cruce con listas públicas de sanciones y puntaje de riesgo por cliente",
+     "Generador de matriz de riesgo y manual con RAG sobre la ley y su reglamentación",
+     "Exportación del legajo para inspección y piloto con 5 a 10 profesionales"
+    ]
+   },
+   "stack": [
+    "Python FastAPI",
+    "React",
+    "PostgreSQL",
+    "Qdrant",
+    "Claude Haiku 5.5 vía API",
+    "Docker",
+    "AWS Lightsail"
+   ],
+   "costo_infra": {
+    "total_anual_usd": 179,
+    "items": [
+     {
+      "concepto": "Servidor AWS Lightsail Linux 2 GB RAM (app, base de datos y workers en Docker)",
+      "usd_anual": 144,
+      "supuesto": "1 instancia de USD 12 por mes durante 12 meses de 2027, sin contar ninguna capa gratuita.",
+      "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+     },
+     {
+      "concepto": "API de LLM Claude Haiku 5.5",
+      "usd_anual": 15,
+      "supuesto": "RAG y redacción para unas 200 generaciones de manual y matriz más 2.000 consultas: del orden de 30 millones de tokens de entrada y 6 millones de salida (USD 3 más USD 3); se redondea a 15 por margen.",
+      "fuente_precio_url": "https://claude.com/pricing"
+     },
+     {
+      "concepto": "Dominio y DNS",
+      "usd_anual": 20,
+      "supuesto": "Estimación por encima sin página de precios abierta: un dominio .com suele costar menos de USD 15 por año; se redondea a 20 con margen."
+     }
+    ]
+   },
+   "competidores": [],
+   "monetizacion": "Suscripción mensual por profesional, con un precio de referencia de USD 20 a 30 por mes y un plan de estudio para varios usuarios. Canal: colegios y asociaciones profesionales y cursos de actualización sobre la nueva ley. El precio es un supuesto a validar en entrevistas.",
+   "riesgos": [
+    "La reglamentación de la Ley 20.469 todavía no salió y puede cambiar los requisitos",
+    "Responsabilidad si el sistema no detecta un caso: debe presentarse como apoyo, no como garantía",
+    "Manejo de datos personales sensibles bajo Ley 18.331",
+    "Bajo hábito de pago por software en profesionales independientes"
+   ],
+   "supuestos": [
+    "Las fichas no muestran competidores locales de software antilavado para estudios chicos; eso no prueba que no existan",
+    "Existen en el Reino Unido herramientas de verificación de clientes para estudios jurídicos, sin ficha que lo respalde",
+    "Las escribanías chicas hoy gestionan la debida diligencia con planillas o papel",
+    "Las listas de sanciones relevantes son públicas y descargables",
+    "Precio de USD 20 a 30 por mes aceptable para un profesional independiente",
+    "Se puede contactar escribanos y contadores desde Uruguay antes de diciembre de 2026"
+   ],
+   "evidencias": [
+    "F-legal-contable-009",
+    "F-fintech-seguros-004",
+    "F-fintech-seguros-006"
+   ]
+  },
+  {
+   "local_id": "g04-2",
+   "titulo": "Precontabilización automática de comprobantes y extractos para estudios contables",
+   "problema": "Los estudios contables de Montevideo contratan asistentes para registrar asientos, conciliar bancos y cuentas de clientes y proveedores, con Excel intermedio (F-legal-contable-005): trabajo repetitivo que el estudio cobra dentro de honorarios fijos de $U 18.000 a 25.000 por mes por SRL pequeña (F-legal-contable-001), así que cada hora de carga se come margen. Los comprobantes ya son electrónicos para casi todos los contribuyentes (F-legal-contable-002), pero los dolores siguen: doble carga cuando el sistema no integra y dificultad para exportar XML (F-legal-contable-003). Un ERP con localización como Odoo exige configuración técnica no trivial (F-legal-contable-004).",
+   "usuario": "Asistentes y contadores de estudios contables de 2 a 20 personas que llevan la contabilidad de pymes. Paga el estudio.",
+   "solucion": "Servicio de captura y precontabilización multi-cliente, al estilo de las herramientas de captura de comprobantes usadas por estudios en el Reino Unido, adaptado a Uruguay. El estudio sube o reenvía por correo los XML de CFE recibidos y emitidos, PDFs y extractos bancarios de sus clientes. El sistema extrae RUT, tipo de CFE, montos e IVA; propone la cuenta contable aprendiendo de las imputaciones anteriores de cada cliente (embeddings y reglas); concilia movimientos bancarios contra comprobantes y deja una cola de excepciones para revisión humana. Exporta asientos en planilla o CSV para importar al sistema contable del estudio. Lo que cambia: el formato CFE uruguayo, plan de cuentas local, bancos locales y precio por empresa cliente.",
+   "mvp": {
+    "semestre_1": [
+     "Ingesta de XML de CFE y extractos en CSV o PDF de 2 bancos",
+     "Propuesta de imputación con reglas y similitud, y cola de revisión",
+     "Demo con datos anonimizados de 3 empresas cliente"
+    ],
+    "semestre_2": [
+     "Conciliación bancaria automática con métricas de acierto",
+     "Exportación de asientos en planilla configurable y vista multi-cliente para el estudio",
+     "Piloto con 1 o 2 estudios midiendo horas ahorradas"
+    ]
+   },
+   "stack": [
+    "Python FastAPI",
+    "React",
+    "PostgreSQL con pgvector",
+    "lxml para XML de CFE",
+    "Claude Haiku 5.5 vía API para PDFs",
+    "Docker",
+    "AWS Lightsail"
+   ],
+   "costo_infra": {
+    "total_anual_usd": 184,
+    "items": [
+     {
+      "concepto": "Servidor AWS Lightsail Linux 2 GB RAM (app, base de datos y workers en Docker)",
+      "usd_anual": 144,
+      "supuesto": "1 instancia de USD 12 por mes durante 12 meses de 2027, sin contar ninguna capa gratuita.",
+      "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+     },
+     {
+      "concepto": "API de LLM Claude Haiku 5.5",
+      "usd_anual": 20,
+      "supuesto": "Extracción de PDFs y casos ambiguos: unos 40.000 documentos de prueba a 1.500 tokens de entrada y 300 de salida (60 millones y 12 millones, USD 6 más USD 6); se redondea a 20 por margen. Los XML se leen sin LLM.",
+      "fuente_precio_url": "https://claude.com/pricing"
+     },
+     {
+      "concepto": "Dominio y DNS",
+      "usd_anual": 20,
+      "supuesto": "Estimación por encima sin página de precios abierta: un dominio .com suele costar menos de USD 15 por año; se redondea a 20 con margen."
+     }
+    ]
+   },
+   "competidores": [
+    {
+     "nombre": "YoFacturo y otros proveedores de CFE",
+     "evidencia_ids": [
+      "F-legal-contable-003",
+      "F-comercio-retail-008"
+     ],
+     "hueco": "Están pensados para que cada empresa emita y gestione sus comprobantes, no para que un estudio procese y concilie los de muchos clientes."
+    },
+    {
+     "nombre": "Odoo con localización Uruguay",
+     "evidencia_ids": [
+      "F-legal-contable-004"
+     ],
+     "hueco": "Es un ERP completo por empresa con configuración técnica no trivial; no sirve como capa liviana sobre el sistema que ya usa el estudio."
+    }
+   ],
+   "monetizacion": "Suscripción del estudio por empresa cliente activa, con un precio de referencia de USD 3 a 5 por empresa por mes; un estudio con 40 clientes pagaría USD 120 a 200 por mes. Es un supuesto, contrastado con honorarios de $U 18.000 a 25.000 por SRL pequeña (F-legal-contable-001). Canal: venta directa a estudios y gremio de contadores.",
+   "riesgos": [
+    "Acceso a XML y extractos reales depende de que los estudios los compartan bajo Ley 18.331",
+    "Formatos de extracto distintos por banco",
+    "Si el acierto de imputación es bajo, la revisión anula el ahorro",
+    "Integración con cada sistema contable del estudio"
+   ],
+   "supuestos": [
+    "Los estudios reciben de sus clientes los XML de CFE o pueden obtenerlos",
+    "Existen en el Reino Unido herramientas de captura de comprobantes para estudios contables, sin ficha que lo respalde",
+    "Un estudio típico atiende decenas de empresas cliente",
+    "Precio de USD 3 a 5 por empresa por mes aceptable",
+    "Los bancos uruguayos permiten exportar extractos en CSV o PDF"
+   ],
+   "evidencias": [
+    "F-legal-contable-005",
+    "F-legal-contable-001",
+    "F-legal-contable-002",
+    "F-legal-contable-003",
+    "F-legal-contable-004",
+    "F-comercio-retail-008"
+   ]
+  },
+  {
+   "local_id": "g04-3",
+   "titulo": "Copiloto de obligaciones fiscales para unipersonales que empiezan",
+   "problema": "Un negocio nuevo en Uruguay debe facturar electrónicamente desde el primer día (F-legal-contable-002) y, si factura como contribuyente de IVA, necesita certificado digital y un CAE que vence a los 2 años (F-comercio-retail-009). El costo de entender esto lo paga en honorarios: un contador cobra $U 2.200 a 3.000 por mes a un monotributista (F-legal-contable-001), y elegir mal el proveedor de CFE trae rechazos, caídas y un plan por comprobante más caro pasados unos 80 CFE por mes (F-legal-contable-003).",
+   "usuario": "Unipersonales y monotributistas que recién empiezan o facturan poco, sobre todo servicios. Pagan ellos; contadores asociados pueden pagar por recibir clientes ordenados.",
+   "solucion": "App web para autónomos, al estilo de las apps españolas de gestión para autónomos, adaptada al régimen uruguayo. Un asistente pregunta actividad, ingresos y clientes, y arma un calendario personalizado de obligaciones DGI y BPS con alertas; controla vencimiento del CAE y del certificado; importa los CFE emitidos y recibidos en XML para llevar ingresos y gastos; avisa cuando conviene revisar el régimen o el plan del proveedor de CFE según volumen; y responde dudas con RAG sobre normativa y guías públicas, citando la fuente y derivando al contador cuando la pregunta lo exige. Al cierre arma un dossier para el contador. Lo que cambia: regímenes uruguayos, organismos, vencimientos y un modelo que deriva a contadores en vez de reemplazarlos.",
+   "mvp": {
+    "semestre_1": [
+     "Asistente de alta y calendario de obligaciones para 2 regímenes, con alertas por correo",
+     "Importación de XML de CFE y libro simple de ingresos y gastos",
+     "Demo con 5 unipersonales de prueba"
+    ],
+    "semestre_2": [
+     "Asistente de preguntas con RAG sobre normativa pública y citas",
+     "Alertas de volumen y vencimiento de CAE, y dossier para el contador",
+     "Piloto con 20 a 30 usuarios y medición de retención"
+    ]
+   },
+   "stack": [
+    "Next.js",
+    "Python FastAPI",
+    "PostgreSQL",
+    "Qdrant",
+    "Claude Haiku 5.5 vía API",
+    "Docker",
+    "AWS Lightsail"
+   ],
+   "costo_infra": {
+    "total_anual_usd": 179,
+    "items": [
+     {
+      "concepto": "Servidor AWS Lightsail Linux 2 GB RAM (app, base de datos y workers en Docker)",
+      "usd_anual": 144,
+      "supuesto": "1 instancia de USD 12 por mes durante 12 meses de 2027, sin contar ninguna capa gratuita.",
+      "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+     },
+     {
+      "concepto": "API de LLM Claude Haiku 5.5",
+      "usd_anual": 15,
+      "supuesto": "Asistente para unos 50 usuarios de piloto con 20 consultas por mes cada uno a 4.000 tokens de entrada y 500 de salida (unos 48 millones y 6 millones, USD 4,8 más USD 3); se redondea a 15 por margen.",
+      "fuente_precio_url": "https://claude.com/pricing"
+     },
+     {
+      "concepto": "Dominio y DNS",
+      "usd_anual": 20,
+      "supuesto": "Estimación por encima sin página de precios abierta: un dominio .com suele costar menos de USD 15 por año; se redondea a 20 con margen."
+     }
+    ]
+   },
+   "competidores": [
+    {
+     "nombre": "Contador tradicional",
+     "evidencia_ids": [
+      "F-legal-contable-001"
+     ],
+     "hueco": "Cobra un fijo mensual aunque el autónomo facture poco y no le da visibilidad diaria de sus obligaciones."
+    },
+    {
+     "nombre": "Proveedores de CFE como YoFacturo",
+     "evidencia_ids": [
+      "F-legal-contable-003",
+      "F-comercio-retail-009"
+     ],
+     "hueco": "Resuelven la emisión pero no el calendario de obligaciones ni la orientación sobre el régimen."
+    }
+   ],
+   "monetizacion": "Freemium: calendario gratis y plan de USD 5 a 8 por mes con importación de CFE, asistente y dossier. Segundo ingreso: contadores asociados pagan por recibir clientes nuevos con la información ordenada. Montos a validar.",
+   "riesgos": [
+    "Una respuesta tributaria equivocada genera daño y desconfianza: hay que citar fuentes y derivar",
+    "Cambios normativos obligan a mantener el calendario",
+    "Disposición a pagar baja en usuarios que facturan poco",
+    "Rechazo de contadores si lo ven como reemplazo"
+   ],
+   "supuestos": [
+    "Existen en España apps de gestión fiscal para autónomos, sin ficha que lo respalde",
+    "Los vencimientos de DGI y BPS están publicados y se pueden modelar por régimen",
+    "Los unipersonales pueden descargar los XML de sus CFE",
+    "Precio de USD 5 a 8 por mes aceptable",
+    "Hay contadores dispuestos a pagar por clientes derivados",
+    "Las fichas no muestran apps locales de este tipo; no prueba que no existan"
+   ],
+   "evidencias": [
+    "F-legal-contable-001",
+    "F-legal-contable-002",
+    "F-legal-contable-003",
+    "F-comercio-retail-009"
+   ]
+  }
+ ]
+}

@@ -12,7 +12,7 @@
      "Entrevistas con productores y veterinarios sobre cómo registran hoy tratamientos y retiros",
      "App offline con registro de tratamientos por caravana y por lote, y cálculo de fin de retiro",
      "Sincronización con backend y vista web del veterinario con sus establecimientos",
-     "Demo al tutor: cargar tratamientos de un rodeo de prueba y ver el estado de cada animal"
+     "Demo al tutor: tratamientos de un rodeo de prueba y estado de cada animal"
     ],
     "semestre_2": [
      "Flujo de armado de tropa con semáforo por animal y bloqueo con justificación",
@@ -49,10 +49,10 @@
    "competidores": [],
    "monetizacion": "Suscripción anual por establecimiento y un plan para veterinarios con varios establecimientos. Canal: veterinarios de libre ejercicio y gremiales de productores. Precio y disposición a pagar a validar antes de diciembre de 2026.",
    "riesgos": [
-    "El período de retiro depende de cada producto y lo carga una persona: un error de carga da un falso apto",
-    "Adopción baja si registrar en el campo lleva más tiempo que hoy",
+    "El retiro depende de cada producto y lo carga una persona: un error da un falso apto",
+    "Adopción baja si registrar en el campo lleva más tiempo",
     "Sin integración con el SNIG: el MVP exporta, no carga eventos en el sistema oficial",
-    "Disposición a pagar incierta si el productor percibe el riesgo de sanción como bajo"
+    "Disposición a pagar incierta si el riesgo de sanción se percibe bajo"
    ],
    "supuestos": [
     "Una parte de los expedientes por residuos se origina en animales enviados antes de cumplir el retiro; la ficha no desglosa causas",
