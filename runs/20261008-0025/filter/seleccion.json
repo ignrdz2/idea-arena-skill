@@ -1,0 +1,82 @@
+{
+ "seleccionadas": [
+  "i018",
+  "i012",
+  "i006",
+  "i026",
+  "i015",
+  "i010",
+  "i009",
+  "i017",
+  "i003",
+  "i021",
+  "i005",
+  "i002",
+  "i028",
+  "i027",
+  "i011",
+  "i001"
+ ],
+ "fusionadas": [],
+ "sector_principal": {
+  "i001": "legal-contable",
+  "i002": "salud",
+  "i003": "turismo",
+  "i004": "fintech-seguros",
+  "i005": "comercio-retail",
+  "i006": "salud",
+  "i007": "comercio-retail",
+  "i008": "educacion",
+  "i009": "legal-contable",
+  "i010": "educacion",
+  "i011": "educacion",
+  "i012": "agro",
+  "i013": "sector-publico",
+  "i014": "turismo",
+  "i015": "fintech-seguros",
+  "i016": "logistica-transporte",
+  "i017": "sector-publico",
+  "i018": "comercio-retail",
+  "i019": "sector-publico",
+  "i020": "logistica-transporte",
+  "i021": "energia-ambiente",
+  "i022": "salud",
+  "i023": "legal-contable",
+  "i024": "energia-ambiente",
+  "i025": "sector-publico",
+  "i026": "logistica-transporte",
+  "i027": "fintech-seguros",
+  "i028": "logistica-transporte",
+  "i029": "turismo"
+ },
+ "temas_compartidos": [
+  [
+   "i001",
+   "i009",
+   "i023"
+  ],
+  [
+   "i004",
+   "i015"
+  ],
+  [
+   "i005",
+   "i020"
+  ]
+ ],
+ "fuera_por_cupo": [
+  "i023",
+  "i022",
+  "i029",
+  "i014",
+  "i004",
+  "i007",
+  "i008",
+  "i013",
+  "i025",
+  "i019",
+  "i020",
+  "i016",
+  "i024"
+ ]
+}

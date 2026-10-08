@@ -220,6 +220,11 @@
    },
    "sobreviven": 29,
    "grupos_lexicos": 0
+  },
+  "select": {
+   "grupos": 29,
+   "fusionadas": 0,
+   "seleccionadas": 16
   }
  },
  "scope_batches": [
@@ -305,7 +310,24 @@
   "i029"
  ],
  "dedup_needed": true,
- "selected": [],
+ "selected": [
+  "i018",
+  "i012",
+  "i006",
+  "i026",
+  "i015",
+  "i010",
+  "i009",
+  "i017",
+  "i003",
+  "i021",
+  "i005",
+  "i002",
+  "i028",
+  "i027",
+  "i011",
+  "i001"
+ ],
  "shortlist": [],
  "deepen": {},
  "plan": {

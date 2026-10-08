@@ -1,0 +1,478 @@
+{
+ "version": 1,
+ "seed": 7,
+ "dir": "runs/20261008-0025/tournament",
+ "has_baseline": false,
+ "final": null,
+ "agents": {
+  "i001": {
+   "card": {
+    "reasoning": {
+     "id": "legal-contable",
+     "name": "legal-contable"
+    }
+   },
+   "solution": "runs/20261008-0025/ideas/i001.md",
+   "idea_json": "runs/20261008-0025/ideas/i001.json",
+   "alive": true,
+   "eliminated_in": null,
+   "eliminated_by": null,
+   "byes": 0,
+   "shown_first": 0,
+   "shown_second": 1,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i002": {
+   "card": {
+    "reasoning": {
+     "id": "salud",
+     "name": "salud"
+    }
+   },
+   "solution": "runs/20261008-0025/ideas/i002.md",
+   "idea_json": "runs/20261008-0025/ideas/i002.json",
+   "alive": true,
+   "eliminated_in": null,
+   "eliminated_by": null,
+   "byes": 0,
+   "shown_first": 0,
+   "shown_second": 1,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i003": {
+   "card": {
+    "reasoning": {
+     "id": "turismo",
+     "name": "turismo"
+    }
+   },
+   "solution": "runs/20261008-0025/ideas/i003.md",
+   "idea_json": "runs/20261008-0025/ideas/i003.json",
+   "alive": true,
+   "eliminated_in": null,
+   "eliminated_by": null,
+   "byes": 0,
+   "shown_first": 0,
+   "shown_second": 1,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i005": {
+   "card": {
+    "reasoning": {
+     "id": "comercio-retail",
+     "name": "comercio-retail"
+    }
+   },
+   "solution": "runs/20261008-0025/ideas/i005.md",
+   "idea_json": "runs/20261008-0025/ideas/i005.json",
+   "alive": true,
+   "eliminated_in": null,
+   "eliminated_by": null,
+   "byes": 0,
+   "shown_first": 1,
+   "shown_second": 0,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i006": {
+   "card": {
+    "reasoning": {
+     "id": "salud",
+     "name": "salud"
+    }
+   },
+   "solution": "runs/20261008-0025/ideas/i006.md",
+   "idea_json": "runs/20261008-0025/ideas/i006.json",
+   "alive": true,
+   "eliminated_in": null,
+   "eliminated_by": null,
+   "byes": 0,
+   "shown_first": 0,
+   "shown_second": 1,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i009": {
+   "card": {
+    "reasoning": {
+     "id": "legal-contable",
+     "name": "legal-contable"
+    }
+   },
+   "solution": "runs/20261008-0025/ideas/i009.md",
+   "idea_json": "runs/20261008-0025/ideas/i009.json",
+   "alive": true,
+   "eliminated_in": null,
+   "eliminated_by": null,
+   "byes": 0,
+   "shown_first": 1,
+   "shown_second": 0,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i010": {
+   "card": {
+    "reasoning": {
+     "id": "educacion",
+     "name": "educacion"
+    }
+   },
+   "solution": "runs/20261008-0025/ideas/i010.md",
+   "idea_json": "runs/20261008-0025/ideas/i010.json",
+   "alive": true,
+   "eliminated_in": null,
+   "eliminated_by": null,
+   "byes": 0,
+   "shown_first": 1,
+   "shown_second": 0,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i011": {
+   "card": {
+    "reasoning": {
+     "id": "educacion",
+     "name": "educacion"
+    }
+   },
+   "solution": "runs/20261008-0025/ideas/i011.md",
+   "idea_json": "runs/20261008-0025/ideas/i011.json",
+   "alive": true,
+   "eliminated_in": null,
+   "eliminated_by": null,
+   "byes": 0,
+   "shown_first": 1,
+   "shown_second": 0,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i012": {
+   "card": {
+    "reasoning": {
+     "id": "agro",
+     "name": "agro"
+    }
+   },
+   "solution": "runs/20261008-0025/ideas/i012.md",
+   "idea_json": "runs/20261008-0025/ideas/i012.json",
+   "alive": true,
+   "eliminated_in": null,
+   "eliminated_by": null,
+   "byes": 0,
+   "shown_first": 0,
+   "shown_second": 1,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i015": {
+   "card": {
+    "reasoning": {
+     "id": "fintech-seguros",
+     "name": "fintech-seguros"
+    }
+   },
+   "solution": "runs/20261008-0025/ideas/i015.md",
+   "idea_json": "runs/20261008-0025/ideas/i015.json",
+   "alive": true,
+   "eliminated_in": null,
+   "eliminated_by": null,
+   "byes": 0,
+   "shown_first": 1,
+   "shown_second": 0,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i017": {
+   "card": {
+    "reasoning": {
+     "id": "sector-publico",
+     "name": "sector-publico"
+    }
+   },
+   "solution": "runs/20261008-0025/ideas/i017.md",
+   "idea_json": "runs/20261008-0025/ideas/i017.json",
+   "alive": true,
+   "eliminated_in": null,
+   "eliminated_by": null,
+   "byes": 0,
+   "shown_first": 0,
+   "shown_second": 1,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i018": {
+   "card": {
+    "reasoning": {
+     "id": "comercio-retail",
+     "name": "comercio-retail"
+    }
+   },
+   "solution": "runs/20261008-0025/ideas/i018.md",
+   "idea_json": "runs/20261008-0025/ideas/i018.json",
+   "alive": true,
+   "eliminated_in": null,
+   "eliminated_by": null,
+   "byes": 0,
+   "shown_first": 0,
+   "shown_second": 1,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i021": {
+   "card": {
+    "reasoning": {
+     "id": "energia-ambiente",
+     "name": "energia-ambiente"
+    }
+   },
+   "solution": "runs/20261008-0025/ideas/i021.md",
+   "idea_json": "runs/20261008-0025/ideas/i021.json",
+   "alive": true,
+   "eliminated_in": null,
+   "eliminated_by": null,
+   "byes": 0,
+   "shown_first": 1,
+   "shown_second": 0,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i026": {
+   "card": {
+    "reasoning": {
+     "id": "logistica-transporte",
+     "name": "logistica-transporte"
+    }
+   },
+   "solution": "runs/20261008-0025/ideas/i026.md",
+   "idea_json": "runs/20261008-0025/ideas/i026.json",
+   "alive": true,
+   "eliminated_in": null,
+   "eliminated_by": null,
+   "byes": 0,
+   "shown_first": 1,
+   "shown_second": 0,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i027": {
+   "card": {
+    "reasoning": {
+     "id": "fintech-seguros",
+     "name": "fintech-seguros"
+    }
+   },
+   "solution": "runs/20261008-0025/ideas/i027.md",
+   "idea_json": "runs/20261008-0025/ideas/i027.json",
+   "alive": true,
+   "eliminated_in": null,
+   "eliminated_by": null,
+   "byes": 0,
+   "shown_first": 0,
+   "shown_second": 1,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i028": {
+   "card": {
+    "reasoning": {
+     "id": "logistica-transporte",
+     "name": "logistica-transporte"
+    }
+   },
+   "solution": "runs/20261008-0025/ideas/i028.md",
+   "idea_json": "runs/20261008-0025/ideas/i028.json",
+   "alive": true,
+   "eliminated_in": null,
+   "eliminated_by": null,
+   "byes": 0,
+   "shown_first": 1,
+   "shown_second": 0,
+   "personas": [
+    "cliente"
+   ]
+  }
+ },
+ "agents_n": 16,
+ "rounds": [
+  {
+   "n": 1,
+   "alive": [
+    "i001",
+    "i002",
+    "i003",
+    "i005",
+    "i006",
+    "i009",
+    "i010",
+    "i011",
+    "i012",
+    "i015",
+    "i017",
+    "i018",
+    "i021",
+    "i026",
+    "i027",
+    "i028"
+   ],
+   "matches": [
+    {
+     "id": "r1-m01",
+     "a": "i005",
+     "b": "i006",
+     "winner": null,
+     "loser": null,
+     "reason": null,
+     "survived": [],
+     "scores": null,
+     "source": null,
+     "first": "i005",
+     "second": "i006",
+     "personas": [
+      "cliente"
+     ]
+    },
+    {
+     "id": "r1-m02",
+     "a": "i003",
+     "b": "i021",
+     "winner": null,
+     "loser": null,
+     "reason": null,
+     "survived": [],
+     "scores": null,
+     "source": null,
+     "first": "i021",
+     "second": "i003",
+     "personas": [
+      "cliente"
+     ]
+    },
+    {
+     "id": "r1-m03",
+     "a": "i010",
+     "b": "i001",
+     "winner": null,
+     "loser": null,
+     "reason": null,
+     "survived": [],
+     "scores": null,
+     "source": null,
+     "first": "i010",
+     "second": "i001",
+     "personas": [
+      "cliente"
+     ]
+    },
+    {
+     "id": "r1-m04",
+     "a": "i027",
+     "b": "i026",
+     "winner": null,
+     "loser": null,
+     "reason": null,
+     "survived": [],
+     "scores": null,
+     "source": null,
+     "first": "i026",
+     "second": "i027",
+     "personas": [
+      "cliente"
+     ]
+    },
+    {
+     "id": "r1-m05",
+     "a": "i009",
+     "b": "i018",
+     "winner": null,
+     "loser": null,
+     "reason": null,
+     "survived": [],
+     "scores": null,
+     "source": null,
+     "first": "i009",
+     "second": "i018",
+     "personas": [
+      "cliente"
+     ]
+    },
+    {
+     "id": "r1-m06",
+     "a": "i017",
+     "b": "i011",
+     "winner": null,
+     "loser": null,
+     "reason": null,
+     "survived": [],
+     "scores": null,
+     "source": null,
+     "first": "i011",
+     "second": "i017",
+     "personas": [
+      "cliente"
+     ]
+    },
+    {
+     "id": "r1-m07",
+     "a": "i028",
+     "b": "i012",
+     "winner": null,
+     "loser": null,
+     "reason": null,
+     "survived": [],
+     "scores": null,
+     "source": null,
+     "first": "i028",
+     "second": "i012",
+     "personas": [
+      "cliente"
+     ]
+    },
+    {
+     "id": "r1-m08",
+     "a": "i002",
+     "b": "i015",
+     "winner": null,
+     "loser": null,
+     "reason": null,
+     "survived": [],
+     "scores": null,
+     "source": null,
+     "first": "i015",
+     "second": "i002",
+     "personas": [
+      "cliente"
+     ]
+    }
+   ],
+   "bye": null,
+   "closed": false
+  }
+ ],
+ "champion": null,
+ "persona_order": [
+  "cliente",
+  "competidor",
+  "inversor",
+  "tutor"
+ ],
+ "personas_per_match": 1,
+ "judge_both_orders": false
+}
