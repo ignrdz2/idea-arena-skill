@@ -1,0 +1,85 @@
+{
+ "id": "i012",
+ "titulo": "Registro offline de tratamientos veterinarios con retiro calculado, listo para declarar al SNIG",
+ "problema": "Desde el 19/08/2026 el SNIG bloquea la documentación de faena de cada bovino en retiro, pero solo según lo declarado, y el simulador anunciado no tiene fecha (F-ataque-r1-m07-i012-cliente-001, F-defensa-r1-m07-i012-001). Queda sin cubrir la aplicación no declarada o tardía, anotada a mano en el campo. El MGAP informó 499 expedientes por residuos en 2025 y 2026, con 52 sanciones (F-agro-001); no se sabe cuántos son por retiro incumplido.",
+ "usuario": "Usa: el veterinario que indica el tratamiento y el productor o capataz que lo aplica. Paga: el productor, por establecimiento; el veterinario con varios clientes puede contratar un plan propio.",
+ "solucion": "App móvil sin señal: registra caravana o lote, producto, dosis y fecha, con el retiro cargado por el veterinario desde el prospecto y mostrado con su origen. Calcula la liberación de cada animal y, antes de armar una tropa, lista apto, en retiro o sin datos (sin dato nunca es apto). Exporta el historial en PDF y CSV para declarar en el SNIG y como respaldo ante un expediente. Ayuda, no sustituye la declaración oficial.",
+ "mvp": {
+  "semestre_1": [
+   "Entrevistas con productores y veterinarios: cómo registran, quién declara, cuánto pagarían",
+   "App offline con registro por caravana y lote, y cálculo de fin de retiro con su origen",
+   "Sincronización con backend y vista web del veterinario",
+   "Demo al tutor: rodeo de prueba y estado de cada animal"
+  ],
+  "semestre_2": [
+   "Listado de animales por estado antes de armar la tropa, con bloqueo y justificación",
+   "Exportación del historial a PDF y CSV por establecimiento",
+   "Medición del cálculo de retiro con casos de prueba; piloto con un veterinario o datos de prueba",
+   "Business case con precios validados; demo final"
+  ]
+ },
+ "stack": [
+  "React Native con Expo",
+  "SQLite local para modo offline",
+  "FastAPI (Python)",
+  "PostgreSQL",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 104,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 1 GB (API y base de datos en Docker)",
+    "usd_anual": 84,
+    "supuesto": "Una instancia de USD 7 por mes durante 12 meses de 2027 para desarrollo, piloto y demo; volumen de piloto de decenas de usuarios. No se cuenta la capa gratuita porque la página no dice cuánto dura.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "Dominio para la demo y el piloto",
+    "usd_anual": 20,
+    "supuesto": "Estimación por encima: Cloudflare Registrar cobra a costo sin margen, pero la página no muestra el precio de un .com; se reservan USD 20 por un año.",
+    "fuente_precio_url": "https://www.cloudflare.com/products/registrar/"
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "SNIG del MGAP",
+   "evidencia_ids": [
+    "F-ataque-r1-m07-i012-cliente-001",
+    "F-defensa-r1-m07-i012-001"
+   ],
+   "hueco": "Bloquea solo lo declarado; el simulador no tiene fecha. No cubre el registro en el campo sin señal."
+  },
+  {
+   "nombre": "Gecos",
+   "evidencia_ids": [
+    "F-ataque-r1-m07-i012-cliente-002"
+   ],
+   "hueco": "Registra actos sanitarios; su página no menciona retiros. Podría agregarlos: diferencia corta, no probada."
+  }
+ ],
+ "monetizacion": "Suscripción anual por establecimiento y un plan para veterinarios con varios establecimientos. Canal: veterinarios y gremiales. Precio, cantidad de establecimientos y señal de pago: sin datos, se miden en las entrevistas del semestre 1.",
+ "riesgos": [
+  "El simulador del SNIG, cuando salga, reduce el valor del listado previo a la tropa",
+  "El retiro lo carga una persona: un error da un falso apto",
+  "Doble carga si no reemplaza la Planilla de Control Sanitario",
+  "Datos de terceros: la base debe cumplir la Ley 18.331 y registrarse ante la URCDP"
+ ],
+ "supuestos": [
+  "Una parte de los expedientes por residuos viene de retiros incumplidos; la ficha no desglosa causas",
+  "Hay tratamientos no declarados o tardíos; sin cifra",
+  "No hay hoy una herramienta simple de registro sin señal; no se relevó más software ganadero que Gecos",
+  "Se puede contactar productores y veterinarios antes de diciembre de 2026; la tabla de contactos está vacía",
+  "Los retiros se toman del prospecto, sin base oficial ni datos pagos",
+  "Que la planilla digital sirva ante el MGAP no está confirmado",
+  "Piloto con datos mínimos y consentimiento; sin piloto, datos de prueba"
+ ],
+ "evidencias": [
+  "F-agro-001",
+  "F-ataque-r1-m07-i012-cliente-001",
+  "F-ataque-r1-m07-i012-cliente-002",
+  "F-defensa-r1-m07-i012-001"
+ ]
+}

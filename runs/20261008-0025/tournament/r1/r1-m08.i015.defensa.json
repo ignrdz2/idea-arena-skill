@@ -1,0 +1,79 @@
+{
+ "idea": "i015",
+ "respuestas": [
+  {
+   "ataque": 1,
+   "decision": "CONCEDE",
+   "detalle": "Tiene razón: alertas proactivas exigirían plantillas pagas. Arreglo: las alertas solo se muestran en el panel y se anexan a la respuesta de una consulta del usuario, dentro de la ventana de 24 horas, sin plantillas. La página oficial (ficha nueva, leída) dice que los mensajes no plantilla en ventana son gratis, así que el USD 0 se sostiene con el diseño corregido. Total sin cambios: USD 115,08.",
+   "evidencia": [
+    "F-defensa-r1-m08-i015-001"
+   ]
+  },
+  {
+   "ataque": 2,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que las tres fichas son agregadas y que 'la protección actúa del lado del banco' no tenía respaldo: lo saqué. Agregué una ficha uruguaya que reporta comprobantes adulterados por WhatsApp, Marketplace e Instagram, y declaré que la pérdida por vendedor no está medida y se mide en el piloto. No acepto que la demanda sea pura opinión: F-fintech-seguros-006 lista Marketplace como tipo común y la ficha nueva describe el mecanismo; lo que queda como supuesto es la disposición a pagar.",
+   "evidencia": [
+    "F-defensa-r1-m08-i015-002",
+    "F-fintech-seguros-006",
+    "F-fintech-seguros-004"
+   ]
+  },
+  {
+   "ataque": 3,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que mirar la cuenta es la defensa gratuita para el comprobante (ficha F-ataque-r1-m08-i015-cliente-001, Argentina) y lo declaré como línea base. No acepto que reemplace al producto: esa defensa no dice nada de links de phishing, falsas ofertas de crédito ni suplantación, tipos que el BCU lista (F-fintech-seguros-006). Reposicioné el valor central en mensajes y links; en comprobantes el bot solo refuerza el chequeo y su precisión se mide en el semestre 2 sin prometerla.",
+   "evidencia": [
+    "F-ataque-r1-m08-i015-cliente-001",
+    "F-fintech-seguros-006"
+   ]
+  },
+  {
+   "ataque": 4,
+   "decision": "CONCEDE",
+   "detalle": "Tiene razón: el 400 y los USD 28.800 no tenían base. Los reemplacé por una hipótesis explícita (100 pymes serían USD 7.200 al año), aclaré que no hay cifra de mercado ni contactos de gremios, y puse en el piloto la medición de cuántos pagarían USD 6 por mes. Sumé F-comercio-retail-006 y la baja digitalización como riesgo.",
+   "evidencia": [
+    "F-comercio-retail-006"
+   ]
+  },
+  {
+   "ataque": 5,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que faltaba una meta y la sinceridad sobre el set propio: agregué metas (80% de detección, hasta 10% de falsos positivos), publicación de resultados reales y que el set sale de denuncias y notas públicas. Además el bot nunca responde 'seguro': dice 'no detecté señales, verificá igual'. No acepto que deba responder por el error: ninguna herramienta de verificación asume esa garantía, y la idea la comunica como ayuda, no garantía. Que los estafadores cambien de patrón ya estaba como riesgo y ahora tiene mitigación (actualizar el set con reportes).",
+   "evidencia": []
+  },
+  {
+   "ataque": 6,
+   "decision": "CONCEDE",
+   "detalle": "Tiene razón en que era una frase. Ahora: la captura se procesa y se borra; se guardan solo dominio, tipo y fecha por 90 días; las alertas son sobre dominios y textos, nunca listas de personas (evita difamar); consentimiento y aviso al primer uso. Declaré como supuesto revisar con la guía de la URCDP si hay que registrar la base. No cité un trámite concreto porque no lo verifiqué.",
+   "evidencia": []
+  }
+ ],
+ "nuevas_fichas": [
+  {
+   "id": "F-defensa-r1-m08-i015-001",
+   "sector": "transversal",
+   "hallazgo": "La página oficial de precios de WhatsApp Business Platform dice que los mensajes no plantilla dentro de la ventana de atención de 24 horas son gratis, y que las plantillas se cobran fuera de ella.",
+   "source_url": "https://developers.facebook.com/docs/whatsapp/pricing",
+   "source_title": "WhatsApp Business Platform pricing",
+   "source_date": "desconocida",
+   "source_type": "precios",
+   "geografia": "GLOBAL",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T12:30:00",
+   "extracto": "All non-template messages are free"
+  },
+  {
+   "id": "F-defensa-r1-m08-i015-002",
+   "sector": "transversal",
+   "hallazgo": "Un medio de retail reporta que en Uruguay es frecuente enviar comprobantes de transferencia falsos con capturas adulteradas, y que WhatsApp, Facebook Marketplace e Instagram son las plataformas más mencionadas en denuncias.",
+   "source_url": "https://americaretail-malls.com/paises/uruguay/estafas-virtuales-crecen-en-uruguay-con-metodos-mas-complejos-y-dificiles-de-detectar/",
+   "source_title": "Estafas virtuales crecen en Uruguay con métodos más complejos y difíciles de detectar",
+   "source_date": "2026",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:30:00"
+  }
+ ]
+}

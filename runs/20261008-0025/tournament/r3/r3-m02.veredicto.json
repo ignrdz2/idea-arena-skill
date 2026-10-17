@@ -1,0 +1,32 @@
+{
+  "match": "r3-m02",
+  "scores": {
+    "X": {"demanda": 4, "viabilidad": 8, "diferenciacion": 4, "business_case": 5, "encaje": 6, "academico": 6, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 6, "viabilidad": 7, "diferenciacion": 5, "business_case": 6, "encaje": 7, "academico": 7, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "Y",
+  "reason": "Y muestra el dolor en estudios contables uruguayos con fichas locales verificadas (avisos que piden conciliar bancos y el tiempo de conciliar a mano con extractos PDF), mientras X no tiene ninguna ficha de que el ausentismo sea un problema que los colegios privados paguen por resolver y su hueco frente a Appoderado, SInIDE y los incumbentes locales es más débil.",
+  "survived": [
+    "afirmación falsa de que todo era local con Lightsail: corregida, datos reales solo en un equipo en Uruguay y nube solo con sintéticos",
+    "servidor de 2 GB sin plan B de costo: plan B de 4 GB documentado con la tabla de precios, USD 236 bajo el tope",
+    "cita de F-legal-contable-003 que no decía lo atribuido: fila quitada",
+    "violación de R4 y R7 por falta de contactos: rebatido, R4 pide clientes contactables y los datos del piloto son con acuerdo propio o generados por el equipo",
+    "precio anclado al plan de Contafácil sin cuenta de clientes: referencia bajada, cuenta de 10 estudios y CAC declarado como supuesto",
+    "demanda basada solo en avisos: sumada ficha local verificada del tiempo de conciliar y formatos PDF por banco, con el pago declarado como supuesto"
+  ],
+  "standing": {
+    "X": [
+      "no hay ninguna ficha de que el ausentismo cueste alumnos o cuotas a un colegio privado ni señal de pago",
+      "el hueco (medir intervenciones) es copiable por Asistente.uy, Colegium o Trivium, ya hay alertas en Appoderado y SInIDE, y un trimestre no mide retención",
+      "canal y costo de adquisición sin medir en un sector pagador en crisis",
+      "sin colegio piloto el modelo de riesgo se valida solo sobre datos sintéticos"
+    ],
+    "Y": [
+      "el pago por conciliar sigue siendo un supuesto sin señal de pago ni cantidad de estudios",
+      "Conty ya declara conciliación bancaria automática; el hueco (PDF de bancos y cuenta aprendida) se apoya en silencio de su página y es copiable",
+      "el producto agrega una herramienta y un paso de carga, sin evidencia de que el estudio lo tolere",
+      "sin estudio voluntario el acierto real de la imputación aprendida no se demuestra",
+      "costo de adquisición sin medir"
+    ]
+  }
+}

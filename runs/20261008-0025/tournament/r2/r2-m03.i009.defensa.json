@@ -1,0 +1,99 @@
+{
+ "idea": "i009",
+ "respuestas": [
+  {
+   "ataque": 1,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que el silencio de dos landing pages no prueba el hueco y que no hay ficha de pago por conciliación: lo dejé como supuesto explícito y agregué una verificación concreta antes de diciembre (probar el plan gratuito de Contafácil, F-ataque-r1-m05-i009-cliente-003, que según la ficha existe a $0). No acepto que falte toda señal de que alguien concilia a mano: F-legal-contable-005 y dos fichas nuevas de avisos de estudios (Pocitos y Ciudad Vieja) listan conciliaciones bancarias como tarea contratada, y la rúbrica cuenta las ofertas laborales como señal de pago. Tampoco figura en la idea que los sistemas destino no concilien: solo que las fichas no lo muestran.",
+   "evidencia": [
+    "F-defensa-r1-m05-i009-001",
+    "F-defensa-r1-m05-i009-002",
+    "F-legal-contable-005",
+    "F-defensa-r2-m03-i009-001",
+    "F-defensa-r2-m03-i009-002",
+    "F-ataque-r1-m05-i009-cliente-003"
+   ]
+  },
+  {
+   "ataque": 2,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que lo multi-cliente no diferencia (ya no se presenta como diferencial) y que un competidor con clientes puede copiar rápido: el riesgo ahora dice que la ventaja es de tiempo y no de foso. No acepto que sea 'trivial': ninguna ficha muestra que lo hagan ni que tengan parsers de extractos bancarios; la afirmación es opinión sin respaldo. Es una amenaza de cualquier producto; el objetivo de la tesis es un MVP con business case, no un foso permanente (constraints.md, Contexto).",
+   "evidencia": [
+    "F-ataque-r1-m05-i009-cliente-001",
+    "F-ataque-r1-m05-i009-cliente-002"
+   ]
+  },
+  {
+   "ataque": 3,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que subir XML a mano y mantener dos herramientas es una fricción real: ahora figura en riesgos y la solución se declara complemento de la herramienta de CFE, no reemplazo. No acepto que el flujo sea peor en lo que importa: Contafácil también ofrece subir archivos e-Factura (F-defensa-r1-m05-i009-002), así que el XML ya está en manos del estudio, y la conciliación opera sobre movimientos bancarios que el CFE no contiene. La exportación a un sistema contable concreto se acota a un formato elegido con el piloto en el semestre 2, en vez de prometer todos.",
+   "evidencia": [
+    "F-defensa-r1-m05-i009-002",
+    "F-defensa-r1-m05-i009-001"
+   ]
+  },
+  {
+   "ataque": 4,
+   "decision": "CONCEDE",
+   "detalle": "Tiene razón: $U 3.000 a 6.000 supera el techo publicado ($3.799) y 'similar' era inexacto. Bajé la referencia a $U 1.500 a 3.500 por mes, por debajo del plan más alto, presentada como complemento y como supuesto a validar sin ficha de pago por conciliación (declarado en supuestos). Quité la palabra 'similar'.",
+   "evidencia": [
+    "F-ataque-r1-m05-i009-cliente-003"
+   ]
+  },
+  {
+   "ataque": 5,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que la demanda de conciliación no tiene medición de horas, costo ni cantidad de estudios; lo declaré en supuestos ('sin horas ni costo medidos', sin cifra de estudios). Busqué más evidencia y sumé dos fichas de avisos de estudios contables en Montevideo (Pocitos y Ciudad Vieja) con conciliaciones bancarias: ya no descansa en una sola oferta. No acepto que las ofertas no sean señal de pago: contratar personal para la tarea es gasto recurrente (rúbrica, ancla de demanda) y los honorarios fijos de F-legal-contable-001 fundamentan la inferencia de margen, que la idea ya marca como inferencia.",
+   "evidencia": [
+    "F-legal-contable-005",
+    "F-legal-contable-001",
+    "F-defensa-r2-m03-i009-001",
+    "F-defensa-r2-m03-i009-002"
+   ]
+  },
+  {
+   "ataque": 6,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que con datos sintéticos el 80 por ciento no prueba acierto real: la idea lo dice ahora en riesgos y la demo del semestre 1 solo mide acierto sobre sintéticos contra una línea de base de reglas. No acepto que viole R4 o R7: la tabla de contactos está vacía para todo el equipo, R4 pide poder contactar usuarios desde Uruguay (estudios contables de Montevideo, F-legal-contable-005) y R7 permite datos generados por el propio producto y sintéticos; el piloto es opcional y la idea tiene plan B (sin estudio, se reporta solo sintético). No invento contactos: queda como supuesto con la acción de entrevistar estudios antes de diciembre.",
+   "evidencia": [
+    "F-legal-contable-005"
+   ]
+  },
+  {
+   "ataque": 7,
+   "decision": "CONCEDE",
+   "detalle": "Tiene razón en ambos puntos. Eliminé el LLM externo: la extracción de PDF y los embeddings (modelo pequeño en CPU) son locales, así que no hay transferencia internacional (art. 23) y desaparece el ítem de USD 20; el total baja a USD 164. El tamaño de mercado sigue sin ficha: lo declaré en supuestos ('no hay cifra de estudios de 2 a 20 personas').",
+   "evidencia": [
+    "F-ataque-r1-m05-i009-cliente-004"
+   ]
+  }
+ ],
+ "nuevas_fichas": [
+  {
+   "id": "F-defensa-r2-m03-i009-001",
+   "sector": "legal-contable",
+   "hallazgo": "Un aviso en BuscoJobs de un estudio contable de Pocitos, Montevideo, que presta servicios contables y fiscales, lista conciliaciones bancarias entre las tareas principales del asistente contable, junto con registraciones y seguimiento de cartera de clientes. La oferta figura finalizada.",
+   "source_url": "https://www.buscojobs.com.uy/asistente-contable-en-montevideo-ID-256768",
+   "source_title": "ASISTENTE CONTABLE - Montevideo (BuscoJobs)",
+   "source_date": "desconocida",
+   "source_type": "oferta_laboral",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "Conciliaciones bancarias"
+  },
+  {
+   "id": "F-defensa-r2-m03-i009-002",
+   "sector": "legal-contable",
+   "hallazgo": "El listado de Jooble Uruguay para estudios contables en Montevideo muestra un aviso de auxiliar contable de un estudio en Ciudad Vieja con registraciones contables, liquidaciones de sueldo y conciliaciones bancarias, ingreso inmediato, sin sueldo indicado.",
+   "source_url": "https://uy.jooble.org/trabajo-estudio-contable/Montevideo%2C-Montevideo",
+   "source_title": "Estudio contable en Montevideo, Jooble Uruguay 2026",
+   "source_date": "2026-10",
+   "source_type": "oferta_laboral",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:00:00",
+   "extracto": "conciliaciones bancarias"
+  }
+ ]
+}

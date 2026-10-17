@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Veredicto del juez",
+  "description": "X e Y son las dos ideas en el orden en que se le presentaron al juez. Puntajes de 0 a 10. fatal_motivo solo cuenta con la forma restriccion_dura:R<n>: ... o afirmacion_sin_evidencia: ...",
+  "type": "object",
+  "required": ["scores", "winner", "reason"],
+  "properties": {
+    "match": {"type": "string"},
+    "scores": {
+      "type": "object",
+      "required": ["X", "Y"],
+      "properties": {
+        "X": {
+          "type": "object",
+          "required": ["demanda", "viabilidad", "diferenciacion", "business_case", "encaje", "academico", "fatal", "fatal_motivo"],
+          "properties": {
+            "demanda": {"type": "number", "minimum": 0, "maximum": 10},
+            "viabilidad": {"type": "number", "minimum": 0, "maximum": 10},
+            "diferenciacion": {"type": "number", "minimum": 0, "maximum": 10},
+            "business_case": {"type": "number", "minimum": 0, "maximum": 10},
+            "encaje": {"type": "number", "minimum": 0, "maximum": 10},
+            "academico": {"type": "number", "minimum": 0, "maximum": 10},
+            "fatal": {"type": "boolean"},
+            "fatal_motivo": {"type": "string"}
+          }
+        },
+        "Y": {
+          "type": "object",
+          "required": ["demanda", "viabilidad", "diferenciacion", "business_case", "encaje", "academico", "fatal", "fatal_motivo"],
+          "properties": {
+            "demanda": {"type": "number", "minimum": 0, "maximum": 10},
+            "viabilidad": {"type": "number", "minimum": 0, "maximum": 10},
+            "diferenciacion": {"type": "number", "minimum": 0, "maximum": 10},
+            "business_case": {"type": "number", "minimum": 0, "maximum": 10},
+            "encaje": {"type": "number", "minimum": 0, "maximum": 10},
+            "academico": {"type": "number", "minimum": 0, "maximum": 10},
+            "fatal": {"type": "boolean"},
+            "fatal_motivo": {"type": "string"}
+          }
+        }
+      }
+    },
+    "winner": {"type": "string"},
+    "reason": {"type": "string"},
+    "survived": {"type": "array", "items": {"type": "string"}},
+    "standing": {"type": "object"}
+  }
+}

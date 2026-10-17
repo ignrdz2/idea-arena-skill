@@ -1,0 +1,103 @@
+{
+ "id": "i010",
+ "titulo": "Alertas tempranas de ausentismo y desvinculación para liceos privados",
+ "problema": "En Uruguay, de 100 adolescentes que ingresaron al liceo en 2017 solo 43 egresaron en ocho años y casi la mitad faltó al menos el 11% de los días (F-educacion-001). Son cifras de liceos en general: ninguna ficha muestra que apliquen a privados ni que el ausentismo les cueste cuotas; es lo primero a validar. Los liceos privados suman 41.235 alumnos (F-defensa-r1-m03-i010-001) y el sector tiene cierres y fusiones (F-educacion-004).",
+ "usuario": "Adscriptos y coordinadores de liceos de colegios privados (Audec y Aidep: unos 220 colegios, F-educacion-004); paga la dirección.",
+ "solucion": "Plataforma web que importa planillas CSV o Excel de asistencia y notas, con mapeo de columnas, sin depender de la API de ninguna suite. Calcula un puntaje de riesgo con reglas explicables más un modelo simple y genera una lista semanal priorizada con el motivo de cada alerta. Registra cada intervención y su resultado. El aviso a la familia sale de plantillas; un LLM con datos seudonimizados solo se usa con datos reales si la URCDP lo confirma. El adscripto revisa todo.",
+ "mvp": {
+  "semestre_1": [
+   "Importador de planillas, modelo de datos y panel por grupo",
+   "Cohortes sintéticas y puntaje de riesgo por reglas explicables",
+   "Demo: lista semanal priorizada con motivo de cada alerta, con datos sintéticos"
+  ],
+  "semestre_2": [
+   "Registro de intervenciones y tablero de resultados",
+   "Mensajes a familias: plantillas y borrador con LLM (datos sintéticos), con revisión humana",
+   "Modelo simple comparado contra las reglas (histórico de un colegio si hay, si no sintético) y política de datos según Ley 18.331",
+   "Demo: piloto si hay colegio; si no, simulación, más business case"
+  ]
+ },
+ "stack": [
+  "Python",
+  "FastAPI",
+  "PostgreSQL",
+  "scikit-learn",
+  "React",
+  "Gemini 2.5 Flash-Lite API",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 104,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 1 GB",
+    "usd_anual": 84,
+    "supuesto": "Plan de USD 7 por mes, 12 meses; app y PostgreSQL en Docker.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API Gemini 2.5 Flash-Lite",
+    "usd_anual": 20,
+    "supuesto": "20 millones de tokens de entrada (USD 0,10 por millón) y 5 millones de salida (USD 0,40): unos USD 4, redondeado a 20.",
+    "fuente_precio_url": "https://ai.google.dev/gemini-api/docs/pricing"
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Asistente.uy",
+   "evidencia_ids": [
+    "F-educacion-005"
+   ],
+   "hueco": "Tiene asistencia, seguimiento estudiantil y portal de familias; la ficha (un comparador) no muestra priorización por riesgo ni medición de intervenciones, pero podría sumarlas."
+  },
+  {
+   "nombre": "Appoderado (Chile)",
+   "evidencia_ids": [
+    "F-ataque-r2-m04-i010-competidor-001"
+   ],
+   "hueco": "Ofrece alertas de ausentismo crónico y deserción: alertar no es nuevo. No menciona Uruguay."
+  },
+  {
+   "nombre": "Trivium",
+   "evidencia_ids": [
+    "F-ataque-r2-m04-i010-competidor-002"
+   ],
+   "hueco": "Montevideo, colegios uruguayos, asistencia y abandono por grado; la ficha no describe alertas, pero podría sumarlas."
+  },
+  {
+   "nombre": "SInIDE Gestión Escolar",
+   "evidencia_ids": [
+    "F-ataque-r2-m04-i010-competidor-003"
+   ],
+   "hueco": "Prevé alertas por inasistencias (prensa 2023); alcance sobre privados desconocido."
+  }
+ ],
+ "monetizacion": "Suscripción anual por colegio, por ejemplo USD 3 por alumno de liceo por año. Techo teórico: 41.235 alumnos (F-defensa-r1-m03-i010-001) por USD 3, unos USD 124.000 con 100% de penetración. Supuesto: unos 200 alumnos de liceo por colegio, USD 600; 10 colegios, unos USD 6.000. Precio a validar.",
+ "riesgos": [
+  "Competidores con alertas o que pueden sumarlas: el hueco es medir qué intervención funciona",
+  "Sin colegio piloto, el modelo mide el generador sintético, no el riesgo real; el valor central son las reglas y las intervenciones",
+  "Datos de menores: en un colegio chico la seudonimización puede no impedir reidentificar, y el art. 23 limita transferirlos al exterior (F-defensa-r1-m03-i010-002). Plan B: sin LLM",
+  "Planilla semanal con fricción; plan B, carga mensual",
+  "Un trimestre mide detección, no retención"
+ ],
+ "supuestos": [
+  "Los colegios exportan asistencia y notas en planilla y aceptan cargarla",
+  "Retener alumnos es prioridad económica y el ausentismo les cuesta cuotas",
+  "Pagarían del orden de USD 3 por alumno de liceo por año",
+  "Unos 200 alumnos de liceo por colegio",
+  "Se consigue un colegio piloto antes de diciembre de 2026; el MVP no depende de eso",
+  "El ausentismo de liceos en general se parece al de privados; hoy se detecta tarde y a mano"
+ ],
+ "evidencias": [
+  "F-educacion-001",
+  "F-educacion-004",
+  "F-educacion-005",
+  "F-defensa-r1-m03-i010-001",
+  "F-defensa-r1-m03-i010-002",
+  "F-ataque-r2-m04-i010-competidor-001",
+  "F-ataque-r2-m04-i010-competidor-002",
+  "F-ataque-r2-m04-i010-competidor-003"
+ ]
+}

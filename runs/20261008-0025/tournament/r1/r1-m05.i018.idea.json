@@ -1,0 +1,94 @@
+{
+ "id": "i018",
+ "titulo": "Stock único que se descuenta leyendo los CFE que la pyme ya emite",
+ "problema": "El 92% de las pymes uruguayas de e-commerce no gestiona inventario con un sistema y solo el 31% usa código de barras (F-comercio-retail-006). Quien factura con un proveedor de CFE (F-legal-contable-002) repite cada venta en el inventario (F-comercio-retail-009, F-legal-contable-003). Su costo en horas o ventas no está medido: es un supuesto.",
+ "usuario": "Dueño o encargado de una pyme uruguaya que vende en local y/o online, factura con un proveedor de CFE sin módulo de stock (o con uno pago aparte) y no quiere migrar. Paga el comercio.",
+ "solucion": "PWA de stock único que no emite comprobantes: lee los XML de CFE que la pyme ya emite, descuenta stock (las notas de crédito revierten) y lee los CFE recibidos para dar de alta mercadería. Emparejamiento con SKU en tres pasos: código de ítem, similitud de texto en PostgreSQL y, solo si duda, un LLM, con confirmación humana. Al LLM va solo la descripción de la línea, sin RUT, montos ni datos de clientes. El celular lee códigos de barras. Alerta quiebres y sugiere reposición por rotación.",
+ "mvp": {
+  "semestre_1": [
+   "Productos, depósitos y movimientos con API y panel web",
+   "Importación de XML de CFE y descuento de stock con emparejamiento en tres pasos",
+   "Escaneo de código de barras en PWA",
+   "CFE sintéticos con talles y colores: acierto medido por paso; datos reales de 1 o 2 pymes si aparecen"
+  ],
+  "semestre_2": [
+   "Lectura automática de CFE desde una casilla de correo dedicada",
+   "Alertas de quiebre y reposición por rotación",
+   "Piloto de un mes con 3 a 5 pymes si hay contactos; si no, datos sintéticos y entrevistas",
+   "Business case con métricas de uso o entrevistas"
+  ]
+ },
+ "stack": [
+  "FastAPI",
+  "PostgreSQL",
+  "React PWA",
+  "ZXing",
+  "Claude Haiku 5.5",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 208,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 2 GB RAM con IPv4",
+    "usd_anual": 144,
+    "supuesto": "USD 12 por mes durante 12 meses; sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API de Claude Haiku 5.5",
+    "usd_anual": 10,
+    "supuesto": "10 millones de tokens de entrada y 2 de salida al año a USD 0,10 y 0,50 por millón: unos USD 2; se presupuestan 10.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "Dominio .com, snapshots y correo entrante",
+    "usd_anual": 54,
+    "supuesto": "Estimación por encima, sin fuente: dominio USD 15, snapshots USD 15, casilla de correo USD 24."
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "YoFacturo",
+   "evidencia_ids": [
+    "F-comercio-retail-009"
+   ],
+   "hueco": "Descuenta stock solo si la pyme migra a su facturación; migrar causa demoras (F-legal-contable-003)."
+  },
+  {
+   "nombre": "gestionUltimate, Facture ERP y Fixed",
+   "evidencia_ids": [
+    "F-ataque-r1-m05-i018-cliente-001",
+    "F-ataque-r1-m05-i018-cliente-002",
+    "F-ataque-r1-m05-i018-cliente-003"
+   ],
+   "hueco": "Stock, depósitos y alertas atados a su propia facturación (Fixed lo cobra aparte): sirven a quien migra, no a quien conserva su proveedor."
+  }
+ ],
+ "monetizacion": "Suscripción mensual que paga el comercio, USD 15 a 25 por local, anclada al módulo de stock de Fixed (unos $1.626 al mes, F-ataque-r1-m05-i018-cliente-003; sin conversión verificada). Venta directa y, como hipótesis, estudios contables. Fixed declara más de 22.000 empresas con facturación.",
+ "riesgos": [
+  "Un proveedor de CFE puede no exportar XML cómodo (F-legal-contable-003): se prueban 3 antes de diciembre; si falla, se importa el CSV de ventas",
+  "El emparejamiento falla con variantes; se mide con el banco sintético",
+  "La pyme puede preferir el módulo de su proveedor",
+  "Ley 18.331: el CFE trae RUT y datos de clientes. Se procesa en servidor propio y se quita todo dato personal antes del LLM; enviarlos a EEUU exigiría base legal y registro ante la URCDP (F-ataque-r1-m05-i009-cliente-004)"
+ ],
+ "supuestos": [
+  "Que la mayoría de los proveedores de CFE permite exportar el XML",
+  "Que USD 15 a 25 por mes es aceptable; no hay ficha de disposición a pagar",
+  "Que la doble carga cuesta horas o ventas; ninguna ficha lo mide",
+  "Que ningún competidor sugiere reposición por rotación y que los contadores recomiendan herramientas",
+  "Que hay pymes piloto antes de diciembre de 2026"
+ ],
+ "evidencias": [
+  "F-comercio-retail-006",
+  "F-comercio-retail-009",
+  "F-legal-contable-002",
+  "F-legal-contable-003",
+  "F-ataque-r1-m05-i018-cliente-001",
+  "F-ataque-r1-m05-i018-cliente-002",
+  "F-ataque-r1-m05-i018-cliente-003",
+  "F-ataque-r1-m05-i009-cliente-004"
+ ]
+}

@@ -1,0 +1,74 @@
+{
+ "id": "i028",
+ "titulo": "Prediccion de espera para retirar contenedores en el puerto de Montevideo",
+ "problema": "Retirar un contenedor del puerto de Montevideo puede demorar hasta 9 horas cuando deberia tomar 1,5 a 2 (F-logistica-transporte-001). Las esperas se agravan con atrasos de buques, como los mas de 150 camiones varados diez dias con perdidas estimadas de US$ 750.000 (F-logistica-transporte-002), con paros que dejaron casi 500 camiones esperando (F-logistica-transporte-004) y con caidas de sistemas de la terminal (F-logistica-transporte-005). El transportista se entera en la fila: no sabe cuando le conviene ir ni puede planificar el resto de los viajes del camion.",
+ "usuario": "Lo usan transportistas y despachantes que retiran contenedores; paga la empresa de transporte. La mayoria son empresas de uno a tres camiones (F-logistica-transporte-009), por lo que se apunta a un precio bajo y a acuerdos con la gremial.",
+ "solucion": "Una app web instalable (PWA) donde el chofer marca llegada, ingreso y salida de cada terminal; el registro se completa solo por geocerca cuando da permiso de ubicacion. Con esos tiempos, mas datos publicos de arribos de buques y avisos de paro cargados por el equipo, un modelo estima la espera por terminal y franja horaria y avisa cuando la fila se dispara. Un panel muestra a la empresa la espera historica por terminal y las horas de camion perdidas, util para reclamar o facturar demoras.",
+ "mvp": {
+  "semestre_1": [
+   "PWA con registro manual y por geocerca de tiempos en las terminales",
+   "Backend con API, base de datos y panel de espera actual e historica",
+   "Piloto con un grupo chico de choferes y primer informe de tiempos reales"
+  ],
+  "semestre_2": [
+   "Modelo de prediccion de espera por terminal y franja, evaluado contra los datos del piloto",
+   "Alertas push por demoras anomalas",
+   "Reporte de horas perdidas por empresa exportable a PDF",
+   "Business case con precios validados en entrevistas"
+  ]
+ },
+ "stack": [
+  "React PWA",
+  "Python FastAPI",
+  "PostgreSQL con TimescaleDB",
+  "scikit-learn o LightGBM",
+  "Leaflet con OpenStreetMap",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 174,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 2 GB RAM con IPv4",
+    "usd_anual": 144,
+    "supuesto": "USD 12 por mes x 12 meses, una instancia para API, base de datos y modelo, Docker Compose; no se cuenta la capa gratuita porque la pagina no dice cuanto dura.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 20,
+    "supuesto": "Estimacion por encima: Cloudflare Registrar cobra al costo del registro pero su pagina no muestra el precio del .com; se reservan USD 20 por un ano con margen."
+   },
+   {
+    "concepto": "API de lenguaje Claude Haiku 5.5 para resumen diario de demoras",
+    "usd_anual": 10,
+    "supuesto": "Unos 365 resumenes al ano de 20.000 tokens de entrada y 1.000 de salida: menos de USD 1 a USD 0,10 y 0,50 por millon; se reservan USD 10 con margen.",
+    "fuente_precio_url": "https://claude.com/pricing"
+   }
+  ]
+ },
+ "competidores": [],
+ "monetizacion": "Suscripcion mensual por camion para empresas de transporte, con un plan gratis que solo aporta tiempos (para sumar datos) y un plan pago con prediccion, alertas y reportes de horas perdidas. Canal: la Intergremial de Transporte de Carga y despachantes. Los precios se validan en entrevistas antes de diciembre de 2026.",
+ "riesgos": [
+  "Arranque en frio: sin suficientes choferes reportando, la prediccion no sirve",
+  "Las terminales o la ANP podrian publicar su propio indicador de espera",
+  "Poca adopcion digital en empresas chicas (F-logistica-transporte-008)",
+  "La espera depende de eventos externos (paros, buques) dificiles de predecir"
+ ],
+ "supuestos": [
+  "Los transportistas pagarian por saber la espera antes de salir; no hay ficha con disposicion a pagar",
+  "Las fichas no muestran competidores que midan la espera en el puerto; no se afirma que no existan",
+  "Hay datos publicos de arribos de buques utilizables legalmente; falta verificarlo",
+  "Un piloto de 10 a 20 choferes alcanza para un primer modelo",
+  "Los datos de ubicacion se tratan con consentimiento segun la Ley 18.331"
+ ],
+ "evidencias": [
+  "F-logistica-transporte-001",
+  "F-logistica-transporte-002",
+  "F-logistica-transporte-004",
+  "F-logistica-transporte-005",
+  "F-logistica-transporte-008",
+  "F-logistica-transporte-009"
+ ]
+}

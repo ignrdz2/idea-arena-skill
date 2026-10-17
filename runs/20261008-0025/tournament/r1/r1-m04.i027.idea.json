@@ -1,0 +1,90 @@
+{
+ "id": "i027",
+ "titulo": "Cartera digital para corredores de seguros chicos",
+ "problema": "En Uruguay la distribución de seguros depende de corredores y productores asesores (F-fintech-seguros-008). El corredor chico vive de renovar su cartera y la maneja en PDF y planillas. Ya hay software pago con carga de PDF y avisos por WhatsApp desde USD 49 por mes (F-ataque-r1-m04-i027-cliente-001): hay quien paga, pero el tramo bajo 150 pólizas no tiene oferta de entrada. El costo de los vencimientos perdidos es un supuesto a validar.",
+ "usuario": "Corredores y productores asesores independientes, con menos de unas 300 pólizas activas, en Uruguay. Ellos pagan.",
+ "solucion": "Aplicación web donde el corredor sube en lote pólizas PDF de cualquier aseguradora o importa su planilla. Un paso local enmascara identificadores (documento, matrícula, teléfono, email) y un modelo de lenguaje extrae asegurado, compañía, ramo, coberturas, prima y vencimiento. El corredor revisa solo los campos de baja confianza. Un tablero muestra vencimientos a 60 días. Envía avisos por email y arma el mensaje de renovación para que el corredor lo mande por WhatsApp desde su número (enlace wa.me).",
+ "mvp": {
+  "semestre_1": [
+   "Extracción de PDF de 3 aseguradoras con enmascarado local, confianza por campo y precisión por campo medida con pólizas propias del equipo y de familiares con consentimiento, más sintéticas",
+   "Tablero de vencimientos con carga masiva o planilla y avisos por email, probado con 2 corredores"
+  ],
+  "semestre_2": [
+   "Mensajes de renovación para WhatsApp desde el número del corredor",
+   "Piloto de 2 meses con 3 a 5 corredores: minutos de revisión por póliza frente a su planilla y renovaciones avisadas a tiempo",
+   "Business case con precio validado por cartas de intención firmadas"
+  ]
+ },
+ "stack": [
+  "Python",
+  "FastAPI",
+  "PostgreSQL",
+  "React",
+  "Claude Haiku 5.5 API",
+  "Amazon SES",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 106,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 1 GB con IPv4",
+    "usd_anual": 84,
+    "supuesto": "USD 7 por mes durante 12 meses, una instancia para app, base y demo, sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API Claude Haiku 5.5",
+    "usd_anual": 20,
+    "supuesto": "3.000 pólizas a 20.000 tokens de entrada (USD 0,10 por millón) y 1.000 de salida (USD 0,50 por millón) dan unos USD 7,5; con reintentos se redondea a 20.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "Amazon SES para avisos por email",
+    "usd_anual": 2,
+    "supuesto": "Hasta 20.000 emails al año a USD 0,10 cada 1.000, sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/ses/pricing/"
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Nexura",
+   "evidencia_ids": [
+    "F-ataque-r1-m04-i027-cliente-001"
+   ],
+   "hueco": "Carga de PDF, CRM y avisos por WhatsApp desde USD 49 por mes. Su página no informa precisión de extracción ni tratamiento de datos, ni ofrece entrada gratis. El precio es copiable: el diferencial a probar es la precisión medida."
+  },
+  {
+   "nombre": "Figuro",
+   "evidencia_ids": [
+    "F-defensa-r1-m04-i027-002"
+   ],
+   "hueco": "Gestión de cartera y avisos de vencimientos en Uruguay, pero su página no describe extracción desde PDF."
+  }
+ ],
+ "monetizacion": "Suscripción según pólizas activas: gratis hasta 50, USD 19 por mes hasta 300 y USD 35 por encima. Canal: asociaciones como A.PRO.A.SE., con más de 500 corredores y agentes (F-defensa-r1-m04-i027-001). Escenario: 25 a 50 corredores de pago (5 a 10%) a USD 25 promedio, unos USD 7.500 a 15.000 al año. El piloto no cobra.",
+ "riesgos": [
+  "Formatos de pólizas muy distintos bajan la precisión",
+  "Un competidor con más recursos copia precio o extracción",
+  "Sin corredores reales, la precisión se mide con datos propios y sintéticos",
+  "Ley 18.331: el corredor es responsable y el equipo encargado; hay que inscribir la base y usar cláusulas modelo para transferir al exterior (F-defensa-r1-m04-i027-003)"
+ ],
+ "supuestos": [
+  "Los corredores chicos gestionan su cartera en planillas y PDF",
+  "Perder vencimientos les cuesta renovaciones",
+  "Se llega a corredores vía A.PRO.A.SE., sin contacto confirmado hoy",
+  "Un corredor chico pagaría USD 19 a 35 por mes",
+  "Adopta el 5 a 10% de los asociados",
+  "Hay 2 a 5 corredores dispuestos a probarlo; si no, plan B con pólizas propias y sintéticas",
+  "El proveedor del modelo acepta cláusulas modelo de la URCDP"
+ ],
+ "evidencias": [
+  "F-fintech-seguros-008",
+  "F-ataque-r1-m04-i027-cliente-001",
+  "F-defensa-r1-m04-i027-001",
+  "F-defensa-r1-m04-i027-002",
+  "F-defensa-r1-m04-i027-003"
+ ]
+}

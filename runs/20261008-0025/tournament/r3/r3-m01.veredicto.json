@@ -1,0 +1,30 @@
+{
+  "match": "r3-m01",
+  "scores": {
+    "X": {"demanda": 5, "viabilidad": 8, "diferenciacion": 3, "business_case": 6, "encaje": 7, "academico": 6, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 6, "viabilidad": 6, "diferenciacion": 6, "business_case": 4, "encaje": 6, "academico": 6, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "X",
+  "reason": "X tiene un MVP de bajo costo con plan B tecnico (parsers por plantilla) y un mercado local donde ya se paga por software de cartera, mientras Y depende de que choferes poco digitalizados generen los datos sin los cuales no hay producto y su business case no tiene precio ni tamano de flota con respaldo; eso pesa mas que la mejor diferenciacion de Y.",
+  "survived": [
+    "Escenario de ingresos inflado por precio promedio: corregido a precio unico de USD 19 y USD 5.700 a 11.400, con churn y tamano del segmento declarados como desconocidos",
+    "Cumplimiento de la Ley 18.331 incompleto: agregados evaluacion de impacto y registro en marzo 2027, seudonimizacion nombrada como tal y plan B sin modelo de lenguaje",
+    "Figuro da avisos gratis: rebatido, la ficha del plan gratuito no lista avisos",
+    "El pago se valida recien al final: parcialmente arreglado con 10 entrevistas de precio antes de diciembre de 2026"
+  ],
+  "standing": {
+    "X": [
+      "Nexura ya cubre el mismo segmento con extraccion de PDF por IA y avisos; el diferencial es precio y precision publicada, copiable",
+      "No hay ficha del dolor ni de la disposicion a pagar del corredor de 100 a 300 polizas",
+      "Sin contactos confirmados; las cartas de intencion son senal de pago debil",
+      "El envio por wa.me de un clic sigue siendo mas debil que el WhatsApp automatico de Nexura"
+    ],
+    "Y": [
+      "No hay ficha de la espera tipica; el dolor citado es un maximo denunciado y shocks que no se predicen",
+      "El segmento que paga (flotas de 5 o mas camiones) no tiene tamano conocido",
+      "Precio y disposicion a pagar sin ninguna senal; canal sin contacto",
+      "Arranque en frio: el valor depende de reportes manuales de choferes poco digitalizados y el plan B no entrega datos reales",
+      "La terminal ya muestra LineUp y camara del acceso y podria agregar un indicador de espera"
+    ]
+  }
+}

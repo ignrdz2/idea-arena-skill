@@ -1,0 +1,100 @@
+{
+ "id": "i009",
+ "titulo": "Conciliación bancaria y precontabilización aprendida para estudios contables",
+ "problema": "Los estudios contables de Montevideo contratan asistentes que registran asientos y concilian bancos con Excel intermedio (F-legal-contable-005, F-defensa-r2-m03-i009-001). Un proveedor de ERP estima que conciliar 200 a 500 movimientos a mano lleva un día y que los bancos entregan PDF o formatos propios (F-defensa-r3-m02-i009-002, fuente interesada). Una SRL pequeña paga honorarios fijos de $U 18.000 a 25.000 por mes (F-legal-contable-001): más carga resta margen. CFE a asiento ya está cubierto (F-ataque-r1-m05-i009-cliente-001, F-ataque-r1-m05-i009-cliente-002) y Conty declara conciliar banco y contabilidad (F-defensa-r3-m02-i009-003).",
+ "usuario": "Asistentes y contadores de estudios contables de 2 a 20 personas que llevan la contabilidad de pymes. Paga el estudio.",
+ "solucion": "Lee extractos PDF de 2 bancos y propone la cuenta de cada movimiento aprendiendo de las imputaciones previas de cada cliente (reglas y embeddings locales), con cola de excepciones para revisión humana. Cruza con los XML de CFE y exporta una planilla configurable. Datos reales solo en el piloto, en un equipo en Uruguay con Docker; el servidor en la nube recibe solo datos sintéticos, sin transferencia internacional (art. 23, F-ataque-r1-m05-i009-cliente-004). Acuerdo escrito y base registrada.",
+ "mvp": {
+  "semestre_1": [
+   "Lectura local de PDF de 2 bancos y XML de CFE, con datos sintéticos",
+   "Propuesta de imputación y cola de revisión, contra una línea de base de reglas",
+   "Demo con extractos propios anonimizados, midiendo acierto"
+  ],
+  "semestre_2": [
+   "Cruce banco-comprobantes con métricas de acierto y horas",
+   "Exportación configurable (un destino primero) y vista multi-cliente",
+   "Piloto voluntario con acuerdo de datos en 1 o 2 estudios"
+  ]
+ },
+ "stack": [
+  "Python FastAPI",
+  "React",
+  "PostgreSQL con pgvector",
+  "lxml para XML de CFE",
+  "Extracción local de PDF",
+  "Embeddings locales en CPU (modelo multilingüe pequeño)",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 164,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail 2 GB",
+    "usd_anual": 144,
+    "supuesto": "USD 12 por mes, 12 meses, solo sintéticos y demo. Plan B: 4 GB (USD 24 por mes) 6 meses y 2 GB otros 6 dan 216, con dominio 236, bajo el tope.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "Dominio y DNS",
+    "usd_anual": 20,
+    "supuesto": "Estimación por encima, sin página de precios abierta: un dominio .com más DNS, redondeado a USD 20."
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Contafácil",
+   "evidencia_ids": [
+    "F-ataque-r1-m05-i009-cliente-001",
+    "F-ataque-r1-m05-i009-cliente-003"
+   ],
+   "hueco": "Descarga CFE y entrega asientos. Su página no menciona conciliación ni sugerencia de cuenta (silencio, no prueba)."
+  },
+  {
+   "nombre": "Contable.CFE",
+   "evidencia_ids": [
+    "F-ataque-r1-m05-i009-cliente-002"
+   ],
+   "hueco": "Convierte CFE en asientos con cuentas configuradas una vez; no menciona conciliación ni aprendizaje."
+  },
+  {
+   "nombre": "Conty (Memory)",
+   "evidencia_ids": [
+    "F-defensa-r3-m02-i009-003"
+   ],
+   "hueco": "Declara conciliación bancaria automática; su página no dice formatos de extracto ni cuenta aprendida. Es el más cercano: se verifica."
+  }
+ ],
+ "monetizacion": "Plan plano por estudio. Referencia a validar: $U 1.500 a 2.500 por mes (moneda presumible: pesos, F-ataque-r1-m05-i009-cliente-003). Cuenta: 10 estudios a $U 2.000 son $U 20.000 por mes, objetivo no dato. Canal: venta directa en Montevideo y vía CCEAU (supuesto).",
+ "riesgos": [
+  "Conty ya cubre parte de la conciliación: el hueco queda en PDF y cuenta aprendida",
+  "Sin estudio voluntario no hay acierto real medido",
+  "Formatos de extracto distintos por banco",
+  "Un competidor podría copiarlo: la ventaja es de tiempo",
+  "El estudio suma un paso y una herramienta"
+ ],
+ "supuestos": [
+  "Los estudios reciben los XML de CFE o pueden obtenerlos",
+  "No hay cifra de estudios de 2 a 20 personas",
+  "La carga contable resta margen (inferencia de honorarios fijos)",
+  "Los estudios pagarían por evitar la conciliación: sin ficha de pago",
+  "Precio, cuenta de 10 estudios y costo de adquisición a validar",
+  "Se arranca con el historial de asientos que el estudio exporta, para evitar el arranque en frío",
+  "Meta: 80 por ciento de acierto en proveedores recurrentes, con horas medidas",
+  "Sin estudio con acuerdo en abril 2027, la tesis mide sobre extractos propios anonimizados y lo declara",
+  "Antes de diciembre de 2026: contactar estudios, probar Contafácil gratis y confirmar si Conty importa extractos; hoy no hay contactos cargados"
+ ],
+ "evidencias": [
+  "F-legal-contable-005",
+  "F-legal-contable-001",
+  "F-ataque-r1-m05-i009-cliente-001",
+  "F-ataque-r1-m05-i009-cliente-002",
+  "F-ataque-r1-m05-i009-cliente-003",
+  "F-ataque-r1-m05-i009-cliente-004",
+  "F-defensa-r2-m03-i009-001",
+  "F-defensa-r3-m02-i009-001",
+  "F-defensa-r3-m02-i009-002",
+  "F-defensa-r3-m02-i009-003"
+ ]
+}

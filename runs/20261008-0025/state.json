@@ -1,0 +1,378 @@
+{
+ "version": 1,
+ "run": "20261008-0025",
+ "dir": "runs/20261008-0025",
+ "mode": "full",
+ "seed": 7,
+ "created": "2026-10-08T00:25:49",
+ "sectors": [
+  {
+   "id": "comercio-retail",
+   "nombre": "Comercio y retail"
+  },
+  {
+   "id": "agro",
+   "nombre": "Agro"
+  },
+  {
+   "id": "salud",
+   "nombre": "Salud"
+  },
+  {
+   "id": "logistica-transporte",
+   "nombre": "Logística y transporte"
+  },
+  {
+   "id": "fintech-seguros",
+   "nombre": "Fintech y seguros"
+  },
+  {
+   "id": "educacion",
+   "nombre": "Educación"
+  },
+  {
+   "id": "legal-contable",
+   "nombre": "Legal y contable"
+  },
+  {
+   "id": "sector-publico",
+   "nombre": "Sector público"
+  },
+  {
+   "id": "turismo",
+   "nombre": "Turismo"
+  },
+  {
+   "id": "energia-ambiente",
+   "nombre": "Energía y ambiente"
+  }
+ ],
+ "sectors_how": "todos los de config.json",
+ "generators": [
+  {
+   "id": "g01",
+   "strategy": "dolor",
+   "focus": [
+    "energia-ambiente"
+   ],
+   "ideas": 3
+  },
+  {
+   "id": "g02",
+   "strategy": "capacidad",
+   "focus": [
+    "logistica-transporte"
+   ],
+   "ideas": 3
+  },
+  {
+   "id": "g03",
+   "strategy": "segmento",
+   "focus": [
+    "salud"
+   ],
+   "ideas": 3
+  },
+  {
+   "id": "g04",
+   "strategy": "localizar",
+   "focus": [
+    "legal-contable"
+   ],
+   "ideas": 3
+  },
+  {
+   "id": "g05",
+   "strategy": "invertir",
+   "focus": [
+    "sector-publico"
+   ],
+   "ideas": 3
+  },
+  {
+   "id": "g06",
+   "strategy": "dolor",
+   "focus": [
+    "agro"
+   ],
+   "ideas": 3
+  },
+  {
+   "id": "g07",
+   "strategy": "capacidad",
+   "focus": [
+    "educacion"
+   ],
+   "ideas": 3
+  },
+  {
+   "id": "g08",
+   "strategy": "segmento",
+   "focus": [
+    "turismo"
+   ],
+   "ideas": 3
+  },
+  {
+   "id": "g09",
+   "strategy": "localizar",
+   "focus": [
+    "comercio-retail"
+   ],
+   "ideas": 3
+  },
+  {
+   "id": "g10",
+   "strategy": "invertir",
+   "focus": [
+    "fintech-seguros"
+   ],
+   "ideas": 3
+  }
+ ],
+ "steps": {
+  "verify": {
+   "aceptadas": 85,
+   "ok": 82,
+   "bloqueadas": 3,
+   "descartadas": 6,
+   "motivos": {
+    "esquema": 6
+   },
+   "por_sector": {
+    "comercio-retail": {
+     "recibidas": 11,
+     "aceptadas": 11,
+     "bloqueadas": 0,
+     "descartadas": 0
+    },
+    "agro": {
+     "recibidas": 8,
+     "aceptadas": 2,
+     "bloqueadas": 0,
+     "descartadas": 6
+    },
+    "salud": {
+     "recibidas": 10,
+     "aceptadas": 10,
+     "bloqueadas": 1,
+     "descartadas": 0
+    },
+    "logistica-transporte": {
+     "recibidas": 11,
+     "aceptadas": 11,
+     "bloqueadas": 0,
+     "descartadas": 0
+    },
+    "fintech-seguros": {
+     "recibidas": 8,
+     "aceptadas": 8,
+     "bloqueadas": 0,
+     "descartadas": 0
+    },
+    "educacion": {
+     "recibidas": 10,
+     "aceptadas": 10,
+     "bloqueadas": 0,
+     "descartadas": 0
+    },
+    "legal-contable": {
+     "recibidas": 9,
+     "aceptadas": 9,
+     "bloqueadas": 1,
+     "descartadas": 0
+    },
+    "sector-publico": {
+     "recibidas": 9,
+     "aceptadas": 9,
+     "bloqueadas": 1,
+     "descartadas": 0
+    },
+    "turismo": {
+     "recibidas": 9,
+     "aceptadas": 9,
+     "bloqueadas": 0,
+     "descartadas": 0
+    },
+    "energia-ambiente": {
+     "recibidas": 6,
+     "aceptadas": 6,
+     "bloqueadas": 0,
+     "descartadas": 0
+    }
+   }
+  },
+  "ingest": {
+   "recibidas": 29,
+   "validas": 29,
+   "rechazadas_esquema": 0,
+   "pasan_filtro_duro": 29,
+   "problemas": {},
+   "avisos": {
+    "costo_estimado": 24
+   }
+  },
+  "scope-collect": {
+   "evaluadas": 29,
+   "veredictos": {
+    "viable": 14,
+    "viable_con_recorte": 15
+   },
+   "sobreviven": 29,
+   "grupos_lexicos": 0
+  },
+  "select": {
+   "grupos": 29,
+   "fusionadas": 0,
+   "seleccionadas": 16
+  },
+  "rank": {
+   "top": [
+    "i009",
+    "i027",
+    "i028",
+    "i010",
+    "i006",
+    "i011",
+    "i015",
+    "i021"
+   ],
+   "excluidas_por_fallo_fatal": [
+    "i002"
+   ]
+  },
+  "shortlist": {
+   "ideas": [
+    "i009",
+    "i027",
+    "i028",
+    "i010",
+    "i006",
+    "i011",
+    "i015",
+    "i021"
+   ]
+  }
+ },
+ "scope_batches": [
+  [
+   "i001",
+   "i002",
+   "i003"
+  ],
+  [
+   "i004",
+   "i005",
+   "i006"
+  ],
+  [
+   "i007",
+   "i008",
+   "i009"
+  ],
+  [
+   "i010",
+   "i011",
+   "i012"
+  ],
+  [
+   "i013",
+   "i014",
+   "i015"
+  ],
+  [
+   "i016",
+   "i017",
+   "i018"
+  ],
+  [
+   "i019",
+   "i020",
+   "i021"
+  ],
+  [
+   "i022",
+   "i023",
+   "i024"
+  ],
+  [
+   "i025",
+   "i026",
+   "i027"
+  ],
+  [
+   "i028",
+   "i029"
+  ]
+ ],
+ "candidates": [
+  "i001",
+  "i002",
+  "i003",
+  "i004",
+  "i005",
+  "i006",
+  "i007",
+  "i008",
+  "i009",
+  "i010",
+  "i011",
+  "i012",
+  "i013",
+  "i014",
+  "i015",
+  "i016",
+  "i017",
+  "i018",
+  "i019",
+  "i020",
+  "i021",
+  "i022",
+  "i023",
+  "i024",
+  "i025",
+  "i026",
+  "i027",
+  "i028",
+  "i029"
+ ],
+ "dedup_needed": true,
+ "selected": [
+  "i018",
+  "i012",
+  "i006",
+  "i026",
+  "i015",
+  "i010",
+  "i009",
+  "i017",
+  "i003",
+  "i021",
+  "i005",
+  "i002",
+  "i028",
+  "i027",
+  "i011",
+  "i001"
+ ],
+ "shortlist": [
+  "i009",
+  "i027",
+  "i028",
+  "i010",
+  "i006",
+  "i011",
+  "i015",
+  "i021"
+ ],
+ "deepen": {},
+ "plan": {
+  "calls": 114,
+  "waves": 19,
+  "tokens_k": [
+   2475,
+   6160
+  ]
+ },
+ "git_baseline": []
+}

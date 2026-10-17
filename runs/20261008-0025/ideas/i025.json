@@ -1,0 +1,65 @@
+{
+ "id": "i025",
+ "titulo": "Registro y reporte de incidentes de ciberseguridad en 24 horas para entidades chicas",
+ "problema": "CERTuy registró 14.264 incidentes en 2024, 42.768 en 2025 y 32.399 solo en el primer semestre de 2026, y el Decreto 66/025 obliga a las entidades de sectores críticos a reportar incidentes en 24 horas (F-sector-publico-006). Las organizaciones con pocas capacidades digitales lo sufren más: en el Estado no hay un marco de competencias digitales y las capacidades analíticas son limitadas (F-sector-publico-004), y la madurez digital de las intendencias es muy desigual (F-sector-publico-001). Una entidad sin equipo de seguridad no sabe qué registrar, cómo clasificarlo ni cómo armar el reporte a tiempo.",
+ "usuario": "Usa: el responsable de TI o de seguridad (a menudo una sola persona) de una intendencia, un organismo chico o una entidad privada de sector crítico. Paga: la entidad.",
+ "solucion": "Una herramienta mínima de cumplimiento: el responsable describe el incidente en lenguaje natural o por formulario guiado; un LLM propone tipo y severidad, pide los datos que faltan y arranca un reloj de 24 horas con avisos. Genera el borrador del reporte, guarda una bitácora con evidencias y línea de tiempo, y sugiere pasos de contención básicos desde guías cargadas por la entidad. No es un SOC: no monitorea redes, ordena y documenta la respuesta.",
+ "mvp": {
+  "semestre_1": [
+   "Formulario guiado y chat que registra incidentes con línea de tiempo y adjuntos",
+   "Clasificación de tipo y severidad con LLM sobre una taxonomía configurable",
+   "Demo con 20 incidentes simulados y medición de acierto"
+  ],
+  "semestre_2": [
+   "Reloj de 24 horas con avisos por correo y borrador de reporte exportable",
+   "Guías de contención con RAG sobre documentos de la entidad",
+   "Usuarios y roles, auditoría y piloto o entrevistas con 5 entidades"
+  ]
+ },
+ "stack": [
+  "Python FastAPI",
+  "PostgreSQL",
+  "Qdrant",
+  "React",
+  "Claude Haiku 5.5 vía API",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 148,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 2 GB con IPv4",
+    "usd_anual": 144,
+    "supuesto": "Una instancia de USD 12 por mes durante 12 meses para backend, base y Qdrant; sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API de LLM Claude Haiku 5.5",
+    "usd_anual": 4,
+    "supuesto": "Hasta 20 millones de tokens de entrada (USD 0,10 por millón) y 4 millones de salida (USD 0,50 por millón) en el año, unos 3.000 incidentes de prueba con guías.",
+    "fuente_precio_url": "https://claude.com/pricing"
+   }
+  ]
+ },
+ "competidores": [],
+ "monetizacion": "Suscripción por entidad, sin licencia inicial: USD 40 por mes para entidades chicas, con un plan anual pagado por adelantado. Canal: responsables de TI de intendencias y de proveedores chicos de sectores críticos, y estudios que asesoran en seguridad como revendedores.",
+ "riesgos": [
+  "Alcance exacto del Decreto 66/025 y formato del reporte: si no coincide con el producto, pierde valor",
+  "Que CERTuy publique su propia herramienta gratuita de registro",
+  "Datos de incidentes sensibles: exige buenas prácticas de seguridad y cumplimiento con la Ley 18.331",
+  "Clasificación errónea de severidad con impacto en el plazo"
+ ],
+ "supuestos": [
+  "Hay en Uruguay un número relevante de entidades obligadas sin equipo propio de seguridad (a verificar)",
+  "Las entidades obligadas pagarían USD 40 por mes por ordenar el reporte",
+  "La taxonomía y el formato de reporte de CERTuy son públicos o se obtienen en entrevistas",
+  "Las fichas no muestran competidores; no se afirma que no existan",
+  "No hay contacto identificado: la validación depende de conseguir entrevistas antes de diciembre de 2026"
+ ],
+ "evidencias": [
+  "F-sector-publico-006",
+  "F-sector-publico-004",
+  "F-sector-publico-001"
+ ]
+}

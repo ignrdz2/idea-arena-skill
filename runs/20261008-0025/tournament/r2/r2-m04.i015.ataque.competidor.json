@@ -1,0 +1,103 @@
+{
+  "idea": "i015",
+  "persona": "competidor",
+  "ataques": [
+    {
+      "n": 1,
+      "severidad": "MAJOR",
+      "titulo": "Ya existe un bot gratuito de WhatsApp para reenviar mensajes sospechosos en LATAM",
+      "donde": "Supuestos: 'No hay competidores directos en las fichas'; seccion Competidores (solo Naranja X); Solucion (numero al que se reenvia el mensaje)",
+      "problema": "El producto central (reenviar un mensaje o link a un numero de WhatsApp y recibir el analisis) ya lo ofrece gratis, sin registro y sin limite de uso, un detector de fraude para LATAM que analiza phishing, links maliciosos, suplantacion de marcas y numeros falsos. Hoy se optimiza para Colombia, Mexico, Peru, Chile, Argentina y Ecuador, y agregar marcas uruguayas (BROU, Itau, Mercado Pago UY) es un trabajo de dias para ellos. Ademas ScamZero verifica mensajes, links y numeros gratis, y Truecaller lanzo un verificador gratuito (hoy solo India) con plan de expandirse a LATAM y de sumar analisis de capturas. La idea declara que no hay competidores en las fichas, pero eso es un hueco de su investigacion, no del mercado: la rubrica puntua 0 a 2 en diferenciacion cuando la idea 'ignora competidores obvios'. La unica diferencia que queda es 'foco Uruguay', que no es una barrera.",
+      "tipo": "evidencia",
+      "evidencia": ["F-ataque-r2-m04-i015-competidor-001", "F-ataque-r2-m04-i015-competidor-002", "F-ataque-r2-m04-i015-competidor-003"]
+    },
+    {
+      "n": 2,
+      "severidad": "MAJOR",
+      "titulo": "El plan pago de USD 6 compite contra alternativas gratis y su ventaja (alertas) es reactiva",
+      "donde": "Monetizacion (freemium, plan negocio USD 6/mes) y Solucion (alertas 'sin mensajes proactivos')",
+      "problema": "Con competidores gratis e ilimitados (ficha 001) el plan gratis de 10 verificaciones por mes es peor que lo que ya hay sin costo, y lo que se vende como plan negocio (historial y alertas) se entrega solo 'anexadas a la respuesta de una consulta', es decir, el vendedor tiene que preguntar para enterarse. Una alerta que solo llega si uno consulta no es una alerta, y el historial se puede resolver con el propio chat de WhatsApp. No hay ninguna ficha de disposicion a pagar (la idea lo declara como supuesto), y la unica ficha sobre pymes (F-comercio-retail-006) muestra baja digitalizacion en logistica de inventario, no gasto en seguridad. El segmento que sufre el dolor puede ser real pero el hueco 'pagar USD 6' no esta mostrado: es el caso de segmento que nadie atiende porque no paga.",
+      "tipo": "evidencia",
+      "evidencia": ["F-ataque-r2-m04-i015-competidor-001", "F-ataque-r2-m04-i015-competidor-003", "F-comercio-retail-006"]
+    },
+    {
+      "n": 3,
+      "severidad": "MAJOR",
+      "titulo": "El dolor medido es el comprobante falso, pero el producto prioriza mensajes y links, donde hay gratis; y el comprobante lo resuelve mirar la cuenta",
+      "donde": "Problema (F-defensa-r1-m08-i015-002) vs Solucion ('El valor central son mensajes y links; en comprobantes refuerza el chequeo en la cuenta') y Competidores (F-ataque-r1-m08-i015-cliente-001)",
+      "problema": "La unica ficha que describe un dolor especifico de vendedores es la de comprobantes adulterados. Pero la propia idea cita que ese problema se evita gratis mirando la cuenta (Naranja X) y reconoce que el modelo con vision no detecta las capturas bien editadas. Entonces el producto se desplaza al terreno donde el dolor no es de vendedores sino de cualquier persona (phishing, links) y donde hay herramientas gratis. Ninguna ficha dice que un vendedor uruguayo reciba phishing o comprobantes falsos con frecuencia ni cuanto pierde (la idea lo admite: 'se mide en el piloto'). Lo que queda como diferencial para vendedores, la captura, es lo que menos agrega.",
+      "tipo": "evidencia",
+      "evidencia": ["F-defensa-r1-m08-i015-002", "F-ataque-r1-m08-i015-cliente-001", "F-ataque-r2-m04-i015-competidor-001"]
+    },
+    {
+      "n": 4,
+      "severidad": "MAJOR",
+      "titulo": "Datos personales de terceros enviados a APIs en EEUU sin camino de cumplimiento descrito (R6)",
+      "donde": "Riesgos (Ley 18.331: 'la captura se procesa y se borra') y Supuestos ('Confirmar con la URCDP si corresponde registrar la base'); Stack (Claude API, WhatsApp Cloud API)",
+      "problema": "Las capturas de comprobantes contienen nombres, cuentas y montos de terceros (los compradores), y se mandan a un proveedor de modelos y a Meta, ambos en el exterior. Segun las fichas de otros cruces, el art. 23 de la Ley 18.331 prohibe transferir a paises sin nivel adecuado salvo Data Privacy Framework, clausulas tipo o autorizacion de la URCDP, y la base debe estar registrada antes de transferir. La idea solo promete borrar y consentimiento 'al primer uso' del vendedor (que no es el titular de los datos de la captura) y deja el registro como duda. R6 pide un camino de cumplimiento realista: acá hay una pregunta abierta sobre un punto que la propia evidencia dice que es obligatorio, y el dueno del dato (el comprador) nunca consiente.",
+      "tipo": "evidencia",
+      "evidencia": ["F-ataque-r1-m05-i009-cliente-004", "F-ataque-r1-m01-i005-cliente-003"]
+    },
+    {
+      "n": 5,
+      "severidad": "MAJOR",
+      "titulo": "Business case sin tamano de mercado ni canal; cifras de contexto no miden a los clientes",
+      "donde": "Monetizacion ('100 pymes pagas serian USD 7.200 al ano'; 'Canal posible, sin contactos hoy') y Problema (F-comercio-retail-001, F-fintech-seguros-004)",
+      "problema": "Ninguna ficha dice cuantos vendedores por WhatsApp/Instagram hay en Uruguay: F-comercio-retail-001 cuenta transacciones (96,3 millones) y F-fintech-seguros-004 cuenta denuncias de toda la poblacion, no de vendedores. El numero de 100 pymes no sale de nada, el canal es 'camaras o gremios' sin un solo contacto (la tabla de contactos esta vacia) y el piloto con 20 a 40 vendedores se reclutaria sin canal. Un competidor con ventas B2B a pymes (bancos, PedidosYa, Tiendanube) llega a esos vendedores sin costo de adquisicion y puede sumar el chequeo como funcion gratuita; la idea no explica por que no lo haria.",
+      "tipo": "evidencia",
+      "evidencia": ["F-comercio-retail-001", "F-fintech-seguros-004", "F-fintech-seguros-005"]
+    },
+    {
+      "n": 6,
+      "severidad": "MINOR",
+      "titulo": "Sin foso defendible: es un prompt sobre una API de vision que cualquiera replica en un mes",
+      "donde": "Solucion y Alcance del MVP (set etiquetado propio, meta 80% de deteccion con 10% de falsos positivos)",
+      "problema": "La capacidad es un modelo de terceros mas RDAP y un set de casos armado por el propio equipo. La meta de 80% y 10% se mide sobre el set que el equipo etiqueta, asi que no es comparable con nada del mercado, y no hay dato exclusivo (no hay socio ni lista de reportes propia). Si Meta, un banco o un gestor como los de las fichas lo agregan, el unico activo (el set) se copia. Es una opinion de competidor: no hay ficha sobre barreras de entrada.",
+      "tipo": "opinion",
+      "evidencia": []
+    }
+  ],
+  "nuevas_fichas": [
+    {
+      "id": "F-ataque-r2-m04-i015-competidor-001",
+      "sector": "transversal",
+      "hallazgo": "Un detector de fraude para SMS y WhatsApp de LATAM funciona reenviando el mensaje sospechoso a un contacto de WhatsApp, que responde con el analisis. Revisa phishing, links, suplantacion de marcas y numeros falsos; es gratis, sin registro y sin limite, optimizado para Colombia, Mexico, Peru, Chile, Argentina y Ecuador.",
+      "source_url": "https://mediavox.co/mvsite/fraud-check",
+      "source_title": "Detector de Estafas SMS y WhatsApp, Verifica Gratis",
+      "source_date": "desconocida",
+      "source_type": "competidor",
+      "geografia": "LATAM",
+      "confianza": "media",
+      "retrieved_at": "2026-10-08T12:00:00",
+      "extracto": "solo reenvialo a este contacto de WhatsApp y te decimos si es estafa",
+      "competidor": "Mediavox Detector de Fraude"
+    },
+    {
+      "id": "F-ataque-r2-m04-i015-competidor-002",
+      "sector": "transversal",
+      "hallazgo": "Truecaller lanzo en septiembre de 2026 Scam Checker, una herramienta web gratuita para pegar un numero, link o mensaje sospechoso; hoy solo en India, con expansion prevista a America Latina y una funcion futura para analizar capturas de pantalla.",
+      "source_url": "https://www.infobae.com/tecno/2026/09/28/lanzaron-una-herramienta-web-gratuita-para-detectar-estafas-por-sms-y-whatsapp/",
+      "source_title": "Lanzaron una herramienta web gratuita para detectar estafas por SMS y WhatsApp",
+      "source_date": "2026-09-28",
+      "source_type": "prensa",
+      "geografia": "GLOBAL",
+      "confianza": "alta",
+      "retrieved_at": "2026-10-08T12:00:00",
+      "competidor": "Truecaller Scam Checker"
+    },
+    {
+      "id": "F-ataque-r2-m04-i015-competidor-003",
+      "sector": "transversal",
+      "hallazgo": "ScamZero ofrece en app store y Google Play un agente que analiza mensajes, links, correos y numeros, y su pagina afirma que verificar es gratis; los planes Pro y Familiar agregan identificador de llamadas, sin anuncios y verificaciones ilimitadas.",
+      "source_url": "https://scamzero.app/",
+      "source_title": "Verificar si un mensaje, numero o enlace es estafa, gratis con IA, ScamZero",
+      "source_date": "desconocida",
+      "source_type": "competidor",
+      "geografia": "LATAM",
+      "confianza": "media",
+      "retrieved_at": "2026-10-08T12:00:00",
+      "extracto": "Verificar mensajes, enlaces, correos y números es gratis.",
+      "competidor": "ScamZero"
+    }
+  ]
+}

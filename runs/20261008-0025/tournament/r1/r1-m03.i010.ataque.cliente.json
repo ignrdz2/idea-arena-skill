@@ -1,0 +1,70 @@
+{
+  "idea": "i010",
+  "persona": "cliente",
+  "ataques": [
+    {
+      "n": 1,
+      "severidad": "FATAL",
+      "titulo": "El MVP depende de datos de menores de un colegio piloto que no existe ni tiene contacto",
+      "donde": "Alcance Semestre 1 ('datos anonimizados de un colegio piloto') y Semestre 2 ('piloto de un trimestre en un colegio'); Supuestos: 'Se consigue un colegio piloto antes de diciembre de 2026 sin contactos previos declarados'.",
+      "problema": "Viola R7 (y empuja R4/R6): el puntaje de riesgo, el modelo y el piloto necesitan asistencia y notas reales de alumnos menores, y la tabla de contactos de constraints.md esta toda en <<COMPLETAR>>, asi que no hay socio identificado que provea los datos. La propia idea lo admite como supuesto sin plan B. Como responsable de un colegio, un equipo de estudiantes sin antecedentes pidiendo legajos de menores no es algo que apruebe yo solo: necesito autorizacion de la direccion, consentimiento de las familias y un camino claro con la Ley 18.331. Sin ese colegio el semestre 1 no tiene demo real y el 2 no tiene piloto.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 2,
+      "severidad": "MAJOR",
+      "titulo": "La evidencia del dolor es de liceos publicos, no de colegios privados",
+      "donde": "Problema: F-educacion-001, F-educacion-002, F-educacion-003; Supuestos: 'Los patrones de ausentismo de liceos publicos se parecen a los de privados'.",
+      "problema": "Las tres fichas que sostienen el dolor miden liceos (F-001, F-002) y liceos oficiales de ANEP (F-003, 'liceos oficiales'). Ninguna dice nada de ausentismo o desvinculacion en colegios privados, que es el cliente. F-003 ademas muestra que la desvinculacion en Basica Integrada bajo a un minimo historico (3,6%), lo que juega en contra de la urgencia. Como director de colegio privado, esas cifras no son mi problema. La idea lo declara como supuesto, pero toda la demanda del punto de dolor descansa en el: no hay una sola ficha de que un colegio privado uruguayo pierda alumnos por ausentismo no detectado.",
+      "tipo": "evidencia",
+      "evidencia": ["F-educacion-001", "F-educacion-002", "F-educacion-003"]
+    },
+    {
+      "n": 3,
+      "severidad": "MAJOR",
+      "titulo": "F-educacion-004 se lee como si dijera que la desvinculacion causa los cierres",
+      "donde": "Problema: 'cada alumno que se desvincula es ademas una cuota que se pierde, en un sector con cierres y fusiones analizadas por el MEC (F-educacion-004)'; Usuario: 'Adscriptos y coordinadores de colegios privados (Audec, Aidep) lo usan a diario'.",
+      "problema": "La ficha dice solo que hay mas de 300 colegios privados, unos 220 en Audec y Aidep con 113.000 alumnos, que cerraron tres y que el MEC analizo fusiones. No vincula esos cierres con alumnos que se van por ausentismo, ni cuantifica cuotas perdidas, ni dice que los adscriptos detecten tarde y a mano (afirmacion 'Hoy el adscripto lo detecta tarde, a mano' sin ficha ni supuesto). Tampoco dice que Audec o Aidep tengan adscriptos usando una herramienta a diario. Es el nexo central del business case (retener alumno = plata) y no tiene respaldo; el supuesto 'retener alumnos es una prioridad economica' solo lo nombra, no lo mide. Yo necesito saber cuantas cuotas pierdo por esto, no que el sector esta en crisis.",
+      "tipo": "evidencia",
+      "evidencia": ["F-educacion-004"]
+    },
+    {
+      "n": 4,
+      "severidad": "MAJOR",
+      "titulo": "Ya pago una suite con asistencia y seguimiento estudiantil; el hueco es una ausencia de informacion en la ficha",
+      "donde": "Competidores: Asistente.uy y Colegium (SchoolTrack); 'la ficha no muestra que priorice alumnos por riesgo'.",
+      "problema": "F-educacion-005 confirma que Asistente.uy ya tiene asistencia digital, seguimiento estudiantil, portal de familias y comunicaciones con confirmacion de lectura, es decir, ya tiene los datos y el canal con la familia que esta idea reconstruye (borrador de mensaje a familias). La ficha es una pagina de comparador sin precios ni detalle de funciones; que no mencione alertas por riesgo no prueba que no existan. Un colegio que ya usa una suite no va a cargar planillas en una segunda herramienta ni cambiar como trabaja el adscripto: o se integra (y la idea admite que depende de exportar de la suite, supuesto sin evidencia) o compite contra quien puede sumar una alerta de umbral en una version. F-educacion-006 es una nota de 2019 sobre Colegium, tampoco prueba la ausencia de alertas hoy.",
+      "tipo": "evidencia",
+      "evidencia": ["F-educacion-005", "F-educacion-006"]
+    },
+    {
+      "n": 5,
+      "severidad": "MAJOR",
+      "titulo": "Sin evidencia de disposicion a pagar y el piloto no puede demostrar retencion",
+      "donde": "Monetizacion: 'USD 3 por alumno por año (un colegio de 500 alumnos paga USD 1.500)'; Semestre 2: 'piloto de un trimestre'.",
+      "problema": "El precio es un supuesto declarado, sin ninguna ficha de pagos ni de presupuesto de colegios, y sin quien decide la compra ni de que partida sale (ficha F-educacion-004 muestra un sector en crisis, lo que apunta a menos presupuesto, no mas). Con las cifras de la propia idea el ingreso por colegio es USD 1.500 al año, con un ciclo de venta atado al año lectivo, o sea una venta a pocos colegios para pasar de la tesis a algo sostenible. Ademas el resultado que mas importa al comprador (alumnos retenidos) no se mide en un trimestre de un solo colegio, y un modelo predictivo entrenado con los datos de un solo colegio durante ese lapso no tiene muestra para compararse con las reglas. El business case que se entrega en diciembre de 2027 mostraria alertas, no ahorro de plata visible.",
+      "tipo": "evidencia",
+      "evidencia": ["F-educacion-004"]
+    },
+    {
+      "n": 6,
+      "severidad": "MAJOR",
+      "titulo": "Enviar legajos de menores a la API de Gemini sin camino de cumplimiento descrito",
+      "donde": "Solucion: 'un asistente con LLM resume el historial (faltas, notas, observaciones)'; Stack: Gemini 2.5 Flash-Lite API; Riesgos: 'exige consentimiento y cumplimiento estricto de Ley 18.331'.",
+      "problema": "El resumen por alumno manda faltas, notas y observaciones de menores a un proveedor externo en el extranjero. La idea solo menciona la ley como riesgo y como entregable de la ultima etapa, pero no explica base de licitud, transferencia internacional ni anonimizacion previa a la llamada. Como cliente, no autorizo ese flujo a un equipo de estudiantes sin una politica firmada; las familias y la direccion tendrian que consentir antes de cualquier prueba, lo que retrasa aun mas el piloto. R6 permite datos personales solo si hay un camino realista, y aca el camino no esta descrito.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 7,
+      "severidad": "MINOR",
+      "titulo": "Integracion con lo que ya usa el colegio queda como supuesto",
+      "donde": "Supuestos: 'Los colegios privados registran asistencia y notas en formato exportable'; Solucion: 'importa asistencia y calificaciones (planilla o registro propio en la app)'.",
+      "problema": "Si el colegio ya registra en una suite, hacer que el adscripto exporte una planilla cada semana es trabajo extra y cambia su rutina; si no la usa, 'registro propio en la app' lo obliga a cargar todo dos veces. Ninguna ficha dice como llevan hoy asistencia los colegios uruguayos. F-educacion-007 (Colombia) habla de plataformas no integradas, pero es otro pais y otro dolor (gestion administrativa).",
+      "tipo": "evidencia",
+      "evidencia": ["F-educacion-007"]
+    }
+  ],
+  "nuevas_fichas": []
+}

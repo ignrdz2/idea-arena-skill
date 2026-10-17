@@ -1,0 +1,90 @@
+{
+ "id": "i010",
+ "titulo": "Alertas tempranas de ausentismo y desvinculación para liceos privados",
+ "problema": "En Uruguay, de 100 adolescentes que ingresaron al liceo en 2017 solo 43 egresaron en ocho años y casi la mitad faltó al menos el 11% de los días (F-educacion-001). En primer año solo 4 de cada 10 alumnos asisten más del 80% de los días (F-educacion-002), y la promoción en Media Superior cayó 4,3 puntos en 2023 (F-educacion-003). Para un colegio privado cada alumno que se desvincula es además una cuota que se pierde, en un sector con cierres y fusiones analizadas por el MEC (F-educacion-004). Hoy el adscripto lo detecta tarde, a mano.",
+ "usuario": "Adscriptos y coordinadores de colegios privados (Audec, Aidep) lo usan a diario; paga la dirección del colegio.",
+ "solucion": "Plataforma web que importa asistencia y calificaciones (planilla o registro propio en la app), calcula un puntaje de riesgo por alumno con reglas explicables más un modelo simple entrenado con los datos del propio colegio, y genera una lista semanal priorizada. Para cada alumno en riesgo un asistente con LLM resume el historial (faltas, notas, observaciones) y propone un borrador de mensaje a la familia que el adscripto revisa antes de enviar. Registra intervenciones y resultados.",
+ "mvp": {
+  "semestre_1": [
+   "Importador de planillas de asistencia y notas, modelo de datos y panel por grupo",
+   "Puntaje de riesgo por reglas explicables con datos anonimizados de un colegio piloto",
+   "Demo: lista semanal priorizada con el motivo de cada alerta"
+  ],
+  "semestre_2": [
+   "Resumen por alumno y borrador de mensaje a familias con LLM, con revisión humana",
+   "Registro de intervenciones y tablero de resultados",
+   "Modelo predictivo simple comparado contra las reglas, y política de datos según Ley 18.331",
+   "Demo: piloto de un trimestre en un colegio y business case"
+  ]
+ },
+ "stack": [
+  "Python",
+  "FastAPI",
+  "PostgreSQL",
+  "scikit-learn",
+  "React",
+  "Gemini 2.5 Flash-Lite API",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 119,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 1 GB",
+    "usd_anual": 84,
+    "supuesto": "Plan de USD 7 por mes con IPv4, 12 meses, aloja app y PostgreSQL en Docker para desarrollo, pruebas y un piloto de 1 a 3 colegios.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API Gemini 2.5 Flash-Lite",
+    "usd_anual": 20,
+    "supuesto": "Unos 20 millones de tokens de entrada (USD 0,10 por millón) y 5 millones de salida (USD 0,40 por millón) en el año: unos USD 4, redondeado a 20 con margen. No se cuenta la capa gratuita.",
+    "fuente_precio_url": "https://ai.google.dev/gemini-api/docs/pricing"
+   },
+   {
+    "concepto": "Dominio y DNS",
+    "usd_anual": 15,
+    "supuesto": "Estimación por encima sin fuente abierta: un dominio .com cuesta del orden de USD 10 a 12 por año; se redondea a 15 con margen. DNS en el mismo registrador."
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Asistente.uy",
+   "evidencia_ids": [
+    "F-educacion-005"
+   ],
+   "hueco": "Ofrece asistencia digital y seguimiento estudiantil dentro de una suite de gestión; la ficha no muestra que priorice alumnos por riesgo ni que mida intervenciones. Se puede integrar como fuente de datos en lugar de competir."
+  },
+  {
+   "nombre": "Colegium (SchoolTrack)",
+   "evidencia_ids": [
+    "F-educacion-006"
+   ],
+   "hueco": "Suite de gestión escolar regional; la ficha (de 2019) no menciona alertas de desvinculación. Obliga a migrar toda la gestión."
+  }
+ ],
+ "monetizacion": "Suscripción anual por colegio según matrícula, por ejemplo USD 3 por alumno por año (un colegio de 500 alumnos paga USD 1.500). Venta directa a direcciones y vía asociaciones de colegios. Precio a validar en entrevistas.",
+ "riesgos": [
+  "Pocos datos históricos por colegio para entrenar un modelo; las reglas pueden alcanzar",
+  "Datos de menores: exige consentimiento y cumplimiento estricto de Ley 18.331",
+  "Las suites existentes pueden agregar alertas similares",
+  "Ciclo de venta lento, atado al año lectivo"
+ ],
+ "supuestos": [
+  "Los colegios privados registran asistencia y notas en formato exportable",
+  "Retener alumnos es una prioridad económica de las direcciones",
+  "Los colegios pagarían del orden de USD 3 por alumno por año",
+  "Se consigue un colegio piloto antes de diciembre de 2026 sin contactos previos declarados",
+  "Los patrones de ausentismo de liceos públicos se parecen a los de privados"
+ ],
+ "evidencias": [
+  "F-educacion-001",
+  "F-educacion-002",
+  "F-educacion-003",
+  "F-educacion-004",
+  "F-educacion-005",
+  "F-educacion-006"
+ ]
+}

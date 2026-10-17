@@ -1,214 +1,326 @@
-# The Arena skill
+# /idea-arena: un embudo de ideas de tesis
 
-When Claude keeps giving you bad answers, make 100 versions of it fight to the death. One Claude
-Code skill. Free, MIT, no signup, no API key, nothing to connect.
+**In English.** `/idea-arena` is a Claude Code skill that finds and filters startup-style
+engineering thesis ideas with a pipeline of sub-agents. Agents research real problems in Uruguay
+and Latin America and write evidence cards. A Python verifier opens every cited URL. Other agents
+generate ideas that must cite that evidence, then a hard filter drops ideas over budget or without
+local evidence, and a scope check and a dedup pass cut what is left. The survivors fight in an
+elimination tournament: each round a different persona (customer, competitor, investor, advisor)
+attacks both ideas, each idea defends and revises itself, and a blind judge scores the match on a
+written rubric. The output is a shortlist with the full verdict trail, five market-validation
+questions per idea and interview scripts. The state machine, filters, rubric math and bracket are
+plain Python 3.8+ with no dependencies and a unit test suite. Every run is versioned in `runs/`.
+It builds on the open-source `/arena` skill (credit at the end). The rest of this README is in
+Spanish.
 
-You use it when you are not happy with what Claude gave you. Instead of asking again and again,
-`/arena` spins up 100 sub-agents and gives every one of them the exact same task, word for word.
-Each one gets a different strategy card: a way of reasoning, a workflow and a strategy, so each one
-attacks the task differently. Then they pair off. Each attacks the other's solution, each defends
-and revises its own, and a judge scores the match on a written rubric. The loser is out. 100
-becomes 50, then 25, 13, 7, 4, 2, 1.
+## En español
 
-What comes back is the one solution that survived, the attacks it beat on the way, and how many
-rounds it took.
+`/idea-arena` adapta el torneo de `/arena` para generar y filtrar ideas de tesis de ingeniería en
+modalidad emprendedurismo. Sub-agentes investigan problemas reales en Uruguay y LATAM, generan ideas
+que citan esa evidencia, las filtran y las hacen pelear en un torneo con ataques de personas y un
+juez ciego. Al final queda una shortlist de 5 a 8 ideas con el rastro de cada veredicto, 5 preguntas
+para validar cada idea con gente del mercado y un guion de entrevista.
 
-**It never touches your files.** Every sub-agent writes inside `.arena/`. The winning answer comes
-back to you, and using it is your call.
+No elige la tesis por ustedes. Achica el espacio de búsqueda con evidencia verificable y les dice qué
+validar primero.
 
-## Install
+## Antes del primer run
 
-Paste this into Claude:
+1. **Completá los placeholders.** `python skills/idea-arena/idea_arena.py doctor` lista cada
+   `<<COMPLETAR>>` y `<<REVISAR>>` que falta (ver la lista al final de este archivo). Los agentes
+   tratan un placeholder como "sin información", así que el pipeline corre igual, pero el encaje con
+   el equipo se evalúa a ciegas hasta que lo completen.
+2. **Calibrá el juez** con 3 ideas sobre las que ya tengas opinión (ver "Calibración").
+3. **Corré el piloto** y mirá el resultado antes del run completo.
+4. **Permisos.** Los sub-agentes usan WebSearch y WebFetch y escriben en `runs/`. Sin reglas de
+   permiso, cada uso pide aprobación (cientos en un run completo). Opciones: aprobá "para esta
+   sesión" cuando aparezca el primer pedido de cada herramienta y usá el modo aceptar ediciones
+   (Shift+Tab), o agregá esto a `.claude/settings.local.json` del proyecto:
+
+   ```json
+   {
+     "permissions": {
+       "allow": [
+         "WebSearch",
+         "WebFetch",
+         "Edit(runs/**)",
+         "Bash(python skills/idea-arena/idea_arena.py:*)"
+       ]
+     }
+   }
+   ```
+
+   Nada de esto lo configura el skill: es decisión de ustedes.
+
+Requisitos: Claude Code y Python 3.8 o más nuevo, sin dependencias. En Windows el comando es
+`python`; en macOS y Linux, `python3`. El comando `/idea-arena` ya está registrado en este proyecto
+por `.claude/skills/idea-arena/SKILL.md`, que redirige a `skills/idea-arena/SKILL.md`. Abrí Claude
+Code en la raíz del repo.
+
+## Cómo correr el piloto
+
+En Claude Code, desde la raíz del repo:
 
 ```
-https://github.com/Jakeschincariol/arena-skill
-
-Install this skill, then confirm /arena works.
+/idea-arena --pilot --dry-run      ver el plan: fases, llamadas, oleadas y tokens, sin gastar nada
+/idea-arena --pilot                correr el piloto
 ```
 
-Or copy the folder yourself, in Claude Code:
+El piloto usa 3 sectores (sorteados con la semilla, o los que pongas en `pilot.sectors`), 5
+generadores de 2 ideas, un bracket de hasta 8 y una shortlist de 5: hasta 53 llamadas a
+sub-agentes en unas 14 oleadas. Claude orquesta todo y al final te muestra la tabla de la shortlist.
+El resultado queda en `runs/<YYYYMMDD-HHMM>/shortlist.md`.
 
-```bash
-git clone https://github.com/Jakeschincariol/arena-skill.git
-cp -r arena-skill/skills/arena ~/.claude/skills/
-```
+Qué mirar en el piloto antes de pasar al run completo:
+- `filter/reporte.md`: cuántas fichas se descartaron y por qué (muertas, bloqueadas, esquema), y
+  cuántas ideas cayeron en cada filtro.
+- Algunas fichas en `evidence/fichas.json`: si los hallazgos son concretos y las fuentes, buenas.
+- Una página de idea en `ideas/` y un veredicto en `tournament/r1/`.
+- El uso de tokens real en tu plan, para decidir si el run completo entra.
 
-Or as a plugin:
+## Correr el run completo en la nube
 
-```
-/plugin marketplace add Jakeschincariol/arena-skill
-/plugin install arena-skill@arena-skill
-```
+Una sesión de Claude Code en la nube corre el run en una VM de Anthropic, sigue aunque cierres la
+computadora y gasta primero el crédito de sesiones en la nube, si lo tenés.
 
-Claude Code namespaces plugin skills, so installed as a plugin it shows up as `/arena-skill:arena`.
-Copy the folder instead if you want plain `/arena`. Project-local instead of global: copy the same
-folder into your repo's `.claude/skills/`.
+1. **Entorno con red completa.** En [claude.ai/code](https://claude.ai/code), el ícono de nube
+   arriba del cuadro de mensaje abre el selector de entornos. Creá uno (por ejemplo "idea-arena")
+   con **Network access: Full**. Con el nivel por defecto (Trusted), el verificador de Python no
+   puede abrir diarios ni sitios del gobierno y descarta las fichas. En las variables de entorno
+   agregá `BASH_DEFAULT_TIMEOUT_MS=600000`, para que los pasos que verifican URLs no se corten.
+2. **El repo en GitHub, al día.** La sesión clona la rama de GitHub, no tu copia local: hacé push
+   antes de empezar.
+3. **Nueva sesión** en ese entorno, sobre este repo y la rama `main`, en modo automático. El
+   mensaje (la semilla puede ser cualquier número; queda guardada para repetir el sorteo):
 
-It needs Claude Code, because it spawns sub-agents with the Agent tool, and Python 3.8 or newer.
-Nothing to pip install.
+   ```
+   Corré el skill idea-arena con los argumentos "--seed 7": es el run oficial, completo.
+   - Confirmo el run completo; no hace falta preguntar.
+   - Guardá el avance: después de cada step, commit de runs/ solamente y push a la rama de la sesión.
+   - Si los agentes se cortan por límite de uso, avisame cuándo se renueva y pará. Cuando te diga
+     "continuá", seguí con next.
+   ```
 
-## Use it
+4. **Si se corta** (límite de uso o VM pausada), volvé a la sesión y escribí "continuá". El estado
+   está en `runs/<run>/` y en los commits de la rama.
+5. **Al terminar**, la shortlist está en la rama de la sesión: traela con `git fetch` y mergeala a
+   `main`, o abrí un PR desde claude.ai/code.
 
-```
-/arena
-/arena --quick write the headline for our pricing page
-/arena --agents 32 fix the flaky test in tests/test_api.py
-/arena --seed 7 plan my launch week, I have 6 hours a day
-```
+## Comandos
 
-On its own, `/arena` takes your last request as the task and the answer you did not like as the one
-to beat. Claude can also reach for it without the slash, when you say something like "that's a bad
-answer, make them compete". When it starts itself like that, it asks before it spends anything.
-
-| flag | what it does |
+| en Claude Code | qué hace |
 | --- | --- |
-| `--agents N` | N competitors. Default 100. |
-| `--quick` | 16 competitors. The everyday setting. |
-| `--seed S` | Same seed, same cards and same bracket. Default random, and recorded. |
-| `--wave W` | Sub-agents per wave. Default 10. Only raise it if you raised Claude Code's limit. |
+| `/idea-arena --dry-run` | el plan del run completo, sin escribir nada |
+| `/idea-arena --pilot` | el piloto |
+| `/idea-arena` | el run completo (pide confirmación antes de empezar) |
+| `/idea-arena --seed 7` | misma semilla, mismo sorteo de sectores, IDs y cruces (no las mismas respuestas) |
+| `/idea-arena calibrate` | calibrar el juez contra tu ranking |
+| `/idea-arena deepen i007` | profundizar una idea: arquitectura, costos y competidores |
+| `/idea-arena status` | dónde quedó el último run |
+| `/idea-arena doctor` | placeholders pendientes y chequeos de consistencia |
+| `/idea-arena audit` | confirma con git que nada cambió fuera de `runs/` |
 
-## How it works
+La herramienta también se usa a mano: `python skills/idea-arena/idea_arena.py <comando>`, con
+`plan`, `init`, `next`, `prompts`, `check`, `step`, `status`, `record`, `deepen`, `calibrate`,
+`doctor` y `audit`. Si se corta la sesión a mitad de un run, `/idea-arena status` y después pedile a
+Claude que siga: `next` retoma desde el disco.
 
-1. **Spawn.** N sub-agents, one Agent call each. Every one gets the same task text, byte for byte
-   (a test checks it), plus one strategy card. There are 15 reasoning modes (first principles,
-   inversion, analogy, adversarial, constraint first, worked example, Socratic, contrarian, systems
-   thinking and more), 12 workflows (draft, critique, rewrite; outline first; test first; research,
-   then synthesise; three drafts, pick one...) and 12 strategies (simplest thing that works, maximal
-   rigour, user empathy first, edge cases first, speed...). That is 2,160 different cards. The
-   dealer gives each agent its own, with no repeats.
-2. **Attack.** Solutions are paired, and the pairing avoids putting two agents with the same
-   reasoning mode against each other. Each side attacks the other's solution through its own card:
-   what is wrong, what requirement it missed, the exact input that breaks it. Up to 7 attacks,
-   labelled FATAL, MAJOR or MINOR.
-3. **Defend.** Each side answers every attack it took, conceding or rebutting with evidence, then
-   rewrites its solution to fix everything it conceded.
-4. **Judge.** A separate judge sub-agent reads both revised solutions, checks every attack itself,
-   and scores both on [the rubric](skills/arena/rubric.md): correctness 30, completeness against the
-   task 25, robustness to the attacks raised 20, specificity 15, clarity 10. The judge never sees
-   the cards. `bracket.py` does the arithmetic: the higher total goes through, and a solution with a
-   verified fatal flaw cannot beat one without. The loser is out.
-5. **Repeat.** The survivors carry their revised solutions into the next round. An odd number means
-   one bye, never to the same agent twice while anyone else is waiting for one.
-6. **Result.** One solution left. You get it, the attacks it survived, its card and the round count.
-   If you started from an answer you rejected, a last judge compares the winner with it blind and
-   the skill tells you the score, even when the old answer wins.
+## El pipeline
 
-The 100-agent bracket, from `python3 skills/arena/bracket.py plan`:
+1. **Investigación.** Un agente por sector busca dolores concretos, ofertas laborales que revelan
+   dolores, informes y competidores, y escribe fichas de evidencia (`briefs/01_investigacion.md`).
+2. **Verificación (Python).** Pide cada URL por HTTP. Una URL que no existe descarta la ficha. Una
+   URL que el sitio no deja leer a un script (LinkedIn y algunos portales) queda marcada como
+   `bloqueada`: cuenta, vale menos, y una idea no puede apoyarse solo en fichas bloqueadas. Si la
+   ficha trae una cita literal, Python la busca en la página.
+3. **Generación.** Cada generador recibe una estrategia de arranque (`strategies.json`) y sus propios
+   sectores foco (uno por generador cuando alcanzan), y escribe ideas de una página que citan fichas
+   por ID (`briefs/02_generacion.md`). El problema central de cada idea sale de sus sectores.
+4. **Filtro duro (Python).** Esquema completo, costo anual dentro del tope, ítems que suman el
+   total, IDs citados que existen, mínimo de evidencia, evidencia de Uruguay o LATAM, y página de
+   hasta 700 palabras. Un precio sin fuente verificada no descarta la idea: queda como estimación,
+   con un aviso en la página para el juez, y cuenta para el tope igual.
+5. **Alcance.** Un agente por lote de 3 ideas decide si el MVP entra en dos semestres: viable, viable
+   con recorte o inviable. Solo "inviable" elimina.
+6. **Deduplicación.** Similitud de texto en Python más un agente que agrupa casi-duplicados. Queda la
+   idea de cada grupo con más evidencia verificada.
+7. **Selección (Python).** Hasta 16 candidatas (8 en el piloto), repartidas por sector.
+8. **Torneo.** Cada cruce: las dos ideas reciben ataques de la misma persona (cliente uruguayo,
+   competidor, inversor, tutor; cambia por ronda), cada una se defiende y se revisa, y un juez ciego
+   las puntúa con `rubric.md`. Python aplica la cuenta y la regla del fallo fatal.
+9. **Shortlist.** Ranking, 5 preguntas de validación por idea (un agente por idea), guiones de
+   entrevista y `shortlist.md`.
 
-```
-  round  alive  matches  bye  sub-agent calls  waves
-  spawn    100        -    -              100     10
-      1    100       50    -              250     25
-      2     50       25    -              125     13
-      3     25       12  yes               60      8
-      4     13        6  yes               30      5
-      5      7        3  yes               15      3
-      6      4        2    -               10      3
-      7      2        1    -                5      3
-  total                                 595     70
+### La rúbrica y el fallo fatal
 
-  alive per round: 100 -> 50 -> 25 -> 13 -> 7 -> 4 -> 2 -> 1
-```
+Evidencia de demanda 25, viabilidad con el presupuesto y el plazo 25, diferenciación 20, calidad del
+business case 15, encaje con el equipo 10, valor académico 5. Un **fallo fatal** es violar una
+restricción dura de `constraints.md` o sostener una afirmación central sin evidencia. El juez solo
+puede marcarlo con una de esas dos categorías, y Python además marca como fatal una idea revisada que
+rompe el filtro duro. Una idea con fallo fatal no le gana a una sin él, y una idea que perdió su
+último cruce con fallo fatal no entra en la shortlist.
 
-The whole tournament lives in one JSON file, managed by `bracket.py`. The main Claude session
-only runs the loop and never reads the hundreds of solution files: every sub-agent writes its work
-to disk and replies with one line, so the main context holds receipts and bookkeeping, not the
-work. If the conversation gets compacted halfway through, `bracket.py next` picks it up from the
-file.
+### El juez ciego y el orden
 
-## What it costs
+El juez ve "Idea X" e "Idea Y", nunca los IDs ni la estrategia con la que nació cada idea (eso queda
+en `ideas/meta.json`, que ningún agente del torneo lee). Los IDs se asignan después de barajar. En
+cada cruce va primero la idea que fue mostrada primero menos veces; si empatan, el orden alterna
+cruce a cruce. Con los cruces que arma `bracket.py`, una idea puede igual quedar primera 3 veces más
+que segunda (pasó en el 1,1% de 4.500 torneos simulados de 2 a 16 ideas). Si la calibración
+muestra sesgo de posición, poné `tournament.judge_both_orders: true`: cada cruce se juzga en los dos
+órdenes y se promedian los puntajes (un 20% más de llamadas en el torneo).
 
-The skill is free. The tokens are yours, and 100 agents is a lot of them.
+## Configuración (`skills/idea-arena/config.json`)
 
-| agents | rounds | sub-agent calls | waves of 10 |
+| clave | default | qué controla |
+| --- | --- | --- |
+| `infra_budget_usd` | 300 | tope duro del costo anual de infraestructura (restricción R1) |
+| `infra_budget_target_usd` | 200 | objetivo cómodo: entre este valor y el tope, la idea es válida pero puntúa menos en viabilidad |
+| `team` | 3 personas, 10 a 16 h/semana, 32 semanas | la capacidad de referencia para el chequeo de alcance |
+| `sectors` | 10 sectores | un agente de investigación por sector. Agregá, sacá o renombrá |
+| `research` | 6 a 15 fichas, fuentes de hasta 5 años | cuánta evidencia pide cada investigador |
+| `evidence.on_blocked` | `keep_flagged` | `discard` descarta también las URLs bloqueadas |
+| `evidence.excerpt_check` | `warn` | `discard` descarta fichas cuya cita literal no aparece en la página |
+| `generation` | 10 agentes x 3 ideas | cuántas ideas nacen |
+| `filter` | 2 fichas mínimo, 1 local, 700 palabras, lotes de 3 | el filtro duro y el chequeo de alcance |
+| `selection.max_candidates` | 16 | tamaño del bracket |
+| `tournament.persona_order` | cliente, competidor, inversor, tutor | qué persona ataca en cada ronda |
+| `tournament.judge_both_orders` | false | juez doble, con el orden invertido |
+| `tournament.attackers_can_search` | true | si atacantes y defensores pueden traer evidencia nueva de la web |
+| `shortlist.size` | 8 | cuántas ideas van a la shortlist |
+| `models` | todo `null` | modelo por fase; `null` es el de la sesión |
+| `limits` | ver archivo | tope de llamadas por fase: `init` se niega si el plan lo supera |
+| `pilot` | 3 sectores, 5x2 ideas, bracket 8, top 5 | lo que cambia con `--pilot` |
+| `seed` | null | semilla fija para todos los runs; null es al azar (y queda registrada) |
+
+Cada run guarda una copia congelada de la configuración en `runs/<run>/inputs/`, así que cambiar
+`config.json` no altera runs anteriores.
+
+## Cuánto cuesta en tokens
+
+El skill es gratis; los tokens son de ustedes, y esto gasta muchos. Estimación gruesa, hasta que el
+piloto la mida:
+
+| modo | llamadas a sub-agentes | oleadas de 10 | tokens, a ojo |
 | --- | --- | --- | --- |
-| 100, the default | 7 | 595 | 70 |
-| 64 | 6 | 379 | 49 |
-| 32 | 5 | 187 | 28 |
-| 16, `--quick` | 4 | 91 | 16 |
-| 8 | 3 | 43 | 10 |
+| `--pilot` | hasta 53 | unas 14 | 1,1 a 2,6 millones |
+| completo | hasta 114 | unas 19 | 2,5 a 6,2 millones |
+| `calibrate` (3 ideas) | 6 | 1 | 0,1 a 0,3 millones |
+| `deepen` | 3 por idea | 1 | 0,1 a 0,4 millones por idea |
 
-Add one call when there is a rejected answer to beat. Every call reads the task and one or two
-solutions, so the bill grows with the size of the task. Use `--quick` or `--agents 16` for
-everyday things and save the full 100 for the answer that matters. The skill prints these numbers
-before it starts, and `python3 skills/arena/bracket.py plan --agents N` prints them any time.
+La investigación es la fase más cara (los agentes leen páginas web enteras). Para gastar menos:
+corré el piloto primero, poné `"sonnet"` en `models.research`, `models.attack` y `models.defend`
+(dejá el juez con el modelo de la sesión), bajá `generation.agents` o `selection.max_candidates`
+(con 8 candidatas el torneo baja de 75 a 35 llamadas). `/idea-arena --dry-run` recalcula todo antes de
+gastar. En un plan de suscripción esto consume tu límite de uso: un run completo puede llevarse una
+buena parte de una ventana. Tiempo, a ojo: el piloto, alrededor de una hora; el completo, de 2 a 4.
 
-## The tool
+## Cómo editar `constraints.md`
 
-`bracket.py` is standard-library Python. It is the reason the orchestrator never loses track.
+`skills/idea-arena/constraints.md` es lo que todos los agentes leen. Tiene tres partes:
 
-```bash
-python3 bracket.py plan --agents 100        # rounds, calls, waves. Writes nothing
-python3 bracket.py init --agents 100 --seed 7 --task-file task.md [--baseline-file old.md]
-python3 bracket.py next                     # what to do now, with the exact command
-python3 bracket.py prompts attack           # write every sub-agent brief, list the jobs in waves
-python3 bracket.py pairings                 # this round's matches, including the bye
-python3 bracket.py collect                  # record the judges' verdicts
-python3 bracket.py record r3-m07 a042 --reason "..."   # or record one by hand
-python3 bracket.py advance                  # eliminate the losers, pair the survivors
-python3 bracket.py status                   # alive and eliminated, per round
-python3 bracket.py winner                   # the survivor, the attacks it survived, the rounds
+1. **Restricciones duras (R1 a R7).** Eliminan ideas y son las únicas que el juez puede citar como
+   fallo fatal. Para agregar una, usá el ID siguiente con el formato `- **R8** (tema): texto`. Si le
+   escribís `[A CONFIRMAR]`, el juez la trata como criterio blando hasta que saques la marca.
+2. **Perfil del equipo.** Fortalezas, experiencia, intereses y horas de cada integrante, la tabla de
+   contactos en industrias concretas y las preferencias. Los contactos importan: suben el encaje y
+   habilitan ideas que necesitan datos de un socio (R7).
+3. **Criterios blandos con pesos.** Si cambiás un peso, cambialo también en `rubric.md` y en
+   `CRITERIA` de `ia_tournament.py`; un test verifica que los tres coincidan.
+
+`{{infra_budget_usd}}` y los otros valores entre llaves se completan solos desde `config.json` en la
+copia de cada run. No uses los caracteres de raya larga ni de semirraya en ningún archivo del repo:
+un test los prohíbe (las salidas de los agentes se sanean solas).
+
+## Calibración
+
+Antes de gastar en un run completo, comprobá que el juez piensa parecido a ustedes:
+
+1. Reemplazá los placeholders de `skills/idea-arena/calibration/ideas/idea_A.md`, `idea_B.md` e
+   `idea_C.md` con tres ideas que ya conozcan y sobre las que tengan opinión. Mantené las secciones
+   y poné links donde haya evidencia. Podés agregar más archivos.
+2. Escribí tu orden en `skills/idea-arena/calibration/my_ranking.md`.
+3. `/idea-arena calibrate`. El juez compara cada par en los dos órdenes (6 llamadas con 3 ideas).
+4. Leé `runs/<run>/calibration_report.md`: acuerdo por pares con tu ranking, tau de Kendall,
+   consistencia entre órdenes (sesgo de posición) y en qué criterios tu idea preferida puntuó menos.
+   Ajustá pesos o anclas en `rubric.md` y repetí.
+
+Con 3 ideas la señal es gruesa: un desacuerdo puede ser ruido. Usala para detectar desvíos grandes.
+
+## Profundizar una idea
+
+`/idea-arena deepen i007` lanza 3 agentes sobre la última versión de la idea: un bosquejo de
+arquitectura, un modelo de costos mes a mes con tres escenarios y fuentes de precios, y una tabla de
+competidores. Las fuentes nuevas se verifican como cualquier ficha. Queda en
+`runs/<run>/deepen/i007/`.
+
+## Qué se versiona
+
+Todo lo que escribe el pipeline está en `runs/<YYYYMMDD-HHMM>/`, y `runs/` no está en `.gitignore` a
+propósito: fichas, ideas, veredictos y briefs son el registro de cómo eligieron la tesis.
+`runs/README.md` describe cada archivo. El skill no hace commits. Antes de un commit,
+`/idea-arena audit` confirma que nada cambió fuera de `runs/`. Los briefs de `prompts/` tienen rutas
+absolutas de la máquina donde se corrió el run: los agentes las necesitan.
+
+## La letra chica
+
+- **Una URL que existe no prueba que diga lo que la ficha afirma.** Python verifica que la página
+  exista y, si hay cita literal, que la cita esté. Que el hallazgo esté bien parafraseado lo chequean
+  el juez y los atacantes. Revisen a mano las fichas de las ideas que les interesen.
+- **Los jueces son Claude.** La shortlist es lo que sobrevivió a este torneo, no una verdad. Por eso
+  muestra el rastro de cada veredicto, y por eso existen las preguntas de validación.
+- **Más allá del puesto 2, el orden es ruidoso.** Dos ideas eliminadas en la misma ronda enfrentaron
+  rivales distintos.
+- **La misma semilla da el mismo sorteo, no las mismas ideas.** Los modelos no son deterministas.
+- **Si el sector no tiene evidencia en la web, no hay ideas de ese sector.** Las ideas nacen de
+  fichas; el conocimiento de ustedes entra por los contactos y los intereses en `constraints.md`.
+
+## Placeholders que te toca completar
+
+`/idea-arena doctor` los lista con número de línea. Hoy son:
+
+**`skills/idea-arena/constraints.md`**
+- Perfil técnico: el `<<REVISAR>>` sobre OpenAI. En tu descripción dice "Azure, AWS OpenAI";
+  aclarar si es Azure OpenAI, OpenAI vía AWS u otra cosa.
+- Capacidad: semanas efectivas por semestre según el calendario de la facultad (opcional).
+- Integrantes 1, 2 y 3: nombre o rol, fortalezas técnicas propias, experiencia laboral, intereses y
+  horas por semana si difieren de 10 a 16 (opcional).
+- Tabla de contactos en industrias concretas: sector, organización, persona o rol, qué puede aportar
+  y quién del equipo lo conoce (dos filas de ejemplo; agreguen las que tengan).
+- Preferencias del equipo: sectores preferidos y sectores a evitar (opcionales, no eliminan ideas).
+
+**`skills/idea-arena/calibration/`**
+- `ideas/idea_A.md`, `ideas/idea_B.md`, `ideas/idea_C.md`: tres ideas reales sobre las que tengas
+  opinión.
+- `my_ranking.md`: tu orden de las tres.
+
+## Archivos
+
+```
+skills/idea-arena/SKILL.md            la orquestación que sigue Claude
+skills/idea-arena/idea_arena.py       la herramienta: máquina de estados del pipeline
+skills/idea-arena/ia_tournament.py    el torneo, sobre skills/arena/bracket.py (importado, no copiado)
+skills/idea-arena/ia_schema.py        validación, filtro duro y la página de 1 hoja
+skills/idea-arena/ia_evidence.py      chequeo HTTP de URLs, similitud de texto, saneo
+skills/idea-arena/config.json         los parámetros
+skills/idea-arena/constraints.md      restricciones, perfil del equipo y criterios
+skills/idea-arena/rubric.md           la rúbrica del juez
+skills/idea-arena/strategies.json     las 5 estrategias de arranque
+skills/idea-arena/personas.json       las 4 personas de ataque
+skills/idea-arena/schemas/            los formatos de ficha, idea, ataque, defensa, veredicto...
+skills/idea-arena/briefs/             un brief por fase: lo que recibe cada sub-agente
+skills/idea-arena/templates/          la plantilla del guion de entrevista
+skills/idea-arena/calibration/        tus ideas de calibración y tu ranking
+.claude/skills/idea-arena/SKILL.md    registra /idea-arena en este proyecto
+docs/PLAN.md                          el plan de diseño aprobado
+tests/test_idea_arena.py              los tests
+runs/                                 todo lo que escribe el pipeline
 ```
 
-The tests run a full 100-agent tournament through that command line with random winners and check
-it ends with exactly one survivor, plus 16, 7 and 1 agents, the dealer's guarantees, and every
-phase from spawn to the final check with stand-in sub-agents:
+Tests, desde la raíz del repo: `python -m unittest discover -s tests -v`. Incluyen un piloto completo
+por línea de comandos con sub-agentes y URLs simulados, que verifica que nada se escriba fuera de
+`runs/`.
 
-```bash
-python3 -m unittest discover -s tests -v
-```
+---
 
-## The fine print
-
-**"100 versions of Claude" means 100 sub-agents of the model you are running.** Not 100 different
-models. What makes them different is the card. The dealer guarantees that no two agents get the
-same card, that every reasoning mode, workflow and strategy is dealt as evenly as possible, and that
-up to 144 agents, no two agents even share two of their three parts.
-
-**A competitor is its card plus its solution file.** Sub-agents do not remember anything between
-calls, so when competitor a017 attacks in round 3, that is a fresh sub-agent handed a017's card and
-a017's latest solution. 100 competitors, 595 calls.
-
-**"The best answer" means the one that survived every match.** The judges are Claude too, scoring
-against a written rubric that is in this repo for you to read and change. What you get is the
-strongest answer this tournament found, not a proof that it is right. That is why it shows you the
-attacks it survived, and why it tells you straight when the answer you rejected scored higher.
-
-**100 agents do not all run at the same moment.** Claude Code runs at most 10 tool calls at once by
-default (the `CLAUDE_CODE_MAX_TOOL_USE_CONCURRENCY` setting), so the arena runs in waves of 10. The
-spawn is 10 waves, the whole 100-agent run is 70, and it takes a while. If you raise that limit,
-pass `--wave` to match.
-
-**Expect permission prompts unless you allow edits.** Every sub-agent writes a file into `.arena/`,
-and in the default permission mode that is one approval per file. Run it in accept-edits mode
-(Shift+Tab).
-
-**Sub-agents cannot see your chat.** The skill writes a standalone task file, and that file is all
-100 agents ever know. If a requirement never made it into the file, all 100 miss it. It is at
-`.arena/<run>/task.md` if you want to check.
-
-**It never edits your project.** Code changes come back as a diff or as full files inside the
-winning answer. Applying them is your call, and the skill asks.
-
-**The same seed gives the same cards and the same bracket.** Not the same answers. The model is not
-deterministic.
-
-**It does not fix a bad task.** Vague task in, 100 flavours of vague out.
-
-## Files
-
-```
-skills/arena/SKILL.md          the orchestration steps and the exact brief every sub-agent gets
-skills/arena/bracket.py        the tournament state machine, standard library only
-skills/arena/strategies.json   15 reasoning modes, 12 workflows, 12 strategies. Edit freely
-skills/arena/rubric.md         the five criteria every judge scores on
-tests/test_bracket.py          the tests
-```
-
-## Credit
-
-Made by Jake Schincariol, [opusjake.ai](https://opusjake.ai).
-
-## License
-
-MIT. Take it, change it, ship it.
+Basado en [/arena](https://github.com/Jakeschincariol/arena-skill) de Jake Schincariol (licencia MIT, ver `LICENSE`). Su README original está en [`skills/arena/README.md`](skills/arena/README.md).

@@ -1,0 +1,92 @@
+{
+ "id": "i010",
+ "titulo": "Alertas tempranas de ausentismo y desvinculación para liceos privados",
+ "problema": "En Uruguay, de 100 adolescentes que ingresaron al liceo en 2017 solo 43 egresaron en ocho años y casi la mitad faltó al menos el 11% de los días (F-educacion-001). En primer año solo 4 de cada 10 asisten más del 80% de los días (F-educacion-002). Son cifras de liceos en general: cuánto aplican a privados es parte de la validación. Los liceos privados suman 41.235 alumnos (F-defensa-r1-m03-i010-001) y el sector sufre cierres y fusiones (F-educacion-004): perder un alumno es perder una cuota.",
+ "usuario": "Adscriptos y coordinadores de colegios privados (Audec y Aidep: unos 220 colegios, 113.000 alumnos, F-educacion-004); paga la dirección.",
+ "solucion": "Plataforma web que importa planillas de asistencia y notas (exportes de la suite del colegio), calcula un puntaje de riesgo con reglas explicables más un modelo simple, y genera una lista semanal priorizada con el motivo de cada alerta. Para cada alumno en riesgo, un LLM recibe solo datos seudonimizados y propone un borrador de mensaje a la familia, que el adscripto revisa antes de enviar. Registra intervenciones y resultados.",
+ "mvp": {
+  "semestre_1": [
+   "Importador de planillas, modelo de datos y panel por grupo",
+   "Generador de cohortes sintéticas y puntaje de riesgo por reglas explicables",
+   "Demo: lista semanal priorizada con motivo de cada alerta, con datos sintéticos"
+  ],
+  "semestre_2": [
+   "Seudonimizador y borrador de mensaje a familias con LLM, con revisión humana",
+   "Registro de intervenciones y tablero de resultados",
+   "Modelo simple comparado contra las reglas (retrospectivo; histórico de un colegio si hay, si no sintético) y política de datos según Ley 18.331",
+   "Demo: piloto si se consigue colegio; si no, simulación completa, más business case"
+  ]
+ },
+ "stack": [
+  "Python",
+  "FastAPI",
+  "PostgreSQL",
+  "scikit-learn",
+  "React",
+  "Gemini 2.5 Flash-Lite API",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 119,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 1 GB",
+    "usd_anual": 84,
+    "supuesto": "Plan de USD 7 por mes, 12 meses; aloja app y PostgreSQL en Docker para desarrollo, pruebas y piloto.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API Gemini 2.5 Flash-Lite",
+    "usd_anual": 20,
+    "supuesto": "20 millones de tokens de entrada (USD 0,10 por millón) y 5 millones de salida (USD 0,40): unos USD 4, redondeado a 20. Sin capa gratuita.",
+    "fuente_precio_url": "https://ai.google.dev/gemini-api/docs/pricing"
+   },
+   {
+    "concepto": "Dominio y DNS",
+    "usd_anual": 15,
+    "supuesto": "Estimación sin fuente: un dominio .com cuesta del orden de USD 10 a 12 por año; se redondea a 15."
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Asistente.uy",
+   "evidencia_ids": [
+    "F-educacion-005"
+   ],
+   "hueco": "Tiene asistencia, seguimiento estudiantil y portal de familias; la ficha (un comparador) no muestra priorización por riesgo ni medición de intervenciones, y podría sumar alertas. Por eso es una capa sobre sus exportes, con puntaje explicable y resultados."
+  },
+  {
+   "nombre": "Colegium (SchoolTrack)",
+   "evidencia_ids": [
+    "F-educacion-006"
+   ],
+   "hueco": "Suite regional; la ficha (2019) no menciona alertas, lo que no prueba que no existan. Obliga a migrar toda la gestión; esta idea no."
+  }
+ ],
+ "monetizacion": "Suscripción anual por colegio, por ejemplo USD 3 por alumno por año. Con el promedio de F-educacion-004 (113.000 / 220, unos 514 alumnos) un colegio paga unos USD 1.500; 10 colegios, unos USD 15.000. Precio, decisor y partida a validar en entrevistas.",
+ "riesgos": [
+  "Sin colegio piloto, el modelo se compara con datos sintéticos: menos valor académico, demanda sin medir",
+  "Datos de menores: el LLM recibe solo datos seudonimizados; se asume que no hay transferencia de datos personales (art. 23, F-defensa-r1-m03-i010-002), a confirmar con la URCDP",
+  "Las suites existentes pueden agregar alertas",
+  "Un trimestre mide detección anticipada, no retención"
+ ],
+ "supuestos": [
+  "Los colegios exportan asistencia y notas y aceptan cargar una planilla semanal",
+  "Retener alumnos es una prioridad económica de las direcciones",
+  "Pagarían del orden de USD 3 por alumno por año",
+  "Se consigue un colegio piloto antes de diciembre de 2026; el MVP no depende de eso",
+  "El ausentismo de liceos en general se parece al de privados",
+  "Hoy los adscriptos detectan tarde y a mano"
+ ],
+ "evidencias": [
+  "F-educacion-001",
+  "F-educacion-002",
+  "F-educacion-004",
+  "F-educacion-005",
+  "F-educacion-006",
+  "F-defensa-r1-m03-i010-001",
+  "F-defensa-r1-m03-i010-002"
+ ]
+}

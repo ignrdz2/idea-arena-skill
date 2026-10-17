@@ -1,0 +1,70 @@
+{
+ "id": "i006",
+ "titulo": "Medición de tiempos de espera para prestadores de salud chicos",
+ "problema": "La Política Nacional de Garantía de Acceso Oportuno fija plazos máximos (24 horas hábiles medicina general, 48 cirugía general, 30 días especialistas) y obliga a los prestadores a medirlos y cumplirlos (F-salud-001). Pero el propio MSP admite que faltan sistemas de información: el cálculo empieza cuando se registra la demanda, sin contar días de agenda cerrada (F-salud-002). Los prestadores con menos recursos, con presión financiera como la documentada en una mutualista (F-salud-010), difícilmente pueden encarar un proyecto informático propio para cumplir.",
+ "usuario": "Dirección técnica y administración de prestadores integrales chicos o del interior y de policlínicas privadas. Paga el prestador; lo usan el administrativo de agenda y la dirección.",
+ "solucion": "Un servicio web que registra cada pedido de consulta en el momento en que el usuario lo hace, incluso si no hay agenda abierta, y lo concilia con el turno finalmente dado. Importa los turnos desde una exportación CSV de la agenda existente, calcula el tiempo de espera por especialidad contra el plazo del decreto, alerta los pedidos por vencer y genera el reporte de cumplimiento. La dirección puede consultar en lenguaje natural (por ejemplo, qué especialidad incumplió más este mes) con Text-to-SQL.",
+ "mvp": {
+  "semestre_1": [
+   "Modelo de datos de pedidos, turnos y plazos del decreto con calendario de días hábiles",
+   "Formulario de registro de demanda e importador CSV de agendas",
+   "Tablero de cumplimiento por especialidad sobre datos sintéticos, demostrado al tutor"
+  ],
+  "semestre_2": [
+   "Alertas de pedidos por vencer y reporte exportable de cumplimiento",
+   "Consultas en lenguaje natural con Text-to-SQL y validación de las consultas generadas",
+   "Piloto con un prestador o policlínica usando su exportación real anonimizada",
+   "Business case con precio por prestador"
+  ]
+ },
+ "stack": [
+  "Python FastAPI",
+  "PostgreSQL",
+  "React",
+  "Claude Haiku 5.5 vía API para Text-to-SQL",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 109,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 1 GB con IPv4",
+    "usd_anual": 84,
+    "supuesto": "Un servidor 12 meses a USD 7 por mes con app y PostgreSQL; sin contar capa gratuita porque no se documenta su duración en la página.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API de Claude Haiku 5.5",
+    "usd_anual": 10,
+    "supuesto": "3.000 consultas en lenguaje natural con 6.000 tokens de entrada (esquema incluido) y 500 de salida: 18M a USD 0,10 y 1,5M a USD 0,50 por millón, unos USD 3; redondeo a 10.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/docs/about-claude/pricing"
+   },
+   {
+    "concepto": "Dominio propio",
+    "usd_anual": 15,
+    "supuesto": "Estimación por encima sin fuente abierta: un dominio .com por un año, redondeado hacia arriba con margen."
+   }
+  ]
+ },
+ "competidores": [],
+ "monetizacion": "Suscripción anual del prestador según tamaño, de USD 150 a 400 al mes, con implementación incluida. Canal: venta directa a direcciones técnicas, empezando por prestadores del interior.",
+ "riesgos": [
+  "Sin socio identificado para el piloto: el acceso a datos reales de agenda depende de convencer a un prestador",
+  "El MSP o los grandes proveedores de historia clínica agregan la medición a sus propios sistemas",
+  "Ciclo de venta largo en instituciones de salud",
+  "Datos personales de salud: requiere anonimización y cumplimiento de la Ley 18.331"
+ ],
+ "supuestos": [
+  "Las fichas no muestran competidores que midan tiempos de espera contra el decreto; no afirmo que no existan",
+  "Los prestadores chicos no tienen hoy un sistema para medir los plazos del decreto",
+  "Las agendas existentes permiten exportar turnos en CSV",
+  "Un prestador paga USD 150 a 400 al mes por cumplir la norma",
+  "El decreto se aplica en 2027 con los plazos anunciados"
+ ],
+ "evidencias": [
+  "F-salud-001",
+  "F-salud-002",
+  "F-salud-010"
+ ]
+}

@@ -1,0 +1,94 @@
+{
+ "id": "i023",
+ "titulo": "Carpeta crediticia portable para pymes a partir de su factura electrónica",
+ "problema": "PedidosYa Créditos prestó más de US$ 6,4 millones a más de 1.000 pymes uruguayas desde mediados de 2025, evaluándolas con las ventas que pasan por su propia app (F-fintech-seguros-005): las pymes toman crédito cuando alguien las evalúa con sus ventas reales, pero ese dato queda encerrado en una plataforma. Casi todo contribuyente uruguayo ya emite factura electrónica (F-legal-contable-002), así que la pyme tiene su historial de ventas en CFE, aunque exportar los XML cuesta (F-legal-contable-003). Hoy ordenar esa información pasa por el contador, con balances de $U 55.000 a 90.000 (F-legal-contable-001).",
+ "usuario": "Pymes y unipersonales uruguayas que facturan electrónicamente y buscan crédito o mejores condiciones. Paga la pyme por cada carpeta; en una segunda etapa pagan los financiadores por recibir carpetas estandarizadas.",
+ "solucion": "La pyme sube sus CFE en XML o el export de su proveedor de facturación. El sistema los normaliza y genera una carpeta: ventas mensuales, estacionalidad, concentración de clientes, ticket promedio y tendencia, con un resumen en lenguaje claro generado por IA que cita cada dato. La carpeta es de la pyme: la comparte con un link con vencimiento y consentimiento registrado. No presta ni da un puntaje oficial: entrega información verificable para que cualquier banco, cooperativa o fintech evalúe.",
+ "mvp": {
+  "semestre_1": [
+   "Parser de XML de CFE (e-Factura y e-Ticket) con normalización y pruebas sobre datos de ejemplo",
+   "Generación de la carpeta con indicadores de ventas y gráficos, demostrada con datos de 2 pymes voluntarias"
+  ],
+  "semestre_2": [
+   "Resumen narrativo con IA que cita cada indicador, y link compartible con consentimiento y vencimiento",
+   "Validación con al menos 2 financiadores sobre qué indicadores usan",
+   "Piloto con 10 pymes y business case"
+  ]
+ },
+ "stack": [
+  "Python",
+  "FastAPI",
+  "PostgreSQL",
+  "lxml para XML de CFE",
+  "React",
+  "Apache ECharts",
+  "Claude Haiku 5.5 API",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 107.08,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 1 GB con IPv4",
+    "usd_anual": 84,
+    "supuesto": "USD 7 por mes durante 12 meses, una instancia para app, procesamiento y base de datos; no se cuenta capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API Claude Haiku 5.5",
+    "usd_anual": 10,
+    "supuesto": "Unas 500 carpetas en desarrollo y piloto a 30.000 tokens de entrada (USD 0,10 por millón) y 2.000 de salida (USD 0,50 por millón) dan unos USD 2; se redondea a 10 con margen.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "Amazon SES para notificaciones",
+    "usd_anual": 2,
+    "supuesto": "Hasta 20.000 emails en el año a USD 0,10 cada 1.000, sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/ses/pricing/"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 11.08,
+    "supuesto": "Un dominio por un año al precio publicado de USD 11,08.",
+    "fuente_precio_url": "https://porkbun.com/tld/com"
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "PedidosYa Créditos",
+   "evidencia_ids": [
+    "F-fintech-seguros-005"
+   ],
+   "hueco": "Evalúa solo a comercios de su app con datos propios y los ata a su crédito; la pyme no puede llevar ese historial a otro financiador."
+  },
+  {
+   "nombre": "Estudios contables",
+   "evidencia_ids": [
+    "F-legal-contable-001"
+   ],
+   "hueco": "Preparan balances caros y anuales; no dan una vista mensual de ventas lista para compartir en minutos."
+  }
+ ],
+ "monetizacion": "La pyme paga USD 10 por carpeta o USD 8 por mes con actualización mensual. Más adelante, financiadores pagan por carpeta recibida estandarizada. Canal: proveedores de facturación electrónica y estudios contables como socios que lo revenden. Con 300 pymes en plan mensual serían unos USD 28.800 al año.",
+ "riesgos": [
+  "Los financiadores pueden no aceptar una carpeta de un tercero",
+  "XML adulterados: hay que validar firmas y CAE",
+  "Datos financieros sensibles exigen seguridad y cumplir la Ley 18.331",
+  "Obtener los XML depende del proveedor de facturación"
+ ],
+ "supuestos": [
+  "Muchas pymes fuera de plataformas tienen dificultad para acceder a crédito por falta de información ordenada",
+  "Financiadores valorarían una carpeta estandarizada basada en CFE",
+  "Una pyme pagaría USD 8 a 10 por carpeta",
+  "Los proveedores de CFE permiten exportar los XML, con fricción",
+  "Dar información a financiadores no requiere habilitación del BCU si no se presta ni intermedia dinero"
+ ],
+ "evidencias": [
+  "F-fintech-seguros-005",
+  "F-legal-contable-002",
+  "F-legal-contable-003",
+  "F-legal-contable-001"
+ ]
+}

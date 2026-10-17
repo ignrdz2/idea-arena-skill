@@ -1,0 +1,137 @@
+{
+ "generador": "g06",
+ "ideas": [
+  {
+   "local_id": "g06-1",
+   "titulo": "Semáforo de retiro: registro de tratamientos veterinarios y control antes de embarcar a faena",
+   "problema": "Si un animal tratado con un medicamento veterinario va a faena antes de cumplir el período de retiro, el residuo aparece en el muestreo del frigorífico y el productor enfrenta un expediente. El MGAP informó 499 expedientes por residuos iniciados en 2025 y 2026, con 52 resoluciones sancionatorias, y el muestreo en frigoríficos subió cerca de 20% desde octubre de 2025 (F-agro-001). Los eventos sanitarios de cada bovino ya se asientan en el SNIG (F-agro-002), pero ese registro no avisa qué animales siguen en retiro al armar una tropa.",
+   "usuario": "Usa: el productor ganadero o su capataz, y el veterinario que indica los tratamientos. Paga: el productor, por establecimiento; el veterinario puede revenderlo a sus clientes.",
+   "solucion": "App móvil que funciona sin señal: al tratar un animal o lote se registra caravana, producto, dosis y fecha, y la app calcula el fin de retiro con el dato que el veterinario toma del prospecto. Al armar un embarque se escanean las caravanas de la tropa y se ve un semáforo por animal: apto, en retiro (con fecha de liberación) o sin datos. Exporta el historial de tratamientos por establecimiento, útil como respaldo ante un expediente y para cargar eventos en el SNIG.",
+   "mvp": {
+    "semestre_1": [
+     "Entrevistas con productores y veterinarios sobre cómo registran hoy tratamientos y retiros",
+     "App offline con registro de tratamientos por caravana y por lote, y cálculo de fin de retiro",
+     "Sincronización con backend y vista web del veterinario con sus establecimientos",
+     "Demo al tutor: tratamientos de un rodeo de prueba y estado de cada animal"
+    ],
+    "semestre_2": [
+     "Flujo de armado de tropa con semáforo por animal y bloqueo con justificación",
+     "Exportación del historial de tratamientos a PDF y CSV por establecimiento",
+     "Piloto con al menos un veterinario y sus clientes durante parte de la zafra",
+     "Business case con precios validados; demo final con datos del piloto"
+    ]
+   },
+   "stack": [
+    "React Native con Expo",
+    "SQLite local para modo offline",
+    "FastAPI (Python)",
+    "PostgreSQL",
+    "Docker",
+    "AWS Lightsail"
+   ],
+   "costo_infra": {
+    "total_anual_usd": 104,
+    "items": [
+     {
+      "concepto": "Servidor AWS Lightsail Linux 1 GB (API y base de datos en Docker)",
+      "usd_anual": 84,
+      "supuesto": "Una instancia de USD 7 por mes durante 12 meses de 2027 para desarrollo, piloto y demo; volumen de piloto de decenas de usuarios. No se cuenta la capa gratuita porque la página no dice cuánto dura.",
+      "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+     },
+     {
+      "concepto": "Dominio para la demo y el piloto",
+      "usd_anual": 20,
+      "supuesto": "Estimación por encima: Cloudflare Registrar cobra a costo sin margen, pero la página no muestra el precio de un .com; se reservan USD 20 por un año.",
+      "fuente_precio_url": "https://www.cloudflare.com/products/registrar/"
+     }
+    ]
+   },
+   "competidores": [],
+   "monetizacion": "Suscripción anual por establecimiento y un plan para veterinarios con varios establecimientos. Canal: veterinarios de libre ejercicio y gremiales de productores. Precio y disposición a pagar a validar antes de diciembre de 2026.",
+   "riesgos": [
+    "El retiro depende de cada producto y lo carga una persona: un error da un falso apto",
+    "Adopción baja si registrar en el campo lleva más tiempo",
+    "Sin integración con el SNIG: el MVP exporta, no carga eventos en el sistema oficial",
+    "Disposición a pagar incierta si el riesgo de sanción se percibe bajo"
+   ],
+   "supuestos": [
+    "Una parte de los expedientes por residuos se origina en animales enviados antes de cumplir el retiro; la ficha no desglosa causas",
+    "Los productores no tienen hoy una herramienta simple para saber qué animales siguen en retiro al armar una tropa",
+    "Las fichas no muestran competidores; puede haber software de gestión ganadera con registro sanitario que no se relevó",
+    "Se puede contactar desde Uruguay a productores y veterinarios para validar antes de diciembre de 2026",
+    "Los tiempos de retiro se toman del prospecto de cada producto, cargados por el veterinario, sin datos pagos"
+   ],
+   "evidencias": [
+    "F-agro-001",
+    "F-agro-002"
+   ]
+  },
+  {
+   "local_id": "g06-2",
+   "titulo": "Libreta de stock bovino conciliada con la trazabilidad obligatoria",
+   "problema": "Todo productor bovino debe asentar en el SNIG los movimientos, cambios de propiedad y eventos sanitarios de cada animal, sobre la base de DICOSE y la Ley 17.997 (F-agro-002). Mantener el stock por caravana, potrero y categoría coincidiendo con lo declarado es trabajo administrativo del productor o su escritorio. En otros rubros del agro, el papeleo de traslados ya se percibe como un costo que paga el productor (F-logistica-transporte-003), y las empresas chicas tienen digitalización baja (F-logistica-transporte-008).",
+   "usuario": "Usa: el productor ganadero chico o mediano, su capataz y el contador o escritorio rural que lo asiste. Paga: el productor, o el escritorio rural que lo ofrece a varios clientes.",
+   "solucion": "App offline para registrar en el campo nacimientos, caravaneos, muertes, ventas, compras y pases entre potreros, por caravana o por lote. Mantiene el stock por categoría y potrero y lo concilia contra el listado que el productor exporta del registro oficial: marca caravanas que faltan, sobran o cambiaron de categoría y arma pendientes a regularizar antes de un embarque. Panel web para el escritorio rural con el estado de cada cliente.",
+   "mvp": {
+    "semestre_1": [
+     "Entrevistas con productores y escritorios rurales para mapear qué registran, dónde y con qué errores",
+     "App offline con registro de eventos de stock por caravana y por lote, y stock por potrero y categoría",
+     "Importador del listado exportado del registro oficial en el formato que se releve",
+     "Demo al tutor: rodeo de prueba con altas, bajas y pases, y su stock resultante"
+    ],
+    "semestre_2": [
+     "Motor de conciliación con reporte de diferencias y lista de pendientes",
+     "Panel web multi-cliente para escritorio rural",
+     "Piloto con al menos un escritorio rural o productor real",
+     "Business case con precios validados; demo final con la conciliación de un establecimiento del piloto"
+    ]
+   },
+   "stack": [
+    "React Native con Expo",
+    "SQLite local para modo offline",
+    "FastAPI (Python)",
+    "PostgreSQL",
+    "React para el panel web",
+    "Docker",
+    "AWS Lightsail"
+   ],
+   "costo_infra": {
+    "total_anual_usd": 104,
+    "items": [
+     {
+      "concepto": "Servidor AWS Lightsail Linux 1 GB (API, panel y base de datos en Docker)",
+      "usd_anual": 84,
+      "supuesto": "Una instancia de USD 7 por mes durante los 12 meses de 2027; volumen de piloto de pocas decenas de establecimientos. No se cuenta la capa gratuita porque la página no dice cuánto dura.",
+      "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+     },
+     {
+      "concepto": "Dominio para la demo y el piloto",
+      "usd_anual": 20,
+      "supuesto": "Estimación por encima: Cloudflare Registrar cobra a costo sin margen, pero la página no muestra el precio de un .com; se reservan USD 20 por un año.",
+      "fuente_precio_url": "https://www.cloudflare.com/products/registrar/"
+     }
+    ]
+   },
+   "competidores": [],
+   "monetizacion": "Suscripción anual por establecimiento con un tramo por cantidad de cabezas, y un plan para escritorios rurales por cantidad de clientes. Canal principal: escritorios rurales y contadores del interior, que concentran varios productores. Precio y cantidad de clientes potenciales a validar en entrevistas antes de diciembre de 2026.",
+   "riesgos": [
+    "El registro oficial puede no permitir exportar datos en un formato utilizable, lo que obliga a carga manual para conciliar",
+    "Cambios en los sistemas o formatos del MGAP",
+    "El productor puede no ver valor si ya delega todo en el escritorio rural",
+    "Datos de stock y propiedad son datos personales: requiere consentimiento y cumplimiento de la Ley 18.331"
+   ],
+   "supuestos": [
+    "Mantener el stock real conciliado con el registro oficial le cuesta tiempo y errores al productor; la ficha no cuantifica ese costo",
+    "El productor puede descargar o exportar sus propios datos del registro oficial; si no, la conciliación se hace con carga manual",
+    "Los escritorios rurales gestionan la trazabilidad de varios productores y pagarían por una herramienta común",
+    "Las fichas no muestran competidores; puede haber software de gestión ganadera que no se relevó",
+    "Se puede contactar desde Uruguay a productores y escritorios rurales antes de diciembre de 2026"
+   ],
+   "evidencias": [
+    "F-agro-002",
+    "F-logistica-transporte-003",
+    "F-logistica-transporte-008"
+   ]
+  }
+ ]
+}

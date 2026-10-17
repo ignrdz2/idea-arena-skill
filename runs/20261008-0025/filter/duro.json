@@ -1,0 +1,354 @@
+{
+ "ideas": {
+  "i001": {
+   "titulo": "Copiloto de obligaciones fiscales para unipersonales que empiezan",
+   "pasa": true,
+   "palabras": 663,
+   "costo_anual_usd": 179,
+   "problemas": [],
+   "avisos": [
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Dominio y DNS' es una estimación sin fuente"
+    }
+   ]
+  },
+  "i002": {
+   "titulo": "Seguimiento de pacientes tras un intento de autoeliminación para equipos de salud mental",
+   "pasa": true,
+   "palabras": 636,
+   "costo_anual_usd": 139,
+   "problemas": [],
+   "avisos": [
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Mensajes plantilla de WhatsApp' es una estimación sin fuente"
+    },
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Dominio propio' es una estimación sin fuente"
+    }
+   ]
+  },
+  "i003": {
+   "titulo": "Inteligencia de demanda por mercado de origen para posadas y cabañas del interior",
+   "pasa": true,
+   "palabras": 698,
+   "costo_anual_usd": 129,
+   "problemas": [],
+   "avisos": [
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Dominio .com' es una estimación sin fuente"
+    }
+   ]
+  },
+  "i004": {
+   "titulo": "Cumplimiento antilavado para escribanías y estudios contables chicos",
+   "pasa": true,
+   "palabras": 650,
+   "costo_anual_usd": 179,
+   "problemas": [],
+   "avisos": [
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Dominio y DNS' es una estimación sin fuente"
+    }
+   ]
+  },
+  "i005": {
+   "titulo": "Portal de cambios y devoluciones para tiendas online uruguayas",
+   "pasa": true,
+   "palabras": 677,
+   "costo_anual_usd": 194,
+   "problemas": [],
+   "avisos": [
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Dominio .com y snapshots de respaldo' es una estimación sin fuente"
+    }
+   ]
+  },
+  "i006": {
+   "titulo": "Medición de tiempos de espera para prestadores de salud chicos",
+   "pasa": true,
+   "palabras": 633,
+   "costo_anual_usd": 109,
+   "problemas": [],
+   "avisos": [
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Dominio propio' es una estimación sin fuente"
+    }
+   ]
+  },
+  "i007": {
+   "titulo": "Radar de exposición del catálogo frente a compras por franquicia",
+   "pasa": true,
+   "palabras": 684,
+   "costo_anual_usd": 199,
+   "problemas": [],
+   "avisos": [
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Dominio .com y snapshots de respaldo' es una estimación sin fuente"
+    }
+   ]
+  },
+  "i008": {
+   "titulo": "Tutor de práctica para la prueba de matemática de ingreso a Ingeniería",
+   "pasa": true,
+   "palabras": 698,
+   "costo_anual_usd": 179,
+   "problemas": [],
+   "avisos": [
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Dominio y DNS' es una estimación sin fuente"
+    }
+   ]
+  },
+  "i009": {
+   "titulo": "Precontabilización automática de comprobantes y extractos para estudios contables",
+   "pasa": true,
+   "palabras": 675,
+   "costo_anual_usd": 184,
+   "problemas": [],
+   "avisos": [
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Dominio y DNS' es una estimación sin fuente"
+    }
+   ]
+  },
+  "i010": {
+   "titulo": "Alertas tempranas de ausentismo y desvinculación para liceos privados",
+   "pasa": true,
+   "palabras": 699,
+   "costo_anual_usd": 119,
+   "problemas": [],
+   "avisos": [
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Dominio y DNS' es una estimación sin fuente"
+    }
+   ]
+  },
+  "i011": {
+   "titulo": "Consultas en lenguaje natural sobre los datos dispersos de un colegio",
+   "pasa": true,
+   "palabras": 656,
+   "costo_anual_usd": 189,
+   "problemas": [],
+   "avisos": [
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Dominio y DNS' es una estimación sin fuente"
+    }
+   ]
+  },
+  "i012": {
+   "titulo": "Semáforo de retiro: registro de tratamientos veterinarios y control antes de embarcar a faena",
+   "pasa": true,
+   "palabras": 696,
+   "costo_anual_usd": 104,
+   "problemas": [],
+   "avisos": []
+  },
+  "i013": {
+   "titulo": "Reportes ciudadanos de contenedores para planificar la recolección y el rediseño de la red",
+   "pasa": true,
+   "palabras": 688,
+   "costo_anual_usd": 169,
+   "problemas": [],
+   "avisos": [
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Dominio .com por un año' es una estimación sin fuente"
+    }
+   ]
+  },
+  "i014": {
+   "titulo": "Tours cortos con regreso garantizado para cruceristas, vendidos por guías independientes",
+   "pasa": true,
+   "palabras": 693,
+   "costo_anual_usd": 114,
+   "problemas": [],
+   "avisos": [
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Dominio .com' es una estimación sin fuente"
+    }
+   ]
+  },
+  "i015": {
+   "titulo": "Verificador de estafas por WhatsApp para vendedores online",
+   "pasa": true,
+   "palabras": 695,
+   "costo_anual_usd": 115.08,
+   "problemas": [],
+   "avisos": []
+  },
+  "i016": {
+   "titulo": "Libreta de stock bovino conciliada con la trazabilidad obligatoria",
+   "pasa": true,
+   "palabras": 689,
+   "costo_anual_usd": 104,
+   "problemas": [],
+   "avisos": []
+  },
+  "i017": {
+   "titulo": "Reclamos vecinales por WhatsApp para municipios chicos, sin implantación",
+   "pasa": true,
+   "palabras": 694,
+   "costo_anual_usd": 130,
+   "problemas": [],
+   "avisos": [
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Dominio y respaldos' es una estimación sin fuente"
+    }
+   ]
+  },
+  "i018": {
+   "titulo": "Stock único que se descuenta leyendo los CFE que la pyme ya emite",
+   "pasa": true,
+   "palabras": 694,
+   "costo_anual_usd": 194,
+   "problemas": [],
+   "avisos": [
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Dominio .com y snapshots de respaldo' es una estimación sin fuente"
+    }
+   ]
+  },
+  "i019": {
+   "titulo": "Consultas en lenguaje natural sobre los datos de gestión de un organismo",
+   "pasa": true,
+   "palabras": 611,
+   "costo_anual_usd": 166,
+   "problemas": [],
+   "avisos": []
+  },
+  "i020": {
+   "titulo": "Ruteo y prueba de entrega para pymes de e-commerce y mensajerias chicas",
+   "pasa": true,
+   "palabras": 619,
+   "costo_anual_usd": 174,
+   "problemas": [],
+   "avisos": [
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Dominio .com' es una estimación sin fuente"
+    }
+   ]
+  },
+  "i021": {
+   "titulo": "Prediagnóstico energético de mipymes a partir de sus facturas de UTE",
+   "pasa": true,
+   "palabras": 698,
+   "costo_anual_usd": 169,
+   "problemas": [],
+   "avisos": [
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Dominio .com por un año' es una estimación sin fuente"
+    }
+   ]
+  },
+  "i022": {
+   "titulo": "Agenda por WhatsApp con lista de espera para consultorios independientes del interior",
+   "pasa": true,
+   "palabras": 699,
+   "costo_anual_usd": 185,
+   "problemas": [],
+   "avisos": [
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Mensajes plantilla de WhatsApp (recordatorios)' es una estimación sin fuente"
+    },
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Dominio propio' es una estimación sin fuente"
+    }
+   ]
+  },
+  "i023": {
+   "titulo": "Carpeta crediticia portable para pymes a partir de su factura electrónica",
+   "pasa": true,
+   "palabras": 696,
+   "costo_anual_usd": 107.08,
+   "problemas": [],
+   "avisos": []
+  },
+  "i024": {
+   "titulo": "Gestión y prorrateo de cargadores de autos eléctricos compartidos en edificios",
+   "pasa": true,
+   "palabras": 572,
+   "costo_anual_usd": 159,
+   "problemas": [],
+   "avisos": [
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Dominio .com por un año' es una estimación sin fuente"
+    }
+   ]
+  },
+  "i025": {
+   "titulo": "Registro y reporte de incidentes de ciberseguridad en 24 horas para entidades chicas",
+   "pasa": true,
+   "palabras": 611,
+   "costo_anual_usd": 148,
+   "problemas": [],
+   "avisos": []
+  },
+  "i026": {
+   "titulo": "Asistente de papeleo por viaje para fleteros con uno a tres camiones",
+   "pasa": true,
+   "palabras": 697,
+   "costo_anual_usd": 204,
+   "problemas": [],
+   "avisos": [
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Dominio .com' es una estimación sin fuente"
+    }
+   ]
+  },
+  "i027": {
+   "titulo": "Cartera digital para corredores de seguros chicos",
+   "pasa": true,
+   "palabras": 699,
+   "costo_anual_usd": 117.08,
+   "problemas": [],
+   "avisos": []
+  },
+  "i028": {
+   "titulo": "Prediccion de espera para retirar contenedores en el puerto de Montevideo",
+   "pasa": true,
+   "palabras": 690,
+   "costo_anual_usd": 174,
+   "problemas": [],
+   "avisos": [
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Dominio .com' es una estimación sin fuente"
+    }
+   ]
+  },
+  "i029": {
+   "titulo": "Registro y reporte de huéspedes para anfitriones particulares de vivienda turística",
+   "pasa": true,
+   "palabras": 679,
+   "costo_anual_usd": 179,
+   "problemas": [],
+   "avisos": [
+    {
+     "codigo": "costo_estimado",
+     "detalle": "el precio de 'Dominio .com' es una estimación sin fuente"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,30 @@
+{
+  "idea": "i011",
+  "preguntas": [
+    {
+      "pregunta": "La última vez que la dirección necesitó un dato que cruzaba cobranza, matrícula y asistencia (por ejemplo, para decidir becas o cuotas), ¿de qué sistemas o planillas salió cada parte y cómo lo armaron?",
+      "a_quien": "administrador o secretario administrativo de un colegio privado de Montevideo",
+      "que_valida": "Supuesto de que los colegios uruguayos usan sistemas no integrados y planillas; ataque de que ese dolor solo tiene ficha colombiana y en Uruguay es supuesto"
+    },
+    {
+      "pregunta": "En el último cierre de mes, ¿cuántas horas y cuántas personas dedicaron a preparar los reportes de morosidad y matrícula que pide la dirección, y alguna vez se tomó una decisión con un dato que después resultó estar mal?",
+      "a_quien": "administrador o contador interno de un colegio privado de Montevideo",
+      "que_valida": "Cuánto cuesta hoy el problema; supuesto de que morosidad y matrícula son consultas frecuentes"
+    },
+    {
+      "pregunta": "La última vez que el colegio contrató un software o servicio de gestión, ¿quién lo propuso, quién aprobó el gasto, de qué presupuesto salió y cuánto pagan hoy por mes por esas herramientas?",
+      "a_quien": "director o representante legal de un colegio privado asociado a Audec o Aidep",
+      "que_valida": "Quién decide y paga; ataque de que el precio de USD 60 a 120 por mes no tiene ancla y el segmento está en crisis"
+    },
+    {
+      "pregunta": "La última vez que necesitaron sacar datos de su sistema de facturación o de gestión académica, ¿cómo lo hicieron, en qué formato salió y cuánto trabajo manual hubo que hacer después?",
+      "a_quien": "encargado de sistemas o de secretaría de un colegio privado de Montevideo que usa un sistema de gestión escolar",
+      "que_valida": "Supuesto de que los sistemas exportan a CSV; ataques de carga manual de exportaciones e importadores probados solo con datos sintéticos"
+    },
+    {
+      "pregunta": "Cuando la dirección pidió un número que el sistema de gestión no muestra, ¿qué hicieron: lo pidieron al proveedor del sistema, armaron una tabla dinámica o un tablero, o quedó sin responder? ¿Qué pasó con ese pedido?",
+      "a_quien": "director o administrador de un colegio privado de Montevideo que usa una suite de gestión escolar",
+      "que_valida": "Ataques de que un incumbente puede sumar consultas sin migración y de que BI genérico e IA de planillas son la alternativa real"
+    }
+  ]
+}

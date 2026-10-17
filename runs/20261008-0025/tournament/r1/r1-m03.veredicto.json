@@ -1,0 +1,28 @@
+{
+  "match": "r1-m03",
+  "scores": {
+    "X": {"demanda": 6, "viabilidad": 8, "diferenciacion": 5, "business_case": 6, "encaje": 8, "academico": 7, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 4, "viabilidad": 7, "diferenciacion": 4, "business_case": 5, "encaje": 8, "academico": 5, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "X",
+  "reason": "X apoya el dolor en varias fichas locales verificadas (ausentismo y desvinculación, matrícula privada, crisis del sector) y corre sin dependencias sobre datos sintéticos a USD 119, mientras Y admite que su dolor central es hipótesis y compite con un calendario gratuito local (Calculame) y con el contador.",
+  "survived": [
+    "Dependencia de un colegio piloto y R7: rebatido con cohortes sintéticas generadas por el producto y demo alternativa",
+    "Lectura causal de F-educacion-004: el texto se corrigió y lo no respaldado pasó a supuestos",
+    "Envío de datos de menores a Gemini: ahora solo datos seudonimizados, revisión humana y riesgo declarado ante la URCDP",
+    "Doble carga con la suite del colegio: se eliminó el registro propio y queda solo importación de exportes"
+  ],
+  "standing": {
+    "X": [
+      "Ninguna ficha muestra ausentismo o desvinculación en colegios privados: el dolor en el cliente es un supuesto",
+      "Las suites existentes (Asistente.uy, Colegium) podrían sumar alertas; el hueco se infiere de la ausencia de información",
+      "Disposición a pagar y retención medible sin evidencia; el piloto mide detección, no ahorro"
+    ],
+    "Y": [
+      "El dolor de olvidar vencimientos y la disposición a pagar son hipótesis sin ficha",
+      "Para quien ya tiene contador la app es un costo extra, y quien no lo tiene es quien menos paga",
+      "Calculame ya ofrece gratis calendario DGI y BPS con registro y un sistema para no olvidar fechas; la diferencia (perfil individual, CAE) es fácil de copiar",
+      "Sin contactos ni contador identificado para validar el calendario y llegar al piloto de 20 a 30 usuarios"
+    ]
+  }
+}

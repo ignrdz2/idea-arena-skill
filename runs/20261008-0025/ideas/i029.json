@@ -1,0 +1,76 @@
+{
+ "id": "i029",
+ "titulo": "Registro y reporte de huéspedes para anfitriones particulares de vivienda turística",
+ "problema": "La regulación de vivienda turística obliga a registrar cada vivienda, mostrar un número único en cada oferta, y las plataformas solo podrán publicar alojamientos registrados, con 180 días para adecuarse (F-turismo-001). Además, el texto aprobado en el Senado exige informar al Ministerio del Interior la identidad de cada huésped y reportar anualmente turistas y días de alojamiento (F-turismo-002). Lo sufre el particular que alquila pocas viviendas en temporada: sin recepción ni sistema, si no cumple queda fuera de las plataformas, su canal de venta. Hoteles y cámaras presionan hace años para formalizar la oferta informal (F-turismo-003).",
+ "usuario": "Propietarios particulares con 1 a 5 viviendas de alquiler turístico en balnearios de Maldonado y Rocha, y pequeñas inmobiliarias que administran viviendas de terceros. Paga el propietario o la inmobiliaria.",
+ "solucion": "Aplicación web en español y portugués que guía la inscripción y guarda el número de registro de cada vivienda; genera un enlace de check-in que el huésped completa desde el celular antes de llegar; guarda esos datos cifrados y con plazo de borrado; arma el reporte de huéspedes y el resumen anual listos para cargar; y revisa los anuncios para avisar si falta el número de registro.",
+ "mvp": {
+  "semestre_1": [
+   "Alta de propietario y viviendas con número de registro",
+   "Enlace de check-in del huésped con formulario bilingüe, consentimiento y almacenamiento cifrado",
+   "Demo al tutor: una vivienda de prueba con 10 huéspedes cargados y su listado exportable"
+  ],
+  "semestre_2": [
+   "Generación del reporte de huéspedes y del resumen anual en el formato vigente",
+   "Verificador de anuncios que detecta si falta el número de registro",
+   "Piloto con 5 a 10 propietarios reales y métricas de tiempo ahorrado; business case final"
+  ]
+ },
+ "stack": [
+  "Next.js",
+  "FastAPI (Python)",
+  "PostgreSQL",
+  "Docker",
+  "AWS Lightsail",
+  "Claude Haiku 5.5 API",
+  "Resend"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 179,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 2 GB con IPv4",
+    "usd_anual": 144,
+    "supuesto": "USD 12 por mes durante 12 meses de 2027; aloja API, base PostgreSQL en Docker y frontend; sin capa gratuita (su duración no figura en la página).",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API de Claude Haiku 5.5",
+    "usd_anual": 20,
+    "supuesto": "Unos 20.000 pedidos al año, 3.000 tokens de entrada y 500 de salida cada uno: 60M entrada a USD 0,10 y 10M salida a USD 0,50 por millón da USD 11; se redondea a 20.",
+    "fuente_precio_url": "https://claude.com/pricing"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 15,
+    "supuesto": "Estimación por encima, sin página de precio abierta: USD 15 por un año."
+   },
+   {
+    "concepto": "Envío de emails transaccionales (Resend, plan gratuito)",
+    "usd_anual": 0,
+    "supuesto": "Plan gratuito permanente: 3.000 emails por mes y 100 por día; alcanza para piloto y demo.",
+    "fuente_precio_url": "https://resend.com/pricing"
+   }
+  ]
+ },
+ "competidores": [],
+ "monetizacion": "Suscripción del propietario de USD 6 por vivienda por mes en temporada (o USD 40 por vivienda al año) y plan para inmobiliarias de USD 3 por vivienda con mínimo de 10. Venta directa y alianza con inmobiliarias locales.",
+ "riesgos": [
+  "El decreto puede demorarse o cambiar el formato y el canal de reporte",
+  "El Estado o las plataformas pueden ofrecer gratis una herramienta equivalente",
+  "Manejo de datos de identidad de huéspedes: exige cumplir la Ley 18.331 (registro de la base, consentimiento, seguridad)",
+  "Propietarios poco dispuestos a pagar por cumplir una obligación"
+ ],
+ "supuestos": [
+  "El decreto reglamentario estará vigente en 2027 con requisitos similares al proyecto presentado",
+  "El reporte de huéspedes se podrá cargar o exportar en un formato que el producto pueda generar, sin integración oficial",
+  "Los propietarios particulares no tienen hoy una herramienta para esto: las fichas no muestran competidores, no se afirma que no existan",
+  "Se puede contactar propietarios de balnearios desde Uruguay antes de diciembre de 2026",
+  "Precios de suscripción sin validar"
+ ],
+ "evidencias": [
+  "F-turismo-001",
+  "F-turismo-002",
+  "F-turismo-003"
+ ]
+}

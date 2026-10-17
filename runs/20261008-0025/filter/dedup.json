@@ -1,0 +1,104 @@
+{
+ "grupos": [
+  [
+   "i001"
+  ],
+  [
+   "i002"
+  ],
+  [
+   "i003"
+  ],
+  [
+   "i004"
+  ],
+  [
+   "i005"
+  ],
+  [
+   "i006"
+  ],
+  [
+   "i007"
+  ],
+  [
+   "i008"
+  ],
+  [
+   "i009"
+  ],
+  [
+   "i010"
+  ],
+  [
+   "i011"
+  ],
+  [
+   "i012"
+  ],
+  [
+   "i013"
+  ],
+  [
+   "i014"
+  ],
+  [
+   "i015"
+  ],
+  [
+   "i016"
+  ],
+  [
+   "i017"
+  ],
+  [
+   "i018"
+  ],
+  [
+   "i019"
+  ],
+  [
+   "i020"
+  ],
+  [
+   "i021"
+  ],
+  [
+   "i022"
+  ],
+  [
+   "i023"
+  ],
+  [
+   "i024"
+  ],
+  [
+   "i025"
+  ],
+  [
+   "i026"
+  ],
+  [
+   "i027"
+  ],
+  [
+   "i028"
+  ],
+  [
+   "i029"
+  ]
+ ],
+ "motivos": [
+  "Ninguna pareja es casi-duplicada: las 29 ideas quedan solas.",
+  "i011 e i019: misma técnica (Text-to-SQL sobre datos dispersos) pero distinto usuario y problema: dirección de colegios privados frente a funcionarios de organismos públicos; serían dos tesis distintas.",
+  "i012 e i016: mismo usuario ganadero, pero problemas distintos: control de períodos de retiro antes de faena frente a conciliación de stock con el SNIG.",
+  "i013 e i017: ambos para intendencias, pero i013 rediseña la red de contenedores con reportes por QR y i017 es un canal general de reclamos por WhatsApp.",
+  "i001 e i009: ambos usan CFE, pero i001 es para el unipersonal que gestiona sus obligaciones y i009 automatiza la carga contable de estudios con muchos clientes.",
+  "i018 e i023: ambos leen CFE de pymes, pero uno gestiona stock y el otro arma una carpeta para pedir crédito.",
+  "i005 e i020: e-commerce pyme, pero devoluciones frente a ruteo y prueba de entrega.",
+  "i002 e i006: prestadores de salud, pero seguimiento de casos de salud mental frente a medición de tiempos de espera; i022 es agenda para consultorios independientes.",
+  "i010 e i011: colegios privados, pero alertas de desvinculación para adscriptos frente a consultas de gestión para la dirección.",
+  "i026 e i028: transportistas chicos, pero papeleo por viaje frente a predicción de espera en el puerto.",
+  "i003 e i029: alojamiento turístico del interior, pero inteligencia de demanda frente a cumplimiento del registro de huéspedes."
+ ]
+}

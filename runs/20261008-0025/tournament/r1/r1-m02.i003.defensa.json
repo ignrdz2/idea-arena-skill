@@ -1,0 +1,80 @@
+{
+ "idea": "i003",
+ "respuestas": [
+  {
+   "ataque": 1,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que el dolor del dueño y la disposición a pagar no tienen ficha y que 'decide a ciegas' era una afirmación de la idea: ahora el problema lo presenta como hipótesis a validar y los supuestos declaran que dolor, pago y asociación compradora no tienen ficha; la asociación pasa a hipótesis secundaria. No acepto que la volatilidad por mercado de origen sea opinión: F-turismo-007 (brasileños a la baja compensados por argentinos, ocupación de Rocha en febrero de 50% a 60%) y F-turismo-008 (diferencia con Argentina en el mínimo de cinco años, Brasil más barato) la documentan como hecho de sector. Lo que falta es el costo para cada alojamiento, y eso queda declarado.",
+   "evidencia": [
+    "F-turismo-007",
+    "F-turismo-008"
+   ]
+  },
+  {
+   "ataque": 2,
+   "decision": "PARCIAL",
+   "detalle": "Tiene razón en lo verificable: abrí la página oficial y el catálogo de datos abiertos, y los archivos son trimestrales y anuales; el catálogo lista nacionalidad y destino principal del viaje y no menciona departamento (F-defensa-r1-m02-i003-001). Arreglo: el supuesto de desglose pasa a 'no confirmado' con plan B; se quita el ejemplo de brasileños a Rocha; el resumen semanal ya no depende del dato trimestral sino del tipo de cambio diario público. No acepto que todo el producto dependa de ese supuesto: las alertas cambiarias usan solo el tipo de cambio y la tesis de F-turismo-008 es que el flujo depende de él; el dato trimestral aporta el mix de contexto.",
+   "evidencia": [
+    "F-turismo-004",
+    "F-defensa-r1-m02-i003-001",
+    "F-turismo-008"
+   ]
+  },
+  {
+   "ataque": 3,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que tamaño de mercado, cantidad de pagadores y canal no tenían respaldo ni supuesto: ahora están declarados como supuestos, la venta directa es el canal principal y el tamaño se calcula en las entrevistas del business case. Rebato que 'el modelo no cierra': la cuenta es USD 12 x 12 = USD 144 por alojamiento contra USD 114 de infraestructura, así que un cliente cubre el costo y el piloto de 5 a 8 genera margen; R1 mide el costo del MVP, no un ingreso mínimo. La licencia de USD 600 queda solo como hipótesis secundaria.",
+   "evidencia": [
+    "F-turismo-007"
+   ]
+  },
+  {
+   "ataque": 4,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que la sección de competidores era débil. Busqué y abrí el sitio de MiniHotel PMS, un sistema uruguayo con channel manager y un Yield Manager de tarifas 'según la demanda y ocupación' (F-defensa-r1-m02-i003-002); entra como competidor con su hueco, declarado como hipótesis porque no verifiqué que use datos de origen o tipo de cambio. Se agregan como riesgo ese PMS y el gráfico gratuito del Ministerio. No acepto que 'ninguno respaldado por fichas' fuera no haber buscado: era una declaración explícita de límite, y el supuesto ya aclaraba que no se afirmaba inexistencia.",
+   "evidencia": [
+    "F-defensa-r1-m02-i003-002"
+   ]
+  },
+  {
+   "ataque": 5,
+   "decision": "PARCIAL",
+   "detalle": "Acepto la carga y la privacidad: la ocupación pasa a carga mensual opcional, en planilla simple y sin datos de huéspedes; la capa base funciona sin ella (alertas cambiarias y mix de visitantes), lo que contesta que sin la carga quede nada útil; el supuesto declara que la ocupación agregada no es dato personal y que, si se pidiera más, se aplica la Ley 18.331 con consentimiento. La promoción pasa de 'lista para publicar' a borrador que el dueño revisa. Rechazo que el producto quede sin valor sin la carga, por lo dicho; que el dueño no cargue queda como riesgo.",
+   "evidencia": []
+  },
+  {
+   "ataque": 6,
+   "decision": "CONCEDE",
+   "detalle": "Tiene razón: 30.000 consultas no cuadran con un piloto de 5 a 8 alojamientos. Redimensioné a unas 8.000 llamadas al año (consultas, resúmenes semanales y pruebas): USD 6,8 según el precio de la página abierta de Anthropic (Haiku 5.5, USD 0,10 de entrada y 0,50 de salida por millón), redondeado a USD 15. El servidor de USD 7 por mes coincide con la página de Lightsail que abrí. Total nuevo: USD 114.",
+   "evidencia": []
+  }
+ ],
+ "nuevas_fichas": [
+  {
+   "id": "F-defensa-r1-m02-i003-001",
+   "sector": "turismo",
+   "hallazgo": "El catálogo de datos abiertos describe Turismo Receptivo del Ministerio de Turismo: datos trimestrales con nacionalidad y destino principal; no menciona departamento.",
+   "source_url": "https://catalogodatos.gub.uy/dataset/ministerio-de-turismo-turismo-receptivo",
+   "source_title": "Turismo Receptivo - Conjunto de datos - Catálogo de Datos Abiertos",
+   "source_date": "2024-11-14",
+   "source_type": "datos_abiertos",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T13:00:00",
+   "extracto": "nacionalidad de los visitantes"
+  },
+  {
+   "id": "F-defensa-r1-m02-i003-002",
+   "sector": "turismo",
+   "hallazgo": "MiniHotel PMS, software hotelero uruguayo, ofrece channel manager y un Yield Manager de tarifas según demanda y ocupación.",
+   "source_url": "https://sistemahotelero.com.uy/",
+   "source_title": "Software para Hoteles - MiniHotel PMS Uruguay 2026",
+   "source_date": "2026",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T13:05:00",
+   "competidor": "MiniHotel PMS"
+  }
+ ]
+}

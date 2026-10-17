@@ -1,0 +1,131 @@
+{
+ "sector": "educacion",
+ "fichas": [
+  {
+   "id": "F-educacion-001",
+   "sector": "educacion",
+   "hallazgo": "De 100 adolescentes que ingresaron al liceo en Uruguay en 2017, solo 43 egresaron tras ocho años y 42 no figuran inscriptos en educación media. Casi la mitad del alumnado faltó al menos el 11% de los días de clase.",
+   "source_url": "https://www.elobservador.com.uy/tres-graficos-que-muestran-como-los-liceos-uruguay-son-un-expulsor-estudiantes-n6016536",
+   "source_title": "Tres gráficos que muestran cómo los liceos en Uruguay son un 'expulsor de estudiantes'",
+   "source_date": "2025-09-11",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T00:27:32"
+  },
+  {
+   "id": "F-educacion-002",
+   "sector": "educacion",
+   "hallazgo": "En el primer año de Secundaria solo 4 de cada 10 alumnos asisten más del 80% de los días lectivos, y en la prueba de matemática de Ingeniería del primer semestre solo aprobó el 25% de los inscriptos. ANEP proyecta que en 2030 el 75% de los jóvenes de 21 a 23 años completaría la enseñanza obligatoria.",
+   "source_url": "https://www.elobservador.com.uy/seria-historico-uruguay-la-meta-imposible-la-educacion-que-este-ritmo-podria-concretarse-n6049886",
+   "source_title": "\"Sería histórico para Uruguay\": la meta \"imposible\" de la educación que, a este ritmo, podría concretarse",
+   "source_date": "2026-07-07",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T00:27:32"
+  },
+  {
+   "id": "F-educacion-003",
+   "sector": "educacion",
+   "hallazgo": "El Monitor Educativo Liceal de ANEP registró una desvinculación interanual 2023-2024 de 3,6% en Educación Básica Integrada, mínimo histórico, pero la promoción en Educación Media Superior de liceos oficiales fue de 75,5% en 2023, con caída de 4,3 puntos.",
+   "source_url": "https://www.gub.uy/presidencia/comunicacion/noticias/baja-historica-desvinculacion-incremento-promocion-primeros-tres-anos",
+   "source_title": "Baja histórica de desvinculación e incremento de promoción en primeros tres años de secundaria",
+   "source_date": "2024-08-20",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T00:27:32"
+  },
+  {
+   "id": "F-educacion-004",
+   "sector": "educacion",
+   "hallazgo": "Uruguay tiene más de 300 colegios privados, unos 220 agrupados en Audec y Aidep con unos 113.000 alumnos; a fines de 2023 cerraron tres y el MEC analizó fusiones por la crisis del sector.",
+   "source_url": "https://www.ambito.com/uruguay/crisis-colegios-privados-el-ministerio-educacion-analiza-la-posibilidad-fusion-las-instituciones-n5929975/amp",
+   "source_title": "Crisis en colegios privados: el Ministerio de Educación analiza la posibilidad de fusión de las instituciones",
+   "source_date": "2024-01-25",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T00:27:32",
+   "extracto": "las soluciones tienen que venir de los propios actores"
+  },
+  {
+   "id": "F-educacion-005",
+   "sector": "educacion",
+   "hallazgo": "Asistente.uy es una plataforma uruguaya de gestión institucional para colegios y otras instituciones: comunicaciones con confirmación de lectura, portal de familias, asistencia digital, seguimiento estudiantil y facturación. La ficha no publica precios.",
+   "source_url": "https://www.comparasoftware.com/asistente-uy",
+   "source_title": "Asistente Uy: precios, funciones y opiniones",
+   "source_date": "2025",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T00:27:32",
+   "extracto": "una plataforma uruguaya de gestión institucional diseñada para colegios",
+   "competidor": "Asistente.uy"
+  },
+  {
+   "id": "F-educacion-006",
+   "sector": "educacion",
+   "hallazgo": "Colegium ofrece Edufácil (gestión escolar para colegios públicos) y SchoolTrack (colegios privados), con presencia declarada en ocho países incluido Uruguay y más de 130 empleados. La afirmación de mayor alcance en Latinoamérica es de la propia empresa y la nota es de 2019.",
+   "source_url": "https://www.itsitio.com/uy/nicolas-schenquerman-en-colegium-somos-mas-de-130-personas-entregando-productos-tecnologicos",
+   "source_title": "Nicolás Schenquerman: \"En Colegium somos más de 130 personas entregando productos tecnológicos\"",
+   "source_date": "2019-05-28",
+   "source_type": "competidor",
+   "geografia": "LATAM",
+   "confianza": "baja",
+   "retrieved_at": "2026-10-08T00:27:32",
+   "extracto": "En Colegium somos más de 130 personas entregando productos tecnológicos",
+   "competidor": "Colegium"
+  },
+  {
+   "id": "F-educacion-007",
+   "sector": "educacion",
+   "hallazgo": "Según un informe de la fintech mattilda, cerca de dos tercios de los colegios privados colombianos usan plataformas no integradas a su gestión diaria y el 85% debe duplicar tareas administrativas. Referencia regional de un dolor de gestión, no uruguaya.",
+   "source_url": "https://www.vanguardia.com/colombia/2026/09/02/colegios-privados-en-colombia-enfrentan-un-reto-modernizar-su-gestion-y-conectar-sus-plataformas/",
+   "source_title": "Colegios privados en Colombia enfrentan un reto: modernizar su gestión y conectar sus plataformas",
+   "source_date": "2026-09-02",
+   "source_type": "prensa",
+   "geografia": "CO",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T00:27:32"
+  },
+  {
+   "id": "F-educacion-008",
+   "sector": "educacion",
+   "hallazgo": "Ceibal lanzó en marzo de 2025 EduIA Lab, laboratorio regional de IA en educación, con tres áreas: desarrollo profesional docente, aprendizaje estudiantil y gestión educativa. Es un actor público que puede ser socio o competidor de soluciones de IA educativa.",
+   "source_url": "https://www.gub.uy/ministerio-educacion-cultura/comunicacion/noticias/lanzamiento-del-laboratorio-regional-inteligencia-artificial-educacion",
+   "source_title": "Lanzamiento del laboratorio regional de Inteligencia Artificial en educación",
+   "source_date": "2025-03-27",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T00:27:32"
+  },
+  {
+   "id": "F-educacion-009",
+   "sector": "educacion",
+   "hallazgo": "INEFOP informó que más de 50.000 personas accedieron a sus cursos en 2023 (8% más que en 2022), el 70% con algún grado de virtualidad, y que su programa de habilidades digitales capacitó a más de 25.000 personas.",
+   "source_url": "https://www.gub.uy/presidencia/comunicacion/noticias/50000-personas-accedieron-cursos-inefop-2023",
+   "source_title": "Unas 50.000 personas accedieron a cursos de Inefop en 2023",
+   "source_date": "2024-01-25",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T00:27:32",
+   "extracto": "un incremento del 8% en relación al año anterior"
+  },
+  {
+   "id": "F-educacion-010",
+   "sector": "educacion",
+   "hallazgo": "Una nota de Montevideo Portal sobre el congreso EduIA (organizado por Ceibal con BID, Banco Mundial y CAF) menciona herramientas como Teach FX para docentes y Aleks para alumnos (usada en Ecuador). Un experto del Banco Mundial dijo que la brecha de acceso tecnológico en Uruguay está casi resuelta.",
+   "source_url": "https://www.montevideo.com.uy/En-Perspectiva/-Que-herramientas-de-IA-ayudan-a-mejorar-el-rendimiento-de-docentes-y-alumnos-en-el-aula--uc902994",
+   "source_title": "¿Qué herramientas de IA ayudan a mejorar el rendimiento de docentes y alumnos en el aula?",
+   "source_date": "2024-10-11",
+   "source_type": "prensa",
+   "geografia": "LATAM",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T00:27:32"
+  }
+ ]
+}

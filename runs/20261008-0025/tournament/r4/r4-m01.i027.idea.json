@@ -1,0 +1,104 @@
+{
+ "id": "i027",
+ "titulo": "Cartera digital para corredores de seguros chicos",
+ "problema": "En Uruguay la distribución de seguros depende de corredores y productores asesores (F-fintech-seguros-008). Nexura y Figuro venden software de cartera, con precios contradictorios: Nexura desde USD 49 (F-ataque-r1-m04-i027-cliente-001) o USD 197 (F-ataque-r2-m02-i027-competidor-003); Figuro desde USD 5 (F-ataque-r2-m02-i027-competidor-002). Que perder vencimientos cueste renovaciones y que paguen USD 19 son supuestos.",
+ "usuario": "Corredores y productores asesores independientes, con 100 a 300 pólizas activas, en Uruguay. Ellos pagan.",
+ "solucion": "Aplicación web donde el corredor sube pólizas PDF o importa su planilla. Un paso local seudonimiza datos personales y no envía nada al modelo si la confianza del enmascarado es baja. Un modelo extrae compañía, ramo, coberturas, prima y vencimiento; el corredor revisa solo campos de baja confianza. Un tablero muestra vencimientos a 60 días, con avisos por email y renovaciones por WhatsApp (wa.me) con un clic.",
+ "mvp": {
+  "semestre_1": [
+   "Antes de diciembre de 2026: 10 entrevistas a corredores vía A.PRO.A.SE. y Faprosu sobre precio y cartera",
+   "Marzo 2027: evaluación de impacto y registro de la base; sin cláusulas, parsers por plantilla sin modelo",
+   "Extracción de PDF de 2 aseguradoras con seudonimización local; precisión por campo y recall del enmascarado, parsers contra modelo, con pólizas propias y sintéticas",
+   "Tablero de vencimientos con avisos por email, con datos sintéticos"
+  ],
+  "semestre_2": [
+   "Tercera aseguradora y mensajes de WhatsApp",
+   "Piloto de 2 meses con 3 a 5 corredores: minutos de revisión por póliza frente a su planilla; sin corredores, solo pólizas propias",
+   "Business case con precio validado por cartas de intención"
+  ]
+ },
+ "stack": [
+  "Python",
+  "FastAPI",
+  "PostgreSQL",
+  "React",
+  "Claude Haiku 5.5 API",
+  "Amazon SES",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 178,
+  "items": [
+   {
+    "concepto": "AWS Lightsail Linux 2 GB",
+    "usd_anual": 144,
+    "supuesto": "USD 12 por mes, 12 meses, 2 GB con IPv4.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "Snapshots Lightsail",
+    "usd_anual": 12,
+    "supuesto": "Snapshots de 20 GB a USD 0,05 por GB-mes.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API Claude Haiku 5.5",
+    "usd_anual": 20,
+    "supuesto": "3.000 pólizas, 20.000 tokens de entrada (USD 0,10 por millón) y 1.000 de salida (USD 0,50 por millón): USD 7,5; con reintentos, 20.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "Amazon SES para avisos por email",
+    "usd_anual": 2,
+    "supuesto": "Hasta 20.000 emails a USD 0,10 cada 1.000.",
+    "fuente_precio_url": "https://aws.amazon.com/ses/pricing/"
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Nexura",
+   "evidencia_ids": [
+    "F-ataque-r1-m04-i027-cliente-001",
+    "F-ataque-r2-m02-i027-competidor-003"
+   ],
+   "hueco": "Su plan para 150 a 600 pólizas se solapa. Extrae del PDF con IA, avisa por WhatsApp y declara cumplir la Ley 18.331. No publica precisión. La idea compite en precio (hipótesis) y precisión medida; es copiable."
+  },
+  {
+   "nombre": "Figuro",
+   "evidencia_ids": [
+    "F-defensa-r1-m04-i027-002",
+    "F-ataque-r2-m02-i027-competidor-002"
+   ],
+   "hueco": "Cartera y avisos de vencimiento (plan no precisado); sin extracción desde PDF descrita. Si los avisos entran en USD 5, el precio no diferencia."
+  }
+ ],
+ "monetizacion": "Suscripción de USD 19 por mes para carteras de 100 a 300 pólizas, con prueba gratis de 60 días; el piloto no cobra. Canal: A.PRO.A.SE., con más de 500 corredores y agentes (F-defensa-r1-m04-i027-001). Escenario ilustrativo: 25 a 50 pagos, USD 5.700 a 11.400 al año, si 5 a 10% de los asociados cayera en el rango.",
+ "riesgos": [
+  "Formatos de pólizas distintos bajan la precisión, válida solo para los probados",
+  "Nexura publica su precisión o baja el precio; Figuro podría incluir avisos desde USD 5",
+  "WhatsApp con un clic es más débil que el de Nexura",
+  "Ley 18.331: inscribir la base, evaluación de impacto y cláusulas modelo (F-defensa-r1-m04-i027-003); seudonimizar no es anonimizar; sin cláusulas, la tesis compara parsers",
+  "Enmascarado frágil en escaneos malos: se mide su recall"
+ ],
+ "supuestos": [
+  "Los corredores chicos usan planillas y PDF",
+  "Perder vencimientos les cuesta renovaciones",
+  "Se llega a corredores vía A.PRO.A.SE., sin acceso confirmado",
+  "Un corredor de 100 a 300 pólizas pagaría USD 19 por mes",
+  "Cuántos asociados tienen 100 a 300 pólizas se desconoce; con menos de 100 muchos usan Excel",
+  "Hay 2 a 5 corredores para probarlo; si no, no se prueba el pago",
+  "El proveedor acepta cláusulas modelo"
+ ],
+ "evidencias": [
+  "F-fintech-seguros-008",
+  "F-ataque-r1-m04-i027-cliente-001",
+  "F-defensa-r1-m04-i027-001",
+  "F-defensa-r1-m04-i027-002",
+  "F-defensa-r1-m04-i027-003",
+  "F-ataque-r2-m02-i027-competidor-002",
+  "F-ataque-r2-m02-i027-competidor-003",
+  "F-defensa-r4-m01-i027-001"
+ ]
+}

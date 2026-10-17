@@ -1,0 +1,58 @@
+{
+ "descartadas": [
+  {
+   "id": "F-agro-003",
+   "source_url": "https://www.interempresas.net/ovino/286529-sistema-SNIG-servira-tambien-controlar-uso-antibioticos-produccion-animal-Uruguay.html",
+   "motivo": "esquema",
+   "errores": [
+    "$: falta el campo 'retrieved_at'"
+   ],
+   "sector": "agro"
+  },
+  {
+   "id": "F-agro-004",
+   "source_url": "https://www.ort.edu.uy/en/news/ganader-is-revolutionizing-the-livestock-industry-with-innovative-technology",
+   "motivo": "esquema",
+   "errores": [
+    "$: falta el campo 'retrieved_at'"
+   ],
+   "sector": "agro"
+  },
+  {
+   "id": "F-agro-005",
+   "source_url": "https://www.uruguayxxi.gub.uy/en/news/article/proyectos-uruguayos-de-agtech-abren-el-campo-a-la-sostenibilidad/",
+   "motivo": "esquema",
+   "errores": [
+    "$: falta el campo 'retrieved_at'"
+   ],
+   "sector": "agro"
+  },
+  {
+   "id": "F-agro-006",
+   "source_url": "https://www.ambito.com/uruguay/ya-se-perdieron-dos-tercios-la-produccion-soja-la-sequia-n5680916/amp",
+   "motivo": "esquema",
+   "errores": [
+    "$: falta el campo 'retrieved_at'"
+   ],
+   "sector": "agro"
+  },
+  {
+   "id": "F-agro-007",
+   "source_url": "https://www.xn--lamaana-7za.uy/agro/en-surco-seguros-estamos-enfocados-en-terminar-de-pagar-el-total-de-las-indemnizaciones",
+   "motivo": "esquema",
+   "errores": [
+    "$: falta el campo 'retrieved_at'"
+   ],
+   "sector": "agro"
+  },
+  {
+   "id": "F-agro-008",
+   "source_url": "https://agraria.pe/noticias/presidente-de-uruguay-visita-instalaciones-citricolas-de-cam-39676",
+   "motivo": "esquema",
+   "errores": [
+    "$: falta el campo 'retrieved_at'"
+   ],
+   "sector": "agro"
+  }
+ ]
+}

@@ -1,0 +1,95 @@
+{
+ "id": "i013",
+ "titulo": "Reportes ciudadanos de contenedores para planificar la recolección y el rediseño de la red",
+ "problema": "Montevideo tiene 11.800 contenedores públicos y planea bajar a menos de 4.000 hacia fines de 2028, con contenedores de llave digital, para atacar vandalismo, hurgado y acumulación de basura (F-energia-ambiente-004). El 72% de los montevideanos califica mal o muy mal la limpieza y el 62% la recolección, y un caso de contenedores cerrados en Buenos Aires fracasó por vandalismo (F-energia-ambiente-005). Decidir dónde dejar cada contenedor y detectar a tiempo los desbordes exige datos de campo que hoy llegan por reclamos dispersos. Además, la capacidad digital de las intendencias es muy desigual (F-sector-publico-001).",
+ "usuario": "Usan: vecinos que reportan y operadores de limpieza de intendencias o municipios. Paga la intendencia o el municipio.",
+ "solucion": "Cada contenedor lleva un código QR que abre una web sin instalar nada: el vecino reporta con foto si está lleno, roto o con basura afuera. Un modelo de visión clasifica la foto y descarta duplicados. El operador ve un mapa de calor de desbordes y fallas por zona y horario, y un módulo de análisis sugiere qué contenedores consolidar o reubicar al reducir la red, cruzando reportes con densidad de puntos.",
+ "mvp": {
+  "semestre_1": [
+   "Web de reporte por QR con foto y ubicación",
+   "Clasificación de fotos con modelo de visión y deduplicación por cercanía y tiempo",
+   "Demo con un conjunto de contenedores de prueba en un barrio"
+  ],
+  "semestre_2": [
+   "Tablero para operadores con mapa de calor y alertas",
+   "Módulo de sugerencia de consolidación de contenedores con métricas de cobertura",
+   "Piloto con un municipio o una intendencia del interior",
+   "Business case para venta al sector público"
+  ]
+ },
+ "stack": [
+  "Python",
+  "FastAPI",
+  "PostgreSQL con PostGIS",
+  "Gemini 2.5 Flash-Lite (clasificación de imágenes)",
+  "React con Leaflet",
+  "Cloudflare R2",
+  "Docker",
+  "DigitalOcean Droplet"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 169,
+  "items": [
+   {
+    "concepto": "Droplet básico 2 GiB RAM",
+    "usd_anual": 144,
+    "supuesto": "USD 12 al mes por 12 meses; API, PostGIS y tablero para un piloto de algunos cientos de contenedores.",
+    "fuente_precio_url": "https://www.digitalocean.com/pricing/droplets"
+   },
+   {
+    "concepto": "API de Gemini 2.5 Flash-Lite (capa paga)",
+    "usd_anual": 10,
+    "supuesto": "5.000 fotos al año, unos 1.500 tokens de entrada y 300 de salida cada una: menos de USD 2 a USD 0,10 y 0,40 por millón; se redondea a 10.",
+    "fuente_precio_url": "https://ai.google.dev/gemini-api/docs/pricing"
+   },
+   {
+    "concepto": "Almacenamiento de fotos en Cloudflare R2",
+    "usd_anual": 0,
+    "supuesto": "Capa gratuita de 10 GB-mes que se renueva cada mes durante todo 2027; 5.000 fotos comprimidas a 300 KB ocupan unos 1,5 GB.",
+    "fuente_precio_url": "https://www.cloudflare.com/plans/"
+   },
+   {
+    "concepto": "Dominio .com por un año",
+    "usd_anual": 15,
+    "supuesto": "Estimación por encima, sin página de precios abierta: un dominio .com suele costar menos de USD 15 al año; se redondea para arriba con margen."
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "SovraGov (Sovra)",
+   "evidencia_ids": [
+    "F-sector-publico-007"
+   ],
+   "hueco": "Plataforma general de trámites municipales; las fichas no muestran gestión de contenedores con fotos ni apoyo al rediseño de la red."
+  },
+  {
+   "nombre": "MuniDigital",
+   "evidencia_ids": [
+    "F-sector-publico-008"
+   ],
+   "hueco": "GovTech municipal general; las fichas no la muestran en Uruguay ni con foco en residuos."
+  }
+ ],
+ "monetizacion": "Licencia anual por municipio o intendencia, escalonada por cantidad de contenedores, de unos USD 3.000 a 10.000 al año, con un piloto gratuito acotado. Precios a validar.",
+ "riesgos": [
+  "La venta al Estado es lenta y depende de compras públicas",
+  "La Intendencia de Montevideo puede desarrollarlo internamente o ya tener sistemas propios",
+  "Baja participación vecinal o reportes falsos",
+  "Vandalismo de los QR en los contenedores"
+ ],
+ "supuestos": [
+  "Los municipios o intendencias del interior tienen presupuesto y voluntad de pagar una licencia de este tamaño",
+  "Los vecinos reportan si el canal es simple y ven respuesta",
+  "Hay un municipio contactable desde Uruguay para validar antes de diciembre",
+  "La ubicación de contenedores se puede obtener de datos abiertos o relevar en el piloto",
+  "Las fotos se tratan sin datos personales identificables para cumplir la Ley 18.331"
+ ],
+ "evidencias": [
+  "F-energia-ambiente-004",
+  "F-energia-ambiente-005",
+  "F-sector-publico-001",
+  "F-sector-publico-007",
+  "F-sector-publico-008"
+ ]
+}

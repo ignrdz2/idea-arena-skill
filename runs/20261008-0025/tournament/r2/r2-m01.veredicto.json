@@ -1,0 +1,26 @@
+{
+  "match": "r2-m01",
+  "scores": {
+    "X": {"demanda": 6, "viabilidad": 8, "diferenciacion": 4, "business_case": 5, "encaje": 6, "academico": 4, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 6, "viabilidad": 7, "diferenciacion": 5, "business_case": 4, "encaje": 7, "academico": 7, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "Y",
+  "reason": "Con demanda pareja y mejor viabilidad y business case en X, Y gana por poco porque su hueco no choca con un sistema gratuito del regulador que arranca en 2027 y porque su estimador con error medido contra linea base aporta un desafio de ingenieria y un uso del perfil de datos que X, casi un CRUD con Text-to-SQL opcional, no tiene.",
+  "survived": [
+    "Ubicacion en primer plano y marcas con error: zona amplia, hora corregible, intervalos y minimo de reportes",
+    "Validacion sin contactos y R4: entrega 1 con demo simulada rotulada, piloto opcional, Intergremial identificada en fichas",
+    "Fichas de dolor sobre eventos impredecibles: 001 fechada como maximo denunciado, choques cubiertos con espera reportada en vivo y supuestos declarados"
+  ],
+  "standing": {
+    "X": [
+      "El sistema gratuito del MSP desde 2027 deja poco margen al diferencial de alerta previa",
+      "Cualquier agenda (Zalon, CliniGest) puede agregar el indicador sobre datos que ya tiene",
+      "Precio de USD 60 a 150 sin senal de pago frente a una agenda completa de $25 al mes y mercado de pocas decenas de prestadores"
+    ],
+    "Y": [
+      "Arranque en frio y sustituto gratis del aviso informal entre choferes",
+      "Terminales o ANP pueden publicar el indicador con datos exactos; cuantiles y panel son copiables",
+      "Ticket chico en un sector de empresas de pocos camiones y tamano de mercado sin ningun numero"
+    ]
+  }
+}

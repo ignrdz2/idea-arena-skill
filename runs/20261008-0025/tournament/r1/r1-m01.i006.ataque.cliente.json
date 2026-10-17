@@ -1,0 +1,112 @@
+{
+ "idea": "i006",
+ "persona": "cliente",
+ "ataques": [
+  {
+   "n": 1,
+   "severidad": "MAJOR",
+   "titulo": "La obligación de medir recae en un sistema nacional del MSP, no en una herramienta del prestador",
+   "donde": "Problema, cita de F-salud-001; Supuesto 'El decreto se aplica en 2027'",
+   "problema": "La idea sostiene que el decreto 'obliga a los prestadores a medir y cumplir' y que por eso pagarían. La nota oficial de Presidencia dice que se crea un sistema nacional de monitoreo obligatorio y que el texto no exige ninguna herramienta propia al prestador. Como responsable de un prestador chico, el que mide es el MSP; yo no tengo una multa por no tener tu software, y si el MSP me pide datos los armo con lo que ya tengo. La disposición a pagar USD 150 a 400 por mes por 'cumplir la norma' queda sin base. Además el MSP ya admite que construirá el sistema (F-salud-002 describe la falta de información como un problema del MSP).",
+   "tipo": "evidencia",
+   "evidencia": [
+    "F-salud-001",
+    "F-salud-002",
+    "F-ataque-r1-m01-i006-cliente-001"
+   ]
+  },
+  {
+   "n": 2,
+   "severidad": "MAJOR",
+   "titulo": "Los plazos del decreto que la idea usa no coinciden con el decreto publicado",
+   "donde": "Problema ('24 horas hábiles medicina general, 48 cirugía general, 30 días especialistas') y Alcance S1 ('plazos del decreto')",
+   "problema": "La idea fija tres plazos tomados de una nota de prensa de marzo. El texto del decreto, según Presidencia, tiene más categorías: 30 días corridos para medicina general con médico tratante, 24 horas hábiles solo para consultas básicas de urgencia, hasta 90 días con especialista tratante, 10 días hábiles para consultas priorizadas por el MSP, y distingue 'médico tratante' de quien no lo es. El modelo de datos del semestre 1 y las alertas 'por vencer' se construirían sobre reglas equivocadas o incompletas, y el MSP puede cambiar las categorías (ya hubo una modificación). Nadie en la idea leyó el decreto.",
+   "tipo": "evidencia",
+   "evidencia": [
+    "F-salud-001",
+    "F-ataque-r1-m01-i006-cliente-001"
+   ]
+  },
+  {
+   "n": 3,
+   "severidad": "MAJOR",
+   "titulo": "'Competidores: ninguno' ignora software de agenda uruguayo barato que ya está instalado donde la idea quiere vender",
+   "donde": "Sección Competidores y Monetización (USD 150 a 400 por mes)",
+   "problema": "Las fichas ya traen a Zalon (agenda y suscripción para profesionales de salud en Uruguay) y a AgendaPro (centros médicos, LATAM), y una búsqueda simple muestra CliniGest, con agenda, historia clínica y estadísticas por $25 al mes. Cualquiera de ellos puede agregar un indicador de días entre pedido y turno con poco desarrollo, porque ya tienen los turnos; la idea además depende de una exportación CSV de ellos. Como cliente, comparo USD 150 a 400 por mes contra un sistema de agenda completo que cuesta una fracción y que mi gente ya usa. La idea no explica por qué un competidor no lo haría ni por qué pagaría 10 o más veces el precio de esa referencia.",
+   "tipo": "evidencia",
+   "evidencia": [
+    "F-salud-006",
+    "F-salud-007",
+    "F-ataque-r1-m01-i006-cliente-002"
+   ]
+  },
+  {
+   "n": 4,
+   "severidad": "MAJOR",
+   "titulo": "El supuesto 'los prestadores chicos no tienen sistema' choca con la ficha de digitalización",
+   "donde": "Supuestos declarados, segundo punto; Problema",
+   "problema": "La ficha F-salud-005 (Agesic, 2026) dice que el 83% de las instituciones registra la información clínica de forma digital y el 64% ofrece agenda online. Esa ficha está bloqueada, así que pesa menos, pero es la única medición nacional en las fichas y apunta en contra del supuesto sobre el que se apoya toda la demanda. La idea cita F-salud-002 (mayo de 2025) para decir que faltan sistemas, pero eso habla del cálculo del MSP, no de lo que tiene un prestador chico. No hay ninguna ficha sobre prestadores chicos o del interior.",
+   "tipo": "evidencia",
+   "evidencia": [
+    "F-salud-005",
+    "F-salud-002"
+   ]
+  },
+  {
+   "n": 5,
+   "severidad": "MAJOR",
+   "titulo": "F-salud-010 describe una mutualista grande en 2021 y se usa para hablar de prestadores chicos",
+   "donde": "Problema, cita de F-salud-010",
+   "problema": "Casa de Galicia es una mutualista con USD 76 millones de endeudamiento; no es un prestador 'chico o del interior' ni una policlínica privada. La ficha es de 2021 y habla de déficit, es decir de falta de plata: eso argumenta contra pagar USD 1.800 a 4.800 por año por una herramienta de cumplimiento, no a favor. No hay ficha de demanda real (dolor, costo de incumplir, señal de pago) para el segmento elegido, así que la demanda descansa en una sola ficha de norma más una de contexto financiero mal aplicada.",
+   "tipo": "evidencia",
+   "evidencia": [
+    "F-salud-010"
+   ]
+  },
+  {
+   "n": 6,
+   "severidad": "MAJOR",
+   "titulo": "El flujo exige doble carga del administrativo y conciliación manual con la agenda que ya uso",
+   "donde": "Solución: formulario de registro de demanda más importador CSV",
+   "problema": "Para medir desde el pedido, mi administrativo tendría que cargar cada solicitud en un formulario aparte además de la agenda actual, y yo tendría que exportar y subir un CSV para conciliar. Eso cambia cómo trabaja mi gente y duplica tarea, que es justo lo que no acepto; si falla la carga, el dato es incompleto y el reporte no sirve para el MSP. Que 'las agendas permiten exportar CSV' es un supuesto declarado pero sin ficha, y no hay integración con el sistema local ni con WhatsApp/teléfono, que es por donde llegan muchos pedidos. Opinión de uso, sin ficha que la mida.",
+   "tipo": "opinion",
+   "evidencia": []
+  },
+  {
+   "n": 7,
+   "severidad": "MAJOR",
+   "titulo": "Piloto y validación sin socio, con datos de salud de pacientes entregados a estudiantes",
+   "donde": "Riesgos (sin socio identificado), Alcance S2 (piloto con exportación real anonimizada); constraints R4 y R7",
+   "problema": "La tabla de contactos de constraints.md está sin completar (<<COMPLETAR>>), así que no hay un prestador ni una persona con quien validar antes de diciembre de 2026 (R4) ni quien provea la exportación real (R7). Como cliente, no entrego una exportación de agenda, aun anonimizada, a un equipo de estudiantes sin un acuerdo claro bajo la Ley 18.331 (datos de salud), y sin esa exportación el semestre 2 queda con datos sintéticos y sin plan B. Tampoco se dice cómo se anonimiza ni quién decide en la dirección técnica. Es una opinión: la restricción no se viola sobre el papel, pero la evidencia de que el cliente existe y entrega datos es nula.",
+   "tipo": "opinion",
+   "evidencia": []
+  }
+ ],
+ "nuevas_fichas": [
+  {
+   "id": "F-ataque-r1-m01-i006-cliente-001",
+   "sector": "salud",
+   "hallazgo": "Nota de Presidencia sobre el decreto del 26/02/2026 (publicado 3/3/2026): plazos de 30 días corridos para medicina general/pediatría con médico tratante, 48 horas hábiles cirugía general, hasta 90 días con especialista tratante, 10 días hábiles priorizadas. Crea un sistema nacional de monitoreo obligatorio; no menciona ninguna herramienta que deban usar los prestadores.",
+   "source_url": "https://www.gub.uy/presidencia/comunicacion/noticias/modificacion-normativa-ajusta-plazos-para-acceder-consultas-estudios-cirugias",
+   "source_title": "Modificación de normativa ajusta plazos para acceder a consultas, estudios y cirugías",
+   "source_date": "2026-03-03",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T12:00:00"
+  },
+  {
+   "id": "F-ataque-r1-m01-i006-cliente-002",
+   "sector": "salud",
+   "hallazgo": "CliniGest, software uruguayo de agenda médica e historia clínica, publica un Plan Fundador de $25 al mes con agenda, historial clínico, gestión financiera básica y recordatorios; promete gráficos y estadísticas de rendimiento. La página no habla de tiempos de espera ni de importación de datos.",
+   "source_url": "https://clinigest.com.uy/",
+   "source_title": "CliniGest Uruguay",
+   "source_date": "desconocida",
+   "source_type": "competidor",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T12:05:00",
+   "competidor": "CliniGest"
+  }
+ ]
+}

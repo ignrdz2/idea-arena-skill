@@ -1,0 +1,128 @@
+{
+  "idea": "i010",
+  "persona": "competidor",
+  "ataques": [
+    {
+      "n": 1,
+      "severidad": "MAJOR",
+      "titulo": "El hueco de las alertas se infiere de fichas de comparador y de 2019, y hay competidores con alertas que la idea no ve",
+      "donde": "Competidores: 'la ficha no muestra priorización por riesgo ni medición de intervenciones'; 'la ficha (2019) no menciona alertas'",
+      "problema": "La diferenciación descansa en lo que dos fichas no dicen: F-educacion-005 es una página de un comparador sin lista completa de funciones ni precios, y F-educacion-006 es una nota de 2019 con confianza baja. La idea misma admite que 'no prueba que no existan'. Además ignora competidores que sí ofrecen el núcleo del producto: Appoderado vende 'Alertas de Ausentismo Crónico' y 'Alerta de Deserción Escolar' (Chile, F-ataque-r2-m04-i010-competidor-001), y Trivium, plataforma fundada en Montevideo en 2023 con colegios uruguayos, ya tiene asistencia, tasa de abandono por grado y un motor de diagnóstico con IA (F-ataque-r2-m04-i010-competidor-002). Para cualquiera de ellos, sumar una lista semanal de riesgo sobre asistencia y notas que ya tienen cargadas es una función de semanas, sin importar planillas. Ese es exactamente el riesgo que la idea lista como 'las suites pueden agregar alertas' sin ninguna defensa concreta.",
+      "tipo": "evidencia",
+      "evidencia": [
+        "F-educacion-005",
+        "F-educacion-006",
+        "F-ataque-r2-m04-i010-competidor-001",
+        "F-ataque-r2-m04-i010-competidor-002"
+      ]
+    },
+    {
+      "n": 2,
+      "severidad": "MAJOR",
+      "titulo": "La capa depende de exportes y de carga semanal manual que el incumbente controla y que el cliente no va a sostener",
+      "donde": "Solución: 'importa planillas de asistencia y notas (exportes de la suite del colegio)'; supuesto 'aceptan cargar una planilla semanal'",
+      "problema": "El producto no tiene el dato en origen: lo recibe de la suite de mi competidor, en un formato que yo decido. Si soy Asistente.uy, Trivium o Colegium, puedo cambiar o limitar el exporte, y mi propio módulo de alertas no pide a la secretaría ninguna tarea semanal extra. Pedirle a un adscripto que exporte y suba una planilla cada semana es fricción recurrente, justo en el paso que el competidor elimina. Ninguna ficha dice que las suites exporten asistencia por alumno en un formato usable; la idea lo declara como supuesto, pero es el supuesto sobre el que se apoya toda la entrada al mercado, y sin colegio piloto no se prueba ni una vez.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 3,
+      "severidad": "MAJOR",
+      "titulo": "Mercado inflado: se usan los 113.000 alumnos de todos los niveles para un producto de liceo",
+      "donde": "Monetización: 'promedio de F-educacion-004 (113.000 / 220, unos 514 alumnos) un colegio paga unos USD 1.500; 10 colegios, unos USD 15.000'",
+      "problema": "El problema que se mide (ausentismo y egreso) es de educación media, pero el promedio de 514 alumnos sale de F-educacion-004, que no dice cuántos de esos 113.000 son de liceo. La propia idea cita que la matrícula total de liceos privados del país es 41.235 (F-defensa-r1-m03-i010-001). A USD 3 por alumno, el techo de todo el segmento liceal privado, con 100% de penetración, sería de unos USD 124.000 al año, y cada colegio tendría bastante menos de 514 alumnos de media. El ingreso por colegio y el total están sobreestimados con datos de la propia idea.",
+      "tipo": "evidencia",
+      "evidencia": [
+        "F-educacion-004",
+        "F-defensa-r1-m03-i010-001"
+      ]
+    },
+    {
+      "n": 4,
+      "severidad": "MAJOR",
+      "titulo": "La ficha de matrícula privada contradice el relato de pérdida de cuotas, y las cifras de ausentismo no son de privados",
+      "donde": "Problema: 'el sector sufre cierres y fusiones (F-educacion-004): perder un alumno es perder una cuota'",
+      "problema": "F-educacion-004 habla de tres cierres y de fusiones en el sector (enero de 2024); no vincula esos cierres con desvinculación de alumnos. F-defensa-r1-m03-i010-001, que la idea cita, dice que en 2023 la matrícula privada recuperó el nivel de 2018 y que la desvinculación no se desglosa por tipo de gestión. Las cifras de F-educacion-001 y F-educacion-002 son de liceos en general (en la práctica, mayormente públicos). La idea lo reconoce, pero entonces no hay ninguna ficha que muestre que el ausentismo o la deserción cuestan cuotas a un colegio privado. 'Retener alumnos es prioridad económica' y 'los adscriptos detectan tarde y a mano' están declarados como supuestos, pero son la demanda entera y no hay ni una señal de pago.",
+      "tipo": "evidencia",
+      "evidencia": [
+        "F-educacion-004",
+        "F-defensa-r1-m03-i010-001",
+        "F-educacion-001",
+        "F-educacion-002"
+      ]
+    },
+    {
+      "n": 5,
+      "severidad": "MAJOR",
+      "titulo": "El Estado ya genera alertas por inasistencia en el sistema educativo, y la idea no lo menciona",
+      "donde": "Problema y Competidores: no aparece ningún sistema público de alertas",
+      "problema": "Uruguay figura entre los países con sistemas de alerta temprana, y el SInIDE Gestión Escolar del Ministerio 'prevé la posibilidad de generar alertas a partir de las inasistencias de los alumnos' (F-ataque-r2-m04-i010-competidor-003). La idea ni lo nombra ni explica qué cubre ni si alcanza a los privados. Si los colegios ya deben reportar a un sistema oficial que alerta por faltas, el valor incremental de otra lista de riesgo baja y el comprador tiene un sustituto gratuito. La ficha es de prensa regional (Infobae, 2023) y no detalla el alcance sobre colegios privados: lo que está probado es que el competidor público existe, no que cubra a este cliente.",
+      "tipo": "evidencia",
+      "evidencia": [
+        "F-ataque-r2-m04-i010-competidor-003"
+      ]
+    },
+    {
+      "n": 6,
+      "severidad": "MINOR",
+      "titulo": "El modelo predictivo, sin datos reales, no se puede comparar con nada que convenza a un cliente",
+      "donde": "Semestre 2: 'Modelo simple comparado contra las reglas (retrospectivo; histórico de un colegio si hay, si no sintético)'",
+      "problema": "Un modelo entrenado y evaluado con cohortes generadas por el propio equipo mide el generador, no el riesgo real, y no le da a un comprador una razón para preferirlo a las reglas de asistencia que cualquier incumbente ya puede poner. La cuestión de diferenciación frente a una función de reglas (faltó N días seguidos) queda sin respuesta, y la tabla de contactos de constraints.md está vacía, así que no hay un colegio identificado que dé el histórico. El plan B de simulación es honesto, pero baja la demanda medida a cero.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 7,
+      "severidad": "MINOR",
+      "titulo": "Datos de menores enviados a una API extranjera con un camino de cumplimiento todavía supuesto",
+      "donde": "Riesgos: 'el LLM recibe solo datos seudonimizados; se asume que no hay transferencia de datos personales (art. 23)'",
+      "problema": "El art. 23 de la Ley 18.331 prohíbe transferir datos personales a países sin nivel adecuado de protección salvo excepciones (F-defensa-r1-m03-i010-002). Que un dato seudonimizado deje de ser personal es una asunción: en un colegio de pocos cientos de alumnos, con asistencia, notas y motivo de alerta, la reidentificación es fácil, y quien lo ve primero es el competidor que ya tiene al cliente y puede ofrecer el mismo borrador sin API externa. El propio texto deja la confirmación a la URCDP; hasta eso, el tramo del LLM puede estar bloqueado por R6 en un piloto real.",
+      "tipo": "evidencia",
+      "evidencia": [
+        "F-defensa-r1-m03-i010-002"
+      ]
+    }
+  ],
+  "nuevas_fichas": [
+    {
+      "id": "F-ataque-r2-m04-i010-competidor-001",
+      "sector": "educacion",
+      "hallazgo": "Appoderado, plataforma de gestión escolar orientada a establecimientos chilenos, incluye en su módulo Estadísticas y Prevención 'Alertas de Ausentismo Crónico' y 'Alerta de Deserción Escolar'. La página no menciona Uruguay.",
+      "source_url": "https://web.appoderado.cl/",
+      "source_title": "Appoderado.com",
+      "source_date": "desconocida",
+      "source_type": "competidor",
+      "geografia": "CL",
+      "confianza": "media",
+      "retrieved_at": "2026-10-08T02:10:00",
+      "extracto": "Alertas de Ausentismo Crónico",
+      "competidor": "Appoderado"
+    },
+    {
+      "id": "F-ataque-r2-m04-i010-competidor-002",
+      "sector": "educacion",
+      "hallazgo": "Trivium se presenta como fundada en 2023 en Montevideo, con colegios uruguayos entre sus clientes, reportes oficiales de ANEP, registro de asistencia, tasa de abandono por grado y un motor de diagnóstico continuo del aprendizaje con IA. La página no describe alertas de ausentismo o deserción.",
+      "source_url": "https://www.trivium.ai/",
+      "source_title": "Trivium",
+      "source_date": "desconocida",
+      "source_type": "competidor",
+      "geografia": "UY",
+      "confianza": "media",
+      "retrieved_at": "2026-10-08T02:10:00",
+      "extracto": "Trivium fue fundado en 2023 en Montevideo",
+      "competidor": "Trivium"
+    },
+    {
+      "id": "F-ataque-r2-m04-i010-competidor-003",
+      "sector": "educacion",
+      "hallazgo": "Una nota de Infobae de 2023 incluye a Uruguay entre los países con sistemas de alerta temprana de abandono escolar y dice que el SInIDE Gestión Escolar del Ministerio de Educación prevé generar alertas a partir de las inasistencias de los alumnos.",
+      "source_url": "https://www.infobae.com/educacion/2023/06/18/alerta-temprana-dos-provincias-ya-usan-inteligencia-artificial-para-prevenir-el-abandono-escolar/",
+      "source_title": "Alerta temprana: dos provincias ya usan inteligencia artificial para prevenir el abandono escolar",
+      "source_date": "2023-06-18",
+      "source_type": "prensa",
+      "geografia": "LATAM",
+      "confianza": "media",
+      "retrieved_at": "2026-10-08T02:10:00"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+ "idea": "i002",
+ "respuestas": [
+  {
+   "ataque": 1,
+   "decision": "CONCEDE",
+   "detalle": "La ficha F-ataque-r1-m08-i002-cliente-001 dice que la política de WhatsApp Business prohíbe usarlo para información de salud cuando la regulación exige salvaguardas reforzadas, y la Ley 18.331 trata los datos de salud como sensibles. Se quita WhatsApp del MVP, del stack y del costo. El aviso de contacto vencido va al equipo, que llama al paciente, como en el protocolo del MSP. Queda declarado como supuesto.",
+   "evidencia": [
+    "F-ataque-r1-m08-i002-cliente-001",
+    "F-defensa-r1-m08-i002-001"
+   ]
+  },
+  {
+   "ataque": 2,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que 'se pierde sin que nadie lo note' estaba escrito como hecho, y que no hay ficha de abandono ni de pago: ahora ambos son supuestos declarados, el precio se valida en entrevistas. No acepto que la demanda sea pura opinión: dos fichas nuevas muestran que el MSP propone llamada a 2 días y consulta a 7, obliga a registrar cada intento en 24 horas y que el viceministro pidió seguimiento sin fijar un sistema. Hay una obligación concreta sin herramienta definida.",
+   "evidencia": [
+    "F-defensa-r1-m08-i002-001",
+    "F-defensa-r1-m08-i002-002",
+    "F-salud-009"
+   ]
+  },
+  {
+   "ataque": 3,
+   "decision": "CONCEDE",
+   "detalle": "Correcto: F-salud-002 trata de tiempos de espera en mutualistas y F-salud-004 de interoperabilidad de 2019; ninguna dice lo que se les atribuía. Se retiran del problema y de las evidencias, y se saca la derivación entre instituciones para no solaparse con la interoperabilidad. El problema se apoya ahora en F-salud-009 y en las dos fichas nuevas, que sí dicen lo citado.",
+   "evidencia": [
+    "F-salud-002",
+    "F-salud-004"
+   ]
+  },
+  {
+   "ataque": 4,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que no hay socio y que un piloto con datos reales de pacientes no es realista para estudiantes: el semestre 2 pasa a una prueba de uso con casos ficticios y entrevistas, sin datos reales, y el riesgo queda declarado. No acepto que se viole R4: pide usuarios contactables desde Uruguay, no un socio ya identificado; los equipos de salud mental de prestadores son contactables para entrevistas antes de diciembre. R7 no aplica: los datos los genera el producto.",
+   "evidencia": []
+  },
+  {
+   "ataque": 5,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que 'ninguno' ignoraba a Zalon (F-salud-006) y AgendaPro (F-salud-007): ahora figuran como competidores, con el riesgo de que agreguen el módulo y el de doble carga de datos. No acepto que la diferencia sea vacía: ambas fichas describen agenda y recordatorios al paciente, no planes de contacto con vencimientos y alerta al equipo cuando un contacto no se registra. F-salud-005 está bloqueada y no se usa.",
+   "evidencia": [
+    "F-salud-006",
+    "F-salud-007"
+   ]
+  },
+  {
+   "ataque": 6,
+   "decision": "PARCIAL",
+   "detalle": "Acepto la falta de respaldos y de registro de la base: se agregan snapshots (USD 20, estimación) y el registro ante la URCDP al entregable de cumplimiento; total USD 119. No acepto que el riesgo sea el de un sistema productivo: en 2027 solo hay casos ficticios, así que no hay datos reales que proteger, y el supuesto sobre dispositivo médico ya estaba declarado como tal. Los datos personales reales quedan condicionados a completar el plan de cumplimiento (R6).",
+   "evidencia": []
+  },
+  {
+   "ataque": 7,
+   "decision": "CONCEDE",
+   "detalle": "Sin WhatsApp desaparece la partida de USD 40 y su tarifa no confirmada. Con casos ficticios tampoco hay mensajes a pacientes que presupuestar. El costo baja a USD 119.",
+   "evidencia": [
+    "F-ataque-r1-m08-i002-cliente-001"
+   ]
+  }
+ ],
+ "nuevas_fichas": [
+  {
+   "id": "F-defensa-r1-m08-i002-001",
+   "sector": "salud",
+   "hallazgo": "Nota de la Facultad de Psicología (31/3/2025): el MSP propone para quien intentó suicidarse un seguimiento telefónico en un plazo máximo de dos días desde el egreso y una consulta presencial en un plazo máximo de siete días; la nota reconoce desafíos con los registros en algunas mutualistas y menciona sanciones a prestadores.",
+   "source_url": "https://psico.edu.uy/presencias-en-medios/un-intento-de-suicidio-cada-tres-horas-en-uruguay-reflejo-de-una-crisis-en-la",
+   "source_title": "Un intento de suicidio cada tres horas en Uruguay: reflejo de una crisis en la salud pública",
+   "source_date": "2025-03-31",
+   "source_type": "academico",
+   "geografia": "UY",
+   "confianza": "media",
+   "retrieved_at": "2026-10-08T14:00:00",
+   "extracto": "el seguimiento telefónico inmediato en un plazo máximo de dos días desde el egreso"
+  },
+  {
+   "id": "F-defensa-r1-m08-i002-002",
+   "sector": "salud",
+   "hallazgo": "El Observador (30/9/2022): un decreto del MSP obliga a los prestadores a registrar cada intento de suicidio en una base digital dentro de las 24 horas del ingreso y a asignar un funcionario por turno para cargarlo; el viceministro dijo que quienes intentan 'tienen que tener un seguimiento'. El decreto no fija un sistema de seguimiento.",
+   "source_url": "https://www.elobservador.com.uy/nota/ministerio-de-salud-publica-emitio-decreto-que-obliga-a-prestadores-a-registrar-intentos-de-suicidio-en-una-base-digital-para-seguirlos-en-tiempo-real--2022930171429",
+   "source_title": "MSP emitió decreto que obliga a prestadores a registrar intentos de suicidio en una base digital",
+   "source_date": "2022-09-30",
+   "source_type": "prensa",
+   "geografia": "UY",
+   "confianza": "media"
+  }
+ ]
+}

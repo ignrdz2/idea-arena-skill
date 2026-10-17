@@ -1,0 +1,61 @@
+{
+  "idea": "i009",
+  "persona": "tutor",
+  "ataques": [
+    {
+      "n": 1,
+      "severidad": "MAJOR",
+      "titulo": "El componente central (aprender de imputaciones previas) no tiene datos etiquetados si falla el estudio piloto",
+      "donde": "Solución: 'aprendiendo de las imputaciones previas de cada cliente'; Semestre 1: 'Demo con extractos propios anonimizados, midiendo acierto'; Supuestos: 'Sin estudio con acuerdo en abril 2027, la tesis mide sobre extractos propios anonimizados'",
+      "problema": "El plan B es hueco. Medir acierto de cuenta contable exige extractos con su imputación real, hecha por un contador de un cliente real. El equipo no tiene ese historial: los 'extractos propios' son de sus cuentas personales, sin plan de cuentas ni imputaciones previas de ningún cliente de estudio. Sin estudio, la meta de 80 por ciento de acierto no se puede medir de forma creíble y la tesis queda demostrando solo lectura de PDF con datos sintéticos. La restricción R7 (datos) se cumple solo si hay un socio identificado, y la tabla de contactos del equipo está sin completar (<<COMPLETAR>>); la propia idea admite 'hoy no hay contactos cargados'. Para un tutor, la dependencia externa crítica no tiene un plan B que preserve el resultado académico. El abril 2027 como fecha de corte además deja solo un semestre escaso para el piloto.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 2,
+      "severidad": "MAJOR",
+      "titulo": "La demanda descansa en dos avisos laborales, uno finalizado, y ninguna señal de pago por conciliar",
+      "donde": "Problema: 'Los estudios contables de Montevideo contratan asistentes que registran asientos y concilian bancos con Excel intermedio'; Supuestos: 'Los estudios pagarían por evitar la conciliación: sin ficha de pago'",
+      "problema": "Se generaliza a 'los estudios de Montevideo' desde dos avisos de empleo: uno de un intermediario de reclutamiento (Nexum Consulting) y otro marcado como finalizado. Ninguno dice cuántas horas se gastan conciliando ni cuánto cuesta. Que la conciliación sea una de varias tareas de un asistente no prueba que sea el dolor que un estudio pagaría por eliminar. La única cifra de tiempo (200 a 500 movimientos por día) viene de un blog de un proveedor de ERP con interés comercial, que la propia idea reconoce. La disposición a pagar está declarada como supuesto, así que no es fatal, pero el criterio de demanda queda en 'dolor sugerido, pago no respaldado' y sin tamaño de mercado (no hay cifra de estudios de 2 a 20 personas).",
+      "tipo": "evidencia",
+      "evidencia": ["F-legal-contable-005", "F-defensa-r2-m03-i009-001", "F-defensa-r3-m02-i009-002"]
+    },
+    {
+      "n": 3,
+      "severidad": "MAJOR",
+      "titulo": "El precio de referencia choca con el piso del mercado y el hueco frente a Conty no está verificado",
+      "donde": "Monetización: '$U 1.500 a 2.500 por mes'; Competidores: Conty 'su página no dice formatos de extracto ni cuenta aprendida'",
+      "problema": "Contafácil ya publica un plan Free a $0 y planes Simple $1.499, Pro $2.799 por mes con empresas ilimitadas, así que el estudio comparará esta herramienta con un paquete que entrega asientos de CFE. Pedir $U 1.500 a 2.500 por una herramienta que además exige agregar un paso al flujo no tiene respaldo de que alguien pague ese margen. Sobre diferenciación: Conty declara conciliación bancaria automática y es el ERP al que exportan Contafácil y Contable.CFE, o sea el sistema donde ya vive el estudio. El hueco ('PDF y cuenta aprendida') se afirma por silencio de una página de marketing, y la idea usa 'silencio, no prueba' para sus rivales mientras lo usa como base de su propio hueco. Ni la ficha de Conty ni las otras dicen que la exportación a Conty u otro ERP sea posible para este flujo; la idea solo promete 'un destino primero' sin nombrarlo.",
+      "tipo": "evidencia",
+      "evidencia": ["F-ataque-r1-m05-i009-cliente-003", "F-defensa-r3-m02-i009-003", "F-ataque-r1-m05-i009-cliente-001", "F-ataque-r1-m05-i009-cliente-002"]
+    },
+    {
+      "n": 4,
+      "severidad": "MAJOR",
+      "titulo": "Alcance técnico subestimado: extracción de PDF de bancos sin ficha sobre formatos y exportación a ERP no definida",
+      "donde": "Alcance Semestre 1: 'Lectura local de PDF de 2 bancos y XML de CFE'; Semestre 2: 'Exportación configurable ... y vista multi-cliente'; Riesgos: 'Formatos de extracto distintos por banco'",
+      "problema": "La única ficha sobre extractos dice que cinco bancos ofrecen PDF o 'formatos propios', sin precisar si son PDF con texto, escaneados o tablas irregulares. La idea no nombra cuáles son los 2 bancos ni confirma que haya extractos reales de ellos para construir y probar el parser. Los XML de CFE, además, se bajan de DGI con robots (como hace Contafácil): la idea supone que los estudios los tienen o los obtienen, y lo declara solo como supuesto. En semestre 2 se acumulan cruce banco-comprobantes, exportación configurable, vista multi-cliente y un piloto con acuerdo de datos, con 3 personas que cursan o trabajan. No hay un hito demostrable que no dependa del piloto: la primera entrega (datos sintéticos) demuestra un parser, no el aprendizaje. El desafío de ingeniería real (aprendizaje por cliente con pocos datos y arranque en frío) queda reducido a 'reglas y embeddings' sin comparar métodos ni definir la métrica más allá de una meta de 80 por ciento no fundamentada.",
+      "tipo": "evidencia",
+      "evidencia": ["F-defensa-r3-m02-i009-002", "F-ataque-r1-m05-i009-cliente-001"]
+    },
+    {
+      "n": 5,
+      "severidad": "MAJOR",
+      "titulo": "El camino de cumplimiento de la Ley 18.331 se afirma sin fuente y la arquitectura del piloto es incoherente",
+      "donde": "Solución: 'Datos reales solo en el piloto, en un equipo en Uruguay con Docker; el servidor en la nube recibe solo datos sintéticos ... Acuerdo escrito y base registrada.'",
+      "problema": "La ficha citada cubre solo la transferencia internacional (art. 23) y dice que la base debe registrarse ante la URCDP antes de transferir; no respalda que el equipo pueda registrar una base, ni quién es responsable y quién encargado del tratamiento, ni los plazos. 'Acuerdo escrito y base registrada' es una afirmación de cumplimiento sin ficha ni supuesto que la declare. Además, los extractos bancarios y las imputaciones de clientes de un estudio contienen datos financieros de terceros que el estudio debe proteger. Operativamente, si los datos reales viven en un equipo del equipo, no queda claro cómo los contadores del estudio usan una 'vista multi-cliente' sin exponer ese equipo por red o llevar los datos a la nube, que es justo lo que se dice evitar. La región citada de Lightsail es Sao Paulo, no Uruguay, así que cualquier uso de la nube con datos reales sería transferencia internacional. R6 exige un camino realista, y acá solo hay una promesa.",
+      "tipo": "evidencia",
+      "evidencia": ["F-ataque-r1-m05-i009-cliente-004", "F-defensa-r3-m02-i009-001"]
+    },
+    {
+      "n": 6,
+      "severidad": "MINOR",
+      "titulo": "El hueco de diferenciación es de tiempo y el costo depende de un dominio sin fuente",
+      "donde": "Riesgos: 'Un competidor podría copiarlo: la ventaja es de tiempo'; Costo: 'Dominio y DNS 20 ... estimación'",
+      "problema": "La propia idea admite que el diferencial es copiable: Contafácil ya automatiza la descarga de CFE y entrega asientos a los mismos ERP, y agregar lectura de extractos es una extensión natural para quien ya tiene la relación con el estudio. En costos, el total de USD 164 entra con holgura bajo el tope, pero el rubro dominio es estimación sin fuente (aviso del chequeo automático); no viola R1 porque el margen cubre un precio mucho mayor, así que es menor.",
+      "tipo": "evidencia",
+      "evidencia": ["F-ataque-r1-m05-i009-cliente-001", "F-defensa-r3-m02-i009-001"]
+    }
+  ],
+  "nuevas_fichas": []
+}

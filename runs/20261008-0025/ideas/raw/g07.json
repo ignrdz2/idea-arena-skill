@@ -1,0 +1,277 @@
+{
+ "generador": "g07",
+ "ideas": [
+  {
+   "local_id": "g07-1",
+   "titulo": "Alertas tempranas de ausentismo y desvinculación para liceos privados",
+   "problema": "En Uruguay, de 100 adolescentes que ingresaron al liceo en 2017 solo 43 egresaron en ocho años y casi la mitad faltó al menos el 11% de los días (F-educacion-001). En primer año solo 4 de cada 10 alumnos asisten más del 80% de los días (F-educacion-002), y la promoción en Media Superior cayó 4,3 puntos en 2023 (F-educacion-003). Para un colegio privado cada alumno que se desvincula es además una cuota que se pierde, en un sector con cierres y fusiones analizadas por el MEC (F-educacion-004). Hoy el adscripto lo detecta tarde, a mano.",
+   "usuario": "Adscriptos y coordinadores de colegios privados (Audec, Aidep) lo usan a diario; paga la dirección del colegio.",
+   "solucion": "Plataforma web que importa asistencia y calificaciones (planilla o registro propio en la app), calcula un puntaje de riesgo por alumno con reglas explicables más un modelo simple entrenado con los datos del propio colegio, y genera una lista semanal priorizada. Para cada alumno en riesgo un asistente con LLM resume el historial (faltas, notas, observaciones) y propone un borrador de mensaje a la familia que el adscripto revisa antes de enviar. Registra intervenciones y resultados.",
+   "mvp": {
+    "semestre_1": [
+     "Importador de planillas de asistencia y notas, modelo de datos y panel por grupo",
+     "Puntaje de riesgo por reglas explicables con datos anonimizados de un colegio piloto",
+     "Demo: lista semanal priorizada con el motivo de cada alerta"
+    ],
+    "semestre_2": [
+     "Resumen por alumno y borrador de mensaje a familias con LLM, con revisión humana",
+     "Registro de intervenciones y tablero de resultados",
+     "Modelo predictivo simple comparado contra las reglas, y política de datos según Ley 18.331",
+     "Demo: piloto de un trimestre en un colegio y business case"
+    ]
+   },
+   "stack": [
+    "Python",
+    "FastAPI",
+    "PostgreSQL",
+    "scikit-learn",
+    "React",
+    "Gemini 2.5 Flash-Lite API",
+    "Docker",
+    "AWS Lightsail"
+   ],
+   "costo_infra": {
+    "total_anual_usd": 119,
+    "items": [
+     {
+      "concepto": "Servidor AWS Lightsail Linux 1 GB",
+      "usd_anual": 84,
+      "supuesto": "Plan de USD 7 por mes con IPv4, 12 meses, aloja app y PostgreSQL en Docker para desarrollo, pruebas y un piloto de 1 a 3 colegios.",
+      "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+     },
+     {
+      "concepto": "API Gemini 2.5 Flash-Lite",
+      "usd_anual": 20,
+      "supuesto": "Unos 20 millones de tokens de entrada (USD 0,10 por millón) y 5 millones de salida (USD 0,40 por millón) en el año: unos USD 4, redondeado a 20 con margen. No se cuenta la capa gratuita.",
+      "fuente_precio_url": "https://ai.google.dev/gemini-api/docs/pricing"
+     },
+     {
+      "concepto": "Dominio y DNS",
+      "usd_anual": 15,
+      "supuesto": "Estimación por encima sin fuente abierta: un dominio .com cuesta del orden de USD 10 a 12 por año; se redondea a 15 con margen. DNS en el mismo registrador."
+     }
+    ]
+   },
+   "competidores": [
+    {
+     "nombre": "Asistente.uy",
+     "evidencia_ids": [
+      "F-educacion-005"
+     ],
+     "hueco": "Ofrece asistencia digital y seguimiento estudiantil dentro de una suite de gestión; la ficha no muestra que priorice alumnos por riesgo ni que mida intervenciones. Se puede integrar como fuente de datos en lugar de competir."
+    },
+    {
+     "nombre": "Colegium (SchoolTrack)",
+     "evidencia_ids": [
+      "F-educacion-006"
+     ],
+     "hueco": "Suite de gestión escolar regional; la ficha (de 2019) no menciona alertas de desvinculación. Obliga a migrar toda la gestión."
+    }
+   ],
+   "monetizacion": "Suscripción anual por colegio según matrícula, por ejemplo USD 3 por alumno por año (un colegio de 500 alumnos paga USD 1.500). Venta directa a direcciones y vía asociaciones de colegios. Precio a validar en entrevistas.",
+   "riesgos": [
+    "Pocos datos históricos por colegio para entrenar un modelo; las reglas pueden alcanzar",
+    "Datos de menores: exige consentimiento y cumplimiento estricto de Ley 18.331",
+    "Las suites existentes pueden agregar alertas similares",
+    "Ciclo de venta lento, atado al año lectivo"
+   ],
+   "supuestos": [
+    "Los colegios privados registran asistencia y notas en formato exportable",
+    "Retener alumnos es una prioridad económica de las direcciones",
+    "Los colegios pagarían del orden de USD 3 por alumno por año",
+    "Se consigue un colegio piloto antes de diciembre de 2026 sin contactos previos declarados",
+    "Los patrones de ausentismo de liceos públicos se parecen a los de privados"
+   ],
+   "evidencias": [
+    "F-educacion-001",
+    "F-educacion-002",
+    "F-educacion-003",
+    "F-educacion-004",
+    "F-educacion-005",
+    "F-educacion-006"
+   ]
+  },
+  {
+   "local_id": "g07-2",
+   "titulo": "Consultas en lenguaje natural sobre los datos dispersos de un colegio",
+   "problema": "Los colegios privados uruguayos atraviesan una crisis: más de 300 instituciones, tres cierres a fines de 2023 y el MEC analizando fusiones (F-educacion-004). Para decidir (precios, becas, grupos, personal) la dirección necesita cruzar matrícula, cobranza y asistencia, pero esos datos viven en plataformas que no se hablan: en Colombia cerca de dos tercios de los colegios privados usan plataformas no integradas y el 85% duplica tareas administrativas (F-educacion-007). Cada pregunta termina en planillas armadas a mano por administración.",
+   "usuario": "Directores y administradores de colegios privados pequeños y medianos; paga el colegio.",
+   "solucion": "Capa de datos que consolida exportaciones de los sistemas que el colegio ya usa (facturación, gestión académica, planillas) en una base única con un catálogo semántico, y un asistente Text-to-SQL que responde en español preguntas como cuántas familias tienen cuotas atrasadas por nivel o cómo cambió la matrícula por grado. Cada respuesta muestra la consulta, la tabla y un gráfico, y las preguntas útiles se guardan como tablero mensual. No reemplaza los sistemas existentes.",
+   "mvp": {
+    "semestre_1": [
+     "Importadores para planillas y exportaciones CSV de 2 o 3 sistemas, base unificada en PostgreSQL",
+     "Catálogo semántico de tablas y glosario del colegio",
+     "Demo: 20 preguntas de dirección respondidas sobre datos de prueba"
+    ],
+    "semestre_2": [
+     "Text-to-SQL con validación de consultas, solo lectura y permisos por rol",
+     "Tableros guardados y reporte mensual automático",
+     "Evaluación de exactitud contra un conjunto de preguntas con respuesta conocida",
+     "Demo: piloto con datos reales de un colegio y business case"
+    ]
+   },
+   "stack": [
+    "Python",
+    "FastAPI",
+    "PostgreSQL",
+    "LangGraph",
+    "Gemini 2.5 Flash API",
+    "React",
+    "Docker",
+    "AWS Lightsail"
+   ],
+   "costo_infra": {
+    "total_anual_usd": 189,
+    "items": [
+     {
+      "concepto": "Servidor AWS Lightsail Linux 2 GB",
+      "usd_anual": 144,
+      "supuesto": "Plan de USD 12 por mes con IPv4, 12 meses, para app, base unificada y tareas de importación de 1 a 3 colegios piloto.",
+      "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+     },
+     {
+      "concepto": "API Gemini 2.5 Flash",
+      "usd_anual": 30,
+      "supuesto": "Unos 30 millones de tokens de entrada (USD 0,30 por millón) y 3 millones de salida (USD 2,50 por millón) entre evaluación y piloto: unos USD 17, redondeado a 30. No se cuenta la capa gratuita.",
+      "fuente_precio_url": "https://ai.google.dev/gemini-api/docs/pricing"
+     },
+     {
+      "concepto": "Dominio y DNS",
+      "usd_anual": 15,
+      "supuesto": "Estimación por encima sin fuente abierta: un dominio .com cuesta del orden de USD 10 a 12 por año; se redondea a 15 con margen. DNS en el mismo registrador."
+     }
+    ]
+   },
+   "competidores": [
+    {
+     "nombre": "Asistente.uy",
+     "evidencia_ids": [
+      "F-educacion-005"
+     ],
+     "hueco": "Integra comunicaciones, asistencia y facturación en su propia suite; la ficha no muestra consultas libres sobre datos de otros sistemas. Sirve a quien migra todo, no a quien mantiene varias herramientas."
+    },
+    {
+     "nombre": "Colegium (Edufácil, SchoolTrack)",
+     "evidencia_ids": [
+      "F-educacion-006"
+     ],
+     "hueco": "Suite completa que exige migración; la ficha no menciona análisis en lenguaje natural."
+    }
+   ],
+   "monetizacion": "Suscripción mensual por colegio, por ejemplo USD 60 a 120 según cantidad de fuentes conectadas, más una tarifa única de puesta en marcha de los importadores. Venta directa a direcciones administrativas.",
+   "riesgos": [
+    "Respuestas SQL incorrectas que lleven a malas decisiones: hay que mostrar la consulta y validar",
+    "Cada colegio exporta en formatos distintos y el mantenimiento de importadores crece",
+    "Datos de familias y cobranza: cumplimiento de Ley 18.331 y control de acceso",
+    "Un colegio en crisis puede no tener presupuesto para software nuevo"
+   ],
+   "supuestos": [
+    "Los colegios uruguayos también usan sistemas no integrados, como los colombianos de la ficha",
+    "Los sistemas actuales permiten exportar datos a CSV o planilla",
+    "Las direcciones pagarían USD 60 a 120 por mes",
+    "La morosidad y la caída de matrícula son preguntas frecuentes de la dirección",
+    "Se consigue un colegio piloto antes de diciembre de 2026"
+   ],
+   "evidencias": [
+    "F-educacion-004",
+    "F-educacion-005",
+    "F-educacion-006",
+    "F-educacion-007"
+   ]
+  },
+  {
+   "local_id": "g07-3",
+   "titulo": "Tutor de práctica para la prueba de matemática de ingreso a Ingeniería",
+   "problema": "En la prueba de matemática de Ingeniería del primer semestre solo aprobó el 25% de los inscriptos (F-educacion-002). Quien no la aprueba arranca la carrera con atraso, y el egreso de educación media ya es bajo (F-educacion-001). Las herramientas adaptativas que llegan a la región, como Aleks, son genéricas y no están alineadas a esa prueba (F-educacion-010). Hoy la alternativa son clases particulares.",
+   "usuario": "Estudiantes de último año de liceo y recién ingresados a Ingeniería en Uruguay; pagan ellos o sus familias, y en una segunda etapa institutos preparatorios.",
+   "solucion": "Aplicación web: un banco de ejercicios etiquetados por tema, generado y revisado a partir de material público de la prueba, con diagnóstico inicial, plan de estudio adaptativo según errores y un tutor con RAG que explica paso a paso citando el material de curso en lugar de dar solo el resultado. El docente o el estudiante ve un mapa de temas dominados y pendientes.",
+   "mvp": {
+    "semestre_1": [
+     "Ingesta de material público de la prueba, etiquetado por tema y embeddings en Qdrant",
+     "Banco inicial de ejercicios con corrección automática de respuestas numéricas",
+     "Demo: diagnóstico inicial y mapa de temas para un estudiante"
+    ],
+    "semestre_2": [
+     "Tutor RAG con explicaciones paso a paso y citas del material",
+     "Plan adaptativo según errores y repetición espaciada",
+     "Prueba con un grupo de estudiantes antes de una instancia de la prueba y medición de resultados",
+     "Business case con precio validado"
+    ]
+   },
+   "stack": [
+    "Python",
+    "FastAPI",
+    "Qdrant Cloud",
+    "Gemini 2.5 Flash API",
+    "Gemini Embedding",
+    "Next.js",
+    "PostgreSQL",
+    "Docker",
+    "AWS Lightsail"
+   ],
+   "costo_infra": {
+    "total_anual_usd": 179,
+    "items": [
+     {
+      "concepto": "Servidor AWS Lightsail Linux 1 GB",
+      "usd_anual": 84,
+      "supuesto": "Plan de USD 7 por mes con IPv4, 12 meses, para app y PostgreSQL con hasta unos 200 estudiantes de prueba.",
+      "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+     },
+     {
+      "concepto": "Qdrant Cloud capa gratuita",
+      "usd_anual": 0,
+      "supuesto": "Cluster gratuito de 1 GB de RAM y 4 GB de disco, sin límite de tiempo según la página; alcanza para el corpus de ejercicios y material.",
+      "fuente_precio_url": "https://qdrant.tech/pricing/"
+     },
+     {
+      "concepto": "API Gemini 2.5 Flash y embeddings",
+      "usd_anual": 80,
+      "supuesto": "200 estudiantes, 100 consultas cada uno, unos 4.000 tokens de entrada y 1.000 de salida por consulta: 80 millones de entrada (USD 24) y 20 millones de salida (USD 50), más embeddings del corpus a USD 0,20 por millón. Unos USD 75, redondeado a 80.",
+      "fuente_precio_url": "https://ai.google.dev/gemini-api/docs/pricing"
+     },
+     {
+      "concepto": "Dominio y DNS",
+      "usd_anual": 15,
+      "supuesto": "Estimación por encima sin fuente abierta: un dominio .com cuesta del orden de USD 10 a 12 por año; se redondea a 15 con margen. DNS en el mismo registrador."
+     }
+    ]
+   },
+   "competidores": [
+    {
+     "nombre": "Aleks",
+     "evidencia_ids": [
+      "F-educacion-010"
+     ],
+     "hueco": "Plataforma adaptativa de matemática usada en Ecuador; no está alineada a la prueba de ingreso de Ingeniería en Uruguay ni a su material."
+    },
+    {
+     "nombre": "EduIA Lab de Ceibal",
+     "evidencia_ids": [
+      "F-educacion-008"
+     ],
+     "hueco": "Laboratorio público de IA educativa con foco en aprendizaje estudiantil; puede ser socio o desarrollar algo similar, pero la ficha no muestra un producto para esta prueba."
+    }
+   ],
+   "monetizacion": "Pase por temporada de examen para el estudiante, por ejemplo USD 10 a 15, con diagnóstico gratuito como gancho. Segunda línea: licencias por grupo para institutos preparatorios y liceos privados. Precio a validar.",
+   "riesgos": [
+    "Estudiantes con baja disposición a pagar; la versión gratuita puede canibalizar",
+    "Errores matemáticos del LLM: hay que verificar con cálculo simbólico y revisión humana",
+    "Uso del material de la facultad: verificar que sea público y su licencia",
+    "Demanda estacional, concentrada antes de cada instancia de la prueba"
+   ],
+   "supuestos": [
+    "El material de la prueba y de cursos introductorios es público y se puede usar",
+    "El bajo porcentaje de aprobación de la ficha se repite en otras instancias",
+    "Los estudiantes o familias pagarían USD 10 a 15 por temporada",
+    "Se puede reclutar un grupo de prueba de estudiantes de liceo o de primer año"
+   ],
+   "evidencias": [
+    "F-educacion-001",
+    "F-educacion-002",
+    "F-educacion-008",
+    "F-educacion-010"
+   ]
+  }
+ ]
+}

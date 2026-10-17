@@ -1,0 +1,28 @@
+{
+  "match": "r1-m01",
+  "scores": {
+    "X": {"demanda": 3, "viabilidad": 7, "diferenciacion": 3, "business_case": 4, "encaje": 6, "academico": 5, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 5, "viabilidad": 8, "diferenciacion": 6, "business_case": 5, "encaje": 7, "academico": 6, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "Y",
+  "reason": "Y apoya el problema en un decreto local con plazos y monitoreo obligatorio y en la admision del MSP de que el calculo no cuenta la agenda cerrada, con un hueco que ninguna ficha de competidor cubre, mientras X compite contra Boris y Undo que ya hacen lo mismo y su dolor (volumen y costo de devoluciones) no tiene ficha.",
+  "survived": [
+    "plazos del decreto mal tomados: corregidos con las categorias de la nota de Presidencia y tabla configurable",
+    "competidores ignorados: Zalon, AgendaPro y CliniGest agregados y precio bajado a USD 60 a 150",
+    "supuesto contradicho por F-salud-005: bien rebatido, mide digitalizacion y no espera desde el pedido",
+    "ficha de Casa de Galicia mal aplicada: retirada",
+    "doble carga del administrativo: reducida a un formulario solo para pedidos con agenda cerrada",
+    "piloto sin socio y datos de salud: plan B con datos sinteticos y CSV sin identificadores"
+  ],
+  "standing": {
+    "X": [
+      "Boris y Undo ya ofrecen portal, panel y cambio por producto o credito; el hueco fuera de Tiendanube es solo hipotesis",
+      "no hay ficha del volumen ni del costo de devoluciones en pymes uruguayas; la demanda central sigue sin respaldo",
+      "disposicion a pagar, tamano del mercado inicial y canal por agencias sin ficha ni contactos"
+    ],
+    "Y": [
+      "la disposicion a pagar del prestador chico sigue sin ficha: el decreto no le exige herramienta propia y el monitoreo lo hace el MSP",
+      "un software de agenda que ya tiene los turnos podria agregar el indicador desde el pedido con poco desarrollo"
+    ]
+  }
+}

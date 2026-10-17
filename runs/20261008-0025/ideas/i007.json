@@ -1,0 +1,75 @@
+{
+ "id": "i007",
+ "titulo": "Radar de exposición del catálogo frente a compras por franquicia",
+ "problema": "El comercio minorista uruguayo pierde ventas frente a plataformas extranjeras: la Cámara de Comercio estima unos 15 millones de dólares por mes, sobre todo en indumentaria, calzado, juguetes y hogar (F-comercio-retail-003). Los envíos por franquicia pasaron de 304.870 a 957.633 en un semestre (F-comercio-retail-004) y cerraron unas 40 jugueterías en 2025 (F-comercio-retail-005), mientras el volumen vendido se estanca (F-comercio-retail-002). El comerciante no sabe qué productos están expuestos y cuáles puede defender.",
+ "usuario": "Dueño o comprador de una tienda minorista de juguetes, indumentaria, calzado u hogar en Uruguay; paga el comercio. Podría pagar también una cámara o asociación del rubro para sus socios.",
+ "solucion": "El comercio sube su catálogo (planilla o exportación del sistema). El sistema busca productos equivalentes en páginas públicas de plataformas extranjeras con embeddings de texto e imagen, calcula el costo puesto en Uruguay para el consumidor con las reglas de franquicia (tres compras anuales de hasta US$ 200 y 20 kilos, F-comercio-retail-004), el tipo de cambio y el plazo de entrega, y clasifica cada SKU: expuesto, defendible o sin equivalente. Para los expuestos sugiere ajustar precio, dejar de reponer o comunicar ventajas locales (entrega inmediata, cambio, garantía).",
+ "mvp": {
+  "semestre_1": [
+   "Ingesta de catálogo y normalización de productos",
+   "Búsqueda de equivalentes con embeddings sobre un conjunto de páginas públicas cargadas por el usuario o el equipo",
+   "Calculadora de costo puesto con reglas de franquicia y tipo de cambio",
+   "Demo: catálogo real de una juguetería con SKUs clasificados y validación manual de aciertos"
+  ],
+  "semestre_2": [
+   "Seguimiento periódico de precios de los equivalentes encontrados",
+   "Recomendaciones por SKU generadas con LLM y explicadas",
+   "Panel por rubro y temporada",
+   "Demo: 3 comercios de distintos rubros y business case con su feedback"
+  ]
+ },
+ "stack": [
+  "Python",
+  "Playwright para páginas públicas",
+  "Modelo de embeddings multilingüe abierto (sentence-transformers)",
+  "Qdrant",
+  "Claude Haiku 5.5",
+  "PostgreSQL",
+  "Next.js",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 199,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 2 GB RAM con IPv4",
+    "usd_anual": 144,
+    "supuesto": "USD 12 por mes durante 12 meses de 2027; aloja backend y base de datos en Docker; sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API de Claude Haiku 5.5",
+    "usd_anual": 25,
+    "supuesto": "Unos 30 millones de tokens de entrada y 5 millones de salida en el año (clasificación y recomendaciones en pruebas y pilotos) a USD 0,10 y 0,50 por millón; da unos USD 5,5, se presupuestan USD 25 de margen.",
+    "fuente_precio_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+   },
+   {
+    "concepto": "Dominio .com y snapshots de respaldo",
+    "usd_anual": 30,
+    "supuesto": "Estimación por encima, sin fuente: dominio y snapshots semanales, USD 15 cada uno."
+   }
+  ]
+ },
+ "competidores": [],
+ "monetizacion": "Suscripción mensual del comercio de USD 20 a 40 según cantidad de SKUs, y un plan para asociaciones gremiales que lo ofrezcan a sus socios. Canal: asociaciones del rubro y venta directa a tiendas.",
+ "riesgos": [
+  "Los términos de uso de las plataformas extranjeras pueden prohibir la consulta automatizada; obliga a limitarse a consultas puntuales o carga manual de enlaces",
+  "El emparejamiento de productos genéricos sin marca puede dar falsos positivos",
+  "El comercio puede ver el diagnóstico como mala noticia sin acciones accionables",
+  "Cambios en el régimen de franquicia alteran el cálculo"
+ ],
+ "supuestos": [
+  "Las fichas no muestran competidores locales de inteligencia de precios frente a compras por franquicia; no se afirma que no existan",
+  "El modelo se inspira en herramientas de monitoreo de precios de competidores usadas en otros mercados; su éxito no está respaldado por fichas",
+  "Que los comerciantes pagarían USD 20 a 40 por mes; no hay ficha de disposición a pagar",
+  "Que existe una forma legal de obtener precios públicos de las plataformas extranjeras en el volumen del MVP",
+  "Que una asociación del rubro estaría dispuesta a difundirlo; no hay contacto declarado"
+ ],
+ "evidencias": [
+  "F-comercio-retail-002",
+  "F-comercio-retail-003",
+  "F-comercio-retail-004",
+  "F-comercio-retail-005"
+ ]
+}

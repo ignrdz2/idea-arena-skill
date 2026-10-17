@@ -1,0 +1,93 @@
+{
+ "id": "i021",
+ "titulo": "Prediagnóstico energético de mipymes a partir de sus facturas de UTE",
+ "problema": "Las mipymes son el 80% de las empresas; el MIEM lanzó en 2020 un simulador y un reintegro de hasta USD 3.000 para estudios de eficiencia (F-energia-ambiente-001). La tarifa General Simple (hasta 40 kW) cobra potencia contratada y cargo fijo, con opción Hora-Estacional (F-defensa-r1-m02-i021-001); elegir exige leer la factura. Que paguen de más y paguen por saberlo son hipótesis a medir.",
+ "usuario": "Dueño o administrador de una mipyme con factura de UTE no residencial. Segundo cliente: consultores e instaladores.",
+ "solucion": "Asesor independiente de UTE: la mipyme sube 12 facturas en PDF o foto. Un extractor con LLM y validación por reglas arma la serie de consumo, potencia y cargos. Un motor de reglas basado en el decreto estima, como rango, ahorros por ajustar potencia o pasar a Hora-Estacional (sin recomendar bajar potencia sin demanda medida) y un escenario solar editable. UTE gana si el cliente cambia de plan; este informe no.",
+ "mvp": {
+  "semestre_1": [
+   "Extractor de facturas UTE (PDF y foto), medido sobre facturas del equipo y donadas",
+   "Motor de reglas para General Simple y Hora-Estacional, con tarifas en tabla versionada y tests contra el decreto",
+   "Demo: subir facturas y ver un primer ahorro",
+   "Entrevistas sobre precio a consultores, instaladores y mipymes"
+  ],
+  "semestre_2": [
+   "Simulador solar con supuestos editables",
+   "Informe descargable y panel para consultores",
+   "Piloto con 5 a 15 mipymes: cuántas piden estudio o contactan un especialista",
+   "Business case con precios validados en entrevistas"
+  ]
+ },
+ "stack": [
+  "Python",
+  "FastAPI",
+  "PostgreSQL",
+  "Gemini Flash-Lite (extracción), con modelo alternativo",
+  "React",
+  "Docker",
+  "DigitalOcean Droplet"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 169,
+  "items": [
+   {
+    "concepto": "Droplet básico 2 GiB RAM",
+    "usd_anual": 144,
+    "supuesto": "USD 12 al mes por 12 meses; aloja API, base y frontend para menos de 100 usuarios.",
+    "fuente_precio_url": "https://www.digitalocean.com/pricing/droplets"
+   },
+   {
+    "concepto": "API de LLM para extracción (Gemini Flash-Lite, capa paga)",
+    "usd_anual": 10,
+    "supuesto": "2.000 facturas al año, unos 3.000 tokens de entrada y 1.000 de salida cada una, a USD 0,10 y 0,40 por millón: unos USD 2; se redondea a 10. Capa paga.",
+    "fuente_precio_url": "https://ai.google.dev/gemini-api/docs/pricing"
+   },
+   {
+    "concepto": "Dominio .com por un año",
+    "usd_anual": 15,
+    "supuesto": "Estimación por encima, sin página de precios abierta: un .com suele costar menos de USD 15 al año."
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "UTE: Plan Pymes y técnicos de asesoramiento",
+   "evidencia_ids": [
+    "F-ataque-r2-m02-i021-competidor-001",
+    "F-ataque-r2-m02-i021-competidor-002"
+   ],
+   "hueco": "Asesora gratis a pedido y aconseja ajustar tarifa y potencia (ficha de 2018, vigencia sin confirmar). Hueco: informe inmediato desde la factura, con solar y sin incentivo de UTE. Es copiable."
+  },
+  {
+   "nombre": "Simulador de autodiagnóstico del MIEM",
+   "evidencia_ids": [
+    "F-energia-ambiente-001"
+   ],
+   "hueco": "Supuesto: se basa en lo declarado y no lee facturas."
+  }
+ ],
+ "monetizacion": "Prediagnóstico inicial gratis. Ingreso principal, hipótesis sin ficha: consultores e instaladores pagan unos USD 20 por prediagnóstico de una mipyme que aceptó ser contactada. Segundo ingreso: informe puntual de unos USD 15, sin suscripción porque el ahorro se corrige una vez. Precios validados con cartas de intención antes de la entrega 2; sin interés de consultores, pasa a herramienta para consultores.",
+ "riesgos": [
+  "UTE ya asesora gratis y puede copiar la función",
+  "El reintegro del MIEM es de 2020 y puede no estar vigente",
+  "Fotos malas bajan la precisión",
+  "El ahorro puede ser chico: el hueco puede ser un segmento que no paga",
+  "Un error del motor cuesta plata: rangos y tests contra el decreto",
+  "Las tarifas cambian cada año: actualizar la tabla lleva pocas horas"
+ ],
+ "supuestos": [
+  "Sin contactos cargados: facturas del equipo, su entorno o anonimizadas",
+  "El decreto alcanza para modelar potencia y tarifa",
+  "Consultores e instaladores pagan por clientes calificados, aunque compiten (sin ficha)",
+  "Las mipymes pagan de más y pagan por un ahorro estimado (sin ficha)",
+  "Los precios de USD 20 y USD 15 son hipótesis sin base",
+  "Solo se buscó UTE además del MIEM",
+  "El tratamiento de facturas cumple la Ley 18.331 con consentimiento"
+ ],
+ "evidencias": [
+  "F-energia-ambiente-001",
+  "F-defensa-r1-m02-i021-001",
+  "F-ataque-r2-m02-i021-competidor-001",
+  "F-ataque-r2-m02-i021-competidor-002"
+ ]
+}

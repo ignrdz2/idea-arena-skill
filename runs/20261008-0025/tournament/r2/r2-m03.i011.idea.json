@@ -1,0 +1,92 @@
+{
+ "id": "i011",
+ "titulo": "Consultas en lenguaje natural sobre los datos dispersos de un colegio",
+ "problema": "Los colegios privados uruguayos están en crisis: más de 300, tres cierres a fines de 2023 y el MEC analizando fusiones (F-educacion-004). Para decidir precios, becas y grupos, la dirección necesita cruzar matrícula, cobranza y asistencia. En Colombia cerca de dos tercios usan plataformas no integradas (F-educacion-007); mide integración, no consultas, y en Uruguay es un supuesto.",
+ "usuario": "Directores y administradores de colegios privados con varios sistemas; paga el colegio.",
+ "solucion": "Capa de datos que consolida exportaciones de los sistemas del colegio (facturación, gestión académica, planillas) en una base única con catálogo semántico, y un asistente Text-to-SQL en español: familias con cuotas atrasadas por nivel, matrícula por grado. Al modelo solo viajan esquema, glosario y pregunta, nunca filas: la consulta corre en el servidor propio. Cada respuesta muestra consulta, tabla, gráfico y fecha del último dato.",
+ "mvp": {
+  "semestre_1": [
+   "Importador CSV genérico por mapeo de columnas, base PostgreSQL; plantillas por sistema solo con una exportación real",
+   "Catálogo semántico y glosario editable (moroso, nivel)",
+   "Demo: 20 preguntas de dirección sobre un colegio sintético"
+  ],
+  "semestre_2": [
+   "Text-to-SQL con validación, solo lectura, permisos por rol",
+   "Tableros guardados y reporte mensual automático",
+   "Exactitud con respuestas conocidas, sobre datos sintéticos (no prueba colegios reales)",
+   "Demo y business case; piloto solo si hay colegio socio"
+  ]
+ },
+ "stack": [
+  "Python",
+  "FastAPI",
+  "PostgreSQL",
+  "LangGraph",
+  "Gemini 2.5 Flash API",
+  "React",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 189,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 2 GB",
+    "usd_anual": 144,
+    "supuesto": "Plan de USD 12 por mes con IPv4, 12 meses. Un servidor; pruebas locales en Docker; un esquema por colegio piloto (1 a 3).",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API Gemini 2.5 Flash",
+    "usd_anual": 30,
+    "supuesto": "5.000 consultas de 6.000 tokens de entrada y 600 de salida: 30 millones (USD 0,30 por millón) y 3 millones (USD 2,50 por millón), unos USD 17, redondeado a 30. Plan pago.",
+    "fuente_precio_url": "https://ai.google.dev/gemini-api/docs/pricing"
+   },
+   {
+    "concepto": "Dominio y DNS",
+    "usd_anual": 15,
+    "supuesto": "Estimación por encima sin fuente abierta: un dominio .com cuesta del orden de USD 10 a 12 por año; se redondea a 15. DNS en el registrador."
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "Asistente.uy",
+   "evidencia_ids": [
+    "F-educacion-005"
+   ],
+   "hueco": "Suite de comunicaciones, asistencia y facturación; la ficha no muestra consultas libres, pero podría agregarlas (riesgo). Solo ve su base, no cruza otros sistemas."
+  },
+  {
+   "nombre": "Colegium (Edufácil, SchoolTrack)",
+   "evidencia_ids": [
+    "F-educacion-006"
+   ],
+   "hueco": "Suite que exige migración; nota de 2019 sin lenguaje natural (a validar). Solo ve sus datos."
+  }
+ ],
+ "monetizacion": "Suscripción mensual por colegio, USD 60 a 120 según fuentes (supuesto sin ancla de precios), más puesta en marcha única de USD 150 a 300 (supuesto) con primera carga hecha por el equipo. Ilustrativo: 220 colegios agrupados (F-educacion-004, socios de gremios) y 5% de adopción (supuesto) son 11 colegios, USD 8.000 a 16.000 por año, contra USD 189 de infraestructura: sirve a un business case de tesis, no a escala.",
+ "riesgos": [
+  "Respuestas SQL incorrectas: mostrar la consulta, validar y medir exactitud",
+  "Un incumbente agrega lenguaje natural: la diferencia es cruzar sistemas",
+  "Cada colegio exporta distinto: mapeo configurable",
+  "Datos de menores y cobranza: base registrada ante la URCDP por el colegio, sin filas hacia el modelo, API paga sin uso para mejora de productos (F-defensa-r1-m06-i011-001), art. 23 de Ley 18.331 (F-ataque-r1-m05-i009-cliente-004)",
+  "Un colegio en crisis puede no pagar: si ninguna dirección acepta en entrevistas, cambia precio o cliente"
+ ],
+ "supuestos": [
+  "Los colegios uruguayos usan sistemas no integrados y planillas (sin ficha uruguaya)",
+  "Los sistemas exportan a CSV (sin ficha)",
+  "Las direcciones pagarían USD 60 a 120 por mes; quién compra es desconocido",
+  "Morosidad y matrícula son consultas frecuentes",
+  "Alternativas: tablas dinámicas, IA de hojas de cálculo y BI genérico; se paga por cruzar fuentes y el glosario cargado",
+  "Antes de diciembre de 2026: entrevistas a direcciones y pedido de una exportación anonimizada; si no hay piloto, datos sintéticos"
+ ],
+ "evidencias": [
+  "F-ataque-r1-m05-i009-cliente-004",
+  "F-defensa-r1-m06-i011-001",
+  "F-educacion-004",
+  "F-educacion-005",
+  "F-educacion-006",
+  "F-educacion-007"
+ ]
+}

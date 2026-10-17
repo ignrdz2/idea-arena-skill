@@ -1,0 +1,42 @@
+{
+ "idea": "i009",
+ "respuestas": [
+  {
+   "ataque": 1,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que los extractos propios no traen imputaciones de un cliente real: ese plan B era hueco, y lo quito. Arreglo: el plan B pasa a un generador de historial sintético de un estudio (plan de cuentas, proveedores recurrentes, ruido) y el resultado académico es la comparación reglas contra embeddings sobre él, declarado como límite de generalidad. No acepto que viole R7: R7 permite datos generados por el propio producto y el plan B no usa datos de terceros. Tampoco que el primer hito solo demuestre un parser: ahora incluye la comparación de métodos.",
+   "evidencia": []
+  },
+  {
+   "ataque": 2,
+   "decision": "PARCIAL",
+   "detalle": "Acepto la generalización: reescribí el problema como un aviso citado (el otro, finalizado, lo saqué), señal de tarea repetitiva y no de pago. No acepto que sea un hueco oculto: la idea ya declaraba como supuesto la falta de ficha de pago y de cifra de estudios, y marcaba la cifra del blog como fuente interesada (F-defensa-r3-m02-i009-002). El criterio es demanda sugerida, y así queda dicha; validarla es tarea previa a diciembre.",
+   "evidencia": ["F-legal-contable-005", "F-defensa-r2-m03-i009-001", "F-defensa-r3-m02-i009-002"]
+  },
+  {
+   "ataque": 3,
+   "decision": "PARCIAL",
+   "detalle": "Concedo el doble rasero: el hueco frente a Conty se apoya en silencio, y ahora lo rotulo así en el competidor y en el riesgo. Concedo que el destino de exportación no estaba nombrado: es Conty, al que importan Contafácil y Contable.CFE. Rebato el choque de precio: $U 1.500 a 2.500 cae dentro de la banda Simple 1.499 a Pro 2.799 que ya publica Contafácil, que vende descarga de CFE y no conciliación; el plan Free es de esa función. El precio sigue como referencia a validar.",
+   "evidencia": ["F-ataque-r1-m05-i009-cliente-003", "F-defensa-r3-m02-i009-003", "F-ataque-r1-m05-i009-cliente-001", "F-ataque-r1-m05-i009-cliente-002"]
+  },
+  {
+   "ataque": 4,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que faltaban los bancos y el alcance de semestre 2 era grande: nombro BROU e Itaú (de la ficha, a confirmar con extractos reales), saco la vista multi-cliente y limito el piloto a 1 estudio. Acepto que la métrica era floja: la meta de 80 por ciento pasa a supuesto sin fundamento y el hito 1 compara métodos. Rebato que los XML de CFE sean un supuesto frágil: Contafácil descarga los CFE de todas las empresas de un estudio con robots, así que los estudios los obtienen.",
+   "evidencia": ["F-defensa-r3-m02-i009-002", "F-ataque-r1-m05-i009-cliente-001"]
+  },
+  {
+   "ataque": 5,
+   "decision": "CONCEDE",
+   "detalle": "Tiene razón: la ficha cubre solo el art. 23, y 'acuerdo y base registrada' era afirmación sin respaldo, además de una arquitectura incoherente para el uso multi-cliente. Arreglo: los datos reales viven en una instalación Docker dentro del equipo del propio estudio, en Uruguay, sin exponer nada por red ni subir a Lightsail (región Sao Paulo, ver ficha); la nube queda con sintéticos. Los roles (estudio responsable, equipo encargado), el contrato y el registro de la base pasan a supuesto explícito, sin ficha, a confirmar con asesoría antes del piloto.",
+   "evidencia": ["F-ataque-r1-m05-i009-cliente-004", "F-defensa-r3-m02-i009-001"]
+  },
+  {
+   "ataque": 6,
+   "decision": "CONCEDE",
+   "detalle": "Elimino el rubro de dominio sin fuente: la demo se sirve por IP y el costo queda en USD 144, todo con fuente de precio (plan B 216). Que el diferencial es copiable ya estaba declarado como riesgo; lo muevo a la fila de Contafácil, que es donde aplica.",
+   "evidencia": ["F-ataque-r1-m05-i009-cliente-001", "F-defensa-r3-m02-i009-001"]
+  }
+ ],
+ "nuevas_fichas": []
+}

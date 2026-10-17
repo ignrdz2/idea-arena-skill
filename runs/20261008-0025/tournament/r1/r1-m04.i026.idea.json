@@ -1,0 +1,110 @@
+{
+ "id": "i026",
+ "titulo": "Registro unico de viaje y margen para fleteros con uno a tres camiones",
+ "problema": "Entre 80 y 90% del transporte profesional son empresas de uno a tres camiones y el gasoil pesa 40 a 50% de lo que cobran (F-logistica-transporte-009, dirigente, 2020). Las logisticas chicas tienen la digitalizacion mas baja del sector (F-logistica-transporte-008) y la doble carga de datos es un dolor tipico (F-legal-contable-003). El fletero tipea el viaje varias veces y no sabe cuanto le dejo. La Guia Electronica de Carga genera reclamos (F-logistica-transporte-003, confianza baja), pero el MTOP dijo que no tiene fecha (F-ataque-r1-m04-i026-cliente-001): el MVP no depende de ella.",
+ "usuario": "Dueno de una empresa de uno a tres camiones, que paga y suele manejar; su contador recibe los datos.",
+ "solucion": "El fletero carga cada viaje una sola vez: foto del remito o audio. Un modelo con vision extrae origen, destino, carga, cliente y precio, y el usuario confirma. La app anota gasoil y peajes, calcula el margen por viaje y exporta los datos al contador o su facturador. Permite preguntar en lenguaje natural, por ejemplo cuanto gane con un cliente en marzo, con Text-to-SQL. Si la guia se vuelve exigible, un modulo opcional ordena los campos para la aplicacion gratuita del MTOP (F-ataque-r1-m04-i026-cliente-002); no la emite.",
+ "mvp": {
+  "semestre_1": [
+   "App web movil con alta de viajes desde foto o audio y confirmacion",
+   "Extraccion con modelo de lenguaje, exactitud medida sobre remitos reales, formulario guiado como plan B",
+   "Gastos y margen por viaje"
+  ],
+  "semestre_2": [
+   "Exportacion CSV para el contador o facturador",
+   "Consultas en lenguaje natural con Text-to-SQL y controles de seguridad",
+   "Piloto con 5 a 10 fleteros y business case; plantilla de la guia solo si es exigible"
+  ]
+ },
+ "stack": [
+  "Next.js PWA",
+  "Python FastAPI",
+  "PostgreSQL",
+  "OpenAI gpt-5-mini",
+  "Whisper",
+  "Text-to-SQL con validacion",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 194,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 2 GB RAM con IPv4",
+    "usd_anual": 144,
+    "supuesto": "USD 12 por mes x 12 meses, una instancia con Docker Compose; no se cuenta la capa gratuita porque la pagina no dice cuanto dura.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 20,
+    "supuesto": "Estimacion por encima: la pagina de Cloudflare Registrar no muestra el precio del .com."
+   },
+   {
+    "concepto": "API OpenAI: gpt-5-mini y transcripcion Whisper",
+    "usd_anual": 30,
+    "supuesto": "5.000 llamadas con 4.000 tokens de entrada y 600 de salida: unos USD 11; 2.000 audios de 30 segundos a USD 0,006 por minuto: USD 6; se reservan USD 30.",
+    "fuente_precio_url": "https://developers.openai.com/api/docs/pricing"
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "YoFacturo",
+   "evidencia_ids": [
+    "F-comercio-retail-008",
+    "F-comercio-retail-009"
+   ],
+   "hueco": "Facturacion y stock para comercios; no modela viaje ni margen. Complemento: recibe el CSV."
+  },
+  {
+   "nombre": "Flexy y LlegoYa",
+   "evidencia_ids": [
+    "F-logistica-transporte-006",
+    "F-logistica-transporte-007"
+   ],
+   "hueco": "Marketplaces de carga con baja traccion; sin registro de viaje ni margen."
+  },
+  {
+   "nombre": "Aplicacion gratuita del MTOP",
+   "evidencia_ids": [
+    "F-ataque-r1-m04-i026-cliente-002"
+   ],
+   "hueco": "Solo emite la guia; sin gastos ni margen."
+  },
+  {
+   "nombre": "WhatsApp, planilla y contador",
+   "evidencia_ids": [
+    "F-logistica-transporte-008"
+   ],
+   "hueco": "La alternativa real hoy; se gana si cargar desde una foto lleva menos que la planilla."
+  }
+ ],
+ "monetizacion": "Suscripcion mensual por camion, con prueba gratis. Supuesto: USD 10 por camion al mes; dos camiones pagos cubren la infraestructura. Canal secundario: estudios contables. Precio y disposicion a pagar se validan con entrevistas a fleteros antes de diciembre de 2026.",
+ "riesgos": [
+  "Disposicion a pagar no probada: si menos de la mitad de 10 fleteros entrevistados pagaria, se pivota",
+  "Sin contactos de fleteros hoy: contacto en frio via gremios y contadores",
+  "Errores en remitos manuscritos: plan B con formulario guiado",
+  "La guia puede no entrar en vigencia: por eso es opcional"
+ ],
+ "supuestos": [
+  "No hay ficha sobre el formato de la guia: el MVP no la emite",
+  "No se emite el comprobante electronico: se exportan datos",
+  "Los fleteros pagarian una suscripcion; no hay ficha con precio ni cantidad de camiones",
+  "La extraccion supera 90% de campos correctos tras confirmacion; se mide en el semestre 1",
+  "Datos personales de clientes tratados segun la Ley 18.331"
+ ],
+ "evidencias": [
+  "F-logistica-transporte-003",
+  "F-logistica-transporte-006",
+  "F-logistica-transporte-007",
+  "F-logistica-transporte-008",
+  "F-logistica-transporte-009",
+  "F-legal-contable-002",
+  "F-legal-contable-003",
+  "F-comercio-retail-008",
+  "F-comercio-retail-009",
+  "F-ataque-r1-m04-i026-cliente-001",
+  "F-ataque-r1-m04-i026-cliente-002"
+ ]
+}

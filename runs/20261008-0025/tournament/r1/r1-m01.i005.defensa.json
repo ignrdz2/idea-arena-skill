@@ -1,0 +1,70 @@
+{
+ "idea": "i005",
+ "respuestas": [
+  {
+   "ataque": 1,
+   "decision": "CONCEDE",
+   "detalle": "Las fichas F-ataque-r1-m01-i005-cliente-001 y -002 muestran que Boris y Undo ya ofrecen portal, panel y cambio en Tiendanube. Agregué los tres competidores a la idea, quité la afirmación de que no hay y reposicioné el hueco como hipótesis a validar: tiendas uruguayas fuera de Tiendanube, flujo local y análisis por SKU. Es riesgo y supuesto declarados, no un hecho.",
+   "evidencia": [
+    "F-ataque-r1-m01-i005-cliente-001",
+    "F-ataque-r1-m01-i005-cliente-002",
+    "F-comercio-retail-010"
+   ]
+  },
+  {
+   "ataque": 2,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que F-comercio-retail-007 no mide costo ni volumen de devoluciones y que admite la lectura contraria; reescribí el problema para decirlo y lo dejé como primera hipótesis a validar. No acepto que el dolor sea inferido de datos que dicen otra cosa: solo el 8% gestiona devoluciones, ninguna mide su logística y los pedidos se confirman a mano (F-comercio-retail-006); la idea ya declaraba la falta de tasa y costo en supuestos.",
+   "evidencia": [
+    "F-comercio-retail-007",
+    "F-comercio-retail-006"
+   ]
+  },
+  {
+   "ataque": 3,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que el riesgo estaba incompleto: la transferencia a EEUU exige consentimiento o cláusulas (F-ataque-r1-m01-i005-cliente-003). Ahora el modelo solo recibe foto y texto del motivo, sin nombre, dirección ni pedido; hay consentimiento en el portal, cláusulas de la Res. 41/021 (F-defensa-r1-m01-i005-001) y modo sin LLM por tienda. No acepto que viole R6: R6 pide un camino realista, no cumplimiento ya ejecutado, y la Res. 41/021 publica el contenido mínimo de las cláusulas. Queda como supuesto que no hace falta asesoría paga.",
+   "evidencia": [
+    "F-ataque-r1-m01-i005-cliente-003",
+    "F-defensa-r1-m01-i005-001"
+   ]
+  },
+  {
+   "ataque": 4,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que la disposición a pagar, el tamaño inicial y el piloto no tienen respaldo; lo pasé a supuestos y riesgos (sin tienda identificada, plan B con datos cedidos o simulados). No acepto que el ingreso no cubra el servidor: con las cuentas del propio ataque, 3 tiendas dan USD 45 a 90 por mes contra USD 194 por año de infraestructura (unos USD 16 por mes), y lo agregué a la monetización.",
+   "evidencia": []
+  },
+  {
+   "ataque": 5,
+   "decision": "CONCEDE",
+   "detalle": "F-comercio-retail-006 (92% sin sistema de inventario) hace inviable sincronizar stock. Quité la reserva de stock y la integración con plataformas del MVP: pedidos por CSV y disponibilidad del talle confirmada por la tienda en la bandeja. Una API queda condicionada a las entrevistas. Reduce alcance y riesgo de plazo.",
+   "evidencia": [
+    "F-comercio-retail-006"
+   ]
+  },
+  {
+   "ataque": 6,
+   "decision": "CONCEDE",
+   "detalle": "F-legal-contable-002 solo respalda que la factura electrónica es obligatoria. Reescribí la solución: el MVP entrega una planilla de salida, sin integración con proveedores de CFE, y el ahorro de tiempo quedó como supuesto.",
+   "evidencia": [
+    "F-legal-contable-002"
+   ]
+  }
+ ],
+ "nuevas_fichas": [
+  {
+   "id": "F-defensa-r1-m01-i005-001",
+   "sector": "transversal",
+   "hallazgo": "La Resolución 41/021 de la URCDP (8/9/2021) recomienda a responsables y encargados que transfieren datos a países no adecuados, en el marco del art. 23 de la Ley 18.331, adoptar cláusulas contractuales mínimas del Anexo I, y exige una evaluación de impacto previa.",
+   "source_url": "https://www.gub.uy/unidad-reguladora-control-datos-personales/institucional/normativa/resolucion-n-41021",
+   "source_title": "Resolución N° 41/021 - URCDP",
+   "source_date": "2021-09-08",
+   "source_type": "gobierno",
+   "geografia": "UY",
+   "confianza": "alta",
+   "retrieved_at": "2026-10-08T02:00:00",
+   "extracto": "la adopción de cláusulas contractuales como las indicadas en el Anexo I"
+  }
+ ]
+}

@@ -1,0 +1,75 @@
+{
+ "idea": "i028",
+ "persona": "cliente",
+ "ataques": [
+  {
+   "n": 1,
+   "severidad": "MAJOR",
+   "titulo": "El dolor citado son eventos extraordinarios que un modelo de espera no predice ni permite evitar",
+   "donde": "Problema y Solución: modelo que estima espera por terminal y franja horaria",
+   "problema": "Las fichas que sostienen el dolor son un buque atrasado con 150 camiones varados diez días (F-002), paros con casi 500 camiones (F-004) y una caída de software (F-005). Son sucesos puntuales, y la propia sección de Riesgos admite que paros y buques son difíciles de predecir. F-001 muestra además que la ANP considera las demoras normales y las atribuye en parte a controles documentales: es una espera estructural, no un dato que el chofer ignore. Como cliente me pregunto qué hago distinto al saber que la fila es de 6 horas: el camión igual tiene que retirar ese contenedor. Ninguna ficha dice que el transportista pueda elegir otra hora o terminal ni que le cueste menos por hacerlo. La idea asume que saber la espera genera una decisión que ahorra plata, y eso no está respaldado.",
+   "tipo": "evidencia",
+   "evidencia": [
+    "F-logistica-transporte-001",
+    "F-logistica-transporte-002",
+    "F-logistica-transporte-004",
+    "F-logistica-transporte-005"
+   ]
+  },
+  {
+   "n": 2,
+   "severidad": "MAJOR",
+   "titulo": "F-009 mal leída: habla de fleteros de Cerro Largo en 2020, no de quienes retiran contenedores en el puerto",
+   "donde": "Usuario: la mayoría son empresas de uno a tres camiones (F-logistica-transporte-009)",
+   "problema": "La ficha F-009 es la opinión de un dirigente de fleteros de Cerro Largo en 2020 sobre el transporte profesional en general (con foco en el gasoil y la producción agropecuaria). No dice nada del segmento que retira contenedores en Montevideo, que puede estar más concentrado en flotas medianas y empresas con sistemas propios. La idea usa la ficha para fijar el cliente, el precio bajo y el canal por gremial. Si el cliente real es una flota de 10 a 50 camiones, cambian el precio, el comprador y la integración que se espera. Además, si el 40 a 50% del flete es gasoil, el margen es fino y la disposición a pagar una suscripción por camión es baja, algo que la idea no discute.",
+   "tipo": "evidencia",
+   "evidencia": [
+    "F-logistica-transporte-009"
+   ]
+  },
+  {
+   "n": 3,
+   "severidad": "MAJOR",
+   "titulo": "Las fichas de apps de transporte uruguayas muestran adopción muy baja y la idea no lo enfrenta",
+   "donde": "Riesgos (arranque en frío, adopción digital) y Competidores: Ninguno respaldado por fichas",
+   "problema": "Flexy declara 300 fleteros y 1.000 a 1.200 usuarios pero solo 5 o 6 fletes por semana (F-006). LlegoYa suma 250 transportistas y 55 envíos en menos de un año (F-007). F-008 mide digitalización media/baja de 2,47 sobre 5, más baja en empresas chicas. Es el mismo público al que se le pide que un chofer abra una app y marque llegada, ingreso y salida en cada terminal, todos los días, sin recibir nada a cambio hasta que haya modelo. El plan gratis que solo aporta datos pide trabajo al chofer y no le da valor. Los datos de Flexy y LlegoYa son la mejor señal local y apuntan contra el supuesto de que la masa crítica de 10 a 20 choferes constantes sea alcanzable. La idea cita F-008 como riesgo pero no saca la consecuencia.",
+   "tipo": "evidencia",
+   "evidencia": [
+    "F-logistica-transporte-006",
+    "F-logistica-transporte-007",
+    "F-logistica-transporte-008"
+   ]
+  },
+  {
+   "n": 4,
+   "severidad": "MAJOR",
+   "titulo": "El registro automático por geocerca no es viable en una PWA y el dato depende de que el chofer lo cargue",
+   "donde": "Solución: el registro se completa solo por geocerca cuando da permiso de ubicación; stack React PWA",
+   "problema": "Una PWA en el navegador no garantiza geolocalización en segundo plano: con la app cerrada o el teléfono bloqueado en la cabina, el navegador no dispara eventos de geocerca de forma fiable, y en iOS es más restrictivo. Esto es conocimiento técnico general, sin ficha en la idea. Las geocercas fiables requieren app nativa, con costos de publicación y más trabajo para el equipo. Si falla, los tiempos de ingreso y salida quedan en carga manual, en un público con baja digitalización (F-008), y el modelo se entrena con pocos datos ruidosos. La idea presenta como resuelto el punto que sostiene todo su dataset, sin supuesto declarado ni plan B.",
+   "tipo": "opinion",
+   "evidencia": []
+  },
+  {
+   "n": 5,
+   "severidad": "MAJOR",
+   "titulo": "Business case sin precio, sin tamaño de mercado y sin evidencia de que se puedan reclamar las demoras",
+   "donde": "Monetización y Panel: útil para reclamar o facturar demoras",
+   "problema": "La monetización es suscripción mensual por camión con plan gratis, sin precio ni cantidad de camiones que retiran contenedores, ni conversión esperada del plan gratis al pago. Es el patrón freemium sin quién paga ni cuánto. Se afirma que el panel sirve para reclamar o facturar demoras, pero ninguna ficha ni supuesto dice que exista una tarifa de demora o estadía que el transportista pueda cobrar al dador de carga o a la terminal. Sin eso, el reporte de horas perdidas es un número para quejarse, y la Intergremial ya se queja con cifras propias (F-001, F-002). El canal Intergremial se nombra, pero no hay contacto ni acuerdo con ella.",
+   "tipo": "evidencia",
+   "evidencia": [
+    "F-logistica-transporte-001",
+    "F-logistica-transporte-002"
+   ]
+  },
+  {
+   "n": 6,
+   "severidad": "MAJOR",
+   "titulo": "Dependencia crítica de datos y de un piloto sin contactos identificados, y rastreo de choferes sin camino de cumplimiento claro",
+   "donde": "Alcance semestre 1 (piloto) y Supuestos: datos públicos de arribos, consentimiento Ley 18.331",
+   "problema": "Los contactos del equipo en constraints.md son todos <<COMPLETAR>>: no hay empresa ni gremial comprometida para el piloto del semestre 1, y el modelo del semestre 2 se evalúa solo contra esos datos. La idea declara que los datos de arribos de buques son utilizables legalmente y que falta verificarlo, y esa es una entrada central del modelo (R7). Además se rastrea la ubicación de choferes que son empleados: el consentimiento del trabajador frente a su empleador es discutible, y el cliente, la empresa, no va a querer que sus camiones queden geolocalizados en una app de estudiantes sin garantías. No hay plan B si el piloto no arranca en marzo o si los datos de buques no sirven. Con 10 a 20 choferes y pocas semanas, además, hay muy pocas observaciones por terminal y franja horaria para entrenar LightGBM de forma defendible.",
+   "tipo": "opinion",
+   "evidencia": []
+  }
+ ],
+ "nuevas_fichas": []
+}

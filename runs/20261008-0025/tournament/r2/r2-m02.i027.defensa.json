@@ -1,0 +1,69 @@
+{
+ "idea": "i027",
+ "respuestas": [
+  {
+   "ataque": 1,
+   "decision": "CONCEDE",
+   "detalle": "Cierto: Figuro tiene plan gratuito y pagos desde USD 5, y Nexura/Figuro rondan USD 50. Se elimina la frase 'sin oferta de entrada' y 'ni ofrece entrada gratis'. El hueco pasa a ser precisión publicada y precio para 100 a 300 pólizas, declarado como hipótesis.",
+   "evidencia": [
+    "F-ataque-r2-m02-i027-competidor-001",
+    "F-ataque-r2-m02-i027-competidor-002"
+   ]
+  },
+  {
+   "ataque": 2,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que Nexura ya extrae del PDF con IA y declara la Ley 18.331: se corrige la ficha de Nexura y se quita 'no informa tratamiento de datos'. No acepto que no haya diferencial: Nexura no publica precisión de extracción (la home solo afirma que la IA lee los campos), y la idea ofrece precisión por campo publicada, revisión solo de lo dudoso y precio de entrada (USD 19 frente a USD 49). La copiabilidad queda como riesgo declarado, sin pretender que sea un foso.",
+   "evidencia": [
+    "F-ataque-r2-m02-i027-competidor-003",
+    "F-ataque-r1-m04-i027-cliente-001"
+   ]
+  },
+  {
+   "ataque": 3,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que bajo 100 pólizas el Excel alcanza: el usuario pasa a 100 a 300 pólizas y se quita el tramo gratis perpetuo por una prueba de 60 días. No acepto que ese tramo no pague: Nexura y Figuro cobran cerca de USD 50 desde unas 150 pólizas, y el precio de la idea queda por debajo; la disposición a pagar sigue declarada como supuesto.",
+   "evidencia": [
+    "F-ataque-r2-m02-i027-competidor-001",
+    "F-ataque-r1-m04-i027-cliente-001"
+   ]
+  },
+  {
+   "ataque": 4,
+   "decision": "PARCIAL",
+   "detalle": "Cierto que F-fintech-seguros-008 solo respalda la distribución por corredores, y la idea ya lo declaraba. Se reescribe el problema para citar solo lo que las fichas dicen. No acepto que no haya señal: dos competidores cobran por este flujo y Nexura dice que bajo 100 pólizas se usa Excel, lo que respalda el uso de planillas. El costo de vencimientos perdidos sigue como supuesto, y se agregan entrevistas antes de diciembre.",
+   "evidencia": [
+    "F-fintech-seguros-008",
+    "F-ataque-r2-m02-i027-competidor-001",
+    "F-ataque-r1-m04-i027-cliente-001"
+   ]
+  },
+  {
+   "ataque": 5,
+   "decision": "PARCIAL",
+   "detalle": "Cierto que el nombre del asegurado llegaba al proveedor: ahora se reemplaza por un código localmente y se restituye después. No acepto que no haya camino legal: las fichas documentan inscripción de la base y cláusulas modelo (R6 pide un camino realista, no su ejecución). Que el proveedor las acepte y el costo de cumplimiento quedan como supuestos, y se agrega el riesgo de falla del enmascarado.",
+   "evidencia": [
+    "F-defensa-r1-m04-i027-003",
+    "F-ataque-r1-m05-i009-cliente-004",
+    "F-ataque-r2-m02-i027-competidor-003"
+   ]
+  },
+  {
+   "ataque": 6,
+   "decision": "PARCIAL",
+   "detalle": "Cierto que wa.me es manual y más débil que los avisos de Nexura; se declara en riesgos. No acepto que tablero y email sean lo que resuelve una planilla: el valor es la extracción con confianza que los alimenta, no el tablero. La idea nunca afirmó paridad en WhatsApp.",
+   "evidencia": [
+    "F-ataque-r1-m04-i027-cliente-001"
+   ]
+  },
+  {
+   "ataque": 7,
+   "decision": "PARCIAL",
+   "detalle": "Acepto que no hay contacto confirmado y que el plan B solo valida los formatos probados: se declara en riesgos y se agrega contactar corredores vía A.PRO.A.SE. y Faprosu antes de diciembre. No acepto que viole R4, que pide usuarios contactables desde Uruguay, no ya contactados. El 5 a 10% ya era un supuesto declarado y no una afirmación con ficha.",
+   "evidencia": [
+    "F-defensa-r1-m04-i027-001"
+   ]
+  }
+ ],
+ "nuevas_fichas": []
+}

@@ -1,0 +1,72 @@
+{
+ "id": "i020",
+ "titulo": "Ruteo y prueba de entrega para pymes de e-commerce y mensajerias chicas",
+ "problema": "En Montevideo, 32,5% de las empresas de e-commerce entrevistadas no tiene sistema de ruteo, 26% no usa indicadores para monitorear la entrega y 88% de los proveedores logisticos sufrio problemas de seguridad en entregas (F-logistica-transporte-010). Ninguna pyme consultada por UTEC mide la eficiencia de su logistica (F-comercio-retail-007). Mientras tanto el e-commerce crece (F-comercio-retail-001) y la ultima milla, sobre todo fuera de Montevideo, es uno de sus principales obstaculos (F-logistica-transporte-011).",
+ "usuario": "Pymes de e-commerce con reparto propio y mensajerias chicas que reparten para varias tiendas; paga la empresa. El repartidor usa la app movil y el cliente final recibe el aviso.",
+ "solucion": "La pyme sube los pedidos del dia (CSV o planilla) y el sistema geocodifica direcciones, arma rutas optimizadas por vehiculo respetando ventanas horarias, y las envia a la app del repartidor. La prueba de entrega guarda foto, firma y ubicacion, y marca entregas fuera de zona o anomalas como alerta de seguridad. El panel muestra indicadores: entregas a tiempo, costo por entrega y kilometros, y permite preguntar en lenguaje natural sobre esos datos.",
+ "mvp": {
+  "semestre_1": [
+   "Carga de pedidos y geocodificacion de direcciones uruguayas",
+   "Optimizador de rutas con ventanas horarias sobre el mapa de Uruguay",
+   "App del repartidor con secuencia de paradas"
+  ],
+  "semestre_2": [
+   "Prueba de entrega con foto, firma y ubicacion, y alertas de anomalias",
+   "Panel de indicadores y consultas en lenguaje natural",
+   "Piloto con una o dos pymes y comparacion de kilometros antes y despues"
+  ]
+ },
+ "stack": [
+  "React y PWA para repartidor",
+  "Python FastAPI",
+  "Google OR-Tools",
+  "OSRM con extracto OpenStreetMap de Uruguay",
+  "Nominatim o geocodificador propio",
+  "PostgreSQL con PostGIS",
+  "Claude Haiku 5.5 para consultas",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 174,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 2 GB RAM con IPv4",
+    "usd_anual": 144,
+    "supuesto": "USD 12 por mes x 12 meses, una instancia para API, base, OSRM con el extracto de Uruguay y fotos comprimidas, Docker Compose; no se cuenta la capa gratuita porque la pagina no dice cuanto dura.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 20,
+    "supuesto": "Estimacion por encima: Cloudflare Registrar cobra al costo del registro pero su pagina no muestra el precio del .com; se reservan USD 20 por un ano con margen."
+   },
+   {
+    "concepto": "API Claude Haiku 5.5 para consultas en lenguaje natural",
+    "usd_anual": 10,
+    "supuesto": "Unas 3.000 consultas al ano de 5.000 tokens de entrada y 500 de salida: unos USD 2 a USD 0,10 y 0,50 por millon; se reservan USD 10 con margen.",
+    "fuente_precio_url": "https://claude.com/pricing"
+   }
+  ]
+ },
+ "competidores": [],
+ "monetizacion": "Suscripcion mensual por vehiculo o por tramo de entregas para la pyme o la mensajeria, con prueba gratis. Canal: comunidades de tiendas online y mensajerias de Montevideo, luego interior. Los precios se validan en entrevistas.",
+ "riesgos": [
+  "Existen ruteadores internacionales que las fichas no relevan",
+  "Geocodificacion debil en direcciones uruguayas incompletas",
+  "OSRM y fotos pueden exigir mas memoria o disco que el servidor previsto",
+  "Las pymes chicas pueden no ver valor si reparten pocos pedidos"
+ ],
+ "supuestos": [
+  "Las fichas no muestran competidores de ruteo para pymes; no se afirma que no existan",
+  "Las pymes pagarian por ruteo y prueba de entrega; no hay ficha con precio",
+  "El extracto de OpenStreetMap de Uruguay entra en 2 GB de RAM con OSRM",
+  "Fotos y ubicaciones de entrega se tratan segun la Ley 18.331"
+ ],
+ "evidencias": [
+  "F-logistica-transporte-010",
+  "F-logistica-transporte-011",
+  "F-comercio-retail-001",
+  "F-comercio-retail-007"
+ ]
+}

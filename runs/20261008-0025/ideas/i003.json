@@ -1,0 +1,76 @@
+{
+ "id": "i003",
+ "titulo": "Inteligencia de demanda por mercado de origen para posadas y cabañas del interior",
+ "problema": "El turismo uruguayo depende de pocos mercados y del tipo de cambio: en el verano 2025 cayeron los brasileños en algunos destinos y los compensaron los argentinos, y en Rocha la ocupación de febrero rondó 50% a 60% (F-turismo-007). La diferencia de precios con Argentina bajó a 47%, el mínimo en cinco años, y Brasil pasó a ser más barato (F-turismo-008). Una posada o un complejo de cabañas del interior se entera de estos cambios tarde, por la prensa, y decide precios y promoción a ciegas. Los datos para anticiparlo existen y son abiertos: visitantes, gasto y estadía por origen (F-turismo-004), pero nadie los traduce para un alojamiento chico.",
+ "usuario": "Dueños de posadas, hostels y complejos de cabañas de 5 a 30 unidades en Rocha, Maldonado y Colonia, sin área comercial. Paga el alojamiento; también podría pagar una liga o asociación de turismo departamental para sus socios.",
+ "solucion": "Tablero web y resumen semanal por email que cruza los datos abiertos de turismo receptivo por origen y destino con el tipo de cambio y la ocupación propia que carga el alojamiento. Muestra qué mercado está creciendo o cayendo, alerta cuando Uruguay se encarece frente a Argentina o Brasil, permite preguntar en lenguaje natural (por ejemplo: cuántos brasileños vinieron a Rocha el último enero contra el anterior) y propone acciones concretas, como una promoción en portugués lista para publicar.",
+ "mvp": {
+  "semestre_1": [
+   "ETL de los archivos de turismo receptivo y del tipo de cambio a un modelo de datos",
+   "Tablero por destino y mercado de origen con series históricas",
+   "Demo al tutor: consultas en lenguaje natural sobre los datos con validación de la SQL generada"
+  ],
+  "semestre_2": [
+   "Carga simple de ocupación propia y comparación con el destino",
+   "Alertas de competitividad cambiaria y resumen semanal con acciones sugeridas",
+   "Piloto con 5 a 8 alojamientos del interior; business case final"
+  ]
+ },
+ "stack": [
+  "Python (pandas, FastAPI)",
+  "PostgreSQL",
+  "Text-to-SQL con Claude Haiku 5.5 API",
+  "Streamlit o Next.js",
+  "Docker",
+  "AWS Lightsail",
+  "Resend"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 129,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 1 GB con IPv4",
+    "usd_anual": 84,
+    "supuesto": "USD 7 por mes durante 12 meses; aloja tablero, ETL de datos abiertos y PostgreSQL en Docker; sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API de Claude Haiku 5.5",
+    "usd_anual": 30,
+    "supuesto": "Unas 30.000 consultas al año, 5.000 tokens de entrada y 700 de salida: 150M a USD 0,10 y 21M a USD 0,50 por millón da USD 25,5; se redondea a 30.",
+    "fuente_precio_url": "https://claude.com/pricing"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 15,
+    "supuesto": "Estimación por encima, sin página de precio abierta: USD 15 por un año."
+   },
+   {
+    "concepto": "Envío de emails transaccionales (Resend, plan gratuito)",
+    "usd_anual": 0,
+    "supuesto": "Plan gratuito permanente: 3.000 emails por mes y 100 por día; alcanza para piloto y demo.",
+    "fuente_precio_url": "https://resend.com/pricing"
+   }
+  ]
+ },
+ "competidores": [],
+ "monetizacion": "Suscripción de USD 12 por mes por alojamiento, o licencia anual de USD 600 para una asociación departamental que lo ofrezca a hasta 30 socios. Canal: asociaciones y ligas de turismo del interior y venta directa.",
+ "riesgos": [
+  "Los datos abiertos salen con rezago y poco desglose por departamento, lo que limita alertas útiles",
+  "Que el dueño vea valor en el dato pero no cambie decisiones, y no renueve",
+  "Text-to-SQL con respuestas erróneas: requiere validación y límites",
+  "Disposición a pagar baja en alojamientos chicos y estacionales"
+ ],
+ "supuestos": [
+  "Los archivos de turismo receptivo tienen desglose por origen y destino suficiente para el tablero",
+  "El tipo de cambio se obtiene de fuentes públicas oficiales",
+  "Los alojamientos chicos del interior no usan hoy herramientas de este tipo: las fichas no muestran competidores, no se afirma que no existan",
+  "Se puede contactar dueños de posadas y asociaciones de turismo desde Uruguay antes de diciembre de 2026",
+  "Precios de suscripción sin validar"
+ ],
+ "evidencias": [
+  "F-turismo-007",
+  "F-turismo-008",
+  "F-turismo-004"
+ ]
+}

@@ -1,0 +1,89 @@
+{
+ "id": "i003",
+ "titulo": "Inteligencia de demanda por mercado de origen para posadas y cabañas del interior",
+ "problema": "El turismo uruguayo depende de pocos mercados y del tipo de cambio: en el verano 2025 cayeron los brasileños en algunos destinos y los compensaron los argentinos, y en Rocha la ocupación de febrero rondó 50% a 60% (F-turismo-007). La diferencia de precios con Argentina bajó a 47%, el mínimo en cinco años (F-turismo-008). El Ministerio publica visitantes por nacionalidad y destino principal, cada trimestre (F-turismo-004, F-defensa-r1-m02-i003-001). Que un alojamiento chico lo sepa tarde y pierda por eso es hipótesis a validar.",
+ "usuario": "Dueños de posadas, hostels y complejos de cabañas de 5 a 30 unidades en Rocha, Maldonado y Colonia, sin área comercial. Paga el alojamiento. Una asociación de turismo departamental como compradora es hipótesis secundaria.",
+ "solucion": "Tablero web y resumen por email. Base, sin carga del dueño: cruza el mix de visitantes por nacionalidad y destino principal con el tipo de cambio diario y alerta cuando Uruguay se encarece frente a Argentina o Brasil. Opcional: cada mes el dueño sube su ocupación en una planilla, sin datos de huéspedes. Permite consultas en lenguaje natural y genera un borrador de promoción en portugués que el dueño revisa.",
+ "mvp": {
+  "semestre_1": [
+   "ETL de los archivos trimestrales de turismo receptivo y del tipo de cambio",
+   "Tablero por nacionalidad y destino principal con series históricas",
+   "Demo al tutor: consultas en lenguaje natural con SQL validada y exactitud medida en 30 preguntas"
+  ],
+  "semestre_2": [
+   "Alertas cambiarias y resumen semanal basado en el tipo de cambio",
+   "Carga mensual opcional de ocupación y comparación con el destino",
+   "Piloto con 5 a 8 alojamientos; business case final"
+  ]
+ },
+ "stack": [
+  "Python (pandas, FastAPI)",
+  "PostgreSQL",
+  "Text-to-SQL con Claude Haiku 5.5 API",
+  "Streamlit o Next.js",
+  "Docker",
+  "AWS Lightsail",
+  "Resend"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 114,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 1 GB con IPv4",
+    "usd_anual": 84,
+    "supuesto": "USD 7 por mes durante 12 meses; aloja tablero, ETL y PostgreSQL en Docker; sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API de Claude Haiku 5.5",
+    "usd_anual": 15,
+    "supuesto": "Unas 8.000 llamadas al año (piloto, resúmenes y pruebas), 5.000 tokens de entrada y 700 de salida: 40M a USD 0,10 y 5,6M a USD 0,50 por millón da USD 6,8; se redondea a 15.",
+    "fuente_precio_url": "https://claude.com/pricing"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 15,
+    "supuesto": "Estimación por encima, sin página de precio abierta: USD 15 por un año."
+   },
+   {
+    "concepto": "Envío de emails transaccionales (Resend, plan gratuito)",
+    "usd_anual": 0,
+    "supuesto": "Plan gratuito: 3.000 emails por mes y 100 por día; alcanza para piloto y demo.",
+    "fuente_precio_url": "https://resend.com/pricing"
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "MiniHotel PMS",
+   "evidencia_ids": [
+    "F-defensa-r1-m02-i003-002"
+   ],
+   "hueco": "Yield Manager con tarifas según demanda y ocupación propias. No se verificó que use mix por origen ni tipo de cambio: hipótesis."
+  }
+ ],
+ "monetizacion": "Suscripción de USD 12 por mes por alojamiento (USD 144 al año: un cliente cubre la infraestructura de USD 114). Canal: venta directa tras entrevistas y piloto. Hipótesis secundaria: licencia de USD 600 anuales a una asociación, hasta 30 socios.",
+ "riesgos": [
+  "Datos trimestrales y quizá sin desglose por departamento",
+  "El dueño ve valor pero no cambia decisiones ni renueva",
+  "Text-to-SQL erróneo: requiere validación y medición",
+  "Disposición a pagar baja en alojamientos chicos y estacionales",
+  "Un PMS con yield manager o datos gratuitos del Ministerio cubre lo mismo"
+ ],
+ "supuestos": [
+  "El desglose por departamento no está confirmado (plan B: mix nacional más tipo de cambio)",
+  "El tipo de cambio diario sale de fuentes públicas oficiales",
+  "Dolor, disposición a pagar, cantidad de alojamientos y compra por asociaciones no tienen ficha: se validan en entrevistas",
+  "La ocupación mensual agregada no es dato personal; si se pidiera más, se aplica la Ley 18.331",
+  "No se afirma que no existan herramientas similares en estos alojamientos",
+  "Se puede contactar dueños y asociaciones antes de diciembre de 2026",
+  "Precios de suscripción sin validar"
+ ],
+ "evidencias": [
+  "F-turismo-007",
+  "F-turismo-008",
+  "F-turismo-004",
+  "F-defensa-r1-m02-i003-001",
+  "F-defensa-r1-m02-i003-002"
+ ]
+}

@@ -1,0 +1,84 @@
+{
+ "id": "i014",
+ "titulo": "Tours cortos con regreso garantizado para cruceristas, vendidos por guías independientes",
+ "problema": "En la temporada 2024-2025 Montevideo recibió 234.865 cruceristas, el 75% del total, y el gasto promedio por persona en tierra fue de solo USD 59,1 (F-turismo-005). El crucerista tiene pocas horas y debe volver al barco a tiempo. Los guías independientes llegan a él sobre todo vía plataformas de free tour donde el viajero paga lo que quiere al final (F-turismo-006): el guía no sabe cuánto va a cobrar ni cuántos van a venir. Ni el guía capta parte del gasto del crucerista con un precio fijo, ni el crucerista tiene una oferta pensada para su horario de escala.",
+ "usuario": "Guías turísticos independientes de Montevideo y Colonia (paga el guía) y cruceristas hispanohablantes, lusohablantes y angloparlantes (usuario final, paga el tour).",
+ "solucion": "Plataforma donde cada guía publica tours cortos de precio fijo cargados sobre las escalas de cruceros de la temporada: el crucerista elige su barco y ve solo los tours que terminan con margen antes de la hora de embarque. Reserva con prepago, recordatorios y punto de encuentro en el puerto. Un asistente traduce la descripción del tour a portugués e inglés y recalcula el itinerario si el barco cambia el horario, avisando al guía y a los inscriptos.",
+ "mvp": {
+  "semestre_1": [
+   "Carga del calendario de escalas desde fuentes públicas y alta de guías y tours",
+   "Filtro de tours por barco y horario de embarque, con traducción automática",
+   "Demo al tutor: reserva simulada de punta a punta para una escala real de la temporada 2026-2027"
+  ],
+  "semestre_2": [
+   "Prepago con pasarela local y política de cancelación",
+   "Recalculo de itinerario y avisos ante cambio de horario",
+   "Piloto con 3 a 5 guías en la temporada 2026-2027 o con datos de esa temporada; business case final"
+  ]
+ },
+ "stack": [
+  "React",
+  "Node.js (NestJS)",
+  "PostgreSQL",
+  "Docker",
+  "AWS Lightsail",
+  "Claude Haiku 5.5 API",
+  "Resend",
+  "Mercado Pago Checkout"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 114,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 1 GB con IPv4",
+    "usd_anual": 84,
+    "supuesto": "USD 7 por mes durante 12 meses; aloja la web de reservas, la API y PostgreSQL en Docker; sin capa gratuita.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "API de Claude Haiku 5.5",
+    "usd_anual": 15,
+    "supuesto": "Unas 10.000 traducciones y ajustes de itinerario en el año, 4.000 tokens de entrada y 800 de salida: 40M a USD 0,10 y 8M a USD 0,50 por millón da USD 8; se redondea a 15.",
+    "fuente_precio_url": "https://claude.com/pricing"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 15,
+    "supuesto": "Estimación por encima, sin página de precio abierta: USD 15 por un año."
+   },
+   {
+    "concepto": "Envío de emails transaccionales (Resend, plan gratuito)",
+    "usd_anual": 0,
+    "supuesto": "Plan gratuito permanente: 3.000 emails por mes y 100 por día; alcanza para piloto y demo.",
+    "fuente_precio_url": "https://resend.com/pricing"
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "GuruWalk",
+   "evidencia_ids": [
+    "F-turismo-006"
+   ],
+   "hueco": "Modelo de pago libre al final: el guía no tiene ingreso previsible y la oferta no se filtra por la hora de embarque de un crucero."
+  }
+ ],
+ "monetizacion": "Comisión de 10% sobre cada reserva prepaga, cobrada al guía. Con un tour de USD 25 por persona, 5 guías y unas 400 reservas por temporada darían unos USD 1.000 por temporada; crecer exige sumar puertos de la región.",
+ "riesgos": [
+  "Temporada corta (aproximadamente noviembre a abril): poca ventana para pilotar",
+  "Las navieras venden excursiones propias y pueden competir con precio o confianza",
+  "Cumplir requisitos para operar como guía o agencia según la normativa de turismo",
+  "Comisiones de la pasarela de pago reducen el margen"
+ ],
+ "supuestos": [
+  "El calendario de escalas de cruceros se publica de forma abierta y se puede usar",
+  "Los guías independientes prefieren precio fijo a pago libre; no hay ficha que lo muestre",
+  "El crucerista reservaría antes de bajar si ve un regreso garantizado",
+  "Se puede contactar guías de Montevideo desde Uruguay antes de diciembre de 2026",
+  "Precio del tour y comisión sin validar"
+ ],
+ "evidencias": [
+  "F-turismo-005",
+  "F-turismo-006"
+ ]
+}

@@ -1,0 +1,91 @@
+{
+ "id": "i026",
+ "titulo": "Asistente de papeleo por viaje para fleteros con uno a tres camiones",
+ "problema": "Entre 80 y 90% del transporte profesional son empresas de uno a tres camiones (F-logistica-transporte-009). Desde 2026 transportistas y arroceros reclaman que la Guia Electronica de Carga suma carga administrativa que encarece el flete (F-logistica-transporte-003), y ademas casi todo emisor debe facturar electronicamente (F-legal-contable-002), con doble carga de datos como dolor tipico (F-legal-contable-003). Las empresas logisticas chicas tienen la digitalizacion mas baja del sector (F-logistica-transporte-008): el viaje se tipea varias veces y no se sabe cuanto dejo, aunque el gasoil pesa 40 a 50% de lo que se cobra (F-logistica-transporte-009).",
+ "usuario": "El dueno de una empresa de uno a tres camiones, que paga y suele manejar; su contador recibe los datos exportados.",
+ "solucion": "El fletero carga cada viaje una sola vez: foto del remito o un audio. Un modelo de lenguaje con vision extrae origen, destino, carga, cliente y precio, y el usuario confirma. Con ese registro unico la app prepara los datos listos para copiar en la Guia Electronica de Carga y para el comprobante electronico, registra gasoil y peajes, y calcula el margen por viaje. Se puede preguntar en lenguaje natural, por ejemplo cuanto gane con un cliente en marzo, con Text-to-SQL sobre sus propios datos.",
+ "mvp": {
+  "semestre_1": [
+   "App web movil con alta de viajes desde foto o audio y confirmacion de campos",
+   "Extraccion con modelo de lenguaje y medicion de exactitud sobre remitos reales",
+   "Registro de gastos y margen por viaje"
+  ],
+  "semestre_2": [
+   "Plantilla de datos para Guia Electronica de Carga y exportacion para el contador",
+   "Consultas en lenguaje natural con Text-to-SQL y controles de seguridad",
+   "Piloto con 5 a 10 fleteros y business case"
+  ]
+ },
+ "stack": [
+  "Next.js PWA",
+  "Python FastAPI",
+  "PostgreSQL",
+  "OpenAI gpt-5-mini (vision y texto)",
+  "Whisper o modelo de transcripcion",
+  "Text-to-SQL con validacion de consultas",
+  "Docker",
+  "AWS Lightsail"
+ ],
+ "costo_infra": {
+  "total_anual_usd": 204,
+  "items": [
+   {
+    "concepto": "Servidor AWS Lightsail Linux 2 GB RAM con IPv4",
+    "usd_anual": 144,
+    "supuesto": "USD 12 por mes x 12 meses, una instancia para API y base de datos, Docker Compose; no se cuenta la capa gratuita porque la pagina no dice cuanto dura.",
+    "fuente_precio_url": "https://aws.amazon.com/lightsail/pricing/"
+   },
+   {
+    "concepto": "Dominio .com",
+    "usd_anual": 20,
+    "supuesto": "Estimacion por encima: Cloudflare Registrar cobra al costo del registro pero su pagina no muestra el precio del .com; se reservan USD 20 por un ano con margen."
+   },
+   {
+    "concepto": "API OpenAI gpt-5-mini para extraccion y consultas",
+    "usd_anual": 40,
+    "supuesto": "5.000 llamadas al ano con 4.000 tokens de entrada y 600 de salida: 20 M entrada a USD 0,25 y 3 M salida a USD 2 por millon dan unos USD 11; se reservan USD 40 por imagenes, audio y pruebas.",
+    "fuente_precio_url": "https://developers.openai.com/api/docs/pricing"
+   }
+  ]
+ },
+ "competidores": [
+  {
+   "nombre": "YoFacturo",
+   "evidencia_ids": [
+    "F-comercio-retail-008",
+    "F-comercio-retail-009"
+   ],
+   "hueco": "Facturacion y stock para comercios; no modela el viaje, la Guia Electronica de Carga ni el margen por flete."
+  },
+  {
+   "nombre": "Odoo con localizacion uruguaya",
+   "evidencia_ids": [
+    "F-legal-contable-004"
+   ],
+   "hueco": "ERP generico que exige configurar intermediario, certificado y CAE: demasiado complejo para un fletero con un camion."
+  }
+ ],
+ "monetizacion": "Suscripcion mensual por camion para el fletero, con prueba gratis. Canal secundario: estudios contables de transportistas, con un plan propio. Los precios se validan en entrevistas.",
+ "riesgos": [
+  "El sistema oficial de la Guia Electronica de Carga puede no tener API y quedar en copia manual",
+  "Cambios regulatorios en la guia o su eventual derogacion",
+  "Errores de extraccion en remitos manuscritos o fotos malas"
+ ],
+ "supuestos": [
+  "No hay ficha sobre el formato o la API de la Guia Electronica de Carga: el MVP prepara los datos y no la emite",
+  "La emision del comprobante electronico se integra con un proveedor existente o queda fuera del MVP",
+  "Los fleteros pagarian una suscripcion mensual; no hay ficha con precio",
+  "La extraccion con modelo de lenguaje supera 90% de campos correctos tras confirmacion",
+  "Datos personales de clientes tratados segun la Ley 18.331"
+ ],
+ "evidencias": [
+  "F-logistica-transporte-003",
+  "F-logistica-transporte-008",
+  "F-logistica-transporte-009",
+  "F-legal-contable-002",
+  "F-legal-contable-003",
+  "F-legal-contable-004",
+  "F-comercio-retail-008",
+  "F-comercio-retail-009"
+ ]
+}

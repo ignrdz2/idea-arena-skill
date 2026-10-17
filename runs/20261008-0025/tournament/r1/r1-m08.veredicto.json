@@ -1,0 +1,24 @@
+{
+  "match": "r1-m08",
+  "scores": {
+    "X": {"demanda": 5, "viabilidad": 8, "diferenciacion": 5, "business_case": 5, "encaje": 8, "academico": 7, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 5, "viabilidad": 7, "diferenciacion": 5, "business_case": 5, "encaje": 5, "academico": 3, "fatal": true, "fatal_motivo": "afirmacion_sin_evidencia: 'desde 2022 obliga a registrar cada intento en 24 horas, sin fijar cómo se hace el seguimiento (F-defensa-r1-m08-i002-002)', la ficha citada no existe y la afirmación sostiene el argumento de demanda"}
+  },
+  "winner": "X",
+  "reason": "Y apoya su argumento de demanda en una ficha que no existe (fallo fatal) y además encaja peor con el perfil de IA del equipo, mientras X arregló sus ataques con evidencia local verificada y un costo de USD 115 bien sustentado.",
+  "survived": [
+    "Costo cero de WhatsApp contradicho por las alertas: arreglado, alertas solo en panel y dentro de la ventana de 24 horas",
+    "Demanda sin fichas de vendedores: arreglado en parte con ficha uruguaya de comprobantes adulterados por WhatsApp y Marketplace, pérdida declarada como a medir",
+    "Mirar la cuenta es gratis: rebatido, el valor central pasa a links, phishing y falsas ofertas que esa defensa no cubre",
+    "Falsos negativos sin meta: arreglado con metas de detección y falsos positivos y sin responder nunca 'seguro'",
+    "Ley 18.331 sin camino concreto: arreglado con borrado de capturas, retención de 90 días y alertas solo sobre dominios y textos"
+  ],
+  "standing": {
+    "X": ["Disposición a pagar y tamaño de mercado sin base: 100 pymes es una hipótesis, sin canal ni contactos"],
+    "Y": [
+      "Demanda central sin ficha: abandono del seguimiento y pago de USD 100 a 200 son supuestos, y la obligación de 2022 cita una ficha inexistente",
+      "Sin socio ni validación real: la prueba del semestre 2 es solo con casos ficticios y entrevistas",
+      "Diferenciación frente a Zalon y AgendaPro real pero fácil de copiar como módulo"
+    ]
+  }
+}

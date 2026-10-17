@@ -1,0 +1,193 @@
+{
+ "ranking": [
+  {
+   "id": "i009",
+   "champion": true,
+   "reached_round": 5,
+   "eliminated_in": null,
+   "eliminated_by": null,
+   "lost_score": null,
+   "fatal": false,
+   "rank": 1,
+   "titulo": "Conciliación bancaria y precontabilización aprendida para estudios contables"
+  },
+  {
+   "id": "i027",
+   "champion": false,
+   "reached_round": 4,
+   "eliminated_in": 4,
+   "eliminated_by": "i009",
+   "lost_score": 51.0,
+   "fatal": false,
+   "rank": 2,
+   "titulo": "Cartera digital para corredores de seguros chicos"
+  },
+  {
+   "id": "i028",
+   "champion": false,
+   "reached_round": 3,
+   "eliminated_in": 3,
+   "eliminated_by": "i027",
+   "lost_score": 57.0,
+   "fatal": false,
+   "rank": 3,
+   "titulo": "Prediccion de espera para retirar contenedores en el puerto de Montevideo"
+  },
+  {
+   "id": "i010",
+   "champion": false,
+   "reached_round": 3,
+   "eliminated_in": 3,
+   "eliminated_by": "i009",
+   "lost_score": 54.5,
+   "fatal": false,
+   "rank": 4,
+   "titulo": "Alertas tempranas de ausentismo y desvinculación para liceos privados"
+  },
+  {
+   "id": "i006",
+   "champion": false,
+   "reached_round": 2,
+   "eliminated_in": 2,
+   "eliminated_by": "i028",
+   "lost_score": 58.5,
+   "fatal": false,
+   "rank": 5,
+   "titulo": "Medición de tiempos de espera desde el pedido para prestadores de salud chicos"
+  },
+  {
+   "id": "i011",
+   "champion": false,
+   "reached_round": 2,
+   "eliminated_in": 2,
+   "eliminated_by": "i009",
+   "lost_score": 53.0,
+   "fatal": false,
+   "rank": 6,
+   "titulo": "Consultas en lenguaje natural sobre los datos dispersos de un colegio"
+  },
+  {
+   "id": "i015",
+   "champion": false,
+   "reached_round": 2,
+   "eliminated_in": 2,
+   "eliminated_by": "i010",
+   "lost_score": 52.5,
+   "fatal": false,
+   "rank": 7,
+   "titulo": "Verificador de estafas por WhatsApp para vendedores online"
+  },
+  {
+   "id": "i021",
+   "champion": false,
+   "reached_round": 2,
+   "eliminated_in": 2,
+   "eliminated_by": "i027",
+   "lost_score": 47.0,
+   "fatal": false,
+   "rank": 8,
+   "titulo": "Prediagnóstico energético de mipymes a partir de sus facturas de UTE"
+  },
+  {
+   "id": "i026",
+   "champion": false,
+   "reached_round": 1,
+   "eliminated_in": 1,
+   "eliminated_by": "i027",
+   "lost_score": 56.5,
+   "fatal": false,
+   "rank": 9,
+   "titulo": "Registro unico de viaje y margen para fleteros con uno a tres camiones"
+  },
+  {
+   "id": "i018",
+   "champion": false,
+   "reached_round": 1,
+   "eliminated_in": 1,
+   "eliminated_by": "i009",
+   "lost_score": 54.5,
+   "fatal": false,
+   "rank": 10,
+   "titulo": "Stock único que se descuenta leyendo los CFE que la pyme ya emite"
+  },
+  {
+   "id": "i001",
+   "champion": false,
+   "reached_round": 1,
+   "eliminated_in": 1,
+   "eliminated_by": "i010",
+   "lost_score": 53.5,
+   "fatal": false,
+   "rank": 11,
+   "titulo": "Copiloto de obligaciones fiscales para unipersonales que empiezan"
+  },
+  {
+   "id": "i003",
+   "champion": false,
+   "reached_round": 1,
+   "eliminated_in": 1,
+   "eliminated_by": "i021",
+   "lost_score": 53.0,
+   "fatal": false,
+   "rank": 12,
+   "titulo": "Inteligencia de demanda por mercado de origen para posadas y cabañas del interior"
+  },
+  {
+   "id": "i017",
+   "champion": false,
+   "reached_round": 1,
+   "eliminated_in": 1,
+   "eliminated_by": "i011",
+   "lost_score": 52.5,
+   "fatal": false,
+   "rank": 13,
+   "titulo": "Reclamos vecinales por WhatsApp para municipios chicos, con implantación liviana"
+  },
+  {
+   "id": "i005",
+   "champion": false,
+   "reached_round": 1,
+   "eliminated_in": 1,
+   "eliminated_by": "i006",
+   "lost_score": 45.5,
+   "fatal": false,
+   "rank": 14,
+   "titulo": "Portal de cambios y devoluciones para tiendas online uruguayas"
+  },
+  {
+   "id": "i012",
+   "champion": false,
+   "reached_round": 1,
+   "eliminated_in": 1,
+   "eliminated_by": "i028",
+   "lost_score": 45.5,
+   "fatal": false,
+   "rank": 15,
+   "titulo": "Registro offline de tratamientos veterinarios con retiro calculado, listo para declarar al SNIG"
+  },
+  {
+   "id": "i002",
+   "champion": false,
+   "reached_round": 1,
+   "eliminated_in": 1,
+   "eliminated_by": "i015",
+   "lost_score": 54.0,
+   "fatal": true,
+   "rank": 16,
+   "titulo": "Seguimiento de pacientes tras un intento de autoeliminación para equipos de salud mental"
+  }
+ ],
+ "top": [
+  "i009",
+  "i027",
+  "i028",
+  "i010",
+  "i006",
+  "i011",
+  "i015",
+  "i021"
+ ],
+ "excluidas_por_fallo_fatal": [
+  "i002"
+ ]
+}

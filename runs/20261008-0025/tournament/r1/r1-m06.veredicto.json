@@ -1,0 +1,28 @@
+{
+  "match": "r1-m06",
+  "scores": {
+    "X": {"demanda": 4, "viabilidad": 7, "diferenciacion": 4, "business_case": 5, "encaje": 9, "academico": 8, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 4, "viabilidad": 8, "diferenciacion": 4, "business_case": 4, "encaje": 6, "academico": 5, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "X",
+  "reason": "Con demanda igual de débil en las dos (contexto local más supuestos de pago), X gana por encaje directo con la especialidad Text-to-SQL del equipo, un desafío académico medible y un business case algo más cuantificado, mientras Y enfrenta un sustituto gratuito con respaldo estatal (Agesic) y un comprador que la ficha 008 muestra reacio a pagar.",
+  "survived": [
+    "R7 por depender de un colegio piloto inexistente: rebatido, demos y evaluación sobre datos sintéticos generados por el equipo, piloto real opcional",
+    "Datos de menores y cobranza enviados a una API externa: arreglado, al modelo solo viajan esquema, glosario y pregunta, API paga sin uso para mejora de productos, base registrada por el colegio",
+    "Supuestos de costo sin detalle: arreglado, volumen de tokens explícito y total de USD 189 bajo el objetivo"
+  ],
+  "standing": {
+    "X": [
+      "La demanda uruguaya no tiene ficha: el dolor viene de una ficha colombiana y queda como supuesto",
+      "Sin señal de pago y con colegios en crisis; quién decide la compra sigue desconocido",
+      "El hueco frente a las suites y a las hojas de cálculo con IA se apoya en lo que las fichas no dicen y es copiable",
+      "La carga manual de exportar CSV y mantener el glosario sigue sin resolverse"
+    ],
+    "Y": [
+      "La intendencia más grande ya resuelve reclamos por WhatsApp con su gente: el comprador es también el sustituto",
+      "Ninguna ficha muestra demanda de reclamos en municipios chicos ni disposición a pagar",
+      "Agesic ofrece participación digital gratis al mismo comprador: reconocido pero no resuelto",
+      "Ingreso por municipio muy chico, mercado sin dimensionar y canal vía Congreso de Intendentes sin ficha que lo muestre comprando para municipios"
+    ]
+  }
+}

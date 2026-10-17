@@ -1,0 +1,13 @@
+{
+ "descartadas": [
+  {
+   "id": "F-defensa-r1-m08-i002-002",
+   "source_url": "https://www.elobservador.com.uy/nota/ministerio-de-salud-publica-emitio-decreto-que-obliga-a-prestadores-a-registrar-intentos-de-suicidio-en-una-base-digital-para-seguirlos-en-tiempo-real--2022930171429",
+   "motivo": "esquema",
+   "errores": [
+    "$: falta el campo 'retrieved_at'"
+   ],
+   "contexto": "r1-m08 defensa de i002"
+  }
+ ]
+}

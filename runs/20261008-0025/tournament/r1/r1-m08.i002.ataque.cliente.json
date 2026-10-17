@@ -1,0 +1,92 @@
+{
+  "idea": "i002",
+  "persona": "cliente",
+  "ataques": [
+    {
+      "n": 1,
+      "severidad": "FATAL",
+      "titulo": "El canal central de recordatorios por WhatsApp choca con la política de WhatsApp Business sobre información de salud",
+      "donde": "Solución (recordatorio al paciente por WhatsApp), Semestre 2, Stack (WhatsApp Cloud API), costo de mensajes",
+      "problema": "La política de WhatsApp Business indica que no se debe usar la plataforma para telemedicina ni para enviar o pedir información relacionada con la salud cuando la regulación aplicable exige salvaguardas reforzadas. Un mensaje a una persona que intentó suicidarse revela un dato de salud mental, y la Ley 18.331 trata los datos de salud como sensibles. La idea no declara este riesgo en supuestos (solo asume la tarifa) ni tiene plan B (SMS, llamada). Como cliente, no activo un canal que Meta puede cortar o que me expone a un reclamo por divulgar un dato sensible en el celular del paciente, que puede ser compartido o estar a la vista de otros.",
+      "tipo": "evidencia",
+      "evidencia": [
+        "F-ataque-r1-m08-i002-cliente-001"
+      ]
+    },
+    {
+      "n": 2,
+      "severidad": "FATAL",
+      "titulo": "La demanda central (equipos que pierden pacientes y pagarían USD 100 a 200 por mes) no tiene ninguna ficha",
+      "donde": "Problema ('El paciente que no vuelve al control se pierde sin que nadie lo note'), Usuario, Monetización y Supuestos declarados",
+      "problema": "Ninguna ficha dice que los prestadores pierdan pacientes tras un intento, cuántos no vuelven al control, cómo hacen hoy el seguimiento ni que alguien pague por esto. F-salud-009 solo cuantifica intentos y muertes; no mide abandono de seguimiento. F-salud-002 y F-salud-004 hablan de otra cosa (ver ataque 3). Lo central queda en supuestos ('siguen con planillas o papel', 'una institución paga USD 100 a 200'), pero un supuesto declarado no es respaldo: la afirmación 'se pierde sin que nadie lo note' del Problema está escrita como hecho. En demanda, la rúbrica da 0 a 2 cuando la demanda es una opinión de quien escribió la idea. No hay un solo presupuesto, oferta laboral o precio de un competidor que indique disposición a pagar.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 3,
+      "severidad": "MAJOR",
+      "titulo": "F-salud-002 y F-salud-004 se citan para algo que no dicen",
+      "donde": "Problema: 'La continuidad entre instituciones es limitada... (F-salud-004) y el MSP reconoce falta de sistemas de información para seguir plazos asistenciales (F-salud-002)'",
+      "problema": "F-salud-002 trata de la medición de tiempos de espera para estudios y consultas en mutualistas (el único sistema que funciona es el del block quirúrgico); no menciona salud mental, intentos de suicidio ni seguimiento de pacientes. F-salud-004 dice que las historias clínicas de 2,1 millones de usuarios son interoperables entre 14 prestadores desde 2019 (fuente de hace 7 años), con autorización del paciente; no dice que la continuidad sea limitada ni que haya pacientes perdidos. Si ya existe interoperabilidad, la derivación entre instituciones que propone la idea podría solaparse con ella en lugar de ser un hueco. Dos de las tres fichas de la idea no sostienen el argumento que se les atribuye.",
+      "tipo": "evidencia",
+      "evidencia": [
+        "F-salud-002",
+        "F-salud-004"
+      ]
+    },
+    {
+      "n": 4,
+      "severidad": "MAJOR",
+      "titulo": "Sin socio ni contacto para el piloto y el cliente decide por riesgo clínico, no por precio",
+      "donde": "Alcance Semestre 2 (piloto con un equipo de salud mental), Riesgos ('Sin socio identificado'), constraints R4 y tabla de contactos",
+      "problema": "La tabla de contactos de constraints.md está sin completar y la propia idea admite que no hay socio. R4 exige clientes que el equipo pueda contactar desde Uruguay para validar antes de diciembre de 2026, y no hay ninguno identificado. Además, el piloto exige datos reales de pacientes tras un intento: la institución tendría que entregar datos de salud mental muy sensibles a un equipo de estudiantes sin historial, y los equipos deben pasar por su dirección técnica, su asesoría legal y su comité. Quien compra en un prestador chico es una dirección técnica con presupuesto acotado (lo reconoce el Riesgos). Como responsable del área, no pondría nombres y teléfonos de pacientes en un sistema de estudiantes. Sin piloto, el semestre 2 no tiene validación y la demo del semestre 1 es con datos ficticios.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 5,
+      "severidad": "MAJOR",
+      "titulo": "Diferenciación vacía: 'ninguno respaldado por fichas' ignora lo que ya usa el cliente",
+      "donde": "Competidores ('Ninguno respaldado por fichas') y Supuestos",
+      "problema": "La idea no compara con lo que el equipo ya tiene: las instituciones registran la información clínica de forma digital (83% según F-salud-005, ficha bloqueada, vale menos), y existen agendas con recordatorios por WhatsApp para centros de salud (F-salud-007 AgendaPro en Argentina, F-salud-006 Zalon en Uruguay con agenda y recordatorios). Un prestador con agenda online y recordatorios puede pedir una lista de pacientes con cita vencida a su sistema actual. La idea no explica por qué un módulo de seguimiento con vencimientos no lo agregaría cualquiera de ellos, ni por qué el cliente cambiaría una planilla que ya funciona para un equipo chico. Nueva herramienta que no se integra con la historia clínica de la institución = doble carga de datos para su gente.",
+      "tipo": "evidencia",
+      "evidencia": [
+        "F-salud-005",
+        "F-salud-006",
+        "F-salud-007"
+      ]
+    },
+    {
+      "n": 6,
+      "severidad": "MAJOR",
+      "titulo": "Regulación y seguridad subestimadas: datos de salud mental con USD 7 por mes de servidor y sin plan de cumplimiento verificado",
+      "donde": "Riesgos, Supuestos ('no requiere habilitación como dispositivo médico'), costo de infraestructura (Lightsail 1 GB)",
+      "problema": "El supuesto de que una herramienta que no puntúa riesgo no es dispositivo médico no tiene ninguna ficha, y R6 exige un camino realista de cumplimiento con la Ley 18.331 para datos personales; la idea solo promete un 'plan de cumplimiento' como entregable de fin de 2027. El costo no incluye respaldos, monitoreo, registro de la base ante el regulador de datos ni una auditoría de seguridad, y todo con un solo servidor de 1 GB. Un incidente con este tipo de datos es, en palabras de la propia idea, 'grave'. Como cliente, no puedo comprar algo cuyo proveedor aún no demuestra cómo cumple.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 7,
+      "severidad": "MINOR",
+      "titulo": "Costo de WhatsApp es un supuesto sin fuente y la tarifa no se pudo confirmar",
+      "donde": "Costo de infraestructura, fila 'Mensajes plantilla de WhatsApp', supuesto 'no supera USD 0,03'",
+      "problema": "La tarifa de USD 0,03 por plantilla es una estimación sin fuente. Abrí la página oficial de precios de WhatsApp Business y no muestra las tarifas ni dice si Uruguay entra en 'Resto de Latinoamérica'. El margen del total (USD 139 contra tope 300) absorbe una tarifa mayor, así que no viola R1, pero el supuesto de 1.300 mensajes con 40 pacientes de prueba tampoco se justifica: un piloto real con pacientes reales suele ser menor.",
+      "tipo": "opinion",
+      "evidencia": []
+    }
+  ],
+  "nuevas_fichas": [
+    {
+      "id": "F-ataque-r1-m08-i002-cliente-001",
+      "sector": "transversal",
+      "hallazgo": "La política de WhatsApp Business prohíbe usar la plataforma para telemedicina o para enviar o pedir información relacionada con la salud cuando la regulación aplicable exige salvaguardas reforzadas para esos datos; también restringe bienes y servicios médicos.",
+      "source_url": "https://whatsappbusiness.com/policy/",
+      "source_title": "WhatsApp Business Messaging Policy",
+      "source_date": "desconocida",
+      "source_type": "otro",
+      "geografia": "GLOBAL",
+      "confianza": "media",
+      "retrieved_at": "2026-10-08T00:40:00"
+    }
+  ]
+}

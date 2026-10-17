@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Ficha de evidencia",
+  "description": "Un hallazgo concreto, sacado de una página que el agente abrió con WebFetch. Python vuelve a pedir la URL: si no existe, la ficha se descarta. El campo verificacion lo agrega Python; los agentes no lo escriben.",
+  "type": "object",
+  "required": ["id", "sector", "hallazgo", "source_url", "source_title", "source_date", "source_type", "geografia", "confianza", "retrieved_at"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^F-[a-z0-9]+(-[a-z0-9]+)*-[0-9]{3}$", "description": "F-<sector>-001, o el prefijo que indique el brief."},
+    "sector": {"type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$", "description": "El id del sector en config.json, o transversal."},
+    "hallazgo": {"type": "string", "minLength": 20, "maxLength": 450, "description": "Parafraseado, 1 o 2 oraciones, con el dato concreto."},
+    "source_url": {"type": "string", "format": "uri", "maxLength": 1000},
+    "source_title": {"type": "string", "minLength": 2, "maxLength": 300},
+    "source_date": {"type": "string", "pattern": "^([0-9]{4}(-[0-9]{2}(-[0-9]{2})?)?|desconocida)$", "description": "AAAA, AAAA-MM, AAAA-MM-DD o desconocida."},
+    "source_type": {"enum": ["prensa", "informe", "oferta_laboral", "competidor", "gobierno", "academico", "foro_redes", "datos_abiertos", "precios", "otro"]},
+    "geografia": {"type": "string", "pattern": "^([A-Z]{2}(-[A-Z0-9]{1,3})?|LATAM|GLOBAL)$", "description": "Código ISO del país (UY, AR, BR, US...), LATAM o GLOBAL."},
+    "confianza": {"enum": ["alta", "media", "baja"]},
+    "retrieved_at": {"type": "string", "format": "date-time", "description": "Cuándo se abrió la página, ISO 8601: 2026-10-02T15:04:00."},
+    "extracto": {"type": "string", "maxLength": 300, "description": "Opcional. Frase literal corta (hasta 30 palabras) de la página, para verificar."},
+    "competidor": {"type": "string", "maxLength": 120, "description": "Opcional. Nombre del competidor, si la ficha habla de uno."},
+    "verificacion": {"type": "object", "description": "Lo agrega Python."}
+  },
+  "additionalProperties": false
+}

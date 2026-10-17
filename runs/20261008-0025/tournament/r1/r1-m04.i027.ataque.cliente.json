@@ -1,0 +1,85 @@
+{
+  "idea": "i027",
+  "persona": "cliente",
+  "ataques": [
+    {
+      "n": 1,
+      "severidad": "FATAL",
+      "titulo": "Ignora a Nexura, que ya ofrece lo mismo en Uruguay, y afirma que no hay vista unificada para el corredor",
+      "donde": "Seccion Competidores (solo Klimber y bots de aseguradoras) y Problema (\"sin herramientas para no perder vencimientos\")",
+      "problema": "La idea sostiene que el corredor multimarca no tiene una vista unificada de su cartera ni herramientas para sus vencimientos, sin ninguna ficha que lo diga y sin declararlo en supuestos (los supuestos hablan de planillas, no de ausencia de software). La ficha nueva muestra que Nexura ya se vende a corredores de Uruguay: subir el PDF de la poliza y extraer los datos, CRM de polizas y clientes, avisos automaticos de renovacion por WhatsApp, desde USD 49 por mes, sin contrato anual, para carteras de 150 a 600 polizas. Es el mismo producto central (PDF a ficha, vencimientos, avisos) con WhatsApp proactivo, que la idea no puede hacer. Como cliente, no cambio una herramienta ya disponible por una de estudiantes que hace menos. Es una afirmacion central de ausencia de competidores sin respaldo.",
+      "tipo": "evidencia",
+      "evidencia": ["F-ataque-r1-m04-i027-cliente-001"]
+    },
+    {
+      "n": 2,
+      "severidad": "MAJOR",
+      "titulo": "Las fichas de competidores no dicen lo que la idea les atribuye",
+      "donde": "Competidores: Klimber (F-fintech-seguros-007) y bots de WhatsApp (F-fintech-seguros-008)",
+      "problema": "F-fintech-seguros-007 solo dice que MetLife y la Asociacion Insurtech destacaron productos de contratacion inmediata hechos con Klimber; no dice que Klimber no de herramientas al corredor independiente. F-fintech-seguros-008 (nota de 2021 sobre San Cristobal) dice que existe un bot de WhatsApp como canal; no dice que cada bot atienda solo pólizas de su compañía ni que el corredor carezca de vista unificada. Ambas diferencias son inferencias de la idea presentadas como evidencia. Ademas ninguno de los dos es competidor directo: el competidor real es el software de gestion de cartera, que la idea no busco. La diferenciacion queda sin sustento.",
+      "tipo": "evidencia",
+      "evidencia": ["F-fintech-seguros-007", "F-fintech-seguros-008"]
+    },
+    {
+      "n": 3,
+      "severidad": "MAJOR",
+      "titulo": "La demanda es 100% supuesto: ninguna ficha muestra el dolor del corredor chico ni que pague",
+      "donde": "Problema y Supuestos declarados (\"Perder vencimientos les cuesta renovaciones\", \"Un corredor pagaria USD 15 a 30 por mes\")",
+      "problema": "Las tres fichas citadas son contexto macro: primas del mercado (F-fintech-seguros-003), cantidad de aseguradoras (F-fintech-seguros-008) y un caso de contratacion digital (F-fintech-seguros-007). El ratio combinado de 106,2% habla del resultado tecnico de las aseguradoras, no de que el corredor pierda renovaciones. No hay una ficha sobre cuantos corredores hay, cuanto pierden por vencimientos no avisados, ni que paguen por software. Declarar los supuestos lo hace honesto pero no lo respalda: como cliente, no se si esto me cuesta plata o es un extra, y la idea tampoco.",
+      "tipo": "evidencia",
+      "evidencia": ["F-fintech-seguros-003", "F-fintech-seguros-008"]
+    },
+    {
+      "n": 4,
+      "severidad": "MAJOR",
+      "titulo": "Depende de polizas reales de terceros sin socio identificado ni plan B, y de datos personales de asegurados",
+      "donde": "Supuestos (\"Se pueden conseguir polizas reales anonimizadas\"), Alcance Semestre 1 (3 aseguradoras, 2 corredores reales) y Riesgos (Ley 18.331)",
+      "problema": "La tabla de contactos de constraints.md esta toda en <<COMPLETAR>>: no hay corredor ni asociacion identificados (R7: la dependencia de datos ajenos exige un socio en la tabla). El extractor, la metrica de precision por campo y el piloto exigen PDFs reales de al menos 3 aseguradoras; sin ellos, la precision medida con PDFs sinteticos no sirve. Ademas cada poliza lleva nombre, documento, patente o domicilio del asegurado y se envia a una API en el exterior; como corredor no entrego la cartera de mis clientes a un equipo de estudiantes sin acuerdo, base de datos registrada ni consentimiento. La idea nombra la Ley 18.331 pero no da camino de cumplimiento (R6). No hay plan B si ningun corredor entrega PDFs.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 5,
+      "severidad": "MAJOR",
+      "titulo": "Business case sin tamano de mercado ni canal verificados; el precio no esta anclado a lo que ya se vende",
+      "donde": "Monetizacion: \"100 corredores a USD 20 de promedio, unos USD 24.000 al ano\"; Supuesto \"cientos de corredores contactables via asociaciones\"",
+      "problema": "No hay ninguna ficha con la cantidad de corredores o productores en Uruguay, ni con la existencia de asociaciones que den acceso, ni con precios de referencia. Los 100 clientes y el promedio de USD 20 son numeros elegidos, no derivados. El unico precio de mercado encontrado (Nexura, desde USD 49 por mes) es mas del doble del tramo de la idea, lo que sugiere o que el precio esta mal calibrado o que es mas barato por hacer menos. El piloto de 3 a 5 corredores durante 2 meses no valida disposicion a pagar si el producto es gratis hasta 50 polizas y el piloto no cobra.",
+      "tipo": "evidencia",
+      "evidencia": ["F-ataque-r1-m04-i027-cliente-001"]
+    },
+    {
+      "n": 6,
+      "severidad": "MAJOR",
+      "titulo": "Obliga a cambiar el flujo de trabajo: carga manual de PDFs y validacion campo por campo",
+      "donde": "Solucion: \"el corredor sube polizas en PDF ... a una ficha que el corredor valida\"",
+      "problema": "Un corredor con 200 a 700 polizas activas tiene que subir y revisar cada una antes de recibir el primer aviso util. Si el LLM falla en formatos distintos (riesgo que la propia idea declara), el tiempo de validacion puede superar al de mantener mi planilla, y no hay integracion con lo que ya uso (planilla, portales de las aseguradoras, correo). Los avisos van por email, un canal que mis clientes de seguros leen poco, mientras el WhatsApp proactivo queda afuera por costo. El beneficio visible llega recien tras una carga inicial grande y no esta cuantificado.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 7,
+      "severidad": "MINOR",
+      "titulo": "El asistente de WhatsApp reactivo agrega poco valor y expone al corredor a respuestas de cobertura erradas",
+      "donde": "Alcance Semestre 2: asistente de WhatsApp que responde consultas del cliente sobre su propia poliza",
+      "problema": "Solo responde cuando el cliente escribe primero, que es el caso menos frecuente; el dolor declarado es avisar vencimientos, y eso va por email. A la vez, un LLM que contesta sobre coberturas a un asegurado puede equivocarse y el corredor responde ante su cliente. Cada corredor necesita ademas su propia cuenta de WhatsApp Business verificada. Parece una pieza de demo, no algo por lo que yo pagaria.",
+      "tipo": "opinion",
+      "evidencia": []
+    }
+  ],
+  "nuevas_fichas": [
+    {
+      "id": "F-ataque-r1-m04-i027-cliente-001",
+      "sector": "transversal",
+      "hallazgo": "Nexura se ofrece a corredores de seguros de Uruguay: carga del PDF de la poliza con extraccion automatica de datos, CRM de polizas y clientes, avisos de renovacion por WhatsApp y precio desde USD 49 por mes, sin contrato anual; recomendada para carteras de 150 a 600 polizas.",
+      "source_url": "https://nexuraseguros.com/blog/software-corredores-seguros-uruguay-2026",
+      "source_title": "Software para corredores de seguros en Uruguay 2026",
+      "source_date": "2026-03-29",
+      "source_type": "competidor",
+      "geografia": "UY",
+      "confianza": "media",
+      "retrieved_at": "2026-10-08T12:00:00",
+      "extracto": "Subís el PDF de la póliza y el sistema extrae automáticamente los datos",
+      "competidor": "Nexura"
+    }
+  ]
+}

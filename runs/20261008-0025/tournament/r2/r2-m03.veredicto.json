@@ -1,0 +1,30 @@
+{
+  "match": "r2-m03",
+  "scores": {
+    "X": {"demanda": 6, "viabilidad": 7, "diferenciacion": 5, "business_case": 6, "encaje": 7, "academico": 7, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 3, "viabilidad": 7, "diferenciacion": 4, "business_case": 5, "encaje": 9, "academico": 7, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "X",
+  "reason": "X tiene demanda local verificada (tres avisos de estudios de Montevideo que contratan personal para conciliar bancos, dos ok y uno bloqueado, más honorarios y planes pagos de herramientas vecinas), mientras que el dolor de Y solo tiene respaldo en una ficha colombiana y su cliente uruguayo está en crisis y sin ancla de precio.",
+  "survived": [
+    "precio por encima del techo de Contafácil: bajado a $U 1.500 a 3.500 y declarado supuesto",
+    "demanda de conciliación en una sola oferta: ahora hay tres avisos locales",
+    "piloto sin socio de datos como violación de R4 o R7: rebatido, hay plan B con datos sintéticos declarado",
+    "LLM externo y transferencia internacional: eliminado, todo local, costo USD 164",
+    "tamaño de mercado ausente: declarado como supuesto"
+  ],
+  "standing": {
+    "X": [
+      "el hueco frente a Contafácil y Contable.CFE se apoya en el silencio de sus páginas, sin ficha de pago por conciliación",
+      "un incumbente con clientes y CFE de DGI puede copiar la conciliación rápido; la ventaja es solo de tiempo",
+      "flujo con XML subido a mano y exportación genérica, sin importar a Conty o Zureo: dos herramientas para el estudio"
+    ],
+    "Y": [
+      "un incumbente con los datos en su base puede sumar consultas en lenguaje natural sin migración",
+      "el dolor de sistemas no integrados solo tiene ficha colombiana; en Uruguay es supuesto, sin señal de pago",
+      "el segmento objetivo está en crisis y el precio de USD 60 a 120 no tiene ancla",
+      "importadores y exactitud solo probados con datos sintéticos, sin formatos de exportación reales",
+      "BI genérico e IA de planillas son la alternativa real y la diferencia es copiable"
+    ]
+  }
+}

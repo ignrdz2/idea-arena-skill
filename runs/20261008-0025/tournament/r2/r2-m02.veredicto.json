@@ -1,0 +1,28 @@
+{
+  "match": "r2-m02",
+  "scores": {
+    "X": {"demanda": 5, "viabilidad": 8, "diferenciacion": 4, "business_case": 7, "encaje": 7, "academico": 6, "fatal": false, "fatal_motivo": ""},
+    "Y": {"demanda": 3, "viabilidad": 7, "diferenciacion": 3, "business_case": 4, "encaje": 7, "academico": 6, "fatal": false, "fatal_motivo": ""}
+  },
+  "winner": "X",
+  "reason": "X tiene señales locales de pago (Nexura y Figuro cobran unos USD 50 por mes por este flujo) y un canal concreto con A.PRO.A.SE., mientras Y no tiene ninguna ficha de dolor ni de pago, compite con el asesoramiento gratuito de UTE y depende de vender leads sin validar.",
+  "survived": [
+    "Hueco 'sin oferta de entrada' falso: se quitó y se reconoce a Figuro gratis y desde USD 5",
+    "Segmento bajo 100 pólizas que no paga: el usuario pasa a 100 a 300 pólizas y el tramo gratis perpetuo pasa a prueba de 60 días",
+    "Nombre del asegurado enviado a la API en EE.UU.: ahora se enmascara localmente, con camino legal documentado (inscripción y cláusulas modelo)"
+  ],
+  "standing": {
+    "X": [
+      "Nexura ya extrae del PDF con IA en 43 aseguradoras: el diferencial (precisión publicada y precio) es copiable",
+      "El dolor (vencimientos perdidos) y la disposición a pagar USD 19 siguen sin ficha, solo como supuestos",
+      "WhatsApp manual por wa.me queda por debajo de Nexura",
+      "Sin contacto confirmado con corredores ni con A.PRO.A.SE.; la conversión de 5 a 10% no tiene base"
+    ],
+    "Y": [
+      "Ninguna ficha muestra que la mipyme pague de más ni que pague por saberlo",
+      "UTE asesora gratis sobre tarifa y potencia; el hueco (inmediatez, solar, sin incentivo) es copiable",
+      "El ahorro se corrige una vez y el segmento de bajo consumo puede no pagar",
+      "El ingreso principal (USD 20 por lead a consultores e instaladores) no tiene ficha ni validación"
+    ]
+  }
+}

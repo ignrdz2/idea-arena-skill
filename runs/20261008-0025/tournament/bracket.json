@@ -1,0 +1,1567 @@
+{
+ "version": 1,
+ "seed": 7,
+ "dir": "runs/20261008-0025/tournament",
+ "has_baseline": false,
+ "final": null,
+ "agents": {
+  "i001": {
+   "card": {
+    "reasoning": {
+     "id": "legal-contable",
+     "name": "legal-contable"
+    }
+   },
+   "solution": "runs/20261008-0025/tournament/r1/r1-m03.i001.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r1/r1-m03.i001.idea.json",
+   "alive": false,
+   "eliminated_in": 1,
+   "eliminated_by": "i010",
+   "byes": 0,
+   "shown_first": 0,
+   "shown_second": 1,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i002": {
+   "card": {
+    "reasoning": {
+     "id": "salud",
+     "name": "salud"
+    }
+   },
+   "solution": "runs/20261008-0025/tournament/r1/r1-m08.i002.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r1/r1-m08.i002.idea.json",
+   "alive": false,
+   "eliminated_in": 1,
+   "eliminated_by": "i015",
+   "byes": 0,
+   "shown_first": 0,
+   "shown_second": 1,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i003": {
+   "card": {
+    "reasoning": {
+     "id": "turismo",
+     "name": "turismo"
+    }
+   },
+   "solution": "runs/20261008-0025/tournament/r1/r1-m02.i003.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r1/r1-m02.i003.idea.json",
+   "alive": false,
+   "eliminated_in": 1,
+   "eliminated_by": "i021",
+   "byes": 0,
+   "shown_first": 0,
+   "shown_second": 1,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i005": {
+   "card": {
+    "reasoning": {
+     "id": "comercio-retail",
+     "name": "comercio-retail"
+    }
+   },
+   "solution": "runs/20261008-0025/tournament/r1/r1-m01.i005.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r1/r1-m01.i005.idea.json",
+   "alive": false,
+   "eliminated_in": 1,
+   "eliminated_by": "i006",
+   "byes": 0,
+   "shown_first": 1,
+   "shown_second": 0,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i006": {
+   "card": {
+    "reasoning": {
+     "id": "salud",
+     "name": "salud"
+    }
+   },
+   "solution": "runs/20261008-0025/tournament/r2/r2-m01.i006.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r2/r2-m01.i006.idea.json",
+   "alive": false,
+   "eliminated_in": 2,
+   "eliminated_by": "i028",
+   "byes": 0,
+   "shown_first": 1,
+   "shown_second": 1,
+   "personas": [
+    "cliente",
+    "competidor"
+   ]
+  },
+  "i009": {
+   "card": {
+    "reasoning": {
+     "id": "legal-contable",
+     "name": "legal-contable"
+    }
+   },
+   "solution": "runs/20261008-0025/tournament/r4/r4-m01.i009.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r4/r4-m01.i009.idea.json",
+   "alive": true,
+   "eliminated_in": null,
+   "eliminated_by": null,
+   "byes": 0,
+   "shown_first": 2,
+   "shown_second": 2,
+   "personas": [
+    "cliente",
+    "competidor",
+    "inversor",
+    "tutor"
+   ]
+  },
+  "i010": {
+   "card": {
+    "reasoning": {
+     "id": "educacion",
+     "name": "educacion"
+    }
+   },
+   "solution": "runs/20261008-0025/tournament/r3/r3-m02.i010.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r3/r3-m02.i010.idea.json",
+   "alive": false,
+   "eliminated_in": 3,
+   "eliminated_by": "i009",
+   "byes": 0,
+   "shown_first": 3,
+   "shown_second": 0,
+   "personas": [
+    "cliente",
+    "competidor",
+    "inversor"
+   ]
+  },
+  "i011": {
+   "card": {
+    "reasoning": {
+     "id": "educacion",
+     "name": "educacion"
+    }
+   },
+   "solution": "runs/20261008-0025/tournament/r2/r2-m03.i011.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r2/r2-m03.i011.idea.json",
+   "alive": false,
+   "eliminated_in": 2,
+   "eliminated_by": "i009",
+   "byes": 0,
+   "shown_first": 1,
+   "shown_second": 1,
+   "personas": [
+    "cliente",
+    "competidor"
+   ]
+  },
+  "i012": {
+   "card": {
+    "reasoning": {
+     "id": "agro",
+     "name": "agro"
+    }
+   },
+   "solution": "runs/20261008-0025/tournament/r1/r1-m07.i012.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r1/r1-m07.i012.idea.json",
+   "alive": false,
+   "eliminated_in": 1,
+   "eliminated_by": "i028",
+   "byes": 0,
+   "shown_first": 0,
+   "shown_second": 1,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i015": {
+   "card": {
+    "reasoning": {
+     "id": "fintech-seguros",
+     "name": "fintech-seguros"
+    }
+   },
+   "solution": "runs/20261008-0025/tournament/r2/r2-m04.i015.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r2/r2-m04.i015.idea.json",
+   "alive": false,
+   "eliminated_in": 2,
+   "eliminated_by": "i010",
+   "byes": 0,
+   "shown_first": 1,
+   "shown_second": 1,
+   "personas": [
+    "cliente",
+    "competidor"
+   ]
+  },
+  "i017": {
+   "card": {
+    "reasoning": {
+     "id": "sector-publico",
+     "name": "sector-publico"
+    }
+   },
+   "solution": "runs/20261008-0025/tournament/r1/r1-m06.i017.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r1/r1-m06.i017.idea.json",
+   "alive": false,
+   "eliminated_in": 1,
+   "eliminated_by": "i011",
+   "byes": 0,
+   "shown_first": 0,
+   "shown_second": 1,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i018": {
+   "card": {
+    "reasoning": {
+     "id": "comercio-retail",
+     "name": "comercio-retail"
+    }
+   },
+   "solution": "runs/20261008-0025/tournament/r1/r1-m05.i018.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r1/r1-m05.i018.idea.json",
+   "alive": false,
+   "eliminated_in": 1,
+   "eliminated_by": "i009",
+   "byes": 0,
+   "shown_first": 0,
+   "shown_second": 1,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i021": {
+   "card": {
+    "reasoning": {
+     "id": "energia-ambiente",
+     "name": "energia-ambiente"
+    }
+   },
+   "solution": "runs/20261008-0025/tournament/r2/r2-m02.i021.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r2/r2-m02.i021.idea.json",
+   "alive": false,
+   "eliminated_in": 2,
+   "eliminated_by": "i027",
+   "byes": 0,
+   "shown_first": 1,
+   "shown_second": 1,
+   "personas": [
+    "cliente",
+    "competidor"
+   ]
+  },
+  "i026": {
+   "card": {
+    "reasoning": {
+     "id": "logistica-transporte",
+     "name": "logistica-transporte"
+    }
+   },
+   "solution": "runs/20261008-0025/tournament/r1/r1-m04.i026.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r1/r1-m04.i026.idea.json",
+   "alive": false,
+   "eliminated_in": 1,
+   "eliminated_by": "i027",
+   "byes": 0,
+   "shown_first": 1,
+   "shown_second": 0,
+   "personas": [
+    "cliente"
+   ]
+  },
+  "i027": {
+   "card": {
+    "reasoning": {
+     "id": "fintech-seguros",
+     "name": "fintech-seguros"
+    }
+   },
+   "solution": "runs/20261008-0025/tournament/r4/r4-m01.i027.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r4/r4-m01.i027.idea.json",
+   "alive": false,
+   "eliminated_in": 4,
+   "eliminated_by": "i009",
+   "byes": 0,
+   "shown_first": 3,
+   "shown_second": 1,
+   "personas": [
+    "cliente",
+    "competidor",
+    "inversor",
+    "tutor"
+   ]
+  },
+  "i028": {
+   "card": {
+    "reasoning": {
+     "id": "logistica-transporte",
+     "name": "logistica-transporte"
+    }
+   },
+   "solution": "runs/20261008-0025/tournament/r3/r3-m01.i028.solution.md",
+   "idea_json": "runs/20261008-0025/tournament/r3/r3-m01.i028.idea.json",
+   "alive": false,
+   "eliminated_in": 3,
+   "eliminated_by": "i027",
+   "byes": 0,
+   "shown_first": 1,
+   "shown_second": 2,
+   "personas": [
+    "cliente",
+    "competidor",
+    "inversor"
+   ]
+  }
+ },
+ "agents_n": 16,
+ "rounds": [
+  {
+   "n": 1,
+   "alive": [
+    "i001",
+    "i002",
+    "i003",
+    "i005",
+    "i006",
+    "i009",
+    "i010",
+    "i011",
+    "i012",
+    "i015",
+    "i017",
+    "i018",
+    "i021",
+    "i026",
+    "i027",
+    "i028"
+   ],
+   "matches": [
+    {
+     "id": "r1-m01",
+     "a": "i005",
+     "b": "i006",
+     "winner": "i006",
+     "loser": "i005",
+     "reason": "Y apoya el problema en un decreto local con plazos y monitoreo obligatorio y en la admision del MSP de que el calculo no cuenta la agenda cerrada, con un hueco que ninguna ficha de competidor cubre, mientras X compite contra Boris y Undo que ya hacen lo mismo y su dolor (volumen y costo de devoluciones) no tiene ficha.",
+     "survived": [
+      "plazos del decreto mal tomados: corregidos con las categorias de la nota de Presidencia y tabla configurable",
+      "competidores ignorados: Zalon, AgendaPro y CliniGest agregados y precio bajado a USD 60 a 150",
+      "supuesto contradicho por F-salud-005: bien rebatido, mide digitalizacion y no espera desde el pedido",
+      "ficha de Casa de Galicia mal aplicada: retirada",
+      "doble carga del administrativo: reducida a un formulario solo para pedidos con agenda cerrada",
+      "piloto sin socio y datos de salud: plan B con datos sinteticos y CSV sin identificadores"
+     ],
+     "scores": {
+      "i005": 45.5,
+      "i006": 62.0
+     },
+     "source": "judge",
+     "first": "i005",
+     "second": "i006",
+     "personas": [
+      "cliente"
+     ],
+     "attacks_checked": true,
+     "det_fatal": {
+      "i005": [],
+      "i006": []
+     },
+     "hard_notes": {
+      "i005": [
+       "costo_estimado: el precio de 'Dominio .com y snapshots de respaldo' es una estimación sin fuente"
+      ],
+      "i006": [
+       "costo_estimado: el precio de 'Dominio propio' es una estimación sin fuente"
+      ]
+     },
+     "revised": true,
+     "fatal": {
+      "i005": false,
+      "i006": false
+     },
+     "criteria": {
+      "i005": {
+       "demanda": 3,
+       "viabilidad": 7,
+       "diferenciacion": 3,
+       "business_case": 4,
+       "encaje": 6,
+       "academico": 5
+      },
+      "i006": {
+       "demanda": 5,
+       "viabilidad": 8,
+       "diferenciacion": 6,
+       "business_case": 5,
+       "encaje": 7,
+       "academico": 6
+      }
+     },
+     "fatal_motivos": {
+      "i005": [],
+      "i006": []
+     },
+     "standing": {
+      "i005": [
+       "Boris y Undo ya ofrecen portal, panel y cambio por producto o credito; el hueco fuera de Tiendanube es solo hipotesis",
+       "no hay ficha del volumen ni del costo de devoluciones en pymes uruguayas; la demanda central sigue sin respaldo",
+       "disposicion a pagar, tamano del mercado inicial y canal por agencias sin ficha ni contactos"
+      ],
+      "i006": [
+       "la disposicion a pagar del prestador chico sigue sin ficha: el decreto no le exige herramienta propia y el monitoreo lo hace el MSP",
+       "un software de agenda que ya tiene los turnos podria agregar el indicador desde el pedido con poco desarrollo"
+      ]
+     },
+     "notes": []
+    },
+    {
+     "id": "r1-m02",
+     "a": "i003",
+     "b": "i021",
+     "winner": "i021",
+     "loser": "i003",
+     "reason": "Con demanda igual de floja en las dos (dolor y pago declarados como supuestos), X ofrece algo que la mipyme no obtiene gratis (leer sus facturas y calcular el ahorro con el decreto 339/2025 verificado), mientras que la capa base de Y se reduce a datos trimestrales nacionales y al tipo de cambio públicos, con un hueco débil frente a esa alternativa gratuita.",
+     "survived": [
+      "Ataque fatal de disposición a pagar: rebatido como fatal porque está declarada en supuestos y el modelo se reordenó hacia el lead calificado",
+      "Subsidio MIEM de 2020: arreglado, el valor ya no depende del reintegro y la cifra derivada se quitó",
+      "Falta de contactos para facturas y piloto: arreglado con plan B declarado (facturas propias, contacto en frío, piloto de 5 a 15)",
+      "Pliego tarifario sin ficha: arreglado con la ficha verificada del decreto 339/2025 y motor acotado a dos tarifas con rangos",
+      "Acceso restringido a Gemini 2.5 Flash-Lite: arreglado con modelo alternativo y costo de peor caso de USD 259 bajo el tope"
+     ],
+     "scores": {
+      "i003": 53.0,
+      "i021": 55.5
+     },
+     "source": "judge",
+     "first": "i021",
+     "second": "i003",
+     "personas": [
+      "cliente"
+     ],
+     "attacks_checked": true,
+     "det_fatal": {
+      "i021": [],
+      "i003": []
+     },
+     "hard_notes": {
+      "i021": [
+       "costo_estimado: el precio de 'Dominio .com por un año' es una estimación sin fuente"
+      ],
+      "i003": [
+       "costo_estimado: el precio de 'Dominio .com' es una estimación sin fuente"
+      ]
+     },
+     "revised": true,
+     "fatal": {
+      "i003": false,
+      "i021": false
+     },
+     "criteria": {
+      "i003": {
+       "demanda": 4,
+       "viabilidad": 8,
+       "diferenciacion": 3,
+       "business_case": 4,
+       "encaje": 8,
+       "academico": 6
+      },
+      "i021": {
+       "demanda": 4,
+       "viabilidad": 7,
+       "diferenciacion": 5,
+       "business_case": 5,
+       "encaje": 7,
+       "academico": 7
+      }
+     },
+     "fatal_motivos": {
+      "i003": [],
+      "i021": []
+     },
+     "standing": {
+      "i021": [
+       "Ninguna ficha muestra que una mipyme pague de más ni que alguien pague por prediagnósticos o leads (queda como hipótesis)",
+       "Diferenciación copiable: UTE o un instalador pueden extender el simulador por factura a comercios"
+      ],
+      "i003": [
+       "Dolor y disposición a pagar del dueño de posada sin ficha, solo declarados como hipótesis",
+       "El dato abierto es trimestral y nacional: el producto base queda en alertas de tipo de cambio sin valor propio para una posada concreta",
+       "La alternativa gratuita (datos del Ministerio y cotización pública) cubre casi lo mismo, y el hueco frente a MiniHotel es hipótesis"
+      ]
+     },
+     "notes": []
+    },
+    {
+     "id": "r1-m03",
+     "a": "i010",
+     "b": "i001",
+     "winner": "i010",
+     "loser": "i001",
+     "reason": "X apoya el dolor en varias fichas locales verificadas (ausentismo y desvinculación, matrícula privada, crisis del sector) y corre sin dependencias sobre datos sintéticos a USD 119, mientras Y admite que su dolor central es hipótesis y compite con un calendario gratuito local (Calculame) y con el contador.",
+     "survived": [
+      "Dependencia de un colegio piloto y R7: rebatido con cohortes sintéticas generadas por el producto y demo alternativa",
+      "Lectura causal de F-educacion-004: el texto se corrigió y lo no respaldado pasó a supuestos",
+      "Envío de datos de menores a Gemini: ahora solo datos seudonimizados, revisión humana y riesgo declarado ante la URCDP",
+      "Doble carga con la suite del colegio: se eliminó el registro propio y queda solo importación de exportes"
+     ],
+     "scores": {
+      "i010": 65.5,
+      "i001": 53.5
+     },
+     "source": "judge",
+     "first": "i010",
+     "second": "i001",
+     "personas": [
+      "cliente"
+     ],
+     "attacks_checked": true,
+     "det_fatal": {
+      "i010": [],
+      "i001": []
+     },
+     "hard_notes": {
+      "i010": [
+       "costo_estimado: el precio de 'Dominio y DNS' es una estimación sin fuente"
+      ],
+      "i001": [
+       "costo_estimado: el precio de 'Correo de alertas, dominio y DNS' es una estimación sin fuente"
+      ]
+     },
+     "revised": true,
+     "fatal": {
+      "i010": false,
+      "i001": false
+     },
+     "criteria": {
+      "i010": {
+       "demanda": 6,
+       "viabilidad": 8,
+       "diferenciacion": 5,
+       "business_case": 6,
+       "encaje": 8,
+       "academico": 7
+      },
+      "i001": {
+       "demanda": 4,
+       "viabilidad": 7,
+       "diferenciacion": 4,
+       "business_case": 5,
+       "encaje": 8,
+       "academico": 5
+      }
+     },
+     "fatal_motivos": {
+      "i010": [],
+      "i001": []
+     },
+     "standing": {
+      "i010": [
+       "Ninguna ficha muestra ausentismo o desvinculación en colegios privados: el dolor en el cliente es un supuesto",
+       "Las suites existentes (Asistente.uy, Colegium) podrían sumar alertas; el hueco se infiere de la ausencia de información",
+       "Disposición a pagar y retención medible sin evidencia; el piloto mide detección, no ahorro"
+      ],
+      "i001": [
+       "El dolor de olvidar vencimientos y la disposición a pagar son hipótesis sin ficha",
+       "Para quien ya tiene contador la app es un costo extra, y quien no lo tiene es quien menos paga",
+       "Calculame ya ofrece gratis calendario DGI y BPS con registro y un sistema para no olvidar fechas; la diferencia (perfil individual, CAE) es fácil de copiar",
+       "Sin contactos ni contador identificado para validar el calendario y llegar al piloto de 20 a 30 usuarios"
+      ]
+     },
+     "notes": []
+    },
+    {
+     "id": "r1-m04",
+     "a": "i027",
+     "b": "i026",
+     "winner": "i027",
+     "loser": "i026",
+     "reason": "Y tiene una señal de pago local (Nexura cobra desde USD 49 por mes a corredores uruguayos), un canal con tamaño verificado (A.PRO.A.SE., más de 500 corredores) y un costo de USD 106 con plan B de datos, mientras que la demanda de X descansa en una declaración de 2020 y un estudio de digitalización sin ninguna señal de que el fletero pague.",
+     "survived": [
+      "Ignorar a Nexura y afirmar ausencia de herramientas: Nexura y Figuro pasan a competidores y se retira la afirmación",
+      "Fichas de competidores que no decían lo atribuido: se retiran Klimber y los bots",
+      "Dependencia de pólizas reales y Ley 18.331: plan B con pólizas propias y sintéticas, enmascarado y camino de cumplimiento con ficha",
+      "Business case sin tamaño ni canal: canal y tamaño anclados en A.PRO.A.SE., escenario de 5 a 10% declarado y cartas de intención",
+      "Cambio de flujo de trabajo: carga masiva, importación de planilla, revisión solo de campos de baja confianza y mensaje wa.me",
+      "Asistente de WhatsApp reactivo: eliminado"
+     ],
+     "scores": {
+      "i027": 61.5,
+      "i026": 56.5
+     },
+     "source": "judge",
+     "first": "i026",
+     "second": "i027",
+     "personas": [
+      "cliente"
+     ],
+     "attacks_checked": true,
+     "det_fatal": {
+      "i026": [],
+      "i027": []
+     },
+     "hard_notes": {
+      "i026": [
+       "costo_estimado: el precio de 'Dominio .com' es una estimación sin fuente"
+      ],
+      "i027": []
+     },
+     "revised": true,
+     "fatal": {
+      "i027": false,
+      "i026": false
+     },
+     "criteria": {
+      "i027": {
+       "demanda": 5,
+       "viabilidad": 8,
+       "diferenciacion": 4,
+       "business_case": 7,
+       "encaje": 7,
+       "academico": 7
+      },
+      "i026": {
+       "demanda": 4,
+       "viabilidad": 7,
+       "diferenciacion": 5,
+       "business_case": 5,
+       "encaje": 8,
+       "academico": 7
+      }
+     },
+     "fatal_motivos": {
+      "i027": [],
+      "i026": []
+     },
+     "standing": {
+      "i026": [
+       "Disposición a pagar y dolor sin señal: la demanda se apoya en un testimonio de 2020 y en datos de digitalización; que el fletero tipee el viaje varias veces y pague USD 10 por camión sigue sin ficha"
+      ],
+      "i027": [
+       "La demanda sigue en buena parte como supuesto: ninguna ficha muestra que el corredor chico pierda renovaciones ni cuánto le cuesta; solo la existencia de Nexura y Figuro sugiere pago"
+      ]
+     },
+     "notes": []
+    },
+    {
+     "id": "r1-m05",
+     "a": "i009",
+     "b": "i018",
+     "winner": "i009",
+     "loser": "i018",
+     "reason": "X apunta a un hueco concreto (conciliación bancaria e imputación aprendida) que las fichas de Contafácil y Contable.CFE no cubren, frente a un comprador que ya paga por herramientas del rubro, mientras Y queda reducida a un segmento angosto, las pymes que no migran ni activan el módulo de stock de su proveedor, frente a gestionUltimate, Facture ERP y Fixed.",
+     "survived": [
+      "Competidores uruguayos de CFE a asiento ignorados: ahora están citados y la idea dejó de competir en eso",
+      "Precio por empresa sobre un competidor con empresas ilimitadas: pasó a plan plano por estudio, declarado a validar",
+      "Fichas de YoFacturo y Odoo mal leídas: reescrito y Odoo retirado",
+      "Datos reales sin socio y sin camino de Ley 18.331: datos sintéticos, extracción local y LLM solo con datos anonimizados o consentimiento; R7 bien rebatido",
+      "Sin meta de acierto ni línea de base de horas: meta y medición agregadas como supuesto"
+     ],
+     "scores": {
+      "i009": 60.0,
+      "i018": 54.5
+     },
+     "source": "judge",
+     "first": "i009",
+     "second": "i018",
+     "personas": [
+      "cliente"
+     ],
+     "attacks_checked": true,
+     "det_fatal": {
+      "i009": [],
+      "i018": []
+     },
+     "hard_notes": {
+      "i009": [
+       "costo_estimado: el precio de 'Dominio y DNS' es una estimación sin fuente"
+      ],
+      "i018": [
+       "costo_estimado: el precio de 'Dominio .com, snapshots y correo entrante' es una estimación sin fuente"
+      ]
+     },
+     "revised": true,
+     "fatal": {
+      "i009": false,
+      "i018": false
+     },
+     "criteria": {
+      "i009": {
+       "demanda": 5,
+       "viabilidad": 7,
+       "diferenciacion": 6,
+       "business_case": 5,
+       "encaje": 7,
+       "academico": 7
+      },
+      "i018": {
+       "demanda": 5,
+       "viabilidad": 7,
+       "diferenciacion": 4,
+       "business_case": 5,
+       "encaje": 6,
+       "academico": 6
+      }
+     },
+     "fatal_motivos": {
+      "i009": [],
+      "i018": []
+     },
+     "standing": {
+      "i009": [
+       "Demanda delgada: una sola oferta laboral sobre conciliación, sin ficha de cantidad de estudios ni de pago por conciliación; el precio plano de $U 3.000 a 6.000 queda por encima del plan más caro de Contafácil"
+      ],
+      "i018": [
+       "El hueco depende de pymes que no migran ni activan el módulo de stock de su proveedor (Fixed lo vende aparte, Facture ERP y gestionUltimate lo integran), sin evidencia de que ese segmento exista y pague",
+       "El dolor de la doble carga se apoya en blogs de un proveedor y no hay ficha de su costo en horas o ventas"
+      ]
+     },
+     "notes": []
+    },
+    {
+     "id": "r1-m06",
+     "a": "i017",
+     "b": "i011",
+     "winner": "i011",
+     "loser": "i017",
+     "reason": "Con demanda igual de débil en las dos (contexto local más supuestos de pago), X gana por encaje directo con la especialidad Text-to-SQL del equipo, un desafío académico medible y un business case algo más cuantificado, mientras Y enfrenta un sustituto gratuito con respaldo estatal (Agesic) y un comprador que la ficha 008 muestra reacio a pagar.",
+     "survived": [
+      "R7 por depender de un colegio piloto inexistente: rebatido, demos y evaluación sobre datos sintéticos generados por el equipo, piloto real opcional",
+      "Datos de menores y cobranza enviados a una API externa: arreglado, al modelo solo viajan esquema, glosario y pregunta, API paga sin uso para mejora de productos, base registrada por el colegio",
+      "Supuestos de costo sin detalle: arreglado, volumen de tokens explícito y total de USD 189 bajo el objetivo"
+     ],
+     "scores": {
+      "i017": 52.5,
+      "i011": 56.0
+     },
+     "source": "judge",
+     "first": "i011",
+     "second": "i017",
+     "personas": [
+      "cliente"
+     ],
+     "attacks_checked": true,
+     "det_fatal": {
+      "i011": [],
+      "i017": []
+     },
+     "hard_notes": {
+      "i011": [
+       "costo_estimado: el precio de 'Dominio y DNS' es una estimación sin fuente"
+      ],
+      "i017": [
+       "costo_estimado: el precio de 'Dominio y respaldos' es una estimación sin fuente"
+      ]
+     },
+     "revised": true,
+     "fatal": {
+      "i017": false,
+      "i011": false
+     },
+     "criteria": {
+      "i017": {
+       "demanda": 4,
+       "viabilidad": 8,
+       "diferenciacion": 4,
+       "business_case": 4,
+       "encaje": 6,
+       "academico": 5
+      },
+      "i011": {
+       "demanda": 4,
+       "viabilidad": 7,
+       "diferenciacion": 4,
+       "business_case": 5,
+       "encaje": 9,
+       "academico": 8
+      }
+     },
+     "fatal_motivos": {
+      "i017": [],
+      "i011": []
+     },
+     "standing": {
+      "i011": [
+       "La demanda uruguaya no tiene ficha: el dolor viene de una ficha colombiana y queda como supuesto",
+       "Sin señal de pago y con colegios en crisis; quién decide la compra sigue desconocido",
+       "El hueco frente a las suites y a las hojas de cálculo con IA se apoya en lo que las fichas no dicen y es copiable",
+       "La carga manual de exportar CSV y mantener el glosario sigue sin resolverse"
+      ],
+      "i017": [
+       "La intendencia más grande ya resuelve reclamos por WhatsApp con su gente: el comprador es también el sustituto",
+       "Ninguna ficha muestra demanda de reclamos en municipios chicos ni disposición a pagar",
+       "Agesic ofrece participación digital gratis al mismo comprador: reconocido pero no resuelto",
+       "Ingreso por municipio muy chico, mercado sin dimensionar y canal vía Congreso de Intendentes sin ficha que lo muestre comprando para municipios"
+      ]
+     },
+     "notes": []
+    },
+    {
+     "id": "r1-m07",
+     "a": "i028",
+     "b": "i012",
+     "winner": "i028",
+     "loser": "i012",
+     "reason": "X tiene un dolor local repetido y con pérdidas en dólares (F-001, F-002) sin competidor directo en las fichas, mientras que en Y el bloqueo gratuito del SNIG ya cubre el núcleo del problema, Gecos queda como copia rápida y no hay precio ni señal de pago.",
+     "survived": [
+      "F-009 mal leída: la idea ya no fija cliente ni precio con ella y la declara dato general",
+      "Geocerca no viable en PWA: reemplazada por registro de un toque con ubicación en primer plano",
+      "Plan gratis sin valor para el chofer: ahora recibe la espera reciente reportada por otros",
+      "Dependencia de datos de buques (R7): rebatido, el dataset central lo genera el producto y los buques son opcionales",
+      "LightGBM con pocos datos: el estimador base pasa a cuantiles contra una línea base ingenua",
+      "Reclamar o facturar demoras sin respaldo: se sacó de la solución y quedó en supuestos"
+     ],
+     "scores": {
+      "i028": 58.0,
+      "i012": 45.5
+     },
+     "source": "judge",
+     "first": "i028",
+     "second": "i012",
+     "personas": [
+      "cliente"
+     ],
+     "attacks_checked": true,
+     "det_fatal": {
+      "i028": [],
+      "i012": []
+     },
+     "hard_notes": {
+      "i028": [
+       "costo_estimado: el precio de 'Dominio .com' es una estimación sin fuente"
+      ],
+      "i012": []
+     },
+     "revised": true,
+     "fatal": {
+      "i028": false,
+      "i012": false
+     },
+     "criteria": {
+      "i028": {
+       "demanda": 6,
+       "viabilidad": 6,
+       "diferenciacion": 5,
+       "business_case": 5,
+       "encaje": 7,
+       "academico": 7
+      },
+      "i012": {
+       "demanda": 4,
+       "viabilidad": 7,
+       "diferenciacion": 3,
+       "business_case": 3,
+       "encaje": 5,
+       "academico": 5
+      }
+     },
+     "fatal_motivos": {
+      "i028": [],
+      "i012": []
+     },
+     "standing": {
+      "i028": [
+       "No hay evidencia de que saber la espera permita una decisión que ahorre plata; queda como supuesto central a probar en el piloto",
+       "Adopción baja y arranque en frío: sin choferes que marquen no hay predicción, y no hay empresa piloto ni contactos",
+       "Business case con precio hipotético de USD 5 por camión, sin tamaño de mercado ni contacto con el canal"
+      ],
+      "i012": [
+       "Con el bloqueo del SNIG el dolor queda en lo no declarado o tardío, sin cifra ni ficha de pérdida o pago",
+       "Gecos ya registra actos sanitarios por caravana y podría agregar retiros; la diferencia es corta y no probada",
+       "Sin precio, sin cantidad de establecimientos y sin señal de pago; riesgo de doble carga frente a la planilla y el SNIG"
+      ]
+     },
+     "notes": []
+    },
+    {
+     "id": "r1-m08",
+     "a": "i002",
+     "b": "i015",
+     "winner": "i015",
+     "loser": "i002",
+     "reason": "Y apoya su argumento de demanda en una ficha que no existe (fallo fatal) y además encaja peor con el perfil de IA del equipo, mientras X arregló sus ataques con evidencia local verificada y un costo de USD 115 bien sustentado.",
+     "survived": [
+      "Costo cero de WhatsApp contradicho por las alertas: arreglado, alertas solo en panel y dentro de la ventana de 24 horas",
+      "Demanda sin fichas de vendedores: arreglado en parte con ficha uruguaya de comprobantes adulterados por WhatsApp y Marketplace, pérdida declarada como a medir",
+      "Mirar la cuenta es gratis: rebatido, el valor central pasa a links, phishing y falsas ofertas que esa defensa no cubre",
+      "Falsos negativos sin meta: arreglado con metas de detección y falsos positivos y sin responder nunca 'seguro'",
+      "Ley 18.331 sin camino concreto: arreglado con borrado de capturas, retención de 90 días y alertas solo sobre dominios y textos"
+     ],
+     "scores": {
+      "i002": 54.0,
+      "i015": 61.5
+     },
+     "source": "judge",
+     "first": "i015",
+     "second": "i002",
+     "personas": [
+      "cliente"
+     ],
+     "attacks_checked": true,
+     "det_fatal": {
+      "i015": [],
+      "i002": [
+       "evidencia_inexistente"
+      ]
+     },
+     "hard_notes": {
+      "i015": [],
+      "i002": [
+       "costo_estimado: el precio de 'Respaldos (snapshots) del servidor' es una estimación sin fuente",
+       "costo_estimado: el precio de 'Dominio propio' es una estimación sin fuente",
+       "evidencia_inexistente: cita fichas que no existen o fueron descartadas: F-defensa-r1-m08-i002-002",
+       "ficha nueva descartada: F-defensa-r1-m08-i002-002 (esquema)"
+      ]
+     },
+     "revised": true,
+     "fatal": {
+      "i002": true,
+      "i015": false
+     },
+     "criteria": {
+      "i002": {
+       "demanda": 5,
+       "viabilidad": 7,
+       "diferenciacion": 5,
+       "business_case": 5,
+       "encaje": 5,
+       "academico": 3
+      },
+      "i015": {
+       "demanda": 5,
+       "viabilidad": 8,
+       "diferenciacion": 5,
+       "business_case": 5,
+       "encaje": 8,
+       "academico": 7
+      }
+     },
+     "fatal_motivos": {
+      "i002": [
+       "afirmacion_sin_evidencia: 'desde 2022 obliga a registrar cada intento en 24 horas, sin fijar cómo se hace el seguimiento (F-defensa-r1-m08-i002-002)', la ficha citada no existe y la afirmación sostiene el argumento de demanda"
+      ],
+      "i015": []
+     },
+     "standing": {
+      "i015": [
+       "Disposición a pagar y tamaño de mercado sin base: 100 pymes es una hipótesis, sin canal ni contactos"
+      ],
+      "i002": [
+       "Demanda central sin ficha: abandono del seguimiento y pago de USD 100 a 200 son supuestos, y la obligación de 2022 cita una ficha inexistente",
+       "Sin socio ni validación real: la prueba del semestre 2 es solo con casos ficticios y entrevistas",
+       "Diferenciación frente a Zalon y AgendaPro real pero fácil de copiar como módulo"
+      ]
+     },
+     "notes": [
+      "fatal determinístico de i002: evidencia_inexistente"
+     ]
+    }
+   ],
+   "bye": null,
+   "closed": true
+  },
+  {
+   "n": 2,
+   "alive": [
+    "i006",
+    "i009",
+    "i010",
+    "i011",
+    "i015",
+    "i021",
+    "i027",
+    "i028"
+   ],
+   "matches": [
+    {
+     "id": "r2-m01",
+     "a": "i028",
+     "b": "i006",
+     "winner": "i028",
+     "loser": "i006",
+     "reason": "Con demanda pareja y mejor viabilidad y business case en X, Y gana por poco porque su hueco no choca con un sistema gratuito del regulador que arranca en 2027 y porque su estimador con error medido contra linea base aporta un desafio de ingenieria y un uso del perfil de datos que X, casi un CRUD con Text-to-SQL opcional, no tiene.",
+     "survived": [
+      "Ubicacion en primer plano y marcas con error: zona amplia, hora corregible, intervalos y minimo de reportes",
+      "Validacion sin contactos y R4: entrega 1 con demo simulada rotulada, piloto opcional, Intergremial identificada en fichas",
+      "Fichas de dolor sobre eventos impredecibles: 001 fechada como maximo denunciado, choques cubiertos con espera reportada en vivo y supuestos declarados"
+     ],
+     "scores": {
+      "i028": 59.0,
+      "i006": 58.5
+     },
+     "source": "judge",
+     "first": "i006",
+     "second": "i028",
+     "personas": [
+      "competidor"
+     ],
+     "attacks_checked": true,
+     "det_fatal": {
+      "i006": [],
+      "i028": []
+     },
+     "hard_notes": {
+      "i006": [
+       "costo_estimado: el precio de 'Dominio propio' es una estimación sin fuente"
+      ],
+      "i028": [
+       "costo_estimado: el precio de 'Dominio .com' es una estimación sin fuente"
+      ]
+     },
+     "revised": true,
+     "fatal": {
+      "i028": false,
+      "i006": false
+     },
+     "criteria": {
+      "i028": {
+       "demanda": 6,
+       "viabilidad": 7,
+       "diferenciacion": 5,
+       "business_case": 4,
+       "encaje": 7,
+       "academico": 7
+      },
+      "i006": {
+       "demanda": 6,
+       "viabilidad": 8,
+       "diferenciacion": 4,
+       "business_case": 5,
+       "encaje": 6,
+       "academico": 4
+      }
+     },
+     "fatal_motivos": {
+      "i028": [],
+      "i006": []
+     },
+     "standing": {
+      "i006": [
+       "El sistema gratuito del MSP desde 2027 deja poco margen al diferencial de alerta previa",
+       "Cualquier agenda (Zalon, CliniGest) puede agregar el indicador sobre datos que ya tiene",
+       "Precio de USD 60 a 150 sin senal de pago frente a una agenda completa de $25 al mes y mercado de pocas decenas de prestadores"
+      ],
+      "i028": [
+       "Arranque en frio y sustituto gratis del aviso informal entre choferes",
+       "Terminales o ANP pueden publicar el indicador con datos exactos; cuantiles y panel son copiables",
+       "Ticket chico en un sector de empresas de pocos camiones y tamano de mercado sin ningun numero"
+      ]
+     },
+     "notes": []
+    },
+    {
+     "id": "r2-m02",
+     "a": "i021",
+     "b": "i027",
+     "winner": "i027",
+     "loser": "i021",
+     "reason": "X tiene señales locales de pago (Nexura y Figuro cobran unos USD 50 por mes por este flujo) y un canal concreto con A.PRO.A.SE., mientras Y no tiene ninguna ficha de dolor ni de pago, compite con el asesoramiento gratuito de UTE y depende de vender leads sin validar.",
+     "survived": [
+      "Hueco 'sin oferta de entrada' falso: se quitó y se reconoce a Figuro gratis y desde USD 5",
+      "Segmento bajo 100 pólizas que no paga: el usuario pasa a 100 a 300 pólizas y el tramo gratis perpetuo pasa a prueba de 60 días",
+      "Nombre del asegurado enviado a la API en EE.UU.: ahora se enmascara localmente, con camino legal documentado (inscripción y cláusulas modelo)"
+     ],
+     "scores": {
+      "i021": 47.0,
+      "i027": 61.0
+     },
+     "source": "judge",
+     "first": "i027",
+     "second": "i021",
+     "personas": [
+      "competidor"
+     ],
+     "attacks_checked": true,
+     "det_fatal": {
+      "i027": [],
+      "i021": []
+     },
+     "hard_notes": {
+      "i027": [],
+      "i021": [
+       "costo_estimado: el precio de 'Dominio .com por un año' es una estimación sin fuente"
+      ]
+     },
+     "revised": true,
+     "fatal": {
+      "i021": false,
+      "i027": false
+     },
+     "criteria": {
+      "i021": {
+       "demanda": 3,
+       "viabilidad": 7,
+       "diferenciacion": 3,
+       "business_case": 4,
+       "encaje": 7,
+       "academico": 6
+      },
+      "i027": {
+       "demanda": 5,
+       "viabilidad": 8,
+       "diferenciacion": 4,
+       "business_case": 7,
+       "encaje": 7,
+       "academico": 6
+      }
+     },
+     "fatal_motivos": {
+      "i021": [],
+      "i027": []
+     },
+     "standing": {
+      "i027": [
+       "Nexura ya extrae del PDF con IA en 43 aseguradoras: el diferencial (precisión publicada y precio) es copiable",
+       "El dolor (vencimientos perdidos) y la disposición a pagar USD 19 siguen sin ficha, solo como supuestos",
+       "WhatsApp manual por wa.me queda por debajo de Nexura",
+       "Sin contacto confirmado con corredores ni con A.PRO.A.SE.; la conversión de 5 a 10% no tiene base"
+      ],
+      "i021": [
+       "Ninguna ficha muestra que la mipyme pague de más ni que pague por saberlo",
+       "UTE asesora gratis sobre tarifa y potencia; el hueco (inmediatez, solar, sin incentivo) es copiable",
+       "El ahorro se corrige una vez y el segmento de bajo consumo puede no pagar",
+       "El ingreso principal (USD 20 por lead a consultores e instaladores) no tiene ficha ni validación"
+      ]
+     },
+     "notes": []
+    },
+    {
+     "id": "r2-m03",
+     "a": "i009",
+     "b": "i011",
+     "winner": "i009",
+     "loser": "i011",
+     "reason": "X tiene demanda local verificada (tres avisos de estudios de Montevideo que contratan personal para conciliar bancos, dos ok y uno bloqueado, más honorarios y planes pagos de herramientas vecinas), mientras que el dolor de Y solo tiene respaldo en una ficha colombiana y su cliente uruguayo está en crisis y sin ancla de precio.",
+     "survived": [
+      "precio por encima del techo de Contafácil: bajado a $U 1.500 a 3.500 y declarado supuesto",
+      "demanda de conciliación en una sola oferta: ahora hay tres avisos locales",
+      "piloto sin socio de datos como violación de R4 o R7: rebatido, hay plan B con datos sintéticos declarado",
+      "LLM externo y transferencia internacional: eliminado, todo local, costo USD 164",
+      "tamaño de mercado ausente: declarado como supuesto"
+     ],
+     "scores": {
+      "i009": 62.0,
+      "i011": 53.0
+     },
+     "source": "judge",
+     "first": "i009",
+     "second": "i011",
+     "personas": [
+      "competidor"
+     ],
+     "attacks_checked": true,
+     "det_fatal": {
+      "i009": [],
+      "i011": []
+     },
+     "hard_notes": {
+      "i009": [
+       "costo_estimado: el precio de 'Dominio y DNS' es una estimación sin fuente"
+      ],
+      "i011": [
+       "costo_estimado: el precio de 'Dominio y DNS' es una estimación sin fuente"
+      ]
+     },
+     "revised": true,
+     "fatal": {
+      "i009": false,
+      "i011": false
+     },
+     "criteria": {
+      "i009": {
+       "demanda": 6,
+       "viabilidad": 7,
+       "diferenciacion": 5,
+       "business_case": 6,
+       "encaje": 7,
+       "academico": 7
+      },
+      "i011": {
+       "demanda": 3,
+       "viabilidad": 7,
+       "diferenciacion": 4,
+       "business_case": 5,
+       "encaje": 9,
+       "academico": 7
+      }
+     },
+     "fatal_motivos": {
+      "i009": [],
+      "i011": []
+     },
+     "standing": {
+      "i009": [
+       "el hueco frente a Contafácil y Contable.CFE se apoya en el silencio de sus páginas, sin ficha de pago por conciliación",
+       "un incumbente con clientes y CFE de DGI puede copiar la conciliación rápido; la ventaja es solo de tiempo",
+       "flujo con XML subido a mano y exportación genérica, sin importar a Conty o Zureo: dos herramientas para el estudio"
+      ],
+      "i011": [
+       "un incumbente con los datos en su base puede sumar consultas en lenguaje natural sin migración",
+       "el dolor de sistemas no integrados solo tiene ficha colombiana; en Uruguay es supuesto, sin señal de pago",
+       "el segmento objetivo está en crisis y el precio de USD 60 a 120 no tiene ancla",
+       "importadores y exactitud solo probados con datos sintéticos, sin formatos de exportación reales",
+       "BI genérico e IA de planillas son la alternativa real y la diferencia es copiable"
+      ]
+     },
+     "notes": []
+    },
+    {
+     "id": "r2-m04",
+     "a": "i015",
+     "b": "i010",
+     "winner": "i010",
+     "loser": "i015",
+     "reason": "X tiene un cliente pagador acotado (unos 220 colegios, 41.235 alumnos de liceo privado) con precio y techo de mercado coherentes y un MVP demostrable sin dependencias, mientras Y compite contra verificadores gratuitos de WhatsApp ya existentes en LATAM, sin tamaño de mercado ni canal.",
+     "survived": [
+      "mercado inflado con 113.000 alumnos de todos los niveles: corregido a 41.235 alumnos de liceo privado y 200 por colegio como supuesto",
+      "SInIDE como sustituto público omitido: agregado con sus límites",
+      "modelo entrenado con datos sintéticos mide el generador: reconocido, el valor pasa a reglas explicables e intervenciones",
+      "datos de menores a una API extranjera: avisos por plantillas, LLM solo con datos sintéticos salvo confirmación de la URCDP, plan B sin LLM",
+      "dependencia de exportes de la suite: importador CSV o Excel con mapeo de columnas y plan B de carga mensual"
+     ],
+     "scores": {
+      "i015": 52.5,
+      "i010": 57.0
+     },
+     "source": "judge",
+     "first": "i010",
+     "second": "i015",
+     "personas": [
+      "competidor"
+     ],
+     "attacks_checked": true,
+     "det_fatal": {
+      "i010": [],
+      "i015": []
+     },
+     "hard_notes": {
+      "i010": [],
+      "i015": []
+     },
+     "revised": true,
+     "fatal": {
+      "i015": false,
+      "i010": false
+     },
+     "criteria": {
+      "i015": {
+       "demanda": 5,
+       "viabilidad": 7,
+       "diferenciacion": 3,
+       "business_case": 4,
+       "encaje": 7,
+       "academico": 7
+      },
+      "i010": {
+       "demanda": 4,
+       "viabilidad": 8,
+       "diferenciacion": 4,
+       "business_case": 6,
+       "encaje": 7,
+       "academico": 6
+      }
+     },
+     "fatal_motivos": {
+      "i015": [],
+      "i010": []
+     },
+     "standing": {
+      "i010": [
+       "hay competidores con alertas (Appoderado) o que pueden sumarlas (Asistente.uy, Trivium); el registro de intervenciones es copiable y no está validado",
+       "ninguna ficha muestra que el ausentismo cueste cuotas a un colegio privado ni señales de pago: la demanda del pagador es supuesto"
+      ],
+      "i015": [
+       "existen verificadores gratuitos por WhatsApp en LATAM (Mediavox, ScamZero, Truecaller en camino) y la diferencia restante es foco Uruguay y capturas",
+       "el plan de USD 6 compite contra opciones gratis sin ninguna ficha de disposición a pagar",
+       "el dolor específico del vendedor (comprobante falso) se resuelve gratis mirando la cuenta; frecuencia y pérdida no medidas",
+       "sin tamaño de mercado de vendedores ni canal: 100 pymes es un escenario ilustrativo",
+       "sin foso: modelo de terceros más un set propio que se puede replicar"
+      ]
+     },
+     "notes": []
+    }
+   ],
+   "bye": null,
+   "closed": true
+  },
+  {
+   "n": 3,
+   "alive": [
+    "i009",
+    "i010",
+    "i027",
+    "i028"
+   ],
+   "matches": [
+    {
+     "id": "r3-m01",
+     "a": "i027",
+     "b": "i028",
+     "winner": "i027",
+     "loser": "i028",
+     "reason": "X tiene un MVP de bajo costo con plan B tecnico (parsers por plantilla) y un mercado local donde ya se paga por software de cartera, mientras Y depende de que choferes poco digitalizados generen los datos sin los cuales no hay producto y su business case no tiene precio ni tamano de flota con respaldo; eso pesa mas que la mejor diferenciacion de Y.",
+     "survived": [
+      "Escenario de ingresos inflado por precio promedio: corregido a precio unico de USD 19 y USD 5.700 a 11.400, con churn y tamano del segmento declarados como desconocidos",
+      "Cumplimiento de la Ley 18.331 incompleto: agregados evaluacion de impacto y registro en marzo 2027, seudonimizacion nombrada como tal y plan B sin modelo de lenguaje",
+      "Figuro da avisos gratis: rebatido, la ficha del plan gratuito no lista avisos",
+      "El pago se valida recien al final: parcialmente arreglado con 10 entrevistas de precio antes de diciembre de 2026"
+     ],
+     "scores": {
+      "i027": 57.5,
+      "i028": 57.0
+     },
+     "source": "judge",
+     "first": "i027",
+     "second": "i028",
+     "personas": [
+      "inversor"
+     ],
+     "attacks_checked": true,
+     "det_fatal": {
+      "i027": [],
+      "i028": []
+     },
+     "hard_notes": {
+      "i027": [],
+      "i028": [
+       "costo_estimado: el precio de 'Dominio .com' es una estimación sin fuente"
+      ]
+     },
+     "revised": true,
+     "fatal": {
+      "i027": false,
+      "i028": false
+     },
+     "criteria": {
+      "i027": {
+       "demanda": 5,
+       "viabilidad": 8,
+       "diferenciacion": 3,
+       "business_case": 6,
+       "encaje": 7,
+       "academico": 6
+      },
+      "i028": {
+       "demanda": 6,
+       "viabilidad": 6,
+       "diferenciacion": 6,
+       "business_case": 4,
+       "encaje": 6,
+       "academico": 6
+      }
+     },
+     "fatal_motivos": {
+      "i027": [],
+      "i028": []
+     },
+     "standing": {
+      "i027": [
+       "Nexura ya cubre el mismo segmento con extraccion de PDF por IA y avisos; el diferencial es precio y precision publicada, copiable",
+       "No hay ficha del dolor ni de la disposicion a pagar del corredor de 100 a 300 polizas",
+       "Sin contactos confirmados; las cartas de intencion son senal de pago debil",
+       "El envio por wa.me de un clic sigue siendo mas debil que el WhatsApp automatico de Nexura"
+      ],
+      "i028": [
+       "No hay ficha de la espera tipica; el dolor citado es un maximo denunciado y shocks que no se predicen",
+       "El segmento que paga (flotas de 5 o mas camiones) no tiene tamano conocido",
+       "Precio y disposicion a pagar sin ninguna senal; canal sin contacto",
+       "Arranque en frio: el valor depende de reportes manuales de choferes poco digitalizados y el plan B no entrega datos reales",
+       "La terminal ya muestra LineUp y camara del acceso y podria agregar un indicador de espera"
+      ]
+     },
+     "notes": []
+    },
+    {
+     "id": "r3-m02",
+     "a": "i009",
+     "b": "i010",
+     "winner": "i009",
+     "loser": "i010",
+     "reason": "Y muestra el dolor en estudios contables uruguayos con fichas locales verificadas (avisos que piden conciliar bancos y el tiempo de conciliar a mano con extractos PDF), mientras X no tiene ninguna ficha de que el ausentismo sea un problema que los colegios privados paguen por resolver y su hueco frente a Appoderado, SInIDE y los incumbentes locales es más débil.",
+     "survived": [
+      "afirmación falsa de que todo era local con Lightsail: corregida, datos reales solo en un equipo en Uruguay y nube solo con sintéticos",
+      "servidor de 2 GB sin plan B de costo: plan B de 4 GB documentado con la tabla de precios, USD 236 bajo el tope",
+      "cita de F-legal-contable-003 que no decía lo atribuido: fila quitada",
+      "violación de R4 y R7 por falta de contactos: rebatido, R4 pide clientes contactables y los datos del piloto son con acuerdo propio o generados por el equipo",
+      "precio anclado al plan de Contafácil sin cuenta de clientes: referencia bajada, cuenta de 10 estudios y CAC declarado como supuesto",
+      "demanda basada solo en avisos: sumada ficha local verificada del tiempo de conciliar y formatos PDF por banco, con el pago declarado como supuesto"
+     ],
+     "scores": {
+      "i009": 62.0,
+      "i010": 54.5
+     },
+     "source": "judge",
+     "first": "i010",
+     "second": "i009",
+     "personas": [
+      "inversor"
+     ],
+     "attacks_checked": true,
+     "det_fatal": {
+      "i010": [],
+      "i009": []
+     },
+     "hard_notes": {
+      "i010": [
+       "costo_estimado: el precio de 'Dominio' es una estimación sin fuente",
+       "costo_estimado: el precio de 'Copias de seguridad' es una estimación sin fuente"
+      ],
+      "i009": [
+       "costo_estimado: el precio de 'Dominio y DNS' es una estimación sin fuente"
+      ]
+     },
+     "revised": true,
+     "fatal": {
+      "i009": false,
+      "i010": false
+     },
+     "criteria": {
+      "i009": {
+       "demanda": 6,
+       "viabilidad": 7,
+       "diferenciacion": 5,
+       "business_case": 6,
+       "encaje": 7,
+       "academico": 7
+      },
+      "i010": {
+       "demanda": 4,
+       "viabilidad": 8,
+       "diferenciacion": 4,
+       "business_case": 5,
+       "encaje": 6,
+       "academico": 6
+      }
+     },
+     "fatal_motivos": {
+      "i009": [],
+      "i010": []
+     },
+     "standing": {
+      "i010": [
+       "no hay ninguna ficha de que el ausentismo cueste alumnos o cuotas a un colegio privado ni señal de pago",
+       "el hueco (medir intervenciones) es copiable por Asistente.uy, Colegium o Trivium, ya hay alertas en Appoderado y SInIDE, y un trimestre no mide retención",
+       "canal y costo de adquisición sin medir en un sector pagador en crisis",
+       "sin colegio piloto el modelo de riesgo se valida solo sobre datos sintéticos"
+      ],
+      "i009": [
+       "el pago por conciliar sigue siendo un supuesto sin señal de pago ni cantidad de estudios",
+       "Conty ya declara conciliación bancaria automática; el hueco (PDF de bancos y cuenta aprendida) se apoya en silencio de su página y es copiable",
+       "el producto agrega una herramienta y un paso de carga, sin evidencia de que el estudio lo tolere",
+       "sin estudio voluntario el acierto real de la imputación aprendida no se demuestra",
+       "costo de adquisición sin medir"
+      ]
+     },
+     "notes": []
+    }
+   ],
+   "bye": null,
+   "closed": true
+  },
+  {
+   "n": 4,
+   "alive": [
+    "i009",
+    "i027"
+   ],
+   "matches": [
+    {
+     "id": "r4-m01",
+     "a": "i027",
+     "b": "i009",
+     "winner": "i009",
+     "loser": "i027",
+     "reason": "X compite contra Nexura, que según las fichas ya hace en Uruguay lo mismo (PDF a datos con IA, avisos por WhatsApp, Ley 18.331), y su componente de IA depende de cláusulas de transferencia no confirmadas, mientras Y procesa localmente sin dependencia regulatoria ni de API externa y su hueco frente a Conty, aunque apoyado en silencio, no está tan cubierto.",
+     "survived": [
+      "Plan B sin imputaciones reales: reemplazado por historial sintético con comparación reglas contra embeddings; R7 bien rebatido (datos propios o sintéticos)",
+      "Precio de referencia frente a Contafácil: rebatido, cae dentro de la banda Simple a Pro que ya se paga",
+      "Alcance técnico: bancos nombrados (BROU e Itaú), vista multi-cliente quitada, piloto limitado a 1 estudio, hito 1 compara métodos",
+      "Ley 18.331 y arquitectura del piloto: datos reales en Docker dentro del estudio, sin transferencia; roles y registro pasados a supuesto",
+      "Dominio sin fuente: eliminado, costo USD 144 con fuente"
+     ],
+     "scores": {
+      "i027": 51.0,
+      "i009": 55.5
+     },
+     "source": "judge",
+     "first": "i027",
+     "second": "i009",
+     "personas": [
+      "tutor"
+     ],
+     "attacks_checked": true,
+     "det_fatal": {
+      "i027": [],
+      "i009": []
+     },
+     "hard_notes": {
+      "i027": [],
+      "i009": []
+     },
+     "revised": true,
+     "fatal": {
+      "i027": false,
+      "i009": false
+     },
+     "criteria": {
+      "i027": {
+       "demanda": 5,
+       "viabilidad": 6,
+       "diferenciacion": 3,
+       "business_case": 5,
+       "encaje": 7,
+       "academico": 6
+      },
+      "i009": {
+       "demanda": 5,
+       "viabilidad": 7,
+       "diferenciacion": 4,
+       "business_case": 5,
+       "encaje": 7,
+       "academico": 6
+      }
+     },
+     "fatal_motivos": {
+      "i027": [],
+      "i009": []
+     },
+     "standing": {
+      "i027": [
+       "Piloto y validación de pago dependen de corredores sin contacto; el plan B no prueba disposición a pagar",
+       "Diferencia frente a Nexura es precio y una precisión medida, copiable, con anclas de precio contradictorias",
+       "Demanda del segmento de 100 a 300 pólizas sin evidencia y solapado con Nexura desde 150",
+       "Sin cláusulas de transferencia el componente de IA queda fuera de producción y la tesis se reduce a comparar parsers"
+      ],
+      "i009": [
+       "Demanda apoyada en un aviso laboral y un blog interesado, sin señal de pago por conciliar ni tamaño de mercado",
+       "Hueco frente a Conty (PDF y cuenta aprendida) solo por silencio de su página; copiable por Contafácil",
+       "Sin estudio piloto, el aprendizaje se mide solo sobre historial sintético, con validez limitada"
+      ]
+     },
+     "notes": []
+    }
+   ],
+   "bye": null,
+   "closed": true
+  }
+ ],
+ "champion": "i009",
+ "persona_order": [
+  "cliente",
+  "competidor",
+  "inversor",
+  "tutor"
+ ],
+ "personas_per_match": 1,
+ "judge_both_orders": false
+}

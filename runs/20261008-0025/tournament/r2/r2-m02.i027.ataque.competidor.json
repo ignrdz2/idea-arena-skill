@@ -1,0 +1,113 @@
+{
+  "idea": "i027",
+  "persona": "competidor",
+  "ataques": [
+    {
+      "n": 1,
+      "severidad": "FATAL",
+      "titulo": "El hueco central (\"el tramo bajo 150 pólizas no tiene oferta de entrada\") no tiene ficha y es falso",
+      "donde": "Problema: \"hay quien paga, pero el tramo bajo 150 pólizas no tiene oferta de entrada\"; Competidores: Nexura \"ni ofrece entrada gratis\"; tabla de Supuestos declarados",
+      "problema": "Es una afirmación sobre ausencia de competidores y precios, y no está en la lista de supuestos. La ficha citada (F-ataque-r1-m04-i027-cliente-001) solo dice que Nexura recomienda carteras de 150 a 600 pólizas, no que nadie venda por debajo. Y hay oferta de entrada: Figuro, que la propia idea cita, tiene plan gratuito y planes de pago desde USD 5 al mes (ficha nueva 002), y el blog de Nexura lista a Figuro a unos USD 50 por mes y a AdminSE sin precio publicado (ficha nueva 001). Un fundador de Figuro ve esto y responde con su plan gratis actual.",
+      "tipo": "evidencia",
+      "evidencia": ["F-ataque-r1-m04-i027-cliente-001", "F-ataque-r2-m02-i027-competidor-002", "F-ataque-r2-m02-i027-competidor-001"]
+    },
+    {
+      "n": 2,
+      "severidad": "MAJOR",
+      "titulo": "Nexura ya tiene la función diferencial (PDF con IA) y la idea se la deja copiar sin defensa",
+      "donde": "Competidores: \"el diferencial a probar es la precisión medida\"; Riesgos: \"Un competidor con más recursos copia precio o extracción\"",
+      "problema": "La home de Nexura dice que el usuario sube el PDF y la IA lee prima, vigencias, cuotas, coberturas y certificados de flota, con 43 aseguradoras de 5 países ya mapeadas (ficha nueva 003). La idea promete extraer de 3 aseguradoras. El único diferencial es una métrica de precisión que Nexura puede publicar el mes que viene, y la idea no explica qué impide que Nexura (que ya cobra por este flujo) baje el precio o abra un tramo gratis. Esto es un 4 de diferenciación: 'más barato' sin explicar por qué el competidor no lo hace. Además, la idea afirma que Nexura 'no ofrece entrada gratis' y 'no informa tratamiento de datos', pero su home describe cifrado AES-256 y cumplimiento declarado de la Ley 18.331, justo donde la idea pone su riesgo.",
+      "tipo": "evidencia",
+      "evidencia": ["F-ataque-r2-m02-i027-competidor-003", "F-ataque-r1-m04-i027-cliente-001"]
+    },
+    {
+      "n": 3,
+      "severidad": "MAJOR",
+      "titulo": "El segmento que dice atender es el que no paga: bajo 100 a 150 pólizas el corredor se arregla con Excel",
+      "donde": "Usuario: \"menos de unas 300 pólizas activas\"; Monetización: gratis hasta 50, USD 19 hasta 300",
+      "problema": "El blog de Nexura, la misma fuente que usa la idea, dice que con menos de 100 pólizas muchos corredores se manejan bien con Excel y que por debajo de 150 puede alcanzar por ahora (ficha nueva 001). El competidor ya midió dónde empieza a doler y lo puso en 150 a 600. La idea apunta a un tramo que, según el competidor, no tiene urgencia de pago, y encima regala el tramo hasta 50 pólizas. Entre 50 y 150 el corredor tiene Excel, o el plan gratis de Figuro, o el pago de Nexura. Nada en las fichas muestra disposición a pagar USD 19 por mes en ese tramo.",
+      "tipo": "evidencia",
+      "evidencia": ["F-ataque-r2-m02-i027-competidor-001", "F-ataque-r1-m04-i027-cliente-001"]
+    },
+    {
+      "n": 4,
+      "severidad": "MAJOR",
+      "titulo": "La demanda real no tiene respaldo: la única ficha del problema no habla de PDF, planillas ni vencimientos perdidos",
+      "donde": "Problema: \"El corredor chico vive de renovar su cartera y la maneja en PDF y planillas\" citando F-fintech-seguros-008",
+      "problema": "F-fintech-seguros-008 (nota de 2021 sobre San Cristóbal) solo dice que hay 16 aseguradoras y que la distribución depende de corredores y productores. No dice cómo gestionan la cartera ni que pierdan renovaciones. La idea lo reconoce en supuestos, pero entonces la demanda entera (dolor, costo, pago) es un supuesto y no hay una sola ficha local de un corredor con el problema. Que 2 a 3 competidores vendan este producto prueba que hay oferta, no que el corredor chico lo necesite o pague.",
+      "tipo": "evidencia",
+      "evidencia": ["F-fintech-seguros-008"]
+    },
+    {
+      "n": 5,
+      "severidad": "MAJOR",
+      "titulo": "Datos personales de terceros a una API en EE.UU.: el enmascarado no cubre el nombre del asegurado y el camino legal es un supuesto",
+      "donde": "Solución: \"enmascara identificadores (documento, matrícula, teléfono, email)\" y luego el modelo \"extrae asegurado\"; Riesgos: Ley 18.331; Supuestos: \"El proveedor acepta cláusulas modelo de la URCDP\"",
+      "problema": "Si el modelo extrae el asegurado, el nombre llega al proveedor, porque la lista de enmascarado no lo incluye. Eso es transferencia internacional de datos personales: exige inscribir antes la base y garantías suficientes (F-defensa-r1-m04-i027-003), con autorización o cláusulas de la Res. 41/021 hacia EE.UU. (F-ataque-r1-m05-i009-cliente-004). La idea deja como supuesto que el proveedor acepte las cláusulas, y no hay evidencia de que lo haga. Para el corredor, que es el responsable, esto es el primer obstáculo de venta, y Nexura ya declara cumplimiento de la Ley 18.331 (ficha nueva 003). Sin ese camino, el piloto con corredores reales y el costo de cumplimiento (R6) quedan en el aire.",
+      "tipo": "evidencia",
+      "evidencia": ["F-defensa-r1-m04-i027-003", "F-ataque-r1-m05-i009-cliente-004", "F-ataque-r2-m02-i027-competidor-003"]
+    },
+    {
+      "n": 6,
+      "severidad": "MINOR",
+      "titulo": "El WhatsApp por enlace wa.me es más débil que lo que ya vende el competidor",
+      "donde": "Solución y Semestre 2: \"arma el mensaje de renovación para que el corredor lo mande por WhatsApp desde su número (enlace wa.me)\"",
+      "problema": "Con wa.me el corredor tiene que abrir y apretar enviar mensaje por mensaje; Nexura ofrece avisos de renovación por WhatsApp (F-ataque-r1-m04-i027-cliente-001). La idea se queda con la parte manual para evitar costos de la API de WhatsApp, y eso la deja por debajo de la función más usada en la región para cobrar y renovar. El tablero y los emails son lo que cualquier planilla con recordatorios ya resuelve.",
+      "tipo": "evidencia",
+      "evidencia": ["F-ataque-r1-m04-i027-cliente-001"]
+    },
+    {
+      "n": 7,
+      "severidad": "MINOR",
+      "titulo": "Canal y piloto sin contacto: toda la validación depende de A.PRO.A.SE. y de 2 a 5 corredores sin identificar",
+      "donde": "Monetización: \"Canal: asociaciones como A.PRO.A.SE.\"; Supuestos: \"sin contacto confirmado hoy\"",
+      "problema": "La tabla de contactos de constraints.md está sin completar, así que no hay corredor ni asociación alcanzable hoy. La ficha F-defensa-r1-m04-i027-001 solo dice que la asociación reúne más de 500 corredores y agentes; no dice que difunda software de terceros ni que los asociados sean de menos de 300 pólizas. La conversión de 5 a 10% de los asociados no tiene base. Sin corredores, el plan B (pólizas de familiares y sintéticas) no valida ni precio ni precisión sobre formatos reales, que es justo el diferencial prometido.",
+      "tipo": "opinion",
+      "evidencia": []
+    }
+  ],
+  "nuevas_fichas": [
+    {
+      "id": "F-ataque-r2-m02-i027-competidor-001",
+      "sector": "transversal",
+      "hallazgo": "El blog de Nexura sobre software para corredores en Uruguay dice que con menos de 100 pólizas muchos corredores se manejan bien con Excel; lista a Figuro en unos USD 50 por mes y a AdminSE sin precio publicado, para corredurías de más de cinco personas.",
+      "source_url": "https://nexuraseguros.com/blog/software-corredores-seguros-uruguay-2026",
+      "source_title": "Software para corredores de seguros en Uruguay 2026",
+      "source_date": "2026-03-29",
+      "source_type": "competidor",
+      "geografia": "UY",
+      "confianza": "media",
+      "retrieved_at": "2026-10-08T13:00:00",
+      "extracto": "Con menos de 100 pólizas, muchos corredores se manejan bien.",
+      "competidor": "Nexura"
+    },
+    {
+      "id": "F-ataque-r2-m02-i027-competidor-002",
+      "sector": "transversal",
+      "hallazgo": "Figuro, software para agentes de seguros, ofrece un plan gratuito (formularios por ramo, prospectos, cotizaciones comparativas) y planes de pago desde USD 5 por mes, con conectores para Zapier y Make.",
+      "source_url": "https://www.figuro.la/blog-post/software-para-agentes-de-seguros-guia-completa",
+      "source_title": "Software para Agentes de Seguros: Guía por Etapa (2026)",
+      "source_date": "2026",
+      "source_type": "competidor",
+      "geografia": "LATAM",
+      "confianza": "media",
+      "retrieved_at": "2026-10-08T13:05:00",
+      "extracto": "Figuro tiene plan gratuito con formularios por ramo, lista de prospectos y cotizaciones comparativas.",
+      "competidor": "Figuro"
+    },
+    {
+      "id": "F-ataque-r2-m02-i027-competidor-003",
+      "sector": "transversal",
+      "hallazgo": "La home de Nexura dice que el corredor sube el PDF y la IA lee prima, vigencias, cuotas y coberturas; declara 43 aseguradoras de 5 países mapeadas, cifrado AES-256, cumplimiento de la Ley 18.331 e infraestructura en AWS; planes desde USD 197 por mes.",
+      "source_url": "https://nexuraseguros.com/",
+      "source_title": "NEXURA - CRM y Automatización con IA para Corredores de Seguros",
+      "source_date": "desconocida",
+      "source_type": "competidor",
+      "geografia": "UY",
+      "confianza": "media",
+      "retrieved_at": "2026-10-08T13:10:00",
+      "extracto": "Subís el PDF y la IA lee prima, vigencias, cuotas, coberturas y certificados de flota.",
+      "competidor": "Nexura"
+    }
+  ]
+}

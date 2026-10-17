@@ -1,0 +1,105 @@
+{
+  "idea": "i021",
+  "persona": "competidor",
+  "ataques": [
+    {
+      "n": 1,
+      "severidad": "MAJOR",
+      "titulo": "La demanda central (la mipyme paga de más y pagaría por saberlo) no tiene ninguna ficha",
+      "donde": "Problema (\"Que la mipyme pague de más es una hipótesis a medir en el piloto\"), Monetización y Supuestos declarados",
+      "problema": "Todo el negocio depende de que haya ahorro tarifario relevante en mipymes y de que alguien pague por descubrirlo. Las fichas citadas no lo muestran: F-energia-ambiente-001 es una campaña del MIEM de 2020 (sirve para el tamaño del segmento, no para el dolor), F-energia-ambiente-002 es sobre microgeneración y F-defensa-r1-m02-i021-001 es solo el texto del decreto de tarifas. Ninguna dice que una mipyme uruguaya pague de más, cuánto, ni que alguien pague por un prediagnóstico. La idea lo reconoce como hipótesis y lo lista como supuesto, así que no es fatal por omisión de declaración, pero la demanda queda en el ancla de 0 a 2 de la rúbrica (opinión del autor) más que en la de 4. El precio de USD 20 por prediagnóstico y de USD 10 al mes no tiene ninguna base. Además, el propio riesgo declarado (\"el ahorro puede ser chico en mipymes de poco consumo\") apunta a que el ahorro puede no cubrir ni el plan mensual.",
+      "tipo": "evidencia",
+      "evidencia": [
+        "F-energia-ambiente-001",
+        "F-defensa-r1-m02-i021-001"
+      ]
+    },
+    {
+      "n": 2,
+      "severidad": "MAJOR",
+      "titulo": "UTE ya ofrece este asesoramiento tarifario a mipymes, y la idea no lo considera",
+      "donde": "Competidores (solo MIEM, simulador residencial de UTE e instaladores) y Supuesto \"No se buscaron más competidores\"",
+      "problema": "El competidor obvio es UTE misma. Su Plan Pymes ofrece a las mipymes asesoramiento personalizado de tarifa y de potencia contratada, y la página de opciones tarifarias para pymes dice que tiene técnicos especializados en todo el país para asesorar sobre tarifas, con solicitud por formulario o por oficina comercial. UTE además vende el Plan Inteligente Pymes sobre la tarifa Hora-Estacional con una garantía de ahorro, así que tiene incentivo comercial a mover a los clientes. Quien lee la factura y recomienda ajustar potencia o pasar a Hora-Estacional ya es un servicio gratuito del dueño de los datos. La idea compara contra un simulador residencial de 2018 y declara que no buscó más competidores: ignora a un competidor obvio, lo que en la rúbrica cae en el rango 0 a 2 de diferenciación. El hueco \"leer la factura con foto\" es una comodidad, no un servicio que UTE no pueda hacer; la ficha del simulador residencial dice que UTE ya usa consumo de 12 meses, potencia y tarifa de la factura.",
+      "tipo": "evidencia",
+      "evidencia": [
+        "F-ataque-r2-m02-i021-competidor-001",
+        "F-ataque-r2-m02-i021-competidor-002",
+        "F-ataque-r1-m02-i021-cliente-001"
+      ]
+    },
+    {
+      "n": 3,
+      "severidad": "MAJOR",
+      "titulo": "Evidencia mal leída: el competidor del MIEM y la cita de instaladores no dicen lo que la idea afirma",
+      "donde": "Competidores: \"Instaladores y consultores ... (evidencia: F-energia-ambiente-002)\" y \"Simulador de autodiagnóstico del MIEM ... (F-energia-ambiente-001)\"",
+      "problema": "F-energia-ambiente-002 habla de cobertura eléctrica y del decreto de microgeneración 173/010; no menciona instaladores ni consultores, ni que evalúen gratis. Está citada como evidencia de un competidor que la ficha no describe. Con F-energia-ambiente-001 pasa algo parecido: la ficha dice que el MIEM tiene un simulador de autodiagnóstico, pero nada sobre qué datos usa; la idea afirma como \"Supuesto\" que no lee facturas, y a la vez el segundo cliente (consultores e instaladores) y su disposición a pagar USD 20 por lead calificado no tienen ficha. Las cifras de ese lead son una opinión presentada junto a una cita que no la respalda.",
+      "tipo": "evidencia",
+      "evidencia": [
+        "F-energia-ambiente-002",
+        "F-energia-ambiente-001"
+      ]
+    },
+    {
+      "n": 4,
+      "severidad": "MAJOR",
+      "titulo": "El segmento que ahorra más con THE es el de menor consumo, que es el que menos paga",
+      "donde": "Usuario, Monetización (plan mipyme USD 10 al mes si el ahorro supera 3 veces el costo anual)",
+      "problema": "La tarifa General Simple cubre consumos menores a 2.000 kWh mensuales y la propia idea reconoce que el ahorro puede ser chico en mipymes de poco consumo. Su regla (solo cobrar el plan si el ahorro estimado supera 3 veces el costo anual, o sea USD 360) implica que casi nadie del segmento cumple la condición, y quien la cumpla puede resolverlo una vez con el asesoramiento gratuito de UTE y no necesita una suscripción mensual. El ahorro es puntual (se corrige la potencia o la tarifa una vez), por lo que la recurrencia es débil: la mayoría pagaría, como mucho, un informe único. El hueco puede ser un segmento que nadie atiende porque no paga.",
+      "tipo": "evidencia",
+      "evidencia": [
+        "F-ataque-r2-m02-i021-competidor-001",
+        "F-ataque-r2-m02-i021-competidor-002"
+      ]
+    },
+    {
+      "n": 5,
+      "severidad": "MAJOR",
+      "titulo": "El modelo de ingresos depende de un segundo cliente no validado y que además es un competidor",
+      "donde": "Monetización: \"consultores e instaladores pagan unos USD 20 por prediagnóstico calificado\"; Supuestos: \"Hay consultores e instaladores uruguayos dispuestos a pagar\"",
+      "problema": "El ingreso principal es la venta de leads a instaladores y consultores. No hay ninguna ficha de que existan en Uruguay en cantidad suficiente, ni de que compren leads, ni de cuánto. El propio texto los lista como competidores que evalúan gratis al vender. Una mipyme que cargó 12 facturas ya entregó la información; el consultor o el instalador puede pedirla directamente. La idea tampoco explica por qué la mipyme aceptaría ser contactada, ni por qué UTE no sería quien capte esos leads. Con 5 a 15 mipymes en el piloto no hay forma de medir el precio por lead antes de la entrega final.",
+      "tipo": "opinion",
+      "evidencia": []
+    },
+    {
+      "n": 6,
+      "severidad": "MINOR",
+      "titulo": "Viabilidad: motor de reglas exacto sobre tarifas que cambian cada año y riesgo de error con costo para el cliente",
+      "donde": "Solución (motor de reglas basado en el decreto) y Riesgos (\"Un error del motor cuesta plata\")",
+      "problema": "La ficha del decreto fija las tarifas de enero de 2026; el pliego de UTE se actualiza cada año y existe además una opción Plan Inteligente con descuento. Mantener el motor al día es trabajo recurrente que la idea no cuenta en horas ni en costos. Además la validación \"por un especialista antes del piloto\" depende de una persona que el equipo no tiene: la tabla de contactos está sin completar. Es un riesgo de viabilidad con plan B débil, no un bloqueo.",
+      "tipo": "evidencia",
+      "evidencia": [
+        "F-defensa-r1-m02-i021-001"
+      ]
+    }
+  ],
+  "nuevas_fichas": [
+    {
+      "id": "F-ataque-r2-m02-i021-competidor-001",
+      "sector": "transversal",
+      "hallazgo": "UTE ofrece a las pymes tres opciones tarifarias (Plan Inteligente Pymes sobre Hora-Estacional, Tarifa General Simple para consumo menor a 2.000 kWh mensuales y Mediano Consumidor) y dice contar con técnicos especializados en todo el país para asesorar sobre tarifas, con pedido por formulario u oficina comercial.",
+      "source_url": "https://portal.ute.com.uy/clientes/soluciones-para-empresas/beneficios/opciones-tarifarias-para-pymes",
+      "source_title": "Opciones Tarifarias para Pymes (UTE)",
+      "source_date": "desconocida",
+      "source_type": "competidor",
+      "geografia": "UY",
+      "confianza": "alta",
+      "retrieved_at": "2026-10-08T10:30:00",
+      "extracto": "técnicos especializados en todo el país",
+      "competidor": "UTE"
+    },
+    {
+      "id": "F-ataque-r2-m02-i021-competidor-002",
+      "sector": "transversal",
+      "hallazgo": "UTE publicó en 2018 que las mipymes pueden acceder al Plan Pymes, con asesoramiento personalizado y gratuito de tarifa y eficiencia energética, que puede incluir adecuar la tarifa, ajustar la potencia contratada y compensar energía reactiva; lo promueve la DNE del MIEM. La vigencia actual no está confirmada.",
+      "source_url": "https://portal.ute.com.uy/articulos/tu-empresa-tiene-la-tarifa-adecuada",
+      "source_title": "Tu empresa tiene la tarifa adecuada (UTE)",
+      "source_date": "2018-10",
+      "source_type": "competidor",
+      "geografia": "UY",
+      "confianza": "media",
+      "retrieved_at": "2026-10-08T10:31:00",
+      "extracto": "asesoramiento personalizado tarifario y de eficiencia energética",
+      "competidor": "UTE"
+    }
+  ]
+}
